@@ -1,0 +1,6 @@
+{
+    "require": {
+        "atoum/atoum" : "dev-master",
+        "sunra/php-simple-html-dom-parser": "dev-master"
+    }
+}
