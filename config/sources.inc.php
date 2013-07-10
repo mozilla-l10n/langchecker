@@ -1,7 +1,5 @@
 <?php
 
-include __DIR__ . '/adu.inc.php';   // list of adu per locale
-
 $public_repo1 = 'https://svn.mozilla.org/projects/mozilla-europe.org/trunk/';
 $public_repo2 = 'https://svn.mozilla.org/projects/mozilla.com/trunk/';
 $public_repo3 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/';
