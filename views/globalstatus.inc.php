@@ -32,7 +32,6 @@ foreach($sites[$website][4] as $_file) {
         $local_lang_file = $sites[$website][1] . $sites[$website][2] . $_lang . '/' . $_file;
 
         if ( !@file_get_contents($local_lang_file) ) {
-            echo 'boo';
             continue;
         }
         analyseLangFile($_lang, $website, $_file, $seconds);
