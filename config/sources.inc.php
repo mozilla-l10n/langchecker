@@ -205,7 +205,7 @@ $langfiles_subsets = array(
                                                         'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
                                                         'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'),
         'firefoxos/firefoxos.lang'             => array('fr', 'es-AR', 'es-ES', 'fy-NL', 'nl', 'pl', 'pt-BR'),
-        'mozorg/15years.lang'                  => array('ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hr', 'fy-NL', 'hi-IN', 'id', 'it', 'lg', 'ms', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'sq', 'sr', 'zh-CN', 'zh-TW'),
+        'mozorg/15years.lang'                  => array('ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hr', 'fy-NL', 'hi-IN', 'id', 'it', 'lg', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'zh-CN', 'zh-TW'),
         'firefox/partners/index.lang'          => array('ca', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'it',
                                                          'ja', 'ko', 'pl', 'pt-BR', 'zh-CN', 'zh-TW'),
         'firefox/os/prelaunch.lang'          => array('es-ES', 'pl'),
