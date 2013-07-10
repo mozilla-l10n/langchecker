@@ -67,13 +67,13 @@ $mozillaorg_lang = array(
     'foundation/annualreport/2011faq.lang'  => false,
     'firefoxos/firefoxos.lang'              => true,
     'firefox/partners/index.lang'           => true,
-    'plugincheck.lang'                      => true,
     'tabzilla/tabzilla.lang'                => false,
     'mozorg/15years.lang'                   => false,
     'firefox/os/prelaunch.lang'             => true,
     'firefox/os/index.lang'                 => true,
     'firefox/new.lang'                      => true,
     'mozorg/about/manifesto.lang'           => false,
+    'mozorg/plugincheck.lang'               => true,
 );
 
 $firefoxhealthreport_lang = array(
@@ -174,6 +174,7 @@ $langfiles_subsets = array(
         'firefoxtesting.lang'                  => $mozilla,
         'main.lang'                            => $mozillaorg,
         'download_button.lang'                 => $mozillaorg,
+        'mozorg/plugincheck.lang'              => $mozillaorg,
         'plugincheck.lang'                     => $mozillaorg,
         'snippets.lang'                        => $mozillaorg,
         'newsletter.lang'                      => $mozillaorg,

@@ -81,14 +81,43 @@ foreach ($files as $filename) {
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/download.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/newsletter.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/mozorg/contribute.lang');
+            l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/plugincheck.lang');
 
             $exceptions = array(
+                // new string => older equivalent string
                 'Different by design'           => 'Different by Design',
                 'Proudly<br />non-profit'       => 'Proudly <span>non-profit</span>',
                 'Innovating<br />for you'       => 'Innovating <span>for you</span>',
                 'Fast, flexible,<br />secure'   => 'Fast, flexible, <span>secure</span>',
             );
-            $exceptions = array();
+
+            $exceptions = array(
+                'Check Your Plugins' => 'Check Your <span>Plugins</span>',
+                'Step 1: Click Update to update a plugin.' => '<strong><em>Step 1:</em></strong> Click <strong>Update</strong> to update a plugin.',
+                'Step 2: Complete all recommended updates before restarting your browser.' => '<strong><em>Step 2:</em></strong> <strong>Complete all recommended updates</strong> <em>before</em> restarting your browser.',
+                'Potentially vulnerable plugins' => 'Potentially vulnerable plugins:',
+                'Frequently Asked Questions' => 'Frequently asked <span>Questions</span>',
+                'Plugins power videos, animation and games' => 'Plugins power <strong>videos, animation and games</strong>.',
+                'They\'re built outside of Firefox by companies like Adobe Systems and Apple' => 'They\'re built <strong>outside of Firefox by companies</strong> like <a href="%(adobe)s">Adobe Systems</a> and <a href="%(apple)s" >Apple</a>.',
+                'Plugins don\'t always update automatically.' => 'Plugins <strong>don\'t always update</strong> automatically.',
+                'Old plugins can interrupt browsing and waste your time.' => 'Old plugins can interrupt browsing and <strong>waste your time</strong>.',
+                'In the future, Firefox will update plugins for you. Until then, you should regularly check this page and update your plugins to stay safe.' => 'In the future, Firefox will update plugins for you.  Until then, you should <strong>regularly check this page</strong> and update your plugins to stay safe.',
+                'Which Plugins do I have?' => 'Which plugins do I have?',
+                'We automatically detected your plugins above, to view your installed plugins in Firefox follow these steps:' => 'We automatically detected your plugins above, to <strong>view your installed plugins in Firefox</strong> follow these steps:',
+                'Open the Tools menu.' => 'Open the <kbd>Tools</kbd> menu.',
+                'Choose Add-ons.' => 'Choose <kbd>Add-ons</kbd>.',
+                'Click the plugins tab.' => 'Click the <kbd>plugins</kbd> tab.',
+                'Click the Disable button.' => 'Click the <kbd>Disable</kbd> button.',
+                'Caution: disabling a plugin means that you will no longer be able to do certain things. For example, if you disable Flash, you will not be able to watch videos on YouTube.' => '<strong>Caution:</strong> disabling a plugin means that you will <strong>no longer be able to do</strong> certain things. For example, if you disable Flash, you will not be able to watch videos on popular video streaming sites.',
+                'Have more questions?' => 'Have more <span>questions?</span>',
+                'vulnerable' => 'Vulnerable',
+                'Status' => 'State',
+            );
+
+
+
+
+            //~ $exceptions = array();
 
             $content = buildFile($exceptions);
             $path    = $source;
@@ -188,11 +217,19 @@ function dumpString($english, $exceptions=array()) {
         return str_replace(array('<span>', '</span>'), array('<br />', ''), $str);
     };
 
-    //~ if (array_key_exists($english, $exceptions) && isset($GLOBALS['__l10n_moz'][$english])) {
-        //~ $chunk .= $span_to_br($GLOBALS['__l10n_moz'][$exceptions[$english]]);
-    //~ } else {
+    if (array_key_exists($english, $exceptions) && isset($GLOBALS['__l10n_moz'][$exceptions[$english]]) ) {
+        $tempString = strip_tags($GLOBALS['__l10n_moz'][$exceptions[$english]]);
+
+        if ($english == 'Potentially vulnerable plugins') {
+            $tempString = str_replace(':', '', $tempString);
+        } elseif ($english == 'vulnerable') {
+            $tempString = strtolower($tempString);
+        }
+
+        $chunk .= $tempString;
+    } else {
         $chunk .= (array_key_exists($english, $GLOBALS['__l10n_moz'])) ? $GLOBALS['__l10n_moz'][$english]: $english;
-    //~ }
+    }
     $chunk .= "\n\n\n";
 
     return $chunk;
@@ -205,4 +242,8 @@ function file_force_contents($dir, $contents){
     foreach($parts as $part)
         if(!is_dir($dir .= "/$part")) mkdir($dir);
     file_put_contents("$dir/$file", $contents);
+}
+
+function isWindowsEOL($line) {
+    return (substr($line, -2) === "\r\n") ? true : false;
 }
