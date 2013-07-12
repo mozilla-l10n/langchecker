@@ -72,6 +72,7 @@ $mozillaorg_lang = array(
     'firefox/os/prelaunch.lang'             => true,
     'firefox/os/index.lang'                 => true,
     'firefox/new.lang'                      => true,
+    'firefox/update.lang'                   => true,
     'mozorg/about/manifesto.lang'           => false,
     'mozorg/plugincheck.lang'               => true,
 );
@@ -167,6 +168,7 @@ $langfiles_subsets = array(
         'upgradedialog.lang'                   => $startpage36,
         'download.lang'                        => $mozilla,
         'firefox/new.lang'                     => $mozilla,
+        'firefox/updates.lang'                 => $mozilla,
         'euballot.lang'                        => array('bg', 'hr', 'cs', 'da', 'nl', 'en-GB',
                                                          'et', 'fi', 'fr', 'de', 'el', 'hu', 'it',
                                                          'lv', 'lt', 'nb-NO', 'pl', 'pt-PT', 'ro',
