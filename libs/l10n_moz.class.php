@@ -84,7 +84,6 @@ class l10n_moz
             // no active tag
             if (($i == 0 or $i == 1)
                 && self::startsWith($f[$i], '## NOTE:')
-                && !self::startsWith($f[$i+1], ';')
             ) {
                 $GLOBALS[$array_name]['filedescription'][] = trim(substr($f[$i], 8));
                 continue;
@@ -92,9 +91,8 @@ class l10n_moz
 
             // active tag
             if (($i == 1 or $i == 2)
-                && $active
+                && $active === true
                 && self::startsWith($f[$i], '## NOTE:')
-                && !self::startsWith($f[$i+1], ';')
             ) {
                 $GLOBALS[$array_name]['filedescription'][] = trim(substr($f[$i], 8));
                 continue;
