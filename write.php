@@ -22,7 +22,7 @@ require $conf . 'locales.inc.php';   // list of locales
 require $conf . 'sources.inc.php';   // websites definition, needs locales.inc.php
 
 /* user provided variables */
-$filename = (isset($_GET['file']))    ? secureText($_GET['file'])    : 'firefox/partners/index.lang'; // which file are we comparing? Default to main.lang
+$filename = (isset($_GET['file']))    ? secureText($_GET['file'])    : 'firefox/new.lang'; // which file are we comparing? Default to main.lang
 $locale   = (isset($_GET['locale']))  ? secureText($_GET['locale'])  : '';          // which locale are we analysing? No default
 $website  = (isset($_GET['website'])) ? secureText($_GET['website']) : '0';          // which website are we looking at?
 
@@ -67,21 +67,10 @@ foreach ($files as $filename) {
             /* here we load preexisting lang files */
             l10n_moz::load($source);
 
-            //~ if ($_lang == 'fr') {
-                //~ var_dump($GLOBALS["__l10n_moz"]);
-                //~ exit;
-            //~ }
-
-            /* for surveys */
+            /* incorporte strings from other lang files */
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey1.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey2.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey3.lang');
-            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/main.lang');
-            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/mobile.lang');
-            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/download.lang');
-            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/newsletter.lang');
-            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/mozorg/contribute.lang');
-            l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/plugincheck.lang');
 
             $exceptions = array(
                 // new string => older equivalent string
@@ -91,33 +80,7 @@ foreach ($files as $filename) {
                 'Fast, flexible,<br />secure'   => 'Fast, flexible, <span>secure</span>',
             );
 
-            $exceptions = array(
-                'Check Your Plugins' => 'Check Your <span>Plugins</span>',
-                'Step 1: Click Update to update a plugin.' => '<strong><em>Step 1:</em></strong> Click <strong>Update</strong> to update a plugin.',
-                'Step 2: Complete all recommended updates before restarting your browser.' => '<strong><em>Step 2:</em></strong> <strong>Complete all recommended updates</strong> <em>before</em> restarting your browser.',
-                'Potentially vulnerable plugins' => 'Potentially vulnerable plugins:',
-                'Frequently Asked Questions' => 'Frequently asked <span>Questions</span>',
-                'Plugins power videos, animation and games' => 'Plugins power <strong>videos, animation and games</strong>.',
-                'They\'re built outside of Firefox by companies like Adobe Systems and Apple' => 'They\'re built <strong>outside of Firefox by companies</strong> like <a href="%(adobe)s">Adobe Systems</a> and <a href="%(apple)s" >Apple</a>.',
-                'Plugins don\'t always update automatically.' => 'Plugins <strong>don\'t always update</strong> automatically.',
-                'Old plugins can interrupt browsing and waste your time.' => 'Old plugins can interrupt browsing and <strong>waste your time</strong>.',
-                'In the future, Firefox will update plugins for you. Until then, you should regularly check this page and update your plugins to stay safe.' => 'In the future, Firefox will update plugins for you.  Until then, you should <strong>regularly check this page</strong> and update your plugins to stay safe.',
-                'Which Plugins do I have?' => 'Which plugins do I have?',
-                'We automatically detected your plugins above, to view your installed plugins in Firefox follow these steps:' => 'We automatically detected your plugins above, to <strong>view your installed plugins in Firefox</strong> follow these steps:',
-                'Open the Tools menu.' => 'Open the <kbd>Tools</kbd> menu.',
-                'Choose Add-ons.' => 'Choose <kbd>Add-ons</kbd>.',
-                'Click the plugins tab.' => 'Click the <kbd>plugins</kbd> tab.',
-                'Click the Disable button.' => 'Click the <kbd>Disable</kbd> button.',
-                'Caution: disabling a plugin means that you will no longer be able to do certain things. For example, if you disable Flash, you will not be able to watch videos on YouTube.' => '<strong>Caution:</strong> disabling a plugin means that you will <strong>no longer be able to do</strong> certain things. For example, if you disable Flash, you will not be able to watch videos on popular video streaming sites.',
-                'Have more questions?' => 'Have more <span>questions?</span>',
-                'vulnerable' => 'Vulnerable',
-                'Status' => 'State',
-            );
-
-
-
-
-            //~ $exceptions = array();
+            $exceptions = array();
 
             $content = buildFile($exceptions);
             $path    = $source;
@@ -161,17 +124,8 @@ function buildFile($exceptions=array()) {
             echo "\n\n";
             continue;
         }
-
         echo dumpString($key, $exceptions);
     }
-
-    //~ $newsignup = dumpString('Sign me up!');
-    //~ $newsignup = str_replace('&nbsp;!', '', $newsignup);
-    //~ $newsignup = str_replace('!', '', $newsignup);
-    //~ $newsignup = str_replace('！', '', $newsignup);
-    //~ $newsignup = trim($newsignup);
-    //~ echo "# Button\n";
-    //~ echo $newsignup;
 
     /* put l10n extras at the end of the file */
     foreach ($GLOBALS['__l10n_moz'] as $key => $val) {
