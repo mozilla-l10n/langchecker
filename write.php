@@ -27,9 +27,9 @@ require $conf . 'locales.inc.php';   // list of locales
 require $conf . 'sources.inc.php';   // websites definition, needs locales.inc.php
 
 /* user provided variables */
-$filename = (isset($_GET['file']))    ? secureText($_GET['file'])    : 'main.lang'; // which file are we comparing? Set a default
-$locale   = (isset($_GET['locale']))  ? secureText($_GET['locale'])  : '';          // which locale are we analysing? No default
-$website  = (isset($_GET['website'])) ? secureText($_GET['website']) : '0';          // which website are we looking at? Default to www.mozilla.org
+$filename = (isset($argv[1])) ? secureText($argv[1]) : 'main.lang'; // which file are we comparing? Set a default
+$website  = (isset($argv[2])) ? secureText($argv[2])  : '0';         // which website are we looking at? Default to www.mozilla.org
+$locale   = (isset($argv[3])) ? secureText($argv[3])  : '';          // which locale are we analysing? No default
 
 /* temp variables */
 $reflang  = $sites[$website][5];
