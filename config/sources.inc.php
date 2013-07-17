@@ -11,26 +11,7 @@ if (!isset($_SERVER['SERVER_NAME'])) {
     $_SERVER['SERVER_NAME'] = '';
 }
 
-if ($_SERVER['SERVER_NAME'] == 'l10n.mozilla-community.org') {
-    $repo1 = '/home/pascalc/mozillaorgsvn/';
-    $repo2 = '/home/pascalc/startpagesvn/';
-    $repo3 = '/home/pascalc/surveys/';
-    $repo4 = '/home/pascalc/marketing/';
-    $repo5 = '/home/pascalc/firefoxhealthreport/';
-    $root  = '/home/pascalc/public_html/langchecker/';
-    include __DIR__ . '/../../webdashdata/data.locales.php';
-    $mozilla = array_diff($mozillaorg, array('en-GB', 'es',));
-    $mozillaorg = array_diff($mozillaorg, array('en-GB', 'es', 'lg', 'nn-NO', 'sw'));
-} else {
-    $repo1 = '/home/pascalc/repos/svn/mozillaorg/trunk/';
-    $repo2 = '/home/pascalc/repos/svn/l10n-misc/fx36start/locale/';
-    $repo3 = '/home/pascalc/repos/svn/l10n-misc/surveys/';
-    $repo4 = '/home/pascalc/repos/svn/l10n-misc/marketing/';
-    $repo5 = '/home/pascalc/repos/svn/l10n-misc/firefoxhealthreport/';
-    $root  = $_SERVER['DOCUMENT_ROOT'] . '/dev/langchecker/';
-    include __DIR__ . '/locales.inc.php';
-    $mozillaorg = array_diff($mozilla, array('en-GB', 'es', 'lg', 'nn-NO', 'sw'));
-}
+require __DIR__ . '/settings.inc.php';
 
 
 $mozillaorg_lang = array(
