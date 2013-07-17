@@ -69,10 +69,19 @@ foreach ($files as $filename) {
             /* here we load preexisting lang files */
             l10n_moz::load($source);
 
-            /* incorporte strings from other lang files */
+            /* is the lang file using Windows or Unix EOL? */
+            $eol = file($source);
+            $eol = isWindowsEOL($eol[0]) ? "\r\n" : "\n";
+
+            $activeStatus = (boolean) $GLOBALS['__l10n_moz']['activated'];
+
+            /* incorporate strings from other lang files */
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey1.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey2.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey3.lang');
+            l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/foundationsection.lang');
+
+            $GLOBALS['__l10n_moz']['activated'] = (boolean) $activeStatus;
 
             $exceptions = array(
                 // new string => older equivalent string
@@ -84,15 +93,15 @@ foreach ($files as $filename) {
 
             $exceptions = array();
 
-            $content = buildFile($exceptions);
+            $content = buildFile($eol, $exceptions);
             $path    = $source;
             //~ print_r($content);die; //debug
 
             file_force_contents($path, $content);
 
-            $result .= $_lang  . "\n";
-            $result .= $source . "\n";
-            $result .= $path   . "\n";
+            $result .= $_lang  . $eol;
+            $result .= $source . $eol;
+            $result .= $path   . $eol;
 
             if (isset($GLOBALS['__l10n_moz'])) {
                 unset($GLOBALS['__l10n_moz']);
@@ -104,14 +113,14 @@ foreach ($files as $filename) {
 }
 
 
-function buildFile($exceptions=array()) {
+function buildFile($eol, $exceptions=array()) {
 
     ob_start();
 
     header('Content-type: text/plain; charset=UTF-8');
 
     if ( $GLOBALS['__l10n_moz']['activated'] ) {
-        echo "## active ##\n";
+        echo '## active ##' . $eol;
     }
 
     foreach ($GLOBALS['__english_moz'] as $key => $val) {
@@ -122,18 +131,18 @@ function buildFile($exceptions=array()) {
 
         if ($key == 'filedescription') {
             foreach ($GLOBALS['__english_moz']['filedescription'] as $header) {
-                echo '## NOTE: ' . $header . "\n";
+                echo '## NOTE: ' . $header . $eol;
             }
-            echo "\n\n";
+            echo  $eol . $eol;
             continue;
         }
-        echo dumpString($key, $exceptions);
+        echo dumpString($key, $eol, $exceptions);
     }
 
     /* put l10n extras at the end of the file */
     foreach ($GLOBALS['__l10n_moz'] as $key => $val) {
         if (strstr($key, '{l10n-extra}') == true) {
-            echo dumpString($key);
+            echo dumpString($key, $eol);
         }
     }
 
@@ -145,7 +154,7 @@ function buildFile($exceptions=array()) {
 }
 
 
-function dumpString($english, $exceptions=array()) {
+function dumpString($english, $eol, $exceptions=array()) {
 
     if ($english == 'activated') {
         return;
@@ -154,10 +163,10 @@ function dumpString($english, $exceptions=array()) {
     $chunk = '';
 
     if (isset($GLOBALS['__l10n_comments'][$english])) {
-        $chunk .= '# ' . trim($GLOBALS['__l10n_comments'][$english]) . "\n";
+        $chunk .= '# ' . trim($GLOBALS['__l10n_comments'][$english]) . $eol;
     }
 
-    $chunk .= ";$english\n";
+    $chunk .= ";$english" . $eol;
 
     $span_to_br = function($str) {
         return str_replace(array('<span>', '</span>'), array('<br />', ''), $str);
@@ -176,7 +185,7 @@ function dumpString($english, $exceptions=array()) {
     } else {
         $chunk .= (array_key_exists($english, $GLOBALS['__l10n_moz'])) ? $GLOBALS['__l10n_moz'][$english]: $english;
     }
-    $chunk .= "\n\n\n";
+    $chunk .= $eol . $eol . $eol;
 
     return $chunk;
 }
@@ -185,8 +194,11 @@ function file_force_contents($dir, $contents){
     $parts = explode('/', $dir);
     $file = array_pop($parts);
     $dir = '';
-    foreach($parts as $part)
-        if(!is_dir($dir .= "/$part")) mkdir($dir);
+    foreach($parts as $part) {
+        if (!is_dir($dir .= "/$part")) {
+            mkdir($dir);
+        }
+    }
     file_put_contents("$dir/$file", $contents);
 }
 
