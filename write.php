@@ -2,6 +2,11 @@
 
 date_default_timezone_set('Europe/Paris');
 
+if (php_sapi_name() != 'cli') {
+    die('Nope');
+}
+
+
 /* server shortcuts */
 $called    = true;
 $aproot    = __DIR__ . '/';
@@ -79,7 +84,6 @@ foreach ($files as $filename) {
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey1.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey2.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey3.lang');
-            l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/foundationsection.lang');
 
             $GLOBALS['__l10n_moz']['activated'] = (boolean) $activeStatus;
 
@@ -99,9 +103,7 @@ foreach ($files as $filename) {
 
             file_force_contents($path, $content);
 
-            $result .= $_lang  . $eol;
-            $result .= $source . $eol;
-            $result .= $path   . $eol;
+            $result .= $_lang  . ': ' . $filename . $eol;
 
             if (isset($GLOBALS['__l10n_moz'])) {
                 unset($GLOBALS['__l10n_moz']);
