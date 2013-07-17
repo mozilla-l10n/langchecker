@@ -22,9 +22,9 @@ require $conf . 'locales.inc.php';   // list of locales
 require $conf . 'sources.inc.php';   // websites definition, needs locales.inc.php
 
 /* user provided variables */
-$filename = (isset($_GET['file']))    ? secureText($_GET['file'])    : 'firefox/new.lang'; // which file are we comparing? Default to main.lang
+$filename = (isset($_GET['file']))    ? secureText($_GET['file'])    : 'firefox/new.lang'; // which file are we comparing? Set a default
 $locale   = (isset($_GET['locale']))  ? secureText($_GET['locale'])  : '';          // which locale are we analysing? No default
-$website  = (isset($_GET['website'])) ? secureText($_GET['website']) : '0';          // which website are we looking at?
+$website  = (isset($_GET['website'])) ? secureText($_GET['website']) : '0';          // which website are we looking at? Default to www.mozilla.org
 
 /* temp variables */
 $reflang  = $sites[$website][6];
@@ -38,6 +38,8 @@ getEnglishSource($reflang, $website, $filename, 1);
  *
  * Exemple d'utilisation:
  * http://localhost/dev/langchecker/write.php?website=0&file=firefoxlive.lang
+ *
+ * les fichiers doivent avoir les droits 755
  */
 
 if ($GLOBALS['__english_moz'] == null) {
@@ -84,6 +86,7 @@ foreach ($files as $filename) {
 
             $content = buildFile($exceptions);
             $path    = $source;
+            //~ print_r($content);die; //debug
 
             file_force_contents($path, $content);
 
@@ -145,24 +148,13 @@ function buildFile($exceptions=array()) {
 function dumpString($english, $exceptions=array()) {
 
     if ($english == 'activated') {
-        return $GLOBALS['__l10n_moz'][$english]. "\n";
+        return;
     }
 
     $chunk = '';
 
     if (isset($GLOBALS['__l10n_comments'][$english])) {
-
-        $comments = $GLOBALS['__l10n_comments'][$english];
-
-        if (strpos($GLOBALS['__l10n_comments'][$english], 'sep@rator')) {
-            $comments = explode('sep@rator', $GLOBALS['__l10n_comments'][$english]);
-            $chunk .= '## ' . trim($comments[0]) . " ##\n";
-            if (trim($comments[1]) != '') {
-                $chunk .= '# ' . trim($comments[1]) . "\n";
-            }
-        } else {
-            $chunk .= '# ' . trim($comments) . "\n";
-        }
+        $chunk .= '# ' . trim($GLOBALS['__l10n_comments'][$english]) . "\n";
     }
 
     $chunk .= ";$english\n";

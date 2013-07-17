@@ -108,20 +108,7 @@ class l10n_moz
                 if ($i >= 2 && in_array($reflang, $englishes)) {
                     $GLOBALS['__l10n_comments'][$english] = '';
 
-                    if (self::startsWith($f[$i-2], '##')) {
-                        $str = explode('##', $f[$i-2]);
-                        $str = trim(implode($str));
-                        $GLOBALS['__l10n_comments'][$english] .= $str . 'sep@rator';
-                    }
-
-                    if (self::startsWith($f[$i-1], '##')) {
-                        $str = explode('##', $f[$i-1]);
-                        $str = trim(implode($str));
-                        $GLOBALS['__l10n_comments'][$english] .= $str . 'sep@rator';
-                        continue;
-                    }
-
-                    if (self::startsWith($f[$i-1], '#')) {
+                    if (self::startsWith($f[$i-1], '#') && !self::startsWith($f[$i-1], '##')) {
                         $GLOBALS['__l10n_comments'][$english] .= trim(substr($f[$i-1],1));
                     }
 
