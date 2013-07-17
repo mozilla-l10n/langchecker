@@ -17,7 +17,7 @@ foreach( $sites as $key => $val) {
         l10n_moz::load($source);
         unset($reflang);
 
-        analyseLangFile($locale, $key, $file, $seconds);
+        analyseLangFile($locale, $key, $file);
 
         foreach($GLOBALS[$locale] as $key2 => $val2) {
             $serialdata[$site][$file][$key2] = count($GLOBALS[$locale][$key2]);

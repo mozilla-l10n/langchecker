@@ -24,7 +24,7 @@ foreach($sites as $k => $v) {
     }
 }
 
-getEnglishSource($reflang, $target, $_file, $seconds);
+getEnglishSource($reflang, $target, $_file);
 
 
 // reassign a lang file to a reduced set of locales

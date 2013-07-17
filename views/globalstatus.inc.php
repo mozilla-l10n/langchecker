@@ -13,7 +13,7 @@ foreach($sites[$website][4] as $_file) {
 
     $reflang = $sites[$website][6];
 
-    getEnglishSource($reflang, $website, $_file, $seconds);
+    getEnglishSource($reflang, $website, $_file);
 
     echo '<table class="globallist"><tr><th colspan="5" class="filename">' . $_file . '</th></tr>';
     echo '<tr><th>Locale</th><th>Identical</th><th>Translated</th><th>Missing</th><th>Obsolete</th></tr>';
@@ -34,7 +34,7 @@ foreach($sites[$website][4] as $_file) {
         if ( !@file_get_contents($local_lang_file) ) {
             continue;
         }
-        analyseLangFile($_lang, $website, $_file, $seconds);
+        analyseLangFile($_lang, $website, $_file);
         //~ var_dump($GLOBALS[$_lang]);
         $todo    = count($GLOBALS[$_lang]['Identical']) + count($GLOBALS[$_lang]['Missing']);
         $total   = $todo + count($GLOBALS[$_lang]['Translated']);

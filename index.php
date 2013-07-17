@@ -35,21 +35,19 @@ if ($locale == '' && $action == '') {
 } elseif ($locale != '' && $website == '' && $serial == true) {
     /* case 4: data fetched externally */
     $case = 4;
-} elseif ($locale == '' && array_key_exists($website, $sites) && $serial == false && $action == 'cachestatus') {
-    /* case 5: list status of cached files for a site */
-    $case = 5;
 } elseif ($locale == ''  && $serial == false && $action == 'count') {
     /* case 6: list all locales and give the number of untranslated strings for all of them */
-    $case = 6;
+    $case = 5;
 } elseif ($locale == ''  && $serial == false && $action == 'translate') {
     /* case 7: list all translations of a string for snippets */
-    $case = 7;
+    $case = 6;
 }
 
 if ($action == 'api') {
-    $case = 8;
+    $case = 7;
 }
-switch($case) {
+
+switch ($case) {
     case 1:
         $template = $templates . 'template.inc.php';
         $view     = $views . 'listlocales.inc.php';
@@ -68,17 +66,13 @@ switch($case) {
         break;
     case 5:
         $template = $templates . 'template.inc.php';
-        $view     = $views . 'cachestatus.inc.php';
+        $view     = $views . 'countstrings.inc.php';
         break;
     case 6:
         $template = $templates . 'template.inc.php';
-        $view     = $views . 'countstrings.inc.php';
-        break;
-    case 7:
-        $template = $templates . 'template.inc.php';
         $view     = $views . 'translatestrings.inc.php';
         break;
-    case 8:
+    case 7:
         $template = $views . 'json.inc.php';
         break;
     default:

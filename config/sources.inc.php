@@ -1,11 +1,10 @@
 <?php
 
-$public_repo1 = 'https://svn.mozilla.org/projects/mozilla-europe.org/trunk/';
-$public_repo2 = 'https://svn.mozilla.org/projects/mozilla.com/trunk/';
-$public_repo3 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/';
-$public_repo4 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/';
-$public_repo5 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
-$public_repo6 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxhealthreport/';
+$public_repo1 = 'https://svn.mozilla.org/projects/mozilla.com/trunk/';
+$public_repo2 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/';
+$public_repo3 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/';
+$public_repo4 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
+$public_repo5 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxhealthreport/';
 
 // this is to avoid a warning in shell mode
 if (!isset($_SERVER['SERVER_NAME'])) {
@@ -13,32 +12,27 @@ if (!isset($_SERVER['SERVER_NAME'])) {
 }
 
 if ($_SERVER['SERVER_NAME'] == 'l10n.mozilla-community.org') {
-    $repo1 = 'http://svn.mozilla.org/projects/mozilla-europe.org/trunk/';
-    $repo2 = '/home/pascalc/mozillaorgsvn/';
-    $repo3 = '/home/pascalc/startpagesvn/';
-    $repo4 = '/home/pascalc/surveys/';
-    $repo5 = '/home/pascalc/marketing/';
-    $repo6 = '/home/pascalc/firefoxhealthreport/';
+    $repo1 = '/home/pascalc/mozillaorgsvn/';
+    $repo2 = '/home/pascalc/startpagesvn/';
+    $repo3 = '/home/pascalc/surveys/';
+    $repo4 = '/home/pascalc/marketing/';
+    $repo5 = '/home/pascalc/firefoxhealthreport/';
     $root  = '/home/pascalc/public_html/langchecker/';
     include __DIR__ . '/../../webdashdata/data.locales.php';
     $mozilla = array_diff($mozillaorg, array('en-GB', 'es',));
     $mozillaorg = array_diff($mozillaorg, array('en-GB', 'es', 'lg', 'nn-NO', 'sw'));
 } else {
-    $repo1 = 'http://localhost/svnprojects/europeUS/';
-    $repo2 = '/home/pascalc/repos/svn/mozillaorg/trunk/';
-    $repo3 = '/home/pascalc/repos/svn/l10n-misc/fx36start/locale/';
-    $repo4 = '/home/pascalc/repos/svn/l10n-misc/surveys/';
-    $repo5 = '/home/pascalc/repos/svn/l10n-misc/marketing/';
-    $repo6 = '/home/pascalc/repos/svn/l10n-misc/firefoxhealthreport/';
+    $repo1 = '/home/pascalc/repos/svn/mozillaorg/trunk/';
+    $repo2 = '/home/pascalc/repos/svn/l10n-misc/fx36start/locale/';
+    $repo3 = '/home/pascalc/repos/svn/l10n-misc/surveys/';
+    $repo4 = '/home/pascalc/repos/svn/l10n-misc/marketing/';
+    $repo5 = '/home/pascalc/repos/svn/l10n-misc/firefoxhealthreport/';
     $root  = $_SERVER['DOCUMENT_ROOT'] . '/dev/langchecker/';
     include __DIR__ . '/locales.inc.php';
     $mozillaorg = array_diff($mozilla, array('en-GB', 'es', 'lg', 'nn-NO', 'sw'));
 }
 
 $cache_path = $root.'cache/';
-
-// no cache
-$seconds = 1;
 
 $mozillaorg_lang = array(
     'main.lang'                             => true,
@@ -89,64 +83,54 @@ $firefoxhealthreport_lang = array(
 $sites = array(
 
     0 => array( 'www.mozilla.org',
-                $repo2,
+                $repo1,
                 'locales/',
                 $mozilla,
                 array_keys($mozillaorg_lang),
                 $cache_path .'mozilla',
                 'en-GB', // source locale
-                $public_repo2,
+                $public_repo1,
                 ),
 
     1 => array( 'start.mozilla.org',
-                $repo3,
+                $repo2,
                 'locale/',
                 $startpage36,
                 array('fx36start.lang'),
                 $cache_path .'mozilla',
                 'en-US', // source locale
-                $public_repo3,
+                $public_repo2,
                 ),
 
     2 => array( 'surveys',
-                $repo4,
+                $repo3,
                 '',
                 $surveys,
                 array('survey1.lang', 'survey2.lang', 'survey3.lang', 'survey4.lang', 'survey5.lang', ),
                 $cache_path .'mozilla',
                 'en-GB', // source locale
-                $public_repo4,
+                $public_repo3,
                 ),
 
     3 => array( 'marketing',
-                $repo5,
+                $repo4,
                 '',
                 $marketing,
                 array('julyevent.lang'),
                 $cache_path .'mozilla',
                 'en-US', // source locale
-                $public_repo5,
+                $public_repo4,
                 ),
 
     4 => array( 'about:healthreport',
-                $repo6,
+                $repo5,
                 'locale/',
                 $mozilla,
                 array_keys($firefoxhealthreport_lang),
                 $cache_path .'mozilla',
                 'en-US', // source locale
-                $public_repo6,
+                $public_repo5,
                 ),
-
-    //~ 1 => array( 'europe.mozilla.org',
-                //~ $repo1,
-                //~ '/l10n/',
-                //~ $mozilla_europe,
-                //~ array('main.lang'),
-                //~ $cache_path .'europe',
-                //~ 'en', // source locale
-                //~ $public_repo1
-                //~ ),
 );
 
 $langfiles_subsets = array(
@@ -217,7 +201,6 @@ $langfiles_subsets = array(
         'firefox/os/prelaunch.lang'          => array('es-ES', 'pl'),
         'firefox/os/index.lang'              => array('cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'pl', 'pt-BR', 'ro', 'sr'),
 
-        // 'mozorg/contribute-form.lang'    => array('es-ES', 'fr', 'he', 'hr', 'lt', 'pt-BR', 'sq'),
         ),
 
     'start.mozilla.org' => array(
@@ -225,7 +208,6 @@ $langfiles_subsets = array(
         ),
 
     'about:healthreport' => array(
-        //~ 'fhr.lang' => $mozilla,
         'fhr.lang' => array('af', 'an','ar','as','ast','be','bg','bn-BD','bn-IN','br','bs','ca','cs','csb','cy','da','de','el','en-GB','eo','es-AR','es-CL','es-ES','es-MX','et','eu','fa','ff','fi','fr','fy-NL','ga-IE','gd','gl','gu-IN','he','hi-IN','hr','hu','hy-AM','id','is','it','ja','ka','kk','km','kn','ko','ku','lg','lij','lt','lv','mai','mk','ml','mn','mr','ms','my','nb-NO','nl','nn-NO','nso','oc','or','pa-IN','pl','pt-BR','pt-PT','rm','ro','ru','sah','si','sk','sl','son','sq','sr','sv-SE','sw','ta','ta-LK','te','th','tr','uk','ur','vi','wo','zh-CN','zh-TW','zu'),
         ),
 

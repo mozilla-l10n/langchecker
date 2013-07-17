@@ -44,14 +44,14 @@ foreach($site[4] as $_file) {
 
     $reflang = $site[6];
 
-    foreach($sites as $k => $v) {
+    foreach ($sites as $k => $v) {
         if (in_array($site[0], $v)) {
             $target = $k;
             break;
         }
     }
 
-    getEnglishSource($reflang, $target, $_file, $seconds);
+    getEnglishSource($reflang, $target, $_file);
 
 
     // reassign a lang file to a reduced set of locales

@@ -45,22 +45,12 @@ function i__($str) {
 
 
 
-function getEnglishSource($locale, $website, $filename, $seconds=3600) {
+function getEnglishSource($locale, $website, $filename) {
 
     /* data sources */
     include __DIR__ . '/../config/sources.inc.php';
 
-    $local_file = $sites[$website][1] . $sites[$website][2] . $locale . '/' . $filename;
-    $toBeCached = false;
-
-    $path = $local_file;
-    // fetch the file and cache it or use the local cached version
-    if($toBeCached == true) {
-        $path = $sites[$website][1] . $sites[$website][2] . $locale . '/' . $filename;
-        writeToCache($path, $local_file);
-    } else {
-        $path = $local_file;
-    }
+    $path = $sites[$website][1] . $sites[$website][2] . $locale . '/' . $filename;
 
     /* load the English source file stored in $GLOBALS['__english_moz'] */
     l10n_moz::load($path);
@@ -80,47 +70,12 @@ function getTranslations($locale, $website, $filename) {
     // it is important to reset the reference value just after getting the English strings
 }
 
-function goodForCache($local_file, $time) {
-
-    if (!file_exists($local_file) || isset($_GET['nocache'])) {
-        $toBeCached = true;
-    } elseif (isset($_GET['usecache'])) {
-            $toBeCached = false;
-    } else {
-        $age = $_SERVER['REQUEST_TIME'] - filemtime($local_file);
-        $toBeCached = ($age > $time) ? true : false;
-    }
-
-    return $toBeCached;
-}
-
-function fileAge($local_file) {
-
-    if (!file_exists($local_file)) return false;
-
-    $age = $_SERVER['REQUEST_TIME'] - filemtime($local_file);
-    return $age;
-}
-
-function analyseLangFile($locale, $website, $filename, $seconds=3600) {
+function analyseLangFile($locale, $website, $filename) {
 
     /* data sources */
     include __DIR__ . '/../config/sources.inc.php';
 
-    /* Caching mechanism is here */
-    //~ $local_file = $sites[$website][5] . '/' . $locale . '-' . str_replace('/', '_', $filename);
-    //~ $toBeCached = goodForCache($local_file, $seconds);
-
-    $local_file = $sites[$website][1] . $sites[$website][2] . $locale . '/' . $filename;
-    $toBeCached = false;
-
-    // fetch the file and cache it or use the local cached version
-    if($toBeCached == true) {
-        $path = $sites[$website][1] . $sites[$website][2] . $locale . '/' . $filename;
-        writeToCache($path, $local_file);
-    } else {
-        $path = $local_file;
-    }
+    $path = $sites[$website][1] . $sites[$website][2] . $locale . '/' . $filename;
 
     /* load the localized file stored in $GLOBALS['__l10n_moz'], we reset $locale here */
     l10n_moz::load($path);
@@ -167,7 +122,7 @@ function analyseLangFile($locale, $website, $filename, $seconds=3600) {
                     // add to missing strings global array
                     $GLOBALS[$locale]['Missing'][] = $key;
                 }
-            } else if (strstr($key, '{l10n-extra}') == true){
+            } elseif (strstr($key, '{l10n-extra}') == true){
                 // add to Identical strings global array
                 $GLOBALS[$locale]['Obsolete'][] = str_replace('{l10n-extra}', '', $key);
             } else {
@@ -178,13 +133,13 @@ function analyseLangFile($locale, $website, $filename, $seconds=3600) {
 
 
 
-        foreach($GLOBALS['__english_moz'] as $key => $val) {
+        foreach ($GLOBALS['__english_moz'] as $key => $val) {
 
-            if($key == 'filedescription' || $key == 'activated') {
+            if ($key == 'filedescription' || $key == 'activated') {
                 continue;
             }
 
-            if(!array_key_exists($key, $GLOBALS['__l10n_moz']) && strstr($key, '{l10n-extra}') == false) {
+            if (!array_key_exists($key, $GLOBALS['__l10n_moz']) && strstr($key, '{l10n-extra}') == false) {
                 $GLOBALS[$locale]['Missing'][] = $key;
             }
         }
@@ -266,27 +221,12 @@ function var_dump2($val) {
 }
 
 
-/*
- * caching functions
- */
-
-function writeToCache($url, $local) {
-    $page = @file_get_contents($url);
-    if ($page == false) return;
-    file_put_contents($local, $page);
-}
-
-
-function getmicrotime() {
-    list($usec, $sec) = explode (' ', microtime());
-    return ((float)$usec + (float)$sec);
-}
-
 function showPythonVar($str) {
     $regex = '#%\(' . '[a-z0-9._-]+' . '\)s#';
     preg_match_all($regex, $str, $matches);
     foreach ($matches[0] as $val) {
         $str = str_replace($val, "<em>${val}</em>", $str);
     }
+
     return $str;
 }

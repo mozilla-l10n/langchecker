@@ -23,7 +23,7 @@ foreach ($sites as $key => $_site) {
             /*
              *  Reassign a lang file to a reduced set of locales
              */
-             
+
             if (@is_array($langfiles_subsets[$_site[0]][$filename])
                 && !in_array($locale, $langfiles_subsets[$_site[0]][$filename])) {
                 continue;
@@ -62,9 +62,9 @@ foreach ($sites as $key => $_site) {
                 //~ $bugzilla = 'https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla%20Localizations&qa_contact=&short_desc=[]&comment=%28Attach%20your%20updated%20' . $filename .   '%20file%20to%20this%20bug%20or%20indicate%20the%20revision%20number%20of%20your%20commit%20in%20SVN%29&short_desc=%5Bl10n%3A ' . $locale . '%5D%20updated%20' . $filename . '%20file%20for%20' . $_site[0] . '&cf_locale=' . $locale . 'component=';
             //~ }
 
-            getEnglishSource($reflang, $key, $filename, $seconds);
+            getEnglishSource($reflang, $key, $filename);
 
-            analyseLangFile($locale, $key, $filename, $seconds);
+            analyseLangFile($locale, $key, $filename);
 
             unset($reflang);
 

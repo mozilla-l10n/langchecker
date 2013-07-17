@@ -5,8 +5,6 @@
 
 $todo        = array();
 $total       = array();
-$seconds     = 1;
-
 
 foreach($mozilla as $lang) {
 
@@ -28,8 +26,8 @@ foreach($mozilla as $lang) {
         if ( !@file_get_contents($sites[0][1] . $sites[0][2] . $lang . '/' . $_file) ) continue;
 
 
-        getEnglishSource($reflang, 0, $_file, $seconds);
-        analyseLangFile($lang, 0, $_file, $seconds);
+        getEnglishSource($reflang, 0, $_file);
+        analyseLangFile($lang, 0, $_file);
 
         $todo[$lang]  +=  count($GLOBALS[$lang]['Identical']) + count($GLOBALS[$lang]['Missing']);
 

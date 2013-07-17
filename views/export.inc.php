@@ -35,9 +35,9 @@ foreach($sites as $key => $_site) {
             $source = $sites[$key][1] . $sites[$key][2] . $reflang . '/' . $filename;
             $target = $sites[$key][1] . $sites[$key][2] . $locale  . '/' . $filename;
 
-            getEnglishSource($reflang, $key, $filename, $seconds);
+            getEnglishSource($reflang, $key, $filename);
 
-            analyseLangFile($locale, $key, $filename, $seconds);
+            analyseLangFile($locale, $key, $filename);
 
             $export[$_site[0]][$filename]['identical']  = count($GLOBALS[$locale]['Identical']);
             $export[$_site[0]][$filename]['missing']    = count($GLOBALS[$locale]['Missing']);
