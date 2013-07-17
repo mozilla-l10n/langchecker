@@ -32,6 +32,10 @@ class l10n_moz
      */
     public static function getFile($file)
     {
+        if (!is_file($file)) {
+            error_log($file . ' does not exist!');
+            return false;
+        }
 
         $file = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         // Remove potential Byte Order mark

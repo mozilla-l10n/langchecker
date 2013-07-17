@@ -7,6 +7,11 @@ $public_repo4 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/';
 $public_repo5 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
 $public_repo6 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxhealthreport/';
 
+// this is to avoid a warning in shell mode
+if (!isset($_SERVER['SERVER_NAME'])) {
+    $_SERVER['SERVER_NAME'] = '';
+}
+
 if ($_SERVER['SERVER_NAME'] == 'l10n.mozilla-community.org') {
     $repo1 = 'http://svn.mozilla.org/projects/mozilla-europe.org/trunk/';
     $repo2 = '/home/pascalc/mozillaorgsvn/';

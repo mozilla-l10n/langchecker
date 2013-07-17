@@ -22,7 +22,7 @@ require $conf . 'locales.inc.php';   // list of locales
 require $conf . 'sources.inc.php';   // websites definition, needs locales.inc.php
 
 /* user provided variables */
-$filename = (isset($_GET['file']))    ? secureText($_GET['file'])    : 'firefox/new.lang'; // which file are we comparing? Set a default
+$filename = (isset($_GET['file']))    ? secureText($_GET['file'])    : 'main.lang'; // which file are we comparing? Set a default
 $locale   = (isset($_GET['locale']))  ? secureText($_GET['locale'])  : '';          // which locale are we analysing? No default
 $website  = (isset($_GET['website'])) ? secureText($_GET['website']) : '0';          // which website are we looking at? Default to www.mozilla.org
 
@@ -30,7 +30,7 @@ $website  = (isset($_GET['website'])) ? secureText($_GET['website']) : '0';     
 $reflang  = $sites[$website][6];
 $source   = $sites[$website][1] . $sites[$website][2] . $reflang . '/' . $filename;
 
-echo "Reference English file: $source \n";
+error_log( "Reference English file: $source \n");
 
 getEnglishSource($reflang, $website, $filename, 1);
 
@@ -108,7 +108,7 @@ foreach ($files as $filename) {
             }
         }
 
-        echo $result;
+        error_log( $result);
     }
 }
 
