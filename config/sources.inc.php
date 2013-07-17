@@ -168,7 +168,7 @@ $langfiles_subsets = array(
         'upgradedialog.lang'                   => $startpage36,
         'download.lang'                        => $mozilla,
         'firefox/new.lang'                     => $mozilla,
-        'firefox/updates.lang'                 => $mozilla,
+        'firefox/update.lang'                 => $mozilla,
         'euballot.lang'                        => array('bg', 'hr', 'cs', 'da', 'nl', 'en-GB',
                                                          'et', 'fi', 'fr', 'de', 'el', 'hu', 'it',
                                                          'lv', 'lt', 'nb-NO', 'pl', 'pt-PT', 'ro',
