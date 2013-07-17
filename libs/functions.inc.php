@@ -189,37 +189,12 @@ function secureText($var, $tablo = true) {
     return ($tablo == true) ? $var2 : $var2[0];
 }
 
-
-/*
- * convert short mozeu locales to long moco locales
- *
- */
-
-function mozeuLocaleConvert($lang) {
-
-    $mapme = array(
-        'en-GB' => 'en',
-        'es-ES' => 'es',
-        'nb-NO' => 'no',
-        'pt-PT' => 'pt',
-        'sv-SE' => 'sv',
-    );
-
-    if (array_key_exists($lang, $mapme)) {
-        return $mapme[$lang];
-    } else {
-        return $lang;
-    }
-}
-
-
 function var_dump2($val) {
     echo '<pre>';
     echo 'LINE: ' . __LINE__ . '<br>';
     var_dump($val);
     echo '</pre>';
 }
-
 
 function showPythonVar($str) {
     $regex = '#%\(' . '[a-z0-9._-]+' . '\)s#';

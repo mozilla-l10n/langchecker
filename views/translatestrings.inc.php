@@ -32,17 +32,17 @@ $filename = (isset($_GET['file'])) ? secureText($_GET['file']) : 'snippets.lang'
 $show_status = (isset($_GET['show'])) ? 'auto' : 'none';
 
 foreach ($sites as $site) {
-    if($filename != '' && in_array($filename, $site[4]))  {
+    if ($filename != '' && in_array($filename, $site[4])) {
         $site[4] = array($filename);
         break;
     }
 }
 
-foreach($site[4] as $_file) {
+foreach ($site[4] as $_file) {
 
     echo '<h2>' . $_file . '</h2>';
 
-    $reflang = $site[6];
+    $reflang = $site[5];
 
     foreach ($sites as $k => $v) {
         if (in_array($site[0], $v)) {

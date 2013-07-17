@@ -8,16 +8,16 @@ $filename = (isset($_GET['file'])) ? secureText($_GET['file']) : 'snippets.lang'
 $stringid = (isset($_GET['stringid'])) ? secureText($_GET['stringid']) : false;
 
 foreach ($sites as $site) {
-    if($filename != '' && in_array($filename, $site[4]))  {
+    if ($filename != '' && in_array($filename, $site[4]))  {
         $site[4] = array($filename);
         break;
     }
 }
 
 $_file = $site[4][0];
-$reflang = $site[6];
+$reflang = $site[5];
 
-foreach($sites as $k => $v) {
+foreach ($sites as $k => $v) {
     if (in_array($site[0], $v)) {
         $target = $k;
         break;
@@ -43,6 +43,7 @@ foreach ($GLOBALS['__english_moz'] as $k =>$v) {
     if (isset($_GET['stringid']) && $_GET['stringid'] != $sha1) {
         continue;
     }
+
     $json[$sha1]['en-US']= trim($v);
 
     foreach ($targetted_locales as $_lang) {
@@ -54,7 +55,7 @@ foreach ($GLOBALS['__english_moz'] as $k =>$v) {
 
         l10n_moz::load($local_lang_file);
 
-        if(i__($k)) {
+        if (i__($k)) {
             $result = trim(str_replace('{l10n-extra}', '', ___($k)));
             $json[$sha1][$_lang]= $result;
         }

@@ -32,7 +32,7 @@ $locale   = (isset($_GET['locale']))  ? secureText($_GET['locale'])  : '';      
 $website  = (isset($_GET['website'])) ? secureText($_GET['website']) : '0';          // which website are we looking at? Default to www.mozilla.org
 
 /* temp variables */
-$reflang  = $sites[$website][6];
+$reflang  = $sites[$website][5];
 $source   = $sites[$website][1] . $sites[$website][2] . $reflang . '/' . $filename;
 
 error_log( "Reference English file: $source \n");
@@ -196,7 +196,7 @@ function file_force_contents($dir, $contents){
     $parts = explode('/', $dir);
     $file = array_pop($parts);
     $dir = '';
-    foreach($parts as $part) {
+    foreach ($parts as $part) {
         if (!is_dir($dir .= "/$part")) {
             mkdir($dir);
         }

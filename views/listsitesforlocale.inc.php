@@ -15,7 +15,7 @@ foreach ($sites as $key => $_site) {
 
         echo '<div class="website">';
         echo '<h2>' . $_site[0] . '</h2>';
-        $repo = $sites[$key][7] . $sites[$key][2] . $locale . '/';
+        $repo = $sites[$key][6] . $sites[$key][2] . $locale . '/';
         echo "<p>Repository : <a href=\"$repo\">$repo</a></p>";
 
         foreach ($_site[4] as $filename) {
@@ -33,20 +33,15 @@ foreach ($sites as $key => $_site) {
              * Define English defaults stored in $GLOBALS['__english_moz']
              * We temporarily define a $lang variable for that
              */
-            if ($_site[0] == 'europe.mozilla.org') {
-                $reflang    = 'en';
-                $locale     = mozeuLocaleConvert($locale);
-                $bugwebsite = 'www.mozilla-europe.org';
-            } else {
-                $reflang = $sites[$key][6];
-                $bugwebsite = 'www.mozilla.org';
-            }
+
+            $reflang = $sites[$key][5];
+            $bugwebsite = 'www.mozilla.org';
 
             $source = $sites[$key][1] . $sites[$key][2] . $reflang . '/' . $filename;
             $target = $sites[$key][1] . $sites[$key][2] . $locale  . '/' . $filename;
 
-            $url_source = $sites[$key][7] . $sites[$key][2] . $reflang  . '/' . $filename;
-            $url_target = $sites[$key][7] . $sites[$key][2] . $locale   . '/' . $filename;
+            $url_source = $sites[$key][6] . $sites[$key][2] . $reflang  . '/' . $filename;
+            $url_target = $sites[$key][6] . $sites[$key][2] . $locale   . '/' . $filename;
 
 
 
@@ -56,11 +51,7 @@ foreach ($sites as $key => $_site) {
                 $qacontact = 'pascalc@gmail.com';
             }
 
-            //~ if ($_site[0] == 'www.mozilla.org') {
-                $bugzilla ='https://bugzilla.mozilla.org/enter_bug.cgi?alias=&assigned_to=pascalc%40gmail.com&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=normal&bug_status=NEW&comment=%28Attach%20your%20updated%20' . $filename .   '%20file%20to%20this%20bug%20or%20indicate%20the%20revision%20number%20of%20your%20commit%20in%20SVN%29&component=L10N&contenttypeentry=&contenttypemethod=autodetect&contenttypeselection=text%2Fplain&data=&dependson=&description=&flag_type-4=X&flag_type-418=X&flag_type-419=X&flag_type-506=X&flag_type-507=X&form_name=enter_bug&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=All&priority=--&product=' . $bugwebsite . '&qa_contact=' . $qacontact . '&rep_platform=All&short_desc=%5Bl10n%3A ' . $locale . '%5D%20updated%20' . $filename . '%20file%20for%20' . $_site[0].'&target_milestone=---&version=unspecified&format=__default__&cf_locale='.$locale.'%20%2F%20';
-            //~ } elseif ($_site[0] == 'about:healthreport') {
-                //~ $bugzilla = 'https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla%20Localizations&qa_contact=&short_desc=[]&comment=%28Attach%20your%20updated%20' . $filename .   '%20file%20to%20this%20bug%20or%20indicate%20the%20revision%20number%20of%20your%20commit%20in%20SVN%29&short_desc=%5Bl10n%3A ' . $locale . '%5D%20updated%20' . $filename . '%20file%20for%20' . $_site[0] . '&cf_locale=' . $locale . 'component=';
-            //~ }
+            $bugzilla ='https://bugzilla.mozilla.org/enter_bug.cgi?alias=&assigned_to=pascalc%40gmail.com&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=normal&bug_status=NEW&comment=%28Attach%20your%20updated%20' . $filename .   '%20file%20to%20this%20bug%20or%20indicate%20the%20revision%20number%20of%20your%20commit%20in%20SVN%29&component=L10N&contenttypeentry=&contenttypemethod=autodetect&contenttypeselection=text%2Fplain&data=&dependson=&description=&flag_type-4=X&flag_type-418=X&flag_type-419=X&flag_type-506=X&flag_type-507=X&form_name=enter_bug&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=All&priority=--&product=' . $bugwebsite . '&qa_contact=' . $qacontact . '&rep_platform=All&short_desc=%5Bl10n%3A ' . $locale . '%5D%20updated%20' . $filename . '%20file%20for%20' . $_site[0].'&target_milestone=---&version=unspecified&format=__default__&cf_locale='.$locale.'%20%2F%20';
 
             getEnglishSource($reflang, $key, $filename);
 

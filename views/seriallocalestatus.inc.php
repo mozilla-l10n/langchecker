@@ -12,7 +12,7 @@ foreach( $sites as $key => $val) {
     foreach($val[4] as $file) {
 
         /* load the reference English file for the site, use a temp $reflang variable for that */
-        $reflang = $sites[$key][6];                // mozeu uses short locale codes
+        $reflang = $sites[$key][5];
         $source  = $sites[$key][1] . $sites[$key][2] . $reflang . '/' . $file;
         l10n_moz::load($source);
         unset($reflang);

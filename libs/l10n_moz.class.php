@@ -72,7 +72,7 @@ class l10n_moz
     {
         global $reflang;
         $GLOBALS['__l10n_moz_files'][] = $file;
-        $englishes = array('en-GB', 'en', 'en-US');
+        $englishes = array('en-GB', 'en', 'en-US', 'en-ZA');
         $array_name = in_array($reflang, $englishes) ? '__english_moz' : '__l10n_moz';
         $GLOBALS[$array_name]['activated'] = $active = false;
 

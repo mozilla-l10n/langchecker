@@ -32,7 +32,6 @@ if ($_SERVER['SERVER_NAME'] == 'l10n.mozilla-community.org') {
     $mozillaorg = array_diff($mozilla, array('en-GB', 'es', 'lg', 'nn-NO', 'sw'));
 }
 
-$cache_path = $root.'cache/';
 
 $mozillaorg_lang = array(
     'main.lang'                             => true,
@@ -81,56 +80,55 @@ $firefoxhealthreport_lang = array(
 );
 
 $sites = array(
+    0 => array(
+        'www.mozilla.org',
+        $repo1,
+        'locales/',
+        $mozilla,
+        array_keys($mozillaorg_lang),
+        'en-GB', // source locale
+        $public_repo1,
+    ),
 
-    0 => array( 'www.mozilla.org',
-                $repo1,
-                'locales/',
-                $mozilla,
-                array_keys($mozillaorg_lang),
-                $cache_path .'mozilla',
-                'en-GB', // source locale
-                $public_repo1,
-                ),
+    1 => array(
+        'start.mozilla.org',
+        $repo2,
+        'locale/',
+        $startpage36,
+        array('fx36start.lang'),
+        'en-US', // source locale
+        $public_repo2,
+    ),
 
-    1 => array( 'start.mozilla.org',
-                $repo2,
-                'locale/',
-                $startpage36,
-                array('fx36start.lang'),
-                $cache_path .'mozilla',
-                'en-US', // source locale
-                $public_repo2,
-                ),
+    2 => array(
+        'surveys',
+        $repo3,
+        '',
+        $surveys,
+        array('survey1.lang', 'survey2.lang', 'survey3.lang', 'survey4.lang', 'survey5.lang', ),
+        'en-GB', // source locale
+        $public_repo3,
+    ),
 
-    2 => array( 'surveys',
-                $repo3,
-                '',
-                $surveys,
-                array('survey1.lang', 'survey2.lang', 'survey3.lang', 'survey4.lang', 'survey5.lang', ),
-                $cache_path .'mozilla',
-                'en-GB', // source locale
-                $public_repo3,
-                ),
+    3 => array(
+        'marketing',
+        $repo4,
+        '',
+        $marketing,
+        array('julyevent.lang'),
+        'en-US', // source locale
+        $public_repo4,
+    ),
 
-    3 => array( 'marketing',
-                $repo4,
-                '',
-                $marketing,
-                array('julyevent.lang'),
-                $cache_path .'mozilla',
-                'en-US', // source locale
-                $public_repo4,
-                ),
-
-    4 => array( 'about:healthreport',
-                $repo5,
-                'locale/',
-                $mozilla,
-                array_keys($firefoxhealthreport_lang),
-                $cache_path .'mozilla',
-                'en-US', // source locale
-                $public_repo5,
-                ),
+    4 => array(
+        'about:healthreport',
+        $repo5,
+        'locale/',
+        $mozilla,
+        array_keys($firefoxhealthreport_lang),
+        'en-US', // source locale
+        $public_repo5,
+    ),
 );
 
 $langfiles_subsets = array(
@@ -157,7 +155,7 @@ $langfiles_subsets = array(
         'upgradedialog.lang'                   => $startpage36,
         'download.lang'                        => $mozilla,
         'firefox/new.lang'                     => $mozilla,
-        'firefox/update.lang'                 => $mozilla,
+        'firefox/update.lang'                  => $mozilla,
         'euballot.lang'                        => array('bg', 'hr', 'cs', 'da', 'nl', 'en-GB',
                                                          'et', 'fi', 'fr', 'de', 'el', 'hu', 'it',
                                                          'lv', 'lt', 'nb-NO', 'pl', 'pt-PT', 'ro',

@@ -3,8 +3,8 @@
 <?php
 
 
-$todo        = array();
-$total       = array();
+$todo  = array();
+$total = array();
 
 foreach($mozilla as $lang) {
 
@@ -20,10 +20,10 @@ foreach($mozilla as $lang) {
         $reflang = 'en-GB';
 
         // skip the loop if we don't have this lang file for the locale
-        if(!in_array($lang, $langfiles_subsets[$sites[0][0]][$_file])) continue;
+        if (!in_array($lang, $langfiles_subsets[$sites[0][0]][$_file])) continue;
 
         // if the .lang file does not exist, we don't want to generate a php warning, just skip the locale for this file
-        if ( !@file_get_contents($sites[0][1] . $sites[0][2] . $lang . '/' . $_file) ) continue;
+        if (!@file_get_contents($sites[0][1] . $sites[0][2] . $lang . '/' . $_file) ) continue;
 
 
         getEnglishSource($reflang, 0, $_file);
@@ -43,8 +43,8 @@ $locales_done = 0;
 echo '<table>';
 echo '<tr><th>locale</th><th>Untranslated</th></tr>';
 
-foreach($todo as $k => $v) {
-    if($v == 0) {
+foreach ($todo as $k => $v) {
+    if ($v == 0) {
         $class = ' class="dim"';
         $locales_done++;
     } else {

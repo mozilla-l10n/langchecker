@@ -8,8 +8,7 @@ foreach($sites as $key => $_site) {
     // we recheck if the locale is ok on each loop
     $localeok = false;
 
-    if(in_array($locale, $_site[3])) {
-
+    if (in_array($locale, $_site[3])) {
         $localeok = true;
 
         foreach($_site[4] as $filename) {
@@ -25,12 +24,8 @@ foreach($sites as $key => $_site) {
              * Define English defaults stored in $GLOBALS['__english_moz']
              * we temporarilly define a $lang variable for that
              */
-            if($_site[0] == 'europe.mozilla.org') {
-                $reflang = 'en';
-                $locale = mozeuLocaleConvert($locale);
-            } else {
-                $reflang =  $sites[$key][6];
-            }
+            $reflang = $sites[$key][5];
+
 
             $source = $sites[$key][1] . $sites[$key][2] . $reflang . '/' . $filename;
             $target = $sites[$key][1] . $sites[$key][2] . $locale  . '/' . $filename;

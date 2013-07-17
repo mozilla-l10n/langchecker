@@ -5,13 +5,13 @@ $done = array();
 // override to not have main.lang as default
 $filename = (isset($_GET['file'])) ? secureText($_GET['file']) : ''; // which file are we comparing? Default to main.lang
 
-if($filename != '' && in_array($filename, $sites[$website][4]))  {
+if ($filename != '' && in_array($filename, $sites[$website][4]))  {
     $sites[$website][4] = array($filename);
 }
 
-foreach($sites[$website][4] as $_file) {
+foreach ($sites[$website][4] as $_file) {
 
-    $reflang = $sites[$website][6];
+    $reflang = $sites[$website][5];
 
     getEnglishSource($reflang, $website, $_file);
 
@@ -36,18 +36,18 @@ foreach($sites[$website][4] as $_file) {
         }
         analyseLangFile($_lang, $website, $_file);
         //~ var_dump($GLOBALS[$_lang]);
-        $todo    = count($GLOBALS[$_lang]['Identical']) + count($GLOBALS[$_lang]['Missing']);
-        $total   = $todo + count($GLOBALS[$_lang]['Translated']);
+        $todo  = count($GLOBALS[$_lang]['Identical']) + count($GLOBALS[$_lang]['Missing']);
+        $total = $todo + count($GLOBALS[$_lang]['Translated']);
         $color = 'rgba(255, 0, 0, ' . $todo/$total . ')';
 
-        if($todo == 0) {
+        if ($todo == 0) {
             $count_done++;
             $done[] = $_lang;
         }
 
         echo '<tr>';
         echo '<td style="background-color:' . $color . ';"><a href="./?locale=' . $_lang . '#' . $_file . '">' . $_lang . '</a></td>';
-        foreach($GLOBALS[$_lang] as $key => $val) {
+        foreach ($GLOBALS[$_lang] as $key => $val) {
             if ($key == 'python_vars') {
                 continue;
             }
