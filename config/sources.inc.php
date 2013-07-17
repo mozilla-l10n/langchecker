@@ -177,7 +177,6 @@ $langfiles_subsets = array(
         'main.lang'                            => $mozillaorg,
         'download_button.lang'                 => $mozillaorg,
         'mozorg/plugincheck.lang'              => $mozillaorg,
-        'plugincheck.lang'                     => $mozillaorg,
         'snippets.lang'                        => $mozillaorg,
         'newsletter.lang'                      => $mozillaorg,
         'firefox/whatsnew.lang'                => $mozillaorg,
