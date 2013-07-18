@@ -61,7 +61,7 @@ foreach ($site[4] as $_file) {
 
     foreach ($GLOBALS['__english_moz'] as $k =>$v) {
 
-        if($k == 'filedescription') continue;
+        if($k == 'filedescription' || $k == 'activated') continue;
 
         echo "<p><a href='#'  style=\"color:green\" onclick=\"showhide('table$val');return false;\">" . trim(str_replace('{l10n-extra}', '', htmlspecialchars($k))) . "</a></p>";
 
