@@ -64,6 +64,8 @@ $slogans_lang = array(
     'firefoxos.lang'  => true,
 );
 
+$slogans_locales = array('bg', 'de', 'cs', 'el', 'es-ES', 'mk', 'hr', 'hu', 'pl', 'ro', 'sr', 'sr-Latn', 'sq');
+
 $sites = array(
     0 => array(
         'www.mozilla.org',
@@ -119,7 +121,7 @@ $sites = array(
         'slogans',
         $repo6,
         '',
-        array('bg', 'de', 'cs', 'el', 'mk', 'hr', 'hu', 'ro', 'sr-Cyrl', 'sr-Latn', 'sq'),
+        $slogans_locales,
         array_keys($slogans_lang),
         'en-US', // source locale
         $public_repo6,
@@ -217,7 +219,7 @@ $langfiles_subsets = array(
     ),
 
     'slogans' => array(
-        'firefoxos.lang' => array('bg', 'de', 'cs', 'el', 'mk', 'hr', 'hu', 'ro', 'sr-Cyrl', 'sr-Latn', 'sq'),
+        'firefoxos.lang' => $slogans_locales,
     ),
 
 
