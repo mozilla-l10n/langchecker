@@ -5,6 +5,7 @@ $public_repo2 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/';
 $public_repo3 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/';
 $public_repo4 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
 $public_repo5 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxhealthreport/';
+$public_repo6 = 'https://svn.mozilla.org/projects/granary/slogans/';
 
 // this is to avoid a warning in shell mode
 if (!isset($_SERVER['SERVER_NAME'])) {
@@ -12,7 +13,6 @@ if (!isset($_SERVER['SERVER_NAME'])) {
 }
 
 require __DIR__ . '/settings.inc.php';
-
 
 $mozillaorg_lang = array(
     'main.lang'                             => true,
@@ -58,6 +58,10 @@ $mozillaorg_lang = array(
 
 $firefoxhealthreport_lang = array(
     'fhr.lang'  => true,
+);
+
+$slogans_lang = array(
+    'firefoxos.lang'  => true,
 );
 
 $sites = array(
@@ -109,6 +113,16 @@ $sites = array(
         array_keys($firefoxhealthreport_lang),
         'en-US', // source locale
         $public_repo5,
+    ),
+
+    5 => array(
+        'slogans',
+        $repo6,
+        '',
+        array('bg', 'de', 'cs', 'el', 'mk', 'hr', 'hu', 'ro', 'sr-Cyrl', 'sr-Latn', 'sq'),
+        array_keys($slogans_lang),
+        'en-US', // source locale
+        $public_repo6,
     ),
 );
 
@@ -200,8 +214,15 @@ $langfiles_subsets = array(
 
     'marketing' => array(
         'julyevent.lang' => array('de', 'es-ES', 'fr', 'it', 'id', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'),
-        ),
+    ),
+
+    'slogans' => array(
+        'firefoxos.lang' => array('bg', 'de', 'cs', 'el', 'mk', 'hr', 'hu', 'ro', 'sr-Cyrl', 'sr-Latn', 'sq'),
+    ),
+
+
 );
+
 
 
 $bugzilla_locales = array(
