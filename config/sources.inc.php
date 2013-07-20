@@ -64,7 +64,7 @@ $slogans_lang = array(
     'firefoxos.lang'  => true,
 );
 
-$slogans_locales = array('bg', 'de', 'cs', 'el', 'es-ES', 'mk', 'hr', 'hu', 'pl', 'ro', 'sr', 'sr-Latn', 'sq');
+$slogans_locales = array('bg', 'de', 'cs', 'el', 'es-ES', 'mk', 'hr', 'hu', 'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sq');
 
 $sites = array(
     0 => array(
