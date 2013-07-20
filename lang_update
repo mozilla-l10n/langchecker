@@ -76,8 +76,12 @@ foreach ($files as $filename) {
             l10n_moz::load($source);
 
             /* is the lang file using Windows or Unix EOL? */
-            $eol = file($source);
-            $eol = isWindowsEOL($eol[0]) ? "\r\n" : "\n";
+            if (file_exists($source)) {
+                $eol = file($source);
+                $eol = isWindowsEOL($eol[0]) ? "\r\n" : "\n";
+            } else {
+                $eol = "\n";
+            }
 
             $activeStatus = (boolean) $GLOBALS['__l10n_moz']['activated'];
 
