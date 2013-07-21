@@ -71,7 +71,7 @@ foreach ($sites as $key => $_site) {
                       <tr>";
 
                 foreach ($GLOBALS[$locale] as $k => $v) {
-                    if ($k == 'Obsolete' || $k == 'python_vars' ) {
+                    if ($k == 'Obsolete' || $k == 'python_vars' || $k == 'activated') {
                         continue;
                     }
                     echo '<td>' . count($GLOBALS[$locale][$k]) . '</td>';
