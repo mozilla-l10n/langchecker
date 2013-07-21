@@ -86,11 +86,18 @@ function analyseLangFile($locale, $website, $filename) {
     $GLOBALS[$locale]['Missing']     = array();
     $GLOBALS[$locale]['Obsolete']    = array();
     $GLOBALS[$locale]['python_vars'] = array();
+    $GLOBALS[$locale]['activated']   = false;
+
 
     if (isset($GLOBALS['__l10n_moz'])) {
         foreach ($GLOBALS['__l10n_moz'] as $key => $val) {
 
-            if ($key == 'filedescription' || $key == 'activated') {
+            if ($key == 'filedescription') {
+                continue;
+            }
+
+            if ($key == 'activated') {
+                $GLOBALS[$locale]['activated'] = $val;
                 continue;
             }
 

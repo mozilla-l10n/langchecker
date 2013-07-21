@@ -15,8 +15,8 @@ foreach ($sites[$website][4] as $_file) {
 
     getEnglishSource($reflang, $website, $_file);
 
-    echo '<table class="globallist"><tr><th colspan="5" class="filename">' . $_file . '</th></tr>';
-    echo '<tr><th>Locale</th><th>Identical</th><th>Translated</th><th>Missing</th><th>Obsolete</th></tr>';
+    echo '<table class="globallist"><tr><th colspan="6" class="filename">' . $_file . '</th></tr>';
+    echo '<tr><th>Locale</th><th>Identical</th><th>Translated</th><th>Missing</th><th>Obsolete</th><th>Activated</th></tr>';
 
     // reassign a lang file to a reduced set of locales
     @$targetted_locales = (is_array($langfiles_subsets[$sites[$website][0]][$_file])) ? $langfiles_subsets[$sites[$website][0]][$_file] : $sites[$website][3];
@@ -51,13 +51,23 @@ foreach ($sites[$website][4] as $_file) {
             if ($key == 'python_vars') {
                 continue;
             }
+
+            if ($key == 'activated') {
+                if ($val == true) {
+                    echo '<td class="activated"></td>';
+                } else {
+                    echo '<td></td>';
+                }
+                continue;
+            }
             $counter = count($GLOBALS[$_lang][$key]);
             $counter = ($counter > 0) ? $counter : '';
 
             echo '<td>' . $counter . '</td>';
         }
+
         if ($_lang == 'lij') {
-            //~ var_dump($GLOBALS[$_lang]);
+            //~ var_dump($GLOBALS['__l10n_moz']);
         }
         unset($GLOBALS[$_lang]);
     }
@@ -67,7 +77,7 @@ foreach ($sites[$website][4] as $_file) {
     $done = array_sum($done);
     $done = number_format($done/(array_sum($adu)-$adu['en-US']-$adu['en-GB']-$adu['en-ZA'])*100, 2) . '%';
 
-    echo '<tr><td colspan= "5">' . $count_done . ' perfect locales (' . round($count_done/count($targetted_locales)*100) .'%)<br>' .  $done . ' of our l10n user base</td></tr>';
+    echo '<tr><td colspan= "6">' . $count_done . ' perfect locales (' . round($count_done/count($targetted_locales)*100) .'%)<br>' .  $done . ' of our l10n user base</td></tr>';
     echo '</table>';
 
     unset($GLOBALS['__english_moz']);

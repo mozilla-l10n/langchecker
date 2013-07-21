@@ -30,6 +30,9 @@
         text-align:center;
     }
 
+    td.activated {
+        background-color:lightgreen;
+    }
 
     th.filename {
         font-size:130%;
