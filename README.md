@@ -1,7 +1,7 @@
 langchecker
 ===========
 
-code to replicate the langchecker feature on my webdashboard
+Code to replicate the langchecker feature on my webdashboard
 
 To set it up, rename the file:
 
@@ -11,4 +11,4 @@ as:
 
 config/settings.inc.php
 
-And indicate in this file the local paths to the various svn repos the application tracks.
+And indicate in this file the local paths to the various svn repositories the application tracks.
