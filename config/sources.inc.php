@@ -14,7 +14,7 @@ if (!isset($_SERVER['SERVER_NAME'])) {
 
 require __DIR__ . '/settings.inc.php';
 
-$mozillaorg_lang = array(
+$mozillaorg_lang = [
     'main.lang'                             => true,
     'download_button.lang'                  => true,
     'snippets.lang'                         => false,
@@ -54,20 +54,17 @@ $mozillaorg_lang = array(
     'firefox/update.lang'                   => true,
     'mozorg/about/manifesto.lang'           => false,
     'mozorg/plugincheck.lang'               => true,
-);
+];
 
-$firefoxhealthreport_lang = array(
-    'fhr.lang'  => true,
-);
+$firefoxhealthreport_lang = ['fhr.lang' => true];
 
-$slogans_lang = array(
-    'firefoxos.lang'  => true,
-);
+$slogans_lang = ['firefoxos.lang' => true];
 
-$slogans_locales = array('bg', 'de', 'cs', 'el', 'es-ES', 'mk', 'hr', 'hu', 'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sq');
+$slogans_locales = ['bg', 'de', 'cs', 'el', 'es-ES', 'mk', 'hr', 'hu', 'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sq'];
 
-$sites = array(
-    0 => array(
+$sites =
+[
+    0 => [
         'www.mozilla.org',
         $repo1,
         'locales/',
@@ -75,39 +72,39 @@ $sites = array(
         array_keys($mozillaorg_lang),
         'en-GB', // source locale
         $public_repo1,
-    ),
+    ],
 
-    1 => array(
+    1 => [
         'start.mozilla.org',
         $repo2,
         'locale/',
         $startpage36,
-        array('fx36start.lang'),
+        ['fx36start.lang'],
         'en-US', // source locale
         $public_repo2,
-    ),
+    ],
 
-    2 => array(
+    2 => [
         'surveys',
         $repo3,
         '',
         $surveys,
-        array('survey1.lang', 'survey2.lang', 'survey3.lang', 'survey4.lang', 'survey5.lang', ),
+        ['survey1.lang', 'survey2.lang', 'survey3.lang', 'survey4.lang', 'survey5.lang'],
         'en-GB', // source locale
         $public_repo3,
-    ),
+    ],
 
-    3 => array(
+    3 => [
         'marketing',
         $repo4,
         '',
         $marketing,
-        array('julyevent.lang'),
+        ['julyevent.lang'],
         'en-US', // source locale
         $public_repo4,
-    ),
+    ],
 
-    4 => array(
+    4 => [
         'about:healthreport',
         $repo5,
         'locale/',
@@ -115,9 +112,9 @@ $sites = array(
         array_keys($firefoxhealthreport_lang),
         'en-US', // source locale
         $public_repo5,
-    ),
+    ],
 
-    5 => array(
+    5 => [
         'slogans',
         $repo6,
         '',
@@ -125,109 +122,140 @@ $sites = array(
         array_keys($slogans_lang),
         'en-US', // source locale
         $public_repo6,
-    ),
-);
+    ],
+];
 
-$langfiles_subsets = array(
-    'www.mozilla.org' => array(
-        'foundationsection.lang'               => array('de', 'cs', 'fr', 'es-ES', 'gl', 'hu',
-                                                         'id', 'it', 'nl', 'pl', 'sl', 'sq',
-                                                         'tr', 'zh-CN', 'zh-TW'),
-        'firefoxlive.lang'                     => array('ar', 'de', 'fa', 'fr', 'es-ES', 'gl',
-                                                         'hr', 'hu', 'ko', 'pl', 'pt-BR', 'rm',
-                                                         'ro', 'ru', 'sk', 'sl', 'sq', 'tr',
-                                                         'zh-CN', 'zh-TW' ),
-        'firefoxflicks.lang'                   => array('ar', 'bg', 'de', 'fa', 'fr', 'gl',
-                                                         'es-ES', 'hu', 'id', 'it', 'ja',
-                                                         'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'),
-        'mozspaces.lang'                       => array('de', 'fr',),
-        'mobile.lang'                          => array('be', 'ca', 'cs', 'da', 'de', 'es-AR',
-                                                         'es-ES', 'et', 'eu', 'fr',  'fy-NL',
-                                                         'ga-IE', 'gd', 'gl', 'he', 'hu', 'id',
-                                                         'it', 'ja', 'ko', 'lt', 'nb-NO', 'nl',
-                                                         'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'ro',
-                                                         'ru', 'sk', 'sl', 'sq', 'sr', 'th',
-                                                         'tr', 'zh-CN', 'zh-TW'),
-        'upgradepromos.lang'                   => array('de', 'es-ES', 'fr', 'it', 'pl', 'ru', 'pt-BR'),
-        'upgradedialog.lang'                   => $startpage36,
-        'download.lang'                        => $mozilla,
-        'firefox/new.lang'                     => $mozilla,
-        'firefox/update.lang'                  => $mozilla,
-        'euballot.lang'                        => array('bg', 'hr', 'cs', 'da', 'nl', 'en-GB',
-                                                         'et', 'fi', 'fr', 'de', 'el', 'hu', 'it',
-                                                         'lv', 'lt', 'nb-NO', 'pl', 'pt-PT', 'ro',
-                                                         'sk', 'sl', 'es-ES', 'sv-SE'),
-        'firefoxtesting.lang'                  => $mozilla,
-        'main.lang'                            => $mozillaorg,
-        'download_button.lang'                 => $mozillaorg,
-        'mozorg/plugincheck.lang'              => $mozillaorg,
-        'snippets.lang'                        => $mozillaorg,
-        'newsletter.lang'                      => $mozillaorg,
-        'firefox/whatsnew.lang'                => $mozillaorg,
-        'videos/video_fx13.lang'               => $mozillaorg,
-        'tabzilla/tabzilla.lang'               => $mozillaorg,
-        'esr.lang'                             => array('de', 'fr'),
-        'channelsposter.lang'                  => array('pt-BR'),
-        'videos/video_evernote.lang'           => array('es-ES', 'pt-BR'),
-        'videos/video_box.lang'                => array('es-ES', 'pt-BR'),
-        'videos/video_teambox.lang'            => array('es-ES', 'pt-BR'),
-        'videos/video_kicksend.lang'           => array('es-ES', 'pt-BR'),
-        'videos/video_mobbase.lang'            => array('es-ES', ),
-        'marketplace/marketplace.lang'         => array('fr', 'es-ES', 'pl', 'pt-BR'),
-        'marketplace/partners.lang'            => array('fr', 'es-ES', 'pt-BR'),
-        'mozorg/about/manifesto.lang'          => array('ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'de', 'el', 'es-AR',
-                                                        'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'fur',
-                                                        'fy-NL', 'gl', 'hr', 'hu', 'id', 'it', 'ja', 'ko',
-                                                        'mk', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
-                                                        'sl', 'sq', 'sr', 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW'),
-        'mozorg/contribute.lang'               => array('bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id', 'it', 'lg', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'sw', 'ta', 'tr', 'vi', 'zh-CN', 'zh-TW'),
-        'foundation/annualreport/2011.lang'    => array('ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
-                                                        'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it',
-                                                        'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
-                                                        'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'),
-        'foundation/annualreport/2011faq.lang' => array('ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
-                                                        'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it',
-                                                        'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
-                                                        'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'),
-        'firefoxos/firefoxos.lang'             => array('fr', 'es-AR', 'es-ES', 'fy-NL', 'nl', 'pl', 'pt-BR'),
-        'mozorg/15years.lang'                  => array('ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hr', 'fy-NL', 'hi-IN', 'id', 'it', 'lg', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'zh-CN', 'zh-TW'),
-        'firefox/partners/index.lang'          => array('ca', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'it',
-                                                         'ja', 'ko', 'pl', 'pt-BR', 'zh-CN', 'zh-TW'),
-        'firefox/os/prelaunch.lang'          => array('es-ES', 'pl'),
-        'firefox/os/index.lang'              => array('cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'pl', 'pt-BR', 'ro', 'sr'),
+$langfiles_subsets = [
+    'www.mozilla.org' =>
+    [
+        'foundationsection.lang' =>
+            ['de', 'cs', 'fr', 'es-ES', 'gl', 'hu', 'id', 'it', 'nl',
+             'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
 
-        ),
+        'firefoxlive.lang'  =>
+            ['ar', 'de', 'fa', 'fr', 'es-ES', 'gl', 'hr', 'hu', 'ko',
+             'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'tr',
+             'zh-CN', 'zh-TW'],
 
-    'start.mozilla.org' => array(
-        'fx36start.lang' => $startpage36,
-        ),
+        'firefoxflicks.lang' =>
+            ['ar', 'bg', 'de', 'fa', 'fr', 'gl', 'es-ES', 'hu', 'id',
+             'it', 'ja', 'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
 
-    'about:healthreport' => array(
-        'fhr.lang' => array('af', 'an','ar','as','ast','be','bg','bn-BD','bn-IN','br','bs','ca','cs','csb','cy','da','de','el','en-GB','eo','es-AR','es-CL','es-ES','es-MX','et','eu','fa','ff','fi','fr','fy-NL','ga-IE','gd','gl','gu-IN','he','hi-IN','hr','hu','hy-AM','id','is','it','ja','ka','kk','km','kn','ko','ku','lg','lij','lt','lv','mai','mk','ml','mn','mr','ms','my','nb-NO','nl','nn-NO','nso','oc','or','pa-IN','pl','pt-BR','pt-PT','rm','ro','ru','sah','si','sk','sl','son','sq','sr','sv-SE','sw','ta','ta-LK','te','th','tr','uk','ur','vi','wo','zh-CN','zh-TW','zu'),
-        ),
+        'mozspaces.lang' => ['de', 'fr'],
 
-    'surveys' => array(
-        'survey1.lang' => array('de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pl', 'pt-BR', 'ru', 'tr', 'vi', 'zh-CN', ),
-        'survey2.lang' => array('de', 'es-ES', 'fr',  'it', 'pl', 'pt-BR', 'ru', ),
-        'survey3.lang' => array('de', 'es-ES', 'fr', 'it', 'ja', 'ko', 'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'),
-        'survey4.lang' => array('de', 'es-AR', 'es-ES', 'es-MX', 'fr', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'tr', 'vi', 'zh-CN'),
-        'survey5.lang' => array('de', 'fr', 'pl',),
-        ),
+        'mobile.lang' =>
+            ['be', 'ca', 'cs', 'da', 'de', 'es-AR', 'es-ES', 'et', 'eu',
+             'fr',  'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hu', 'id',
+             'it', 'ja', 'ko', 'lt', 'nb-NO', 'nl', 'pa-IN', 'pl',
+             'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'th',
+             'tr', 'zh-CN', 'zh-TW'],
 
-    'marketing' => array(
-        'julyevent.lang' => array('de', 'es-ES', 'fr', 'it', 'id', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'),
-    ),
+        'upgradepromos.lang' =>
+            ['de', 'es-ES', 'fr', 'it', 'pl', 'ru', 'pt-BR'],
 
-    'slogans' => array(
-        'firefoxos.lang' => $slogans_locales,
-    ),
+        'upgradedialog.lang' => $startpage36,
+
+        'download.lang' => $mozilla,
+
+        'firefox/new.lang' => $mozilla,
+
+        'firefox/update.lang' => $mozilla,
+
+        'euballot.lang' =>
+            ['bg', 'hr', 'cs', 'da', 'nl', 'en-GB', 'et', 'fi', 'fr',
+             'de', 'el', 'hu', 'it', 'lv', 'lt', 'nb-NO', 'pl', 'pt-PT',
+             'ro', 'sk', 'sl', 'es-ES', 'sv-SE'],
+
+        'firefoxtesting.lang'          => $mozilla,
+        'main.lang'                    => $mozillaorg,
+        'download_button.lang'         => $mozillaorg,
+        'mozorg/plugincheck.lang'      => $mozillaorg,
+        'snippets.lang'                => $mozillaorg,
+        'newsletter.lang'              => $mozillaorg,
+        'firefox/whatsnew.lang'        => $mozillaorg,
+        'videos/video_fx13.lang'       => $mozillaorg,
+        'tabzilla/tabzilla.lang'       => $mozillaorg,
+        'esr.lang'                     => ['de', 'fr'],
+        'channelsposter.lang'          => ['pt-BR'],
+        'videos/video_evernote.lang'   => ['es-ES', 'pt-BR'],
+        'videos/video_box.lang'        => ['es-ES', 'pt-BR'],
+        'videos/video_teambox.lang'    => ['es-ES', 'pt-BR'],
+        'videos/video_kicksend.lang'   => ['es-ES', 'pt-BR'],
+        'videos/video_mobbase.lang'    => ['es-ES'],
+        'marketplace/marketplace.lang' => ['fr', 'es-ES', 'pl', 'pt-BR'],
+        'marketplace/partners.lang'    => ['fr', 'es-ES', 'pt-BR'],
+        'mozorg/about/manifesto.lang'  =>
+            ['ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'de', 'el', 'es-AR',
+             'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'fur',
+             'fy-NL', 'gl', 'hr', 'hu', 'id', 'it', 'ja', 'ko', 'mk',
+             'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
+             'sr', 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW'],
+
+        'mozorg/contribute.lang' =>
+            ['bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+             'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
+             'it', 'lg', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
+             'sl', 'sq', 'sr', 'sw', 'ta', 'tr', 'vi', 'zh-CN', 'zh-TW'],
+
+        'foundation/annualreport/2011.lang' =>
+            ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
+             'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
+             'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
+             'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
+
+        'foundation/annualreport/2011faq.lang' =>
+            ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
+             'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
+             'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
+             'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
+
+        'firefoxos/firefoxos.lang' =>
+            ['fr', 'es-AR', 'es-ES', 'fy-NL', 'nl', 'pl', 'pt-BR'],
+
+        'mozorg/15years.lang' =>
+            ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+             'es-MX', 'fr', 'hr', 'fy-NL', 'hi-IN', 'id', 'it', 'lg',
+             'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr',
+             'zh-CN', 'zh-TW'],
+
+        'firefox/partners/index.lang' =>
+            ['ca', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'it',
+             'ja', 'ko', 'pl', 'pt-BR', 'zh-CN', 'zh-TW'],
+
+        'firefox/os/prelaunch.lang' =>
+            ['es-ES', 'pl'],
+
+        'firefox/os/index.lang' =>
+            ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'pl', 'pt-BR', 'ro', 'sr'],
+
+        ],
+
+    'start.mozilla.org' => ['fx36start.lang' => $startpage36],
+
+    'about:healthreport' =>
+    [
+        'fhr.lang' =>
+            ['af', 'an','ar','as','ast','be','bg','bn-BD','bn-IN','br','bs','ca','cs','csb','cy','da','de','el','en-GB','eo','es-AR','es-CL','es-ES','es-MX','et','eu','fa','ff','fi','fr','fy-NL','ga-IE','gd','gl','gu-IN','he','hi-IN','hr','hu','hy-AM','id','is','it','ja','ka','kk','km','kn','ko','ku','lg','lij','lt','lv','mai','mk','ml','mn','mr','ms','my','nb-NO','nl','nn-NO','nso','oc','or','pa-IN','pl','pt-BR','pt-PT','rm','ro','ru','sah','si','sk','sl','son','sq','sr','sv-SE','sw','ta','ta-LK','te','th','tr','uk','ur','vi','wo','zh-CN','zh-TW','zu'],
+    ],
+
+    'surveys' =>
+    [
+        'survey1.lang' => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pl', 'pt-BR', 'ru', 'tr', 'vi', 'zh-CN'],
+        'survey2.lang' => ['de', 'es-ES', 'fr',  'it', 'pl', 'pt-BR', 'ru'],
+        'survey3.lang' => ['de', 'es-ES', 'fr', 'it', 'ja', 'ko', 'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
+        'survey4.lang' => ['de', 'es-AR', 'es-ES', 'es-MX', 'fr', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'tr', 'vi', 'zh-CN'],
+        'survey5.lang' => ['de', 'fr', 'pl'],
+    ],
+
+    'marketing' => ['julyevent.lang' => ['de', 'es-ES', 'fr', 'it', 'id', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW']],
+
+    'slogans' => ['firefoxos.lang' => $slogans_locales],
+];
 
 
-);
 
-
-
-$bugzilla_locales = array(
+$bugzilla_locales =
+[
     'ach'   => 'Acholi',
     'af'    => 'Afrikaans',
     'ar'    => 'Arabic',
@@ -320,4 +348,4 @@ $bugzilla_locales = array(
     'zh-CN' => 'Chinese (Simplified)',
     'zh-TW' => 'Chinese (Traditional)',
     'zu'    => 'Zulu',
-);
+];
