@@ -13,6 +13,7 @@ if (!isset($_SERVER['SERVER_NAME'])) {
 }
 
 require __DIR__ . '/settings.inc.php';
+include __DIR__ . '/adu.inc.php';
 
 $mozillaorg_lang = [
     'main.lang'                             => true,
