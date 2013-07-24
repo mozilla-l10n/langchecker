@@ -57,8 +57,12 @@ switch ($case) {
         $view     = $views . 'listsitesforlocale.inc.php';
         break;
     case 3:
-        $template = $templates . 'template.inc.php';
-        $view     = $views . 'globalstatus.inc.php';
+        if (!isset($_GET['json'])) {
+            $template = $templates . 'template.inc.php';
+            $view     = $views . 'globalstatus.inc.php';
+        } else {
+            $template= $views . 'globalstatus.inc.php';
+        }
         break;
     case 4:
         // export mode for webdashboard
