@@ -1,0 +1,22 @@
+Version 1.2 (2013-07-25)
+* Renamed write.php as lang_update and make is self-executable
+* Added a column to show if the active tag is set on file view
+* Allow global status view for a lang file to be returned as a json source with the &json get parameter
+* Added CHANGELOG file
+* Now a php 5.4 project
+
+
+Version 1.1 (2013-07-17)
+* Make lang files updatable via shell and write.php
+* Remove old unused caching mechanism
+* Configuration file is now a local file and no longer in the repo
+* General cleanup
+
+
+Version 1.0 (2013-07-17)
+* Fix duplicated ## active ## tag that could happen when updating files
+* Take the file line endings into account (windows vs unix) when updating strings so as to avoid constantly converting Windows files with no change to Unix files.
+
+
+Version 0.1 (2013-07-09)
+*  initial release of the code
