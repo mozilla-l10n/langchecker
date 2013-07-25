@@ -22,6 +22,14 @@
 </style>
 <?php
 
+/*
+ * XXX: clean up that view, see if it is still relevant
+ *
+ * View: sumarizes the state of lang files for a locale
+ */
+
+require __DIR__ . '/libs/functions.inc.php';
+
 $locale = (isset($_GET['locale'])) ? secureText($_GET['locale']) : '';
 
 if ($locale == '') {
@@ -52,11 +60,3 @@ foreach ($data as $site => $tablo) {
     echo '<br>';
 }
 
-
-function secureText($item) {
-    // CRLF XSS
-    $item  = str_replace('%0D', '', $item);
-    $item  = str_replace('%0A', '', $item);
-    $item  = strip_tags($item);
-    return $item;
-}

@@ -29,14 +29,14 @@ require $conf . 'sources.inc.php';   // websites definition, needs locales.inc.p
 
 /* user provided variables */
 $filename = (isset($argv[1])) ? secureText($argv[1]) : 'main.lang'; // which file are we comparing? Set a default
-$website  = (isset($argv[2])) ? secureText($argv[2])  : '0';         // which website are we looking at? Default to www.mozilla.org
-$locale   = (isset($argv[3])) ? secureText($argv[3])  : '';          // which locale are we analysing? No default
+$website  = (isset($argv[2])) ? secureText($argv[2])  : '0'; // which website are we looking at? Default to www.mozilla.org
+$locale   = (isset($argv[3])) ? secureText($argv[3])  : '';  // which locale are we analysing? No default
 
 /* temp variables */
 $reflang  = $sites[$website][5];
 $source   = $sites[$website][1] . $sites[$website][2] . $reflang . '/' . $filename;
 
-error_log( "Reference English file: $source \n");
+error_log("Reference English file: $source \n");
 
 getEnglishSource($reflang, $website, $filename, 1);
 
@@ -106,7 +106,7 @@ foreach ($files as $filename) {
             $path    = $source;
             //~ print_r($content);die; //debug
 
-            file_force_contents($path, $content);
+            fileForceContents($path, $content);
 
             $result .= $_lang  . ': ' . $filename . $eol;
 
@@ -114,19 +114,19 @@ foreach ($files as $filename) {
                 unset($GLOBALS['__l10n_moz']);
             }
         }
-
-        error_log( $result);
+        error_log($result);
     }
 }
 
 
-function buildFile($eol, $exceptions=array()) {
+function buildFile($eol, $exceptions = array())
+{
 
     ob_start();
 
     header('Content-type: text/plain; charset=UTF-8');
 
-    if ( $GLOBALS['__l10n_moz']['activated'] ) {
+    if ($GLOBALS['__l10n_moz']['activated']) {
         echo '## active ##' . $eol;
     }
 
@@ -161,7 +161,8 @@ function buildFile($eol, $exceptions=array()) {
 }
 
 
-function dumpString($english, $eol, $exceptions=array()) {
+function dumpString($english, $eol, $exceptions = array())
+{
 
     if ($english == 'activated') {
         return;
@@ -175,11 +176,13 @@ function dumpString($english, $eol, $exceptions=array()) {
 
     $chunk .= ";$english" . $eol;
 
-    $span_to_br = function($str) {
+    $span_to_br = function ($str) {
         return str_replace(array('<span>', '</span>'), array('<br />', ''), $str);
     };
 
-    if (array_key_exists($english, $exceptions) && isset($GLOBALS['__l10n_moz'][$exceptions[$english]]) ) {
+    if (array_key_exists($english, $exceptions)
+        && isset($GLOBALS['__l10n_moz'][$exceptions[$english]])
+        ) {
         $tempString = strip_tags($GLOBALS['__l10n_moz'][$exceptions[$english]]);
 
         if ($english == 'Potentially vulnerable plugins') {
@@ -197,7 +200,8 @@ function dumpString($english, $eol, $exceptions=array()) {
     return $chunk;
 }
 
-function file_force_contents($dir, $contents){
+function fileForceContents($dir, $contents)
+{
     $parts = explode('/', $dir);
     $file = array_pop($parts);
     $dir = '';
@@ -209,6 +213,7 @@ function file_force_contents($dir, $contents){
     file_put_contents("$dir/$file", $contents);
 }
 
-function isWindowsEOL($line) {
+function isWindowsEOL($line)
+{
     return (substr($line, -2) === "\r\n") ? true : false;
 }

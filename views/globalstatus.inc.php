@@ -6,7 +6,7 @@ $done = array();
 // Override to not have main.lang as default
 $filename = (isset($_GET['file'])) ? secureText($_GET['file']) : '';
 
-if ($filename != '' && in_array($filename, $sites[$website][4]))  {
+if ($filename != '' && in_array($filename, $sites[$website][4])) {
     $sites[$website][4] = array($filename);
 }
 
@@ -19,7 +19,14 @@ foreach ($sites[$website][4] as $_file) {
     getEnglishSource($reflang, $website, $_file);
 
     echo '<table class="globallist"><tr><th colspan="6" class="filename">' . $_file . '</th></tr>';
-    echo '<tr><th>Locale</th><th>Identical</th><th>Translated</th><th>Missing</th><th>Obsolete</th><th>Activated</th></tr>';
+    echo '<tr>
+            <th>Locale</th>
+            <th>Identical</th>
+            <th>Translated</th>
+            <th>Missing</th>
+            <th>Obsolete</th>
+            <th>Activated</th>
+          </tr>';
 
     // Reassign a lang file to a reduced set of locales
     @$targetted_locales = (is_array($langfiles_subsets[$sites[$website][0]][$_file]))
@@ -31,7 +38,7 @@ foreach ($sites[$website][4] as $_file) {
 
     foreach ($targetted_locales as $_lang) {
 
-        if ($_lang == 'en' || $_lang == 'en-GB' ) {
+        if ($_lang == 'en' || $_lang == 'en-GB') {
             continue;
         }
 
@@ -56,7 +63,16 @@ foreach ($sites[$website][4] as $_file) {
         }
 
         echo '<tr>';
-        echo '<td style="background-color:' . $color . ';"><a href="./?locale=' . $_lang . '#' . $_file . '">' . $_lang . '</a></td>';
+        echo '<td style="background-color:'
+              . $color
+              . ';">
+              <a href="./?locale='
+              . $_lang
+              . '#'
+              . $_file
+              . '">'
+              . $_lang
+              . '</a></td>';
         foreach ($GLOBALS[$_lang] as $key => $val) {
             if ($key == 'python_vars') {
                 continue;
@@ -87,7 +103,13 @@ foreach ($sites[$website][4] as $_file) {
     $done = array_sum($done);
     $done = number_format($done/(array_sum($adu)-$adu['en-US']-$adu['en-GB']-$adu['en-ZA'])*100, 2) . '%';
 
-    echo '<tr><td colspan= "6">' . $count_done . ' perfect locales (' . round($count_done/count($targetted_locales)*100) .'%)<br>' .  $done . ' of our l10n user base</td></tr>';
+    echo '<tr><td colspan= "6">'
+         . $count_done
+         . ' perfect locales ('
+         . round($count_done/count($targetted_locales)*100)
+         . '%)<br>'
+         .  $done
+         . ' of our l10n user base</td></tr>';
     echo '</table>';
 
 
@@ -96,7 +118,7 @@ foreach ($sites[$website][4] as $_file) {
 $htmlresult = ob_get_contents();
 ob_clean();
 
-if ( !isset($_GET['json'])) {
+if (!isset($_GET['json'])) {
     echo $htmlresult;
 } else {
     echo jsonOutput($json);

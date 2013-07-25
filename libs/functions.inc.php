@@ -1,7 +1,5 @@
 <?php
 
-if(!$called) die('no direct access');
-
 /**
  * If the string exists in the language cache, return it, otherwise return what was
  * given to us. The language cache is build in the l10n_moz class

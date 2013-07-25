@@ -16,11 +16,11 @@ require_once $libs . 'functions.inc.php';
 require $conf . 'sources.inc.php';   // websites definition, needs locales.inc.php
 
 /* user provided variables */
-$filename = (isset($_GET['file']))    ? secureText($_GET['file'])    : 'main.lang'; // which file are we comparing? Default to main.lang
-$locale   = (isset($_GET['locale']))  ? secureText($_GET['locale'])  : '';          // which locale are we analysing? No default
-$website  = (isset($_GET['website'])) ? secureText($_GET['website']) : '';          // which website are we looking at?
-$action   = (isset($_GET['action']))  ? secureText($_GET['action'])  : '';          // which website are we looking at?
-$serial   = isset($_GET['serial']);                                                 // Do we want serialize data for the webdashboard?
+$filename = (isset($_GET['file']))    ? secureText($_GET['file'])    : 'main.lang';
+$locale   = (isset($_GET['locale']))  ? secureText($_GET['locale'])  : ''; // which locale are we analysing? No default
+$website  = (isset($_GET['website'])) ? secureText($_GET['website']) : ''; // which website are we looking at?
+$action   = (isset($_GET['action']))  ? secureText($_GET['action'])  : '';
+$serial   = isset($_GET['serial']);  // Do we want serialize data for the webdashboard?
 $case     = 0;
 
 if ($locale == '' && $action == '') {
