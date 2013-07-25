@@ -82,18 +82,8 @@ if (isset($_GET['plaintext'])) {
     exit;
 }
 
-$json = json_encode($json);
-
 if (isset($_GET['callback'])) {
-    // JSONP with the defined callback
-    $mime = 'application/javascript';
-    $json = $_GET['callback'] . '(' . $json . ')';
+     echo jsonOutput($json, $_GET['callback']);
 } else {
-    $mime = 'application/json';
-    $mime = 'text/plain';
+    echo jsonOutput($json);
 }
-
-header("access-control-allow-origin: *");
-header("Content-type: {$mime}; charset=UTF-8");
-exit($json);
-
