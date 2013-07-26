@@ -18,8 +18,10 @@ foreach ($sites as $key => $_site) {
         $repo = $sites[$key][6] . $sites[$key][2] . $locale . '/';
         echo "<p>Repository : <a href=\"$repo\">$repo</a></p>";
 
-        $done = '<h3>DONE</h3>';
-        $todo = '<h3>TODO</h3>';
+        $titleDone = '';
+        $titleTodo = '';
+        $done = '';
+        $todo = '';
         foreach ($_site[4] as $filename) {
 
             /*
@@ -65,8 +67,10 @@ foreach ($sites as $key => $_site) {
             if ((count($GLOBALS[$locale]['Missing']) + count($GLOBALS[$locale]['Identical'])) == 0
                 && count($GLOBALS[$locale]['python_vars']) == 0)
             {
+                $titleDone = '<h3>DONE</h3>';
                 $done .= "<a href='#$filename' class='filedone'>$filename</a>";
             } else {
+                $titleTodo = '<h3>TODO</h3>';
                 $todo .= '<div class="filename" id="' . $filename . '">';
                 $todo .= "<h3 class='filename'><a href='#$filename'>$filename</a></h3>
                       <table class=\"side\">
@@ -146,7 +150,9 @@ foreach ($sites as $key => $_site) {
             unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
         }
     }
+    echo $titleDone;
     echo $done;
+    echo $titleTodo;
     echo $todo;
     echo '</div>';
 }
