@@ -1,9 +1,8 @@
 <?php
-// we define in the loop if the locale code is supported in one of the sites;
 
 $export = array();
 
-foreach($sites as $key => $_site) {
+foreach ($sites as $key => $_site) {
 
     // we recheck if the locale is ok on each loop
     $localeok = false;
@@ -11,7 +10,7 @@ foreach($sites as $key => $_site) {
     if (in_array($locale, $_site[3])) {
         $localeok = true;
 
-        foreach($_site[4] as $filename) {
+        foreach ($_site[4] as $filename) {
 
             // reassign a lang file to a reduced set of locales
             if (isset($langfiles_subsets[$_site[0]][$filename])

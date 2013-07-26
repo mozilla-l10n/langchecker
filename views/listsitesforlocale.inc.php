@@ -60,10 +60,12 @@ foreach ($sites as $key => $_site) {
             unset($reflang);
 
 
-            if ( (count($GLOBALS[$locale]['Missing']) + count($GLOBALS[$locale]['Identical'])) == 0 && count($GLOBALS[$locale]['python_vars']) == 0) {
+            if ((count($GLOBALS[$locale]['Missing']) + count($GLOBALS[$locale]['Identical'])) == 0
+                && count($GLOBALS[$locale]['python_vars']) == 0) {
                 echo '<div id="' . $filename . '" class= "filedone">';
-                echo "<h3 class='filedone' ><a href='#$filename' style='color:white;'>$filename</a></h3><p>No Missing or untranslated strings in this file, congrats!</p>";
-            } else  {
+                echo "<h3 class='filedone'><a href='#$filename' style='color:white;'>$filename</a></h3>
+                     <p>No Missing or untranslated strings in this file, congrats!</p>";
+            } else {
                 echo '<div class="filename" id="' . $filename . '">';
                 echo "<h3 class='filename'><a href='#$filename'>$filename</a></h3>
                       <table class=\"side\">
@@ -83,7 +85,9 @@ foreach ($sites as $key => $_site) {
                 echo '</table>';
 
                 foreach ($GLOBALS[$locale] as $k => $v) {
-                    if ($k == 'Translated' || $k == 'Obsolete') continue;
+                    if ($k == 'Translated' || $k == 'Obsolete') {
+                        continue;
+                    }
 
                     if ($k == 'Identical' && count($GLOBALS[$locale][$k]) > 0) {
                         echo '<h3>Strings identical to English:</h3>';
@@ -92,7 +96,6 @@ foreach ($sites as $key => $_site) {
                     if ($k == 'Missing' && count($GLOBALS[$locale][$k]) > 0) {
                         echo '<h3>Missing strings:</h3>';
                     }
-
 
                     if ($k != 'python_vars' && $k != $filename && count($GLOBALS[$locale][$k]) > 0) {
                         echo '<ul>';
@@ -127,7 +130,11 @@ foreach ($sites as $key => $_site) {
             }
 
             if (count($GLOBALS[$locale]['Identical']) > 0) {
-                echo '<div class="tip"><strong>Tip:</strong> if it is normal that a string is identical to the English one for your language, just add <code>{ok}</code> to your string and it will no longer be listed as "identical". Example:
+                echo '<div class="tip">
+                <strong>Tip:</strong> if it is normal that a string is identical
+                to the English one for your language, just add <code>{ok}</code>
+                to your string and it will no longer be listed as "identical".
+                Example:
                 <blockquote>
                 ;Plugins<br/>
                 Plugins {ok}

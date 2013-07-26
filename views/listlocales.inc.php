@@ -11,7 +11,7 @@ ul#locales {
 
 echo '<ul id="locales">';
 
-foreach($mozilla as $_lang) {
+foreach ($mozilla as $_lang) {
     echo '<li><a href="./?locale=' . $_lang . '">' . $_lang . '</a></li>';
 }
 

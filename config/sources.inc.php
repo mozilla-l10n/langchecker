@@ -34,7 +34,6 @@ $mozillaorg_lang = [
     'marketplace/partners.lang'             => false,
     'marketplace/marketplace.lang'          => true,
     'mozorg/contribute.lang'                => false,
-    'mozorg/contribute-form.lang'           => false,
     'firefox/whatsnew.lang'                 => true,
     'videos/video_fx13.lang'                => false,
     'videos/video_evernote.lang'            => false,
