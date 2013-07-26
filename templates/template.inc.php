@@ -45,10 +45,14 @@
 
     }
 
+    div.filename {
+        position:relative;
+        background-color: white;
+        padding: 5px;
+    }
+
     div.filename table.side {
-        position:absolute;
-        top:10px;
-        right:10px;
+        float:right;
     }
 
     div.filename table.python th,
@@ -71,41 +75,23 @@
         background-color:rgba(230, 230, 255, 1);
     }
 
-    div.filename,
-    div.filedone {
-        border:1px solid rgba(200, 200, 200, 1);
-        margin-bottom:10px;
-        padding:20px;
-        background-color:white;
-        border-radius:10px;
-        position:relative;
+    .filedone {
+        display: inline-block;
+        color:white;
+        background: black;
+        padding:  5px;
+        margin: 2px;
     }
 
-    div.filename {
-        min-height:8em;
-    }
-
-    div.filedone {
-        min-height:1em;
-    }
-
-    div.filedone p {
-        float: left;
-        font-size:130%;
-        margin: 0 0 10px;
-        padding: 2px 1em;
-    }
-
-    div.filedone h3.filedone,
     div.filename h3.filename {
-        float:left;
+        display: inline-block;
         margin:0 0 10px 0;
         padding:2px 1em;
         text-align:center;
         min-width:11em;
         background-color: black;
         color:white;
-        font-size:130%;
+        font-size:120%;
     }
 
     div.filename h3.filename a:link,
@@ -114,13 +100,6 @@
     div.filename h3.filename a:active
     {
         color:white;
-    }
-
-
-
-    div.filename p,
-    div.filename h3 {
-        clear:both;
     }
 
     div.filename div.tip {

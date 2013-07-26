@@ -18,6 +18,8 @@ foreach ($sites as $key => $_site) {
         $repo = $sites[$key][6] . $sites[$key][2] . $locale . '/';
         echo "<p>Repository : <a href=\"$repo\">$repo</a></p>";
 
+        $done = '<h3>DONE</h3>';
+        $todo = '<h3>TODO</h3>';
         foreach ($_site[4] as $filename) {
 
             /*
@@ -61,13 +63,12 @@ foreach ($sites as $key => $_site) {
 
 
             if ((count($GLOBALS[$locale]['Missing']) + count($GLOBALS[$locale]['Identical'])) == 0
-                && count($GLOBALS[$locale]['python_vars']) == 0) {
-                echo '<div id="' . $filename . '" class= "filedone">';
-                echo "<h3 class='filedone'><a href='#$filename' style='color:white;'>$filename</a></h3>
-                     <p>No Missing or untranslated strings in this file, congrats!</p>";
+                && count($GLOBALS[$locale]['python_vars']) == 0)
+            {
+                $done .= "<a href='#$filename' class='filedone'>$filename</a>";
             } else {
-                echo '<div class="filename" id="' . $filename . '">';
-                echo "<h3 class='filename'><a href='#$filename'>$filename</a></h3>
+                $todo .= '<div class="filename" id="' . $filename . '">';
+                $todo .= "<h3 class='filename'><a href='#$filename'>$filename</a></h3>
                       <table class=\"side\">
                       <tr><th>Identical</th><th>Translated</th><th>Missing</th></tr>
                       <tr>";
@@ -76,13 +77,13 @@ foreach ($sites as $key => $_site) {
                     if ($k == 'Obsolete' || $k == 'python_vars' || $k == 'activated') {
                         continue;
                     }
-                    echo '<td>' . count($GLOBALS[$locale][$k]) . '</td>';
+                    $todo .= '<td>' . count($GLOBALS[$locale][$k]) . '</td>';
                 }
 
-                echo '<tr><td colspan="3"><a href="' . $url_source . '">Original English source file</a></td></tr>';
-                echo '<tr><td colspan="3"><a href="' . $url_target . '">Your translated file</a></td></tr>';
-                echo '<tr><td colspan="3"><a href="' . $bugzilla . '">Attach your updated file to Bugzilla</a></td></tr>';
-                echo '</table>';
+                $todo .= '<tr><td colspan="3"><a href="' . $url_source . '">Original English source file</a></td></tr>';
+                $todo .= '<tr><td colspan="3"><a href="' . $url_target . '">Your translated file</a></td></tr>';
+                $todo .= '<tr><td colspan="3"><a href="' . $bugzilla . '">Attach your updated file to Bugzilla</a></td></tr>';
+                $todo .= '</table>';
 
                 foreach ($GLOBALS[$locale] as $k => $v) {
                     if ($k == 'Translated' || $k == 'Obsolete') {
@@ -90,27 +91,27 @@ foreach ($sites as $key => $_site) {
                     }
 
                     if ($k == 'Identical' && count($GLOBALS[$locale][$k]) > 0) {
-                        echo '<h3>Strings identical to English:</h3>';
+                        $todo .= '<h3>Strings identical to English:</h3>';
                     }
 
                     if ($k == 'Missing' && count($GLOBALS[$locale][$k]) > 0) {
-                        echo '<h3>Missing strings:</h3>';
+                        $todo .=  '<h3>Missing strings:</h3>';
                     }
 
                     if ($k != 'python_vars' && $k != $filename && count($GLOBALS[$locale][$k]) > 0) {
-                        echo '<ul>';
+                        $todo .= '<ul>';
                         foreach ($v as $k2 => $v2) {
-                            echo '<li>' .trim(str_replace('{l10n-extra}', '', htmlspecialchars($GLOBALS[$locale][$k][$k2]))) . '</li>';
+                            $todo .= '<li>' .trim(str_replace('{l10n-extra}', '', htmlspecialchars($GLOBALS[$locale][$k][$k2]))) . '</li>';
                         }
-                        echo '</ul>';
+                        $todo .= '</ul>';
                     }
                     //~ var_dump($k);
                     if ($k == 'python_vars' && count($GLOBALS[$locale][$k]) > 0) {
-                        echo '<h3>Errors in variables in the sentence:</h3>';
-                        echo '<ul>';
+                        $todo .= '<h3>Errors in variables in the sentence:</h3>';
+                        $todo .= '<ul>';
                         foreach ($v as $k2 => $v2) {
-                            echo "<p></p>";
-                            echo "<table class=\"python\">
+                            $todo .= "<p></p>";
+                            $todo .= "<table class=\"python\">
                                     <tr>
                                         <th><strong style=\"color:red\"> $v2</strong> in the English string is missing in:</th>
                                     </tr>
@@ -122,7 +123,7 @@ foreach ($sites as $key => $_site) {
                                     </tr>
                             </table>";
                         }
-                        echo '</ul>';
+                        $todo .= '</ul>';
                     }
 
 
@@ -130,7 +131,7 @@ foreach ($sites as $key => $_site) {
             }
 
             if (count($GLOBALS[$locale]['Identical']) > 0) {
-                echo '<div class="tip">
+                $todo .= '<div class="tip">
                 <strong>Tip:</strong> if it is normal that a string is identical
                 to the English one for your language, just add <code>{ok}</code>
                 to your string and it will no longer be listed as "identical".
@@ -142,14 +143,12 @@ foreach ($sites as $key => $_site) {
                 </div>';
             }
 
-            echo '</div>';
-
             unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
-
         }
-        echo '</div>';
     }
-
+    echo $done;
+    echo $todo;
+    echo '</div>';
 }
 
 // the locale is not correct
