@@ -7,25 +7,10 @@ if (php_sapi_name() != 'cli') {
     die('Nope');
 }
 
-
-/* server shortcuts */
-$called    = true;
-$aproot    = __DIR__ . '/';
-$libs      = $aproot . 'libs/';
-$conf      = $aproot . 'config/';
-$views     = $aproot . 'views/';
-$templates = $aproot . 'templates/';
-
-/* functions needed to manipulate .lang files */
-require_once $libs . 'l10n_moz.class.php';
-require_once $libs . 'functions.inc.php';
+require_once __DIR__ . '/inc/init.php';
 
 /* init l10n class to create the globals needed */
 $initl10n = new l10n_moz();
-
-/* app-wide variables */
-require $conf . 'locales.inc.php';   // list of locales
-require $conf . 'sources.inc.php';   // websites definition, needs locales.inc.php
 
 /* user provided variables */
 $filename = (isset($argv[1])) ? secureText($argv[1]) : 'main.lang'; // which file are we comparing? Set a default
