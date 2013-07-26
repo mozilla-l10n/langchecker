@@ -1,7 +1,5 @@
 <?php
 
-if(!$called) die('no direct access');
-
 class l10n_moz
 {
     public function __construct()
@@ -51,7 +49,7 @@ class l10n_moz
         for ($i = 0; $i < count($f); $i++) {
             if (self::startsWith($f[$i], ';') && !empty($f[$i+1])) {
                 $f[$i] = trim(str_replace('{l10n-extra}', '', $f[$i]));
-                $GLOBALS['__l10n_moz'][trim(substr($f[$i],1))] = trim(str_replace('{ok}', '&shy;', $f[$i+1]));
+                $GLOBALS['__l10n_moz'][trim(substr($f[$i], 1))] = trim(str_replace('{ok}', '&shy;', $f[$i+1]));
                 $i++;
             }
         }
@@ -104,7 +102,7 @@ class l10n_moz
 
             if (self::startsWith($f[$i], ';') && !empty($f[$i+1])) {
 
-                $english = trim(substr($f[$i],1));
+                $english = trim(substr($f[$i], 1));
                 $translation = trim($f[$i+1]);
 
                 $GLOBALS[$array_name][$english] = $translation;
@@ -113,7 +111,7 @@ class l10n_moz
                     $GLOBALS['__l10n_comments'][$english] = '';
 
                     if (self::startsWith($f[$i-1], '#') && !self::startsWith($f[$i-1], '##')) {
-                        $GLOBALS['__l10n_comments'][$english] .= trim(substr($f[$i-1],1));
+                        $GLOBALS['__l10n_comments'][$english] .= trim(substr($f[$i-1], 1));
                     }
 
                     if ($GLOBALS['__l10n_comments'][$english] == '') {
