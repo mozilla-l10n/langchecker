@@ -57,9 +57,13 @@ $mozillaorg_lang = [
 
 $firefoxhealthreport_lang = ['fhr.lang' => true];
 
-$slogans_lang = ['firefoxos.lang' => true];
+$slogans_lang = [
+    'firefoxos.lang' => true,
+    'marketplacebadge.lang' => true
+];
 
 $slogans_locales = ['bg', 'de', 'cs', 'el', 'es-ES', 'mk', 'hr', 'hu', 'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sq'];
+$marketplacebadge_locales = ['ca', 'cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr', 'tr'];
 
 $sites =
 [
@@ -258,7 +262,10 @@ $langfiles_subsets = [
 
     'marketing' => ['julyevent.lang' => ['de', 'es-ES', 'fr', 'it', 'id', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW']],
 
-    'slogans' => ['firefoxos.lang' => $slogans_locales],
+    'slogans' => [
+        'firefoxos.lang' => $slogans_locales,
+        'marketplacebadge.lang' => $marketplacebadge_locales
+    ],
 ];
 
 
