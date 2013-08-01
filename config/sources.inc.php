@@ -35,19 +35,12 @@ $mozillaorg_lang = [
     'marketplace/marketplace.lang'          => true,
     'mozorg/contribute.lang'                => false,
     'firefox/whatsnew.lang'                 => true,
-    'videos/video_fx13.lang'                => false,
-    'videos/video_evernote.lang'            => false,
-    'videos/video_box.lang'                 => false,
-    'videos/video_teambox.lang'             => false,
-    'videos/video_kicksend.lang'            => false,
-    'videos/video_mobbase.lang'             => false,
     'foundation/annualreport/2011.lang'     => false,
     'foundation/annualreport/2011faq.lang'  => false,
     'firefoxos/firefoxos.lang'              => true,
     'firefox/partners/index.lang'           => true,
     'tabzilla/tabzilla.lang'                => false,
     'mozorg/15years.lang'                   => false,
-    'firefox/os/prelaunch.lang'             => true,
     'firefox/os/index.lang'                 => true,
     'firefox/new.lang'                      => true,
     'firefox/update.lang'                   => true,
@@ -176,14 +169,8 @@ $langfiles_subsets = [
         'snippets.lang'                => $mozillaorg,
         'newsletter.lang'              => $mozillaorg,
         'firefox/whatsnew.lang'        => $mozillaorg,
-        'videos/video_fx13.lang'       => $mozillaorg,
         'tabzilla/tabzilla.lang'       => $mozillaorg,
         'esr.lang'                     => ['de', 'fr'],
-        'videos/video_evernote.lang'   => ['es-ES', 'pt-BR'],
-        'videos/video_box.lang'        => ['es-ES', 'pt-BR'],
-        'videos/video_teambox.lang'    => ['es-ES', 'pt-BR'],
-        'videos/video_kicksend.lang'   => ['es-ES', 'pt-BR'],
-        'videos/video_mobbase.lang'    => ['es-ES'],
         'marketplace/marketplace.lang' => ['fr', 'es-ES', 'pl', 'pt-BR'],
         'marketplace/partners.lang'    => ['fr', 'es-ES', 'pt-BR'],
         'mozorg/about/manifesto.lang'  =>
@@ -223,9 +210,6 @@ $langfiles_subsets = [
         'firefox/partners/index.lang' =>
             ['ca', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'it',
              'ja', 'ko', 'pl', 'pt-BR', 'zh-CN', 'zh-TW'],
-
-        'firefox/os/prelaunch.lang' =>
-            ['es-ES', 'pl'],
 
         'firefox/os/index.lang' =>
             ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'pl', 'pt-BR', 'ro', 'sr'],
