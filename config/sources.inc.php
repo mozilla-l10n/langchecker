@@ -209,7 +209,7 @@ $langfiles_subsets = [
 
         'firefox/partners/index.lang' =>
             ['ca', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'it',
-             'ja', 'ko', 'pl', 'pt-BR', 'zh-CN', 'zh-TW'],
+             'ja', 'ko', 'pl', 'pt-BR', 'ro', 'zh-CN', 'zh-TW'],
 
         'firefox/os/index.lang' =>
             ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'pl', 'pt-BR', 'ro', 'sr'],
