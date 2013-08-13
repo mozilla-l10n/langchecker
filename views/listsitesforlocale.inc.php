@@ -20,6 +20,7 @@ foreach ($sites as $key => $_site) {
 
         $titleDoneFiles = false;
         $titleTodoFiles = false;
+        $titleTodo = false;
         $doneFiles = '';
         $todoFiles = '';
 
