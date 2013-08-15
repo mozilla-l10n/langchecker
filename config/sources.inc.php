@@ -212,7 +212,7 @@ $langfiles_subsets = [
              'ja', 'ko', 'pl', 'pt-BR', 'ro', 'zh-CN', 'zh-TW'],
 
         'firefox/os/index.lang' =>
-            ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'pl', 'pt-BR', 'ro', 'sr'],
+            ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'ja', 'pl', 'pt-BR', 'ro', 'sr'],
 
         ],
 
@@ -251,8 +251,6 @@ $langfiles_subsets = [
         'marketplacebadge.lang' => $marketplacebadge_locales
     ],
 ];
-
-
 
 $bugzilla_locales =
 [
