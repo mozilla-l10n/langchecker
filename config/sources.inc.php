@@ -46,6 +46,7 @@ $mozillaorg_lang = [
     'firefox/update.lang'                   => true,
     'mozorg/about/manifesto.lang'           => false,
     'mozorg/about.lang'                     => false,
+    'mozorg/products.lang'                  => false,
     'mozorg/plugincheck.lang'               => true,
 ];
 
@@ -168,6 +169,7 @@ $langfiles_subsets = [
         'download_button.lang'         => $mozillaorg,
         'mozorg/plugincheck.lang'      => $mozillaorg,
         'mozorg/about.lang'            => $mozillaorg,
+        'mozorg/products.lang'         => $mozillaorg,
         'snippets.lang'                => $mozillaorg,
         'newsletter.lang'              => $mozillaorg,
         'firefox/whatsnew.lang'        => $mozillaorg,
