@@ -85,7 +85,9 @@ foreach ($files as $filename) {
                 'Fast, flexible,<br />secure'   => 'Fast, flexible, <span>secure</span>',
             );
 
-            $exceptions = array();
+            $exceptions = array(
+                'Mozilla and partners prepare to launch first Firefox OS smartphones' => 'Mozilla and partners prepare to launch first Firefox OS smartsphones'
+            );
 
             $content = buildFile($eol, $exceptions);
             $path    = $source;
