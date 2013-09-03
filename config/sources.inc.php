@@ -16,38 +16,39 @@ require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
 $mozillaorg_lang = [
-    'main.lang'                             => true,
-    'download_button.lang'                  => true,
-    'snippets.lang'                         => false,
-    'newsletter.lang'                       => true,
     'download.lang'                         => true,
-    'firefoxtesting.lang'                   => true,
-    'euballot.lang'                         => false,
-    'foundationsection.lang'                => false,
-    'firefoxlive.lang'                      => false,
-    'firefoxflicks.lang'                    => false,
-    'mobile.lang'                           => true,
-    'mozspaces.lang'                        => false,
-    'upgradedialog.lang'                    => true,
-    'upgradepromos.lang'                    => false,
+    'download_button.lang'                  => true,
     'esr.lang'                              => false,
-    'marketplace/partners.lang'             => false,
-    'marketplace/marketplace.lang'          => true,
-    'mozorg/contribute.lang'                => false,
+    'euballot.lang'                         => false,
+    'firefox/new.lang'                      => true,
+    'firefox/os/index.lang'                 => true,
+    'firefox/partners/index.lang'           => true,
+    'firefox/update.lang'                   => true,
     'firefox/whatsnew.lang'                 => true,
+    'firefoxflicks.lang'                    => false,
+    'firefoxlive.lang'                      => false,
+    'firefoxos/firefoxos.lang'              => true,
+    'firefoxtesting.lang'                   => true,
     'foundation/annualreport/2011.lang'     => false,
     'foundation/annualreport/2011faq.lang'  => false,
-    'firefoxos/firefoxos.lang'              => true,
-    'firefox/partners/index.lang'           => true,
-    'tabzilla/tabzilla.lang'                => false,
+    'foundationsection.lang'                => false,
+    'main.lang'                             => true,
+    'marketplace/marketplace.lang'          => true,
+    'marketplace/partners.lang'             => false,
+    'mobile.lang'                           => true,
     'mozorg/15years.lang'                   => false,
-    'firefox/os/index.lang'                 => true,
-    'firefox/new.lang'                      => true,
-    'firefox/update.lang'                   => true,
-    'mozorg/about/manifesto.lang'           => false,
     'mozorg/about.lang'                     => false,
-    'mozorg/products.lang'                  => false,
+    'mozorg/about/manifesto.lang'           => false,
+    'mozorg/contribute.lang'                => false,
     'mozorg/plugincheck.lang'               => true,
+    'mozorg/products.lang'                  => false,
+    'mozspaces.lang'                        => false,
+    'newsletter.lang'                       => true,
+    'privacy/ffos_privacy.lang'             => true,
+    'snippets.lang'                         => false,
+    'tabzilla/tabzilla.lang'                => false,
+    'upgradedialog.lang'                    => true,
+    'upgradepromos.lang'                    => false,
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang' => true];
@@ -126,99 +127,81 @@ $sites =
 $langfiles_subsets = [
     'www.mozilla.org' =>
     [
-        'foundationsection.lang' =>
-            ['de', 'cs', 'fr', 'es-ES', 'gl', 'hu', 'id', 'it', 'nl',
-             'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
-
-        'firefoxlive.lang'  =>
+        'download.lang'                         => $mozilla,
+        'download_button.lang'                  => $mozillaorg,
+        'esr.lang'                              => ['de', 'fr'],
+        'euballot.lang'                         =>
+            ['bg', 'hr', 'cs', 'da', 'nl', 'en-GB', 'et', 'fi', 'fr',
+             'de', 'el', 'hu', 'it', 'lv', 'lt', 'nb-NO', 'pl', 'pt-PT',
+             'ro', 'sk', 'sl', 'es-ES', 'sv-SE'],
+        'firefox/new.lang'                      => $mozilla,
+        'firefox/os/index.lang'                 =>
+            ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'ja', 'pl', 'pt-BR', 'ro', 'sr'],
+        'firefox/partners/index.lang'           =>
+            ['ca', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'it',
+             'ja', 'ko', 'pl', 'pt-BR', 'ro', 'zh-CN', 'zh-TW'],
+        'firefox/update.lang'                   => $mozilla,
+        'firefox/whatsnew.lang'                 => $mozillaorg,        
+        'firefoxflicks.lang'                    =>
+            ['ar', 'bg', 'de', 'fa', 'fr', 'gl', 'es-ES', 'hu', 'id',
+             'it', 'ja', 'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
+        'firefoxlive.lang'                      =>
             ['ar', 'de', 'fa', 'fr', 'es-ES', 'gl', 'hr', 'hu', 'ko',
              'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'tr',
              'zh-CN', 'zh-TW'],
-
-        'firefoxflicks.lang' =>
-            ['ar', 'bg', 'de', 'fa', 'fr', 'gl', 'es-ES', 'hu', 'id',
-             'it', 'ja', 'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
-
-        'mozspaces.lang' => ['de', 'fr'],
-
-        'mobile.lang' =>
+        'firefoxos/firefoxos.lang'              =>
+            ['fr', 'es-AR', 'es-ES', 'fy-NL', 'nl', 'pl', 'pt-BR'],
+        'firefoxtesting.lang'                   => $mozilla,
+        'foundation/annualreport/2011.lang'     =>
+            ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
+             'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
+             'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
+             'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
+        'foundation/annualreport/2011faq.lang'  =>
+            ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
+             'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
+             'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
+             'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
+        'foundationsection.lang'                =>
+            ['de', 'cs', 'fr', 'es-ES', 'gl', 'hu', 'id', 'it', 'nl',
+             'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
+        'main.lang'                             => $mozillaorg,
+        'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
+        'marketplace/partners.lang'             => ['fr', 'es-ES', 'pt-BR'],
+        'mobile.lang'                           =>
             ['be', 'ca', 'cs', 'da', 'de', 'es-AR', 'es-ES', 'et', 'eu',
              'fr',  'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hu', 'id',
              'it', 'ja', 'ko', 'lt', 'nb-NO', 'nl', 'pa-IN', 'pl',
              'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'th',
              'tr', 'zh-CN', 'zh-TW'],
-
-        'upgradepromos.lang' =>
-            ['de', 'es-ES', 'fr', 'it', 'pl', 'ru', 'pt-BR'],
-
-        'upgradedialog.lang' => $startpage36,
-
-        'download.lang' => $mozilla,
-
-        'firefox/new.lang' => $mozilla,
-
-        'firefox/update.lang' => $mozilla,
-
-        'euballot.lang' =>
-            ['bg', 'hr', 'cs', 'da', 'nl', 'en-GB', 'et', 'fi', 'fr',
-             'de', 'el', 'hu', 'it', 'lv', 'lt', 'nb-NO', 'pl', 'pt-PT',
-             'ro', 'sk', 'sl', 'es-ES', 'sv-SE'],
-
-        'firefoxtesting.lang'          => $mozilla,
-        'main.lang'                    => $mozillaorg,
-        'download_button.lang'         => $mozillaorg,
-        'mozorg/plugincheck.lang'      => $mozillaorg,
-        'mozorg/about.lang'            => $mozillaorg,
-        'mozorg/products.lang'         => $mozillaorg,
-        'snippets.lang'                => $mozillaorg,
-        'newsletter.lang'              => $mozillaorg,
-        'firefox/whatsnew.lang'        => $mozillaorg,
-        'tabzilla/tabzilla.lang'       => $mozillaorg,
-        'esr.lang'                     => ['de', 'fr'],
-        'marketplace/marketplace.lang' => ['fr', 'es-ES', 'pl', 'pt-BR'],
-        'marketplace/partners.lang'    => ['fr', 'es-ES', 'pt-BR'],
-        'mozorg/about/manifesto.lang'  =>
+        'mozorg/15years.lang'                   =>
+            ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+             'es-MX', 'fr', 'hr', 'fy-NL', 'hi-IN', 'id', 'it', 'lg',
+             'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr',
+             'zh-CN', 'zh-TW'],
+        'mozorg/about.lang'                     => $mozillaorg,
+        'mozorg/about/manifesto.lang'           =>
             ['ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'de', 'el', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'fur',
              'fy-NL', 'gl', 'hr', 'hu', 'id', 'it', 'ja', 'ko', 'mk',
              'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
              'sr', 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW'],
-
-        'mozorg/contribute.lang' =>
+        'mozorg/contribute.lang'                =>
             ['bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
              'it', 'lg', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
              'sl', 'sq', 'sr', 'sw', 'ta', 'tr', 'vi', 'zh-CN', 'zh-TW'],
-
-        'foundation/annualreport/2011.lang' =>
-            ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
-             'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
-             'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
-             'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
-
-        'foundation/annualreport/2011faq.lang' =>
-            ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
-             'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
-             'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
-             'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
-
-        'firefoxos/firefoxos.lang' =>
-            ['fr', 'es-AR', 'es-ES', 'fy-NL', 'nl', 'pl', 'pt-BR'],
-
-        'mozorg/15years.lang' =>
-            ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
-             'es-MX', 'fr', 'hr', 'fy-NL', 'hi-IN', 'id', 'it', 'lg',
-             'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr',
-             'zh-CN', 'zh-TW'],
-
-        'firefox/partners/index.lang' =>
-            ['ca', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'it',
-             'ja', 'ko', 'pl', 'pt-BR', 'ro', 'zh-CN', 'zh-TW'],
-
-        'firefox/os/index.lang' =>
-            ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'ja', 'pl', 'pt-BR', 'ro', 'sr'],
-
-        ],
+        'mozorg/plugincheck.lang'               => $mozillaorg,                
+        'mozorg/products.lang'                  => $mozillaorg,        
+        'mozspaces.lang'                        => ['de', 'fr'],
+        'newsletter.lang'                       => $mozillaorg,
+        'privacy/ffos_privacy.lang'             => ['es-ES', 'pl'],
+        'snippets.lang'                         => $mozillaorg,
+        'tabzilla/tabzilla.lang'                => $mozillaorg,
+        'upgradedialog.lang'                    => $startpage36,
+        'upgradepromos.lang'                    =>
+            ['de', 'es-ES', 'fr', 'it', 'pl', 'ru', 'pt-BR'],
+    ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
 
