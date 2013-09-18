@@ -193,7 +193,10 @@ table.globallist {
 </head>
 
 <body>
-<?php include $view; ?>
+<?php
+    echo "<!-- Current view: $viewname -->\n";
+    include $view;
+?>
 
 </body>
 </html>
