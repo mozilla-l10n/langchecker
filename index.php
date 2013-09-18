@@ -73,5 +73,10 @@ switch ($case) {
         break;
 }
 
+if (isset($view)) {
+    // Extract the view name removing path ($views) and extension ('.inc.php')
+    $viewname = substr($view, strlen($views), -8);
+}
+
 ob_start();
 include $template;
