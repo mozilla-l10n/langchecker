@@ -18,7 +18,9 @@ foreach ($sites[$website][4] as $_file) {
 
     getEnglishSource($reflang, $website, $_file);
 
-    echo '<table class="globallist"><tr><th colspan="6" class="filename">' . $_file . '</th></tr>';
+    echo '<table class="sortable globallist">';
+    echo '<caption class="filename">' . $_file . '</caption>';
+    echo '<thead>';
     echo '<tr>
             <th>Locale</th>
             <th>Identical</th>
@@ -27,6 +29,7 @@ foreach ($sites[$website][4] as $_file) {
             <th>Obsolete</th>
             <th>Activated</th>
           </tr>';
+    echo '</thead>';
 
     // Reassign a lang file to a reduced set of locales
     @$targetted_locales = (is_array($langfiles_subsets[$sites[$website][0]][$_file]))
@@ -103,6 +106,7 @@ foreach ($sites[$website][4] as $_file) {
     $done = array_sum($done);
     $done = number_format($done/(array_sum($adu)-$adu['en-US']-$adu['en-GB']-$adu['en-ZA'])*100, 2) . '%';
 
+    echo '<tfoot>';
     echo '<tr><td colspan= "6">'
          . $count_done
          . ' perfect locales ('
@@ -110,6 +114,7 @@ foreach ($sites[$website][4] as $_file) {
          . '%)<br>'
          .  $done
          . ' of our l10n user base</td></tr>';
+    echo '</tfoot>';
     echo '</table>';
 
 

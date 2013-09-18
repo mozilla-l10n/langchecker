@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>.lang files checker on mozilla sites</title>
+  <script src="media/js/sorttable.js"></script>
+
   <style type="text/css">
 
     body {
@@ -34,9 +36,12 @@
         background-color:lightgreen;
     }
 
-    th.filename {
+    caption.filename{
         font-size:130%;
         background-color:lightblue;
+        padding:6px;
+        border: 1px solid #A9A9A9;
+        border-bottom: none;
     }
 
     table.globallist {
@@ -174,10 +179,6 @@ table.globallist th, table.globallist td {
     border:1px solid darkgray;
 }
 
-table.globallist th.filename {
-    background: lightblue;
-    color:black;
-}
 
 table.globallist th {
     background: lightblue;
