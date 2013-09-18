@@ -100,6 +100,12 @@ foreach ($sites[$website][4] as $_file) {
         unset($GLOBALS[$_lang]);
     }
 
+    // ja+mozilla.org is not relevant, remove "ja" from $adu and $done in that case
+    if ($website == 0) {
+        unset($adu['ja']);
+        unset($done['ja']);
+    }
+
     // adu count
     $done = array_flip($done);
     $done = array_intersect_key($adu, $done);
@@ -113,13 +119,17 @@ foreach ($sites[$website][4] as $_file) {
          . round($count_done/count($targetted_locales)*100)
          . '%)<br>'
          .  $done
-         . ' of our l10n user base</td></tr>';
-    echo '</tfoot>';
-    echo '</table>';
+         . ' of our l10n user base';
 
+    if ($website == 0) {
+        echo ' (excluding ja)';
+    }
+    echo    '</td></tr>';
+    echo '</table>';
 
     unset($GLOBALS['__english_moz']);
 }
+
 $htmlresult = ob_get_contents();
 ob_clean();
 
