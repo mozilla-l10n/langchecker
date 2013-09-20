@@ -42,6 +42,7 @@ $mozillaorg_lang = [
     'mozorg/contribute.lang'                => false,
     'mozorg/plugincheck.lang'               => true,
     'mozorg/products.lang'                  => false,
+    'mozorg/home.lang'                      => true,
     'mozspaces.lang'                        => false,
     'newsletter.lang'                       => true,
     'privacy/ffos_privacy.lang'             => true,
@@ -180,6 +181,7 @@ $langfiles_subsets = [
              'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr',
              'zh-CN', 'zh-TW'],
         'mozorg/about.lang'                     => $mozillaorg,
+        'mozorg/about.lang'                     => ['fr'],
         'mozorg/about/manifesto.lang'           =>
             ['ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'de', 'el', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'fur',
