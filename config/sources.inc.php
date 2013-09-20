@@ -136,12 +136,12 @@ $langfiles_subsets = [
              'ro', 'sk', 'sl', 'es-ES', 'sv-SE'],
         'firefox/new.lang'                      => $mozilla,
         'firefox/os/index.lang'                 =>
-            ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'ja', 'pl', 'pt-BR', 'ro', 'sr'],
+            ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           =>
             ['ca', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'it',
              'ja', 'ko', 'pl', 'pt-BR', 'ro', 'zh-CN', 'zh-TW'],
         'firefox/update.lang'                   => $mozilla,
-        'firefox/whatsnew.lang'                 => $mozillaorg,        
+        'firefox/whatsnew.lang'                 => $mozillaorg,
         'firefoxflicks.lang'                    =>
             ['ar', 'bg', 'de', 'fa', 'fr', 'gl', 'es-ES', 'hu', 'id',
              'it', 'ja', 'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
@@ -191,8 +191,8 @@ $langfiles_subsets = [
              'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
              'it', 'lg', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
              'sl', 'sq', 'sr', 'sw', 'ta', 'tr', 'vi', 'zh-CN', 'zh-TW'],
-        'mozorg/plugincheck.lang'               => $mozillaorg,                
-        'mozorg/products.lang'                  => $mozillaorg,        
+        'mozorg/plugincheck.lang'               => $mozillaorg,
+        'mozorg/products.lang'                  => $mozillaorg,
         'mozspaces.lang'                        => ['de', 'fr'],
         'newsletter.lang'                       => $mozillaorg,
         'privacy/ffos_privacy.lang'             => ['es-ES', 'pl'],
