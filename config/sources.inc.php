@@ -23,7 +23,7 @@ $mozillaorg_lang = [
     'firefox/new.lang'                      => true,
     'firefox/os/index.lang'                 => true,
     'firefox/partners/index.lang'           => true,
-    'firefox/update.lang'                   => true,
+    //~ 'firefox/update.lang'                   => true,
     'firefox/whatsnew.lang'                 => true,
     'firefoxflicks.lang'                    => false,
     'firefoxlive.lang'                      => false,
@@ -140,7 +140,7 @@ $langfiles_subsets = [
         'firefox/partners/index.lang'           =>
             ['ca', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'it',
              'ja', 'ko', 'pl', 'pt-BR', 'ro', 'zh-CN', 'zh-TW'],
-        'firefox/update.lang'                   => $mozilla,
+        //~ 'firefox/update.lang'                   => $mozilla,
         'firefox/whatsnew.lang'                 => $mozillaorg,
         'firefoxflicks.lang'                    =>
             ['ar', 'bg', 'de', 'fa', 'fr', 'gl', 'es-ES', 'hu', 'id',
