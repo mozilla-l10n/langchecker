@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>.lang files checker on mozilla sites</title>
-  <script src="../media/js/sorttable.js"></script>
+  <script src="./media/js/sorttable.js"></script>
 
   <style type="text/css">
 
