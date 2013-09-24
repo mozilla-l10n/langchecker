@@ -74,6 +74,7 @@ foreach ($files as $filename) {
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey1.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey2.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey3.lang');
+            l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/snippets.lang');
 
             $GLOBALS['__l10n_moz']['activated'] = (boolean) $activeStatus;
 
@@ -86,7 +87,7 @@ foreach ($files as $filename) {
             );
 
             $exceptions = array(
-                'Mozilla and partners prepare to launch first Firefox OS smartphones' => 'Mozilla and partners prepare to launch first Firefox OS smartsphones'
+                //~ 'Mozilla and partners prepare to launch first Firefox OS smartphones' => 'Mozilla and partners prepare to launch first Firefox OS smartsphones'
             );
 
             $content = buildFile($eol, $exceptions);

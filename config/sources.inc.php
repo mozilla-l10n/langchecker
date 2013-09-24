@@ -181,7 +181,7 @@ $langfiles_subsets = [
              'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr',
              'zh-CN', 'zh-TW'],
         'mozorg/about.lang'                     => $mozillaorg,
-        'mozorg/home.lang'                      => ['fr'],
+        'mozorg/home.lang'                      => $mozillaorg,
         'mozorg/about/manifesto.lang'           =>
             ['ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'de', 'el', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'fur',
