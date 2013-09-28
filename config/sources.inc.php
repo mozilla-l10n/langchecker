@@ -15,6 +15,9 @@ if (!isset($_SERVER['SERVER_NAME'])) {
 require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
+$locamotion_locales = ['af', 'ach', 'az', 'cy', 'en-ZA', 'ff', 'gd', 'kk',
+'km', 'lg', 'mn', 'ms', 'my', 'oc', 'sah', 'son', 'tr', 'ur', 'vi', 'xh'];
+
 $mozillaorg_lang = [
     'download.lang'                         => true,
     'download_button.lang'                  => true,

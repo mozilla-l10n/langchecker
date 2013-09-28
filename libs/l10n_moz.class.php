@@ -75,7 +75,7 @@ class l10n_moz
         $GLOBALS[$array_name]['activated'] = $active = false;
 
         $f = self::getFile($file);
-        $f = self::cleanStrings($f);
+        //~ $f = self::cleanStrings($f);
 
         for ($i = 0, $lines = count($f); $i < $lines; $i++) {
             if ($i == 0  && $f[0] == '## active ##') {
@@ -105,7 +105,11 @@ class l10n_moz
                 $english = trim(substr($f[$i], 1));
                 $translation = trim($f[$i+1]);
 
-                $GLOBALS[$array_name][$english] = $translation;
+                /* locamotion support conditional */
+                if (!isset($GLOBALS[$array_name][$english])
+                    || $GLOBALS[$array_name][$english] == $english) {
+                    $GLOBALS[$array_name][$english] = $translation;
+                }
 
                 if ($i >= 2 && in_array($reflang, $englishes)) {
                     $GLOBALS['__l10n_comments'][$english] = '';
@@ -123,6 +127,56 @@ class l10n_moz
         }
 
         unset($f);
+    }
+
+    /**
+     * Gettext import file function
+     */
+    public static function getPoFile($file)
+    {
+        if (!file_exists($file)) {
+            return false;
+        }
+
+        $fc      = implode('', file($file));
+        $res     = array();
+        $matched = preg_match_all('/(msgid\s+("([^"]|\\\\")*?"\s*)+)\s+'.
+        '(msgstr\s+("([^"]|\\\\")*?"\s*)+)/',
+        $fc, $matches);
+
+        if (!$matched) {
+            return false;
+        }
+
+        for ($i=0; $i<$matched; $i++) {
+            $msgid  = preg_replace('/\s*msgid\s*"(.*)"\s*/s','\\1',  $matches[1][$i]);
+            $msgstr = preg_replace('/\s*msgstr\s*"(.*)"\s*/s','\\1', $matches[4][$i]);
+            $res[l10n_moz::poString($msgid)] = l10n_moz::poString($msgstr);
+        }
+
+        if (!empty($res[''])) {
+            $meta = $res[''];
+            unset($res['']);
+        }
+
+        return $res;
+    }
+
+
+    /**
+     * Gettext import string function
+     */
+    public static function poString($string,$reverse=false)
+    {
+        if ($reverse) {
+            $smap = array('"', "\n", "\t", "\r");
+            $rmap = array('\\"', '\\n"' . "\n" . '"', '\\t', '\\r');
+            return (string) str_replace($smap, $rmap, $string);
+        } else {
+            $smap = array('/"\s+"/', '/\\\\n/', '/\\\\r/', '/\\\\t/', '/\\"/');
+            $rmap = array('', "\n", "\r", "\t", '"');
+            return (string) preg_replace($smap, $rmap, $string);
+        }
     }
 
     /*

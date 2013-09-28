@@ -13,9 +13,10 @@ require_once __DIR__ . '/inc/init.php';
 $initl10n = new l10n_moz();
 
 /* user provided variables */
-$filename = (isset($argv[1])) ? secureText($argv[1]) : 'main.lang'; // which file are we comparing? Set a default
-$website  = (isset($argv[2])) ? secureText($argv[2])  : '0'; // which website are we looking at? Default to www.mozilla.org
-$locale   = (isset($argv[3])) ? secureText($argv[3])  : '';  // which locale are we analysing? No default
+$filename   = (isset($argv[1])) ? secureText($argv[1]) : 'main.lang'; // which file are we comparing? Set a default
+$website    = (isset($argv[2])) ? secureText($argv[2])  : '0'; // which website are we looking at? Default to www.mozilla.org
+$locale     = (isset($argv[3])) ? secureText($argv[3])  : 'all';  // which locale are we analysing? No default
+$locamotion = (isset($argv[4])) ? true : false;  // do we scrap locamotion
 
 /* temp variables */
 $reflang  = $sites[$website][5];
@@ -43,7 +44,7 @@ if ($filename == 'all') {
     $files = array($filename);
 }
 
-if ($locale != '' && in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])) {
+if ($locale != 'all' && in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])) {
     $locales = array($locale);
 } else {
     $locales = $langfiles_subsets[$sites[$website][0]][$filename];
@@ -70,11 +71,15 @@ foreach ($files as $filename) {
 
             $activeStatus = (boolean) $GLOBALS['__l10n_moz']['activated'];
 
+            /* import data from locamotion */
+            if ($locamotion) {
+                scrapLocamotion($_lang, $filename, $source);
+            }
             /* incorporate strings from other lang files */
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey1.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey2.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey3.lang');
-            l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/snippets.lang');
+            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/snippets.lang');
 
             $GLOBALS['__l10n_moz']['activated'] = (boolean) $activeStatus;
 
@@ -204,4 +209,74 @@ function fileForceContents($dir, $contents)
 function isWindowsEOL($line)
 {
     return (substr($line, -2) === "\r\n") ? true : false;
+}
+
+
+function scrapLocamotion($_lang, $filename, $source)
+{
+    global $mozillaorg_lang;
+    global $locamotion_locales;
+
+    if (!in_array($_lang, $locamotion_locales)) {
+        return;
+    }
+
+    error_log('== ' . $_lang . ' ==');
+
+    $folder = $mozillaorg_lang[$filename] ? '/1.Critical/' : '/2.Good_to_have/';
+    /* import data from locamotion */
+    $locamotion = 'http://mozilla.locamotion.org/export/mozilla_lang/' . $_lang . $folder . $filename . '.po';
+    $po_exists = strstr(get_headers($locamotion, 1)[0], '200') ? true : false;
+
+    if ($po_exists) {
+        error_log("Fetching $filename from Locamotion");
+        file_put_contents('temp.po', file_get_contents($locamotion));
+        $po_strings = l10n_moz::getPoFile('temp.po');
+        $po_strings = array_filter($po_strings);
+        $temp_lang = '';
+        if (count($po_strings) > 0) {
+
+            foreach ($po_strings as $po_source => $po_trans) {
+                $temp_lang .=
+                    ';'
+                    . $po_source . PHP_EOL
+                    . $po_trans . PHP_EOL. PHP_EOL. PHP_EOL;
+            }
+
+            file_put_contents('temp.lang', $temp_lang);
+
+            // we keep copies of the global array in $a and $b for diff puroposes
+            $a = $GLOBALS['__l10n_moz'];
+            l10n_moz::load('temp.lang');
+            $b = $GLOBALS['__l10n_moz'];
+
+            $have_imported_strings = false;
+            foreach ($b as $key => $val) {
+                $val = is_array($val) ? $val[0] : $val;
+                if ($key != $val
+                    && $key != 'filedescription'
+                    && $key != 'activated'
+                    && array_key_exists($key, $a)
+                    ) {
+                    if ($a[$key] == $key) {
+                        error_log('Imported string: ' . $key .' => ' . $val);
+                        $have_imported_strings = true;
+                    }
+                }
+            }
+
+            if ($have_imported_strings) {
+                error_log("Data from Locamotion extracted and added to local repository.\n");
+            } else {
+                error_log("No new strings from Locamotion added to local repository.\n");
+            }
+
+            unlink('temp.lang');
+
+        } else {
+            error_log($filename . '.po has no strings in it');
+        }
+
+        unlink('temp.po');
+    }
 }
