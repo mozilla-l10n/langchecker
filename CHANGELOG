@@ -1,8 +1,15 @@
+Version 1.4 (2013-??-??)
+* lang_update can now import strings localized on locamotion by importing po files in their export directory
+* Japanese is now excluded from l10n coverage statistics
+* Columns are now sortable in  global view for a locale
+
+
 Version 1.3 (2013-09-17)
 * in global view, fully translated files are now shown as collapsed
 * new view showing all python variable errors for all locales http://l10n.mozilla-community.org/~pascalc/langchecker/?action=errors
 * updated ADU data
 * code cleanups
+
 
 Version 1.2 (2013-07-25)
 * Renamed write.php as lang_update and make is self-executable
