@@ -42,6 +42,7 @@ $mozillaorg_lang = [
     'mozorg/15years.lang'                   => false,
     'mozorg/about.lang'                     => false,
     'mozorg/about/manifesto.lang'           => false,
+    'mozorg/mission.lang'                   => false,
     'mozorg/contribute.lang'                => false,
     'mozorg/plugincheck.lang'               => true,
     'mozorg/products.lang'                  => false,
@@ -185,6 +186,7 @@ $langfiles_subsets = [
              'zh-CN', 'zh-TW'],
         'mozorg/about.lang'                     => $mozillaorg,
         'mozorg/home.lang'                      => $mozillaorg,
+        'mozorg/mission.lang'                   => ['de', 'fr', 'he'],
         'mozorg/about/manifesto.lang'           =>
             ['ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'de', 'el', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'fur',
