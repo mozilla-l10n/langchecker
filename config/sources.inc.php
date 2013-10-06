@@ -141,7 +141,7 @@ $langfiles_subsets = [
              'ro', 'sk', 'sl', 'es-ES', 'sv-SE'],
         'firefox/new.lang'                      => $mozilla,
         'firefox/os/index.lang'                 =>
-            ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
+            ['cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           =>
             ['ca', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'it',
              'ja', 'ko', 'pl', 'pt-BR', 'ro', 'zh-CN', 'zh-TW'],
