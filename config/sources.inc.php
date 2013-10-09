@@ -143,8 +143,8 @@ $langfiles_subsets = [
         'firefox/os/index.lang'                 =>
             ['cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           =>
-            ['ca', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'it',
-             'ja', 'ko', 'pl', 'pt-BR', 'ro', 'zh-CN', 'zh-TW'],
+            ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
+             'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'],
         //~ 'firefox/update.lang'                   => $mozilla,
         'firefox/whatsnew.lang'                 => $mozillaorg,
         'firefoxflicks.lang'                    =>
