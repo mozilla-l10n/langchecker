@@ -83,6 +83,7 @@ foreach ($site[4] as $_file) {
 
         $stripe = true;
         $total_translations = 0;
+        $covered_locales = [];
         foreach ($targetted_locales as $_lang) {
             // If the .lang file does not exist, just skip the locale for this file
             $local_lang_file = $sites[$target][1] . $sites[$target][2] . $_lang . '/' . $_file;
@@ -94,6 +95,7 @@ foreach ($site[4] as $_file) {
 
             if (i__($k)) {
                 $total_translations++;
+                $covered_locales[] = $_lang;
                 if ($stripe == true) {
                     $stripe = false;
                     $stripe_color = '#F0F2F6';
@@ -111,12 +113,12 @@ foreach ($site[4] as $_file) {
             }
             unset($GLOBALS['__l10n_moz']);
         }
-        echo "<tr>
-              <td colspan='2' class='done'>Number of locales done: $total_translations</td>
-              </tr>";
-        echo "</table>";
-
-
+        echo '<tr>'
+            . "<td colspan='2' class='done'>Number of locales done: $total_translations"
+            . ' (' .getUserBaseCoverage($covered_locales) . '% of our l10n user base)'
+            . '</td>'
+            . '</tr>'
+            . '</table>';
     }
     unset($GLOBALS['__english_moz']);
 }
