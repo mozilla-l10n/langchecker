@@ -102,30 +102,21 @@ foreach ($sites[$website][4] as $_file) {
 
     // ja+mozilla.org is not relevant, remove "ja" from $adu and $done in that case
     if ($website == 0) {
-        unset($adu['ja']);
-        unset($done['ja']);
+        $done = getUserBaseCoverage($done) . '% (excluding ja)';
+    } else {
+        $done = getUserBaseCoverage($done, false) . '%';
     }
 
-    // adu count
-    $done = array_flip($done);
-    $done = array_intersect_key($adu, $done);
-    $done = array_sum($done);
-    $done = number_format($done/(array_sum($adu)-$adu['en-US']-$adu['en-GB']-$adu['en-ZA'])*100, 2) . '%';
-
-    echo '<tfoot>';
-    echo '<tr><td colspan= "6">'
-         . $count_done
-         . ' perfect locales ('
-         . round($count_done/count($targetted_locales)*100)
-         . '%)<br>'
-         .  $done
-         . ' of our l10n user base';
-
-    if ($website == 0) {
-        echo ' (excluding ja)';
-    }
-    echo    '</td></tr>';
-    echo '</table>';
+    echo '<tfoot>'
+        . '<tr><td colspan= "6">'
+        . $count_done
+        . ' perfect locales ('
+        . round($count_done/count($targetted_locales)*100)
+        . '%)<br>'
+        . $done
+        . ' of our l10n user base'
+        . '</td></tr>'
+        . '</table>';
 
     unset($GLOBALS['__english_moz']);
 }

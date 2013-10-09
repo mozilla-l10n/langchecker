@@ -238,3 +238,26 @@ function jsonOutput(array $data, $jsonp = false)
     ob_end_clean();
     return $json;
 }
+
+/**
+ * getUserBaseCoverage()
+ *
+ * @param $locales an array of locales
+ * @param $no_japan boolean, default to true, do we include Japanese?
+ *
+ * @return a percent value of our coverage for the user base
+ */
+
+function getUserBaseCoverage($locales, $no_japan = true)
+{
+    include __DIR__ . '/../config/adu.inc.php';
+
+    if ($no_japan) {
+        $adu['ja'] = $adu['ja-JP-mac'] = 0;
+    }
+
+    $english = $adu['en-GB'] + $adu['en-US'] + $adu['en-ZA'];
+    $locales = array_intersect_key($adu, array_flip($locales));
+
+    return number_format( array_sum($locales) / (array_sum($adu) - $english) *100, 2);
+}
