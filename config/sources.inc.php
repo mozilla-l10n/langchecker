@@ -24,6 +24,7 @@ $mozillaorg_lang = [
     'esr.lang'                              => false,
     'euballot.lang'                         => false,
     'firefox/new.lang'                      => true,
+    'firefox/channel.lang'                  => true,
     'firefox/os/index.lang'                 => true,
     'firefox/partners/index.lang'           => true,
     //~ 'firefox/update.lang'                   => true,
@@ -140,6 +141,7 @@ $langfiles_subsets = [
              'de', 'el', 'hu', 'it', 'lv', 'lt', 'nb-NO', 'pl', 'pt-PT',
              'ro', 'sk', 'sl', 'es-ES', 'sv-SE'],
         'firefox/new.lang'                      => $mozilla,
+        'firefox/channel.lang'                  => ['de', 'fr', 'he'],
         'firefox/os/index.lang'                 =>
             ['cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           =>
