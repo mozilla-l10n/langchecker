@@ -149,7 +149,7 @@ $langfiles_subsets = [
             ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
              'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'],
         //~ 'firefox/update.lang'                   => $mozilla,
-        'firefox/whatsnew.lang'                 => $mozillaorg,
+        'firefox/whatsnew.lang'                 => ['hu', 'pl'],
         'firefoxflicks.lang'                    =>
             ['ar', 'bg', 'de', 'fa', 'fr', 'gl', 'es-ES', 'hu', 'id',
              'it', 'ja', 'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
