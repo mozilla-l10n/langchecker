@@ -142,7 +142,7 @@ $langfiles_subsets = [
              'ro', 'sk', 'sl', 'es-ES', 'sv-SE'],
         'firefox/new.lang'                      => $mozilla,
         'firefox/channel.lang'                  =>
-            ['bg', 'cs', 'de', 'es-MX', 'fr', 'he', 'sk'],
+            ['bg', 'cs', 'de', 'es-MX', 'fr', 'he', 'sk', 'sl'],
         'firefox/os/index.lang'                 =>
             ['cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           =>
