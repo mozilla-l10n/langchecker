@@ -16,7 +16,6 @@ $initl10n = new l10n_moz();
 $filename   = (isset($argv[1])) ? secureText($argv[1]) : 'main.lang'; // which file are we comparing? Set a default
 $website    = (isset($argv[2])) ? secureText($argv[2])  : '0'; // which website are we looking at? Default to www.mozilla.org
 $locale     = (isset($argv[3])) ? secureText($argv[3])  : 'all';  // which locale are we analysing? No default
-$locamotion = (isset($argv[4])) ? true : false;  // do we scrap locamotion
 
 /* temp variables */
 $reflang  = $sites[$website][5];
@@ -25,14 +24,6 @@ $source   = $sites[$website][1] . $sites[$website][2] . $reflang . '/' . $filena
 error_log("Reference English file: $source \n");
 
 getEnglishSource($reflang, $website, $filename, 1);
-
-/* Avant de lancer le script faire un $ chown -R pascalc:www-data locales
- *
- * Exemple d'utilisation:
- * http://localhost/dev/langchecker/write.php?website=0&file=firefoxlive.lang
- *
- * les fichiers doivent avoir les droits 755
- */
 
 if ($GLOBALS['__english_moz'] == null) {
     die("$source does not exist");
@@ -46,6 +37,8 @@ if ($filename == 'all') {
 
 if ($locale != 'all' && in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])) {
     $locales = array($locale);
+} elseif ($locale == 'locamotion') {
+    $locales = array_intersect($locamotion_locales, $langfiles_subsets[$sites[$website][0]][$filename]);
 } else {
     $locales = $langfiles_subsets[$sites[$website][0]][$filename];
 }
@@ -72,7 +65,7 @@ foreach ($files as $filename) {
             $activeStatus = (boolean) $GLOBALS['__l10n_moz']['activated'];
 
             /* import data from locamotion */
-            if ($locamotion) {
+            if ($locale == 'locamotion') {
                 scrapLocamotion($_lang, $filename, $source);
             }
             /* incorporate strings from other lang files */
@@ -80,6 +73,7 @@ foreach ($files as $filename) {
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey2.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey3.lang');
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/snippets.lang');
+            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/mozorg/about.lang');
 
             $GLOBALS['__l10n_moz']['activated'] = (boolean) $activeStatus;
 
@@ -111,12 +105,11 @@ foreach ($files as $filename) {
     }
 }
 
+/* functions used for this script */
 
 function buildFile($eol, $exceptions = array())
 {
-
     ob_start();
-
     header('Content-type: text/plain; charset=UTF-8');
 
     if ($GLOBALS['__l10n_moz']['activated']) {
@@ -124,7 +117,6 @@ function buildFile($eol, $exceptions = array())
     }
 
     foreach ($GLOBALS['__english_moz'] as $key => $val) {
-
         if ($key == 'activated') {
             continue;
         }
@@ -147,16 +139,13 @@ function buildFile($eol, $exceptions = array())
     }
 
     $content = ob_get_contents();
-
     ob_end_clean();
 
     return $content;
 }
 
-
 function dumpString($english, $eol, $exceptions = array())
 {
-
     if ($english == 'activated') {
         return;
     }
@@ -188,6 +177,7 @@ function dumpString($english, $eol, $exceptions = array())
     } else {
         $chunk .= (array_key_exists($english, $GLOBALS['__l10n_moz'])) ? $GLOBALS['__l10n_moz'][$english]: $english;
     }
+
     $chunk .= $eol . $eol . $eol;
 
     return $chunk;
@@ -198,11 +188,13 @@ function fileForceContents($dir, $contents)
     $parts = explode('/', $dir);
     $file = array_pop($parts);
     $dir = '';
+
     foreach ($parts as $part) {
         if (!is_dir($dir .= "/$part")) {
             mkdir($dir);
         }
     }
+
     file_put_contents("$dir/$file", $contents);
 }
 
@@ -210,7 +202,6 @@ function isWindowsEOL($line)
 {
     return (substr($line, -2) === "\r\n") ? true : false;
 }
-
 
 function scrapLocamotion($_lang, $filename, $source)
 {
@@ -233,7 +224,8 @@ function scrapLocamotion($_lang, $filename, $source)
         file_put_contents('temp.po', file_get_contents($locamotion));
         $po_strings = l10n_moz::getPoFile('temp.po');
         $po_strings = array_filter($po_strings);
-        $temp_lang = '';
+        $temp_lang  = '';
+
         if (count($po_strings) > 0) {
 
             foreach ($po_strings as $po_source => $po_trans) {
@@ -249,8 +241,8 @@ function scrapLocamotion($_lang, $filename, $source)
             $a = $GLOBALS['__l10n_moz'];
             l10n_moz::load('temp.lang');
             $b = $GLOBALS['__l10n_moz'];
-
             $have_imported_strings = false;
+
             foreach ($b as $key => $val) {
                 $val = is_array($val) ? $val[0] : $val;
                 if ($key != $val
