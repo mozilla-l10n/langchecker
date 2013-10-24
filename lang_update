@@ -214,9 +214,8 @@ function scrapLocamotion($_lang, $filename, $source)
 
     error_log('== ' . $_lang . ' ==');
 
-    $folder = $mozillaorg_lang[$filename] ? '/1.Critical/' : '/2.Good_to_have/';
     /* import data from locamotion */
-    $locamotion = 'http://mozilla.locamotion.org/export/mozilla_lang/' . $_lang . $folder . $filename . '.po';
+    $locamotion = 'https://raw.github.com/translate/mozilla-lang/master/' . $_lang . '/' . $filename . '.po';
     $po_exists = strstr(get_headers($locamotion, 1)[0], '200') ? true : false;
 
     if ($po_exists) {
