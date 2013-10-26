@@ -58,6 +58,25 @@ $mozillaorg_lang = [
     'upgradepromos.lang'                    => false,
 ];
 
+$no_active_tag = [
+    'download.lang',
+    'download_button.lang',
+    'esr.lang',
+    'euballot.lang',
+    'firefoxflicks.lang',
+    'firefoxlive.lang',
+    'firefoxtesting.lang',
+    'foundationsection.lang',
+    'main.lang',
+    'marketplace/marketplace.lang',
+    'marketplace/partners.lang',
+    'mobile.lang',
+    'mozspaces.lang',
+    'newsletter.lang',
+    'snippets.lang',
+    'upgradepromos.lang',
+];
+
 $firefoxhealthreport_lang = ['fhr.lang' => true];
 
 $slogans_lang = [

@@ -63,11 +63,18 @@ foreach ($sites as $key => $_site) {
 
             unset($reflang);
 
+            // create a css class used to show if a file is activated or not
+            if (!in_array($filename, $no_active_tag) && $_site[0] == 'www.mozilla.org') {
+                 $status = $GLOBALS[$locale]['activated'] ? ' activated' : ' notactivated';
+             } else {
+                 $status = ' activated';
+             }
+
             if ((count($GLOBALS[$locale]['Missing']) + count($GLOBALS[$locale]['Identical'])) == 0
                 && count($GLOBALS[$locale]['python_vars']) == 0)
             {
                 $titleDone = true;
-                $doneFiles .= "<a href='#$filename' class='filedone'>$filename</a>";
+                $doneFiles .= "<a href='#$filename' class='filedone$status'>$filename</a>";
             } else {
                 $titleTodo = true;
                 $todoFiles .= '<div class="filename" id="' . $filename . '">';
