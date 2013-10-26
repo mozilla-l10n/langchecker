@@ -189,6 +189,14 @@ table.globallist {
     background: rgb(250,250,250);
 }
 
+.activated {
+    border-right:8px solid green;
+}
+
+.notactivated {
+    border-right:8px solid red;
+}
+
   </style>
 
 </head>
