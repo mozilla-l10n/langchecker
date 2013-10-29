@@ -1,33 +1,33 @@
 #!/usr/bin/env php
 <?php
-
-date_default_timezone_set('Europe/Paris');
-include __DIR__ .'/libs/poparser.php';
-
+// Script should not be called from the Web
 if (php_sapi_name() != 'cli') {
     die('Nope');
 }
 
+date_default_timezone_set('Europe/Paris');
+
+require_once __DIR__ .'/libs/poparser.php';
 require_once __DIR__ . '/inc/init.php';
 
 /* init l10n class to create the globals needed */
 $initl10n = new l10n_moz();
 
 /* user provided variables */
-$filename   = (isset($argv[1])) ? secureText($argv[1]) : 'main.lang'; // which file are we comparing? Set a default
-$website    = (isset($argv[2])) ? secureText($argv[2])  : '0'; // which website are we looking at? Default to www.mozilla.org
-$locale     = (isset($argv[3])) ? secureText($argv[3])  : 'all';  // which locale are we analysing? No default
+$filename = isset($argv[1]) ? secureText($argv[1])  : 'main.lang'; // which file are we comparing? Set a default
+$website  = isset($argv[2]) ? secureText($argv[2])  : '0'; // which website are we looking at? Default to www.mozilla.org
+$locale   = isset($argv[3]) ? secureText($argv[3])  : 'all';  // which locale are we analysing? No default
 
 /* temp variables */
 $reflang  = $sites[$website][5];
 $source   = $sites[$website][1] . $sites[$website][2] . $reflang . '/' . $filename;
 
-error_log("Reference English file: $source \n");
+logger("Reference English file: $source");
 
 getEnglishSource($reflang, $website, $filename, 1);
 
 if ($GLOBALS['__english_moz'] == null) {
-    die("$source does not exist");
+    logger("$source does not exist", 'quit');
 }
 
 if ($filename == 'all') {
@@ -102,6 +102,6 @@ foreach ($files as $filename) {
                 unset($GLOBALS['__l10n_moz']);
             }
         }
-        error_log($result);
+        logger($result);
     }
 }

@@ -388,7 +388,7 @@ function scrapLocamotion($_lang, $filename, $source)
         return;
     }
 
-    error_log('== ' . $_lang . ' ==');
+    logger('== ' . $_lang . ' ==');
 
     /* import data from locamotion */
     $locamotion = 'https://raw.github.com/translate/mozilla-lang/master/'
@@ -397,7 +397,7 @@ function scrapLocamotion($_lang, $filename, $source)
     $po_exists = strstr(get_headers($locamotion, 1)[0], '200') ? true : false;
 
     if ($po_exists) {
-        error_log("Fetching $filename from Locamotion");
+        logger("Fetching $filename from Locamotion");
         file_put_contents('temp.po', file_get_contents($locamotion));
 
         $po_parser = new PoParser();
@@ -432,25 +432,38 @@ function scrapLocamotion($_lang, $filename, $source)
                     && array_key_exists($key, $a)
                     ) {
                     if ($a[$key] == $key) {
-                        error_log('Imported string: ' . $key .' => ' . $val);
+                        logger('Imported string: ' . $key .' => ' . $val);
                         $have_imported_strings = true;
                     }
                 }
             }
 
             if ($have_imported_strings) {
-                error_log("Data from Locamotion extracted and added to local repository.\n");
+                logger("Data from Locamotion extracted and added to local repository.");
             } else {
-                error_log("No new strings from Locamotion added to local repository.\n");
+                logger("No new strings from Locamotion added to local repository.");
             }
 
             unlink('temp.lang');
             unset($po_parser);
 
         } else {
-            error_log($filename . '.po has no strings in it');
+            logger($filename . '.po has no strings in it');
         }
 
         unlink('temp.po');
+    }
+}
+
+
+/*
+ *  SAPI file (lang_update)
+ */
+
+function logger($str, $action='')
+{
+    error_log($str . "\n");
+    if ($action == 'quit') {
+        die;
     }
 }
