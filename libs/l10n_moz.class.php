@@ -36,8 +36,11 @@ class l10n_moz
         }
 
         $file = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        // Remove potential Byte Order mark
-        $file[0] = trim($file[0], "\xEF\xBB\xBF");
+
+        if (count($file) > 0) {
+            $file[0] = trim($file[0], "\xEF\xBB\xBF");
+        }
+
         return $file;
     }
 
@@ -127,56 +130,6 @@ class l10n_moz
         }
 
         unset($f);
-    }
-
-    /**
-     * Gettext import file function
-     */
-    public static function getPoFile($file)
-    {
-        if (!file_exists($file)) {
-            return false;
-        }
-
-        $fc      = implode('', file($file));
-        $res     = array();
-        $matched = preg_match_all('/(msgid\s+("([^"]|\\\\")*?"\s*)+)\s+'.
-        '(msgstr\s+("([^"]|\\\\")*?"\s*)+)/',
-        $fc, $matches);
-
-        if (!$matched) {
-            return false;
-        }
-
-        for ($i=0; $i<$matched; $i++) {
-            $msgid  = preg_replace('/\s*msgid\s*"(.*)"\s*/s','\\1',  $matches[1][$i]);
-            $msgstr = preg_replace('/\s*msgstr\s*"(.*)"\s*/s','\\1', $matches[4][$i]);
-            $res[l10n_moz::poString($msgid)] = l10n_moz::poString($msgstr);
-        }
-
-        if (!empty($res[''])) {
-            $meta = $res[''];
-            unset($res['']);
-        }
-
-        return $res;
-    }
-
-
-    /**
-     * Gettext import string function
-     */
-    public static function poString($string,$reverse=false)
-    {
-        if ($reverse) {
-            $smap = array('"', "\n", "\t", "\r");
-            $rmap = array('\\"', '\\n"' . "\n" . '"', '\\t', '\\r');
-            return (string) str_replace($smap, $rmap, $string);
-        } else {
-            $smap = array('/"\s+"/', '/\\\\n/', '/\\\\r/', '/\\\\t/', '/\\"/');
-            $rmap = array('', "\n", "\r", "\t", '"');
-            return (string) preg_replace($smap, $rmap, $string);
-        }
     }
 
     /*

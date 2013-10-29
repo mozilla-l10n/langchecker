@@ -261,3 +261,209 @@ function getUserBaseCoverage($locales, $no_japan = true)
 
     return number_format( array_sum($locales) / (array_sum($adu) - $english) *100, 2);
 }
+
+
+/*
+ *  SAPI file (lang_update)
+ */
+
+function buildFile($eol, $exceptions = array())
+{
+    ob_start();
+    header('Content-type: text/plain; charset=UTF-8');
+
+    if ($GLOBALS['__l10n_moz']['activated']) {
+        echo '## active ##' . $eol;
+    }
+
+    foreach ($GLOBALS['__english_moz'] as $key => $val) {
+        if ($key == 'activated') {
+            continue;
+        }
+
+        if ($key == 'filedescription') {
+            foreach ($GLOBALS['__english_moz']['filedescription'] as $header) {
+                echo '## NOTE: ' . $header . $eol;
+            }
+            echo  $eol . $eol;
+            continue;
+        }
+        echo dumpString($key, $eol, $exceptions);
+    }
+
+    /* put l10n extras at the end of the file */
+    foreach ($GLOBALS['__l10n_moz'] as $key => $val) {
+        if (strstr($key, '{l10n-extra}') == true) {
+            echo dumpString($key, $eol);
+        }
+    }
+
+    $content = ob_get_contents();
+    ob_end_clean();
+
+    return $content;
+}
+
+
+/*
+ *  SAPI file (lang_update)
+ */
+function dumpString($english, $eol, $exceptions = array())
+{
+    if ($english == 'activated') {
+        return;
+    }
+
+    $chunk = '';
+
+    if (isset($GLOBALS['__l10n_comments'][$english])) {
+        $chunk .= '# ' . trim($GLOBALS['__l10n_comments'][$english]) . $eol;
+    }
+
+    $chunk .= ";$english" . $eol;
+
+    $span_to_br = function ($str) {
+        return str_replace(array('<span>', '</span>'), array('<br />', ''), $str);
+    };
+
+    if (array_key_exists($english, $exceptions)
+        && isset($GLOBALS['__l10n_moz'][$exceptions[$english]])
+        ) {
+        $tempString = strip_tags($GLOBALS['__l10n_moz'][$exceptions[$english]]);
+
+        if ($english == 'Potentially vulnerable plugins') {
+            $tempString = str_replace(':', '', $tempString);
+        } elseif ($english == 'vulnerable') {
+            $tempString = strtolower($tempString);
+        }
+
+        $chunk .= $tempString;
+    } else {
+        $chunk .= (array_key_exists($english, $GLOBALS['__l10n_moz'])) ? $GLOBALS['__l10n_moz'][$english]: $english;
+    }
+
+    $chunk .= $eol . $eol . $eol;
+
+    return $chunk;
+}
+
+
+/*
+ *  SAPI file (lang_update)
+ */
+function fileForceContents($dir, $contents)
+{
+    $parts = explode('/', $dir);
+    $file = array_pop($parts);
+    $dir = '';
+
+    foreach ($parts as $part) {
+        if (!is_dir($dir .= "/$part")) {
+            mkdir($dir);
+        }
+    }
+
+    file_put_contents("$dir/$file", $contents);
+}
+
+
+/*
+ *  SAPI file (lang_update)
+ */
+function isWindowsEOL($line)
+{
+    return (substr($line, -2) === "\r\n") ? true : false;
+}
+
+
+/*
+ *  SAPI file (lang_update)
+ */
+function scrapLocamotion($_lang, $filename, $source)
+{
+    global $mozillaorg_lang;
+    global $locamotion_locales;
+
+    if (!in_array($_lang, $locamotion_locales)) {
+        return;
+    }
+
+    logger('== ' . $_lang . ' ==');
+
+    /* import data from locamotion */
+    $locamotion = 'https://raw.github.com/translate/mozilla-lang/master/'
+                  . str_replace('-', '_', $_lang)
+                  . '/' . $filename . '.po';
+    $po_exists = strstr(get_headers($locamotion, 1)[0], '200') ? true : false;
+
+    if ($po_exists) {
+        logger("Fetching $filename from Locamotion");
+        file_put_contents('temp.po', file_get_contents($locamotion));
+
+        $po_parser = new PoParser();
+        $po_strings = $po_parser->read('temp.po');
+
+        $temp_lang  = '';
+
+        if (count($po_strings) > 0) {
+
+            foreach ($po_strings as $entry) {
+                if (!isset($entry['fuzzy']) && $entry['msgstr'][0] != '') {
+                    $temp_lang .=
+                        ';'
+                        . $entry['msgid'][0] . PHP_EOL
+                        . $entry['msgstr'][0] . PHP_EOL. PHP_EOL. PHP_EOL;
+                }
+            }
+
+            file_put_contents('temp.lang', $temp_lang);
+
+            // we keep copies of the global array in $a and $b for diff puroposes
+            $a = $GLOBALS['__l10n_moz'];
+            l10n_moz::load('temp.lang');
+            $b = $GLOBALS['__l10n_moz'];
+            $have_imported_strings = false;
+
+            foreach ($b as $key => $val) {
+                $val = is_array($val) ? $val[0] : $val;
+                if ($key != $val
+                    && $key != 'filedescription'
+                    && $key != 'activated'
+                    && array_key_exists($key, $a)
+                    ) {
+                    if ($a[$key] == $key) {
+                        logger('Imported string: ' . $key .' => ' . $val);
+                        $have_imported_strings = true;
+                    }
+                }
+            }
+
+            if ($have_imported_strings) {
+                logger("Data from Locamotion extracted and added to local repository.");
+            } else {
+                logger("No new strings from Locamotion added to local repository.");
+            }
+
+            unlink('temp.lang');
+            unset($po_parser);
+
+        } else {
+            logger($filename . '.po has no strings in it');
+        }
+
+        unlink('temp.po');
+    }
+}
+
+
+/*
+ *  SAPI file (lang_update)
+ */
+
+function logger($str, $action='')
+{
+    error_log($str . "\n");
+    if ($action == 'quit') {
+        die;
+    }
+}
