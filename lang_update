@@ -18,33 +18,33 @@ $filename = isset($argv[1]) ? secureText($argv[1])  : 'main.lang'; // which file
 $website  = isset($argv[2]) ? secureText($argv[2])  : '0'; // which website are we looking at? Default to www.mozilla.org
 $locale   = isset($argv[3]) ? secureText($argv[3])  : 'all';  // which locale are we analysing? No default
 
-/* temp variables */
-$reflang  = $sites[$website][5];
-$source   = $sites[$website][1] . $sites[$website][2] . $reflang . '/' . $filename;
-
 if ($filename == 'all') {
-    $files = $langfiles_subsets[$sites[$website][0]];
+    $files = array_keys($langfiles_subsets[$sites[$website][0]]);
 } else {
     $files = array($filename);
-}
-
-if ($locale != 'all' && in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])) {
-    $locales = array($locale);
-} elseif ($locale == 'locamotion') {
-    $locales = array_intersect($locamotion_locales, $langfiles_subsets[$sites[$website][0]][$filename]);
-} else {
-    $locales = $langfiles_subsets[$sites[$website][0]][$filename];
 }
 
 /* loop generating the files */
 foreach ($files as $filename) {
 
+    // load the English source for the file
+
+    $reflang  = $sites[$website][5];
+    $source   = $sites[$website][1] . $sites[$website][2] . $reflang . '/' . $filename;
+    logger("Reference English file: $source");
+
+    if ($locale != 'all' && in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])) {
+        $locales = array($locale);
+    } elseif ($locale == 'locamotion') {
+        $locales = array_intersect($locamotion_locales, $langfiles_subsets[$sites[$website][0]][$filename]);
+    } else {
+        $locales = $langfiles_subsets[$sites[$website][0]][$filename];
+    }
+
+    getEnglishSource($reflang, $website, $filename, 1);
+
     // When we analyse multiple files we don't want to stop for lack of source
     if (count($files) == 1) {
-        logger("Reference English file: $source");
-
-        getEnglishSource($reflang, $website, $filename, 1);
-
         if ($GLOBALS['__english_moz'] == null) {
             logger("$source does not exist", 'quit');
         }
@@ -102,9 +102,14 @@ foreach ($files as $filename) {
 
             $result .= $lang  . ': ' . $filename . $eol;
 
+            // delete translations from memory before processing nxct locale
             if (isset($GLOBALS['__l10n_moz'])) {
                 unset($GLOBALS['__l10n_moz']);
             }
+        }
+        // delete source English strings from memory before loading next file
+        if (isset($GLOBALS['__english_moz'])) {
+            unset($GLOBALS['__english_moz']);
         }
         logger($result);
     }
