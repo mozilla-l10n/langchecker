@@ -48,9 +48,9 @@ if ($locale != 'all' && in_array($locale, $langfiles_subsets[$sites[$website][0]
 foreach ($files as $filename) {
     if (isset($langfiles_subsets[$sites[$website][0]][$filename])) {
         $result = '';
-        foreach ($locales as $_lang) {
+        foreach ($locales as $lang) {
 
-            $source = $sites[$website][1] . $sites[$website][2] . $_lang . '/' . $filename;
+            $source = $sites[$website][1] . $sites[$website][2] . $lang . '/' . $filename;
 
             /* here we load preexisting lang files */
             l10n_moz::load($source);
@@ -67,7 +67,7 @@ foreach ($files as $filename) {
 
             /* import data from locamotion */
             if ($locale == 'locamotion') {
-                scrapLocamotion($_lang, $filename, $source);
+                scrapLocamotion($lang, $filename, $source);
             }
             /* incorporate strings from other lang files */
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey1.lang');
@@ -96,7 +96,7 @@ foreach ($files as $filename) {
 
             fileForceContents($path, $content);
 
-            $result .= $_lang  . ': ' . $filename . $eol;
+            $result .= $lang  . ': ' . $filename . $eol;
 
             if (isset($GLOBALS['__l10n_moz'])) {
                 unset($GLOBALS['__l10n_moz']);
