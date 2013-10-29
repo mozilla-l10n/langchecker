@@ -22,14 +22,6 @@ $locale   = isset($argv[3]) ? secureText($argv[3])  : 'all';  // which locale ar
 $reflang  = $sites[$website][5];
 $source   = $sites[$website][1] . $sites[$website][2] . $reflang . '/' . $filename;
 
-logger("Reference English file: $source");
-
-getEnglishSource($reflang, $website, $filename, 1);
-
-if ($GLOBALS['__english_moz'] == null) {
-    logger("$source does not exist", 'quit');
-}
-
 if ($filename == 'all') {
     $files = $langfiles_subsets[$sites[$website][0]];
 } else {
@@ -46,6 +38,18 @@ if ($locale != 'all' && in_array($locale, $langfiles_subsets[$sites[$website][0]
 
 /* loop generating the files */
 foreach ($files as $filename) {
+
+    // When we analyse multiple files we don't want to stop for lack of source
+    if (count($files) == 1) {
+        logger("Reference English file: $source");
+
+        getEnglishSource($reflang, $website, $filename, 1);
+
+        if ($GLOBALS['__english_moz'] == null) {
+            logger("$source does not exist", 'quit');
+        }
+    }
+
     if (isset($langfiles_subsets[$sites[$website][0]][$filename])) {
         $result = '';
         foreach ($locales as $lang) {
