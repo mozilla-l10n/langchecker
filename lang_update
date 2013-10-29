@@ -215,7 +215,9 @@ function scrapLocamotion($_lang, $filename, $source)
     error_log('== ' . $_lang . ' ==');
 
     /* import data from locamotion */
-    $locamotion = 'https://raw.github.com/translate/mozilla-lang/master/' . $_lang . '/' . $filename . '.po';
+    $locamotion = 'https://raw.github.com/translate/mozilla-lang/master/'
+                  . str_replace('-', '_', $_lang)
+                  . '/' . $filename . '.po';
     $po_exists = strstr(get_headers($locamotion, 1)[0], '200') ? true : false;
 
     if ($po_exists) {
