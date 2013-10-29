@@ -2,6 +2,7 @@
 <?php
 
 date_default_timezone_set('Europe/Paris');
+include __DIR__ .'/libs/poparser.php';
 
 if (php_sapi_name() != 'cli') {
     die('Nope');
@@ -223,17 +224,21 @@ function scrapLocamotion($_lang, $filename, $source)
     if ($po_exists) {
         error_log("Fetching $filename from Locamotion");
         file_put_contents('temp.po', file_get_contents($locamotion));
-        $po_strings = l10n_moz::getPoFile('temp.po');
-        $po_strings = array_filter($po_strings);
+
+        $po_parser = new PoParser();
+        $po_strings = $po_parser->read('temp.po');
+
         $temp_lang  = '';
 
         if (count($po_strings) > 0) {
 
-            foreach ($po_strings as $po_source => $po_trans) {
-                $temp_lang .=
-                    ';'
-                    . $po_source . PHP_EOL
-                    . $po_trans . PHP_EOL. PHP_EOL. PHP_EOL;
+            foreach ($po_strings as $entry) {
+                if (!isset($entry['fuzzy']) && $entry['msgstr'][0] != '') {
+                    $temp_lang .=
+                        ';'
+                        . $entry['msgid'][0] . PHP_EOL
+                        . $entry['msgstr'][0] . PHP_EOL. PHP_EOL. PHP_EOL;
+                }
             }
 
             file_put_contents('temp.lang', $temp_lang);
@@ -265,6 +270,7 @@ function scrapLocamotion($_lang, $filename, $source)
             }
 
             unlink('temp.lang');
+            unset($po_parser);
 
         } else {
             error_log($filename . '.po has no strings in it');
