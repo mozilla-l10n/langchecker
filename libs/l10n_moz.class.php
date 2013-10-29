@@ -36,8 +36,11 @@ class l10n_moz
         }
 
         $file = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        // Remove potential Byte Order mark
-        $file[0] = trim($file[0], "\xEF\xBB\xBF");
+
+        if (count($file) > 0) {
+            $file[0] = trim($file[0], "\xEF\xBB\xBF");
+        }
+
         return $file;
     }
 
