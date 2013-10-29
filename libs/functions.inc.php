@@ -379,22 +379,23 @@ function isWindowsEOL($line)
 /*
  *  SAPI file (lang_update)
  */
-function scrapLocamotion($_lang, $filename, $source)
+function scrapLocamotion($lang, $filename, $source)
 {
     global $mozillaorg_lang;
     global $locamotion_locales;
 
-    if (!in_array($_lang, $locamotion_locales)) {
+    if (!in_array($lang, $locamotion_locales)) {
         return;
     }
 
-    logger('== ' . $_lang . ' ==');
+    logger('== ' . $lang . ' ==');
 
     /* import data from locamotion */
     $locamotion = 'https://raw.github.com/translate/mozilla-lang/master/'
-                  . str_replace('-', '_', $_lang)
+                  . str_replace('-', '_', $lang)
                   . '/' . $filename . '.po';
-    $po_exists = strstr(get_headers($locamotion, 1)[0], '200') ? true : false;
+    $http_response = get_headers($locamotion, 1)[0];
+    $po_exists = strstr($http_response, '200') ? true : false;
 
     if ($po_exists) {
         logger("Fetching $filename from Locamotion");
@@ -450,8 +451,9 @@ function scrapLocamotion($_lang, $filename, $source)
         } else {
             logger($filename . '.po has no strings in it');
         }
-
         unlink('temp.po');
+    } else {
+        logger("$locamotion does not exist, http code was $http_response");
     }
 }
 
