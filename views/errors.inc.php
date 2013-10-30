@@ -52,6 +52,12 @@ foreach ($mozilla as $locale) {
 
                 getEnglishSource($reflang, $key, $filename);
 
+                // If the .lang file does not exist, just skip the locale for this file
+                $local_lang_file = $_site[1] . $_site[2] . $locale . '/' . $filename;
+                if (!file_exists($local_lang_file)) {
+                    continue;
+                }
+
                 analyseLangFile($locale, $key, $filename);
 
                 unset($reflang);
