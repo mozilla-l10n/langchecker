@@ -56,6 +56,11 @@ foreach ($files as $filename) {
 
             $source = $sites[$website][1] . $sites[$website][2] . $lang . '/' . $filename;
 
+            // delete translations from memory before processing locale
+            if (isset($GLOBALS['__l10n_moz'])) {
+                unset($GLOBALS['__l10n_moz']);
+            }
+
             /* here we load preexisting lang files */
             l10n_moz::load($source);
 
@@ -71,7 +76,10 @@ foreach ($files as $filename) {
 
             /* import data from locamotion */
             if ($locale == 'locamotion') {
-                scrapLocamotion($lang, $filename, $source);
+                $import = scrapLocamotion($lang, $filename, $source);
+                if (!$import) {
+                    continue;
+                }
             }
             /* incorporate strings from other lang files */
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey1.lang');
@@ -102,10 +110,6 @@ foreach ($files as $filename) {
 
             $result .= $lang  . ': ' . $filename . $eol;
 
-            // delete translations from memory before processing nxct locale
-            if (isset($GLOBALS['__l10n_moz'])) {
-                unset($GLOBALS['__l10n_moz']);
-            }
         }
         // delete source English strings from memory before loading next file
         if (isset($GLOBALS['__english_moz'])) {

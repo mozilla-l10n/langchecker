@@ -383,9 +383,10 @@ function scrapLocamotion($lang, $filename, $source)
 {
     global $mozillaorg_lang;
     global $locamotion_locales;
+    $imported_strings = false;
 
     if (!in_array($lang, $locamotion_locales)) {
-        return;
+        return false;
     }
 
     logger('== ' . $lang . ' ==');
@@ -403,6 +404,7 @@ function scrapLocamotion($lang, $filename, $source)
 
         $po_parser = new PoParser();
         $po_strings = $po_parser->read('temp.po');
+        unlink('temp.po');
 
         $temp_lang  = '';
 
@@ -422,8 +424,8 @@ function scrapLocamotion($lang, $filename, $source)
             // we keep copies of the global array in $a and $b for diff puroposes
             $a = $GLOBALS['__l10n_moz'];
             l10n_moz::load('temp.lang');
+            unlink('temp.lang');
             $b = $GLOBALS['__l10n_moz'];
-            $have_imported_strings = false;
 
             foreach ($b as $key => $val) {
                 $val = is_array($val) ? $val[0] : $val;
@@ -434,26 +436,30 @@ function scrapLocamotion($lang, $filename, $source)
                     ) {
                     if ($a[$key] == $key) {
                         logger('Imported string: ' . $key .' => ' . $val);
-                        $have_imported_strings = true;
+                        $imported_strings = true;
                     }
                 }
             }
 
-            if ($have_imported_strings) {
-                logger("Data from Locamotion extracted and added to local repository.");
-            } else {
-                logger("No new strings from Locamotion added to local repository.");
-            }
-
-            unlink('temp.lang');
+            // clean up
             unset($po_parser);
+
 
         } else {
             logger($filename . '.po has no strings in it');
         }
-        unlink('temp.po');
+
+
     } else {
         logger("$locamotion does not exist, http code was $http_response");
+    }
+
+    if ($imported_strings) {
+        logger("Data from Locamotion extracted and added to local repository.");
+        return true;
+    } else {
+        logger("No new strings from Locamotion added to local repository.");
+        return false;
     }
 }
 
