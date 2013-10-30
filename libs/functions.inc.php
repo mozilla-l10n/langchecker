@@ -409,13 +409,12 @@ function scrapLocamotion($lang, $filename, $source)
         $temp_lang  = '';
 
         if (count($po_strings) > 0) {
-
             foreach ($po_strings as $entry) {
-                if (!isset($entry['fuzzy']) && $entry['msgstr'][0] != '') {
+                if (!isset($entry['fuzzy']) && implode($entry['msgstr']) != '') {
                     $temp_lang .=
                         ';'
-                        . $entry['msgid'][0] . PHP_EOL
-                        . $entry['msgstr'][0] . PHP_EOL. PHP_EOL. PHP_EOL;
+                        . implode($entry['msgid']) . PHP_EOL
+                        . implode($entry['msgstr']) . PHP_EOL. PHP_EOL. PHP_EOL;
                 }
             }
 
