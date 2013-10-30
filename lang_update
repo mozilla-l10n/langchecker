@@ -33,9 +33,19 @@ foreach ($files as $filename) {
     $source   = $sites[$website][1] . $sites[$website][2] . $reflang . '/' . $filename;
     logger("Reference English file: $source");
 
-    if ($locale != 'all' && in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])) {
+    if (
+        $locale != 'all'
+        && $locale != 'locamotion'
+        && in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])
+        )
+    {
         $locales = array($locale);
-    } elseif ($locale != 'all' && !in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])) {
+    } elseif (
+        $locale != 'all'
+        && $locale != 'locamotion'
+        && !in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])
+        )
+    {
         // locale is not supported for the lang file, skip
         continue;
     } elseif ($locale == 'locamotion') {
