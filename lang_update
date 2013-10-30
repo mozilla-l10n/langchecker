@@ -35,6 +35,9 @@ foreach ($files as $filename) {
 
     if ($locale != 'all' && in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])) {
         $locales = array($locale);
+    } elseif ($locale != 'all' && !in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])) {
+        // locale is not supported for the lang file, skip
+        continue;
     } elseif ($locale == 'locamotion') {
         $locales = array_intersect($locamotion_locales, $langfiles_subsets[$sites[$website][0]][$filename]);
     } else {
