@@ -37,6 +37,7 @@ $mozillaorg_lang = [
     'foundation/annualreport/2011.lang'     => false,
     'foundation/annualreport/2011faq.lang'  => false,
     'foundationsection.lang'                => false,
+    'lightbeam/lightbeam.lang'              => false,
     'main.lang'                             => true,
     'marketplace/marketplace.lang'          => true,
     'marketplace/partners.lang'             => false,
@@ -194,6 +195,7 @@ $langfiles_subsets = [
         'foundationsection.lang'                =>
             ['de', 'cs', 'fr', 'es-ES', 'gl', 'hu', 'id', 'it', 'nl',
              'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
+        'lightbeam/lightbeam.lang'              => ['es-ES'],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
         'marketplace/partners.lang'             => ['fr', 'es-ES', 'pt-BR'],
