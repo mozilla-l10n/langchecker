@@ -1,7 +1,10 @@
-Version 1.4 (2013-??-??)
-* lang_update can now import strings localized on locamotion by importing po files in their export directory
+Version 1.4 (2013-11-02)
+* lang_update can now import strings localized on locamotion by importing po files from https://github.com/translate/mozilla-lang and uses now the poparser library
 * Japanese is now excluded from l10n coverage statistics
 * Columns are now sortable in  global view for a locale
+* The translate view gives us a user base coverage in % per string http://l10n.mozilla-community.org/~pascalc/langchecker/?action=translate&file=home.lang
+* The locale status page now shows with a green/red flag next to the file name if the page has the ## active ## tag set or not http://l10n.mozilla-community.org/~pascalc/langchecker/?locale=ko
+* New page listing the pages fully translated but not activated http://l10n.mozilla-community.org/~pascalc/langchecker/?action=activation
 
 
 Version 1.3 (2013-09-17)
