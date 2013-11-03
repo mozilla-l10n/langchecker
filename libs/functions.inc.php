@@ -474,3 +474,10 @@ function logger($str, $action='')
         die;
     }
 }
+
+/*
+ * Does not work on Windows
+ */
+function isUTF8($file) {
+    return in_array(exec('file --mime-encoding -b ' . $file), ['utf-8', 'us-ascii']) ? true : false;
+}

@@ -70,6 +70,11 @@ foreach ($sites as $key => $_site) {
                  $status = ' activated';
              }
 
+             // check if the lang file is in utf8
+             if (isUTF8($target) == false) {
+                 $status .= ' notutf8';
+             }
+
             if ((count($GLOBALS[$locale]['Missing']) + count($GLOBALS[$locale]['Identical'])) == 0
                 && count($GLOBALS[$locale]['python_vars']) == 0)
             {

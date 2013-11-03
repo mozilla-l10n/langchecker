@@ -197,6 +197,14 @@ table.globallist {
     border-right:8px solid red;
 }
 
+
+.notutf8:after {
+    content: " (Not in UTF-8 !)";
+    color:orange;
+    font-weight: bold;
+}
+
+
   </style>
 
 </head>

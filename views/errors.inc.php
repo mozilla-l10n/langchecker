@@ -1,6 +1,6 @@
 <p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/">Back to Web Dashboard</a></p>
 
-<h1>Display python errors for all locales</h1>
+<h1>Display python and UTF-8 errors for all locales</h1>
 
 <?php
 
@@ -20,10 +20,6 @@ foreach ($mozilla as $locale) {
             $localeok = true;
 
             $repo = $sites[$key][6] . $sites[$key][2] . $locale . '/';
-
-            $htmloutput .= '  <div class="website">' . "\n";
-            $htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
-            $htmloutput .= "    <p>Repository: <a href=\"$repo\">$repo</a></p>\n";
 
             foreach ($_site[4] as $filename) {
 
@@ -54,7 +50,7 @@ foreach ($mozilla as $locale) {
 
                 // If the .lang file does not exist, just skip the locale for this file
                 $local_lang_file = $_site[1] . $_site[2] . $locale . '/' . $filename;
-                if (!file_exists($local_lang_file)) {
+                if (!is_file($local_lang_file)) {
                     continue;
                 }
 
@@ -65,6 +61,10 @@ foreach ($mozilla as $locale) {
                 if (count($GLOBALS[$locale]['python_vars']) != 0)
                 {
                     $localewitherrors = true;
+
+                    $htmloutput .= '  <div class="website">' . "\n";
+                    $htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
+                    $htmloutput .= "    <p>Repository: <a href=\"$repo\">$repo</a></p>\n";
                     $htmloutput .= '    <div class="filename" id="' . $filename . '">' . "\n";
                     $htmloutput .= "      <h3 class='filename'><a href='#$filename'>$filename</a></h3>" . "\n";
 
@@ -91,6 +91,16 @@ foreach ($mozilla as $locale) {
                         }
                     }
                 }
+
+                 // check if the lang file is not in UTF-8 or US-ASCII
+                 if (isUTF8($target) == false) {
+                    $localewitherrors = true;
+
+                    $htmloutput .= '<div class="website">' . "\n";
+                    $htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
+                    $htmloutput .= "    <p><strong>$filename</strong> is not saved in UTF8</p>";
+                    $htmloutput .= "</div>";
+                 }
                 unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
             }
 
