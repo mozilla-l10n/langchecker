@@ -475,9 +475,11 @@ function logger($str, $action='')
     }
 }
 
-/*
- * Does not work on Windows
- */
-function isUTF8($file) {
-    return in_array(exec('file --mime-encoding -b ' . $file), ['utf-8', 'us-ascii']) ? true : false;
+function isUTF8($filename)
+{
+    $info = finfo_open(FILEINFO_MIME_ENCODING);
+    $type = finfo_buffer($info, file_get_contents($filename));
+    finfo_close($info);
+
+    return ($type == 'utf-8' || $type == 'us-ascii') ? true : false;
 }
