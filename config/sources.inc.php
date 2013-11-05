@@ -27,7 +27,6 @@ $mozillaorg_lang = [
     'firefox/channel.lang'                  => true,
     'firefox/os/index.lang'                 => true,
     'firefox/partners/index.lang'           => true,
-    //~ 'firefox/update.lang'                   => true,
     'firefox/whatsnew.lang'                 => true,
     'firefox/installer-help.lang'           => true,
     'firefoxflicks.lang'                    => false,
@@ -162,14 +161,12 @@ $langfiles_subsets = [
              'de', 'el', 'hu', 'it', 'lv', 'lt', 'nb-NO', 'pl', 'pt-PT',
              'ro', 'sk', 'sl', 'es-ES', 'sv-SE'],
         'firefox/new.lang'                      => $mozilla,
-        'firefox/channel.lang'                  =>
-            ['bg', 'ca', 'cs', 'de', 'es-MX', 'fr', 'he', 'sk', 'sl'],
+        'firefox/channel.lang'                  => $mozilla,
         'firefox/os/index.lang'                 =>
             ['cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           =>
             ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
              'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'],
-        //~ 'firefox/update.lang'                   => $mozilla,
         'firefox/whatsnew.lang'                 => ['hu', 'pl'],
         'firefox/installer-help.lang'           => $mozilla,
         'firefoxflicks.lang'                    =>
@@ -195,7 +192,7 @@ $langfiles_subsets = [
         'foundationsection.lang'                =>
             ['de', 'cs', 'fr', 'es-ES', 'gl', 'hu', 'id', 'it', 'nl',
              'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
-        'lightbeam/lightbeam.lang'              => ['es-ES'],
+        'lightbeam/lightbeam.lang'              => ['cs', 'de', 'es-ES', 'fr'],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
         'marketplace/partners.lang'             => ['fr', 'es-ES', 'pt-BR'],
