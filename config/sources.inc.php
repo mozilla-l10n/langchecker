@@ -192,7 +192,7 @@ $langfiles_subsets = [
         'foundationsection.lang'                =>
             ['de', 'cs', 'fr', 'es-ES', 'gl', 'hu', 'id', 'it', 'nl',
              'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
-        'lightbeam/lightbeam.lang'              => ['cs', 'de', 'es-ES', 'fr'],
+        'lightbeam/lightbeam.lang'              => ['cs', 'de', 'es-ES', 'fr', 'sq'],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
         'marketplace/partners.lang'             => ['fr', 'es-ES', 'pt-BR'],
