@@ -250,7 +250,7 @@ $langfiles_subsets = [
              'my', 'nb-NO', 'nl', 'nn-NO', 'nso', 'oc', 'or', 'pa-IN',
              'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sah', 'si',
              'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta',
-             'ta-LK', 'te', 'th', 'tr', 'uk', 'ur', 'vi', 'wo', 'zh-CN',
+             'ta-LK', 'te', 'th', 'tr', 'uk', 'ur', 'vi', 'wo', 'xh', 'zh-CN',
              'zh-TW', 'zu'],
     ],
 
@@ -361,6 +361,7 @@ $bugzilla_locales =
     'tr'    => 'Turkish',
     'uk'    => 'Ukrainian',
     'vi'    => 'Vietnamese',
+    'xh'    => 'Xhosa',
     'wo'    => 'Wolof',
     'zh-CN' => 'Chinese (Simplified)',
     'zh-TW' => 'Chinese (Traditional)',
