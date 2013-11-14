@@ -194,7 +194,7 @@ $langfiles_subsets = [
              'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
         'lightbeam/lightbeam.lang'              =>
             ['ca', 'cs', 'de', 'el', 'es-ES', 'eu', 'fr', 'fy-NL', 'it',
-             'nl', 'pl', 'sq', 'zh-CN'],
+             'nl', 'pl', 'sq', 'tr', 'zh-CN'],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
         'marketplace/partners.lang'             => ['fr', 'es-ES', 'pt-BR'],
