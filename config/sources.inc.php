@@ -193,8 +193,8 @@ $langfiles_subsets = [
             ['de', 'cs', 'fr', 'es-ES', 'gl', 'hu', 'id', 'it', 'nl',
              'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
         'lightbeam/lightbeam.lang'              =>
-            ['ca', 'cs', 'de', 'el', 'es-ES', 'eu', 'fr', 'fy-NL', 'it',
-             'nl', 'pl', 'sq', 'tr', 'zh-CN'],
+            ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+             'eu', 'fr', 'fy-NL', 'it', 'nl', 'pl', 'sq', 'tr', 'zh-CN'],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
         'marketplace/partners.lang'             => ['fr', 'es-ES', 'pt-BR'],
