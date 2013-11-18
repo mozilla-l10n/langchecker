@@ -49,9 +49,10 @@ foreach ($site[4] as $filename) {
             $activation_status = ($GLOBALS[$locale]['activated']) ? 'yes' : 'no';
 
             if (($todo==0) && ($activation_status=='no')) {
+                $svn_path = 'http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/locales/' . $locale . '/' . $filename;
                 echo '<tr>';
-                echo '  <td>' . $locale . '</td>';
-                echo '  <td>' . $filename . '</td>';
+                echo '  <td><a href="/?locale=' . $locale . '" title="See full status of this locale">' . $locale . '</a></td>';
+                echo '  <td><a href="' . $svn_path . '" target="_blank" title="Open this file on SVN">' . $filename . '</a></td>';
                 echo '  <td>' . count($GLOBALS[$locale]['Identical']) . '</td>';
                 echo '  <td>' . count($GLOBALS[$locale]['Translated']) . '</td>';
                 echo '  <td>' . count($GLOBALS[$locale]['Missing']) . '</td>';
