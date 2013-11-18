@@ -4,18 +4,20 @@
 
 <?php
 
-echo '<table class="sortable globallist">';
-echo '<thead>';
-echo '<tr>
-        <th>Locale</th>
-        <th>Filename</th>
-        <th>Identical</th>
-        <th>Translated</th>
-        <th>Missing</th>
-        <th>Obsolete</th>
-        <th>Activated</th>
-      </tr>';
-echo '</thead>';
+echo '<table class="sortable globallist">
+  <thead>
+    <tr>
+      <th>Locale</th>
+      <th>Filename</th>
+      <th>Identical</th>
+      <th>Translated</th>
+      <th>Missing</th>
+      <th>Obsolete</th>
+      <th>Activated</th>
+    </tr>
+  </thead>
+  <tbody>
+';
 
 // We only consider mozilla.org for this view, so $sites[0]
 $site = $sites[0];
@@ -50,18 +52,22 @@ foreach ($site[4] as $filename) {
 
             if (($todo==0) && ($activation_status=='no')) {
                 $svn_path = 'http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/locales/' . $locale . '/' . $filename;
-                echo '<tr>';
-                echo '  <td><a href="/?locale=' . $locale . '" title="See full status of this locale">' . $locale . '</a></td>';
-                echo '  <td><a href="' . $svn_path . '" target="_blank" title="Open this file on SVN">' . $filename . '</a></td>';
-                echo '  <td>' . count($GLOBALS[$locale]['Identical']) . '</td>';
-                echo '  <td>' . count($GLOBALS[$locale]['Translated']) . '</td>';
-                echo '  <td>' . count($GLOBALS[$locale]['Missing']) . '</td>';
-                echo '  <td>' . count($GLOBALS[$locale]['Obsolete']) . '</td>';
-                echo '  <td>' . $activation_status . '</td>';
-                echo '</tr>';
+                echo "  <tr>\n";
+                echo '    <td><a href="/?locale=' . $locale . '" title="See full status of this locale">' . $locale . "</a></td>\n";
+                echo '    <td><a href="' . $svn_path . '" target="_blank" title="Open this file on SVN">' . $filename . "</a></td>\n";
+                echo '    <td>' . count($GLOBALS[$locale]['Identical']) . "</td>\n";
+                echo '    <td>' . count($GLOBALS[$locale]['Translated']) . "</td>\n";
+                echo '    <td>' . count($GLOBALS[$locale]['Missing']) . "</td>\n";
+                echo '    <td>' . count($GLOBALS[$locale]['Obsolete']) . "</td>\n";
+                echo '    <td>' . $activation_status . "</td>\n";
+                echo "  </tr>\n";
             }
             unset($GLOBALS[$locale]);
         }
         unset($GLOBALS['__english_moz']);
     }
 }
+
+echo '</tbody>
+</table>
+';
