@@ -4,9 +4,7 @@
   <meta charset="utf-8">
   <title>.lang files checker on mozilla sites</title>
   <script src="./media/js/sorttable.js"></script>
-
   <style type="text/css">
-
     body {
         color:black;
         background-color:white;
@@ -36,7 +34,7 @@
         background-color:lightgreen;
     }
 
-    caption.filename{
+    caption.filename {
         font-size:130%;
         background-color:lightblue;
         padding:6px;
@@ -124,43 +122,40 @@
         color:rgba(80,80,80,1)
     }
 
+    h1 {
+        margin-bottom: 40px;
+        margin-top: -50px;
+        font-size:40px;
+    }
 
-
-h1 {
-    margin-bottom: 40px;
-    margin-top: -50px;
-    font-size:40px;
-}
-
-h1 span {
-    display:inline-block;;
-    background-color: #E6E6FF;
-    border: 1px solid #C8C8C8;
-    font-size:40px;
-    padding:3px 10px;
-    border-radius:5px;
-}
-
+    h1 span {
+        display:inline-block;
+        background-color: #E6E6FF;
+        border: 1px solid #C8C8C8;
+        font-size:40px;
+        padding:3px 10px;
+        border-radius:5px;
+    }
 
     h2 {
         margin-top:5px;
     }
 
-#back {
-    background-color: rgba(0, 0, 0, 0.698);
-    border-radius: 0 0 30px 30px;
-    box-shadow: 1px 1px 6px darkgray;
-    font-size: 15px;
-    height: 50px;
-    line-height: 50px;
-    margin: 0;
-    padding: 0 20px;
-    position: absolute;
-    right: 10px;
-    text-align: center;
-    text-shadow: 1px 1px 4px black;
-    top: 0;
-}
+    #back {
+        background-color: rgba(0, 0, 0, 0.698);
+        border-radius: 0 0 30px 30px;
+        box-shadow: 1px 1px 6px darkgray;
+        font-size: 15px;
+        height: 50px;
+        line-height: 50px;
+        margin: 0;
+        padding: 0 20px;
+        position: absolute;
+        right: 10px;
+        text-align: center;
+        text-shadow: 1px 1px 4px black;
+        top: 0;
+    }
 
     #back a {
         color:white;
@@ -171,49 +166,44 @@ h1 span {
         height:100%;
     }
 
-.dim {
-    color: lightgray;
-}
+    .dim {
+        color: lightgray;
+    }
 
-table.globallist th, table.globallist td {
-    border:1px solid darkgray;
-}
+    table.globallist th, table.globallist td {
+        border:1px solid darkgray;
+    }
 
+    table.globallist th {
+        background: lightblue;
+        padding: 4px;
+    }
 
-table.globallist th {
-    background: lightblue;
-    padding: 4px;
-}
+    table.globallist {
+        background: rgb(250,250,250);
+    }
 
-table.globallist {
-    background: rgb(250,250,250);
-}
+    .activated {
+        border-right:8px solid green;
+    }
 
-.activated {
-    border-right:8px solid green;
-}
+    .notactivated {
+        border-right:8px solid red;
+    }
 
-.notactivated {
-    border-right:8px solid red;
-}
-
-
-.notutf8:after {
-    content: " (Not in UTF-8 !)";
-    color:orange;
-    font-weight: bold;
-}
-
-
+    .notutf8:after {
+        content: " (Not in UTF-8 !)";
+        color:orange;
+        font-weight: bold;
+    }
   </style>
-
 </head>
 
 <body>
 <?php
-    echo "<!-- Current view: $viewname -->\n";
+    echo "<!-- Current view: {$viewname} -->\n";
     include $view;
+    echo "\n<!-- Elapsed time (s): " . round((microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]), 4) . " -->\n";
 ?>
-
 </body>
 </html>
