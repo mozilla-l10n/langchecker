@@ -4,25 +4,17 @@
 
 <?php
 
+$htmloutput = '';
 foreach ($mozilla as $locale) {
-
-    // we define in the loop if the locale code is supported in one of the sites;
-    $localeok = false;
-    echo '  <h2>Locale: ' . $locale . "</h2>\n";
-
-    $htmloutput = '';
     $localewitherrors = false;
 
+    $locale_htmloutput = '  <h2>Locale: ' . $locale . "</h2>\n";
+
     foreach ($sites as $key => $_site) {
-
         if (in_array($locale, $_site[3])) {
-
-            $localeok = true;
-
             $repo = $sites[$key][6] . $sites[$key][2] . $locale . '/';
 
             foreach ($_site[4] as $filename) {
-
                 /*
                  *  Reassign a lang file to a reduced set of locales
                  */
@@ -62,19 +54,19 @@ foreach ($mozilla as $locale) {
                 {
                     $localewitherrors = true;
 
-                    $htmloutput .= '  <div class="website">' . "\n";
-                    $htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
-                    $htmloutput .= "    <p>Repository: <a href=\"$repo\">$repo</a></p>\n";
-                    $htmloutput .= '    <div class="filename" id="' . $filename . '">' . "\n";
-                    $htmloutput .= "      <h3 class='filename'><a href='#$filename'>$filename</a></h3>" . "\n";
+                    $locale_htmloutput .= '  <div class="website">' . "\n";
+                    $locale_htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
+                    $locale_htmloutput .= "    <p>Repository: <a href=\"$repo\">$repo</a></p>\n";
+                    $locale_htmloutput .= '    <div class="filename" id="' . $filename . '">' . "\n";
+                    $locale_htmloutput .= "      <h3 class='filename'><a href='#$filename'>$filename</a></h3>" . "\n";
 
                     foreach ($GLOBALS[$locale] as $k => $v) {
                         if ($k == 'python_vars' && count($GLOBALS[$locale][$k]) > 0) {
-                            $htmloutput .= '      <h3>Errors in variables in the sentence:</h3>' . "\n";
-                            $htmloutput .= '        <ul>' . "\n";
+                            $locale_htmloutput .= '      <h3>Errors in variables in the sentence:</h3>' . "\n";
+                            $locale_htmloutput .= '        <ul>' . "\n";
                             foreach ($v as $k2 => $v2) {
-                                $htmloutput .= "          <p></p>\n";
-                                $htmloutput .= "          <table class=\"python\">
+                                $locale_htmloutput .= "          <p></p>\n";
+                                $locale_htmloutput .= "          <table class=\"python\">
             <tr>
               <th><strong style=\"color:red\"> $v2</strong> in the English string is missing in:</th>
             </tr>
@@ -86,8 +78,8 @@ foreach ($mozilla as $locale) {
             </tr>
           </table>\n";
                             }
-                            $htmloutput .= "        </ul>\n";
-                            $htmloutput .= "    </div>\n";
+                            $locale_htmloutput .= "        </ul>\n";
+                            $locale_htmloutput .= "    </div>\n";
                         }
                     }
                 }
@@ -96,27 +88,25 @@ foreach ($mozilla as $locale) {
                  if (isUTF8($target) == false) {
                     $localewitherrors = true;
 
-                    $htmloutput .= '<div class="website">' . "\n";
-                    $htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
-                    $htmloutput .= "    <p><strong>$filename</strong> is not saved in UTF8</p>";
-                    $htmloutput .= "</div>";
+                    $locale_htmloutput .= '<div class="website">' . "\n";
+                    $locale_htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
+                    $locale_htmloutput .= "    <p><strong>$filename</strong> is not saved in UTF8</p>";
+                    $locale_htmloutput .= "</div>";
                  }
                 unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
             }
-
-            $htmloutput .= "  </div>\n\n";
+            $locale_htmloutput .= "  </div>\n\n";
         }
     }
 
     if ($localewitherrors) {
-        echo $htmloutput;
-    } else {
-        echo "  <p>Everything looks good</p>\n\n";
+        $htmloutput .= $locale_htmloutput;
     }
+}
 
-
-    // The locale is not correct
-    if (!$localeok) {
-        echo " <p>This locale code is not supported on our sites</p>\n";
-    }
+if ($htmloutput == '') {
+    // There are no errors
+    echo "   <p>Everything looks good, no errors found.</p>";
+} else {
+    echo $htmloutput;
 }
