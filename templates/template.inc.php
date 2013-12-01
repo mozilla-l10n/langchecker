@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>.lang files checker on mozilla sites</title>
+  <link rel="shortcut icon" href="./media/img/favicon.ico">
   <script src="./media/js/sorttable.js"></script>
   <style type="text/css">
     body {
