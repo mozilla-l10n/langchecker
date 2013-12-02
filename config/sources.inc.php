@@ -16,7 +16,7 @@ require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
 $locamotion_locales = ['af', 'ach', 'az', 'cy', 'en-ZA', 'ff', 'gd', 'hi-IN', 'kk',
-'km', 'lg', 'mn', 'ms', 'my', 'oc', 'sah', 'son', 'tr', 'ur', 'vi', 'xh'];
+'km', 'lg', 'ms', 'my', 'oc', 'sah', 'son', 'tr', 'ur', 'vi', 'xh'];
 
 $mozillaorg_lang = [
     'download.lang'                           => true,
@@ -165,7 +165,7 @@ $langfiles_subsets = [
         'firefox/new.lang'                      => $mozilla,
         'firefox/channel.lang'                  => $mozilla,
         'firefox/os/index.lang'                 =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           =>
             ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
              'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'],
@@ -193,14 +193,14 @@ $langfiles_subsets = [
              'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
         'foundation/annualreport/2012/index.lang'     =>
             ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
-             'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
-             'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
-             'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
+             'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it',
+             'ja', 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl',
+             'pt-BR', 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
         'foundation/annualreport/2012/faq.lang'     =>
             ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
-             'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
-             'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
-             'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
+             'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it',
+             'ja', 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl',
+             'pt-BR', 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
         'foundationsection.lang'                =>
             ['de', 'cs', 'fr', 'es-ES', 'gl', 'hu', 'id', 'it', 'nl',
              'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
@@ -232,7 +232,7 @@ $langfiles_subsets = [
              'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
              'sr', 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW'],
         'mozorg/contribute.lang'                =>
-            ['bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+            ['ar', 'bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
              'it', 'lg', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
              'sl', 'sq', 'sr', 'sw', 'ta', 'tr', 'vi', 'zh-CN', 'zh-TW'],
@@ -259,7 +259,7 @@ $langfiles_subsets = [
              'et', 'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
              'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hu', 'hy-AM', 'id',
              'is', 'it', 'ja', 'ka', 'kk', 'km', 'kn', 'ko', 'ku', 'lg',
-             'lij', 'lt', 'lv', 'mai', 'mk', 'ml', 'mn', 'mr', 'ms',
+             'lij', 'lt', 'lv', 'mai', 'mk', 'ml', 'mr', 'ms',
              'my', 'nb-NO', 'nl', 'nn-NO', 'nso', 'oc', 'or', 'pa-IN',
              'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sah', 'si',
              'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta',
@@ -343,7 +343,6 @@ $bugzilla_locales =
     'mai'   => 'Maithili',
     'mk'    => 'Macedonian',
     'ml'    => 'Malayalam',
-    'mn'    => 'Mongolian',
     'mr'    => 'Marathi',
     'ms'    => 'Malay',
     'my'    => 'Burmese',
