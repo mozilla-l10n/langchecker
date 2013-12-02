@@ -182,12 +182,12 @@ $langfiles_subsets = [
             ['fr', 'es-AR', 'es-ES', 'fy-NL', 'nl', 'pl', 'pt-BR'],
         'firefoxtesting.lang'                   => $mozilla,
         'foundation/annualreport/2011.lang'     =>
-            ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
+            ['ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
              'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
              'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
         'foundation/annualreport/2011faq.lang'  =>
-            ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
+            ['ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
              'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
              'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
