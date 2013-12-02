@@ -113,7 +113,7 @@ foreach ($sites as $key => $_site) {
                         $todoFiles .=  '<h3>Missing strings:</h3>';
                     }
 
-                    if ($k != 'python_vars' && $k != $filename && count($GLOBALS[$locale][$k]) > 0) {
+                    if ($k != 'python_vars' && $k != $filename && $k != 'activated' && count($GLOBALS[$locale][$k]) > 0) {
                         $todoFiles .= '<ul>';
                         foreach ($v as $k2 => $v2) {
                             $todoFiles .= '<li>' .trim(str_replace('{l10n-extra}', '', htmlspecialchars($GLOBALS[$locale][$k][$k2]))) . '</li>';
