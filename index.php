@@ -64,8 +64,12 @@ switch ($case) {
         $template = $views . 'export.inc.php';
         break;
     case 7:
-        $template = $templates . 'template.inc.php';
-        $view     = $views . 'countstrings.inc.php';
+        if (!isset($_GET['json'])) {
+            $template = $templates . 'template.inc.php';
+            $view     = $views . 'countstrings.inc.php';
+        } else {
+            $template= $views . 'countstrings.inc.php';
+        }
         break;
     case 8:
         $template = $templates . 'template.inc.php';

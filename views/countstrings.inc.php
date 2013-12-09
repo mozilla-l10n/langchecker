@@ -39,6 +39,12 @@ foreach ($mozilla as $lang) {
 arsort($todo);
 $locales_done = 0;
 
+if (isset($_GET['json'])) {
+    print jsonOutput($todo);
+    die;
+}
+
+
 echo '<table>';
 echo '<tr><th>locale</th><th>Untranslated</th></tr>';
 
