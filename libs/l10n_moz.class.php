@@ -4,34 +4,35 @@ class l10n_moz
 {
     public function __construct()
     {
-        $GLOBALS['__l10n_moz'] = array();
+        $GLOBALS['__l10n_moz']       = array();
         $GLOBALS['__l10n_moz_files'] = array();
-        $GLOBALS['__l10n_comments'] = array();
-        $GLOBALS['__english_moz'] = array();
+        $GLOBALS['__l10n_comments']  = array();
+        $GLOBALS['__english_moz']    = array();
     }
 
 
-    /**
-     *  method mostly used in contexts where we can't male a call to ___()
-     *  such ad heredoc blocks where we can only include variables called from
-     *  the class
+    /*
+     *  Method mostly used in contexts where we can't make a call to ___()
+     *  such as heredoc blocks where we can only include variables called from
+     *  the class.
      */
     public function get($key)
     {
         if (array_key_exists($key, $GLOBALS['__l10n_moz']) && !empty($GLOBALS['__l10n_moz'][$key])) {
             return $GLOBALS['__l10n_moz'][$key];
-        } else {
-            return $key;
         }
+
+        return $key;
     }
 
     /*
-     * loads the file and returns a cleaned up array of the lines
+     * Loads the file and returns a cleaned up array of the lines
      */
     public static function getFile($file)
     {
         if (!is_file($file)) {
             error_log($file . ' does not exist!');
+
             return false;
         }
 
@@ -49,7 +50,7 @@ class l10n_moz
      */
     public static function cleanStrings($f)
     {
-        for ($i = 0; $i < count($f); $i++) {
+        for ($i = 0, $j = count($f); $i < $j; $i++) {
             if (self::startsWith($f[$i], ';') && !empty($f[$i+1])) {
                 $f[$i] = trim(str_replace('{l10n-extra}', '', $f[$i]));
                 $GLOBALS['__l10n_moz'][trim(substr($f[$i], 1))] = trim(str_replace('{ok}', '&shy;', $f[$i+1]));
@@ -60,8 +61,8 @@ class l10n_moz
         return $f;
     }
 
-    /**
-     * Reads in a file of strings into a global array.  File format is:
+    /*
+       Reads in a file of strings into a global array.  File format is:
         ;String in english
         translated string
 
@@ -78,10 +79,9 @@ class l10n_moz
         $GLOBALS[$array_name]['activated'] = $active = false;
 
         $f = self::getFile($file);
-        //~ $f = self::cleanStrings($f);
 
         for ($i = 0, $lines = count($f); $i < $lines; $i++) {
-            if ($i == 0  && $f[0] == '## active ##') {
+            if ($i == 0 && $f[0] == '## active ##') {
                 $GLOBALS[$array_name]['activated'] = $active = true;
                 continue;
             }
@@ -103,12 +103,19 @@ class l10n_moz
                 continue;
             }
 
+
+            // Other tags (promos)
+            if (self::startsWith($f[$i], '##')) {
+                $GLOBALS[$array_name]['tags'][] = trim(str_replace('##', '', $f[$i]));
+                continue;
+            }
+
             if (self::startsWith($f[$i], ';') && !empty($f[$i+1])) {
 
                 $english = trim(substr($f[$i], 1));
                 $translation = trim($f[$i+1]);
 
-                /* locamotion support conditional */
+                // locamotion support conditional
                 if (!isset($GLOBALS[$array_name][$english])
                     || $GLOBALS[$array_name][$english] == $english) {
                     $GLOBALS[$array_name][$english] = $translation;

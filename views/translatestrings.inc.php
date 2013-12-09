@@ -69,7 +69,7 @@ foreach ($site[4] as $_file) {
 
     foreach ($GLOBALS['__english_moz'] as $k => $v) {
 
-        if ($k == 'filedescription' || $k == 'activated') {
+        if (in_array($k, ['filedescription', 'activated','tags'])) {
             continue;
         }
 

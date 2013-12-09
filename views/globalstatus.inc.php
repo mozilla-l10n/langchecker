@@ -77,7 +77,7 @@ foreach ($sites[$website][4] as $_file) {
               . $_lang
               . '</a></td>';
         foreach ($GLOBALS[$_lang] as $key => $val) {
-            if ($key == 'python_vars') {
+            if ($key == 'python_vars' || $key == 'tags' ) {
                 continue;
             }
 
