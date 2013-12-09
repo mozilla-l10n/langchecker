@@ -89,6 +89,7 @@ function analyseLangFile($locale, $website, $filename)
     $GLOBALS[$locale]['Missing']     = array();
     $GLOBALS[$locale]['Obsolete']    = array();
     $GLOBALS[$locale]['python_vars'] = array();
+    $GLOBALS[$locale]['tags']        = array();
     $GLOBALS[$locale]['activated']   = false;
 
 
@@ -101,6 +102,11 @@ function analyseLangFile($locale, $website, $filename)
 
             if ($key == 'activated') {
                 $GLOBALS[$locale]['activated'] = $val;
+                continue;
+            }
+
+            if ($key == 'tags') {
+                $GLOBALS[$locale]['tags'] = $val;
                 continue;
             }
 
@@ -145,7 +151,7 @@ function analyseLangFile($locale, $website, $filename)
 
         foreach ($GLOBALS['__english_moz'] as $key => $val) {
 
-            if ($key == 'filedescription' || $key == 'activated') {
+            if (in_array($key, ['filedescription', 'activated', 'tags'])) {
                 continue;
             }
 
@@ -276,8 +282,16 @@ function buildFile($eol, $exceptions = array())
         echo '## active ##' . $eol;
     }
 
+    if (isset($GLOBALS['__l10n_moz']['tags'])
+        && count($GLOBALS['__l10n_moz']['tags']) > 0
+        ) {
+        foreach ($GLOBALS['__l10n_moz']['tags'] as $tag) {
+            echo "## $tag ##" . $eol;
+        }
+    }
+
     foreach ($GLOBALS['__english_moz'] as $key => $val) {
-        if ($key == 'activated') {
+        if ($key == 'activated' || $key == 'tags') {
             continue;
         }
 
