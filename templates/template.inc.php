@@ -35,6 +35,11 @@
         background-color:lightgreen;
     }
 
+    td.tags_column {
+        text-align: left;
+        font-size: small;
+    }
+
     caption.filename {
         font-size:130%;
         background-color:lightblue;
