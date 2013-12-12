@@ -18,18 +18,22 @@ foreach ($sites[$website][4] as $_file) {
 
     getEnglishSource($reflang, $website, $_file);
 
-    echo '<table class="sortable globallist">';
-    echo '<caption class="filename">' . $_file . '</caption>';
-    echo '<thead>';
-    echo '<tr>
-            <th>Locale</th>
-            <th>Identical</th>
-            <th>Translated</th>
-            <th>Missing</th>
-            <th>Obsolete</th>
-            <th>Activated</th>
-          </tr>';
-    echo '</thead>';
+    echo '
+<table class="sortable globallist">
+  <caption class="filename">' . $_file . '</caption>
+  <thead>
+    <tr>
+      <th>Locale</th>
+      <th>Identical</th>
+      <th>Translated</th>
+      <th>Missing</th>
+      <th>Obsolete</th>
+      <th>Tags</th>
+      <th>Activated</th>
+    </tr>
+  </thead>
+  <tbody>
+';
 
     // Reassign a lang file to a reduced set of locales
     @$targetted_locales = (is_array($langfiles_subsets[$sites[$website][0]][$_file]))
@@ -65,28 +69,49 @@ foreach ($sites[$website][4] as $_file) {
             $done[] = $_lang;
         }
 
-        echo '<tr>';
-        echo '<td style="background-color:'
+        echo "    <tr>\n";
+        echo '      <td style="background-color:'
               . $color
               . ';">
-              <a href="./?locale='
+        <a href="./?locale='
               . $_lang
               . '#'
               . $_file
               . '">'
               . $_lang
-              . '</a></td>';
+              . "</a>
+      </td>\n";
         foreach ($GLOBALS[$_lang] as $key => $val) {
-            if ($key == 'python_vars' || $key == 'tags' ) {
+            if ($key == 'python_vars') {
                 continue;
             }
+
+            if ($key == 'tags') {
+                $json[$_file][$_lang][$key] = $val;
+                if (!empty($val)) {
+                    sort($val);
+                    echo "      <td class='tags_column'>";
+                    foreach ($val as $single_tag) {
+                      if (strpos($single_tag, "NOTE") === false) {
+                        echo $single_tag . " ";
+                        if (end($val) != $single_tag) {
+                          echo "<br/>";  
+                        } 
+                      }
+                    }
+                    echo "</td>\n";
+                } else {
+                    echo "      <td></td>\n";
+                }
+                continue;
+            } 
 
             if ($key == 'activated') {
                 $json[$_file][$_lang][$key] = $val;
                 if ($val == true) {
-                    echo '<td class="activated"></td>';
+                    echo "      <td class='activated'></td>\n";
                 } else {
-                    echo '<td></td>';
+                    echo "      <td></td>\n";
                 }
                 continue;
             }
@@ -94,9 +119,11 @@ foreach ($sites[$website][4] as $_file) {
             $counter = ($counter > 0) ? $counter : '';
             $json[$_file][$_lang][$key] = (int) $counter;
 
-            echo '<td>' . $counter . '</td>';
+            echo '      <td>' . $counter . "</td>\n";
         }
-
+        if (end($targetted_locales) !== $_lang) {
+          echo "    </tr>\n";  
+        } 
         unset($GLOBALS[$_lang]);
     }
 
@@ -107,16 +134,22 @@ foreach ($sites[$website][4] as $_file) {
         $done = getUserBaseCoverage($done, false) . '%';
     }
 
-    echo '<tfoot>'
-        . '<tr><td colspan= "6">'
+    echo '    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan= "7">'
         . $count_done
         . ' perfect locales ('
         . round($count_done/count($targetted_locales)*100)
         . '%)<br>'
         . $done
         . ' of our l10n user base'
-        . '</td></tr>'
-        . '</table>';
+        . '</td>
+    </tr>
+  </tfoot>
+</table>
+';
 
     unset($GLOBALS['__english_moz']);
 }
