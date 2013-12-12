@@ -105,6 +105,9 @@ foreach ($sites[$website][4] as $_file) {
                     }
                 );
 
+                // remove promo_suffix
+                $val = str_replace('promo_', '', $val);
+
                 sort($val);
 
                 if (!empty($val)) {
