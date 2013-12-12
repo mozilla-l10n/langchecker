@@ -2,5 +2,9 @@
     "require": {
         "atoum/atoum" : "dev-master",
         "sunra/php-simple-html-dom-parser": "dev-master"
+    },
+
+    "require-dev": {
+        "raveren/kint" : "dev-1.0.0-wip"
     }
 }

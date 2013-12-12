@@ -11,6 +11,9 @@ $templates = $aproot . 'templates/';
 require_once $libs . 'l10n_moz.class.php';
 require_once $libs . 'functions.inc.php';
 
+/* autoloading of composer dependencies */
+require_once $aproot . 'vendor/autoload.php';
+
 /* app-wide variables */
 require $conf . 'locales.inc.php';
 require $conf . 'sources.inc.php';
