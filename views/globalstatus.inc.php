@@ -82,48 +82,60 @@ foreach ($sites[$website][4] as $_file) {
               . "</a>
       </td>\n";
         foreach ($GLOBALS[$_lang] as $key => $val) {
+
+            // standardize the creation of a table cell
+            $td = function ($content, $class = false) {
+                return '      <td'
+                        . ($class ? " class='{$class}'>" : '>')
+                        . "{$content}</td>\n";
+            };
+
             if ($key == 'python_vars') {
                 continue;
             }
 
             if ($key == 'tags') {
                 $json[$_file][$_lang][$key] = $val;
-                if (!empty($val)) {
-                    sort($val);
-                    echo "      <td class='tags_column'>";
-                    foreach ($val as $single_tag) {
-                      if (strpos($single_tag, "NOTE") === false) {
-                        echo $single_tag . " ";
-                        if (end($val) != $single_tag) {
-                          echo "<br/>";  
-                        } 
-                      }
+
+                // tag that starts with NOTE: should be filtered out
+                $val = array_filter(
+                    $val,
+                    function($str) {
+                        return !l10n_moz::startsWith($str, 'NOTE:');
                     }
-                    echo "</td>\n";
+                );
+
+                sort($val);
+
+                if (!empty($val)) {
+                    echo $td(implode('<br>', $val), 'tags_column');
                 } else {
-                    echo "      <td></td>\n";
+                    echo $td('');
                 }
+
                 continue;
-            } 
+            }
 
             if ($key == 'activated') {
                 $json[$_file][$_lang][$key] = $val;
-                if ($val == true) {
-                    echo "      <td class='activated'></td>\n";
+
+                if ($val) {
+                    echo $td('', 'activated');
                 } else {
-                    echo "      <td></td>\n";
+                    echo $td('');
                 }
+
                 continue;
             }
+
             $counter = count($GLOBALS[$_lang][$key]);
             $counter = ($counter > 0) ? $counter : '';
             $json[$_file][$_lang][$key] = (int) $counter;
 
-            echo '      <td>' . $counter . "</td>\n";
+            echo $td($counter);
         }
-        if (end($targetted_locales) !== $_lang) {
-          echo "    </tr>\n";  
-        } 
+
+        echo "    </tr>\n";
         unset($GLOBALS[$_lang]);
     }
 
@@ -134,7 +146,7 @@ foreach ($sites[$website][4] as $_file) {
         $done = getUserBaseCoverage($done, false) . '%';
     }
 
-    echo '    </tr>
+    echo '
   </tbody>
   <tfoot>
     <tr>
