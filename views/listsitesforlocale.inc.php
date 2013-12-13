@@ -13,10 +13,10 @@ foreach ($sites as $key => $_site) {
 
         $localeok = true;
 
-        echo '<div class="website">';
-        echo '<h2>' . $_site[0] . '</h2>';
+        echo "<div class='website'>\n";
+        echo "  <h2>{$_site[0]}</h2>\n";
         $repo = $sites[$key][6] . $sites[$key][2] . $locale . '/';
-        echo "<p>Repository : <a href=\"$repo\">$repo</a></p>";
+        echo "  <p>Repository: <a href='{$repo}'>$repo</a></p>\n";
 
         $titleDoneFiles = false;
         $titleTodoFiles = false;
@@ -79,26 +79,46 @@ foreach ($sites as $key => $_site) {
                 && count($GLOBALS[$locale]['python_vars']) == 0)
             {
                 $titleDone = true;
-                $doneFiles .= "<a href='#$filename' class='filedone$status'>$filename</a>";
+                $doneFiles .= "    <a href='#{$filename}' class='filedone$status'>{$filename}</a>\n";
             } else {
                 $titleTodo = true;
-                $todoFiles .= '<div class="filename" id="' . $filename . '">';
-                $todoFiles .= "<h3 class='filename'><a href='#$filename'>$filename</a></h3>
-                      <table class=\"side\">
-                      <tr><th>Identical</th><th>Translated</th><th>Missing</th></tr>
-                      <tr>";
+                $todoFiles .= "  <div class='filename' id='{$filename}'>\n" .
+                            "    <h3 class='filename'><a href='#{$filename}'>{$filename}</a></h3>\n" .
+                            "    <table class='side'>\n" .
+                            "      <thead>\n" .                            
+                            "        <tr>\n" .
+                            "          <th>Identical</th>\n" .
+                            "          <th>Translated</th>\n" .
+                            "          <th>Missing</th>\n" .
+                            "        </tr>\n" .
+                            "      </thead>\n" .                            
+                            "      <tbody>\n" .
+                            "        <tr>\n";
 
                 foreach ($GLOBALS[$locale] as $k => $v) {
                     if (in_array($k, ['Obsolete', 'python_vars', 'activated', 'tags'])) {
                         continue;
                     }
-                    $todoFiles .= '<td>' . count($GLOBALS[$locale][$k]) . '</td>';
+                    $todoFiles .= '          <td>' . count($GLOBALS[$locale][$k]) . "</td>\n";
                 }
 
-                $todoFiles .= '<tr><td colspan="3"><a href="' . $url_source . '">Original English source file</a></td></tr>';
-                $todoFiles .= '<tr><td colspan="3"><a href="' . $url_target . '">Your translated file</a></td></tr>';
-                $todoFiles .= '<tr><td colspan="3"><a href="' . $bugzilla . '">Attach your updated file to Bugzilla</a></td></tr>';
-                $todoFiles .= '</table>';
+                $todoFiles .= "        <tr>\n" .
+                              "          <td colspan='3'>\n" .
+                              "            <a href='{$url_source}'>Original English source file</a>\n" .
+                              "          </td>\n" .
+                              "        </tr>\n" . 
+                              "        <tr>\n" .
+                              "          <td colspan='3'>\n" .
+                              "            <a href='{$url_target}'>Your translated file</a>\n" .
+                              "          </td>\n" .
+                              "        </tr>\n" . 
+                              "        <tr>\n" .
+                              "          <td colspan='3'>\n" .
+                              "            <a href='{$bugzilla}'>Attach your updated file to Bugzilla</a>\n" .
+                              "          </td>\n" .
+                              "        </tr>\n" . 
+                              "      </tbody>\n" .
+                              "    </table>\n";
 
                 foreach ($GLOBALS[$locale] as $k => $v) {
                     if ($k == 'Translated' || $k == 'Obsolete') {
@@ -106,11 +126,11 @@ foreach ($sites as $key => $_site) {
                     }
 
                     if ($k == 'Identical' && count($GLOBALS[$locale][$k]) > 0) {
-                        $todoFiles .= '<h3>Strings identical to English:</h3>';
+                        $todoFiles .= "\n    <h3>Strings identical to English:</h3>\n";
                     }
 
                     if ($k == 'Missing' && count($GLOBALS[$locale][$k]) > 0) {
-                        $todoFiles .=  '<h3>Missing strings:</h3>';
+                        $todoFiles .=  "\n    <h3>Missing strings:</h3>\n";
                     }
 
                     if ($k != 'python_vars'
@@ -118,68 +138,67 @@ foreach ($sites as $key => $_site) {
                         && $k != 'activated'
                         && $k != 'tags'
                         && count($GLOBALS[$locale][$k]) > 0) {
-                        $todoFiles .= '<ul>';
+                        $todoFiles .= "    <ul>\n";
                         foreach ($v as $k2 => $v2) {
-                            $todoFiles .= '<li>' . trim(str_replace('{l10n-extra}', '', htmlspecialchars($GLOBALS[$locale][$k][$k2]))) . '</li>';
+                            $todoFiles .= '      <li>' . trim(str_replace('{l10n-extra}', '', htmlspecialchars($GLOBALS[$locale][$k][$k2]))) . "</li>\n";
                         }
-                        $todoFiles .= '</ul>';
+                        $todoFiles .= "    </ul>\n";
                     }
 
                     if ($k == 'python_vars' && count($GLOBALS[$locale][$k]) > 0) {
-                        $todoFiles .= '<h3>Errors in variables in the sentence:</h3>';
-                        $todoFiles .= '<ul>';
+                        $todoFiles .= "\n    <h3>Errors in variables in the sentence:</h3>\n";
                         foreach ($v as $k2 => $v2) {
-                            $todoFiles .= "<p></p>";
-                            $todoFiles .= "<table class=\"python\">
-                                    <tr>
-                                        <th><strong style=\"color:red\"> $v2</strong> in the English string is missing in:</th>
-                                    </tr>
-                                    <tr>
-                                        <td>" . showPythonVar(htmlspecialchars($k2)) . "</td>
-                                    </tr>
-                                    <tr>
-                                        <td>" . showPythonVar(htmlspecialchars($GLOBALS[$filename][$k2])) . "</td>
-                                    </tr>
-                            </table>";
+                            $todoFiles .= "    <table class='python'>\n" .
+                                          "      <thead>\n" .
+                                          "        <tr>\n" .
+                                          "          <th><strong style='color:red'>{$v2}</strong> in the English string is missing in:</th>\n" .
+                                          "        </tr>\n" .
+                                          "      </thead>\n" .
+                                          "      <tbody>\n" .
+                                          "        <tr>\n" .
+                                          "          <td>" . showPythonVar(htmlspecialchars($k2)) . "</td>\n" .
+                                          "        </tr>\n" .
+                                          "        <tr>\n" .
+                                          "          <td>" . showPythonVar(htmlspecialchars($GLOBALS[$filename][$k2])) . "</td>\n" .
+                                          "        </tr>\n" .
+                                          "      </tbody>\n" .
+                                          "    </table>\n";
                         }
-                        $todoFiles .= '</ul>';
                     }
-
-
                 }
+                $todoFiles .= "  </div>\n";
             }
 
             if (count($GLOBALS[$locale]['Identical']) > 0) {
-                $todoFiles .= '<div class="tip">
-                <strong>Tip:</strong> if it is normal that a string is identical
-                to the English one for your language, just add <code>{ok}</code>
-                to your string and it will no longer be listed as "identical".
-                Example:
-                <blockquote>
-                ;Plugins<br/>
-                Plugins {ok}
-                </blockquote>
-                </div>';
+                $todoFiles .= "    <div class='tip'>\n" .
+                              "      <p><strong>Tip:</strong> if it is normal that a string is identical\n" .
+                              "       to the English one for your language, just add <code>{ok}</code>\n" .
+                              "       to your string and it will no longer be listed as \"identical\"\n" .
+                              "       Example: </p><blockquote>;Plugins<br/>Plugins {ok}</blockquote>\n" .
+                              "    </div>\n";
             }
 
             unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
         }
 
         if ($titleDone) {
-            echo '<h3>DONE</h3>';
+            echo "\n  <h3>DONE</h3>\n";
+            echo "  <p>\n";            
             echo $doneFiles;
+            echo "  </p>\n";            
+            
         }
 
         if ($titleTodo) {
-            echo '<h3>TODO</h3>';
+            echo "\n  <h3>TODO</h3>\n";
             echo $todoFiles;
         }
 
-        echo '</div>';
+        echo "</div>\n\n";
     }
 }
 
 // The locale is not correct
 if (!$localeok) {
-    echo "this locale code is not supported on our sites";
+    echo "<p>This locale code is not supported on our sites.</p>\n";
 }
