@@ -253,7 +253,7 @@ $langfiles_subsets = [
     'about:healthreport' =>
     [
         'fhr.lang' =>
-            ['af', 'an', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD',
+            ['af', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg', 'bn-BD',
              'bn-IN', 'br', 'bs', 'ca', 'cs', 'csb', 'cy', 'da', 'de',
              'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
              'et', 'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
@@ -291,6 +291,7 @@ $bugzilla_locales =
     'ar'    => 'Arabic',
     'as'    => 'Assamese',
     'ast'   => 'Asturian',
+    'az'    => 'Azerbaijani',
     'be'    => 'Belarusian',
     'bg'    => 'Bulgarian',
     'bn-BD' => 'Bengali (Bangladesh)',
