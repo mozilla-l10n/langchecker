@@ -81,28 +81,17 @@ class l10n_moz
         $f = self::getFile($file);
 
         for ($i = 0, $lines = count($f); $i < $lines; $i++) {
+            // First line may contain an activation status
             if ($i == 0 && $f[0] == '## active ##') {
                 $GLOBALS[$array_name]['activated'] = $active = true;
                 continue;
             }
 
-            // no active tag
-            if (($i == 0 or $i == 1)
-                && self::startsWith($f[$i], '## NOTE:')
-            ) {
+            // Get file description
+            if (self::startsWith($f[$i], '## NOTE:')) {
                 $GLOBALS[$array_name]['filedescription'][] = trim(substr($f[$i], 8));
                 continue;
             }
-
-            // active tag
-            if (($i == 1 or $i == 2)
-                && $active === true
-                && self::startsWith($f[$i], '## NOTE:')
-            ) {
-                $GLOBALS[$array_name]['filedescription'][] = trim(substr($f[$i], 8));
-                continue;
-            }
-
 
             // Other tags (promos)
             if (self::startsWith($f[$i], '##')) {

@@ -97,14 +97,6 @@ foreach ($sites[$website][4] as $_file) {
             if ($key == 'tags') {
                 $json[$_file][$_lang][$key] = $val;
 
-                // tag that starts with NOTE: should be filtered out
-                $val = array_filter(
-                    $val,
-                    function($str) {
-                        return !l10n_moz::startsWith($str, 'NOTE:');
-                    }
-                );
-
                 // remove promo_suffix
                 $val = str_replace('promo_', '', $val);
 
