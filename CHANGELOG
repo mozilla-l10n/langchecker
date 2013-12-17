@@ -1,3 +1,13 @@
+Version 1.5 (2013-12-17)
+* Automatic checks for file encoding to make sure they are in UTF8
+* Improved Activation view template
+* Updated ADU data
+* Improved errors view to be less verbose and display utf8 errors
+* app now has a favicon
+* Number of untranslated strings per locale can be loaded via json http://l10n.mozilla-community.org/~pascalc/langchecker/?action=count&json
+* Added support for mozilla.org tagging system of lang files in parser + added tags used on globalstatus view
+* Added composer autoloader and Kint library for debugging
+
 Version 1.4 (2013-11-02)
 * lang_update can now import strings localized on locamotion by importing po files from https://github.com/translate/mozilla-lang and uses now the poparser library
 * Japanese is now excluded from l10n coverage statistics
