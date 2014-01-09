@@ -6,6 +6,7 @@ $public_repo3 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/';
 $public_repo4 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
 $public_repo5 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxhealthreport/';
 $public_repo6 = 'https://svn.mozilla.org/projects/granary/slogans/';
+$public_repo7 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/pontoon/snippets/';
 
 // this is to avoid a warning in shell mode
 if (!isset($_SERVER['SERVER_NAME'])) {
@@ -86,8 +87,16 @@ $slogans_lang = [
     'marketplacebadge.lang' => true
 ];
 
+$snippets_lang = [
+    'snippets1.lang' => true,
+    'snippets2.lang' => true,
+];
+
 $slogans_locales = ['bg', 'de', 'cs', 'el', 'es-ES', 'mk', 'hr', 'hu', 'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sq'];
 $marketplacebadge_locales = ['ca', 'cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr', 'sr-Latn', 'tr'];
+
+// $snippets_locales = ['cs', 'de', 'el', 'hu', 'id', 'it', 'ja', 'ko', 'pl', 'ru', 'sr', 'vi', 'zh-CN', 'zh-TW'];
+$snippets_locales = ['it'];
 
 $sites =
 [
@@ -149,6 +158,16 @@ $sites =
         array_keys($slogans_lang),
         'en-US', // source locale
         $public_repo6,
+    ],
+
+    6 => [
+        'snippets',
+        $repo7,
+        '',
+        $snippets_locales,
+        array_keys($snippets_lang),
+        'en-US', // source locale
+        $public_repo7,
     ],
 ];
 
@@ -282,6 +301,14 @@ $langfiles_subsets = [
         'firefoxos.lang' => $slogans_locales,
         'marketplacebadge.lang' => $marketplacebadge_locales
     ],
+
+    'snippets' =>
+    [
+        'snippets1.lang' => ['it'],
+        'snippets2.lang' => ['it'],
+    ],
+
+
 ];
 
 $bugzilla_locales =
