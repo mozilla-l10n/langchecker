@@ -95,8 +95,8 @@ $snippets_lang = [
 $slogans_locales = ['bg', 'de', 'cs', 'el', 'es-ES', 'mk', 'hr', 'hu', 'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sq'];
 $marketplacebadge_locales = ['ca', 'cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr', 'sr-Latn', 'tr'];
 
-// $snippets_locales = ['cs', 'de', 'el', 'hu', 'id', 'it', 'ja', 'ko', 'pl', 'ru', 'sr', 'vi', 'zh-CN', 'zh-TW'];
-$snippets_locales = ['it'];
+$snippets_locales = ['cs', 'de', 'el', 'hu', 'id', 'it', 'ja', 'ko', 'pl', 'ru', 'sl', 'sr', 'vi', 'zh-CN', 'zh-TW'];
+// $snippets_locales = ['it'];
 
 $sites =
 [
@@ -304,7 +304,7 @@ $langfiles_subsets = [
 
     'snippets' =>
     [
-        'snippets1.lang' => ['it'],
+        'snippets1.lang' => ['sl'],
         'snippets2.lang' => ['it'],
     ],
 
