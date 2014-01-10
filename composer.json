@@ -6,5 +6,9 @@
 
     "require-dev": {
         "raveren/kint" : "dev-1.0.0-wip"
+    },
+
+    "autoload": {
+        "psr-0": {"Transvision": "classes/"}
     }
 }

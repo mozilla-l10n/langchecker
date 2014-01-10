@@ -48,5 +48,11 @@ foreach ($sites as $key => $_site) {
     }
 }
 
-header("Content-type:text/plain");
-echo serialize($export);
+if ($serial) {
+    header("Content-type:text/plain");
+    die(serialize($export));
+}
+
+if ($json) {
+    die(Transvision\Json::output($export, false, true));
+}

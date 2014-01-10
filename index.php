@@ -13,13 +13,16 @@ if ($locale == '' && $action == '') {
 } elseif ($locale == '' && $action == 'activation') {
     /* case 3: no locale is requested, we display a list of pages completely translated but not activated */
     $case = 3;
-} elseif ($locale != '' && $website == '' && $serial == false) {
+} elseif ($locale != '' && $website == '' && $serial == false && $json == false) {
     /* case 4: we have a locale but no website is defined, we display the status page for the locale */
     $case = 4;
-} elseif ($website != '' && array_key_exists($website, $sites) && $serial == false && $action == '') {
+} elseif ($website != '' && array_key_exists($website, $sites) && $serial == false && $json == false && $action == '') {
     /* case 5: we have a website defined and just want to see the global status for lang files on this website */
     $case = 5;
 } elseif ($locale != '' && $website == '' && $serial == true) {
+    /* case 6: data fetched externally */
+    $case = 6;
+} elseif ($locale != '' && $website == '' && $serial == false && $json == true) {
     /* case 6: data fetched externally */
     $case = 6;
 } elseif ($locale == ''  && $serial == false && $action == 'count') {

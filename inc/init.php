@@ -24,3 +24,4 @@ $locale   = (isset($_GET['locale']))  ? secureText($_GET['locale'])  : ''; // wh
 $website  = (isset($_GET['website'])) ? secureText($_GET['website']) : ''; // which website are we looking at?
 $action   = (isset($_GET['action']))  ? secureText($_GET['action'])  : '';
 $serial   = isset($_GET['serial']);  // Do we want serialize data for the webdashboard?
+$json     = isset($_GET['json']);  // Do we want json data for the webdashboard?
