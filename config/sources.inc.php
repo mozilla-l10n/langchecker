@@ -28,6 +28,7 @@ $mozillaorg_lang = [
     'firefox/channel.lang'                    => true,
     'firefox/speed.lang'                      => false,
     'firefox/os/index.lang'                   => true,
+    'firefox/os/faq.lang'                     => false,
     'firefox/partners/index.lang'             => true,
     'firefox/whatsnew.lang'                   => true,
     'firefox/installer-help.lang'             => true,
@@ -186,6 +187,8 @@ $langfiles_subsets = [
         'firefox/channel.lang'                  => $mozilla,
         'firefox/speed.lang'                    => ['pt-BR'],
         'firefox/os/index.lang'                 =>
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
+        'firefox/os/faq.lang'                   =>
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           =>
             ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
