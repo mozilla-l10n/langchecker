@@ -17,7 +17,7 @@ require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
 $locamotion_locales = ['af', 'ach', 'az', 'cy', 'en-ZA', 'ff', 'gd', 'hi-IN', 'kk',
-'km', 'lg', 'ms', 'my', 'oc', 'sah', 'son', 'tr', 'ur', 'vi', 'xh'];
+'km', 'ms', 'my', 'oc', 'son', 'tr', 'ur', 'vi', 'xh'];
 
 $mozillaorg_lang = [
     'download.lang'                           => true,
@@ -282,12 +282,12 @@ $langfiles_subsets = [
              'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
              'et', 'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
              'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hu', 'hy-AM', 'id',
-             'is', 'it', 'ja', 'ka', 'kk', 'km', 'kn', 'ko', 'ku', 'lg',
+             'is', 'it', 'ja', 'ka', 'kk', 'km', 'kn', 'ko', 'ku',
              'lij', 'lt', 'lv', 'mai', 'mk', 'ml', 'mr', 'ms',
-             'my', 'nb-NO', 'nl', 'nn-NO', 'nso', 'oc', 'or', 'pa-IN',
-             'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sah', 'si',
+             'my', 'nb-NO', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN',
+             'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si',
              'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta',
-             'ta-LK', 'te', 'th', 'tr', 'uk', 'ur', 'vi', 'wo', 'xh', 'zh-CN',
+             'te', 'th', 'tr', 'uk', 'ur', 'vi', 'xh', 'zh-CN',
              'zh-TW', 'zu'],
     ],
 
