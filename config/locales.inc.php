@@ -20,6 +20,10 @@ $mozilla = [
 ];
 
 $mozilla = array_diff($mozilla, ['en-ZA', 'es']);
+
+// dropped locales
+$mozilla = array_diff($mozilla, ['mn', 'ta-LK', 'ak', 'lg','nso', 'sah', 'wo']);
+
 sort($mozilla);
 
 $startpage36 = [
