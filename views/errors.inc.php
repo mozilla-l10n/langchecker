@@ -84,15 +84,29 @@ foreach ($mozilla as $locale) {
                     }
                 }
 
-                 // check if the lang file is not in UTF-8 or US-ASCII
-                 if (isUTF8($target) == false) {
+                // check if the lang file is not in UTF-8 or US-ASCII
+                if (isUTF8($target) == false) {
                     $localewitherrors = true;
 
                     $locale_htmloutput .= '<div class="website">' . "\n";
                     $locale_htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
                     $locale_htmloutput .= "    <p><strong>$filename</strong> is not saved in UTF8</p>";
                     $locale_htmloutput .= "</div>";
-                 }
+                }
+
+                // Display errors on tags for home.lang
+                if ($filename == 'mozorg/home.lang') {
+                    foreach ($GLOBALS[$locale]['tags'] as $tag) {
+                        if (!in_array($tag, $GLOBALS['__english_moz']['tags'])) {
+                            $localewitherrors = true;
+                            $locale_htmloutput .= "<div class='website'>\n";
+                            $locale_htmloutput .= "    <p>Unknown tag <strong>{$tag}</strong> in home.lang</p>";
+                            $locale_htmloutput .= "</div>\n";
+                        }
+                    }
+                }
+
+
                 unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
             }
             $locale_htmloutput .= "  </div>\n\n";
