@@ -6,7 +6,7 @@
 
 $htmloutput = '';
 foreach ($mozilla as $locale) {
-    $localewitherrors = false;
+    $locale_with_errors = false;
 
     $locale_htmloutput = '  <h2>Locale: ' . $locale . "</h2>\n";
 
@@ -43,6 +43,8 @@ foreach ($mozilla as $locale) {
                 // If the .lang file does not exist, just skip the locale for this file
                 $local_lang_file = $_site[1] . $_site[2] . $locale . '/' . $filename;
                 if (!is_file($local_lang_file)) {
+                    $locale_with_errors = true;
+                    $locale_htmloutput .=  "  <p>File missing: $local_lang_file</p>\n";
                     continue;
                 }
 
@@ -52,7 +54,7 @@ foreach ($mozilla as $locale) {
 
                 if (count($GLOBALS[$locale]['python_vars']) != 0)
                 {
-                    $localewitherrors = true;
+                    $locale_with_errors = true;
 
                     $locale_htmloutput .= '  <div class="website">' . "\n";
                     $locale_htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
@@ -86,7 +88,7 @@ foreach ($mozilla as $locale) {
 
                 // check if the lang file is not in UTF-8 or US-ASCII
                 if (isUTF8($target) == false) {
-                    $localewitherrors = true;
+                    $locale_with_errors = true;
 
                     $locale_htmloutput .= '<div class="website">' . "\n";
                     $locale_htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
@@ -98,7 +100,7 @@ foreach ($mozilla as $locale) {
                 if ($filename == 'mozorg/home.lang') {
                     foreach ($GLOBALS[$locale]['tags'] as $tag) {
                         if (!in_array($tag, $GLOBALS['__english_moz']['tags'])) {
-                            $localewitherrors = true;
+                            $locale_with_errors = true;
                             $locale_htmloutput .= "<div class='website'>\n";
                             $locale_htmloutput .= "    <p>Unknown tag <strong>{$tag}</strong> in home.lang</p>";
                             $locale_htmloutput .= "</div>\n";
@@ -113,7 +115,7 @@ foreach ($mozilla as $locale) {
         }
     }
 
-    if ($localewitherrors) {
+    if ($locale_with_errors) {
         $htmloutput .= $locale_htmloutput;
     }
 }
