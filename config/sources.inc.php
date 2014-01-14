@@ -6,7 +6,7 @@ $public_repo3 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/';
 $public_repo4 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
 $public_repo5 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxhealthreport/';
 $public_repo6 = 'https://svn.mozilla.org/projects/granary/slogans/';
-$public_repo7 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/pontoon/snippets/';
+$public_repo7 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/snippets/';
 
 // this is to avoid a warning in shell mode
 if (!isset($_SERVER['SERVER_NAME'])) {
@@ -90,15 +90,16 @@ $slogans_lang = [
 ];
 
 $snippets_lang = [
-    'snippets1.lang' => true,
-    'snippets2.lang' => true,
+    'jan2014.lang' => true,
 ];
 
 $slogans_locales = ['bg', 'de', 'cs', 'el', 'es-ES', 'mk', 'hr', 'hu', 'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sq'];
 $marketplacebadge_locales = ['ca', 'cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr', 'sr-Latn', 'tr'];
 
 $snippets_locales = ['cs', 'de', 'el', 'hu', 'id', 'it', 'ja', 'ko', 'pl', 'ru', 'sl', 'sr', 'vi', 'zh-CN', 'zh-TW'];
-// $snippets_locales = ['it'];
+
+$pontoon_snippets_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko', 'pl', 'pt-BR',
+                             'ru', 'sl', 'sr', 'vi', 'zh-CN', 'zh-TW'];
 
 $sites =
 [
@@ -309,8 +310,7 @@ $langfiles_subsets = [
 
     'snippets' =>
     [
-        'snippets1.lang' => ['sl'],
-        'snippets2.lang' => ['it'],
+        'jan2014.lang' => ['it', 'sl']
     ],
 
 
