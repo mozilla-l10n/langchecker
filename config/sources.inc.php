@@ -308,7 +308,7 @@ $langfiles_subsets = [
 
     'snippets' =>
     [
-        'jan2014.lang' => ['it', 'sl']
+        'jan2014.lang' => $snippets_locales,
     ],
 
 
