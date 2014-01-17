@@ -1,0 +1,243 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('http://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.eot?#iefix2013') format('embedded-opentype'), url('http://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.woff?2013') format('woff'), url('http://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.ttf?2013') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('http://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.eot?#iefix2013') format('embedded-opentype'), url('http://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.woff?2013') format('woff'), url('http://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.ttf?2013') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('http://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.eot?#iefix2013') format('embedded-opentype'), url('http://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.woff?2013') format('woff'), url('http://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.ttf?2013') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Main structure */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background: #F1EFE8;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    padding: 50px 20px;
+    min-width: 800px;
+}
+
+.sand #outer-wrapper {
+    background: #F5F1E8 url('../img/sandstone/bg-sand.png') repeat-x top left;
+    background: url('../img/sandstone/bg-gradient-sand.png') repeat-x 0 0, url('../img/sandstone/bg-sand.png') repeat 0 0, #F5F1E8;
+    height: 100%;
+}
+
+a {
+    color: #0096DD;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #0073AA;
+    text-decoration: underline;
+}
+
+h1 {
+    margin-bottom: 40px;
+    margin-top: -40px;
+    font-size: 30px;
+    max-width: 500px;
+}
+
+h1 span {
+    display: inline-block;
+    background-color: #FAF8F2;
+    border: 1px solid #9E988B;
+    padding: 3px 10px;
+    border-radius: 10px;
+}
+
+#back {
+    background-color: #9E988B;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 1px 1px 6px #4A412E;
+    font-size: 15px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    text-shadow: 1px 1px 4px #4A412E;
+    top: 0;
+}
+
+#back a {
+    color: #FFF;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Tables */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: #FFF;
+  text-align: center;
+}
+
+td, th {
+    padding: 2px;
+    border: 1px solid #DDD;
+}
+
+th {
+    padding: 6px 10px;
+    background-color: #F5F1E8;
+}
+
+caption.filename {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #F5F1E8;
+    padding: 6px;
+}
+
+tr.dim {
+    color: #DDD;
+}
+
+td.tags_column {
+    text-align: left;
+    font-size: 11px;
+}
+
+td.activated {
+    background-color: #92CC6E;
+}
+
+td.lightlink a {
+    color: #C7EDFF;
+}
+
+td.linklocale a {
+    font-weight: bold;
+}
+
+tfoot td {
+    background-color: #F5F1E8;
+}
+
+/* View: listsitesforlocale */
+
+div.website {
+    border: 1px solid #78756F;
+    margin: 0 0 10px 0;
+    padding: 0 10px;
+    background-color: #FAF8F2;
+}
+
+a.filedone {
+    display: inline-block;
+    color: #FFF;
+    background: #78756F;
+    padding: 5px;
+    margin: 2px;
+}
+
+a.activated {
+    border-right: 8px solid #92CC6E;
+}
+
+a.notactivated {
+    border-right: 8px solid #FF5252;
+}
+
+a.notutf8:after {
+    content: " (Not in UTF-8 !)";
+    color: #FFBD52;
+    font-weight: bold;
+}
+
+div.filename {
+    background-color: white;
+    padding: 5px;
+}
+
+div.filename h3.filename {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    padding: 2px 1em;
+    text-align: center;
+    min-width: 11em;
+    background-color: #78756F;
+    color: white;
+    font-size: 120%;
+}
+
+div.filename h3.filename a:link,
+div.filename h3.filename a:visited,
+div.filename h3.filename a:hover,
+div.filename h3.filename a:active
+{
+    color:white;
+}
+
+div.filename table.side {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+table.python {
+    margin-bottom: 20px;
+}
+
+table.python th,
+table.python td {
+    text-align: left;
+}
+
+table.python td em {
+    color: #FFF;
+    background-color: #92CC6E;
+    font-style: normal;
+    border-radius: 3px;
+    padding: 0 10px;
+}
+
+div.tip {
+    border: 1px solid #DDD;
+    margin: 10px 0;
+    padding: 10px 0 10px 30px;
+    background-color: #FFFFE0;
+}
+
+code {
+    color: gray;
+    font-family: monospace;
+}
+
+div.tip blockquote {
+    color: blue;
+    color: rgba(80,80,80,1)
+}
