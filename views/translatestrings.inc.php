@@ -98,7 +98,7 @@ foreach ($site[4] as $_file) {
                 $covered_locales[] = $_lang;
                 if ($stripe == true) {
                     $stripe = false;
-                    $stripe_color = '#F0F2F6';
+                    $stripe_color = '#FAF6ED';
                 } else {
                     $stripe = true;
                     $stripe_color = 'white';

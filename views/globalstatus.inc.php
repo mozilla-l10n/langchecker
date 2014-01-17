@@ -62,6 +62,13 @@ foreach ($sites[$website][4] as $_file) {
 
         $todo  = count($GLOBALS[$_lang]['Identical']) + count($GLOBALS[$_lang]['Missing']);
         $total = $todo + count($GLOBALS[$_lang]['Translated']);
+
+        if ($todo/$total>0.60) {
+          $cssclass=' lightlink';
+        } else {
+          $cssclass='';
+        }
+
         $color = 'rgba(255, 0, 0, ' . $todo/$total . ')';
 
         if ($todo == 0) {
@@ -70,7 +77,7 @@ foreach ($sites[$website][4] as $_file) {
         }
 
         echo "    <tr>\n";
-        echo '      <td style="background-color:'
+        echo '      <td class="linklocale' . $cssclass . '" style="background-color:'
               . $color
               . ';">
         <a href="./?locale='
