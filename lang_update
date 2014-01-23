@@ -7,7 +7,6 @@ if (php_sapi_name() != 'cli') {
 
 date_default_timezone_set('Europe/Paris');
 
-require_once __DIR__ .'/libs/poparser.php';
 require_once __DIR__ . '/inc/init.php';
 
 /* init l10n class to create the globals needed */

@@ -416,7 +416,7 @@ function scrapLocamotion($lang, $filename, $source)
         logger("Fetching $filename from Locamotion");
         file_put_contents('temp.po', file_get_contents($locamotion));
 
-        $po_parser = new PoParser();
+        $po_parser = new Sepia\PoParser();
         $po_strings = $po_parser->read('temp.po');
         unlink('temp.po');
 
