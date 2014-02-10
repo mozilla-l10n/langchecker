@@ -30,6 +30,7 @@ $mozillaorg_lang = [
     'firefox/os/index.lang'                   => true,
     'firefox/os/faq.lang'                     => false,
     'firefox/partners/index.lang'             => true,
+    'firefox/includes/mwc_2014_schedule.lang' => true,
     'firefox/whatsnew.lang'                   => true,
     'firefox/installer-help.lang'             => true,
     'firefoxflicks.lang'                      => false,
@@ -194,6 +195,7 @@ $langfiles_subsets = [
         'firefox/partners/index.lang'           =>
             ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
              'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'],
+        'firefox/includes/mwc_2014_schedule.lang' => ['cs', 'fr'],
         'firefox/whatsnew.lang'                 => ['hu', 'pl'],
         'firefox/installer-help.lang'           => $mozilla,
         'firefoxflicks.lang'                    =>
