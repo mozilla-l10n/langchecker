@@ -195,7 +195,9 @@ $langfiles_subsets = [
         'firefox/partners/index.lang'           =>
             ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
              'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'],
-        'firefox/includes/mwc_2014_schedule.lang' => ['cs', 'fr'],
+        'firefox/includes/mwc_2014_schedule.lang' =>
+            ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
+             'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'],
         'firefox/whatsnew.lang'                 => ['hu', 'pl'],
         'firefox/installer-help.lang'           => $mozilla,
         'firefoxflicks.lang'                    =>
