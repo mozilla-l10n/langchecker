@@ -31,6 +31,7 @@ $mozillaorg_lang = [
     'firefox/os/faq.lang'                     => false,
     'firefox/partners/index.lang'             => true,
     'firefox/includes/mwc_2014_schedule.lang' => true,
+    'mwc2014_promos.lang'                     => true,
     'firefox/whatsnew.lang'                   => true,
     'firefox/installer-help.lang'             => true,
     'firefoxflicks.lang'                      => false,
@@ -82,6 +83,7 @@ $no_active_tag = [
     'newsletter.lang',
     'snippets.lang',
     'upgradepromos.lang',
+    'mwc2014_promos.lang',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang' => true];
@@ -175,6 +177,9 @@ $sites =
     ],
 ];
 
+$mwc_locales =  ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX',
+ 'fr', 'hu', 'it', 'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'];
+
 $langfiles_subsets = [
     'www.mozilla.org' =>
     [
@@ -192,12 +197,9 @@ $langfiles_subsets = [
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/os/faq.lang'                   =>
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
-        'firefox/partners/index.lang'           =>
-            ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
-             'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'],
-        'firefox/includes/mwc_2014_schedule.lang' =>
-            ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
-             'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'],
+        'firefox/partners/index.lang'           => $mwc_locales,
+        'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
+        'mwc2014_promos.lang'                   => $mwc_locales,
         'firefox/whatsnew.lang'                 => ['hu', 'pl'],
         'firefox/installer-help.lang'           => $mozilla,
         'firefoxflicks.lang'                    =>
