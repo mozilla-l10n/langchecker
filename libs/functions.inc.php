@@ -343,13 +343,17 @@ function dumpString($english, $eol, $exceptions = array())
     if (array_key_exists($english, $exceptions)
         && isset($GLOBALS['__l10n_moz'][$exceptions[$english]])
         ) {
-        $tempString = strip_tags($GLOBALS['__l10n_moz'][$exceptions[$english]]);
+        //$tempString = strip_tags($GLOBALS['__l10n_moz'][$exceptions[$english]]);
+        $tempString = $GLOBALS['__l10n_moz'][$exceptions[$english]];
 
-        if ($english == 'Potentially vulnerable plugins') {
-            $tempString = str_replace(':', '', $tempString);
-        } elseif ($english == 'vulnerable') {
-            $tempString = strtolower($tempString);
+        if ($english == 'View available Firefox OS devices') {
+            $tempString = strip_tags($tempString);
         }
+
+        if ($english == 'See what’s next for mobile with <a %(url1)s>Firefox OS</a>, <a %(url2)s>Firefox Marketplace</a> and <a %(url3)s>Firefox for Android</a>.') {
+            $tempString = str_replace(['{','}'], ['(',')'], $tempString);
+        }
+
 
         $chunk .= $tempString;
     } else {
