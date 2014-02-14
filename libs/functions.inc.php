@@ -345,17 +345,27 @@ function dumpString($english, $eol, $exceptions = array())
         ) {
         //$tempString = strip_tags($GLOBALS['__l10n_moz'][$exceptions[$english]]);
         $tempString = $GLOBALS['__l10n_moz'][$exceptions[$english]];
-
-        if ($english == 'View available Firefox OS devices') {
-            $tempString = strip_tags($tempString);
+        if (!in_array($GLOBALS['__l10n_moz']['locale_code'], ['hu', 'sr'])) {
+            $brands = ['Movistar', 'T-Mobile', 'Telekom', 'Telenor', 'Cosmote', 'Congstar', 'Vivo', 'TIM'];
+            $brands_links = ['<a href="%s">Movistar</a>', '<a href="%s">T-Mobile</a>',
+                       '<a href="%s">Telekom</a>', '<a href="%s">Telenor</a>',
+                       '<a href="%s">Cosmote</a>', '<a href="%s">Congstar</a>',
+                       '<a href="%s">Vivo</a>', '<a href="%s">TIM</a>'];
+        } elseif ($GLOBALS['__l10n_moz']['locale_code'] == 'sr') {
+            $brands = ['Movistar-у', 'T-Mobile-у', 'Telekom-у', 'Telenor-у', 'Cosmote-у', 'Congstar-у', 'Vivo-у', 'TIM-у'];
+            $brands_links = ['<a href="%s">Movistar-у</a>', '<a href="%s">T-Mobile-у</a>',
+                       '<a href="%s">Telekom-у</a>', '<a href="%s">Telenor-у</a>',
+                       '<a href="%s">Cosmote-у</a>', '<a href="%s">Congstar-у</a>',
+                       '<a href="%s">Vivo-у</a>', '<a href="%s">TIM-у</a>'];
+        } else {
+            $brands = ['Movistarnál', 'T-Mobile-nál', 'Telekomnál', 'Telenornál', 'Cosmote-nál', 'Congstarnál', 'Vivonál', 'TIM-nél'];
+            $brands_links = ['<a href="%s">Movistarnál</a>', '<a href="%s">T-Mobile-nál</a>',
+                       '<a href="%s">Telekomnál</a>', '<a href="%s">Telenornál</a>',
+                       '<a href="%s">Cosmote-nál</a>', '<a href="%s">Congstarnál</a>',
+                       '<a href="%s">Vivonál</a>', '<a href="%s">TIM-nél</a>'];
         }
 
-        if ($english == 'See what’s next for mobile with <a %(url1)s>Firefox OS</a>, <a %(url2)s>Firefox Marketplace</a> and <a %(url3)s>Firefox for Android</a>.') {
-            $tempString = str_replace(['{','}'], ['(',')'], $tempString);
-        }
-
-
-        $chunk .= $tempString;
+        $chunk .= str_replace($brands, $brands_links, $tempString);
     } else {
         $chunk .= (array_key_exists($english, $GLOBALS['__l10n_moz'])) ? $GLOBALS['__l10n_moz'][$english]: $english;
     }

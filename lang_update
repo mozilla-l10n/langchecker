@@ -101,17 +101,24 @@ foreach ($files as $filename) {
             //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/mozorg/about.lang');
 
             $GLOBALS['__l10n_moz']['activated'] = (boolean) $activeStatus;
+            $GLOBALS['__l10n_moz']['locale_code'] = $lang;
 
             $exceptions = array(
                 // new string => older equivalent string
-                'Different by design'           => 'Different by Design',
-                'Proudly<br />non-profit'       => 'Proudly <span>non-profit</span>',
-                'Innovating<br />for you'       => 'Innovating <span>for you</span>',
-                'Fast, flexible,<br />secure'   => 'Fast, flexible, <span>secure</span>',
-            );
-
-            $exceptions = array(
-                //~ 'Mozilla and partners prepare to launch first Firefox OS smartphones' => 'Mozilla and partners prepare to launch first Firefox OS smartsphones'
+                'Spain with <a href="%s">Movistar</a>'      => strip_tags('Spain with <a href="%s">Movistar</a>'),
+                'Poland with <a href="%s">T-Mobile</a>'     => strip_tags('Poland with <a href="%s">T-Mobile</a>'),
+                'Venezuela with <a href="%s">Movistar</a>'  => strip_tags('Venezuela with <a href="%s">Movistar</a>'),
+                'Colombia with <a href="%s">Movistar</a>'   => strip_tags('Colombia with <a href="%s">Movistar</a>'),
+                'Hungary with both <a href="%s">Telenor</a> and <a href="%s">Telekom</a>'  => strip_tags('Hungary with both <a href="%s">Telenor</a> and <a href="%s">Telekom</a>'),
+                'Peru with <a href="%s">Movistar</a>'       => strip_tags('Peru with <a href="%s">Movistar</a>'),
+                'Serbia with <a href="%s">Telenor</a>'      => strip_tags('Serbia with <a href="%s">Telenor</a>'),
+                'Montenegro with <a href="%s">Telenor</a>'  => strip_tags('Montenegro with <a href="%s">Telenor</a>'),
+                'Greece with <a href="%s">Cosmote</a>'      => strip_tags('Greece with <a href="%s">Cosmote</a>'),
+                'Germany with <a href="%s">Congstar</a>'    => strip_tags('Germany with <a href="%s">Congstar</a>'),
+                'Brazil with <a href="%s">Vivo</a>'         => strip_tags('Brazil with <a href="%s">Vivo</a>'),
+                'Mexico with <a href="%s">Movistar</a>'     => strip_tags('Mexico with <a href="%s">Movistar</a>'),
+                'Italy with <a href="%s">TIM</a>'           => strip_tags('Italy with <a href="%s">TIM</a>'),
+                'Uruguay with <a href="%s">Movistar</a>'    => strip_tags('Uruguay with <a href="%s">Movistar</a>'),
             );
 
             $content = buildFile($eol, $exceptions);
@@ -127,6 +134,7 @@ foreach ($files as $filename) {
         if (isset($GLOBALS['__english_moz'])) {
             unset($GLOBALS['__english_moz']);
         }
+
         logger($result);
     }
 }
