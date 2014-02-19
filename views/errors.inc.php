@@ -1,14 +1,14 @@
-<p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/">Back to Web Dashboard</a></p>
+      <p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/">Back to Web Dashboard</a></p>
 
-<h1>Display python and UTF-8 errors for all locales</h1>
+      <h1>Display python and UTF-8 errors for all locales</h1>
 
 <?php
 
 $htmloutput = '';
 foreach ($mozilla as $locale) {
     $locale_with_errors = false;
-
-    $locale_htmloutput = '  <h2>Locale: ' . $locale . "</h2>\n";
+    $locale_htmloutput = "\n      <h2>Locale: {$locale}</h2>\n";
+    $open_div = false;
 
     foreach ($sites as $key => $_site) {
         if (in_array($locale, $_site[3])) {
@@ -40,11 +40,18 @@ foreach ($mozilla as $locale) {
 
                 getEnglishSource($reflang, $key, $filename);
 
+                $opening_div = "      <div class='website'>\n" .
+                               "        <h2>{$_site[0]}</h2>\n";
+
                 // If the .lang file does not exist, just skip the locale for this file
                 $local_lang_file = $_site[1] . $_site[2] . $locale . '/' . $filename;
                 if (!is_file($local_lang_file)) {
+                    if (!$open_div) {
+                        $open_div = true;
+                        $locale_htmloutput .= $opening_div;
+                    }
                     $locale_with_errors = true;
-                    $locale_htmloutput .=  "  <p>File missing: $local_lang_file</p>\n";
+                    $locale_htmloutput .= "        <p>File missing: $local_lang_file</p>\n";
                     continue;
                 }
 
@@ -54,56 +61,58 @@ foreach ($mozilla as $locale) {
 
                 if (count($GLOBALS[$locale]['python_vars']) != 0)
                 {
+                    if (!$open_div) {
+                        $open_div = true;
+                        $locale_htmloutput .= $opening_div;
+                    }
                     $locale_with_errors = true;
-
-                    $locale_htmloutput .= '  <div class="website">' . "\n";
-                    $locale_htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
-                    $locale_htmloutput .= "    <p>Repository: <a href=\"$repo\">$repo</a></p>\n";
-                    $locale_htmloutput .= '    <div class="filename" id="' . $filename . '">' . "\n";
-                    $locale_htmloutput .= "      <h3 class='filename'><a href='#$filename'>$filename</a></h3>" . "\n";
+                    $locale_htmloutput .= "        <p>Repository: <a href=\"$repo\">$repo</a></p>\n";
+                    $locale_htmloutput .= "        <div class='filename' id='{$filename}'>\n";
+                    $locale_htmloutput .= "          <h3 class='filename'><a href='#$filename'>$filename</a></h3>\n";
 
                     foreach ($GLOBALS[$locale] as $k => $v) {
                         if ($k == 'python_vars' && count($GLOBALS[$locale][$k]) > 0) {
-                            $locale_htmloutput .= '      <h3>Errors in variables in the sentence:</h3>' . "\n";
-                            $locale_htmloutput .= '        <ul>' . "\n";
+                            $locale_htmloutput .= "          <h3>Errors in variables in the sentence:</h3>\n";
+                            $locale_htmloutput .= "          <ul>\n";
                             foreach ($v as $k2 => $v2) {
-                                $locale_htmloutput .= "          <p></p>\n";
-                                $locale_htmloutput .= "          <table class=\"python\">
-            <tr>
-              <th><strong style=\"color:red\"> $v2</strong> in the English string is missing in:</th>
-            </tr>
-            <tr>
-              <td>" . showPythonVar(htmlspecialchars($k2)) . "</td>
-            </tr>
-            <tr>
-              <td>" . showPythonVar(htmlspecialchars($GLOBALS[$filename][$k2])) . "</td>
-            </tr>
-          </table>\n";
+                                $locale_htmloutput .= "              <table class='python'>
+                <tr>
+                  <th><strong style=\"color:red\"> $v2</strong> in the English string is missing in:</th>
+                </tr>
+                <tr>
+                  <td>" . showPythonVar(htmlspecialchars($k2)) . "</td>
+                </tr>
+                <tr>
+                  <td>" . showPythonVar(htmlspecialchars($GLOBALS[$filename][$k2])) . "</td>
+                </tr>
+              </table>\n";
                             }
-                            $locale_htmloutput .= "        </ul>\n";
-                            $locale_htmloutput .= "    </div>\n";
+                            $locale_htmloutput .= "          </ul>\n";
+                            $locale_htmloutput .= "        </div>\n";
                         }
                     }
                 }
 
                 // check if the lang file is not in UTF-8 or US-ASCII
                 if (isUTF8($target) == false) {
+                   if (!$open_div) {
+                        $open_div = true;
+                        $locale_htmloutput .= $opening_div;
+                    }
                     $locale_with_errors = true;
-
-                    $locale_htmloutput .= '<div class="website">' . "\n";
-                    $locale_htmloutput .= '    <h2>' . $_site[0] . '</h2>' . "\n";
-                    $locale_htmloutput .= "    <p><strong>$filename</strong> is not saved in UTF8</p>";
-                    $locale_htmloutput .= "</div>";
+                    $locale_htmloutput .= "        <p><strong>$filename</strong> is not saved in UTF8</p>\n";
                 }
 
                 // Display errors on tags for home.lang
                 if ($filename == 'mozorg/home.lang') {
                     foreach ($GLOBALS[$locale]['tags'] as $tag) {
                         if (!in_array($tag, $GLOBALS['__english_moz']['tags'])) {
+                            if (!$open_div) {
+                                $open_div = true;
+                                $locale_htmloutput .= $opening_div;
+                            }
                             $locale_with_errors = true;
-                            $locale_htmloutput .= "<div class='website'>\n";
-                            $locale_htmloutput .= "    <p>Unknown tag <strong>{$tag}</strong> in home.lang</p>";
-                            $locale_htmloutput .= "</div>\n";
+                            $locale_htmloutput .= "        <p>Unknown tag <strong>{$tag}</strong> in home.lang</p>\n";
                         }
                     }
                 }
@@ -111,10 +120,11 @@ foreach ($mozilla as $locale) {
 
                 unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
             }
-            $locale_htmloutput .= "  </div>\n\n";
         }
     }
-
+    if ($open_div) {
+        $locale_htmloutput .= "      </div>\n\n";
+    }
     if ($locale_with_errors) {
         $htmloutput .= $locale_htmloutput;
     }
@@ -122,7 +132,7 @@ foreach ($mozilla as $locale) {
 
 if ($htmloutput == '') {
     // There are no errors
-    echo "   <p>Everything looks good, no errors found.</p>";
+    echo "     <p>Everything looks good, no errors found.</p>";
 } else {
     echo $htmloutput;
 }
