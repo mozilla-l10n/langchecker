@@ -109,7 +109,7 @@ foreach ($files as $filename) {
                 'Poland with <a href="%s">T-Mobile</a>'     => strip_tags('Poland with <a href="%s">T-Mobile</a>'),
                 'Venezuela with <a href="%s">Movistar</a>'  => strip_tags('Venezuela with <a href="%s">Movistar</a>'),
                 'Colombia with <a href="%s">Movistar</a>'   => strip_tags('Colombia with <a href="%s">Movistar</a>'),
-                'Hungary with both <a href="%s">Telenor</a> and <a href="%s">Telekom</a>'  => strip_tags('Hungary with both <a href="%s">Telenor</a> and <a href="%s">Telekom</a>'),
+                'Hungary with both <a href="%s">Telenor</a> and <a href="%s">T-Mobile</a>'  => 'Hungary with both <a href="%s">Telenor</a> and <a href="%s">Telekom</a>',
                 'Peru with <a href="%s">Movistar</a>'       => strip_tags('Peru with <a href="%s">Movistar</a>'),
                 'Serbia with <a href="%s">Telenor</a>'      => strip_tags('Serbia with <a href="%s">Telenor</a>'),
                 'Montenegro with <a href="%s">Telenor</a>'  => strip_tags('Montenegro with <a href="%s">Telenor</a>'),

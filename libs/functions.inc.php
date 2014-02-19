@@ -365,6 +365,14 @@ function dumpString($english, $eol, $exceptions = array())
                        '<a href="%s">Vivonál</a>', '<a href="%s">TIM-nél</a>'];
         }
 
+        if ($english == 'Hungary with both <a href="%s">Telenor</a> and <a href="%s">T-Mobile</a>') {
+            if ($GLOBALS['__l10n_moz']['locale_code'] != 'hu') {
+                $tempString = str_replace('Telekom', 'T-Mobile', $tempString);
+            } else {
+                $tempString = str_replace('Telekom', 'T-Mobile-', $tempString);
+            }
+        }
+
         $chunk .= str_replace($brands, $brands_links, $tempString);
     } else {
         $chunk .= (array_key_exists($english, $GLOBALS['__l10n_moz'])) ? $GLOBALS['__l10n_moz'][$english]: $english;
