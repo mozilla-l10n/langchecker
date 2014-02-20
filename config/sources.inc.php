@@ -17,7 +17,7 @@ require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
 $locamotion_locales = ['ach', 'af', 'cy', 'en-ZA', 'ff', 'gd', 'hi-IN', 'kk',
-'km', 'ku', 'ms', 'my', 'oc', 'son', 'tr', 'ur', 'vi', 'xh'];
+                       'km', 'ku', 'ms', 'my', 'oc', 'son', 'ur', 'vi', 'xh'];
 
 $mozillaorg_lang = [
     'download.lang'                           => true,
