@@ -445,41 +445,52 @@ function scrapLocamotion($lang, $filename, $source)
         $temp_lang  = '';
 
         if (count($po_strings) > 0) {
+            // Create a temp.lang file containing strings extracted from Locamotion's .po file
             foreach ($po_strings as $entry) {
                 if (!isset($entry['fuzzy']) && implode($entry['msgstr']) != '') {
+                    if (implode($entry['msgid']) == implode($entry['msgstr'])) {
+                        // Add {ok} if the translation is identical to the English string
+                        $string_status = ' {ok}';
+                    } else {
+                        $string_status = '';
+                    }
                     $temp_lang .=
                         ';'
                         . implode($entry['msgid']) . PHP_EOL
-                        . implode($entry['msgstr']) . PHP_EOL. PHP_EOL. PHP_EOL;
+                        . implode($entry['msgstr']) . $string_status . PHP_EOL . PHP_EOL . PHP_EOL;
                 }
             }
-
             file_put_contents('temp.lang', $temp_lang);
 
-            // we keep copies of the global array in $a and $b for diff puroposes
-            $a = $GLOBALS['__l10n_moz'];
+            // Store "__l10n_moz" containing the strings currently available in SVN
+            $local_lang_file = $GLOBALS['__l10n_moz'];
+            unset($GLOBALS['__l10n_moz']);
+
+            // Load temp.lang and store strings coming from Locamotion
             l10n_moz::load('temp.lang');
             unlink('temp.lang');
-            $b = $GLOBALS['__l10n_moz'];
+            $imported_lang_file = $GLOBALS['__l10n_moz'];
 
-            foreach ($b as $key => $val) {
+            foreach ($imported_lang_file as $key => $val) {
                 $val = is_array($val) ? $val[0] : $val;
-                if ($key != $val
-                    && $key != 'filedescription'
+                if ($key != 'filedescription'
                     && $key != 'activated'
-                    && array_key_exists($key, $a)
+                    && $key != 'tags'
+                    && array_key_exists($key, $local_lang_file)
                     ) {
-                    if ($a[$key] == $key) {
+                    if ($local_lang_file[$key] != $val) {
                         logger('Imported string: ' . $key .' => ' . $val);
                         $imported_strings = true;
                     }
                 }
             }
-
-            // clean up
+            // Clean up
             unset($po_parser);
 
-
+            // Copy tags from the original local file if we need to use temp.lang as source
+            if ($imported_strings) {
+                $GLOBALS['__l10n_moz']['tags'] = $local_lang_file['tags'];
+            }
         } else {
             logger($filename . '.po has no strings in it');
         }
