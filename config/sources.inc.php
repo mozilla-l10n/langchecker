@@ -16,7 +16,7 @@ if (!isset($_SERVER['SERVER_NAME'])) {
 require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
-$locamotion_locales = ['af', 'ach', 'az', 'cy', 'en-ZA', 'ff', 'gd', 'hi-IN', 'kk',
+$locamotion_locales = ['ach', 'af', 'cy', 'en-ZA', 'ff', 'gd', 'hi-IN', 'kk',
 'km', 'ku', 'ms', 'my', 'oc', 'son', 'tr', 'ur', 'vi', 'xh'];
 
 $mozillaorg_lang = [
