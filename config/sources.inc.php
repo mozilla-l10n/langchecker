@@ -84,6 +84,7 @@ $no_active_tag = [
     'snippets.lang',
     'upgradepromos.lang',
     'mwc2014_promos.lang',
+    'firefox/includes/mwc_2014_schedule.lang',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang' => true];
@@ -97,9 +98,8 @@ $snippets_lang = [
     'jan2014.lang' => true,
 ];
 
-$slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'es-AR', 'el', 'es-CL',
-'es-ES', 'es-MX', 'fr', 'hu', 'hr', 'it', 'ja', 'ko',  'pl', 'pt-BR',
-'ro', 'sr', 'sr-Latn', 'zh-CN', 'zh-TW'];
+$slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
+                    'ja', 'ko',  'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'zh-CN', 'zh-TW'];
 
 $marketplacebadge_locales = ['bg', 'bn-BD', 'ca', 'cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'it',
                              'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr', 'sr-Latn', 'tr'];
