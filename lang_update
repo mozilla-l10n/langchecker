@@ -94,11 +94,13 @@ foreach ($files as $filename) {
                 }
             }
             /* incorporate strings from other lang files */
-            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey1.lang');
-            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey2.lang');
-            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/survey3.lang');
-            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/snippets.lang');
-            //~ l10n_moz::load($sites[$website][1] . $sites[$website][2] . $_lang . '/mozorg/about.lang');
+            // l10n_moz::load($sites[$website][1] . $sites[$website][2] . $lang . '/survey1.lang');
+            // l10n_moz::load($sites[$website][1] . $sites[$website][2] . $lang . '/survey2.lang');
+            // l10n_moz::load($sites[$website][1] . $sites[$website][2] . $lang . '/survey3.lang');
+            // l10n_moz::load($sites[$website][1] . $sites[$website][2] . $lang . '/survey4.lang');
+            // l10n_moz::load($sites[$website][1] . $sites[$website][2] . $lang . '/survey5.lang');
+            // l10n_moz::load($sites[$website][1] . $sites[$website][2] . $lang . '/snippets.lang');
+            // l10n_moz::load($sites[$website][1] . $sites[$website][2] . $lang . '/mozorg/about.lang');
 
             $GLOBALS['__l10n_moz']['activated'] = (boolean) $activeStatus;
             $GLOBALS['__l10n_moz']['locale_code'] = $lang;

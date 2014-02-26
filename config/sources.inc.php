@@ -134,7 +134,8 @@ $sites =
         $repo3,
         '',
         $surveys,
-        ['survey1.lang', 'survey2.lang', 'survey3.lang', 'survey4.lang', 'survey5.lang'],
+        ['survey1.lang', 'survey2.lang', 'survey3.lang', 'survey4.lang',
+         'survey5.lang', 'getinvolved_march2014.lang'],
         'en-GB', // source locale
         $public_repo3,
     ],
@@ -309,6 +310,7 @@ $langfiles_subsets = [
         'survey3.lang' => ['de', 'es-ES', 'fr', 'it', 'ja', 'ko', 'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
         'survey4.lang' => ['de', 'es-AR', 'es-ES', 'es-MX', 'fr', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'tr', 'vi', 'zh-CN'],
         'survey5.lang' => ['de', 'fr', 'pl'],
+        'getinvolved_march2014.lang' => ['es-ES', 'id', 'pt-BR', 'zh-CN'],
     ],
 
     'marketing' => ['julyevent.lang' => ['de', 'es-ES', 'fr', 'it', 'id', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW']],
