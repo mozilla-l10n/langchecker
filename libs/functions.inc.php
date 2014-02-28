@@ -273,21 +273,25 @@ function getUserBaseCoverage($locales, $no_japan = true)
  *  SAPI file (lang_update)
  */
 
-function buildFile($eol, $exceptions = array())
+function buildFile($eol, $exceptions = [])
 {
     ob_start();
     header('Content-type: text/plain; charset=UTF-8');
 
     if ($GLOBALS['__l10n_moz']['activated']) {
-        echo '## active ##' . $eol;
+        print '## active ##' . $eol;
     }
 
-    if (isset($GLOBALS['__l10n_moz']['tags'])
-        && count($GLOBALS['__l10n_moz']['tags']) > 0
-        ) {
-        foreach ($GLOBALS['__l10n_moz']['tags'] as $tag) {
-            echo "## $tag ##" . $eol;
-        }
+    $tags = isset($GLOBALS['__l10n_moz']['tags'])
+            ? $GLOBALS['__l10n_moz']['tags']
+            : [];
+    $tags = array_intersect(
+        $tags,
+        getAllowedTagsInFile()
+    );
+
+    foreach ($tags as $tag) {
+        print "## {$tag} ##" . $eol;
     }
 
     foreach ($GLOBALS['__english_moz'] as $key => $val) {
@@ -297,18 +301,18 @@ function buildFile($eol, $exceptions = array())
 
         if ($key == 'filedescription') {
             foreach ($GLOBALS['__english_moz']['filedescription'] as $header) {
-                echo '## NOTE: ' . $header . $eol;
+                print '## NOTE: ' . $header . $eol;
             }
-            echo  $eol . $eol;
+            print  $eol . $eol;
             continue;
         }
-        echo dumpString($key, $eol, $exceptions);
+        print dumpString($key, $eol, $exceptions);
     }
 
     /* put l10n extras at the end of the file */
     foreach ($GLOBALS['__l10n_moz'] as $key => $val) {
         if (strstr($key, '{l10n-extra}') == true) {
-            echo dumpString($key, $eol);
+            print dumpString($key, $eol);
         }
     }
 
@@ -318,6 +322,32 @@ function buildFile($eol, $exceptions = array())
     return $content;
 }
 
+/**
+ * Get the list of allowed tags for a file
+ * @param array $tags_in_file Optional, list of tags provided, otherwise NULL
+ * @param array $reference_tags Optional, list of tags allowed, otherwise NULL
+ * @return array List of tags allowed for the lang file
+ */
+function getAllowedTagsInFile($tags_in_file = null, $reference_tags = null)
+{
+    /*
+        We want to be able to override GLOBALS with custom sets of tags
+    */
+
+    if ($tags_in_file == null) {
+        $tags_in_file = isset($GLOBALS['__l10n_moz']['tags'])
+            ? $GLOBALS['__l10n_moz']['tags']
+            : [];
+    }
+
+    if ($reference_tags == null) {
+        $reference_tags = isset($GLOBALS['__english_moz']['tags'])
+            ? $GLOBALS['__english_moz']['tags']
+            : [];
+    }
+
+    return array_intersect($tags_in_file, $reference_tags);
+}
 
 /*
  *  SAPI file (lang_update)

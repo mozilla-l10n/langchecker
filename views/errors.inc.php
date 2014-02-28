@@ -104,17 +104,18 @@ foreach ($mozilla as $locale) {
                 }
 
                 // Display errors on tags for home.lang
-                if ($filename == 'mozorg/home.lang') {
-                    foreach ($GLOBALS[$locale]['tags'] as $tag) {
-                        if (!in_array($tag, $GLOBALS['__english_moz']['tags'])) {
-                            if (!$open_div) {
-                                $open_div = true;
-                                $locale_htmloutput .= $opening_div;
-                            }
-                            $locale_with_errors = true;
-                            $locale_htmloutput .= "        <p>Unknown tag <strong>{$tag}</strong> in home.lang</p>\n";
-                        }
+                $tags = array_diff(
+                    $GLOBALS[$locale]['tags'],
+                    getAllowedTagsInFile($GLOBALS[$locale]['tags'])
+                );
+
+                foreach ($tags as $tag) {
+                    if (!$open_div) {
+                        $open_div = true;
+                        $locale_htmloutput .= $opening_div;
                     }
+                    $locale_with_errors = true;
+                    $locale_htmloutput .= "        <p>Unknown tag <strong>{$tag}</strong> in {$filename}</p>\n";
                 }
 
 
