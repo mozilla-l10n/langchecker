@@ -413,6 +413,22 @@ function dumpString($english, $eol, $exceptions = array())
     return $chunk;
 }
 
+/**
+ * Import a string from Transvision API
+ * @param string $id UID of the string
+ * @param string $locale locale code
+ * @param string $repo repository (aurora, beta, release, central, gaia...)
+ * @return string Translation if it exists or empty string
+ */
+function getFromTransvision($id, $locale, $repo) {
+    $site = 'http://transvision.mozfr.org/?recherche=';
+    $url = $site . $id . '&repo=' . $repo . '&sourcelocale=en-US&locale='
+           . $locale . '&search_type=entities&json&json';
+    $translation = json_decode(file_get_contents($url), true);
+
+    return array_values($translation[$id])[0];
+}
+
 
 /*
  *  SAPI file (lang_update)
