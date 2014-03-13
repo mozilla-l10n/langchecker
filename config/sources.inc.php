@@ -33,7 +33,7 @@ $mozillaorg_lang = [
     'firefox/includes/mwc_2014_schedule.lang' => true,
     'mwc2014_promos.lang'                     => true,
     'firefox/whatsnew.lang'                   => true,
-    'firefox/windows-8-touch.lang'            => true,
+    'firefox/windows-8-touch.lang'            => false,
     'firefox/installer-help.lang'             => true,
     'firefoxflicks.lang'                      => false,
     'firefoxlive.lang'                        => false,
@@ -86,6 +86,7 @@ $no_active_tag = [
     'upgradepromos.lang',
     'mwc2014_promos.lang',
     'firefox/includes/mwc_2014_schedule.lang',
+    'firefox/windows-8-touch.lang',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang' => true];
