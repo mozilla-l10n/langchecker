@@ -33,7 +33,7 @@ $mozillaorg_lang = [
     'firefox/includes/mwc_2014_schedule.lang' => true,
     'mwc2014_promos.lang'                     => true,
     'firefox/whatsnew.lang'                   => true,
-    'firefox/windows-8-touch.lang'            => false,
+//    'firefox/windows-8-touch.lang'            => false,
     'firefox/installer-help.lang'             => true,
     'firefoxflicks.lang'                      => false,
     'firefoxlive.lang'                        => false,
@@ -86,7 +86,7 @@ $no_active_tag = [
     'upgradepromos.lang',
     'mwc2014_promos.lang',
     'firefox/includes/mwc_2014_schedule.lang',
-    'firefox/windows-8-touch.lang',
+    //'firefox/windows-8-touch.lang',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang' => true];
@@ -207,7 +207,7 @@ $langfiles_subsets = [
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
         'mwc2014_promos.lang'                   => $mwc_locales,
         'firefox/whatsnew.lang'                 => ['hu', 'pl'],
-        'firefox/windows-8-touch.lang'          => $mozilla,
+        //'firefox/windows-8-touch.lang'          => $mozilla,
         'firefox/installer-help.lang'           => $mozilla,
         'firefoxflicks.lang'                    =>
             ['ar', 'bg', 'de', 'fa', 'fr', 'gl', 'es-ES', 'hu', 'id',
