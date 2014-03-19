@@ -16,7 +16,7 @@ if (!isset($_SERVER['SERVER_NAME'])) {
 require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
-$locamotion_locales = ['ach', 'af', 'cy', 'en-ZA', 'ff', 'gd', 'hi-IN', 'kk',
+$locamotion_locales = ['ach', 'af', 'cy', 'en-ZA', 'ff', 'gd', 'hi-IN', 'hsb', 'kk',
                        'km', 'ku', 'ms', 'my', 'oc', 'son', 'ur', 'vi', 'xh'];
 
 $mozillaorg_lang = [
@@ -296,8 +296,8 @@ $langfiles_subsets = [
              'bn-IN', 'br', 'bs', 'ca', 'cs', 'csb', 'cy', 'da', 'de',
              'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
              'et', 'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
-             'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hu', 'hy-AM', 'id',
-             'is', 'it', 'ja', 'ka', 'kk', 'km', 'kn', 'ko', 'ku',
+             'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM',
+             'id', 'is', 'it', 'ja', 'ka', 'kk', 'km', 'kn', 'ko', 'ku',
              'lij', 'lt', 'lv', 'mai', 'mk', 'ml', 'mr', 'ms',
              'my', 'nb-NO', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN',
              'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si',
@@ -372,6 +372,7 @@ $bugzilla_locales =
     'he'    => 'Hebrew',
     'hi-IN' => 'Hindi (India)',
     'hr'    => 'Croatian',
+    'hsb'   => 'Upper Sorbian',
     'hu'    => 'Hungarian',
     'hy-AM' => 'Armenian',
     'id'    => 'Indonesian',
