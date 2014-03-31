@@ -2,7 +2,7 @@
     "require": {
         "atoum/atoum" : "dev-master",
         "sunra/php-simple-html-dom-parser": "dev-master",
-        "sepia/po-parser": "3.0.3"
+        "sepia/po-parser": "3.0.4"
     },
 
     "require-dev": {
