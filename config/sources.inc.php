@@ -31,6 +31,7 @@ $mozillaorg_lang = [
     'firefox/os/faq.lang'                     => false,
     'firefox/partners/index.lang'             => true,
     'firefox/includes/mwc_2014_schedule.lang' => true,
+    'firefox/desktop/index.lang'              => true,
     'mwc2014_promos.lang'                     => true,
     'firefox/whatsnew.lang'                   => true,
 //    'firefox/windows-8-touch.lang'            => false,
@@ -290,6 +291,7 @@ $langfiles_subsets = [
         'upgradedialog.lang'                    => $startpage36,
         'upgradepromos.lang'                    =>
             ['de', 'es-ES', 'fr', 'it', 'pl', 'ru', 'pt-BR'],
+        'firefox/desktop/index.lang'            => ['fr'],
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
