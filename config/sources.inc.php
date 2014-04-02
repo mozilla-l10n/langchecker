@@ -98,6 +98,7 @@ $slogans_lang = [
 
 $snippets_lang = [
     'jan2014.lang' => true,
+    'apr2014.lang' => true,
 ];
 
 $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
@@ -106,8 +107,12 @@ $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr
 $marketplacebadge_locales = ['bg', 'bn-BD', 'ca', 'cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'it',
                              'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr', 'sr-Latn', 'tr'];
 
-$snippets_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
-                     'pl', 'pt-BR', 'ru', 'sr', 'vi', 'zh-CN', 'zh-TW'];
+$snippets_locales = ['bg', 'cs', 'da', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
+                     'nb-NO', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sr', 'vi', 'zh-CN',
+                     'zh-TW'];
+
+$snippets_main_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
+                          'pl', 'pt-BR', 'ru', 'sr', 'vi', 'zh-CN', 'zh-TW'];
 
 $sites =
 [
@@ -325,7 +330,8 @@ $langfiles_subsets = [
 
     'snippets' =>
     [
-        'jan2014.lang' => $snippets_locales,
+        'jan2014.lang' => $snippets_main_locales,
+        'apr2014.lang' => $snippets_locales,
     ],
 
 
