@@ -34,6 +34,7 @@ $mozillaorg_lang = [
     'firefox/desktop/index.lang'              => true,
     'firefox/desktop/customize.lang'          => true,
     'firefox/desktop/fast.lang'               => true,
+    'firefox/desktop/trust.lang'              => true,
     'mwc2014_promos.lang'                     => true,
     'firefox/whatsnew.lang'                   => true,
 //    'firefox/windows-8-touch.lang'            => false,
@@ -296,6 +297,7 @@ $langfiles_subsets = [
         'firefox/desktop/index.lang'            => ['fr'],
         'firefox/desktop/customize.lang'        => ['fr'],
         'firefox/desktop/fast.lang'             => ['fr'],
+        'firefox/desktop/trust.lang'            => ['fr'],
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
