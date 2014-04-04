@@ -295,11 +295,11 @@ $langfiles_subsets = [
         'upgradedialog.lang'                    => $startpage36,
         'upgradepromos.lang'                    =>
             ['de', 'es-ES', 'fr', 'it', 'pl', 'ru', 'pt-BR'],
-        'firefox/desktop/index.lang'            => ['de', 'fr'],
-        'firefox/desktop/customize.lang'        => ['de', 'fr'],
-        'firefox/desktop/fast.lang'             => ['de', 'fr'],
-        'firefox/desktop/trust.lang'            => ['de', 'fr'],
-        'firefox/sync.lang'                     => ['de', 'fr'],
+        'firefox/desktop/index.lang'            => $mozilla,
+        'firefox/desktop/customize.lang'        => $mozilla,
+        'firefox/desktop/fast.lang'             => $mozilla,
+        'firefox/desktop/trust.lang'            => $mozilla,
+        'firefox/sync.lang'                     => $mozilla,
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
