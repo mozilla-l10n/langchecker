@@ -40,6 +40,7 @@ $mozillaorg_lang = [
     'firefox/whatsnew.lang'                   => true,
 //    'firefox/windows-8-touch.lang'            => false,
     'firefox/installer-help.lang'             => true,
+    'firefox/australis/firefox_tour.lang'     => true,
     'firefoxflicks.lang'                      => false,
     'firefoxlive.lang'                        => false,
     'firefoxos/firefoxos.lang'                => true,
@@ -300,6 +301,7 @@ $langfiles_subsets = [
         'firefox/desktop/fast.lang'             => $mozilla,
         'firefox/desktop/trust.lang'            => $mozilla,
         'firefox/sync.lang'                     => $mozilla,
+        'firefox/australis/firefox_tour.lang'   => $mozilla,
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
