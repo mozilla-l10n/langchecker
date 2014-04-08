@@ -43,6 +43,12 @@ foreach ($sites as $key => $_site) {
             if ($_site[0] == 'about:healthreport' && array_key_exists($filename, $firefoxhealthreport_lang)) {
                 $export[$_site[0]][$filename]['critical'] = $firefoxhealthreport_lang[$filename];
             }
+            if ($_site[0] == 'slogans' && array_key_exists($filename, $slogans_lang)) {
+                $export[$_site[0]][$filename]['critical'] = $slogans_lang[$filename];
+            }
+            if ($_site[0] == 'snippets' && array_key_exists($filename, $snippets_lang)) {
+                $export[$_site[0]][$filename]['critical'] = $snippets_lang[$filename];
+            }
             unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
         }
     }
