@@ -37,11 +37,19 @@ foreach ($sites as $key => $_site) {
             $export[$_site[0]][$filename]['missing']    = count($GLOBALS[$locale]['Missing']);
             $export[$_site[0]][$filename]['obsolete']   = count($GLOBALS[$locale]['Obsolete']);
             $export[$_site[0]][$filename]['translated'] = count($GLOBALS[$locale]['Translated']);
+
             if ($_site[0] == 'www.mozilla.org' && array_key_exists($filename, $mozillaorg_lang)) {
                 $export[$_site[0]][$filename]['critical'] = $mozillaorg_lang[$filename];
             }
             if ($_site[0] == 'about:healthreport' && array_key_exists($filename, $firefoxhealthreport_lang)) {
                 $export[$_site[0]][$filename]['critical'] = $firefoxhealthreport_lang[$filename];
+            }
+
+            if ($_site[0] == 'slogans' && array_key_exists($filename, $slogans_lang)) {
+                $export[$_site[0]][$filename]['critical'] = $slogans_lang[$filename];
+            }
+            if ($_site[0] == 'snippets' && array_key_exists($filename, $snippets_lang)) {
+                $export[$_site[0]][$filename]['critical'] = $snippets_lang[$filename];
             }
 
             // Some files have a deadline
