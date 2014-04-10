@@ -43,6 +43,12 @@ foreach ($sites as $key => $_site) {
             if ($_site[0] == 'about:healthreport' && array_key_exists($filename, $firefoxhealthreport_lang)) {
                 $export[$_site[0]][$filename]['critical'] = $firefoxhealthreport_lang[$filename];
             }
+
+            // Some files have a deadline
+            if (array_key_exists($filename, $deadline)) {
+                $export[$_site[0]][$filename]['deadline'] = $deadline[$filename];
+            }
+
             unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
         }
     }

@@ -95,6 +95,19 @@ $no_active_tag = [
     //'firefox/windows-8-touch.lang',
 ];
 
+
+$deadline = [
+    // Australis release
+    'firefox/desktop/index.lang'              => '2014-04-27',
+    'firefox/desktop/customize.lang'          => '2014-04-27',
+    'firefox/desktop/fast.lang'               => '2014-04-27',
+    'firefox/desktop/trust.lang'              => '2014-04-27',
+    'firefox/sync.lang'                       => '2014-04-27',
+    'apr2014.lang'                            => '2014-04-27',
+    'firefox/australis/firefox_tour.lang'     => '2014-04-27',
+
+];
+
 $firefoxhealthreport_lang = ['fhr.lang' => true];
 
 $slogans_lang = [
