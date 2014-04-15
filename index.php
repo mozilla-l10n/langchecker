@@ -31,10 +31,13 @@ if ($locale == '' && $action == '') {
 } elseif ($locale == ''  && $serial == false && $action == 'translate') {
     /* case 8: list all translations of a string for snippets */
     $case = 8;
+} elseif ($locale == '' && $json == true && $action == 'listlocales') {
+    /* case 9: list all locales for a given page or project */
+    $case = 9;
 }
 
 if ($action == 'api') {
-    $case = 9;
+    $case = 10;
 }
 
 switch ($case) {
@@ -79,6 +82,9 @@ switch ($case) {
         $view     = $views . 'translatestrings.inc.php';
         break;
     case 9:
+        $template = $views . 'listlocalesforproject.inc.php';
+        break;
+    case 10:
         $template = $views . 'json.inc.php';
         break;
     default:
