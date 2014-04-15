@@ -303,7 +303,9 @@ $langfiles_subsets = [
         'mozspaces.lang'                        => ['de', 'fr'],
         'newsletter.lang'                       => $mozillaorg,
         'privacy/ffos_privacy.lang'             => ['hu', 'it', 'pt-BR', 'sr'],
-        'privacy/privacy-day.lang'              => ['fr', 'es-AR', 'es-ES'],
+        'privacy/privacy-day.lang'              =>
+            ['ca', 'cs', 'de', 'es-AR', 'es-ES',
+            'fr', 'it', 'pl', 'pt-BR', 'zh-TW'],
         'snippets.lang'                         => $mozillaorg,
         'tabzilla/tabzilla.lang'                => $mozillaorg,
         'upgradedialog.lang'                    => $startpage36,
