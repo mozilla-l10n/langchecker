@@ -116,8 +116,6 @@ $deadline = [
     'mozorg/about/manifesto.lang'    => '2013-12-31',
     'mozorg/mission.lang'            => '2013-12-31',
     'mozorg/products.lang'           => '2013-12-31',
-    'tabzilla/tabzilla.lang'         => '2013-12-31',
-
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang' => true];
