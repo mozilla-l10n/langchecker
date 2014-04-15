@@ -104,7 +104,9 @@ $deadline = [
     'firefox/desktop/trust.lang'              => '2014-04-27',
     'firefox/sync.lang'                       => '2014-04-27',
     'apr2014.lang'                            => '2014-04-27',
-    'firefox/australis/firefox_tour.lang'     => '2014-04-27',
+    'mozorg/home.lang'                        => '2014-04-27',
+    'tabzilla/tabzilla.lang'                  => '2014-04-27',
+    'mozorg/plugincheck.lang'                 => '2013-12-31',
 
 ];
 
