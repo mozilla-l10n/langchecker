@@ -65,7 +65,6 @@ $mozillaorg_lang = [
     'mozorg/home.lang'                        => true,
     'mozspaces.lang'                          => false,
     'newsletter.lang'                         => true,
-    'privacy/ffos_privacy.lang'               => true,
     'privacy/privacy-day.lang'                => false,
     'snippets.lang'                           => false,
     'tabzilla/tabzilla.lang'                  => false,
@@ -313,7 +312,6 @@ $langfiles_subsets = [
         'mozorg/products.lang'                  => $mozillaorg,
         'mozspaces.lang'                        => ['de', 'fr'],
         'newsletter.lang'                       => $mozillaorg,
-        'privacy/ffos_privacy.lang'             => ['hu', 'it', 'pt-BR', 'sr'],
         'privacy/privacy-day.lang'              =>
             ['ca', 'cs', 'de', 'es-AR', 'es-ES', 'fr',
              'it', 'ja', 'pl', 'pt-BR', 'sq', 'zh-TW'],
