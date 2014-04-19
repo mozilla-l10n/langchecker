@@ -313,7 +313,7 @@ $langfiles_subsets = [
         'mozspaces.lang'                        => ['de', 'fr'],
         'newsletter.lang'                       => $mozillaorg,
         'privacy/privacy-day.lang'              =>
-            ['ca', 'cs', 'de', 'es-AR', 'es-ES', 'fr',
+            ['ca', 'cs', 'de', 'es-AR', 'es-ES', 'eu', 'fr',
              'it', 'ja', 'pl', 'pt-BR', 'sq', 'zh-TW'],
         'snippets.lang'                         => $mozillaorg,
         'tabzilla/tabzilla.lang'                => $mozillaorg,
