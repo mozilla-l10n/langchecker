@@ -4,7 +4,7 @@
 
 <?php
 
-echo '<table class="sortable globallist">
+$table_start_code = '<table class="sortable globallist">
   <thead>
     <tr>
       <th>Locale</th>
@@ -18,6 +18,8 @@ echo '<table class="sortable globallist">
   </thead>
   <tbody>
 ';
+$table_rows = '';
+$table_end_code; "\n</tbody>\n</table>";
 
 // We only consider mozilla.org for this view, so $sites[0]
 $site = $sites[0];
@@ -52,15 +54,15 @@ foreach ($site[4] as $filename) {
 
             if (($todo==0) && ($activation_status=='no')) {
                 $svn_path = 'http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/locales/' . $locale . '/' . $filename;
-                echo "  <tr>\n";
-                echo '    <td><a href="./?locale=' . $locale . '" title="See full status of this locale">' . $locale . "</a></td>\n";
-                echo '    <td><a href="' . $svn_path . '" target="_blank" title="Open this file on SVN">' . $filename . "</a></td>\n";
-                echo '    <td>' . count($GLOBALS[$locale]['Identical']) . "</td>\n";
-                echo '    <td>' . count($GLOBALS[$locale]['Translated']) . "</td>\n";
-                echo '    <td>' . count($GLOBALS[$locale]['Missing']) . "</td>\n";
-                echo '    <td>' . count($GLOBALS[$locale]['Obsolete']) . "</td>\n";
-                echo '    <td>' . $activation_status . "</td>\n";
-                echo "  </tr>\n";
+                $table_rows .= "  <tr>\n";
+                $table_rows .= '    <td><a href="./?locale=' . $locale . '" title="See full status of this locale">' . $locale . "</a></td>\n";
+                $table_rows .= '    <td><a href="' . $svn_path . '" target="_blank" title="Open this file on SVN">' . $filename . "</a></td>\n";
+                $table_rows .= '    <td>' . count($GLOBALS[$locale]['Identical']) . "</td>\n";
+                $table_rows .= '    <td>' . count($GLOBALS[$locale]['Translated']) . "</td>\n";
+                $table_rows .= '    <td>' . count($GLOBALS[$locale]['Missing']) . "</td>\n";
+                $table_rows .= '    <td>' . count($GLOBALS[$locale]['Obsolete']) . "</td>\n";
+                $table_rows .= '    <td>' . $activation_status . "</td>\n";
+                $table_rows .= "  </tr>\n";
             }
             unset($GLOBALS[$locale]);
         }
@@ -68,6 +70,8 @@ foreach ($site[4] as $filename) {
     }
 }
 
-echo '</tbody>
-</table>
-';
+if ($table_rows == '') {
+    echo "<p>There are no complete files missing the active tag.</p>";
+} else {
+    echo $table_start_code . $table_rows . $table_end_code;
+}
