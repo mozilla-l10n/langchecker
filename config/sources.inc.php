@@ -314,7 +314,7 @@ $langfiles_subsets = [
         'newsletter.lang'                       => $mozillaorg,
         'privacy/privacy-day.lang'              =>
             ['ca', 'cs', 'de', 'es-AR', 'es-ES', 'eu', 'fr',
-             'it', 'ja', 'pl', 'pt-BR', 'sq', 'zh-TW'],
+             'it', 'ja', 'pl', 'pt-BR', 'sk', 'sq', 'zh-TW'],
         'snippets.lang'                         => $mozillaorg,
         'tabzilla/tabzilla.lang'                => $mozillaorg,
         'upgradedialog.lang'                    => $startpage36,
