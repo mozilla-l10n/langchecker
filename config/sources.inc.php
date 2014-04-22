@@ -24,61 +24,170 @@ $locamotion_locales = ['ach', 'af', 'cy', 'dsb', 'en-ZA', 'es-MX', 'ff', 'gd', '
     kk (20130427)
 */
 
-$mozillaorg_lang = [
-    'download.lang'                           => true,
-    'download_button.lang'                    => true,
-    'esr.lang'                                => false,
-    'euballot.lang'                           => false,
-    'firefox/geolocation.lang'                => false,
-    'firefox/new.lang'                        => true,
-    'firefox/channel.lang'                    => true,
-    'firefox/speed.lang'                      => false,
-    'firefox/os/index.lang'                   => true,
-    'firefox/os/faq.lang'                     => false,
-    'firefox/partners/index.lang'             => true,
-    'firefox/includes/mwc_2014_schedule.lang' => true,
-    'firefox/desktop/index.lang'              => true,
-    'firefox/desktop/customize.lang'          => true,
-    'firefox/desktop/fast.lang'               => true,
-    'firefox/desktop/trust.lang'              => true,
-    'firefox/desktop/tips.lang'               => true,
-    'firefox/sync.lang'                       => true,
-    'mwc2014_promos.lang'                     => true,
-    'firefox/whatsnew.lang'                   => true,
-//    'firefox/windows-8-touch.lang'            => false,
-    'firefox/installer-help.lang'             => true,
-    'firefox/australis/firefox_tour.lang'     => true,
-    'firefoxflicks.lang'                      => false,
-    'firefoxlive.lang'                        => false,
-    'firefoxos/firefoxos.lang'                => true,
-    'firefoxtesting.lang'                     => true,
-    'foundation/annualreport/2011.lang'       => false,
-    'foundation/annualreport/2011faq.lang'    => true,
-    'foundation/annualreport/2012/index.lang' => true,
-    'foundation/annualreport/2012/faq.lang'   => false,
-    'foundationsection.lang'                  => false,
-    'lightbeam/lightbeam.lang'                => false,
-    'main.lang'                               => true,
-    'marketplace/marketplace.lang'            => true,
-    'marketplace/partners.lang'               => false,
-    'mobile.lang'                             => true,
-    'mozorg/about.lang'                       => false,
-    'mozorg/about/manifesto.lang'             => false,
-    'mozorg/about/history.lang'               => false,
-    'mozorg/about/history-details.lang'       => false,
-    'mozorg/mission.lang'                     => false,
-    'mozorg/contribute.lang'                  => false,
-    'mozorg/plugincheck.lang'                 => true,
-    'mozorg/products.lang'                    => false,
-    'mozorg/home.lang'                        => true,
-    'mozspaces.lang'                          => false,
-    'newsletter.lang'                         => true,
-    'privacy/privacy-day.lang'                => false,
-    'snippets.lang'                           => false,
-    'tabzilla/tabzilla.lang'                  => false,
-    'upgradedialog.lang'                      => true,
-    'upgradepromos.lang'                      => false,
-    'firefox/nightly_firstrun.lang'           => false,
+
+$mozillaorg_flags = [
+    'download.lang'                           => [
+        'critical' => 'all',
+    ],
+    'download_button.lang'                    => [
+        'critical' => 'all',
+    ],
+    'esr.lang'                                => [
+        'critical' => 'none',
+    ],
+    'euballot.lang'                           => [
+        'critical' => 'none',
+    ],
+    'firefox/geolocation.lang'                => [
+        'critical' => 'none',
+    ],
+    'firefox/new.lang'                        => [
+        'critical' => 'all',
+    ],
+    'firefox/channel.lang'                    => [
+        'critical' => 'all',
+    ],
+    'firefox/speed.lang'                      => [
+        'critical' => 'none',
+    ],
+    'firefox/os/index.lang'                   => [
+        'critical' => 'all',
+    ],
+    'firefox/os/faq.lang'                     => [
+        'critical' => 'none',
+    ],
+    'firefox/partners/index.lang'             => [
+        'critical' => 'all',
+    ],
+    'firefox/includes/mwc_2014_schedule.lang' => [
+        'critical' => 'all',
+    ],
+    'firefox/desktop/index.lang'              => [
+        'critical' => 'all',
+    ],
+    'firefox/desktop/customize.lang'          => [
+        'critical' => 'all',
+    ],
+    'firefox/desktop/fast.lang'               => [
+        'critical' => 'all',
+    ],
+    'firefox/desktop/trust.lang'              => [
+        'critical' => 'all',
+    ],
+    'firefox/desktop/tips.lang'               => [
+        'critical' => 'all',
+    ],
+    'firefox/sync.lang'                       => [
+        'critical' => 'all',
+    ],
+    'mwc2014_promos.lang'                     => [
+        'critical' => 'all',
+    ],
+    'firefox/whatsnew.lang'                   => [
+        'critical' => 'all',
+    ],
+    'firefox/installer-help.lang'             => [
+        'critical' => 'all',
+    ],
+    'firefox/australis/firefox_tour.lang'     => [
+        'critical' => 'all',
+    ],
+    'firefoxflicks.lang'                      => [
+        'critical' => 'none',
+    ],
+    'firefoxlive.lang'                        => [
+        'critical' => 'none',
+    ],
+    'firefoxos/firefoxos.lang'                => [
+        'critical' => 'all',
+    ],
+    'firefoxtesting.lang'                     => [
+        'critical' => 'all',
+    ],
+    'foundation/annualreport/2011.lang'       => [
+        'critical' => 'none',
+    ],
+    'foundation/annualreport/2011faq.lang'    => [
+        'critical' => 'all',
+    ],
+    'foundation/annualreport/2012/index.lang' => [
+        'critical' => 'all',
+    ],
+    'foundation/annualreport/2012/faq.lang'   => [
+        'critical' => 'none',
+    ],
+    'foundationsection.lang'                  => [
+        'critical' => 'none',
+    ],
+    'lightbeam/lightbeam.lang'                => [
+        'critical' => 'none',
+    ],
+    'main.lang'                               => [
+        'critical' => 'all',
+    ],
+    'marketplace/marketplace.lang'            => [
+        'critical' => 'all',
+    ],
+    'marketplace/partners.lang'               => [
+        'critical' => 'none',
+    ],
+    'mobile.lang'                             => [
+        'critical' => 'all',
+    ],
+    'mozorg/15years.lang'                     => [
+        'critical' => 'none',
+    ],
+    'mozorg/about.lang'                       => [
+        'critical' => 'none',
+    ],
+    'mozorg/about/manifesto.lang'             => [
+        'critical' => 'none',
+    ],
+    'mozorg/about/history.lang'               => [
+        'critical' => 'none',
+    ],
+    'mozorg/about/history-details.lang'       => [
+        'critical' => 'none',
+    ],
+    'mozorg/mission.lang'                     => [
+        'critical' => 'none',
+    ],
+    'mozorg/contribute.lang'                  => [
+        'critical' => 'none',
+    ],
+    'mozorg/plugincheck.lang'                 => [
+        'critical' => 'all',
+    ],
+    'mozorg/products.lang'                    => [
+        'critical' => 'none',
+    ],
+    'mozorg/home.lang'                        => [
+        'critical' => 'all',
+    ],
+    'mozspaces.lang'                          => [
+        'critical' => 'none',
+    ],
+    'newsletter.lang'                         => [
+        'critical' => 'all',
+    ],
+    'privacy/privacy-day.lang'                => [
+        'critical' => 'none',
+    ],
+    'snippets.lang'                           => [
+        'critical' => 'none',
+    ],
+    'tabzilla/tabzilla.lang'                  => [
+        'critical' => 'none',
+    ],
+    'upgradedialog.lang'                      => [
+        'critical' => 'all',
+    ],
+    'upgradepromos.lang'                      => [
+        'critical' => 'none',
+    ],
+    'firefox/nightly_firstrun.lang'           => [
+        'critical' => 'none',
+    ],
 ];
 
 $no_active_tag = [
@@ -162,7 +271,7 @@ $sites =
         $repo1,
         'locales/',
         $mozilla,
-        array_keys($mozillaorg_lang),
+        array_keys($mozillaorg_flags),
         'en-GB', // source locale
         $public_repo1,
     ],
