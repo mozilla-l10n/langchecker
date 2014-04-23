@@ -34,11 +34,15 @@ if ($locale == '' && $action == '') {
 } elseif ($locale == '' && $json == true && $action == 'listlocales') {
     /* case 9: list all locales for a given page or project */
     $case = 9;
+} elseif ($action == 'coverage') {
+    /* case 10: get users base coverage for a list of locales */
+    $case = 10;
 }
 
 if ($action == 'api') {
-    $case = 10;
+    $case = 11;
 }
+
 
 switch ($case) {
     case 1:
@@ -85,6 +89,9 @@ switch ($case) {
         $template = $views . 'listlocalesforproject.inc.php';
         break;
     case 10:
+        $template = $views . 'getcoverage.inc.php';
+        break;
+    case 11:
         $template = $views . 'json.inc.php';
         break;
     default:
