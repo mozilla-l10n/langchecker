@@ -234,7 +234,7 @@ $langfiles_subsets = [
         'firefox/channel.lang'                  => $mozilla,
         'firefox/speed.lang'                    => ['pt-BR'],
         'firefox/os/index.lang'                 =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'fy-NL', 'hr', 'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/os/faq.lang'                   =>
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           => $mwc_locales,
