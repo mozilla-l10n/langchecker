@@ -141,12 +141,7 @@ foreach ($sites[$website][4] as $_file) {
         unset($GLOBALS[$_lang]);
     }
 
-    // ja+mozilla.org is not relevant, remove "ja" from $adu and $done in that case
-    if ($website == 0) {
-        $done = getUserBaseCoverage($done) . '% (excluding ja)';
-    } else {
-        $done = getUserBaseCoverage($done, false) . '%';
-    }
+    $done = getUserBaseCoverage($done) . '%';
 
     echo '
   </tbody>
