@@ -534,7 +534,7 @@ function scrapLocamotion($lang, $filename, $source)
             unset($po_parser);
 
             // Copy tags from the original local file if we need to use temp.lang as source
-            if ($imported_strings) {
+            if ($imported_strings && isset($local_lang_file['tags'])) {
                 $GLOBALS['__l10n_moz']['tags'] = $local_lang_file['tags'];
             }
         } else {
