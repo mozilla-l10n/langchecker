@@ -248,19 +248,18 @@ function jsonOutput(array $data, $jsonp = false)
 /**
  * getUserBaseCoverage()
  *
- * @param $locales an array of locales
- * @param $no_japan boolean, default to true, do we include Japanese?
+ * @param array $locales an array of locales
  *
- * @return a percent value of our coverage for the user base
+ * @return string a percent value of our coverage for the user base
  */
 
-function getUserBaseCoverage($locales, $no_japan = true)
+function getUserBaseCoverage($locales)
 {
     include __DIR__ . '/../config/adu.inc.php';
 
-    if ($no_japan) {
-        $adu['ja'] = $adu['ja-JP-mac'] = 0;
-    }
+    // Japanese has 2 builds
+    $adu['ja'] = $adu['ja'] + $adu['ja-JP-mac'];
+    unset($adu['ja-JP-mac']);
 
     $english = $adu['en-GB'] + $adu['en-US'] + $adu['en-ZA'];
     $locales = array_intersect_key($adu, array_flip($locales));
