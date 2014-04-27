@@ -16,8 +16,13 @@ if (!isset($_SERVER['SERVER_NAME'])) {
 require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
-$locamotion_locales = ['ach', 'af', 'cy', 'en-ZA', 'ff', 'gd', 'hi-IN', 'hsb', 'kk',
+$locamotion_locales = ['ach', 'af', 'cy', 'en-ZA', 'ff', 'gd', 'hi-IN', 'hsb',
                        'km', 'ku', 'ms', 'my', 'oc', 'son', 'ur', 'vi', 'xh'];
+
+/*
+    Locales removed from locamotion import because of commits on SVN
+    kk (20130427)
+*/
 
 $mozillaorg_lang = [
     'download.lang'                           => true,
