@@ -473,7 +473,7 @@ function scrapLocamotion($lang, $filename, $source)
     logger('== ' . $lang . ' ==');
 
     /* import data from locamotion */
-    $locamotion = 'https://raw.github.com/translate/mozilla-lang/master/'
+    $locamotion = 'https://raw.githubusercontent.com/translate/mozilla-lang/master/'
                   . str_replace('-', '_', $lang)
                   . '/' . $filename . '.po';
     $http_response = get_headers($locamotion, 1)[0];
