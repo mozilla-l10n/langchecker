@@ -248,19 +248,18 @@ function jsonOutput(array $data, $jsonp = false)
 /**
  * getUserBaseCoverage()
  *
- * @param $locales an array of locales
- * @param $no_japan boolean, default to true, do we include Japanese?
+ * @param array $locales an array of locales
  *
- * @return a percent value of our coverage for the user base
+ * @return string a percent value of our coverage for the user base
  */
 
-function getUserBaseCoverage($locales, $no_japan = true)
+function getUserBaseCoverage($locales)
 {
     include __DIR__ . '/../config/adu.inc.php';
 
-    if ($no_japan) {
-        $adu['ja'] = $adu['ja-JP-mac'] = 0;
-    }
+    // Japanese has 2 builds
+    $adu['ja'] = $adu['ja'] + $adu['ja-JP-mac'];
+    unset($adu['ja-JP-mac']);
 
     $english = $adu['en-GB'] + $adu['en-US'] + $adu['en-ZA'];
     $locales = array_intersect_key($adu, array_flip($locales));
@@ -405,7 +404,7 @@ function dumpString($english, $eol, $exceptions = array())
 
         $chunk .= str_replace($brands, $brands_links, $tempString);
     } else {
-        $chunk .= (array_key_exists($english, $GLOBALS['__l10n_moz'])) ? $GLOBALS['__l10n_moz'][$english]: $english;
+        $chunk .= array_key_exists($english, $GLOBALS['__l10n_moz']) ? $GLOBALS['__l10n_moz'][$english]: $english;
     }
 
     $chunk .= $eol . $eol . $eol;
@@ -488,7 +487,7 @@ function scrapLocamotion($lang, $filename, $source)
         $po_strings = $po_parser->read('temp.po');
         unlink('temp.po');
 
-        $temp_lang  = '';
+        $temp_lang = '';
 
         if (count($po_strings) > 0) {
             // Create a temp.lang file containing strings extracted from Locamotion's .po file
@@ -516,6 +515,7 @@ function scrapLocamotion($lang, $filename, $source)
             l10n_moz::load('temp.lang');
             unlink('temp.lang');
             $imported_lang_file = $GLOBALS['__l10n_moz'];
+            unset($GLOBALS['__l10n_moz']);
 
             foreach ($imported_lang_file as $key => $val) {
                 $val = is_array($val) ? $val[0] : $val;
@@ -530,23 +530,17 @@ function scrapLocamotion($lang, $filename, $source)
                     }
                 }
             }
-            // Clean up
-            unset($po_parser);
 
-            // Copy tags from the original local file if we need to use temp.lang as source
-            if ($imported_strings && isset($local_lang_file['tags'])) {
-                $GLOBALS['__l10n_moz']['tags'] = $local_lang_file['tags'];
-            }
         } else {
             logger($filename . '.po has no strings in it');
         }
-
 
     } else {
         logger("$locamotion does not exist, http code was $http_response");
     }
 
     if ($imported_strings) {
+        $GLOBALS['__l10n_moz'] = array_merge($local_lang_file, $imported_lang_file);
         logger("Data from Locamotion extracted and added to local repository.");
         return true;
     } else {
