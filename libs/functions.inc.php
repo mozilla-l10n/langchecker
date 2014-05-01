@@ -540,7 +540,7 @@ function scrapLocamotion($lang, $filename, $source)
     }
 
     if ($imported_strings) {
-        $GLOBALS['__l10n_moz'] = array_merge($local_lang_file, $imported_lang_file);
+        $GLOBALS['__l10n_moz'] = $imported_lang_file + $local_lang_file;
         logger("Data from Locamotion extracted and added to local repository.");
         return true;
     } else {
