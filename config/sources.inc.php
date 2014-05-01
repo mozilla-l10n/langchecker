@@ -109,6 +109,7 @@ $deadline = [
     'firefox/desktop/trust.lang'          => '2014-04-27',
     'firefox/sync.lang'                   => '2014-04-27',
     'apr2014.lang'                        => '2014-04-27',
+    'may2014.lang'                        => '2014-05-20',
     'mozorg/home.lang'                    => '2014-04-27',
     'tabzilla/tabzilla.lang'              => '2014-04-27',
     'firefox/australis/firefox_tour.lang' => '2014-04-27',
@@ -134,6 +135,7 @@ $slogans_lang = [
 $snippets_lang = [
     'jan2014.lang' => true,
     'apr2014.lang' => true,
+    'may2014.lang' => true,
 ];
 
 $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
@@ -375,6 +377,7 @@ $langfiles_subsets = [
     [
         'jan2014.lang' => $snippets_main_locales,
         'apr2014.lang' => $snippets_locales,
+        'may2014.lang' => $snippets_locales,
     ],
 
 
