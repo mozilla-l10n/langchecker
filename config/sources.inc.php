@@ -40,6 +40,7 @@ $mozillaorg_lang = [
     'firefox/desktop/customize.lang'          => true,
     'firefox/desktop/fast.lang'               => true,
     'firefox/desktop/trust.lang'              => true,
+    'firefox/desktop/tips.lang'               => true,
     'firefox/sync.lang'                       => true,
     'mwc2014_promos.lang'                     => true,
     'firefox/whatsnew.lang'                   => true,
@@ -107,6 +108,7 @@ $deadline = [
     'firefox/desktop/customize.lang'      => '2014-04-27',
     'firefox/desktop/fast.lang'           => '2014-04-27',
     'firefox/desktop/trust.lang'          => '2014-04-27',
+    'firefox/desktop/tips.lang'           => '2014-05-25',
     'firefox/sync.lang'                   => '2014-04-27',
     'apr2014.lang'                        => '2014-04-27',
     'may2014.lang'                        => '2014-05-20',
@@ -335,6 +337,10 @@ $langfiles_subsets = [
         'firefox/sync.lang'                     => $mozilla,
         'firefox/australis/firefox_tour.lang'   => $mozilla,
         'firefox/nightly_firstrun.lang'         => ['cs', 'de', 'fr', 'it'],
+        'firefox/desktop/tips.lang'             =>
+            ['cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr',
+             'hu', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'zh-CN',
+             'zh-TW'],
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
