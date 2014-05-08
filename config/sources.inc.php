@@ -333,7 +333,7 @@ $langfiles_subsets = [
         'firefox/nightly_firstrun.lang'         => ['cs', 'de', 'fr', 'it'],
         'firefox/desktop/tips.lang'             =>
             ['cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr',
-             'hu', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'zh-CN',
+             'hu', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'zh-CN',
              'zh-TW'],
     ],
 
