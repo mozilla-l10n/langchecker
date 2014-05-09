@@ -63,6 +63,8 @@ $mozillaorg_lang = [
     'mobile.lang'                             => true,
     'mozorg/about.lang'                       => false,
     'mozorg/about/manifesto.lang'             => false,
+    'mozorg/about/history.lang'               => false,
+    'mozorg/about/history-details.lang'       => false,
     'mozorg/mission.lang'                     => false,
     'mozorg/contribute.lang'                  => false,
     'mozorg/plugincheck.lang'                 => true,
@@ -307,6 +309,12 @@ $langfiles_subsets = [
              'fy-NL', 'gl', 'hr', 'hu', 'id', 'it', 'ja', 'ko', 'mk',
              'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
              'sr', 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW'],
+        'mozorg/about/history.lang'             =>
+            ['ar', 'bg', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+             'es-MX', 'fr', 'hr', 'fy-NL', 'id', 'it', 'lt', 'ms', 'nl',
+             'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'ta', 'tr',
+             'zh-CN', 'zh-TW'],
+        'mozorg/about/history-details.lang'     => ['it'],
         'mozorg/contribute.lang'                =>
             ['ar', 'bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
