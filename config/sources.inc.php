@@ -332,9 +332,9 @@ $langfiles_subsets = [
         'firefox/australis/firefox_tour.lang'   => $mozilla,
         'firefox/nightly_firstrun.lang'         => ['cs', 'de', 'fr', 'it'],
         'firefox/desktop/tips.lang'             =>
-            ['cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr',
-             'hu', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'zh-CN',
-             'zh-TW'],
+            ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr',
+             'fy-NL', 'hu', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl',
+             'zh-CN', 'zh-TW'],
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
