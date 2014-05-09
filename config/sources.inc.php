@@ -338,7 +338,7 @@ $langfiles_subsets = [
         'firefox/desktop/trust.lang'            => $mozilla,
         'firefox/sync.lang'                     => $mozilla,
         'firefox/australis/firefox_tour.lang'   => $mozilla,
-        'firefox/nightly_firstrun.lang'         => ['cs', 'de', 'fr', 'it'],
+        'firefox/nightly_firstrun.lang'         => ['cs', 'de', 'fr', 'it', 'ru'],
         'firefox/desktop/tips.lang'             =>
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr',
              'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR',
