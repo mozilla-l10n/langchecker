@@ -314,7 +314,7 @@ $langfiles_subsets = [
              'es-MX', 'fr', 'hr', 'fy-NL', 'id', 'it', 'lt', 'ms', 'nl',
              'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'ta', 'tr',
              'zh-CN', 'zh-TW'],
-        'mozorg/about/history-details.lang'     => ['it'],
+        'mozorg/about/history-details.lang'     => ['de', 'it'],
         'mozorg/contribute.lang'                =>
             ['ar', 'bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
