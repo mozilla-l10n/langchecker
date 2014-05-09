@@ -334,7 +334,7 @@ $langfiles_subsets = [
         'firefox/desktop/tips.lang'             =>
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr',
              'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR',
-             'ru', 'sl', 'zh-CN', 'zh-TW'],
+             'ru', 'sl', 'sq', 'zh-CN', 'zh-TW'],
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
