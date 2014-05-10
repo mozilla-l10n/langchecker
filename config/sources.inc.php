@@ -311,10 +311,10 @@ $langfiles_subsets = [
              'sr', 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW'],
         'mozorg/about/history.lang'             =>
             ['ar', 'bg', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
-             'es-MX', 'fr', 'hr', 'fy-NL', 'id', 'it', 'lt', 'ms', 'nl',
+             'es-MX', 'eu', 'fr', 'hr', 'fy-NL', 'id', 'it', 'lt', 'ms', 'nl',
              'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'ta', 'tr',
              'zh-CN', 'zh-TW'],
-        'mozorg/about/history-details.lang'     => ['de', 'it'],
+        'mozorg/about/history-details.lang'     => ['de', 'eu', 'it'],
         'mozorg/contribute.lang'                =>
             ['ar', 'bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
@@ -340,9 +340,9 @@ $langfiles_subsets = [
         'firefox/australis/firefox_tour.lang'   => $mozilla,
         'firefox/nightly_firstrun.lang'         => ['cs', 'de', 'fr', 'it', 'ru'],
         'firefox/desktop/tips.lang'             =>
-            ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr',
-             'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR',
-             'ru', 'sl', 'sq', 'zh-CN', 'zh-TW'],
+            ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu',
+             'fr', 'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl',
+             'pt-BR', 'ru', 'sl', 'sq', 'zh-CN', 'zh-TW'],
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
