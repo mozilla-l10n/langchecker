@@ -310,11 +310,12 @@ $langfiles_subsets = [
              'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
              'sr', 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW'],
         'mozorg/about/history.lang'             =>
-            ['ar', 'bg', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+            ['ar', 'bg', 'ca', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'eu', 'fr', 'hr', 'fy-NL', 'id', 'it', 'lt', 'ms', 'nl',
              'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'ta', 'tr',
              'zh-CN', 'zh-TW'],
-        'mozorg/about/history-details.lang'     => ['de', 'eu', 'it'],
+        'mozorg/about/history-details.lang'     =>
+            ['ca', 'de', 'eu', 'it'],
         'mozorg/contribute.lang'                =>
             ['ar', 'bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
