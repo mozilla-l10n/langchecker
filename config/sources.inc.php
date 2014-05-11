@@ -312,10 +312,10 @@ $langfiles_subsets = [
         'mozorg/about/history.lang'             =>
             ['ar', 'bg', 'ca', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'eu', 'fr', 'hr', 'fy-NL', 'id', 'it', 'lt', 'ms', 'nl',
-             'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'ta', 'tr',
+             'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'ta', 'tr',
              'zh-CN', 'zh-TW'],
         'mozorg/about/history-details.lang'     =>
-            ['ca', 'de', 'eu', 'it', 'sq', 'zh-TW'],
+            ['ca', 'de', 'eu', 'it', 'sk', 'sq', 'zh-TW'],
         'mozorg/contribute.lang'                =>
             ['ar', 'bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
@@ -343,7 +343,7 @@ $langfiles_subsets = [
         'firefox/desktop/tips.lang'             =>
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu',
              'fr', 'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl',
-             'pt-BR', 'ru', 'sl', 'sq', 'zh-CN', 'zh-TW'],
+             'pt-BR', 'ru', 'sk', 'sl', 'sq', 'zh-CN', 'zh-TW'],
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
