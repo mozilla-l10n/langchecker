@@ -29,6 +29,7 @@ $mozillaorg_lang = [
     'download_button.lang'                    => true,
     'esr.lang'                                => false,
     'euballot.lang'                           => false,
+    'firefox/geolocation.lang'                => false,
     'firefox/new.lang'                        => true,
     'firefox/channel.lang'                    => true,
     'firefox/speed.lang'                      => false,
@@ -344,6 +345,15 @@ $langfiles_subsets = [
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu',
              'fr', 'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl',
              'pt-BR', 'ru', 'sk', 'sl', 'sq', 'zh-CN', 'zh-TW'],
+        'firefox/geolocation.lang'             =>
+            ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
+             'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
+             'es-MX', 'et', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
+             'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hu', 'hy-AM', 'id', 'is',
+             'it', 'ka', 'kk', 'kn', 'ko', 'ku', 'lt', 'lv', 'mk', 'ml', 'mr',
+             'nb-NO', 'nl', 'nn-NO', 'oc', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
+             'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'ta',
+             'te', 'th', 'tr', 'uk', 'vi', 'zh-CN'],
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
