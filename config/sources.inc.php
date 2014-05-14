@@ -16,7 +16,7 @@ if (!isset($_SERVER['SERVER_NAME'])) {
 require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
-$locamotion_locales = ['ach', 'af', 'cy', 'en-ZA', 'ff', 'gd', 'hi-IN', 'hsb',
+$locamotion_locales = ['ach', 'af', 'cy', 'dsb', 'en-ZA', 'ff', 'gd', 'hi-IN', 'hsb',
                        'km', 'ku', 'ms', 'my', 'oc', 'son', 'ur', 'vi', 'xh'];
 
 /*
@@ -363,7 +363,7 @@ $langfiles_subsets = [
         'fhr.lang' =>
             ['af', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg', 'bn-BD',
              'bn-IN', 'br', 'bs', 'ca', 'cs', 'csb', 'cy', 'da', 'de',
-             'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+             'dsb', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
              'et', 'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
              'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM',
              'id', 'is', 'it', 'ja', 'ka', 'kk', 'km', 'kn', 'ko', 'ku',
@@ -422,6 +422,7 @@ $bugzilla_locales =
     'cy'    => 'Welsh',
     'da'    => 'Danish',
     'de'    => 'German',
+    'dsb'   => 'Lower Sorbian',
     'el'    => 'Greek',
     'en-GB' => 'English (British)',
     'eo'    => 'Esperanto',

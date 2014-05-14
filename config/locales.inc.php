@@ -8,7 +8,7 @@ $mozilla_europe = [
 
 $mozilla = [
     'ach', 'af', 'ak', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg', 'bn-IN',
-    'bn-BD', 'br', 'bs', 'ca', 'cs', 'csb', 'cy', 'da', 'de', 'el',
+    'bn-BD', 'br', 'bs', 'ca', 'cs', 'csb', 'cy', 'da', 'de', 'dsb', 'el',
     'eo', 'es-AR', 'es-ES', 'es-CL', 'es-MX', 'et', 'eu', 'fa', 'ff',
     'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN', 'he', 'hi-IN',
     'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ka', 'kk', 'kn',
