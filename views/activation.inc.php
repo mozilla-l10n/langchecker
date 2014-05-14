@@ -19,7 +19,7 @@ $table_start_code = '<table class="sortable globallist">
   <tbody>
 ';
 $table_rows = '';
-$table_end_code; "\n</tbody>\n</table>";
+$table_end_code = "\n</tbody>\n</table>";
 
 // We only consider mozilla.org for this view, so $sites[0]
 $site = $sites[0];
