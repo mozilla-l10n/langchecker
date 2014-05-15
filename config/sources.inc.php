@@ -106,12 +106,12 @@ $no_active_tag = [
 
 $deadline = [
     // Australis release
-    'firefox/desktop/index.lang'          => '2014-04-27',
-    'firefox/desktop/customize.lang'      => '2014-04-27',
-    'firefox/desktop/fast.lang'           => '2014-04-27',
-    'firefox/desktop/trust.lang'          => '2014-04-27',
-    'firefox/desktop/tips.lang'           => '2014-05-20',
-    'firefox/sync.lang'                   => '2014-04-27',
+    'firefox/desktop/index.lang'          => '2014-05-27', // was 2014-04-27
+    'firefox/desktop/customize.lang'      => '2014-05-27', // was 2014-04-27
+    'firefox/desktop/fast.lang'           => '2014-05-27', // was 2014-04-27
+    'firefox/desktop/trust.lang'          => '2014-05-27', // was 2014-04-27
+    'firefox/desktop/tips.lang'           => '2014-05-20', // was 2014-04-20
+    'firefox/sync.lang'                   => '2014-05-27', // was 2014-04-27
     'apr2014.lang'                        => '2014-04-27',
     'may2014.lang'                        => '2014-05-20',
     'mozorg/home.lang'                    => '2014-04-27',
