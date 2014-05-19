@@ -82,7 +82,8 @@ class l10n_moz
 
         for ($i = 0, $lines = count($f); $i < $lines; $i++) {
             // First line may contain an activation status
-            if ($i == 0 && $f[0] == '## active ##') {
+            // Tags are read with regexp "^## (\w+) ##", so trailing spaces can be ignored
+            if ($i == 0 && rtrim($f[0]) == '## active ##') {
                 $GLOBALS[$array_name]['activated'] = $active = true;
                 continue;
             }
@@ -104,21 +105,27 @@ class l10n_moz
                 $english = trim(substr($f[$i], 1));
                 $translation = trim($f[$i+1]);
 
-                // locamotion support conditional
-                if (!isset($GLOBALS[$array_name][$english])
-                    || $GLOBALS[$array_name][$english] == $english) {
-                    $GLOBALS[$array_name][$english] = $translation;
-                }
-
-                if ($i >= 2 && in_array($reflang, $englishes)) {
-                    $GLOBALS['__l10n_comments'][$english] = '';
-
-                    if (self::startsWith($f[$i-1], '#') && !self::startsWith($f[$i-1], '##')) {
-                        $GLOBALS['__l10n_comments'][$english] .= trim(substr($f[$i-1], 1));
+                if (self::startsWith($translation, ';') || self::startsWith($translation, '#')) {
+                    /* Empty translation: what I'm reading as translation is either the next reference string
+                    or the next comment. I'll consider the string untranslated.*/
+                    $translation = $english;
+                } else {
+                    // locamotion support conditional
+                    if (!isset($GLOBALS[$array_name][$english])
+                        || $GLOBALS[$array_name][$english] == $english) {
+                        $GLOBALS[$array_name][$english] = $translation;
                     }
 
-                    if ($GLOBALS['__l10n_comments'][$english] == '') {
-                        unset($GLOBALS['__l10n_comments'][$english]);
+                    if ($i >= 2 && in_array($reflang, $englishes)) {
+                        $GLOBALS['__l10n_comments'][$english] = '';
+
+                        if (self::startsWith($f[$i-1], '#') && !self::startsWith($f[$i-1], '##')) {
+                            $GLOBALS['__l10n_comments'][$english] .= trim(substr($f[$i-1], 1));
+                        }
+
+                        if ($GLOBALS['__l10n_comments'][$english] == '') {
+                            unset($GLOBALS['__l10n_comments'][$english]);
+                        }
                     }
                 }
                 $i++;
