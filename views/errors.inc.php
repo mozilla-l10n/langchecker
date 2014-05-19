@@ -7,7 +7,7 @@
 $htmloutput = '';
 foreach ($mozilla as $locale) {
     $locale_with_errors = false;
-    $locale_htmloutput = "\n      <h2>Locale: {$locale}</h2>\n";
+    $locale_htmloutput = "\n      <h2>Locale: <a href='?locale={$locale}' target='_blank'>{$locale}</a></h2>\n";
     $open_div = false;
 
     foreach ($sites as $key => $_site) {
@@ -101,6 +101,16 @@ foreach ($mozilla as $locale) {
                     }
                     $locale_with_errors = true;
                     $locale_htmloutput .= "        <p><strong>$filename</strong> is not saved in UTF8</p>\n";
+                }
+
+                // Display errors on missing strings
+                if (count($GLOBALS[$locale]['Missing'])) {
+                    if (!$open_div) {
+                        $open_div = true;
+                        $locale_htmloutput .= $opening_div;
+                    }
+                    $locale_with_errors = true;
+                    $locale_htmloutput .= "        <p>Missing strings in {$filename}</p>\n";
                 }
 
                 // Display errors on unknown tags
