@@ -148,8 +148,8 @@ $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr
 $marketplacebadge_locales = ['bg', 'bn-BD', 'ca', 'cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'it',
                              'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr', 'sr-Latn', 'tr'];
 
-$snippets_locales = ['bg', 'cs', 'da', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
-                     'nb-NO', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sr', 'vi', 'zh-CN',
+$snippets_locales = ['cs', 'da', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
+                     'nb-NO', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sr', 'zh-CN',
                      'zh-TW'];
 
 $snippets_main_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
