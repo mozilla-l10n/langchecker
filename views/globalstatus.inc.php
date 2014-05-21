@@ -30,6 +30,7 @@ foreach ($sites[$website][4] as $_file) {
       <th>Obsolete</th>
       <th>Tags</th>
       <th>Activated</th>
+      <th>Moztags</th>
     </tr>
   </thead>
   <tbody>
@@ -58,7 +59,7 @@ foreach ($sites[$website][4] as $_file) {
 
         analyseLangFile($_lang, $website, $_file);
 
-        //~ var_dump($GLOBALS[$_lang]);
+        //var_dump($GLOBALS[$_lang]);
 
         $todo  = count($GLOBALS[$_lang]['Identical']) + count($GLOBALS[$_lang]['Missing']);
         $total = $todo + count($GLOBALS[$_lang]['Translated']);
@@ -114,19 +115,22 @@ foreach ($sites[$website][4] as $_file) {
                 } else {
                     echo $td('');
                 }
-
                 continue;
             }
 
-            if ($key == 'activated') {
-                $json[$_file][$_lang][$key] = $val;
-
-                if ($val) {
-                    echo $td('', 'activated');
+            if ($key == 'moztags') {
+                foreach ($val as $tag) {
+                    if ($tag != 'activated') {
+                        $json[$_file][$_lang][$key][] = $tag;
+                    } else {
+                        echo $td('', 'activated');
+                    }
+                }
+                if (!empty($json[$_file][$_lang][$key])) {
+                    echo $td(implode('<br>', $json[$_file][$_lang][$key]), 'moztags_column');
                 } else {
                     echo $td('');
                 }
-
                 continue;
             }
 
@@ -147,7 +151,7 @@ foreach ($sites[$website][4] as $_file) {
   </tbody>
   <tfoot>
     <tr>
-      <td colspan= "7">'
+      <td colspan= "8">'
         . $count_done
         . ' perfect locales ('
         . round($count_done/count($targetted_locales)*100)

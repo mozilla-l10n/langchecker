@@ -90,25 +90,30 @@ function analyseLangFile($locale, $website, $filename)
     $GLOBALS[$locale]['Obsolete']    = array();
     $GLOBALS[$locale]['python_vars'] = array();
     $GLOBALS[$locale]['tags']        = array();
+    $GLOBALS[$locale]['moztags']     = array();
     $GLOBALS[$locale]['activated']   = false;
-
 
     if (isset($GLOBALS['__l10n_moz'])) {
         foreach ($GLOBALS['__l10n_moz'] as $key => $val) {
-
             if ($key == 'filedescription') {
                 continue;
             }
 
             if ($key == 'activated') {
-                $GLOBALS[$locale]['activated'] = $val;
+                $GLOBALS[$locale]['moztags'][] = $key;
+                //logger($GLOBALS[$locale]['moztags'][0]);
                 continue;
+            }
+            if (array_key_exists($filename, $mozillaorg_flags)) {
+                foreach ($mozillaorg_flags[$filename] as $tag => $locales) {
+                    if ((is_array($locales) && in_array($locale, $locales)) || $locales == 'all') {
+                        if (!array_key_exists($tag, array_flip($GLOBALS[$locale]['moztags']))) {
+                            $GLOBALS[$locale]['moztags'][] = $tag;
+                        }
+                    }
+                }
             }
 
-            if ($key == 'tags') {
-                $GLOBALS[$locale]['tags'] = $val;
-                continue;
-            }
 
             if (array_key_exists($key, $GLOBALS['__english_moz'])) {
 
