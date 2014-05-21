@@ -16,8 +16,8 @@ if (!isset($_SERVER['SERVER_NAME'])) {
 require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
-$locamotion_locales = ['ach', 'af', 'cy', 'en-ZA', 'ff', 'gd', 'hi-IN', 'hsb',
-                       'km', 'ku', 'ms', 'my', 'oc', 'son', 'ur', 'vi', 'xh'];
+$locamotion_locales = ['ach', 'af', 'cy', 'dsb', 'en-ZA', 'es-MX', 'ff', 'gd', 'hi-IN',
+                       'hsb', 'km', 'ku', 'ms', 'my', 'oc', 'son', 'ur', 'vi', 'xh'];
 
 /*
     Locales removed from locamotion import because of commits on SVN
@@ -29,10 +29,10 @@ $mozillaorg_lang = [
     'download_button.lang'                    => true,
     'esr.lang'                                => false,
     'euballot.lang'                           => false,
+    'firefox/geolocation.lang'                => false,
     'firefox/new.lang'                        => true,
     'firefox/channel.lang'                    => true,
     'firefox/speed.lang'                      => false,
-    'firefox/os/devices.lang'                 => true,
     'firefox/os/index.lang'                   => true,
     'firefox/os/faq.lang'                     => false,
     'firefox/partners/index.lang'             => true,
@@ -41,6 +41,7 @@ $mozillaorg_lang = [
     'firefox/desktop/customize.lang'          => true,
     'firefox/desktop/fast.lang'               => true,
     'firefox/desktop/trust.lang'              => true,
+    'firefox/desktop/tips.lang'               => true,
     'firefox/sync.lang'                       => true,
     'mwc2014_promos.lang'                     => true,
     'firefox/whatsnew.lang'                   => true,
@@ -61,9 +62,10 @@ $mozillaorg_lang = [
     'marketplace/marketplace.lang'            => true,
     'marketplace/partners.lang'               => false,
     'mobile.lang'                             => true,
-    'mozorg/15years.lang'                     => false,
     'mozorg/about.lang'                       => false,
     'mozorg/about/manifesto.lang'             => false,
+    'mozorg/about/history.lang'               => false,
+    'mozorg/about/history-details.lang'       => false,
     'mozorg/mission.lang'                     => false,
     'mozorg/contribute.lang'                  => false,
     'mozorg/plugincheck.lang'                 => true,
@@ -76,6 +78,7 @@ $mozillaorg_lang = [
     'tabzilla/tabzilla.lang'                  => false,
     'upgradedialog.lang'                      => true,
     'upgradepromos.lang'                      => false,
+    'firefox/nightly_firstrun.lang'           => false,
 ];
 
 $no_active_tag = [
@@ -103,12 +106,14 @@ $no_active_tag = [
 
 $deadline = [
     // Australis release
-    'firefox/desktop/index.lang'          => '2014-04-27',
-    'firefox/desktop/customize.lang'      => '2014-04-27',
-    'firefox/desktop/fast.lang'           => '2014-04-27',
-    'firefox/desktop/trust.lang'          => '2014-04-27',
-    'firefox/sync.lang'                   => '2014-04-27',
+    'firefox/desktop/index.lang'          => '2014-05-27', // was 2014-04-27
+    'firefox/desktop/customize.lang'      => '2014-05-27', // was 2014-04-27
+    'firefox/desktop/fast.lang'           => '2014-05-27', // was 2014-04-27
+    'firefox/desktop/trust.lang'          => '2014-05-27', // was 2014-04-27
+    'firefox/desktop/tips.lang'           => '2014-05-20', // was 2014-04-20
+    'firefox/sync.lang'                   => '2014-05-27', // was 2014-04-27
     'apr2014.lang'                        => '2014-04-27',
+    'may2014.lang'                        => '2014-05-20',
     'mozorg/home.lang'                    => '2014-04-27',
     'tabzilla/tabzilla.lang'              => '2014-04-27',
     'firefox/australis/firefox_tour.lang' => '2014-04-27',
@@ -118,6 +123,7 @@ $deadline = [
     'firefox/channel.lang'                => '2013-12-31',
     'firefox/whatsnew.lang'               => '2013-12-31',
     'firefox/installer-help.lang'         => '2013-12-31',
+    'lightbeam/lightbeam.lang'            => '2014-05-27',
     'mozorg/about.lang'                   => '2013-12-31',
     'mozorg/about/manifesto.lang'         => '2013-12-31',
     'mozorg/mission.lang'                 => '2013-12-31',
@@ -134,6 +140,7 @@ $slogans_lang = [
 $snippets_lang = [
     'jan2014.lang' => true,
     'apr2014.lang' => true,
+    'may2014.lang' => true,
 ];
 
 $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
@@ -142,8 +149,8 @@ $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr
 $marketplacebadge_locales = ['bg', 'bn-BD', 'ca', 'cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'it',
                              'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr', 'sr-Latn', 'tr'];
 
-$snippets_locales = ['bg', 'cs', 'da', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
-                     'nb-NO', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sr', 'vi', 'zh-CN',
+$snippets_locales = ['cs', 'da', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
+                     'nb-NO', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sr', 'zh-CN',
                      'zh-TW'];
 
 $snippets_main_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
@@ -239,15 +246,10 @@ $langfiles_subsets = [
         'firefox/new.lang'                      => $mozilla,
         'firefox/channel.lang'                  => $mozilla,
         'firefox/speed.lang'                    => ['pt-BR'],
-        'firefox/os/devices.lang'               =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'fy-NL', 'hr',
-             'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/os/index.lang'                 =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'fy-NL', 'hr',
-             'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'fy-NL', 'hr', 'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/os/faq.lang'                   =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu', 'ja',
-             'it', 'pl', 'pt-BR', 'ro', 'sr'],
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           => $mwc_locales,
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
         'mwc2014_promos.lang'                   => $mwc_locales,
@@ -300,11 +302,6 @@ $langfiles_subsets = [
              'it', 'ja', 'ko', 'lt', 'nb-NO', 'nl', 'pa-IN', 'pl',
              'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'th',
              'tr', 'zh-CN', 'zh-TW'],
-        'mozorg/15years.lang'                   =>
-            ['ar', 'bg', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
-             'es-MX', 'fr', 'hr', 'fy-NL', 'hi-IN', 'id', 'it', 'lg', 'lt',
-             'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'ta',
-             'tr', 'zh-CN', 'zh-TW'],
         'mozorg/about.lang'                     => $mozillaorg,
         'mozorg/home.lang'                      => $mozillaorg,
         'mozorg/mission.lang'                   => $mozillaorg,
@@ -314,11 +311,19 @@ $langfiles_subsets = [
              'fy-NL', 'gl', 'hr', 'hu', 'id', 'it', 'ja', 'ko', 'mk',
              'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
              'sr', 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW'],
+        'mozorg/about/history.lang'             =>
+            ['ar', 'bg', 'ca', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+             'es-MX', 'eu', 'fr', 'hr', 'fy-NL', 'gl', 'id', 'it', 'lt', 'ms', 'nl',
+             'pa-IN', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'ta', 'tr',
+             'zh-CN', 'zh-TW'],
+        'mozorg/about/history-details.lang'     =>
+            ['ca', 'de', 'es-CL', 'eu', 'fr', 'gl', 'it', 'pa-IN', 'ro', 'sk', 'sq',
+             'zh-TW'],
         'mozorg/contribute.lang'                =>
             ['ar', 'bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
-             'it', 'lg', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
-             'sl', 'sq', 'sr', 'sw', 'ta', 'tr', 'vi', 'zh-CN', 'zh-TW'],
+             'it', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl',
+             'sq', 'sr', 'ta', 'tr', 'vi', 'zh-CN', 'zh-TW'],
         'mozorg/plugincheck.lang'               => $mozillaorg,
         'mozorg/products.lang'                  => $mozillaorg,
         'mozspaces.lang'                        => ['de', 'fr'],
@@ -337,6 +342,20 @@ $langfiles_subsets = [
         'firefox/desktop/trust.lang'            => $mozilla,
         'firefox/sync.lang'                     => $mozilla,
         'firefox/australis/firefox_tour.lang'   => $mozilla,
+        'firefox/nightly_firstrun.lang'         => ['cs', 'de', 'fr', 'it', 'ru'],
+        'firefox/desktop/tips.lang'             =>
+            ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu',
+             'fr', 'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl',
+             'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'zh-CN', 'zh-TW'],
+        'firefox/geolocation.lang'             =>
+            ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
+             'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
+             'es-MX', 'et', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
+             'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hu', 'hy-AM', 'id', 'is',
+             'it', 'ka', 'kk', 'kn', 'ko', 'ku', 'lt', 'lv', 'mk', 'ml', 'mr',
+             'nb-NO', 'nl', 'nn-NO', 'oc', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
+             'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'ta',
+             'te', 'th', 'tr', 'uk', 'vi', 'zh-CN'],
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
@@ -346,7 +365,7 @@ $langfiles_subsets = [
         'fhr.lang' =>
             ['af', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg', 'bn-BD',
              'bn-IN', 'br', 'bs', 'ca', 'cs', 'csb', 'cy', 'da', 'de',
-             'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+             'dsb', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
              'et', 'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
              'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM',
              'id', 'is', 'it', 'ja', 'ka', 'kk', 'km', 'kn', 'ko', 'ku',
@@ -379,6 +398,7 @@ $langfiles_subsets = [
     [
         'jan2014.lang' => $snippets_main_locales,
         'apr2014.lang' => $snippets_locales,
+        'may2014.lang' => $snippets_locales,
     ],
 
 
@@ -404,6 +424,7 @@ $bugzilla_locales =
     'cy'    => 'Welsh',
     'da'    => 'Danish',
     'de'    => 'German',
+    'dsb'   => 'Lower Sorbian',
     'el'    => 'Greek',
     'en-GB' => 'English (British)',
     'eo'    => 'Esperanto',
