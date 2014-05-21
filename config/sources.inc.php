@@ -33,6 +33,7 @@ $mozillaorg_lang = [
     'firefox/new.lang'                        => true,
     'firefox/channel.lang'                    => true,
     'firefox/speed.lang'                      => false,
+    'firefox/os/devices.lang'                 => true,
     'firefox/os/index.lang'                   => true,
     'firefox/os/faq.lang'                     => false,
     'firefox/partners/index.lang'             => true,
@@ -246,10 +247,15 @@ $langfiles_subsets = [
         'firefox/new.lang'                      => $mozilla,
         'firefox/channel.lang'                  => $mozilla,
         'firefox/speed.lang'                    => ['pt-BR'],
+        'firefox/os/devices.lang'                 =>
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'fy-NL', 'hr',
+             'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/os/index.lang'                 =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'fy-NL', 'hr', 'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'fy-NL', 'hr',
+             'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/os/faq.lang'                   =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu', 'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu',
+             'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           => $mwc_locales,
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
         'mwc2014_promos.lang'                   => $mwc_locales,
