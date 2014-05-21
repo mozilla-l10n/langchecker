@@ -247,7 +247,7 @@ $langfiles_subsets = [
         'firefox/new.lang'                      => $mozilla,
         'firefox/channel.lang'                  => $mozilla,
         'firefox/speed.lang'                    => ['pt-BR'],
-        'firefox/os/devices.lang'                 =>
+        'firefox/os/devices.lang'               =>
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'fy-NL', 'hr',
              'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/os/index.lang'                 =>
@@ -282,12 +282,12 @@ $langfiles_subsets = [
              'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
              'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
              'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
-        'foundation/annualreport/2012/index.lang'     =>
+        'foundation/annualreport/2012/index.lang' =>
             ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it',
              'ja', 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl',
              'pt-BR', 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
-        'foundation/annualreport/2012/faq.lang'     =>
+        'foundation/annualreport/2012/faq.lang' =>
             ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it',
              'ja', 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl',
@@ -353,7 +353,7 @@ $langfiles_subsets = [
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu',
              'fr', 'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl',
              'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'zh-CN', 'zh-TW'],
-        'firefox/geolocation.lang'             =>
+        'firefox/geolocation.lang'              =>
             ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
              'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'et', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
