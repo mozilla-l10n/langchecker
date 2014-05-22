@@ -116,6 +116,7 @@ $deadline = [
     'firefox/sync.lang'                   => '2014-05-27', // was 2014-04-27
     'apr2014.lang'                        => '2014-04-27',
     'may2014.lang'                        => '2014-05-20',
+    'jun2014.lang'                        => '2014-06-09',
     'mozorg/home.lang'                    => '2014-04-27',
     'tabzilla/tabzilla.lang'              => '2014-04-27',
     'firefox/australis/firefox_tour.lang' => '2014-04-27',
@@ -145,6 +146,7 @@ $snippets_lang = [
     'jan2014.lang' => true,
     'apr2014.lang' => true,
     'may2014.lang' => true,
+    'jun2014.lang' => true,
 ];
 
 $addons_lang = [
@@ -425,6 +427,7 @@ $langfiles_subsets = [
         'jan2014.lang' => $snippets_main_locales,
         'apr2014.lang' => $snippets_locales,
         'may2014.lang' => $snippets_locales,
+        'jun2014.lang' => ['de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id', 'it', 'pl', 'pt-BR', 'sr'],
     ],
 
     'add-ons' => [
