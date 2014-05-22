@@ -248,10 +248,10 @@ $langfiles_subsets = [
         'firefox/channel.lang'                  => $mozilla,
         'firefox/speed.lang'                    => ['pt-BR'],
         'firefox/os/devices.lang'               =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'fy-NL', 'hr',
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'fy-NL', 'hr',
              'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/os/index.lang'                 =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'fy-NL', 'hr',
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'fy-NL', 'hr',
              'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/os/faq.lang'                   =>
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu',
