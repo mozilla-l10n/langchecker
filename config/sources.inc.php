@@ -254,7 +254,7 @@ $langfiles_subsets = [
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'fy-NL', 'hr',
              'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/os/faq.lang'                   =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'et', 'fr', 'hr', 'hu',
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'hr', 'hu',
              'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/partners/index.lang'           => $mwc_locales,
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
