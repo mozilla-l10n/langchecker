@@ -17,7 +17,7 @@ require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
 $locamotion_locales = ['ach', 'af', 'cy', 'dsb', 'en-ZA', 'es-MX', 'ff', 'gd', 'hi-IN',
-                       'hsb', 'km', 'ku', 'ms', 'my', 'oc', 'son', 'ur', 'vi', 'xh'];
+                       'hsb', 'km', 'ku', 'ms', 'my', 'oc', 'son', 'ta', 'ur', 'vi', 'xh'];
 
 /*
     Locales removed from locamotion import because of commits on SVN
