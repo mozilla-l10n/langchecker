@@ -7,6 +7,7 @@ $public_repo4 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
 $public_repo5 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxhealthreport/';
 $public_repo6 = 'https://svn.mozilla.org/projects/granary/slogans/';
 $public_repo7 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/snippets/';
+$public_repo8 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/';
 
 // this is to avoid a warning in shell mode
 if (!isset($_SERVER['SERVER_NAME'])) {
@@ -129,6 +130,8 @@ $deadline = [
     'mozorg/about/manifesto.lang'         => '2013-12-31',
     'mozorg/mission.lang'                 => '2013-12-31',
     'mozorg/products.lang'                => '2013-12-31',
+    'worldcup.lang'                       => '2014-06-06',
+    'homefeeds.lang'                      => '2014-06-06',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang' => true];
@@ -144,6 +147,11 @@ $snippets_lang = [
     'may2014.lang' => true,
 ];
 
+$addons_lang = [
+    'worldcup.lang'  => true,
+    'homefeeds.lang' => false,
+];
+
 $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
                     'ja', 'ko',  'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'zh-CN', 'zh-TW'];
 
@@ -156,6 +164,8 @@ $snippets_locales = ['cs', 'da', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'j
 
 $snippets_main_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
                           'pl', 'pt-BR', 'ru', 'sr', 'vi', 'zh-CN', 'zh-TW'];
+
+$addons_locales = ['de', 'es-ES', 'fr', 'id', 'it', 'pt-BR'];
 
 $sites =
 [
@@ -228,6 +238,16 @@ $sites =
         array_keys($snippets_lang),
         'en-US', // source locale
         $public_repo7,
+    ],
+
+    7 => [
+        'add-ons',
+        $repo8,
+        '',
+        $addons_locales,
+        array_keys($addons_lang),
+        'en-US', // source locale
+        $public_repo8,
     ],
 ];
 
@@ -405,6 +425,11 @@ $langfiles_subsets = [
         'jan2014.lang' => $snippets_main_locales,
         'apr2014.lang' => $snippets_locales,
         'may2014.lang' => $snippets_locales,
+    ],
+
+    'add-ons' => [
+        'worldcup.lang'  => $addons_locales,
+        'homefeeds.lang' => $addons_locales
     ],
 
 

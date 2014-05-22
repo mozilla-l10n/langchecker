@@ -48,8 +48,13 @@ foreach ($sites as $key => $_site) {
             if ($_site[0] == 'slogans' && array_key_exists($filename, $slogans_lang)) {
                 $export[$_site[0]][$filename]['critical'] = $slogans_lang[$filename];
             }
+
             if ($_site[0] == 'snippets' && array_key_exists($filename, $snippets_lang)) {
                 $export[$_site[0]][$filename]['critical'] = $snippets_lang[$filename];
+            }
+
+            if ($_site[0] == 'add-ons' && array_key_exists($filename, $addons_lang)) {
+                $export[$_site[0]][$filename]['critical'] = $addons_lang[$filename];
             }
 
             // Some files have a deadline
