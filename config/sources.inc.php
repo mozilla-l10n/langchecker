@@ -69,7 +69,7 @@ $mozillaorg_lang = [
     'mozorg/about/history.lang'               => false,
     'mozorg/about/history-details.lang'       => false,
     'mozorg/mission.lang'                     => false,
-    'mozorg/contribute.lang'                  => false,
+    'mozorg/contribute.lang'                  => true,
     'mozorg/plugincheck.lang'                 => true,
     'mozorg/products.lang'                    => false,
     'mozorg/home.lang'                        => true,
@@ -349,7 +349,7 @@ $langfiles_subsets = [
              'zh-TW'],
         'mozorg/contribute.lang'                =>
             ['ar', 'bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
-             'es-MX', 'fr', 'hr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
+             'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
              'it', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl',
              'sq', 'sr', 'ta', 'tr', 'vi', 'zh-CN', 'zh-TW'],
         'mozorg/plugincheck.lang'               => $mozillaorg,
