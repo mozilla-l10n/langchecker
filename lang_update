@@ -1,5 +1,25 @@
 #!/usr/bin/env php
 <?php
+
+/* Available usages
+
+One file, all locales
+./lang_update mozorg/home.lang 0 all
+(2nd and 3rd parameters are optional for mozilla.org)
+
+One file, one locale
+./lang_update mozorg/home.lang 0 fr
+
+All files, one locale
+./lang_update all 0 fr
+
+All files, all locales
+./lang_update all 0 all
+
+Import from Pootle
+./lang_update all 0 locamotion
+*/
+
 // Script should not be called from the Web
 if (php_sapi_name() != 'cli') {
     die('Nope');
@@ -16,6 +36,7 @@ $initl10n = new l10n_moz();
 $filename = isset($argv[1]) ? secureText($argv[1])  : 'main.lang'; // which file are we comparing? Set a default
 $website  = isset($argv[2]) ? secureText($argv[2])  : '0'; // which website are we looking at? Default to www.mozilla.org
 $locale   = isset($argv[3]) ? secureText($argv[3])  : 'all';  // which locale are we analysing? No default
+$single_file_mode = ($filename != 'all' && $locale != 'all'); // one locale, one file
 
 if ($filename == 'all') {
     $files = array_keys($langfiles_subsets[$sites[$website][0]]);
@@ -30,7 +51,7 @@ foreach ($files as $filename) {
 
     $reflang  = $sites[$website][5];
     $source   = $sites[$website][1] . $sites[$website][2] . $reflang . '/' . $filename;
-    logger("Reference English file: $source");
+    logger("Reference English file: {$source}");
 
     if (
         $locale != 'all'
@@ -45,8 +66,15 @@ foreach ($files as $filename) {
         && !in_array($locale, $langfiles_subsets[$sites[$website][0]][$filename])
         )
     {
-        // locale is not supported for the lang file, skip
-        continue;
+        // Locale is not supported for this file
+        logger("{$locale}: {$filename} is not supported for this locale");
+        if ($single_file_mode) {
+            // Analyzing only this file for this locale, we can stop
+            exit;
+        } else {
+            // Skip to the next file
+            continue;
+        }
     } elseif ($locale == 'locamotion') {
         $locales = array_intersect($locamotion_locales, $langfiles_subsets[$sites[$website][0]][$filename]);
     } else {
