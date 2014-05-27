@@ -1,5 +1,3 @@
-<hr style="clear:both; border:0;">
-<p>Click on the green English strings to expand/collapse the translations done</p>
 <script>
 
   function showhide(id) {
@@ -29,98 +27,95 @@
   </style>
 <?php
 
-
-
 // override to not have main.lang as default
-$filename = (isset($_GET['file'])) ? secureText($_GET['file']) : 'snippets.lang';
-
+$filename = isset($_GET['file']) ? secureText($_GET['file']) : '';
 
 // a switch to show the strings as expanded or not
-$show_status = (isset($_GET['show'])) ? 'auto' : 'none';
+$show_status = isset($_GET['show']) ? 'auto' : 'none';
 
+$file_found = false;
 foreach ($sites as $site) {
     if ($filename != '' && in_array($filename, $site[4])) {
-        $site[4] = array($filename);
+        $file_found = true;
         break;
     }
 }
 
-foreach ($site[4] as $_file) {
+if (! $file_found) {
+    die('<p>ERROR: The file "' . $filename . '" does not exist</p>');
+}
 
-    echo '<h2>' . $_file . '</h2>';
+echo '<p>Click on the green English strings to expand/collapse the translations done</p>
+      <h2>' . $filename . '</h2>';
 
-    $reflang = $site[5];
+$reflang = $site[5];
 
-    foreach ($sites as $k => $v) {
-        if (in_array($site[0], $v)) {
-            $target = $k;
-            break;
-        }
+foreach ($sites as $k => $v) {
+    if (in_array($site[0], $v)) {
+        $target = $k;
+        break;
+    }
+}
+
+getEnglishSource($reflang, $target, $filename);
+
+
+// reassign a lang file to a reduced set of locales
+@$target_locales = is_array($langfiles_subsets[$sites[$target][0]][$filename])
+                      ? $langfiles_subsets[$sites[$target][0]][$filename]
+                      : $sites[$target][3];
+$val = 0;
+
+foreach ($GLOBALS['__english_moz'] as $k => $v) {
+
+    if (in_array($k, ['filedescription', 'activated', 'tags'])) {
+        continue;
     }
 
-    getEnglishSource($reflang, $target, $_file);
+    echo "<p><a href='#'  style=\"color:green\" onclick=\"showhide('table$val');return false;\">"
+         . trim(str_replace('{l10n-extra}', '', htmlspecialchars($k)))
+         . "</a></p>";
 
+    echo "<table style='width:100%; display:{$show_status};' id='table$val'>";
 
-    // reassign a lang file to a reduced set of locales
-    @$targetted_locales = (is_array($langfiles_subsets[$sites[$target][0]][$_file]))
-                          ? $langfiles_subsets[$sites[$target][0]][$_file]
-                          : $sites[$target][3];
-    $val = 0;
+    $val++;
 
-    foreach ($GLOBALS['__english_moz'] as $k => $v) {
-
-        if (in_array($k, ['filedescription', 'activated','tags'])) {
+    $stripe = true;
+    $total_translations = 0;
+    $covered_locales = [];
+    foreach ($target_locales as $_lang) {
+        // If the .lang file does not exist, just skip the locale for this file
+        $local_langfilename = $sites[$target][1] . $sites[$target][2] . $_lang . '/' . $filename;
+        if (! @file_get_contents($local_langfilename)) {
             continue;
         }
 
-        echo "<p><a href='#'  style=\"color:green\" onclick=\"showhide('table$val');return false;\">"
-             . trim(str_replace('{l10n-extra}', '', htmlspecialchars($k)))
-             . "</a></p>";
+        l10n_moz::load($local_langfilename);
 
-        echo "<table style='width:100%; display:{$show_status};' id='table$val'>";
-
-        $val++;
-
-        $stripe = true;
-        $total_translations = 0;
-        $covered_locales = [];
-        foreach ($targetted_locales as $_lang) {
-            // If the .lang file does not exist, just skip the locale for this file
-            $local_lang_file = $sites[$target][1] . $sites[$target][2] . $_lang . '/' . $_file;
-            if (!@file_get_contents($local_lang_file)) {
-                continue;
+        if (i__($k)) {
+            $total_translations++;
+            $covered_locales[] = $_lang;
+            if ($stripe == true) {
+                $stripe = false;
+                $stripe_color = '#FAF6ED';
+            } else {
+                $stripe = true;
+                $stripe_color = 'white';
             }
 
-            l10n_moz::load($local_lang_file);
+            $result = trim(str_replace('{l10n-extra}', '', htmlspecialchars(___($k))));
 
-            if (i__($k)) {
-                $total_translations++;
-                $covered_locales[] = $_lang;
-                if ($stripe == true) {
-                    $stripe = false;
-                    $stripe_color = '#FAF6ED';
-                } else {
-                    $stripe = true;
-                    $stripe_color = 'white';
-                }
-
-                $result = trim(str_replace('{l10n-extra}', '', htmlspecialchars(___($k))));
-
-                echo '<tr style="background-color:' . $stripe_color . '">
-                      <th style="width:5em" >' . $_lang . '</th>
-                      <td style="text-align:left;">' . $result . '</td>
-                      </tr>';
-            }
-            unset($GLOBALS['__l10n_moz']);
+            echo '<tr style="background-color:' . $stripe_color . '">
+                  <th style="width:5em" >' . $_lang . '</th>
+                  <td style="text-align:left;">' . $result . '</td>
+                  </tr>';
         }
-        echo '<tr>'
-            . "<td colspan='2' class='done'>Number of locales done: $total_translations"
-            . ' (' .getUserBaseCoverage($covered_locales) . '% of our l10n user base)'
-            . '</td>'
-            . '</tr>'
-            . '</table>';
+        unset($GLOBALS['__l10n_moz']);
     }
-    unset($GLOBALS['__english_moz']);
+    echo '<tr>'
+        . "<td colspan='2' class='done'>Number of locales done: $total_translations"
+        . ' (' .getUserBaseCoverage($covered_locales) . '% of our l10n user base)'
+        . '</td>'
+        . '</tr>'
+        . '</table>';
 }
-
-echo '<br style="clear:both;">';

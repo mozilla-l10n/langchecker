@@ -4,10 +4,12 @@ ob_start();
 $done = array();
 
 // Override to not have main.lang as default
-$filename = (isset($_GET['file'])) ? secureText($_GET['file']) : '';
+$filename = isset($_GET['file']) ? secureText($_GET['file']) : '';
 
 if ($filename != '' && in_array($filename, $sites[$website][4])) {
     $sites[$website][4] = array($filename);
+} else {
+    die('<p>ERROR: The file "' . $filename . '" does not exist</p>');
 }
 
 foreach ($sites[$website][4] as $_file) {
@@ -36,7 +38,7 @@ foreach ($sites[$website][4] as $_file) {
 ';
 
     // Reassign a lang file to a reduced set of locales
-    @$targetted_locales = (is_array($langfiles_subsets[$sites[$website][0]][$_file]))
+    @$targetted_locales = is_array($langfiles_subsets[$sites[$website][0]][$_file])
                             ? $langfiles_subsets[$sites[$website][0]][$_file]
                             : $sites[$website][3];
 
@@ -63,12 +65,7 @@ foreach ($sites[$website][4] as $_file) {
         $todo  = count($GLOBALS[$_lang]['Identical']) + count($GLOBALS[$_lang]['Missing']);
         $total = $todo + count($GLOBALS[$_lang]['Translated']);
 
-        if ($todo/$total>0.60) {
-          $cssclass=' lightlink';
-        } else {
-          $cssclass='';
-        }
-
+        $cssclass = $todo/$total>0.60 ? ' lightlink' : '';
         $color = 'rgba(255, 0, 0, ' . $todo/$total . ')';
 
         if ($todo == 0) {
@@ -160,14 +157,9 @@ foreach ($sites[$website][4] as $_file) {
 </table>
 ';
 
-    unset($GLOBALS['__english_moz']);
 }
 
 $htmlresult = ob_get_contents();
 ob_clean();
 
-if (!isset($_GET['json'])) {
-    echo $htmlresult;
-} else {
-    echo jsonOutput($json);
-}
+echo !isset($_GET['json']) ? $htmlresult : jsonOutput($json);
