@@ -427,7 +427,7 @@ $langfiles_subsets = [
         'jan2014.lang' => $snippets_main_locales,
         'apr2014.lang' => $snippets_locales,
         'may2014.lang' => $snippets_locales,
-        'jun2014.lang' => ['de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id', 'it', 'pl', 'pt-BR', 'sr'],
+        'jun2014.lang' => ['de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id', 'it', 'nl', 'pl', 'pt-BR', 'sr'],
     ],
 
     'add-ons' => [
