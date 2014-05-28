@@ -167,7 +167,7 @@ $snippets_locales = ['cs', 'da', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'j
 $snippets_main_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
                           'pl', 'pt-BR', 'ru', 'sr', 'vi', 'zh-CN', 'zh-TW'];
 
-$addons_locales = ['de', 'es-ES', 'fr', 'id', 'it', 'pt-BR'];
+$addons_locales = ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'pt-BR'];
 
 $sites =
 [
