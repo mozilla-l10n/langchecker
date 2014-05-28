@@ -8,6 +8,7 @@ $public_repo5 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxhealthr
 $public_repo6 = 'https://svn.mozilla.org/projects/granary/slogans/';
 $public_repo7 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/snippets/';
 $public_repo8 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/';
+$public_repo9 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/';
 
 // this is to avoid a warning in shell mode
 if (!isset($_SERVER['SERVER_NAME'])) {
@@ -133,6 +134,7 @@ $deadline = [
     'mozorg/products.lang'                => '2013-12-31',
     'worldcup.lang'                       => '2014-06-06',
     'homefeeds.lang'                      => '2014-06-06',
+    'updater.lang'                        => '2014-06-06',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang' => true];
@@ -154,6 +156,10 @@ $addons_lang = [
     'homefeeds.lang' => false,
 ];
 
+$firefox_updater_lang = [
+    'updater.lang' => true,
+];
+
 $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
                     'ja', 'ko',  'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'zh-CN', 'zh-TW'];
 
@@ -168,6 +174,10 @@ $snippets_main_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja
                           'pl', 'pt-BR', 'ru', 'sr', 'vi', 'zh-CN', 'zh-TW'];
 
 $addons_locales = ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'pt-BR'];
+
+$firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'id', 'it', 'ja',
+                            'nl', 'pl', 'pt-BR', 'pt', 'ru', 'sl', 'sv', 'th', 'tr', 'vi',
+                            'zh-CN', 'zh-TW'];
 
 $sites =
 [
@@ -250,6 +260,16 @@ $sites =
         array_keys($addons_lang),
         'en-US', // source locale
         $public_repo8,
+    ],
+
+    8 => [
+        'firefox-updater',
+        $repo9,
+        '',
+        $firefox_updater_locales,
+        array_keys($firefox_updater_lang),
+        'en-US', // source locale
+        $public_repo9,
     ],
 ];
 
@@ -435,6 +455,9 @@ $langfiles_subsets = [
         'homefeeds.lang' => $addons_locales
     ],
 
+    'firefox-updater' => [
+        'updater.lang'  => $firefox_updater_locales,
+    ],
 
 ];
 
