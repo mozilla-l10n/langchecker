@@ -37,10 +37,13 @@ if ($locale == '' && $action == '') {
 } elseif ($action == 'coverage') {
     /* case 10: get users base coverage for a list of locales */
     $case = 10;
+} elseif ($action == 'listpages') {
+    /* case 11: display a list of pages, with links to global status, translate */
+    $case = 11;
 }
 
 if ($action == 'api') {
-    $case = 11;
+    $case = 12;
 }
 
 
@@ -92,6 +95,10 @@ switch ($case) {
         $template = $views . 'getcoverage.inc.php';
         break;
     case 11:
+        $template = $templates . 'template.inc.php';
+        $view = $views . 'listpages.inc.php';
+        break;
+    case 12:
         $template = $views . 'json.inc.php';
         break;
     default:
