@@ -241,3 +241,12 @@ div.tip blockquote {
     color: blue;
     color: rgba(80,80,80,1)
 }
+
+
+/* List pages */
+
+table.listpages tr td:first-child {
+    text-align: left;
+    min-width: 250px;
+    padding: 2px 6px;
+}
