@@ -19,7 +19,8 @@ require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
 $locamotion_locales = ['ach', 'af', 'cy', 'dsb', 'en-ZA', 'es-MX', 'ff', 'gd', 'hi-IN',
-                       'hsb', 'km', 'ku', 'ms', 'my', 'oc', 'son', 'ta', 'ur', 'vi', 'xh'];
+                       'hsb', 'km', 'ku', 'ms', 'my', 'oc', 'son', 'ta', 'ur', 'uz',
+                       'vi', 'xh'];
 
 /*
     Locales removed from locamotion import because of commits on SVN
@@ -421,7 +422,7 @@ $langfiles_subsets = [
              'my', 'nb-NO', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN',
              'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si',
              'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta',
-             'te', 'th', 'tr', 'uk', 'ur', 'vi', 'xh', 'zh-CN',
+             'te', 'th', 'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'zh-CN',
              'zh-TW', 'zu'],
     ],
 
@@ -552,6 +553,8 @@ $bugzilla_locales =
     'th'    => 'Thai',
     'tr'    => 'Turkish',
     'uk'    => 'Ukrainian',
+    'ur'    => 'Urdu',
+    'uz'    => 'Uzbek',
     'vi'    => 'Vietnamese',
     'xh'    => 'Xhosa',
     'wo'    => 'Wolof',
