@@ -1,14 +1,15 @@
 <?php
 
-$public_repo1 = 'https://svn.mozilla.org/projects/mozilla.com/trunk/';
-$public_repo2 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/';
-$public_repo3 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/';
-$public_repo4 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
-$public_repo5 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxhealthreport/';
-$public_repo6 = 'https://svn.mozilla.org/projects/granary/slogans/';
-$public_repo7 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/snippets/';
-$public_repo8 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/';
-$public_repo9 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/';
+$public_repo1  = 'https://svn.mozilla.org/projects/mozilla.com/trunk/';
+$public_repo2  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/';
+$public_repo3  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/';
+$public_repo4  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
+$public_repo5  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxhealthreport/';
+$public_repo6  = 'https://svn.mozilla.org/projects/granary/slogans/';
+$public_repo7  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/snippets/';
+$public_repo8  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/';
+$public_repo9  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/';
+$public_repo10 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/';
 
 // this is to avoid a warning in shell mode
 if (!isset($_SERVER['SERVER_NAME'])) {
@@ -161,6 +162,10 @@ $firefox_updater_lang = [
     'updater.lang' => true,
 ];
 
+$fxos_marketing_lang = [
+    'screenshots.lang' => true,
+];
+
 $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
                     'ja', 'ko',  'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'zh-CN', 'zh-TW'];
 
@@ -179,6 +184,9 @@ $addons_locales = ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'pt-BR'];
 $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', 'id', 'it', 'ja',
                             'nl', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sl', 'sv', 'th', 'tr', 'vi',
                             'zh-CN', 'zh-TW'];
+
+$fxos_marketing = ['cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'fr', 'it',
+                   'pl', 'pt-BR', 'ro', 'sr'];
 
 $sites =
 [
@@ -271,6 +279,16 @@ $sites =
         array_keys($firefox_updater_lang),
         'en-US', // source locale
         $public_repo9,
+    ],
+
+    9 => [
+        'firefoxos-marketing',
+        $repo10,
+        '',
+        $fxos_marketing,
+        array_keys($fxos_marketing_lang),
+        'en-US', // source locale
+        $public_repo10,
     ],
 ];
 
@@ -460,6 +478,9 @@ $langfiles_subsets = [
         'updater.lang'  => $firefox_updater_locales,
     ],
 
+    'firefoxos-marketing' => [
+        'screenshots.lang'  => $fxos_marketing,
+    ],
 ];
 
 $bugzilla_locales =
