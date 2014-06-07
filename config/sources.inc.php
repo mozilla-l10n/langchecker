@@ -176,7 +176,7 @@ $snippets_main_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja
 
 $addons_locales = ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'pt-BR'];
 
-$firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es', 'fi', 'fr', 'hu', 'id', 'it', 'ja',
+$firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', 'id', 'it', 'ja',
                             'nl', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sl', 'sv', 'th', 'tr', 'vi',
                             'zh-CN', 'zh-TW'];
 
