@@ -294,8 +294,8 @@ $langfiles_subsets = [
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'fy-NL', 'hr',
              'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
         'firefox/os/index.lang'                 =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'fy-NL', 'hr',
-             'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
+            ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'fy-NL', 'hi-IN',
+             'hr', 'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr', 'ta'],
         'firefox/os/faq.lang'                   =>
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'hr', 'hu',
              'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
