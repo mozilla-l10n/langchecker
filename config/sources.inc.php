@@ -311,13 +311,13 @@ $langfiles_subsets = [
         'firefox/speed.lang'                    => ['pt-BR'],
         'firefox/os/devices.lang'               =>
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'fy-NL', 'hr',
-             'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr'],
+             'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sq', 'sr'],
         'firefox/os/index.lang'                 =>
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'fy-NL', 'hi-IN',
-             'hr', 'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sr', 'ta'],
+             'hr', 'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sq', 'sr', 'ta'],
         'firefox/os/faq.lang'                   =>
             ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'hr', 'hu',
-             'ja', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
+             'ja', 'it', 'pl', 'pt-BR', 'ro', 'sq', 'sr'],
         'firefox/partners/index.lang'           => $mwc_locales,
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
         'mwc2014_promos.lang'                   => $mwc_locales,
