@@ -250,3 +250,12 @@ table.listpages tr td:first-child {
     min-width: 250px;
     padding: 2px 6px;
 }
+
+/* Translate page */
+
+.tag {
+    font-size: 75%;
+    padding: 0.2em 0.6em;
+    border-radius: 0.25em;
+    margin: 0 10px;
+}

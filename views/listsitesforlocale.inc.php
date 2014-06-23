@@ -99,7 +99,7 @@ foreach ($sites as $key => $_site) {
                             "        <tr>\n";
 
                 foreach ($GLOBALS[$locale] as $k => $v) {
-                    if (in_array($k, ['Obsolete', 'python_vars', 'activated', 'tags'])) {
+                    if (in_array($k, ['Obsolete', 'python_vars', 'activated', 'tags', 'tag_bindings'])) {
                         continue;
                     }
                     $todoFiles .= '          <td>' . count($GLOBALS[$locale][$k]) . "</td>\n";

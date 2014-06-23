@@ -64,6 +64,14 @@ class DotLangParser
 
     /*
        Reads in a file of strings into a global array.  File format is:
+
+        ## active ##    // optional, only valid at the beginning of the file
+        ## tag_name ##  // optional tags after the activation status
+
+        ## NOTE: file description // optional
+
+        ## TAG: tag_name // optional, used to bind a string to a tag
+        # Comment  // optional
         ;String in english
         translated string
 
@@ -78,12 +86,12 @@ class DotLangParser
         $englishes = array('en-GB', 'en', 'en-US', 'en-ZA');
         $array_name = in_array($reflang, $englishes) ? '__english_moz' : '__l10n_moz';
         $GLOBALS[$array_name]['activated'] = $active = false;
-
         $f = self::getFile($file);
 
         for ($i = 0, $lines = count($f); $i < $lines; $i++) {
-            // First line may contain an activation status
-            // Tags are read with regexp "^## (\w+) ##", so trailing spaces can be ignored
+            /* First line may contain an activation status
+             * Tags are read with regexp "^## (\w+) ##", so trailing spaces can be ignored
+             */
             if ($i == 0 && rtrim($f[0]) == '## active ##') {
                 $GLOBALS[$array_name]['activated'] = $active = true;
                 continue;
@@ -96,7 +104,9 @@ class DotLangParser
             }
 
             // Other tags (promos)
-            if (self::startsWith($f[$i], '##')) {
+            if (self::startsWith($f[$i], '##') &&
+                ! self::startsWith($f[$i], '## NOTE:') &&
+                ! self::startsWith($f[$i], '## TAG:')) {
                 $GLOBALS[$array_name]['tags'][] = trim(str_replace('##', '', $f[$i]));
                 continue;
             }
@@ -108,8 +118,10 @@ class DotLangParser
 
                 if (self::startsWith($translation, ';') || self::startsWith($translation, '#')) {
                     /* Empty translation: what I'm reading as translation is either the next reference string
-                    or the next comment. I'll consider the string untranslated.*/
-                    $translation = $english;
+                     * or the next meta tag (comment, tag binding). I'll consider the string untranslated.
+                     */
+                    $GLOBALS[$array_name][$english] = $english;
+                    continue;
                 } else {
                     // locamotion support conditional
                     if (!isset($GLOBALS[$array_name][$english])
@@ -118,14 +130,21 @@ class DotLangParser
                     }
 
                     if ($i >= 2 && in_array($reflang, $englishes)) {
-                        $GLOBALS['__l10n_comments'][$english] = '';
-
-                        if (self::startsWith($f[$i-1], '#') && !self::startsWith($f[$i-1], '##')) {
-                            $GLOBALS['__l10n_comments'][$english] .= trim(substr($f[$i-1], 1));
+                        if (self::startsWith($f[$i-1], '## TAG:')) {
+                            // Only tag binding
+                            $GLOBALS[$array_name]['tag_bindings'][$english] = trim(substr($f[$i-1], 7));
                         }
-
-                        if ($GLOBALS['__l10n_comments'][$english] == '') {
-                            unset($GLOBALS['__l10n_comments'][$english]);
+                        if (self::startsWith($f[$i-2], '## TAG:')) {
+                            // Tag binding and comment
+                            $GLOBALS[$array_name]['tag_bindings'][$english] = trim(substr($f[$i-2], 7));
+                        }
+                        if (self::startsWith($f[$i-1], '#') && !self::startsWith($f[$i-1], '##')) {
+                            // Only l10n comment
+                            $GLOBALS['__l10n_comments'][$english] = trim(substr($f[$i-1], 1));
+                        }
+                        if (self::startsWith($f[$i-2], '#') && !self::startsWith($f[$i-2], '##')) {
+                            // L10n comment and tag binding
+                            $GLOBALS['__l10n_comments'][$english] = trim(substr($f[$i-2], 1));
                         }
                     }
                 }

@@ -85,13 +85,14 @@ function analyseLangFile($locale, $website, $filename)
     DotLangParser::load($path);
 
     /* define sub-arrays for a locale */
-    $GLOBALS[$locale]['Identical']   = array();
-    $GLOBALS[$locale]['Translated']  = array();
-    $GLOBALS[$locale]['Missing']     = array();
-    $GLOBALS[$locale]['Obsolete']    = array();
-    $GLOBALS[$locale]['python_vars'] = array();
-    $GLOBALS[$locale]['tags']        = array();
-    $GLOBALS[$locale]['activated']   = false;
+    $GLOBALS[$locale]['Identical']    = [];
+    $GLOBALS[$locale]['Translated']   = [];
+    $GLOBALS[$locale]['Missing']      = [];
+    $GLOBALS[$locale]['Obsolete']     = [];
+    $GLOBALS[$locale]['python_vars']  = [];
+    $GLOBALS[$locale]['tags']         = [];
+    $GLOBALS[$locale]['tag_bindings'] = [];
+    $GLOBALS[$locale]['activated']    = false;
 
 
     if (isset($GLOBALS['__l10n_moz'])) {
@@ -108,6 +109,11 @@ function analyseLangFile($locale, $website, $filename)
 
             if ($key == 'tags') {
                 $GLOBALS[$locale]['tags'] = $val;
+                continue;
+            }
+
+            if ($key == 'tag_bindings') {
+                $GLOBALS[$locale]['tag_bindings'] = $val;
                 continue;
             }
 
@@ -152,7 +158,7 @@ function analyseLangFile($locale, $website, $filename)
 
         foreach ($GLOBALS['__english_moz'] as $key => $val) {
 
-            if (in_array($key, ['filedescription', 'activated', 'tags'])) {
+            if (in_array($key, ['filedescription', 'activated', 'tags', 'tag_bindings'])) {
                 continue;
             }
 
@@ -295,7 +301,9 @@ function buildFile($eol, $exceptions = [])
     }
 
     foreach ($GLOBALS['__english_moz'] as $key => $val) {
-        if ($key == 'activated' || $key == 'tags') {
+        if ($key == 'activated' ||
+            $key == 'tags' ||
+            $key == 'tag_bindings') {
             continue;
         }
 

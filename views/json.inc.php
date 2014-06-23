@@ -38,7 +38,7 @@ foreach ($GLOBALS['__english_moz'] as $k => $v) {
 
     $sha1 = sha1($k);
 
-    if (in_array($k, ['filedescription', 'activated','tags'])) {
+    if (in_array($k, ['filedescription', 'activated', 'tags', 'tag_bindings'])) {
         continue;
     }
 

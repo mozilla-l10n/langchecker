@@ -69,15 +69,31 @@ getEnglishSource($reflang, $target, $filename);
                       : $sites[$target][3];
 $val = 0;
 
-foreach ($GLOBALS['__english_moz'] as $k => $v) {
+$bg_colors = ['#459E09', '#B29EF9', '#2D68BA', '#E39530', '#D6D6D4',
+              '#E3309E', '#FF4040', '#F5F562', '#F562C7', '#C0FCF2'];
+$font_colors = ['#FFF', '#FFF', '#FFF', '#FFF', '#000',
+                '#FFF', '#FFF', '#000', '#FFF', '#000'];
 
-    if (in_array($k, ['filedescription', 'activated', 'tags'])) {
+foreach ($GLOBALS['__english_moz'] as $k => $v) {
+    if (in_array($k, ['filedescription', 'activated', 'tags', 'tag_bindings'])) {
         continue;
     }
 
+    $tag_bindings = $GLOBALS['__english_moz']['tag_bindings'];
+    // I want keys in $available_tags to be progressive
+    $available_tags = array_values(array_unique(array_values($tag_bindings)));
+    $header_string = trim(str_replace('{l10n-extra}', '', htmlspecialchars($k)));
+    if (isset($tag_bindings[$k])) {
+        $current_tag = $tag_bindings[$k];
+        $tag_number = array_search($current_tag, $available_tags);
+        $style = "style='background-color: {$bg_colors[$tag_number]}; color: {$font_colors[$tag_number]};'";
+        $header_string .= "</a><span title='Associated tag' class='tag' {$style}>" . $current_tag . "</span>";
+    } else {
+        $header_string .= "</a>";
+    }
+
     echo "<p><a href='#'  style=\"color:green\" onclick=\"showhide('table$val');return false;\">"
-         . trim(str_replace('{l10n-extra}', '', htmlspecialchars($k)))
-         . "</a></p>";
+         . $header_string . "</p>";
 
     echo "<table style='width:100%; display:{$show_status};' id='table$val'>";
 
