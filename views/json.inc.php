@@ -1,4 +1,6 @@
 <?php
+namespace Langchecker;
+
 $json = array();
 
 // Override to not have main.lang as default
@@ -53,7 +55,7 @@ foreach ($GLOBALS['__english_moz'] as $k => $v) {
             continue;
         }
 
-        l10n_moz::load($local_lang_file);
+        DotLangParser::load($local_lang_file);
 
         if (i__($k)) {
             $result = trim(str_replace('{l10n-extra}', '', ___($k)));

@@ -1,1 +1,4 @@
 config/settings.inc.php
+composer.lock
+locales
+vendor/

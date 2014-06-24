@@ -1,5 +1,6 @@
 #!/usr/bin/env php
 <?php
+namespace Langchecker;
 
 /* Available usages
 
@@ -30,7 +31,7 @@ date_default_timezone_set('Europe/Paris');
 require_once __DIR__ . '/inc/init.php';
 
 /* init l10n class to create the globals needed */
-$initl10n = new l10n_moz();
+$initl10n = new DotLangParser();
 
 /* user provided variables */
 $filename = isset($argv[1]) ? secureText($argv[1])  : 'main.lang'; // which file are we comparing? Set a default
@@ -102,7 +103,7 @@ foreach ($files as $filename) {
             }
 
             /* here we load preexisting lang files */
-            l10n_moz::load($source);
+            DotLangParser::load($source);
 
             /* is the lang file using Windows or Unix EOL? */
             if (file_exists($source)) {

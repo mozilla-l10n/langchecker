@@ -1,4 +1,6 @@
 <?php
+namespace Langchecker;
+
 ob_start();
 
 $done = array();

@@ -1,4 +1,5 @@
 <?php
+namespace Langchecker;
 
 require_once __DIR__ . '/inc/init.php';
 

@@ -1,3 +1,6 @@
+<?php
+namespace Langchecker;
+?>
 
 <h1>Choose your locale:</h1>
 <style>

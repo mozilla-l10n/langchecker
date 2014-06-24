@@ -1,6 +1,7 @@
 <?php
+namespace Langchecker;
 
-class l10n_moz
+class DotLangParser
 {
     public function __construct()
     {

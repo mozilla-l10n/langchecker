@@ -1,4 +1,6 @@
 <?php
+namespace Langchecker;
+
 $todo  = array();
 $total = array();
 

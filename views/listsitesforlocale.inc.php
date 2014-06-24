@@ -1,3 +1,6 @@
+<?php
+namespace Langchecker;
+?>
 <p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/?locale=<?=$locale?>">Back to Web Dashboard</a></p>
 
 <h1>Lang format file checker <span><?=$locale?></span></h1>
@@ -85,13 +88,13 @@ foreach ($sites as $key => $_site) {
                 $todoFiles .= "  <div class='filename' id='{$filename}'>\n" .
                             "    <h3 class='filename'><a href='#{$filename}'>{$filename}</a></h3>\n" .
                             "    <table class='side'>\n" .
-                            "      <thead>\n" .                            
+                            "      <thead>\n" .
                             "        <tr>\n" .
                             "          <th>Identical</th>\n" .
                             "          <th>Translated</th>\n" .
                             "          <th>Missing</th>\n" .
                             "        </tr>\n" .
-                            "      </thead>\n" .                            
+                            "      </thead>\n" .
                             "      <tbody>\n" .
                             "        <tr>\n";
 
@@ -106,17 +109,17 @@ foreach ($sites as $key => $_site) {
                               "          <td colspan='3'>\n" .
                               "            <a href='{$url_source}'>Original English source file</a>\n" .
                               "          </td>\n" .
-                              "        </tr>\n" . 
+                              "        </tr>\n" .
                               "        <tr>\n" .
                               "          <td colspan='3'>\n" .
                               "            <a href='{$url_target}'>Your translated file</a>\n" .
                               "          </td>\n" .
-                              "        </tr>\n" . 
+                              "        </tr>\n" .
                               "        <tr>\n" .
                               "          <td colspan='3'>\n" .
                               "            <a href='{$bugzilla}'>Attach your updated file to Bugzilla</a>\n" .
                               "          </td>\n" .
-                              "        </tr>\n" . 
+                              "        </tr>\n" .
                               "      </tbody>\n" .
                               "    </table>\n";
 
@@ -183,10 +186,10 @@ foreach ($sites as $key => $_site) {
 
         if ($titleDone) {
             echo "\n  <h3>DONE</h3>\n";
-            echo "  <p>\n";            
+            echo "  <p>\n";
             echo $doneFiles;
-            echo "  </p>\n";            
-            
+            echo "  </p>\n";
+
         }
 
         if ($titleTodo) {

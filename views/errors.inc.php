@@ -1,3 +1,6 @@
+<?php
+namespace Langchecker;
+?>
       <p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/">Back to Web Dashboard</a></p>
 
       <h1>Display python and UTF-8 errors for all locales</h1>
