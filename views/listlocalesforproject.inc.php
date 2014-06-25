@@ -1,4 +1,6 @@
 <?php
+namespace Langchecker;
+
 $output_array = [];
 if (isset($_GET['website']) && isset($_GET['file'])) {
     $website = $_GET['website'];

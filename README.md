@@ -12,3 +12,5 @@ as:
 config/settings.inc.php
 
 And indicate in this file the local paths to the various svn repositories the application tracks.
+
+Then install dependencies (composer install)

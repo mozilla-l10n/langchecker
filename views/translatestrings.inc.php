@@ -1,3 +1,6 @@
+<?php
+namespace Langchecker;
+?>
 <script>
 
   function showhide(id) {
@@ -90,7 +93,7 @@ foreach ($GLOBALS['__english_moz'] as $k => $v) {
             continue;
         }
 
-        l10n_moz::load($local_langfilename);
+        DotLangParser::load($local_langfilename);
 
         if (i__($k)) {
             $total_translations++;

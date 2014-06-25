@@ -1,4 +1,5 @@
 <?php
+namespace Langchecker;
 
 $serialdata = array();
 
@@ -16,7 +17,7 @@ foreach ($sites as $key => $val) {
         // Load the reference English file for the site, use a temp $reflang variable for that
         $reflang = $sites[$key][5];
         $source  = $sites[$key][1] . $sites[$key][2] . $reflang . '/' . $file;
-        l10n_moz::load($source);
+        DotLangParser::load($source);
         unset($reflang);
 
         analyseLangFile($locale, $key, $file);

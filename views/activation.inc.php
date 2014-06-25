@@ -1,3 +1,6 @@
+<?php
+namespace Langchecker;
+?>
 <p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/">Back to Web Dashboard</a></p>
 
 <h1>Complete files not activated</h1>

@@ -1,8 +1,9 @@
 <?php
+namespace Langchecker;
 
 /**
  * If the string exists in the language cache, return it, otherwise return what was
- * given to us. The language cache is build in the l10n_moz class
+ * given to us. The language cache is built in the DotLangParser class
  */
 
 function ___($str)
@@ -56,7 +57,7 @@ function getEnglishSource($locale, $website, $filename)
     $path = $sites[$website][1] . $sites[$website][2] . $locale . '/' . $filename;
 
     /* load the English source file stored in $GLOBALS['__english_moz'] */
-    l10n_moz::load($path);
+    DotLangParser::load($path);
 
     // it is important to reset the reference value just after getting the English strings
     unset($GLOBALS['reflang']);
@@ -69,7 +70,7 @@ function getTranslations($locale, $website, $filename)
 
     $local_file = $sites[$website][1] . $sites[$website][2] . $locale . '/' . $filename;
     /* load the English source file stored in $GLOBALS['__english_moz'] */
-    l10n_moz::load($path);
+    DotLangParser::load($path);
     // it is important to reset the reference value just after getting the English strings
 }
 
@@ -81,7 +82,7 @@ function analyseLangFile($locale, $website, $filename)
     $path = $sites[$website][1] . $sites[$website][2] . $locale . '/' . $filename;
 
     /* load the localized file stored in $GLOBALS['__l10n_moz'], we reset $locale here */
-    l10n_moz::load($path);
+    DotLangParser::load($path);
 
     /* define sub-arrays for a locale */
     $GLOBALS[$locale]['Identical']   = array();
@@ -512,7 +513,7 @@ function scrapLocamotion($lang, $filename, $source)
             unset($GLOBALS['__l10n_moz']);
 
             // Load temp.lang and store strings coming from Locamotion
-            l10n_moz::load('temp.lang');
+            DotLangParser::load('temp.lang');
             unlink('temp.lang');
             $imported_lang_file = $GLOBALS['__l10n_moz'];
             unset($GLOBALS['__l10n_moz']);
