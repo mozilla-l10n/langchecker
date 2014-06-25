@@ -74,5 +74,5 @@ if ($serial) {
 }
 
 if ($json) {
-    die(Transvision\Json::output($export, false, true));
+    die(\Transvision\Json::output($export, false, true));
 }
