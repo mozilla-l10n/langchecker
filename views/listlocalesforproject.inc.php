@@ -25,4 +25,4 @@ if (isset($_GET['website']) && isset($_GET['file'])) {
     }
 }
 
-echo Transvision\Json::output($output_array, false, true);
+echo \Transvision\Json::output($output_array, false, true);
