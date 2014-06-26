@@ -2,169 +2,159 @@
 namespace Langchecker;
 ?>
       <p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/">Back to Web Dashboard</a></p>
-
-      <h1>Display python and UTF-8 errors for all locales</h1>
-
+      <h1>Display errors for all locales</h1>
 <?php
 
 $htmloutput = '';
-foreach ($mozilla as $locale) {
+foreach ($mozilla as $current_locale) {
     $locale_with_errors = false;
-    $locale_htmloutput = "\n      <h2>Locale: <a href='?locale={$locale}' target='_blank'>{$locale}</a></h2>\n";
-    $open_div = false;
+    $locale_htmloutput = "\n      <h2>Locale: <a href='?locale={$current_locale}' target='_blank'>{$current_locale}</a></h2>\n";
 
-    foreach ($sites as $key => $_site) {
-        if (in_array($locale, $_site[3])) {
-            $repo = $sites[$key][6] . $sites[$key][2] . $locale . '/';
+    foreach ($sites as $current_website) {
+        if (Project::isSupportedLocale($current_website, $current_locale)) {
+            $repo = Project::getPublicRepoPath($current_website, $current_locale);
 
-            foreach ($_site[4] as $filename) {
-                /*
-                 *  Reassign a lang file to a reduced set of locales
-                 */
-
-                if (@is_array($langfiles_subsets[$_site[0]][$filename])
-                    && !in_array($locale, $langfiles_subsets[$_site[0]][$filename])) {
+            foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
+                if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
+                    // File is not managed for this website+locale, ignore it
                     continue;
                 }
 
-                /*
-                 * Define English defaults stored in $GLOBALS['__english_moz']
-                 * We temporarily define a $lang variable for that
-                 */
+                // Load reference strings
+                $reference_locale = Project::getReferenceLocale($current_website);
+                $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
-                $reflang = $sites[$key][5];
-                $bugwebsite = 'www.mozilla.org';
-
-                $source = $sites[$key][1] . $sites[$key][2] . $reflang . '/' . $filename;
-                $target = $sites[$key][1] . $sites[$key][2] . $locale  . '/' . $filename;
-
-                $url_source = $sites[$key][6] . $sites[$key][2] . $reflang  . '/' . $filename;
-                $url_target = $sites[$key][6] . $sites[$key][2] . $locale   . '/' . $filename;
-
-                getEnglishSource($reflang, $key, $filename);
-
+                $current_website_name = Project::getWebsiteName($current_website);
                 $opening_div = "      <div class='website'>\n" .
-                               "        <h2>{$_site[0]}</h2>\n";
+                               "        <h2>{$current_website_name}</h2>\n";
 
-                // If the .lang file does not exist, just skip the locale for this file
-                $local_lang_file = $_site[1] . $_site[2] . $locale . '/' . $filename;
-                if (!is_file($local_lang_file)) {
-                    if (!$open_div) {
-                        $open_div = true;
+                // If the .lang file does not exist, warn and skip this file
+                $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
+                if (! is_file($locale_filename)) {
+                    if (! $locale_with_errors) {
+                        $locale_with_errors = true;
                         $locale_htmloutput .= $opening_div;
                     }
-                    $locale_with_errors = true;
-                    $locale_htmloutput .= "        <p>File missing: $local_lang_file</p>\n";
+                    $locale_htmloutput .= "        <p>File missing: {$locale_filename}</p>\n";
                     continue;
                 }
 
-                analyseLangFile($locale, $key, $filename);
+                // Extract data from locale
+                $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
+                $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
 
-                unset($reflang);
-
-                if (count($GLOBALS[$locale]['python_vars']) != 0)
-                {
-                    if (!$open_div) {
-                        $open_div = true;
+                if (count($locale_analysis['python_vars']) != 0) {
+                    if (! $locale_with_errors) {
+                        $locale_with_errors = true;
                         $locale_htmloutput .= $opening_div;
                     }
-                    $locale_with_errors = true;
-                    $locale_htmloutput .= "        <p>Repository: <a href=\"$repo\">$repo</a></p>\n";
-                    $locale_htmloutput .= "        <div class='filename' id='{$filename}'>\n";
-                    $locale_htmloutput .= "          <h3 class='filename'><a href='#$filename'>$filename</a></h3>\n";
+                    $locale_htmloutput .= "        <p>Repository: <a href='{$repo}'>{$repo}</a></p>\n";
+                    $locale_htmloutput .= "        <div class='filename' id='{$current_filename}'>\n";
+                    $locale_htmloutput .= "          <h3 class='filename'><a href='#{$current_filename}'>{$current_filename}</a></h3>\n";
 
-                    foreach ($GLOBALS[$locale] as $k => $v) {
-                        if ($k == 'python_vars' && count($GLOBALS[$locale][$k]) > 0) {
-                            $locale_htmloutput .= "          <h3>Errors in variables in the sentence:</h3>\n";
-                            $locale_htmloutput .= "          <ul>\n";
-                            foreach ($v as $k2 => $v2) {
-                                $locale_htmloutput .= "              <table class='python'>
+                    $locale_htmloutput .= "          <h3>Errors in variables in the sentence:</h3>\n";
+                    $locale_htmloutput .= "          <ul>\n";
+                    foreach ($locale_analysis['python_vars'] as $stringid => $python_error) {
+                        $locale_htmloutput .= "              <table class='python'>
                 <tr>
-                  <th><strong style=\"color:red\"> $v2</strong> in the English string is missing in:</th>
+                  <th><strong style='color:red'>{$python_error['var']}</strong> in the English string is missing in:</th>
                 </tr>
                 <tr>
-                  <td>" . showPythonVar(htmlspecialchars($k2)) . "</td>
+                  <td>" . Utils::highlightPythonVar($stringid) . "</td>
                 </tr>
                 <tr>
-                  <td>" . showPythonVar(htmlspecialchars($GLOBALS[$filename][$k2])) . "</td>
+                  <td>" . Utils::highlightPythonVar($python_error['text']) . "</td>
                 </tr>
               </table>\n";
-                            }
-                            $locale_htmloutput .= "          </ul>\n";
-                            $locale_htmloutput .= "        </div>\n";
-                        }
                     }
+                    $locale_htmloutput .= "          </ul>\n";
+                    $locale_htmloutput .= "        </div>\n";
                 }
 
-                // check if the lang file is not in UTF-8 or US-ASCII
-                if (isUTF8($target) == false) {
-                   if (!$open_div) {
-                        $open_div = true;
+                // Check if the lang file is not in UTF-8 or US-ASCII
+                if (Utils::isUTF8($locale_filename) == false) {
+                   if (! $locale_with_errors) {
+                        $locale_with_errors = true;
                         $locale_htmloutput .= $opening_div;
                     }
-                    $locale_with_errors = true;
-                    $locale_htmloutput .= "        <p><strong>$filename</strong> is not saved in UTF8</p>\n";
+                    $locale_htmloutput .= "        <p><strong>{$current_filename}</strong> is not saved in UTF8</p>\n";
                 }
 
                 // Display errors on missing strings
-                if (count($GLOBALS[$locale]['Missing'])) {
-                    if (!$open_div) {
-                        $open_div = true;
-                        $locale_htmloutput .= $opening_div;
-                    }
-                    $locale_with_errors = true;
-                    $locale_htmloutput .= "        <p>Missing strings in {$filename}</p>\n";
-                }
-
-                // Display errors on unknown tags
-                $locale_file_tags = $GLOBALS[$locale]['tags'];
-                $extra_tags = array_diff(
-                    $locale_file_tags,
-                    getAllowedTagsInFile($GLOBALS[$locale]['tags'])
-                );
-                foreach ($extra_tags as $extra_tag) {
-                    if (!$open_div) {
-                        $open_div = true;
-                        $locale_htmloutput .= $opening_div;
-                    }
-                    $locale_with_errors = true;
-                    $locale_htmloutput .= "        <p>Unknown tag <strong>{$extra_tag}</strong> in {$filename}</p>\n";
-                }
-
-                // Display errors on potentially missing tags (only for complete and activated files)
-                $todo = count($GLOBALS[$locale]['Identical']) + count($GLOBALS[$locale]['Missing']);
-                if (($todo==0) && ($GLOBALS[$locale]['activated'])) {
-                    // File is complete and activate, check tags
-                    $reference_tags = isset($GLOBALS['__english_moz']['tags'])
-                        ? $GLOBALS['__english_moz']['tags']
-                        : [];
-                    $missing_tags = array_diff(
-                        $reference_tags,
-                        $locale_file_tags
-                    );
-                    if (count($missing_tags)>0) {
-                        if (!$open_div) {
-                            $open_div = true;
-                            $locale_htmloutput .= $opening_div;
-                        }
+                if (count($locale_analysis['Missing'])) {
+                    if (! $locale_with_errors) {
                         $locale_with_errors = true;
-                        $locale_htmloutput .= "        <p>Possible missing tags in {$filename}</p>\n<ul>\n";
-                        foreach ($missing_tags as $missing_tag) {
-                            $locale_htmloutput .= "<li>{$missing_tag}</li>\n";
-                        }
-                        $locale_htmloutput .= "</ul>\n";
+                        $locale_htmloutput .= $opening_div;
                     }
+                    $locale_htmloutput .= "        <p>Missing strings in {$current_filename}</p>\n";
                 }
 
+                // If locale has tags, display errors on unknown tags
+                if (isset($locale_data['tags'])) {
+                    $locale_file_tags = $locale_data['tags'];
+                    $extra_tags = array_diff($locale_file_tags, $reference_data['tags']);
+                    if (count($extra_tags)) {
+                        foreach ($extra_tags as $extra_tag) {
+                            if (! $locale_with_errors) {
+                                $locale_with_errors = true;
+                                $locale_htmloutput .= $opening_div;
+                            }
+                            $locale_htmloutput .= "        <p>Unknown tag <strong>{$extra_tag}</strong> in {$current_filename}</p>\n";
+                        }
+                    }
+                } else {
+                    $locale_file_tags = [];
+                }
 
-                unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
+                if (isset($reference_data['tag_bindings']) && $locale_analysis['activated']) {
+                    // If file is activated, get a list of untranslated/identical strings bound to tags
+                    $incomplete_tagged_strings = [];
+                    foreach ($reference_data['tag_bindings'] as $string_id => $bound_tag) {
+                        if (in_array($string_id, $locale_analysis['Missing']) ||
+                            in_array($string_id, $locale_analysis['Identical'])) {
+                            $incomplete_tagged_strings[$bound_tag][] = $string_id;
+                        }
+                    }
+
+                    // Get all tags with missing strings
+                    $incomplete_tags = array_unique(array_keys($incomplete_tagged_strings));
+                    if (count($incomplete_tags) > 0) {
+                        foreach ($locale_file_tags as $locale_tag) {
+                            if (in_array($locale_tag, $incomplete_tags)) {
+                                // Tag is enabled, but strings are still missing
+                                if (! $locale_with_errors) {
+                                    $locale_with_errors = true;
+                                    $locale_htmloutput .= $opening_div;
+                                }
+                                $locale_htmloutput .= "<p>Tag <strong>{$locale_tag}</strong> is enabled but the following strings are still missing:</p>\n<ul>\n</li>\n";
+                                foreach ($incomplete_tagged_strings[$locale_tag] as $string_id) {
+                                    $locale_htmloutput .= "<li>" . htmlspecialchars($string_id) . "</li>\n";
+                                }
+                                $locale_htmloutput .= "</ul>\n";
+                            }
+                        }
+                    }
+
+                    // Get all missing tags completely localized
+                    $source_file_tags = isset($reference_data['tags'])
+                                        ? $reference_data['tags']
+                                        : [];
+                    $missing_tags = array_diff($source_file_tags, $locale_file_tags);
+                    foreach ($missing_tags as $missing_tag) {
+                        if (! in_array($missing_tag, $incomplete_tags)) {
+                            if (! $locale_with_errors) {
+                                $locale_with_errors = true;
+                                $locale_htmloutput .= $opening_div;
+                            }
+                            $locale_htmloutput .= "<p>Tag <strong>{$missing_tag}</strong> is missing in {$current_filename}.</p>\n";
+                        }
+                    }
+                }
             }
         }
     }
-    if ($open_div) {
-        $locale_htmloutput .= "      </div>\n\n";
-    }
     if ($locale_with_errors) {
+        $locale_htmloutput .= "      </div>\n\n";
         $htmloutput .= $locale_htmloutput;
     }
 }

@@ -1,78 +1,57 @@
 <?php
 namespace Langchecker;
 
-$export = array();
+use \Transvision\Json;
 
-foreach ($sites as $key => $_site) {
+$export_data = [];
+$current_locale = $locale;
 
-    // we recheck if the locale is ok on each loop
-    $localeok = false;
-
-    if (in_array($locale, $_site[3])) {
-        $localeok = true;
-
-        foreach ($_site[4] as $filename) {
-
-            // reassign a lang file to a reduced set of locales
-            if (isset($langfiles_subsets[$_site[0]][$filename])
-                && is_array($langfiles_subsets[$_site[0]][$filename])
-                && !in_array($locale, $langfiles_subsets[$_site[0]][$filename]) ) {
+foreach ($sites as $website) {
+    if (Project::isSupportedLocale($website, $current_locale)) {
+        foreach (Project::getWebsiteFiles($website) as $filename) {
+            if (! Project::isSupportedLocale($website, $current_locale, $filename, $langfiles_subsets)) {
+                // File is not managed for this website+locale, ignore it
                 continue;
             }
 
-            /*
-             * Define English defaults stored in $GLOBALS['__english_moz']
-             * we temporarilly define a $lang variable for that
-             */
-            $reflang = $sites[$key][5];
+            // Load reference strings
+            $reference_locale = Project::getReferenceLocale($website);
+            $reference_data = LangManager::loadSource($website, $reference_locale, $filename);
 
+            $website_name = Project::getWebsiteName($website);
 
-            $source = $sites[$key][1] . $sites[$key][2] . $reflang . '/' . $filename;
-            $target = $sites[$key][1] . $sites[$key][2] . $locale  . '/' . $filename;
-
-            getEnglishSource($reflang, $key, $filename);
-
-            analyseLangFile($locale, $key, $filename);
-
-            $export[$_site[0]][$filename]['identical']  = count($GLOBALS[$locale]['Identical']);
-            $export[$_site[0]][$filename]['missing']    = count($GLOBALS[$locale]['Missing']);
-            $export[$_site[0]][$filename]['obsolete']   = count($GLOBALS[$locale]['Obsolete']);
-            $export[$_site[0]][$filename]['translated'] = count($GLOBALS[$locale]['Translated']);
-
-            if ($_site[0] == 'www.mozilla.org' && array_key_exists($filename, $mozillaorg_lang)) {
-                $export[$_site[0]][$filename]['critical'] = $mozillaorg_lang[$filename];
-            }
-            if ($_site[0] == 'about:healthreport' && array_key_exists($filename, $firefoxhealthreport_lang)) {
-                $export[$_site[0]][$filename]['critical'] = $firefoxhealthreport_lang[$filename];
+            $locale_filename = Project::getLocalFilePath($website, $current_locale, $filename);
+            if (! is_file($locale_filename)) {
+                // File is missing
+                continue;
             }
 
-            if ($_site[0] == 'slogans' && array_key_exists($filename, $slogans_lang)) {
-                $export[$_site[0]][$filename]['critical'] = $slogans_lang[$filename];
-            }
+            $locale_analysis = LangManager::analyzeLangFile($website, $current_locale, $filename, $reference_data);
 
-            if ($_site[0] == 'snippets' && array_key_exists($filename, $snippets_lang)) {
-                $export[$_site[0]][$filename]['critical'] = $snippets_lang[$filename];
-            }
+            $export_data[$website_name][$filename]['identical'] = count($locale_analysis['Identical']);
+            $export_data[$website_name][$filename]['missing'] = count($locale_analysis['Missing']);
+            $export_data[$website_name][$filename]['obsolete'] = count($locale_analysis['Obsolete']);
+            $export_data[$website_name][$filename]['translated'] = count($locale_analysis['Translated']);
 
-            if ($_site[0] == 'add-ons' && array_key_exists($filename, $addons_lang)) {
-                $export[$_site[0]][$filename]['critical'] = $addons_lang[$filename];
+            if (Project::isCriticalFile($website, $filename)) {
+                $export_data[$website_name][$filename]['critical'] = true;
+            } else {
+                $export_data[$website_name][$filename]['critical'] = false;
             }
 
             // Some files have a deadline
-            if (array_key_exists($filename, $deadline)) {
-                $export[$_site[0]][$filename]['deadline'] = $deadline[$filename];
+            if (isset($deadline[$filename])) {
+                $export_data[$website_name][$filename]['deadline'] = $deadline[$filename];
             }
-
-            unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
         }
     }
 }
 
 if ($serial) {
     header("Content-type:text/plain");
-    die(serialize($export));
+    die(serialize($export_data));
 }
 
 if ($json) {
-    die(\Transvision\Json::output($export, false, true));
+    die(Json::output($export_data, false, true));
 }

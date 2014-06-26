@@ -250,3 +250,42 @@ table.listpages tr td:first-child {
     min-width: 250px;
     padding: 2px 6px;
 }
+
+/* Translate page */
+
+.tag {
+    font-size: 75%;
+    padding: 0.2em 0.6em;
+    border-radius: 0.25em;
+    margin: 0 10px;
+}
+
+td.done {
+    text-align:left;
+    font-style:italic;
+    color: gray;
+}
+
+.translations td {
+    text-align: left;
+}
+
+.translations th {
+    width: 5em;
+}
+
+td.odd {
+    background-color: #FFF;
+}
+
+td.even {
+    background-color: #FAF6ED;
+}
+
+/* List locales */
+
+ul#locales {
+    -moz-column-count: 6;
+    width: 80%;
+}
+

@@ -1,21 +1,11 @@
 <?php
 namespace Langchecker;
-?>
 
-<h1>Choose your locale:</h1>
-<style>
+echo "<h1>Choose your locale:</h1>\n";
+echo "<ul id='locales'>\n";
 
-ul#locales {
-    -moz-column-count: 6;
-    width: 80%;
-}
-</style>
-<?php
-
-echo '<ul id="locales">';
-
-foreach ($mozilla as $_lang) {
-    echo '<li><a href="./?locale=' . $_lang . '">' . $_lang . '</a></li>';
+foreach ($mozilla as $current_locale) {
+    echo "<li><a href='./?locale={$current_locale}'>{$current_locale}</a></li>\n";
 }
 
-echo '</ul>';
+echo "</ul>\n";

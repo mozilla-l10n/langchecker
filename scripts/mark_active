@@ -1,0 +1,72 @@
+#!/usr/bin/env php
+<?php
+namespace Langchecker;
+
+if (php_sapi_name() != 'cli') {
+    die('This command can only be used in CLI mode.');
+}
+
+date_default_timezone_set('Europe/Paris');
+
+if (isset($argv[1])) {
+    if ($argv[1] == '-h' || $argv[1] == '--help' ) {
+        print "mark_active - Add the ## active ## tag to complete lang files on www.mozilla.org\n";
+        print "Usage: mark_active [filename]\n";
+        print "Example: mark_active firefox/new.lang\n";
+        die();
+    }
+}
+
+if (count($argv) < 2) {
+    die("This command needs more options, please check mark_active --help.\n");
+}
+
+require_once __DIR__ . '/../inc/init.php';
+
+// Only mozilla.org
+$current_website = $sites[0];
+$current_filename = $argv[1];
+
+if (in_array($current_filename, $no_active_tag)) {
+    die("This file is not supposed to be activated.\n");
+}
+
+// Read reference data once
+$reference_locale = Project::getReferenceLocale($current_website);
+$reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+
+$supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+foreach ($supported_locales as $current_locale) {
+    if ($current_locale == $reference_locale) {
+        // Ignore reference language
+        continue;
+    }
+    if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
+        // If the .lang file does not exist, just skip the locale for this file
+        continue;
+    }
+    $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
+    $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
+
+    $todo = count($locale_analysis['Identical']) +
+            count($locale_analysis['Missing']) +
+            count($locale_analysis['python_vars']);
+    if ($todo == 0) {
+        if (! $locale_analysis['activated']) {
+            // File is ready, add ## active ## tag
+            $file_content = file($locale_filename);
+            $eol = Utils::checkEOL($file_content[0]);
+            $write_status = file_put_contents($locale_filename, "## active ##{$eol}" . implode($file_content));
+            if ($write_status === false) {
+                print "{$current_locale}/{$current_filename}: there was an error writing the file.\n";
+            } else {
+                print "{$current_locale}/{$current_filename}: added active tag.\n";
+            }
+        } else {
+            print "{$current_locale}/{$current_filename}: file already has the active tag.\n";
+        }
+    } else {
+        print "{$current_locale}/{$current_filename}: file is not ready.\n";
+    }
+
+}

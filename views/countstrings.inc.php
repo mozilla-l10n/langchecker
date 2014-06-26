@@ -1,40 +1,39 @@
 <?php
 namespace Langchecker;
 
-$todo  = array();
-$total = array();
+use \Transvision\Json;
 
-foreach ($mozilla as $lang) {
-    // we don't care about the reference language
-    if ($lang == 'en-GB') {
+$todo  = [];
+$total = [];
+
+// We consider only mozilla.org, so $sites[0]
+$current_website = $sites[0];
+$reference_locale = Project::getReferenceLocale($current_website);
+
+foreach ($mozilla as $current_locale) {
+    // Ignore reference language
+    if ($current_locale == $reference_locale) {
         continue;
     }
 
-    $todo[$lang]  = 0;
-    $total[$lang] = 0;
+    $todo[$current_locale]  = 0;
+    $total[$current_locale] = 0;
 
-    foreach ($sites[0][4] as $_file) {
-
-        $reflang = 'en-GB';
-
+    foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
         // Skip the loop if we don't have this lang file for the locale
-        if (!in_array($lang, $langfiles_subsets[$sites[0][0]][$_file])) {
+        if (! Project::isSupportedLocale($current_website, $current_locale, $langfiles_subsets, $current_filename)) {
             continue;
         }
 
-        // If the .lang file does not exist, we don't want to generate a php warning
-        // just skip the locale for this file
-        if (!@file_get_contents($sites[0][1] . $sites[0][2] . $lang . '/' . $_file)) {
+        // Skip the locale for this file if it's missing
+        if (! is_file(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
             continue;
         }
 
-        getEnglishSource($reflang, 0, $_file);
-        analyseLangFile($lang, 0, $_file);
+        $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+        $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
 
-        $todo[$lang] += count($GLOBALS[$lang]['Identical']) + count($GLOBALS[$lang]['Missing']);
-
-        unset($GLOBALS[$lang]['Identical'], $GLOBALS[$lang]['Missing'] );
-        unset($GLOBALS['__english_moz']);
+        $todo[$current_locale] += count($locale_analysis['Identical']) + count($locale_analysis['Missing']);
     }
 }
 
@@ -42,24 +41,22 @@ arsort($todo);
 $locales_done = 0;
 
 if (isset($_GET['json'])) {
-    print jsonOutput($todo);
-    die;
+    die(Json::output($todo, false, true));
 }
-
 
 echo '<table>';
 echo '<tr><th>locale</th><th>Untranslated</th></tr>';
 
-foreach ($todo as $k => $v) {
-    if ($v == 0) {
-        $class = ' class="dim"';
+foreach ($todo as $key => $val) {
+    if ($val == 0) {
+        $class = 'class="dim"';
         $locales_done++;
     } else {
         $class = '';
     }
 
-    echo "<tr$class><td><a href=\"./?locale=$k\">$k</a></td><td>$v</td></tr>";
+    echo "<tr {$class}><td><a href='./?locale={$key}'>{$key}</a></td><td>{$val}</td></tr>\n";
 }
 
-echo '<tr><td colspan="2">' . $locales_done . ' locales done</td></tr>';
-echo '</table>';
+echo "<tr><td colspan='2'>{$locales_done} locales done</td></tr>\n";
+echo "</table>\n";

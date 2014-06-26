@@ -1,10 +1,13 @@
 <?php
 namespace Langchecker;
 
+use \Transvision\Json;
+
 $output_array = [];
 if (isset($_GET['website']) && isset($_GET['file'])) {
-    $website = $_GET['website'];
-    $output_array = array_values($langfiles_subsets[$sites[$website][0]][$_GET['file']]);
+    $current_website = $sites[$_GET['website']];
+    $current_filename = $_GET['file'];
+    $output_array = array_values(Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets));
 } elseif (isset($_GET['project'])) {
     switch ($_GET['project']) {
         case 'locamotion':
@@ -25,4 +28,4 @@ if (isset($_GET['website']) && isset($_GET['file'])) {
     }
 }
 
-echo \Transvision\Json::output($output_array, false, true);
+echo Json::output($output_array, false, true);

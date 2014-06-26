@@ -17,7 +17,7 @@ if ($locale == '' && $action == '') {
 } elseif ($locale != '' && $website == '' && $serial == false && $json == false) {
     /* case 4: we have a locale but no website is defined, we display the status page for the locale */
     $case = 4;
-} elseif ($website != '' && array_key_exists($website, $sites) && $serial == false && $action == '') {
+} elseif ($website != '' && isset($sites[$website]) && $serial == false && $action == '') {
     /* case 5: we have a website defined and just want to see the global status for lang files on this website */
     $case = 5;
 } elseif ($locale != '' && $website == '' && $serial == true) {
@@ -70,7 +70,7 @@ switch ($case) {
             $template = $templates . 'template.inc.php';
             $view     = $views . 'globalstatus.inc.php';
         } else {
-            $template= $views . 'globalstatus.inc.php';
+            $template = $views . 'globalstatus.inc.php';
         }
         break;
     case 6:
