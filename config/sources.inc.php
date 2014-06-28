@@ -132,6 +132,7 @@ $deadline = [
     'firefox/installer-help.lang'         => '2013-12-31',
     'lightbeam/lightbeam.lang'            => '2014-05-27',
     'mozorg/about.lang'                   => '2013-12-31',
+    'mozorg/about/manifesto.lang'         => '2014-07-02',
     'mozorg/mission.lang'                 => '2013-12-31',
     'mozorg/products.lang'                => '2013-12-31',
     'worldcup.lang'                       => '2014-06-06',
