@@ -22,9 +22,10 @@ foreach ($sites[$website][4] as $_file) {
 
     getEnglishSource($reflang, $website, $_file);
 
+    $translation_link = "?website={$website}&amp;file={$_file}&amp;action=translate";
     echo '
 <table class="sortable globallist">
-  <caption class="filename">' . $_file . '</caption>
+  <caption class="filename"><a href="' . $translation_link . '" title="View available translations for this file">' . $_file . '</a></caption>
   <thead>
     <tr>
       <th>Locale</th>
@@ -96,7 +97,7 @@ foreach ($sites[$website][4] as $_file) {
                         . "{$content}</td>\n";
             };
 
-            if ($key == 'python_vars') {
+            if ($key == 'python_vars' || $key == 'tag_bindings') {
                 continue;
             }
 

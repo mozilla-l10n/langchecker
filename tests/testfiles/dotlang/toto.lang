@@ -1,3 +1,4 @@
+## active ##
 ## I am a tag ##
 
 ## NOTE: I am metadata
@@ -32,4 +33,11 @@ Courrier
 ;Hello
 Bonjour
 
+
+;Empty string
+
+
+## TAG: bound tag
+;String with tag
+Chaîne avec étiquette
 
