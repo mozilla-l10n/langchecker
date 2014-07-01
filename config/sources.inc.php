@@ -137,7 +137,7 @@ $deadline = [
     'mozorg/products.lang'                => '2013-12-31',
     'worldcup.lang'                       => '2014-06-06',
     'homefeeds.lang'                      => '2014-06-06',
-    'updater.lang'                        => '2014-06-06',
+    'updater.lang'                        => '2014-07-03',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang' => true];
@@ -183,7 +183,7 @@ $snippets_main_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja
 $addons_locales = ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'pt-BR'];
 
 $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', 'id', 'it', 'ja',
-                            'nl', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sl', 'sv', 'th', 'tr', 'vi',
+                            'nl', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sl', 'sv-SE', 'th', 'tr', 'vi',
                             'zh-CN', 'zh-TW'];
 
 $fxos_marketing = ['cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'fr', 'it',
