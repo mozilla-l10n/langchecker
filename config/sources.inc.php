@@ -164,7 +164,8 @@ $firefox_updater_lang = [
 ];
 
 $fxos_marketing_lang = [
-    'screenshots.lang' => true,
+    'screenshots.lang' => false,
+    'marketplace_l10n_feed.lang' => false,
 ];
 
 $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
@@ -186,8 +187,8 @@ $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', '
                             'nl', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sl', 'sv-SE', 'th', 'tr', 'vi',
                             'zh-CN', 'zh-TW'];
 
-$fxos_marketing = ['cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'fr', 'it',
-                   'pl', 'pt-BR', 'ro', 'sr'];
+$fxos_marketing = ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it', 'ja',
+                   'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN'];
 
 $sites =
 [
@@ -481,7 +482,10 @@ $langfiles_subsets = [
     ],
 
     'firefoxos-marketing' => [
-        'screenshots.lang'  => $fxos_marketing,
+        'screenshots.lang'  => ['cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'fr',
+                                'it', 'pl', 'pt-BR', 'ro', 'sr'],
+        'marketplace_l10n_feed.lang' => ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'it', 'ja',
+                                         'mk', 'pl', 'pt-BR', 'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN'],
     ],
 ];
 
