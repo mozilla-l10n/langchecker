@@ -55,7 +55,7 @@ List of supported locale for a specific *PROJECTID* in JSON format. Available pr
 List of supported websites and pages.
 
 ```
-/?action=translated&file=FILEID
+/?action=translate&file=FILEID
 ```
 Display a page with all available translations of *FILEID*.
 
@@ -65,9 +65,9 @@ Display a page with all available translations of *FILEID*.
 Display status of locale with code *LOCALEID*. Add ```&json``` to get data in JSON format.
 
 ```
-/?website=SITEID&file=FILEID&locale=all
+/?website=SITEID&file=FILEID
 ```
-Display global status of *FILEID*. Add ```&json``` to get data in JSON format.
+Display global status of *FILEID*. Add ```&json``` to get data in JSON format, ```&json&locale=XXX``` to get only data for a specific locale.
 
 ## lang_update syntax
 
