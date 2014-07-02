@@ -321,8 +321,8 @@ $sites =
     ],
 ];
 
-$mwc_locales =  ['ca', 'cs', 'de', 'es-AR', 'el', 'es-CL', 'es-ES', 'es-MX',
- 'fr', 'hu', 'it', 'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'];
+$mwc_locales =  ['ca', 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
+'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'];
 
 $langfiles_subsets = [
     'www.mozilla.org' =>
