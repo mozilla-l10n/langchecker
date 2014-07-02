@@ -1,0 +1,41 @@
+## active ##
+
+
+;Browser
+Browser
+
+
+;Email
+Email {ok}
+
+
+;Hello
+Ciao
+
+
+;Test
+
+
+
+;01
+1
+
+
+;Press center
+Sala stampa
+
+
+;@@this is a test, do not remove@@
+Questo è un test
+
+
+;String with %(num)s tags
+Stringa con etichette e variabile sbagliata
+
+
+;Second string with %(num)s tags
+Seconda stringa con %(num)s etichette
+
+
+;Obsolete string
+Stringa obsoleta

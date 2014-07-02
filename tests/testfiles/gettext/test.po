@@ -1,0 +1,46 @@
+#. extracted from ./download.lang
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-28 13:33+0100\n"
+"PO-Revision-Date: 2014-05-20 17:20+0000\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 2.5.1\n"
+"X-POOTLE-MTIME: 1400606401.000000\n"
+
+#: download.lang:5
+msgid "Different by Design"
+msgstr "De todos. Para todos"
+
+#: download.lang:9
+msgid "Proudly <span>non-profit</span>"
+msgstr "Orgullosamente <span>sin fines de lucro</span>"
+
+#: download.lang:13
+msgid "Innovating <span>for you</span>"
+msgstr "¡Inovando <span>para ti!</span>"
+
+#: download.lang:17
+msgid "Fast, flexible, <span>secure</span>"
+msgstr "Rápido, flexible, <span>seguro</span>"
+
+#: download.lang:21
+msgid "Thanks for choosing Firefox!"
+msgstr "¡Gracias por elegir Firefox!"
+
+#: download.lang:29
+msgid ""
+"As a non-profit, we’re free to innovate on your behalf without any pressure "
+"to compromise."
+msgstr ""
+"Como una organización sin fines de lucro, somos libres de innovar en tu "
+"nombre sin presión o compromiso alguno."
+
+#: identical string
+msgid "Download"
+msgstr "Download"

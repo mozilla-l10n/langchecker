@@ -1,0 +1,47 @@
+## active ##
+## NOTE: this is a test file
+
+
+;Browser
+Browser
+
+
+# Comment for email string
+;Email
+Email {ok}
+
+
+;Hello
+Ciao
+
+
+;Test
+Test
+
+
+;01
+1
+
+
+# This is the reference locale, shouldn't have a translation. Make sure we use the ID
+;Press center
+Sala stampa
+
+
+# This string will be managed as an exception for "it"
+;this is a test
+Questo è un <a href="%(url)s">test</a>
+
+
+;String with tag
+String with tag
+
+
+;String with %(num)s tags
+Stringa con etichette e variabile sbagliata
+
+
+;Second string with %(num)s tags
+Seconda stringa con %(num)s etichette
+
+

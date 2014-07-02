@@ -2,123 +2,109 @@
 namespace Langchecker;
 ?>
 <script>
-
   function showhide(id) {
-
     val = document.getElementById(id).style.display;
-
-    if (val == '')
-    {
+    if (val == '') {
         document.getElementById(id).style.display='none';
-    }
-    else
-    {
+    } else {
         document.getElementById(id).style.display='';
     }
 
     return false;
-
   }
-
   </script>
-  <style>
-    td.done {
-        text-align:left;
-        font-style:italic;
-        color: gray;
-    }
-  </style>
 <?php
 
-// override to not have main.lang as default
-$filename = isset($_GET['file']) ? secureText($_GET['file']) : '';
-
-// a switch to show the strings as expanded or not
+$current_filename = (isset($_GET['file'])) ? Utils::secureText($_GET['file']) : 'snippets.lang';
 $show_status = isset($_GET['show']) ? 'auto' : 'none';
 
-$file_found = false;
+$supported_file = false;
+// Search which website has the requested file
 foreach ($sites as $site) {
-    if ($filename != '' && in_array($filename, $site[4])) {
-        $file_found = true;
+    if (in_array($current_filename, Project::getWebsiteFiles($site))) {
+        $current_website = $site;
+        $supported_file = true;
         break;
     }
 }
 
-if (! $file_found) {
-    die('<p>ERROR: The file "' . $filename . '" does not exist</p>');
+if (! $supported_file) {
+    die("<p>ERROR: file {$filename} does not exist</p>");
 }
 
-echo '<p>Click on the green English strings to expand/collapse the translations done</p>
-      <h2>' . $filename . '</h2>';
+echo "<p>Click on the green English strings to expand/collapse the translations done</p>\n";
+echo "<h2>{$current_filename}</h2>\n\n";
 
-$reflang = $site[5];
+$reference_locale = Project::getReferenceLocale($current_website);
+$reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
-foreach ($sites as $k => $v) {
-    if (in_array($site[0], $v)) {
-        $target = $k;
-        break;
-    }
-}
+$all_strings = [];
 
-getEnglishSource($reflang, $target, $filename);
-
-
-// reassign a lang file to a reduced set of locales
-@$target_locales = is_array($langfiles_subsets[$sites[$target][0]][$filename])
-                      ? $langfiles_subsets[$sites[$target][0]][$filename]
-                      : $sites[$target][3];
-$val = 0;
-
-foreach ($GLOBALS['__english_moz'] as $k => $v) {
-
-    if (in_array($k, ['filedescription', 'activated', 'tags'])) {
+$supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+foreach ($supported_locales as $current_locale) {
+    if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
+        // If the .lang file does not exist, just skip the locale for this file
         continue;
     }
+    $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
 
-    echo "<p><a href='#'  style=\"color:green\" onclick=\"showhide('table$val');return false;\">"
-         . trim(str_replace('{l10n-extra}', '', htmlspecialchars($k)))
-         . "</a></p>";
-
-    echo "<table style='width:100%; display:{$show_status};' id='table$val'>";
-
-    $val++;
-
-    $stripe = true;
-    $total_translations = 0;
-    $covered_locales = [];
-    foreach ($target_locales as $_lang) {
-        // If the .lang file does not exist, just skip the locale for this file
-        $local_langfilename = $sites[$target][1] . $sites[$target][2] . $_lang . '/' . $filename;
-        if (! @file_get_contents($local_langfilename)) {
-            continue;
+    foreach ($reference_data['strings'] as $string_id => $string_value) {
+        if (LangManager::isStringLocalized($string_id, $locale_data, $reference_data)) {
+            $all_strings[$string_id][$current_locale] = Utils::cleanString($locale_data['strings'][$string_id]);
         }
-
-        DotLangParser::load($local_langfilename);
-
-        if (i__($k)) {
-            $total_translations++;
-            $covered_locales[] = $_lang;
-            if ($stripe == true) {
-                $stripe = false;
-                $stripe_color = '#FAF6ED';
-            } else {
-                $stripe = true;
-                $stripe_color = 'white';
-            }
-
-            $result = trim(str_replace('{l10n-extra}', '', htmlspecialchars(___($k))));
-
-            echo '<tr style="background-color:' . $stripe_color . '">
-                  <th style="width:5em" >' . $_lang . '</th>
-                  <td style="text-align:left;">' . $result . '</td>
-                  </tr>';
-        }
-        unset($GLOBALS['__l10n_moz']);
     }
-    echo '<tr>'
-        . "<td colspan='2' class='done'>Number of locales done: $total_translations"
-        . ' (' .getUserBaseCoverage($covered_locales) . '% of our l10n user base)'
-        . '</td>'
-        . '</tr>'
-        . '</table>';
+}
+
+// Colors used to display tags
+$bg_colors = ['#459E09', '#B29EF9', '#2D68BA', '#E39530', '#D6D6D4',
+              '#E3309E', '#FF4040', '#F5F562', '#F562C7', '#C0FCF2'];
+$font_colors = ['#FFF', '#FFF', '#FFF', '#FFF', '#000',
+                '#FFF', '#FFF', '#000', '#FFF', '#000'];
+
+if (isset($reference_data['tag_bindings'])) {
+    $tag_bindings = $reference_data['tag_bindings'];
+    // I want keys in $available_tags to be progressive
+    $available_tags = array_values(array_unique(array_values($tag_bindings)));
+} else {
+    $tag_bindings = [];
+    $available_tags = [];
+}
+
+$counter = 0;
+foreach ($all_strings as $string_id => $available_translations) {
+    // Display paragraph with reference string
+    echo "<p><a href='#' style='color:green' onclick='showhide(\"table$counter\");'>";
+    $header_string = trim(htmlspecialchars($string_id));
+    if (isset($tag_bindings[$string_id])) {
+        $current_tag = $tag_bindings[$string_id];
+        $tag_number = array_search($current_tag, $available_tags);
+        $style = "style='background-color: {$bg_colors[$tag_number]}; color: {$font_colors[$tag_number]};'";
+        $header_string .= "</a><span title='Associated tag' class='tag' {$style}>" . $current_tag . "</span>";
+    } else {
+        $header_string .= "</a>";
+    }
+
+    echo "<p><a href='#' style='color:green' onclick='showhide(\"table$counter\");'>{$header_string}</p>\n";
+
+    // Display sub-table with localizations for this string
+    echo "<table style='width:100%; display: {$show_status};' id='table$counter' class='translations'>";
+
+    $total_translations = count($available_translations);
+    $covered_locales = array_keys($available_translations);
+
+    $displayed_rows = 0;
+    foreach ($available_translations as $current_locale => $translation) {
+        $css_class = ($displayed_rows & 1) ? 'odd' : 'even';
+        echo "<tr class='{$css_class}'>\n"
+             . "  <th>{$current_locale}</th>\n "
+             . "  <td>{$translation}</td>\n"
+             . "</tr>\n";
+        $displayed_rows++;
+    }
+
+    echo "  <td colspan='2' class='done'>Number of locales done: {$total_translations}"
+        . ' (' . Project::getUserBaseCoverage($covered_locales, $adu) . '% of our l10n user base)'
+        . "  </td>\n</tr>\n</table>";
+
+    $counter++;
 }

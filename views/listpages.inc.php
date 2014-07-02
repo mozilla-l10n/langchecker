@@ -6,8 +6,8 @@ namespace Langchecker;
 <?php
 
 $htmloutput = '';
-foreach ($sites as $key => $site) {
-    $htmloutput .= "\n\t<h2>{$site[0]}</h2>\n";
+foreach ($sites as $site_index => $current_website) {
+    $htmloutput .= "\n\t<h2>" . Project::getWebsiteName($current_website) . "</h2>\n";
     $htmloutput .= "\t<table class='listpages'>
         <thead>
             <tr>
@@ -17,12 +17,11 @@ foreach ($sites as $key => $site) {
             </tr>
         </thead>
         <tbody>\n";
-    asort($site[4]);
-    foreach ($site[4] as $filename) {
+    foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
         $htmloutput .= "\t\t<tr>
-            <td>{$filename}</td>
-            <td><a href='?locale=all&amp;website={$key}&amp;file={$filename}'>Status</a></td>
-            <td><a href='?website={$key}&amp;file={$filename}&amp;action=translate&amp;show'>Translate</a></td>
+            <td>{$current_filename}</td>
+            <td><a href='?locale=all&amp;website={$site_index}&amp;file={$current_filename}'>Status</a></td>
+            <td><a href='?website={$site_index}&amp;file={$current_filename}&amp;action=translate&amp;show'>Translate</a></td>
         </tr>\n";
     }
     $htmloutput .= "    </tbody>\n</table>\n\n";

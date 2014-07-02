@@ -4,11 +4,11 @@ namespace Transvision;
 class Json
 {
     /*
-     * Return a json/jsonp representation of data and exits;
+     * Return a json/jsonp representation of data and exit
      *
-     * @param  array  data in json field
-     * @param  string jsonp function name, default to false
-     * @return json feed
+     * @param   array   $data   Data in json format
+     * @param   string  $jsonp  Function name, default to false
+     * @return  string          Json feed
      */
     public static function output(array $data, $jsonp = false, $pretty_print = false)
     {
@@ -33,8 +33,8 @@ class Json
     /*
      * Return a array from a local or remote file json file
      *
-     * @param  string  uri of the resource
-     * @return array
+     * @param   string  $uri  Uri of the resource
+     * @return  array         Data in array format
      */
     public static function fetch($uri)
     {

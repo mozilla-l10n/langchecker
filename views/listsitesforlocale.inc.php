@@ -2,206 +2,183 @@
 namespace Langchecker;
 ?>
 <p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/?locale=<?=$locale?>">Back to Web Dashboard</a></p>
-
 <h1>Lang format file checker <span><?=$locale?></span></h1>
 
 <?php
 
-// we define in the loop if the locale code is supported in one of the sites;
-$localeok = false;
+$supported_locale = false;
+$current_locale = $locale;
+$html_output = '';
+$bugwebsite = 'www.mozilla.org';
 
-foreach ($sites as $key => $_site) {
+foreach ($sites as $current_website) {
+    $reference_locale = Project::getReferenceLocale($current_website);
+    $repo = Project::getPublicRepoPath($current_website, $current_locale);
+    $website_name = Project::getWebsiteName($current_website);
 
-    if (in_array($locale, $_site[3])) {
+    $html_output .= "\n<div class='website'>\n";
+    $html_output .= "  <h2>{$website_name}</h2>\n";
+    $html_output .= "  <p>Repository: <a href='{$repo}'>{$repo}</a></p>\n";
 
-        $localeok = true;
+    $done_files = '';
+    $todo_files = '';
 
-        echo "<div class='website'>\n";
-        echo "  <h2>{$_site[0]}</h2>\n";
-        $repo = $sites[$key][6] . $sites[$key][2] . $locale . '/';
-        echo "  <p>Repository: <a href='{$repo}'>$repo</a></p>\n";
+    foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
+        if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
+            // File is not managed for this website+locale, ignore it
+            continue;
+        }
+        if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
+            // If the .lang file does not exist, just skip the locale for this file
+            continue;
+        }
 
-        $titleDoneFiles = false;
-        $titleTodoFiles = false;
-        $titleTodo = false;
-        $doneFiles = '';
-        $todoFiles = '';
+        $supported_locale = true;
 
-        foreach ($_site[4] as $filename) {
+        if ($locale == 'fa') {
+            $qa_contact = 'persian.fa@localization.bugs';
+        } else {
+            $qa_contact = 'pascalc@gmail.com';
+        }
 
-            /*
-             *  Reassign a lang file to a reduced set of locales
-             */
+        $bugzilla_link = 'https://bugzilla.mozilla.org/enter_bug.cgi?alias=&assigned_to=pascalc%40gmail.com'
+                       . '&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=normal&bug_status=NEW'
+                       . '&comment=%28Attach%20your%20updated%20' . $current_filename . '%20file%20to%20'
+                       . 'this%20bug%20or%20indicate%20the%20revision%20number%20of%20your%20commit%20in'
+                       . '%20SVN%29&component=L10N&contenttypeentry=&contenttypemethod=autodetect'
+                       . '&contenttypeselection=text%2Fplain&data=&dependson=&description=&flag_type-4=X'
+                       . '&flag_type-418=X&flag_type-419=X&flag_type-506=X&flag_type-507=X&form_name=enter_bug'
+                       . '&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys='
+                       . 'All&priority=--&product=' . $bugwebsite . '&qa_contact=' . $qa_contact
+                       . '&rep_platform=All&short_desc=%5Bl10n%3A ' . $current_locale . '%5D%20updated%20'
+                       .  $current_filename . '%20file%20for%20' . $website_name .'&target_milestone=---&version=unspecified'
+                       . '&format=__default__&cf_locale=' . $current_locale . '%20%2F%20';
 
-            if (@is_array($langfiles_subsets[$_site[0]][$filename])
-                && !in_array($locale, $langfiles_subsets[$_site[0]][$filename])) {
-                continue;
-            }
+        // Load reference strings
+        $reference_filename = Project::getLocalFilePath($current_website, $reference_locale, $current_filename);
+        $reference_url = Project::getPublicFilePath($current_website, $reference_locale, $current_filename);
+        $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+        // Extract data from locale
+        $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
+        $locale_url = Project::getPublicFilePath($current_website, $current_locale, $current_filename);
+        $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
 
-            /*
-             * Define English defaults stored in $GLOBALS['__english_moz']
-             * We temporarily define a $lang variable for that
-             */
+        if (! in_array($current_filename, $no_active_tag) &&
+            $website_name == 'www.mozilla.org') {
+            $status = $locale_analysis['activated'] ? ' activated' : ' notactivated';
+        } else {
+            $status = ' activated';
+        }
 
-            $reflang = $sites[$key][5];
-            $bugwebsite = 'www.mozilla.org';
+        // check if the lang file is in utf8
+        if (Utils::isUTF8($locale_filename) == false) {
+            $status .= ' notutf8';
+        }
 
-            $source = $sites[$key][1] . $sites[$key][2] . $reflang . '/' . $filename;
-            $target = $sites[$key][1] . $sites[$key][2] . $locale  . '/' . $filename;
+        $count_identical = count($locale_analysis['Identical']);
+        $count_missing = count($locale_analysis['Missing']);
+        $count_errors = count($locale_analysis['python_vars']);
 
-            $url_source = $sites[$key][6] . $sites[$key][2] . $reflang  . '/' . $filename;
-            $url_target = $sites[$key][6] . $sites[$key][2] . $locale   . '/' . $filename;
+        if ($count_identical + $count_missing + $count_errors == 0) {
+            // File is complete
+            $done_files .= "  <a href='#{$current_filename}' class='filedone{$status}'>{$current_filename}</a>\n";
+        } else {
+            $todo_files .= "  <div class='filename' id='{$current_filename}'>\n" .
+                           "    <h3 class='filename'><a href='#{$current_filename}'>{$current_filename}</a></h3>\n" .
+                           "    <table class='side'>\n" .
+                           "      <thead>\n" .
+                           "        <tr>\n" .
+                           "          <th>Identical</th>\n" .
+                           "          <th>Translated</th>\n" .
+                           "          <th>Missing</th>\n" .
+                           "        </tr>\n" .
+                           "      </thead>\n" .
+                           "      <tbody>\n" .
+                           "        <tr>\n" .
+                           "          <td>" . count($locale_analysis['Identical']) . "</td>" .
+                           "          <td>" . count($locale_analysis['Translated']) . "</td>" .
+                           "          <td>" . count($locale_analysis['Missing']) . "</td>" .
+                           "        </tr>\n" .
+                           "        <tr>\n" .
+                           "          <td colspan='3'>\n" .
+                           "            <a href='{$reference_url}'>Original English source file</a>\n" .
+                           "          </td>\n" .
+                           "        </tr>\n" .
+                           "        <tr>\n" .
+                           "          <td colspan='3'>\n" .
+                           "            <a href='{$locale_url}'>Your translated file</a>\n" .
+                           "          </td>\n" .
+                           "        </tr>\n" .
+                           "        <tr>\n" .
+                           "          <td colspan='3'>\n" .
+                           "            <a href='{$bugzilla_link}'>Attach your updated file to Bugzilla</a>\n" .
+                           "          </td>\n" .
+                           "        </tr>\n" .
+                           "      </tbody>\n" .
+                           "    </table>\n";
 
-            if ($locale == 'fa') {
-                $qacontact = 'persian.fa@localization.bugs';
-            } else {
-                $qacontact = 'pascalc@gmail.com';
-            }
-
-            $bugzilla ='https://bugzilla.mozilla.org/enter_bug.cgi?alias=&assigned_to=pascalc%40gmail.com&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=normal&bug_status=NEW&comment=%28Attach%20your%20updated%20' . $filename .   '%20file%20to%20this%20bug%20or%20indicate%20the%20revision%20number%20of%20your%20commit%20in%20SVN%29&component=L10N&contenttypeentry=&contenttypemethod=autodetect&contenttypeselection=text%2Fplain&data=&dependson=&description=&flag_type-4=X&flag_type-418=X&flag_type-419=X&flag_type-506=X&flag_type-507=X&form_name=enter_bug&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=All&priority=--&product=' . $bugwebsite . '&qa_contact=' . $qacontact . '&rep_platform=All&short_desc=%5Bl10n%3A ' . $locale . '%5D%20updated%20' . $filename . '%20file%20for%20' . $_site[0].'&target_milestone=---&version=unspecified&format=__default__&cf_locale='.$locale.'%20%2F%20';
-
-            getEnglishSource($reflang, $key, $filename);
-
-            analyseLangFile($locale, $key, $filename);
-
-            unset($reflang);
-
-            // create a css class used to show if a file is activated or not
-            if (!in_array($filename, $no_active_tag) && $_site[0] == 'www.mozilla.org') {
-                 $status = $GLOBALS[$locale]['activated'] ? ' activated' : ' notactivated';
-             } else {
-                 $status = ' activated';
-             }
-
-             // check if the lang file is in utf8
-             if (isUTF8($target) == false) {
-                 $status .= ' notutf8';
-             }
-
-            if ((count($GLOBALS[$locale]['Missing']) + count($GLOBALS[$locale]['Identical'])) == 0
-                && count($GLOBALS[$locale]['python_vars']) == 0)
-            {
-                $titleDone = true;
-                $doneFiles .= "    <a href='#{$filename}' class='filedone$status'>{$filename}</a>\n";
-            } else {
-                $titleTodo = true;
-                $todoFiles .= "  <div class='filename' id='{$filename}'>\n" .
-                            "    <h3 class='filename'><a href='#{$filename}'>{$filename}</a></h3>\n" .
-                            "    <table class='side'>\n" .
-                            "      <thead>\n" .
-                            "        <tr>\n" .
-                            "          <th>Identical</th>\n" .
-                            "          <th>Translated</th>\n" .
-                            "          <th>Missing</th>\n" .
-                            "        </tr>\n" .
-                            "      </thead>\n" .
-                            "      <tbody>\n" .
-                            "        <tr>\n";
-
-                foreach ($GLOBALS[$locale] as $k => $v) {
-                    if (in_array($k, ['Obsolete', 'python_vars', 'activated', 'tags'])) {
-                        continue;
-                    }
-                    $todoFiles .= '          <td>' . count($GLOBALS[$locale][$k]) . "</td>\n";
+            if ($count_identical > 0) {
+                $todo_files .= "\n    <h3>Strings identical to English:</h3>\n";
+                $todo_files .= "    <ul>\n";
+                foreach ($locale_analysis['Identical'] as $identical_string) {
+                    $todo_files .= "      <li>" . htmlspecialchars(Utils::cleanString($identical_string)) . "</li>\n";
                 }
+                $todo_files .= "    </ul>\n";
+            }
 
-                $todoFiles .= "        <tr>\n" .
-                              "          <td colspan='3'>\n" .
-                              "            <a href='{$url_source}'>Original English source file</a>\n" .
-                              "          </td>\n" .
-                              "        </tr>\n" .
-                              "        <tr>\n" .
-                              "          <td colspan='3'>\n" .
-                              "            <a href='{$url_target}'>Your translated file</a>\n" .
-                              "          </td>\n" .
-                              "        </tr>\n" .
-                              "        <tr>\n" .
-                              "          <td colspan='3'>\n" .
-                              "            <a href='{$bugzilla}'>Attach your updated file to Bugzilla</a>\n" .
-                              "          </td>\n" .
-                              "        </tr>\n" .
-                              "      </tbody>\n" .
-                              "    </table>\n";
-
-                foreach ($GLOBALS[$locale] as $k => $v) {
-                    if ($k == 'Translated' || $k == 'Obsolete') {
-                        continue;
-                    }
-
-                    if ($k == 'Identical' && count($GLOBALS[$locale][$k]) > 0) {
-                        $todoFiles .= "\n    <h3>Strings identical to English:</h3>\n";
-                    }
-
-                    if ($k == 'Missing' && count($GLOBALS[$locale][$k]) > 0) {
-                        $todoFiles .=  "\n    <h3>Missing strings:</h3>\n";
-                    }
-
-                    if ($k != 'python_vars'
-                        && $k != $filename
-                        && $k != 'activated'
-                        && $k != 'tags'
-                        && count($GLOBALS[$locale][$k]) > 0) {
-                        $todoFiles .= "    <ul>\n";
-                        foreach ($v as $k2 => $v2) {
-                            $todoFiles .= '      <li>' . trim(str_replace('{l10n-extra}', '', htmlspecialchars($GLOBALS[$locale][$k][$k2]))) . "</li>\n";
-                        }
-                        $todoFiles .= "    </ul>\n";
-                    }
-
-                    if ($k == 'python_vars' && count($GLOBALS[$locale][$k]) > 0) {
-                        $todoFiles .= "\n    <h3>Errors in variables in the sentence:</h3>\n";
-                        foreach ($v as $k2 => $v2) {
-                            $todoFiles .= "    <table class='python'>\n" .
-                                          "      <thead>\n" .
-                                          "        <tr>\n" .
-                                          "          <th><strong style='color:red'>{$v2}</strong> in the English string is missing in:</th>\n" .
-                                          "        </tr>\n" .
-                                          "      </thead>\n" .
-                                          "      <tbody>\n" .
-                                          "        <tr>\n" .
-                                          "          <td>" . showPythonVar(htmlspecialchars($k2)) . "</td>\n" .
-                                          "        </tr>\n" .
-                                          "        <tr>\n" .
-                                          "          <td>" . showPythonVar(htmlspecialchars($GLOBALS[$filename][$k2])) . "</td>\n" .
-                                          "        </tr>\n" .
-                                          "      </tbody>\n" .
-                                          "    </table>\n";
-                        }
-                    }
+            if ($count_missing > 0) {
+                $todo_files .= "\n    <h3>Missing strings:</h3>\n";
+                $todo_files .= "    <ul>\n";
+                foreach ($locale_analysis['Missing'] as $missing_string) {
+                    $todo_files .= "      <li>" . htmlspecialchars(Utils::cleanString($missing_string)) . "</li>\n";
                 }
-                $todoFiles .= "  </div>\n";
+                $todo_files .= "    </ul>\n";
             }
 
-            if (count($GLOBALS[$locale]['Identical']) > 0) {
-                $todoFiles .= "    <div class='tip'>\n" .
-                              "      <p><strong>Tip:</strong> if it is normal that a string is identical\n" .
-                              "       to the English one for your language, just add <code>{ok}</code>\n" .
-                              "       to your string and it will no longer be listed as \"identical\"\n" .
-                              "       Example: </p><blockquote>;Plugins<br/>Plugins {ok}</blockquote>\n" .
-                              "    </div>\n";
+            if ($count_errors > 0) {
+                $todo_files .= "\n    <h3>Errors in variables in the sentence:</h3>\n";
+                $todo_files .= "    <ul>\n";
+                foreach ($locale_analysis['python_vars'] as $stringid => $python_error) {
+                    $todo_files .= "              <table class='python'>
+                <tr>
+                  <th><strong style='color:red'>{$python_error['var']}</strong> in the English string is missing in:</th>
+                </tr>
+                <tr>
+                  <td>" . Utils::highlightPythonVar($stringid) . "</td>
+                </tr>
+                <tr>
+                  <td>" . Utils::highlightPythonVar($python_error['text']) . "</td>
+                </tr>
+              </table>\n";
+                    }
+                $todo_files .= "    </ul>\n";
             }
+            $todo_files .= "  </div>\n";
 
-            unset($GLOBALS['__english_moz'], $GLOBALS[$locale]);
+            if (count($locale_analysis['Identical']) > 0) {
+                $todo_files .= "  <div class='tip'>\n" .
+                               "    <p><strong>Tip:</strong> if it is normal that a string is identical\n" .
+                               "     to the English one for your language, just add <code>{ok}</code>\n" .
+                               "     to your string and it will no longer be listed as \"identical\"\n" .
+                               "     Example: </p><blockquote>;Plugins<br/>Plugins {ok}</blockquote>\n" .
+                               "  </div>\n";
+            }
         }
-
-        if ($titleDone) {
-            echo "\n  <h3>DONE</h3>\n";
-            echo "  <p>\n";
-            echo $doneFiles;
-            echo "  </p>\n";
-
-        }
-
-        if ($titleTodo) {
-            echo "\n  <h3>TODO</h3>\n";
-            echo $todoFiles;
-        }
-
-        echo "</div>\n\n";
     }
+
+    if ($done_files != '') {
+        $html_output .= "\n  <h3>DONE</h3>\n  <p>{$done_files}  </p>\n";
+    }
+
+    if ($todo_files != '') {
+        $html_output .= "\n  <h3>TODO</h3>\n{$todo_files}\n";
+    }
+
+    $html_output .= "</div>\n";
 }
 
-// The locale is not correct
-if (!$localeok) {
-    echo "<p>This locale code is not supported on our sites.</p>\n";
+if (! $supported_locale) {
+    $html_output = "<p>This locale code is not supported on our sites.</p>\n";
 }
+
+echo $html_output;

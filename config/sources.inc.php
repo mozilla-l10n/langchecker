@@ -11,7 +11,7 @@ $public_repo8  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/';
 $public_repo9  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/';
 $public_repo10 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/';
 
-// this is to avoid a warning in shell mode
+// This is to avoid a warning in shell mode
 if (!isset($_SERVER['SERVER_NAME'])) {
     $_SERVER['SERVER_NAME'] = '';
 }
@@ -140,7 +140,9 @@ $deadline = [
     'updater.lang'                        => '2014-07-03',
 ];
 
-$firefoxhealthreport_lang = ['fhr.lang' => true];
+$firefoxhealthreport_lang = [
+    'fhr.lang' => true,
+];
 
 $slogans_lang = [
     'firefoxos.lang' => true,
@@ -190,6 +192,21 @@ $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', '
 $fxos_marketing = ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it', 'ja',
                    'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN'];
 
+/* Array structure for single website
+*
+*   [
+*       0 name,
+*       1 path to local repo,
+*       2 folder containing locale files,
+*       3 array of supported locale,
+*       4 array of supported file names,
+*       5 reference locale,
+*       6 url to public repo,
+*       7 array of priorities,
+*   ]
+*
+*/
+
 $sites =
 [
     0 => [
@@ -200,6 +217,7 @@ $sites =
         array_keys($mozillaorg_lang),
         'en-GB', // source locale
         $public_repo1,
+        $mozillaorg_lang,
     ],
 
     1 => [
@@ -210,6 +228,7 @@ $sites =
         ['fx36start.lang'],
         'en-US', // source locale
         $public_repo2,
+        [],
     ],
 
     2 => [
@@ -221,6 +240,7 @@ $sites =
          'survey5.lang', 'getinvolved_march2014.lang'],
         'en-GB', // source locale
         $public_repo3,
+        [],
     ],
 
     3 => [
@@ -231,6 +251,7 @@ $sites =
         ['julyevent.lang'],
         'en-US', // source locale
         $public_repo4,
+        [],
     ],
 
     4 => [
@@ -241,6 +262,7 @@ $sites =
         array_keys($firefoxhealthreport_lang),
         'en-US', // source locale
         $public_repo5,
+        $firefoxhealthreport_lang,
     ],
 
     5 => [
@@ -251,6 +273,7 @@ $sites =
         array_keys($slogans_lang),
         'en-US', // source locale
         $public_repo6,
+        $slogans_lang,
     ],
 
     6 => [
@@ -261,6 +284,7 @@ $sites =
         array_keys($snippets_lang),
         'en-US', // source locale
         $public_repo7,
+        $snippets_lang,
     ],
 
     7 => [
@@ -271,6 +295,7 @@ $sites =
         array_keys($addons_lang),
         'en-US', // source locale
         $public_repo8,
+        $addons_locales,
     ],
 
     8 => [
@@ -281,6 +306,7 @@ $sites =
         array_keys($firefox_updater_lang),
         'en-US', // source locale
         $public_repo9,
+        $firefox_updater_lang,
     ],
 
     9 => [
@@ -291,6 +317,7 @@ $sites =
         array_keys($fxos_marketing_lang),
         'en-US', // source locale
         $public_repo10,
+        $fxos_marketing_lang,
     ],
 ];
 

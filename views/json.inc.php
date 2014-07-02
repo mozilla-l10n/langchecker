@@ -1,92 +1,90 @@
 <?php
 namespace Langchecker;
 
-$json = array();
+use \Transvision\Json;
 
-// Override to not have main.lang as default
-$filename = (isset($_GET['file'])) ? secureText($_GET['file']) : 'snippets.lang';
-$stringid = (isset($_GET['stringid'])) ? secureText($_GET['stringid']) : false;
+$json = [];
 
+$current_filename = isset($_GET['file']) ? Utils::secureText($_GET['file']) : 'snippets.lang';
+$string_id = isset($_GET['stringid']) ? Utils::secureText($_GET['stringid']) : false;
+
+$supported_file = false;
+// Search which website has the requested file
 foreach ($sites as $site) {
-    if ($filename != '' && in_array($filename, $site[4])) {
-        $site[4] = array($filename);
+    if (in_array($current_filename, Project::getWebsiteFiles($site))) {
+        $current_website = $site;
+        $supported_file = true;
         break;
     }
 }
 
-$_file = $site[4][0];
-$reflang = $site[5];
-
-foreach ($sites as $k => $v) {
-    if (in_array($site[0], $v)) {
-        $target = $k;
-        break;
-    }
+if (! $supported_file) {
+    // File is not managed, throw error
+    http_response_code(400);
+    die("File $current_filename is not supported. Check the file name and try again.");
 }
 
-getEnglishSource($reflang, $target, $_file);
+$reference_locale = Project::getReferenceLocale($current_website);
+$reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
-
-// Reassign a lang file to a reduced set of locales
-@$targetted_locales = (is_array($langfiles_subsets[$sites[$target][0]][$_file]))
-                        ? $langfiles_subsets[$sites[$target][0]][$_file]
-                        : $sites[$target][3];
-
-$val = 0;
-
-foreach ($GLOBALS['__english_moz'] as $k => $v) {
-
-    $sha1 = sha1($k);
-
-    if (in_array($k, ['filedescription', 'activated','tags'])) {
-        continue;
+if (! $string_id) {
+    // Display list of links to strings
+    header("Content-type:text/html; charset=utf-8");
+    echo "<ul>\n";
+    foreach ($reference_data['strings'] as $current_string => $value) {
+        $string_hash = sha1($current_string);
+        if (isset($_GET['callback'])) {
+            $string_link = "?action=api&file={$current_filename}&stringid={$string_hash}&callback={$_GET['callback']}";
+        } else {
+            $string_link = "?action=api&file={$current_filename}&stringid={$string_hash}";
+        }
+        echo "<li><a href='{$string_link}'>"
+             . htmlspecialchars($current_string)
+             . "</a></li>\n";
+    }
+    echo "</ul>\n";
+} else {
+    // I have a string_id to display, identify the reference string from provided hash
+    $reference_string = '';
+    foreach ($reference_data['strings'] as $current_string => $value) {
+        if ($string_id == sha1($current_string)) {
+            $reference_string = $current_string;
+            break;
+        }
     }
 
-    if (isset($_GET['stringid']) && $_GET['stringid'] != $sha1) {
-        continue;
+    if ($reference_string == '') {
+        // String not found, throw error
+        http_response_code(400);
+        die("No string available with id: {$string_id}.");
     }
 
-    $json[$sha1]['en-US']= trim($v);
-
-    foreach ($targetted_locales as $_lang) {
-        // if the .lang file does not exist, we don't want to generate a php warning, just skip the locale for this file
-        $local_lang_file = $sites[$target][1] . $sites[$target][2] . $_lang . '/' . $_file;
-        if (!@file_get_contents($local_lang_file)) {
+    $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+    $json[$string_id][$reference_locale] = $reference_string;
+    foreach ($supported_locales as $current_locale) {
+        if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
+            // If the .lang file does not exist, just skip the locale for this file
             continue;
         }
-
-        DotLangParser::load($local_lang_file);
-
-        if (i__($k)) {
-            $result = trim(str_replace('{l10n-extra}', '', ___($k)));
-            $json[$sha1][$_lang]= $result;
+        $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
+        // Add string to Json only if localized
+        if (LangManager::isStringLocalized($reference_string, $locale_data, $reference_data)) {
+            $json[$string_id][$current_locale] = Utils::cleanString($locale_data['strings'][$reference_string]);
         }
-        unset($GLOBALS['__l10n_moz']);
     }
-}
 
-if (!$stringid) {
-    header("Content-type:text/html; charset=utf-8");
-    echo '<ul>';
-    foreach ($json as $key => $val) {
-        echo '<li><a href="?action=api&file=' . $filename . '&stringid=' . $key . '">'
-             . htmlspecialchars($val['en-US'])
-             . '</a></li>';
+    if (isset($_GET['plaintext'])) {
+        header("Content-type: text/plain; charset=utf-8");
+        foreach ($json[$string_id] as $key => $value) {
+            echo "\n$key : $value\n";
+        }
+        exit;
     }
-    echo '</ul>';
-    exit;
-}
 
-if (isset($_GET['plaintext'])) {
-    header("Content-type: text/plain; charset=utf-8");
-    foreach ($json[$_GET['stringid']] as $k => $v) {
-        echo "\n$k : $v\n";
+    if (isset($_GET['callback'])) {
+        echo Json::output($json, $_GET['callback'], true);
+    } else {
+        echo Json::output($json, false, true);
     }
-    exit;
-}
 
-if (isset($_GET['callback'])) {
-    echo jsonOutput($json, $_GET['callback']);
-} else {
-    echo jsonOutput($json);
 }

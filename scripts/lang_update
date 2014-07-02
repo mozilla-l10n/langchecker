@@ -1,0 +1,128 @@
+#!/usr/bin/env php
+<?php
+namespace Langchecker;
+
+// Script should not be called from the Web
+if (php_sapi_name() != 'cli') {
+    die('This command can only be used in CLI mode.');
+}
+
+date_default_timezone_set('Europe/Paris');
+
+require_once __DIR__ . '/../inc/init.php';
+
+// User provided variables
+$cli_filename = isset($argv[1]) ? Utils::secureText($argv[1])  : 'main.lang';  // Which file are we comparing? Set a default
+$cli_website  = isset($argv[2]) ? Utils::secureText($argv[2])  : '0';          // Which website are we looking at? Default to www.mozilla.org
+$cli_locale   = isset($argv[3]) ? Utils::secureText($argv[3])  : 'all';        // Which locale are we analysing? No default
+$single_file_mode = ($cli_filename != 'all' && $cli_locale != 'all');          // One locale, one file
+
+if (! isset($sites[$cli_website])) {
+    Utils::logger("Unknown website #{$cli_website}.", "quit");
+}
+
+$current_website = $sites[$cli_website];
+
+// Create list of files to analyze
+if ($cli_filename == 'all') {
+    $filelist = Project::getWebsiteFiles($current_website);
+} else {
+    if (! in_array($cli_filename, Project::getWebsiteFiles($current_website))) {
+        // File is not supported
+        $website_name = Project::getWebsiteName($current_website);
+        Utils::logger("File {$cli_filename} is not supported for website #{$cli_website} ({$website_name}).", "quit");
+    }
+    $filelist[] = $cli_filename;
+}
+
+foreach ($filelist as $current_filename) {
+    // Load reference strings
+    $reference_locale = Project::getReferenceLocale($current_website);
+    $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+    $reference_filename = Project::getLocalFilePath($current_website, $reference_locale, $current_filename);
+    Utils::logger("Reference English file: {$reference_filename}");
+
+    // Check if source file exists, if not continue to next file
+    if (! file_exists($reference_filename)) {
+        Utils::logger("Reference English file is missing ({$reference_filename}).");
+        continue;
+    }
+
+    // Check if source does not contain any strings
+    if (count($reference_data['strings']) == 0) {
+        Utils::logger("Reference English seems to be empty or in the wrong format ({$reference_filename}).");
+        continue;
+    }
+
+    // Create the list of locales ($locale_list) that we need to analyze
+    if ($cli_locale != 'all' &&
+        $locale != 'locamotion' &&
+        Project::isSupportedLocale($current_website, $cli_locale, $current_filename, $langfiles_subsets)) {
+        // Single locale is requested and it's supported for this file
+        $locale_list[] = $cli_locale;
+    } elseif ($cli_locale != 'all' &&
+              $cli_locale != 'locamotion' &&
+              ! Project::isSupportedLocale($current_website, $cli_locale, $current_filename, $langfiles_subsets)) {
+        // Locale is not supported for this file
+        Utils::logger("{$cli_locale}: {$current_filename} is not supported for this locale.");
+        if ($single_file_mode) {
+            // Analyzing only this file for this locale, we can stop
+            exit;
+        } else {
+            // Skip to the next file
+            continue;
+        }
+    } elseif ($cli_locale == 'locamotion') {
+        // Intersect Locamotion locales with all supported locales for this file
+        $locale_list = array_intersect(
+            $locamotion_locales,
+            Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets)
+        );
+    } else {
+        // Get all supported locales
+        $locale_list = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+    }
+
+    $result = '';
+
+    foreach ($locale_list as $current_locale) {
+        // For each locale, load existing locale file
+        $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
+        $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
+
+        if (file_exists($locale_filename)) {
+            $file_content = file($locale_filename);
+            $eol = Utils::checkEOL($file_content[0]);
+        } else {
+            // If file is missing, use system end-of-line character
+            $eol = PHP_EOL;
+        }
+
+        // Store activation status
+        $activation_status = $locale_data['activated'];
+
+        // Import data from locamotion
+        if ($cli_locale == 'locamotion') {
+            // I have already checked if locale is supported and in Locamotion group of locales
+            $locamotion_import = LangManager::importLocamotion($locale_data, $current_filename, $current_locale);
+            if (! $locamotion_import['imported']) {
+                continue;
+            } else {
+                // Use strings imported from Locamotion as locale data
+                $locale_data['strings'] = $locamotion_import['strings'];
+            }
+        }
+
+        // Incorporate strings from other lang files
+        // $temp_data = LangManager::loadSource($sites[0], $current_locale, 'main.lang');
+        // $locale_data['strings'] = array_merge($locale_data['strings'], $temp_data['strings']);
+
+        // Exceptions aremanaged in LangManager::manageStringExceptions
+
+        $content = LangManager::buildLangFile($reference_data, $locale_data, $current_locale, $eol);
+        Utils::fileForceContent($locale_filename, $content);
+        $result .= "{$current_locale}: {$current_filename}\n";
+    }
+
+    Utils::logger($result);
+}
