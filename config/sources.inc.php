@@ -321,8 +321,18 @@ $sites =
     ],
 ];
 
-$mwc_locales =  ['ca', 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
+$mwc_locales = ['ca', 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
 'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'];
+
+$firefox_os = ['bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et',
+               'fr', 'fy-NL', 'hi-IN', 'hr', 'hu', 'ja', 'it', 'ko', 'mk',
+               'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'ta', 'zh-CN',
+               'zh-TW'];
+
+$firefox_os_partial = ['bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX',
+               'fr', 'fy-NL', 'hi-IN', 'hr', 'hu', 'ja', 'it', 'ko', 'mk',
+               'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'ta', 'zh-CN',
+               'zh-TW'];
 
 $langfiles_subsets = [
     'www.mozilla.org' =>
@@ -337,16 +347,10 @@ $langfiles_subsets = [
         'firefox/new.lang'                      => $mozilla,
         'firefox/channel.lang'                  => $mozilla,
         'firefox/speed.lang'                    => ['pt-BR'],
-        'firefox/os/devices.lang'               =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'fy-NL', 'hr',
-             'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sq', 'sr'],
-        'firefox/os/index.lang'                 =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'fy-NL', 'hi-IN',
-             'hr', 'hu', 'ja', 'it', 'nl', 'pl', 'pt-BR', 'ro', 'sq', 'sr', 'ta'],
-        'firefox/os/faq.lang'                   =>
-            ['ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et', 'fr', 'hr', 'hu',
-             'ja', 'it', 'pl', 'pt-BR', 'ro', 'sq', 'sr'],
-        'firefox/partners/index.lang'           => $mwc_locales,
+        'firefox/os/devices.lang'               => $firefox_os,
+        'firefox/os/index.lang'                 => $firefox_os,
+        'firefox/os/faq.lang'                   => $firefox_os_partial,
+        'firefox/partners/index.lang'           => $firefox_os_partial,
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
         'mwc2014_promos.lang'                   => $mwc_locales,
         'firefox/whatsnew.lang'                 => ['hu', 'pl'],
