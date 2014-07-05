@@ -92,9 +92,11 @@ All files, one locale (French in this case).
 All files, all locales.
 
 ```
-./scripts/lang_update all 0 locamotion
+./scripts/lang_update all 0 all locamotion
+./scripts/lang_update all 0 cy locamotion
+./scripts/lang_update mozorg/home.lang 0 cy locamotion
 ```
-Import from Pootle.
+Import files for all or one specific locale (cy in this case) from Pootle.
 
 ## .lang format
 
