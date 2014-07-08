@@ -98,7 +98,7 @@ foreach ($all_strings as $string_id => $available_translations) {
         $css_class = ($displayed_rows & 1) ? 'odd' : 'even';
         echo "<tr class='{$css_class}'>\n"
              . "  <th>{$current_locale}</th>\n "
-             . "  <td>{$translation}</td>\n"
+             . "  <td>" . htmlspecialchars($translation) . "</td>\n"
              . "</tr>\n";
         $displayed_rows++;
     }
