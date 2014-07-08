@@ -134,6 +134,7 @@ td.tags_column {
 
 td.activated {
     background-color: #92CC6E;
+    color: #92CC6E;
 }
 
 td.lightlink a {

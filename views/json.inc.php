@@ -3,9 +3,10 @@ namespace Langchecker;
 
 use \Transvision\Json;
 
-$json = [];
+$json_data = [];
 
-$current_filename = isset($_GET['file']) ? Utils::secureText($_GET['file']) : 'snippets.lang';
+// $filename is set in /inc/init.php
+$current_filename = $filename != '' ? $filename : 'snippets.lang';
 $string_id = isset($_GET['stringid']) ? Utils::secureText($_GET['stringid']) : false;
 
 $supported_file = false;
@@ -21,7 +22,7 @@ foreach ($sites as $site) {
 if (! $supported_file) {
     // File is not managed, throw error
     http_response_code(400);
-    die("File $current_filename is not supported. Check the file name and try again.");
+    die("File {$current_filename} is not supported. Check the file name and try again.");
 }
 
 $reference_locale = Project::getReferenceLocale($current_website);
@@ -60,7 +61,7 @@ if (! $string_id) {
     }
 
     $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
-    $json[$string_id][$reference_locale] = $reference_string;
+    $json_data[$string_id][$reference_locale] = $reference_string;
     foreach ($supported_locales as $current_locale) {
         if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
             // If the .lang file does not exist, just skip the locale for this file
@@ -69,22 +70,22 @@ if (! $string_id) {
         $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
         // Add string to Json only if localized
         if (LangManager::isStringLocalized($reference_string, $locale_data, $reference_data)) {
-            $json[$string_id][$current_locale] = Utils::cleanString($locale_data['strings'][$reference_string]);
+            $json_data[$string_id][$current_locale] = Utils::cleanString($locale_data['strings'][$reference_string]);
         }
     }
 
     if (isset($_GET['plaintext'])) {
         header("Content-type: text/plain; charset=utf-8");
-        foreach ($json[$string_id] as $key => $value) {
+        foreach ($json_data[$string_id] as $key => $value) {
             echo "\n$key : $value\n";
         }
         exit;
     }
 
     if (isset($_GET['callback'])) {
-        echo Json::output($json, $_GET['callback'], true);
+        echo Json::output($json_data, $_GET['callback'], true);
     } else {
-        echo Json::output($json, false, true);
+        echo Json::output($json_data, false, true);
     }
 
 }

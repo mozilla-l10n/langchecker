@@ -40,7 +40,7 @@ foreach ($mozilla as $current_locale) {
 arsort($todo);
 $locales_done = 0;
 
-if (isset($_GET['json'])) {
+if ($json) {
     die(Json::output($todo, false, true));
 }
 

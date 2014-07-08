@@ -5,11 +5,28 @@ use \Transvision\Json;
 
 ob_start();
 
-$current_filename = isset($_GET['file']) ? Utils::secureText($_GET['file']) : '';
+// $filename is set in /inc/init.php
+$current_filename = $filename;
+
+if (! isset($sites[$website])) {
+  // This website is not available
+  if ($json) {
+    http_response_code(400);
+    die("{$website} is not a supported website. Check the value and try again.");
+  } else {
+    die("<p>This website is not supported.</p>");
+  }
+}
+
 $current_website = $sites[$website];
 
 if ($current_filename == '' || ! in_array($current_filename, Project::getWebsiteFiles($current_website))) {
-    die("<p>ERROR: file {$current_filename} does not exist</p>");
+    if ($json) {
+        http_response_code(400);
+        die("File {$current_filename} does not exist. Check the value and try again.");
+    } else {
+        die("<p>ERROR: file {$current_filename} does not exist</p>");
+    }
 }
 
 $reference_locale = Project::getReferenceLocale($current_website);
@@ -35,7 +52,7 @@ echo '
 
 $complete_locales_count = 0;
 $complete_locales_list = [];
-$json = [];
+$json_data = [];
 
 $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
 foreach ($supported_locales as $current_locale) {
@@ -74,14 +91,14 @@ foreach ($supported_locales as $current_locale) {
                    ? count($locale_analysis[$key])
                    : '';
         echo "      <td>{$counter}</td>\n";
-        $json[$current_filename][$current_locale][$key] = intval($counter);
+        $json_data[$current_filename][$current_locale][$key] = intval($counter);
     }
 
     // Tags
     if (isset($locale_data['tags'])) {
         $locale_tags = $locale_data['tags'];
         sort($locale_tags);
-        $json[$current_filename][$current_locale]['tags'] = $locale_tags;
+        $json_data[$current_filename][$current_locale]['tags'] = $locale_tags;
         // Remove _promo from tags
         $locale_tags = array_map(
             function($element) {
@@ -92,14 +109,14 @@ foreach ($supported_locales as $current_locale) {
         echo "      <td class='tags_column'>" . implode('<br>', $locale_tags) ."</td>\n";
     } else {
         echo "      <td></td>\n";
-        $json[$current_filename][$current_locale]['tags'] = [];
+        $json_data[$current_filename][$current_locale]['tags'] = [];
     }
 
     // Activation status
     $active = $locale_analysis['activated'];
-    $json[$current_filename][$current_locale]['activated'] = $active;
+    $json_data[$current_filename][$current_locale]['activated'] = $active;
     if ($active) {
-        echo "      <td class='activated'></td>\n";
+        echo "      <td class='activated'>active</td>\n";
     } else {
         echo "      <td></td>\n";
     }
@@ -128,6 +145,22 @@ echo '
 $htmlresult = ob_get_contents();
 ob_clean();
 
-echo ! isset($_GET['json'])
-     ? $htmlresult
-     : Json::output($json, false, true);
+if ($json) {
+    if ($locale == 'all' || $locale == '') {
+        echo Json::output($json_data, false, true);
+    } else {
+        // Only one locale
+        if (isset($json_data[$current_filename][$locale])) {
+            $single_locale_json[$current_filename]['it'] = $json_data[$current_filename][$locale];
+            echo Json::output($single_locale_json, false, true);
+        } else {
+            // Unknown locale
+            http_response_code(400);
+            die("Unknown locale: {$locale}. Check the value and try again.");
+        }
+    }
+} else {
+    echo $htmlresult;
+}
+
+

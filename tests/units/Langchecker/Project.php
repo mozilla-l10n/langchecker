@@ -234,4 +234,286 @@ class Project extends atoum\test
             ->string($obj->getUserBaseCoverage($a, $b))
                 ->isEqualTo($c);
     }
+
+    public function selectViewDP()
+    {
+        return [
+            [
+                [
+                    'action'   => 'activation',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'activation',
+                    'template'     => 'template',
+                ],
+            ],
+            [
+                [
+                    'action'   => 'api',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'json',
+                    'template'     => '',
+                ],
+            ],
+            [
+                [
+                    'action'   => 'count',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'countstrings',
+                    'template'     => 'template',
+                ],
+            ],
+            [
+                [
+                    'action'   => 'count',
+                    'filename' => '',
+                    'json'     => true,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'countstrings',
+                    'template'     => false,
+                ],
+            ],
+            [
+                [
+                    'action'   => 'coverage',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'getcoverage',
+                    'template'     => '',
+                ],
+            ],
+            [
+                [
+                    'action'   => 'errors',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'errors',
+                    'template'     => 'template',
+                ],
+            ],
+            [
+                [
+                    'action'   => 'listlocales',
+                    'filename' => '',
+                    'json'     => true,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'listlocalesforproject',
+                    'template'     => '',
+                ],
+            ],
+            [
+                [
+                    'action'   => 'listlocales',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'listlocales',
+                    'template'     => 'template',
+                ],
+            ],
+            [
+                [
+                    'action'   => 'listpages',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',                ],
+                [
+                    'file'         => 'listpages',
+                    'template'     => 'template',
+                ],
+            ],
+            [
+                [
+                    'action'   => 'translate',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'translatestrings',
+                    'template'     => 'template',
+                ],
+            ],
+            [
+                [
+                    'action'   => '',
+                    'filename' => 'test.lang',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '0',
+                ],
+                [
+                    'file'         => 'globalstatus',
+                    'template'     => 'template',
+                ],
+            ],
+            [
+                [
+                    'action'   => '',
+                    'filename' => 'test.lang',
+                    'json'     => false,
+                    'locale'   => 'it',
+                    'serial'   => false,
+                    'website'  => '0',
+                ],
+                [
+                    'file'         => 'globalstatus',
+                    'template'     => 'template',
+                ],
+            ],
+            [
+                [
+                    'action'   => '',
+                    'filename' => 'test.lang',
+                    'json'     => true,
+                    'locale'   => 'it',
+                    'serial'   => false,
+                    'website'  => '0',
+                ],
+                [
+                    'file'         => 'globalstatus',
+                    'template'     => '',
+                ],
+            ],
+            [
+                [
+                    'action'   => '',
+                    'filename' => 'test.lang',
+                    'json'     => true,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '0',
+                ],
+                [
+                    'file'         => 'globalstatus',
+                    'template'     => '',
+                ],
+            ],
+            [
+                [
+                    'action'   => '',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => 'it',
+                    'serial'   => true,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'export',
+                    'template'     => '',
+                ],
+            ],
+            [
+                [
+                    'action'   => '',
+                    'filename' => '',
+                    'json'     => true,
+                    'locale'   => 'it',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'export',
+                    'template'     => '',
+                ],
+            ],
+            [
+                [
+                    'action'   => '',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => true,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'listlocales',
+                    'template'     => 'template',
+                ],
+            ],
+            [
+                [
+                    'action'   => '',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => 'it',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'listsitesforlocale',
+                    'template'     => 'template',
+                ],
+            ],
+            [
+                [
+                    'action'   => '',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'listlocales',
+                    'template'     => 'template',
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider selectViewDP
+     */
+    public function testSelectView($a, $b)
+    {
+        $obj = new _Project();
+        $this
+            ->array($obj->selectView($a))
+                ->isEqualTo($b);
+    }
 }

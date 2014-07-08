@@ -15,7 +15,8 @@ namespace Langchecker;
   </script>
 <?php
 
-$current_filename = (isset($_GET['file'])) ? Utils::secureText($_GET['file']) : 'snippets.lang';
+// $filename is set in /inc/init.php
+$current_filename = $filename != '' ? $filename : 'snippets.lang';
 $show_status = isset($_GET['show']) ? 'auto' : 'none';
 
 $supported_file = false;

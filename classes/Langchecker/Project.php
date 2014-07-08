@@ -147,10 +147,9 @@ class Project
     /*
      * Return user base coverage for list of locales
      *
-     * @param   array   $locales Array of locales
-     * @return  string           Percent value of our coverage for the user base
+     * @param   array   $locales  Array of locales
+     * @return  string            Percent value of our coverage for the user base
      */
-
     public static function getUserBaseCoverage($locales, $adu)
     {
         if (isset($adu['ja']) && isset($adu['ja-JP-mac'])) {
@@ -169,5 +168,84 @@ class Project
         $locales = array_intersect_key($adu, array_flip($locales));
 
         return number_format(array_sum($locales) / (array_sum($adu) - $english_adu) *100, 2);
+    }
+
+    /*
+     * Return name of the view based on the request parameters
+     *
+     * @param   array   $request  Array of params extracted from URL
+     * @return  array             Array with name of the file to use, if we need a template or not and its name
+     */
+    public static function selectView($request)
+    {
+        // Default: use template called 'template', show list of locales
+        $result['template'] = 'template';
+        $result['file'] = 'listlocales';
+
+        // All URLs with 'action' don't require other values like locale, etc.
+        if ($request['action'] != '') {
+            switch ($request['action']) {
+                case 'activation':
+                    $result['file'] = 'activation';
+                    break;
+                case 'api':
+                    $result['file'] = 'json';
+                    $result['template'] = '';
+                    break;
+                case 'count':
+                    $result['file'] = 'countstrings';
+                    if ($request['json']) {
+                        $result['template'] = '';
+                    }
+                    break;
+                case 'coverage':
+                    $result['file'] = 'getcoverage';
+                    $result['template'] = '';
+                    break;
+                case 'errors':
+                    $result['file'] = 'errors';
+                    break;
+                case 'listlocales':
+                    if ($request['json']) {
+                        $result['file'] = 'listlocalesforproject';
+                        $result['template'] = '';
+                    }
+                    break;
+                case 'listpages':
+                    $result['file'] = 'listpages';
+                    break;
+                case 'translate':
+                    $result['file'] = 'translatestrings';
+                    break;
+            }
+
+            return $result;
+        }
+
+        if ($request['filename'] != '' && $request['website'] != '') {
+            $result['file'] = 'globalstatus';
+            if ($request['json']) {
+                $result['template'] = '';
+            }
+
+            return $result;
+        }
+
+        if ($request['locale'] != '' &&
+            $request['website'] == ''  &&
+            ($request['serial'] || $request['json'])) {
+            $result['file'] = 'export';
+            $result['template'] = '';
+
+            return $result;
+        }
+
+        if ($request['locale'] != '' && $request['website'] == '') {
+            $result['file'] = 'listsitesforlocale';
+
+            return $result;
+        }
+
+        return $result;
     }
 }
