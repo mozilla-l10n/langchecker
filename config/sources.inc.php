@@ -117,6 +117,7 @@ $deadline = [
     'firefox/desktop/trust.lang'          => '2014-05-27', // was 2014-04-27
     'firefox/desktop/tips.lang'           => '2014-05-27', // was 2014-04-20
     'firefox/os/index.lang'               => '2014-07-15',
+    'firefox/os/devices.lang'             => '2014-07-15',
     'firefox/sync.lang'                   => '2014-05-27', // was 2014-04-27
     'apr2014.lang'                        => '2014-04-27',
     'may2014.lang'                        => '2014-05-20',
