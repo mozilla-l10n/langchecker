@@ -421,10 +421,10 @@ $langfiles_subsets = [
             ['ca', 'de', 'es-CL', 'eu', 'fr', 'gl', 'it', 'pa-IN', 'ro', 'sk', 'sq',
              'zh-TW'],
         'mozorg/contribute.lang'                =>
-            ['ar', 'bs', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+            ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
              'it', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl',
-             'sq', 'sr', 'ta', 'tr', 'vi', 'zh-CN', 'zh-TW'],
+             'sq', 'sr', 'ta', 'tr', 'zh-CN', 'zh-TW'],
         'mozorg/plugincheck.lang'               => $mozillaorg,
         'mozorg/products.lang'                  => $mozillaorg,
         'mozspaces.lang'                        => ['de', 'fr'],
