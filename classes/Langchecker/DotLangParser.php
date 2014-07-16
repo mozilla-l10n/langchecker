@@ -51,10 +51,9 @@ class DotLangParser
         $file_content = self::getFile($path);
 
         if ($file_content !== false) {
-            // File exists, I can parse its content
+            // First pass: extract strings and metadata (tags, active status) relevant for all locales.
             for ($i = 0, $lines = count($file_content); $i < $lines; $i++) {
                 $current_line = $file_content[$i];
-
                 /* First line may contain an activation status
                  * Tags are read with regexp "^## (\w+) ##", so trailing spaces can be ignored
                  */
@@ -98,33 +97,40 @@ class DotLangParser
                     } else {
                         // Store the translation
                         $dotlang_data['strings'][$reference] = $translation;
-
-                        /* These meta tags are available before a reference string, but I store them only if I'm
-                         * reading the reference locale
-                         */
-                        if ($i >= 2 && $reference_locale) {
-                            // Tag bindings
-                            if (Utils::startsWith($file_content[$i-1], '## TAG:')) {
-                                // Only tag binding
-                                $dotlang_data['tag_bindings'][$reference] = Utils::leftStrip($file_content[$i-1], '## TAG:');
-                            } elseif (Utils::startsWith($file_content[$i-2], '## TAG:')) {
-                                // Tag binding and comment
-                                $dotlang_data['tag_bindings'][$reference] = Utils::leftStrip($file_content[$i-2], '## TAG:');
-                            }
-
-                            // Comments (#) but not meta tags (##)
-                            if (Utils::startsWith($file_content[$i-1], '#') &&
-                                ! Utils::startsWith($file_content[$i-1], '##')) {
-                                // Only l10n comment
-                                $dotlang_data['comments'][$reference] = Utils::leftStrip($file_content[$i-1], '#');
-                            } elseif (Utils::startsWith($file_content[$i-2], '#') &&
-                                ! Utils::startsWith($file_content[$i-2], '##')) {
-                                // L10n comment and tag binding
-                                $dotlang_data['comments'][$reference] = Utils::leftStrip($file_content[$i-2], '#');
-                            }
-                        }
                     }
                     $i++;
+                }
+            }
+
+            // Second pass: extract only metadata (comments, tag bindings) for reference locale.
+            if ($reference_locale) {
+                for ($i = 0, $lines = count($file_content); $i < $lines; $i++) {
+                    $current_line = $file_content[$i];
+                    if (Utils::startsWith($current_line, ';')) {
+                        // I have a reference string
+                        $reference = Utils::leftStrip($current_line, ';');
+                        $j = $i-1;
+                        while ($j > 0) {
+                            // Stop if I find a line not starting with #
+                            if (! Utils::startsWith($file_content[$j], '#')) {
+                                break;
+                            }
+                            // Tag bindings
+                            if (Utils::startsWith($file_content[$j], '## TAG:')) {
+                                $dotlang_data['tag_bindings'][$reference] = Utils::leftStrip($file_content[$j], '## TAG:');
+                            }
+                            // Comments
+                            if (Utils::startsWith($file_content[$j], '#') &&
+                                ! Utils::startsWith($file_content[$j], '##')) {
+                                $dotlang_data['comments'][$reference][] = Utils::leftStrip($file_content[$j], '#');
+                            }
+                            $j--;
+                        }
+                        // Invert order of comments if available
+                        if (isset($dotlang_data['comments'][$reference])) {
+                            $dotlang_data['comments'][$reference] = array_reverse($dotlang_data['comments'][$reference]);
+                        }
+                    }
                 }
             }
         }

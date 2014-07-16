@@ -23,6 +23,12 @@ Test
 01
 
 
+# Comment 1
+# Comment 2
+;String with multiple comments
+String with multiple comments
+
+
 # This is the reference locale, shouldn't have a translation. Make sure we use the ID
 ;Press center
 Oh press

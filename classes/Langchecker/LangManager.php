@@ -157,7 +157,9 @@ class LangManager
         foreach ($reference_data['strings'] as $string_id => $string_value) {
             // Do we have comments for this string?
             if (isset($reference_data['comments'][$string_id])) {
-                echo "# " . $reference_data['comments'][$string_id] . $eol;
+                foreach ($reference_data['comments'][$string_id] as $comment) {
+                    echo "# {$comment}{$eol}";
+                }
             }
 
             $translation = isset($locale_data['strings'][$string_id]) ?
