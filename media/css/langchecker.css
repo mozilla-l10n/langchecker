@@ -2,35 +2,42 @@
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('http://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.eot?#iefix2013') format('embedded-opentype'), url('http://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.woff?2013') format('woff'), url('http://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.ttf?2013') format('truetype');
+    src: url(https://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.eot?#iefix2013) format('embedded-opentype'),
+         url(https://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.woff?2013) format('woff'),
+         url(https://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.ttf?2013) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Open Sans';
-    src: url('http://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.eot?#iefix2013') format('embedded-opentype'), url('http://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.woff?2013') format('woff'), url('http://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.ttf?2013') format('truetype');
+    src: url(https://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.eot?#iefix2013) format('embedded-opentype'),
+         url(https://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.woff?2013) format('woff'),
+         url(https://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.ttf?2013) format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: 'Open Sans';
-    src: url('http://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.eot?#iefix2013') format('embedded-opentype'), url('http://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.woff?2013') format('woff'), url('http://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.ttf?2013') format('truetype');
+    src: url(https://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.eot?#iefix2013) format('embedded-opentype'),
+         url(https://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.woff?2013) format('woff'),
+         url(https://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.ttf?2013) format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 /* Main structure */
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
 body {
     font-size: 14px;
     line-height: 1.5;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     color: #333;
-    background: #F1EFE8;
+    background: #f1efe8;
     margin: 0;
     padding: 0;
 }
@@ -41,20 +48,21 @@ body {
 }
 
 .sand #outer-wrapper {
-    background: #F5F1E8 url('../img/sandstone/bg-sand.png') repeat-x top left;
-    background: url('../img/sandstone/bg-gradient-sand.png') repeat-x 0 0, url('../img/sandstone/bg-sand.png') repeat 0 0, #F5F1E8;
+    background: #f5f1e8 url(../img/sandstone/bg-sand.png) repeat-x top left;
+    background: url(../img/sandstone/bg-gradient-sand.png) repeat-x 0 0,
+                url(../img/sandstone/bg-sand.png) repeat 0 0, #f5f1e8;
     height: 100%;
 }
 
 a {
-    color: #0096DD;
+    color: #0096dd;
     text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-    color: #0073AA;
+    color: #0073aa;
     text-decoration: underline;
 }
 
@@ -67,16 +75,16 @@ h1 {
 
 h1 span {
     display: inline-block;
-    background-color: #FAF8F2;
-    border: 1px solid #9E988B;
+    background-color: #faf8f2;
+    border: 1px solid #9e988b;
     padding: 3px 10px;
     border-radius: 10px;
 }
 
 #back {
-    background-color: #9E988B;
+    background-color: #9e988b;
     border-radius: 0 0 20px 20px;
-    box-shadow: 1px 1px 6px #4A412E;
+    box-shadow: 1px 1px 6px #4a412e;
     font-size: 15px;
     height: 50px;
     line-height: 50px;
@@ -85,12 +93,12 @@ h1 span {
     position: absolute;
     right: 10px;
     text-align: center;
-    text-shadow: 1px 1px 4px #4A412E;
+    text-shadow: 1px 1px 4px #4a412e;
     top: 0;
 }
 
 #back a {
-    color: #FFF;
+    color: #fff;
     font-weight: bold;
     display: block;
     width: 100%;
@@ -102,29 +110,30 @@ h1 span {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  background-color: #FFF;
+  background-color: #fff;
   text-align: center;
 }
 
-td, th {
+td,
+th {
     padding: 2px;
-    border: 1px solid #DDD;
+    border: 1px solid #ddd;
 }
 
 th {
     padding: 6px 10px;
-    background-color: #F5F1E8;
+    background-color: #f5f1e8;
 }
 
 caption.filename {
     font-size: 18px;
     font-weight: bold;
-    background-color: #F5F1E8;
+    background-color: #f5f1e8;
     padding: 6px;
 }
 
 tr.dim {
-    color: #DDD;
+    color: #ddd;
 }
 
 td.tags_column {
@@ -133,12 +142,12 @@ td.tags_column {
 }
 
 td.activated {
-    background-color: #92CC6E;
-    color: #92CC6E;
+    background-color: #92cc6e;
+    color: #92cc6e;
 }
 
 td.lightlink a {
-    color: #C7EDFF;
+    color: #c7edff;
 }
 
 td.linklocale a {
@@ -146,42 +155,42 @@ td.linklocale a {
 }
 
 tfoot td {
-    background-color: #F5F1E8;
+    background-color: #f5f1e8;
 }
 
 /* View: listsitesforlocale */
 
 div.website {
-    border: 1px solid #78756F;
+    border: 1px solid #78756f;
     margin: 0 0 10px 0;
     padding: 0 10px;
-    background-color: #FAF8F2;
+    background-color: #faf8f2;
 }
 
 a.filedone {
     display: inline-block;
     color: #FFF;
-    background: #78756F;
+    background: #78756f;
     padding: 5px;
     margin: 2px;
 }
 
 a.activated {
-    border-right: 8px solid #92CC6E;
+    border-right: 8px solid #92cc6e;
 }
 
 a.notactivated {
-    border-right: 8px solid #FF5252;
+    border-right: 8px solid #ff5252;
 }
 
 a.notutf8:after {
     content: " (Not in UTF-8 !)";
-    color: #FFBD52;
+    color: #ffbd52;
     font-weight: bold;
 }
 
 div.filename {
-    background-color: white;
+    background-color: #fff;
     padding: 5px;
 }
 
@@ -191,8 +200,8 @@ div.filename h3.filename {
     padding: 2px 1em;
     text-align: center;
     min-width: 11em;
-    background-color: #78756F;
-    color: white;
+    background-color: #78756f;
+    color: #fff;
     font-size: 120%;
 }
 
@@ -201,7 +210,7 @@ div.filename h3.filename a:visited,
 div.filename h3.filename a:hover,
 div.filename h3.filename a:active
 {
-    color:white;
+    color: #fff;
 }
 
 div.filename table.side {
@@ -219,28 +228,28 @@ table.python td {
 }
 
 table.python td em {
-    color: #FFF;
-    background-color: #92CC6E;
+    color: #fff;
+    background-color: #92cc6e;
     font-style: normal;
     border-radius: 3px;
     padding: 0 10px;
 }
 
 div.tip {
-    border: 1px solid #DDD;
+    border: 1px solid #ddd;
     margin: 10px 0;
     padding: 10px 0 10px 30px;
-    background-color: #FFFFE0;
+    background-color: #ffffe0;
 }
 
 code {
-    color: gray;
+    color: #808080;
     font-family: monospace;
 }
 
 div.tip blockquote {
-    color: blue;
-    color: rgba(80,80,80,1)
+    color: #00f;
+    color: rgba(80, 80, 80, 1)
 }
 
 
@@ -262,9 +271,9 @@ table.listpages tr td:first-child {
 }
 
 td.done {
-    text-align:left;
-    font-style:italic;
-    color: gray;
+    text-align: left;
+    font-style: italic;
+    color: #808080;
 }
 
 .translations td {
@@ -276,11 +285,11 @@ td.done {
 }
 
 td.odd {
-    background-color: #FFF;
+    background-color: #fff;
 }
 
 td.even {
-    background-color: #FAF6ED;
+    background-color: #faf6ed;
 }
 
 /* List locales */
@@ -289,4 +298,3 @@ ul#locales {
     -moz-column-count: 6;
     width: 80%;
 }
-
