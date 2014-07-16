@@ -104,7 +104,7 @@ class DotLangParser extends atoum\test
             ->integer(count($dotlang_data['comments']))
                 ->isEqualTo(2);
         $this
-            ->string($dotlang_data['comments']['Browser'])
+            ->string($dotlang_data['comments']['Browser'][0])
                 ->isEqualTo('I am a comment');
 
         // Check bound tags

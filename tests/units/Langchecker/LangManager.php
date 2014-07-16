@@ -36,7 +36,7 @@ class LangManager extends atoum\test
 
         $this
             ->integer(count($analysis_data['Translated']))
-                ->isEqualTo(7);
+                ->isEqualTo(8);
 
         $this
             ->integer(count($analysis_data['python_vars']))
