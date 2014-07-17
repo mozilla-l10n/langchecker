@@ -444,7 +444,10 @@ $langfiles_subsets = [
         'firefox/sync.lang'                     => $mozilla,
         'firefox/australis/firefox_tour.lang'   => $mozilla,
         'firefox/nightly_firstrun.lang'         =>
-            ['cs', 'de', 'es-AR', 'fr', 'it', 'ru'],
+            ['ar', 'ast', 'cs', 'de', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+             'fa', 'fr', 'fy-NL', 'gl', 'he', 'hu', 'id', 'it', 'ja', 'kk', 'ko',
+             'lt', 'lv', 'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-PT', 'ru', 'sk',
+             'sv-SE', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW'],
         'firefox/desktop/tips.lang'             =>
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu',
              'fr', 'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl',
