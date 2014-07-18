@@ -190,8 +190,8 @@ $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', '
                             'nl', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sl', 'sv-SE', 'th', 'tr', 'vi',
                             'zh-CN', 'zh-TW'];
 
-$fxos_marketing = ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it', 'ja',
-                   'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN'];
+$fxos_marketing = ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr', 'hu', 'it', 'ja',
+                   'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'ta', 'tr', 'zh-CN'];
 
 /* Array structure for single website
 *
