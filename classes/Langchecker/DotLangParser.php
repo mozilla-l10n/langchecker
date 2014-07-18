@@ -88,6 +88,14 @@ class DotLangParser
                     $reference = Utils::leftStrip($current_line, ';');
                     $translation = trim($next_line);
 
+                    if (isset($dotlang_data['strings'][$reference]) &&
+                        $reference_locale) {
+                        /* String is already stored, it's a duplicated string. If it's the reference
+                         * locale I save the string ID to issue a warning where necessary.
+                         */
+                        $dotlang_data['duplicates'][] = $reference;
+                    }
+
                     if (Utils::startsWith($translation, ';') || Utils::startsWith($translation, '#')) {
                         /* Empty translation: what I'm reading as translation is either the next reference string
                          * or the next meta tag (comment, tag binding). I consider this string untranslated.

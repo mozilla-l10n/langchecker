@@ -6,6 +6,8 @@ namespace Langchecker;
 <?php
 
 $htmloutput = '';
+
+// Checks on l10n files
 foreach ($mozilla as $current_locale) {
     $locale_with_errors = false;
     $locale_htmloutput = "\n      <h2>Locale: <a href='?locale={$current_locale}' target='_blank'>{$current_locale}</a></h2>\n";
@@ -156,6 +158,40 @@ foreach ($mozilla as $current_locale) {
     if ($locale_with_errors) {
         $locale_htmloutput .= "      </div>\n\n";
         $htmloutput .= $locale_htmloutput;
+    }
+}
+
+// Checks on reference files
+foreach ($sites as $current_website) {
+    $reference_with_errors = false;
+
+    $current_website_name = Project::getWebsiteName($current_website);
+    $reference_locale = Project::getReferenceLocale($current_website);
+
+    $reference_output = "      <h2>Reference locale: {$reference_locale}</h2>\n";
+    $opening_div = "      <div class='website'>\n" .
+                   "        <h2>{$current_website_name}</h2>\n";
+
+    foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
+        // Load reference strings
+        $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+
+        if (isset($reference_data['duplicates'])) {
+            if (! $reference_with_errors) {
+                $reference_with_errors = true;
+                $reference_output .= $opening_div;
+            }
+            $reference_output .= "        <p><strong>{$current_filename}</strong> has duplicated strings</p>\n        <ul>\n";
+            foreach ($reference_data['duplicates'] as $key => $string_id) {
+                $reference_output .= "        <li>" . htmlspecialchars($string_id) . "</li>\n";
+            }
+            $reference_output .= "</ul>\n";
+        }
+    }
+
+    if ($reference_with_errors) {
+        $reference_output .= "      </div>\n\n";
+        $htmloutput .= $reference_output;
     }
 }
 
