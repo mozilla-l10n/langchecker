@@ -203,4 +203,64 @@ class Utils extends atoum\test
         unlink($path);
         rmdir($base_folder);
     }
+
+    public function testGetQueryParam()
+    {
+        $obj = new _Utils();
+
+        $_GET['test_string'] = 'test';
+        $_GET['test_bool'] = true;
+
+        // Missing string param
+        $this
+            ->string($obj->getQueryParam('foo'))
+                ->isEqualTo('');
+
+        // Missing string param with fallback
+        $this
+            ->string($obj->getQueryParam('foo', 'bar'))
+                ->isEqualTo('bar');
+
+        // Existing param
+        $this
+            ->string($obj->getQueryParam('test_string'))
+                ->isEqualTo('test');
+
+        // Existing param
+        $this
+            ->boolean($obj->getQueryParam('test_bool', false))
+                ->isTrue();
+
+        // Missing boolean param
+        $this
+            ->boolean($obj->getQueryParam('foo', false))
+                ->isFalse();
+
+        unset($_GET['test_string']);
+        unset($_GET['test_bool']);
+    }
+
+    public function testGetCliParam()
+    {
+        $obj = new _Utils();
+
+        $options = [
+            1 => 'test'
+        ];
+
+        // Missing string param
+        $this
+            ->string($obj->getCliParam(2, $options))
+                ->isEqualTo('');
+
+        // Missing string param with fallback
+        $this
+            ->string($obj->getCliParam(2, $options, 'foo'))
+                ->isEqualTo('foo');
+
+        // Existing param
+        $this
+            ->string($obj->getCliParam(1, $options, 'foo'))
+                ->isEqualTo('test');
+    }
 }

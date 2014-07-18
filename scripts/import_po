@@ -1,0 +1,61 @@
+#!/usr/bin/env php
+<?php
+namespace Langchecker;
+
+// Script should not be called from the Web
+if (php_sapi_name() != 'cli') {
+    die('This command can only be used in CLI mode.');
+}
+
+date_default_timezone_set('Europe/Paris');
+require_once __DIR__ . '/../inc/init.php';
+
+if (isset($argv[1])) {
+    if ($argv[1] == '-h' || $argv[1] == '--help' ) {
+        print "import_po - Import local .po file in local .lang file\n";
+        print "Usage: import_po [pofile] [langfile]\n";
+        print "\nExample: import_po test.po /svn/it/main.lang\n";
+        print "(import test.po into /svn/it/main.lang)\n";
+        die();
+    }
+}
+
+if (count($argv) < 3) {
+    die("This command needs more options, please check import_po --help.\n");
+}
+
+// User provided variables
+$cli_po_filename   = realpath(Utils::getCliParam(1, $argv, ''));  // po file to import
+$cli_lang_filename = realpath(Utils::getCliParam(2, $argv, ''));  // lang file to use as destination
+
+/* If file doesn't exist, I need to use the original cli argument,
+ * because cli_*_filename will be empty.
+ */
+if (! file_exists($cli_po_filename)) {
+    die(Utils::getCliParam(1, $argv, '') . " does not exist.\n");
+}
+if (! file_exists($cli_lang_filename)) {
+    die(Utils::getCliParam(2, $argv, '') . " does not exist.\n");
+}
+
+Utils::logger("po file (source):\n{$cli_po_filename}\n");
+Utils::logger("lang file (destination):\n{$cli_lang_filename}\n");
+
+// I consider this file as both reference and locale
+$reference_data = DotLangParser::parseFile($cli_lang_filename, true);
+$locale_data = DotLangParser::parseFile($cli_lang_filename, false);
+
+$po_import = LangManager::importLocalPoFile($cli_po_filename, $locale_data);
+
+if ($po_import['imported']) {
+    // I have strings to save
+    $locale_data['strings'] = $po_import['strings'];
+    $file_content = file($cli_lang_filename);
+    $eol = Utils::checkEOL($cli_lang_filename[0]);
+
+    // I pass empty as current_locale (3rd param), no need to manage exceptions
+    $content = LangManager::buildLangFile($reference_data, $locale_data, '', $eol);
+
+    Utils::fileForceContent($cli_lang_filename, $content);
+    Utils::logger("New strings saved in {$cli_lang_filename}.");
+}
