@@ -27,6 +27,8 @@ class DotLangParser extends atoum\test
                     '# another comment',
                     ';Hello',
                     'Bonjour',
+                    ';Hello',
+                    'Bonjour',
                     ';Empty string',
                     '## TAG: bound tag',
                     ';String with tag',
@@ -78,6 +80,12 @@ class DotLangParser extends atoum\test
             ->array($dotlang_data['tags'])
                 ->isEqualTo(['I am a tag']);
 
+
+        // Check duplicates (not relevant for localized files)
+        $this
+            ->boolean(isset($dotlang_data['duplicates']))
+                ->isFalse();
+
         // Check translation of one string
         $this
             ->string($dotlang_data['strings']['Hello'])
@@ -106,6 +114,11 @@ class DotLangParser extends atoum\test
         $this
             ->string($dotlang_data['comments']['Browser'][0])
                 ->isEqualTo('I am a comment');
+
+        // Check duplicates
+        $this
+            ->boolean(in_array('Hello', $dotlang_data['duplicates']))
+                ->isTrue();
 
         // Check bound tags
         $this
