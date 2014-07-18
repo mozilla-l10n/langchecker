@@ -12,7 +12,7 @@ namespace Langchecker;
 
     return false;
   }
-  </script>
+</script>
 <?php
 
 // $filename is set in /inc/init.php
@@ -32,9 +32,6 @@ foreach ($sites as $site) {
 if (! $supported_file) {
     die("<p>ERROR: file {$filename} does not exist</p>");
 }
-
-echo "<p>Click on the green English strings to expand/collapse the translations done</p>\n";
-echo "<h2>{$current_filename}</h2>\n\n";
 
 $reference_locale = Project::getReferenceLocale($current_website);
 $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
@@ -71,10 +68,21 @@ if (isset($reference_data['tag_bindings'])) {
     $available_tags = [];
 }
 
+echo "<p>Click on the green English strings to expand/collapse the translations done</p>\n";
+// Display all tags used in this page
+if (count($available_tags) > 0) {
+    echo "<p>Tags used in this page:\n";
+    foreach ($available_tags as $tag_number => $tag_text) {
+        $style = "style='background-color: {$bg_colors[$tag_number]}; color: {$font_colors[$tag_number]};'";
+        echo "<span class='taglist' {$style}>{$tag_text}</span>\n";
+    }
+    echo "</p>";
+}
+echo "<h2>{$current_filename}</h2>\n\n";
+
 $counter = 0;
 foreach ($all_strings as $string_id => $available_translations) {
     // Display paragraph with reference string
-    echo "<p><a href='#' style='color:green' onclick='showhide(\"table$counter\");'>";
     $header_string = trim(htmlspecialchars($string_id));
     if (isset($tag_bindings[$string_id])) {
         $current_tag = $tag_bindings[$string_id];
@@ -88,7 +96,7 @@ foreach ($all_strings as $string_id => $available_translations) {
     echo "<p><a href='#' style='color:green' onclick='showhide(\"table$counter\");'>{$header_string}</p>\n";
 
     // Display sub-table with localizations for this string
-    echo "<table style='width:100%; display: {$show_status};' id='table$counter' class='translations'>";
+    echo "<table style='width:100%; display: {$show_status};' id='table$counter' class='translations'>\n";
 
     $total_translations = count($available_translations);
     $covered_locales = array_keys($available_translations);
@@ -97,15 +105,15 @@ foreach ($all_strings as $string_id => $available_translations) {
     foreach ($available_translations as $current_locale => $translation) {
         $css_class = ($displayed_rows & 1) ? 'odd' : 'even';
         echo "<tr class='{$css_class}'>\n"
-             . "  <th>{$current_locale}</th>\n "
+             . "  <th>{$current_locale}</th>\n"
              . "  <td>" . htmlspecialchars($translation) . "</td>\n"
              . "</tr>\n";
         $displayed_rows++;
     }
 
-    echo "  <td colspan='2' class='done'>Number of locales done: {$total_translations}"
+    echo "<tr>\n  <td colspan='2' class='done'>Number of locales done: {$total_translations}"
         . ' (' . Project::getUserBaseCoverage($covered_locales, $adu) . '% of our l10n user base)'
-        . "  </td>\n</tr>\n</table>";
+        . "  </td>\n</tr>\n</table>\n";
 
     $counter++;
 }

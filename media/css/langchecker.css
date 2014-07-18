@@ -263,11 +263,16 @@ table.listpages tr td:first-child {
 
 /* Translate page */
 
-.tag {
+.tag,
+.taglist {
     font-size: 75%;
     padding: 0.2em 0.6em;
     border-radius: 0.25em;
     margin: 0 10px;
+}
+
+.taglist {
+    margin: 0 2px;
 }
 
 td.done {
