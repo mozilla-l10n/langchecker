@@ -249,37 +249,52 @@ class LangManager
     }
 
     /*
-     * Read .po file from Locamotion, store data in local lang file
-     *n
+     * Read .po file from Locamotion's github repository, return updated strings
+     *
      * @param   array    $locale_data       Array of data for locale file
      * @param   string   $current_filename  Analyzed file
      * @param   string   $current_locale    Requested locale
+     * @param   string   $lomocation_repo   Path to local clone of Locamotion's repository
      * @return  array                       Result of import (boolean), updated strings (array)
      */
-    public static function importLocamotion($locale_data, $current_filename, $current_locale)
+    public static function importLocamotion($locale_data, $current_filename, $current_locale, $locamotion_repo)
     {
         $result['imported'] = false;
         $result['strings'] = [];
 
-        Utils::logger('== ' . $current_locale . ' ==');
+        Utils::logger("== {$current_locale} ==");
 
-        // Import data from locamotion
-        $locamotion_url = 'https://raw.githubusercontent.com/translate/mozilla-lang/master/'
-                          . str_replace('-', '_', $current_locale)
-                          . '/' . $current_filename . '.po';
-        $http_response = get_headers($locamotion_url, 1)[0];
-        $po_exists = strstr($http_response, '200') ? true : false;
+        $local_import = $locamotion_repo != '' ? true : false;
+
+        if ($local_import) {
+            // Import from local clone
+            $file_path = $locamotion_repo .
+                         str_replace('-', '_', $current_locale)
+                         . '/' . $current_filename . '.po';
+            $po_exists = file_exists($file_path);
+        } else {
+            // Import data from remote
+            $locamotion_url = 'https://raw.githubusercontent.com/translate/mozilla-lang/master/'
+                              . str_replace('-', '_', $current_locale)
+                              . '/' . $current_filename . '.po';
+            $http_response = get_headers($locamotion_url, 1)[0];
+            $po_exists = strstr($http_response, '200') ? true : false;
+        }
 
         if ($po_exists) {
-            Utils::logger("Fetching {$current_filename} from Locamotion.");
 
-            // Create temporary file (temp.po), delete it after extracting strings
-            file_put_contents('temp.po', file_get_contents($locamotion_url));
-            $po_strings = self::loadPoFile('temp.po');
-            unlink('temp.po');
+            if ($local_import) {
+                $po_strings = self::loadPoFile($file_path);
+            } else {
+                Utils::logger("Fetching {$current_filename} from Locamotion.");
+                // Create temporary file (temp.po), delete it after extracting strings
+                file_put_contents('temp.po', file_get_contents($locamotion_url));
+                $po_strings = self::loadPoFile('temp.po');
+                unlink('temp.po');
+            }
 
             if (count($po_strings) == 0) {
-                Utils::logger(".po file is empty.");
+                Utils::logger('.po file is empty.');
             } else {
                 foreach ($po_strings as $string_id => $translation) {
                     if (isset($locale_data['strings'][$string_id])) {
@@ -295,14 +310,62 @@ class LangManager
                 $result['strings'] = $locale_data['strings'];
             }
         } else {
-            Utils::logger("{$locamotion_url} does not exist, http code was {$http_response}");
+            if ($local_import) {
+                Utils::logger("{$file_path} does not exist.");
+            } else {
+                Utils::logger("{$locamotion_url} does not exist, http code was {$http_response}");
+            }
+
             return $result;
         }
 
         if ($result['imported']) {
-            Utils::logger("Data from Locamotion extracted and added to local repository.");
+            Utils::logger('Locamotion data extracted and added to local repository.');
         } else {
-            Utils::logger("No new strings from Locamotion added to local repository.");
+            Utils::logger('No new strings from Locamotion added to local repository.');
+        }
+
+        return $result;
+    }
+
+    /*
+     * Read local .po file, return updated strings
+     *
+     * @param   string   $po_filename   Path to po file
+     * @param   array    $locale_data   Array of data for locale file
+     * @return  array                   Result of import (boolean), updated strings (array)
+     */
+    public static function importLocalPoFile($po_filename, $locale_data)
+    {
+        $result = [
+          'imported' => false,
+          'strings'  => []
+        ];
+
+        // Read po file
+        $po_strings = self::loadPoFile($po_filename);
+
+        if (count($po_strings) == 0) {
+            Utils::logger('.po file is empty.');
+        } else {
+            foreach ($po_strings as $string_id => $translation) {
+                if (isset($locale_data['strings'][$string_id])) {
+                    // String is available in the local lang file, check if is different
+                    if ($po_strings[$string_id] !== $locale_data['strings'][$string_id]) {
+                        // Translation in the .po file is different
+                        Utils::logger("Updated translation: {$string_id} => {$translation}");
+                        $locale_data['strings'][$string_id] = $translation;
+                        $result['imported'] = true;
+                    }
+                }
+            }
+            $result['strings'] = $locale_data['strings'];
+        }
+
+        if ($result['imported']) {
+            Utils::logger('Data imported.');
+        } else {
+            Utils::logger('No data imported.');
         }
 
         return $result;

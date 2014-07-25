@@ -12,7 +12,7 @@ if (isset($argv[1])) {
     if ($argv[1] == '-h' || $argv[1] == '--help' ) {
         print "mark_active - Add the ## active ## tag to complete lang files on www.mozilla.org\n";
         print "Usage: mark_active [filename]\n";
-        print "Example: mark_active firefox/new.lang\n";
+        print "\nExample: mark_active firefox/new.lang\n";
         die();
     }
 }
@@ -25,7 +25,7 @@ require_once __DIR__ . '/../inc/init.php';
 
 // Only mozilla.org
 $current_website = $sites[0];
-$current_filename = $argv[1];
+$current_filename = Utils::secureText($argv[1]);
 
 if (in_array($current_filename, $no_active_tag)) {
     die("This file is not supposed to be activated.\n");

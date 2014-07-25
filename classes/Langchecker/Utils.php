@@ -165,4 +165,37 @@ class Utils
 
         file_put_contents("{$dir}/{$file}", $content);
     }
+
+    /*
+     * Read GET parameter if set, or fallback
+     *
+     * @param   string  $param     GET parameter to check
+     * @param   string  $fallback  Optional fallback value
+     * @return  string             Parameter value, or fallback
+     */
+    public static function getQueryParam($param, $fallback = '') {
+        if (isset($_GET[$param])) {
+            return is_bool($fallback)
+                   ? true
+                   : self::secureText($_GET[$param]);
+        }
+
+        return $fallback;
+    }
+
+    /*
+     * Read CLI parameter if set, or fallback
+     *
+     * @param   integer  $paramnum  Argument number
+     * @param   array    $options   Array of parameters
+     * @param   string   $fallback  Optional fallback value
+     * @return  string              Parameter value, or fallback
+     */
+    public static function getCliParam($paramnum, $options, $fallback = '') {
+        if (isset($options[$paramnum])) {
+            return self::secureText($options[$paramnum]);
+        }
+
+        return $fallback;
+    }
 }
