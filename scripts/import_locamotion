@@ -2,28 +2,16 @@
 <?php
 namespace Langchecker;
 
-// Script should not be called from the Web
-if (php_sapi_name() != 'cli') {
-    die('This command can only be used in CLI mode.');
-}
+$command_help = "import_locamotion - Import strings for www.mozilla.org from Lomocation\n" .
+                "Usage: import_locamotion [locale] [filename] [remote]\n\n" .
+                "Example: import_locamotion\n" .
+                "(import all files from local repository)\n\n" .
+                "Example: import_locamotion all main.lang\n" .
+                "(import main.lang for all locales from local repository)\n\n" .
+                "Example: import_locamotion all all remote\n" .
+                "(import all from remote repository)\n";
 
-date_default_timezone_set('Europe/Paris');
-
-require_once __DIR__ . '/../inc/init.php';
-
-if (isset($argv[1])) {
-    if ($argv[1] == '-h' || $argv[1] == '--help' ) {
-        print "import_locamotion - Import strings for www.mozilla.org from Lomocation\n";
-        print "Usage: import_locamotion [locale] [filename] [remote]\n";
-        print "\nExample: import_locamotion\n";
-        print "(import all files from local repository)\n";
-        print "\nExample: import_locamotion all main.lang\n";
-        print "(import main.lang for all locales from local repository)\n";
-        print "\nExample: import_locamotion all all remote\n";
-        print "(import all from remote repository)\n";
-        die();
-    }
-}
+require_once __DIR__ . '/../inc/cli_init.php';
 
 // User provided variables
 $cli_locale       = Utils::getCliParam(1, $argv, 'all');               // Which locale are we analyzing? No default

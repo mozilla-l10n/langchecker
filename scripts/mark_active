@@ -2,26 +2,13 @@
 <?php
 namespace Langchecker;
 
-if (php_sapi_name() != 'cli') {
-    die('This command can only be used in CLI mode.');
-}
+$command_help = "mark_active - Add the ## active ## tag to complete lang files on www.mozilla.org\n" .
+                "Usage: mark_active [filename]\n\n" .
+                "Example: mark_active firefox/new.lang\n";
+$min_parameters = 1;
+$missing_parameter = "This command needs more parameters, please check import_po --help.\n";
 
-date_default_timezone_set('Europe/Paris');
-
-if (isset($argv[1])) {
-    if ($argv[1] == '-h' || $argv[1] == '--help' ) {
-        print "mark_active - Add the ## active ## tag to complete lang files on www.mozilla.org\n";
-        print "Usage: mark_active [filename]\n";
-        print "\nExample: mark_active firefox/new.lang\n";
-        die();
-    }
-}
-
-if (count($argv) < 2) {
-    die("This command needs more options, please check mark_active --help.\n");
-}
-
-require_once __DIR__ . '/../inc/init.php';
+require_once __DIR__ . '/../inc/cli_init.php';
 
 // Only mozilla.org
 $current_website = $sites[0];

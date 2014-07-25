@@ -2,24 +2,12 @@
 <?php
 namespace Langchecker;
 
-// Script should not be called from the Web
-if (php_sapi_name() != 'cli') {
-    die('This command can only be used in CLI mode.');
-}
+$command_help = "lang_update - Update local lang files\n" .
+                "Usage: lang_update [filename] [websiteid] [locale]\n\n" .
+                "Example: lang_update mozorg/home.lang 0 all\n" .
+                "(update mozorg/home.lang for website 0, all locales)\n";
 
-date_default_timezone_set('Europe/Paris');
-
-require_once __DIR__ . '/../inc/init.php';
-
-if (isset($argv[1])) {
-    if ($argv[1] == '-h' || $argv[1] == '--help' ) {
-        print "lang_update - Update local lang files\n";
-        print "Usage: lang_update [filename] [websiteid] [locale]\n";
-        print "\nExample: lang_update main.lang 0 all\n";
-        print "(update main.lang for website 0, all locales)\n";
-        die();
-    }
-}
+require_once __DIR__ . '/../inc/cli_init.php';
 
 // User provided variables
 $cli_filename = Utils::getCliParam(1, $argv, 'main.lang');           // Which file are we comparing? Set a default

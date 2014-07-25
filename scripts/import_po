@@ -2,27 +2,14 @@
 <?php
 namespace Langchecker;
 
-// Script should not be called from the Web
-if (php_sapi_name() != 'cli') {
-    die('This command can only be used in CLI mode.');
-}
+$command_help = "import_po - Import local .po file in local .lang file\n" .
+                "Usage: import_po [pofile] [langfile]\n\n" .
+                "Example: import_po test.po /svn/it/main.lang\n" .
+                "(import test.po into /svn/it/main.lang)\n";
+$min_parameters = 2;
+$missing_parameter = "This command needs more parameters, please check import_po --help.\n";
 
-date_default_timezone_set('Europe/Paris');
-require_once __DIR__ . '/../inc/init.php';
-
-if (isset($argv[1])) {
-    if ($argv[1] == '-h' || $argv[1] == '--help' ) {
-        print "import_po - Import local .po file in local .lang file\n";
-        print "Usage: import_po [pofile] [langfile]\n";
-        print "\nExample: import_po test.po /svn/it/main.lang\n";
-        print "(import test.po into /svn/it/main.lang)\n";
-        die();
-    }
-}
-
-if (count($argv) < 3) {
-    die("This command needs more options, please check import_po --help.\n");
-}
+require_once __DIR__ . '/../inc/cli_init.php';
 
 // User provided variables
 $cli_po_filename   = realpath(Utils::getCliParam(1, $argv, ''));  // po file to import
