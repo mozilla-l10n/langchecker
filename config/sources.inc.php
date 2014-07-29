@@ -168,6 +168,7 @@ $firefox_updater_lang = [
 
 $fxos_marketing_lang = [
     'screenshots.lang' => false,
+    'screenshots_tarako.lang' => false,
     'marketplace_l10n_feed.lang' => false,
 ];
 
@@ -517,8 +518,9 @@ $langfiles_subsets = [
     ],
 
     'firefoxos-marketing' => [
-        'screenshots.lang'  => ['cs', 'de', 'el', 'es-ES', 'hi-IN', 'hr', 'hu',
-                                'fr', 'it', 'pl', 'pt-BR', 'ro', 'sr', 'ta'],
+        'screenshots.lang'  => ['cs', 'de', 'el', 'es-ES', 'hr', 'hu',
+                                'fr', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
+        'screenshots_tarako.lang'  => ['hi-IN', 'ta'],
         'marketplace_l10n_feed.lang' => ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it', 'ja',
                                          'mk', 'pl', 'pt-BR', 'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN'],
     ],
