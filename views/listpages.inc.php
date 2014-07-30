@@ -9,7 +9,7 @@ $htmloutput = '';
 $displayed_sites = [];
 
 if ($website != '' && isset($sites[$website])) {
-    $displayed_sites[] = $sites[$website];
+    $displayed_sites[$website] = $sites[$website];
 } else {
     $displayed_sites = $sites;
 }
