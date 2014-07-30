@@ -119,9 +119,10 @@ $deadline = [
     'firefox/os/index.lang'               => '2014-07-15',
     'firefox/os/devices.lang'             => '2014-07-15',
     'firefox/sync.lang'                   => '2014-05-27', // was 2014-04-27
-    'apr2014.lang'                        => '2014-04-27',
-    'may2014.lang'                        => '2014-05-20',
-    'jun2014.lang'                        => '2014-06-09',
+    'aug2014_a.lang'                      => '2014-08-15',
+    'aug2014_b.lang'                      => '2014-08-15',
+    'aug2014_c.lang'                      => '2014-08-15',
+    'aug2014_d.lang'                      => '2014-08-15',
     'mozorg/home.lang'                    => '2014-05-27',
     'tabzilla/tabzilla.lang'              => '2014-04-27',
     'firefox/australis/firefox_tour.lang' => '2014-04-27',
@@ -155,6 +156,10 @@ $snippets_lang = [
     'apr2014.lang' => true,
     'may2014.lang' => true,
     'jun2014.lang' => true,
+    'aug2014_a.lang' => true,
+    'aug2014_b.lang' => true,
+    'aug2014_c.lang' => true,
+    'aug2014_d.lang' => true,
 ];
 
 $addons_lang = [
@@ -178,9 +183,9 @@ $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr
 $marketplacebadge_locales = ['bg', 'bn-BD', 'ca', 'cs', 'de', 'el', 'es-ES', 'hr', 'hu', 'it',
                              'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr', 'sr-Latn', 'tr'];
 
-$snippets_locales = ['cs', 'da', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
-                     'nb-NO', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sr', 'zh-CN',
-                     'zh-TW'];
+$snippets_locales = ['bn-BD', 'cs', 'da', 'de', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hr', 'hu', 'id', 'it',
+                     'ja', 'ko', 'nb-NO', 'mk', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'tr',
+                     'sv-SE', 'zh-CN', 'zh-TW'];
 
 $snippets_main_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
                           'pl', 'pt-BR', 'ru', 'sr', 'vi', 'zh-CN', 'zh-TW'];
@@ -506,6 +511,10 @@ $langfiles_subsets = [
         'apr2014.lang' => $snippets_locales,
         'may2014.lang' => $snippets_locales,
         'jun2014.lang' => ['de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id', 'it', 'nl', 'pl', 'pt-BR', 'sr'],
+        'aug2014_a.lang' => ['es-ES'],
+        'aug2014_b.lang' => ['bn-BD', 'cs', 'hr', 'mk'],
+        'aug2014_c.lang' => ['de', 'fr', 'pl', 'nl', 'sl', 'sq', 'zh-TW'],
+        'aug2014_d.lang' => ['el', 'es-CL', 'es-MX', 'it', 'ja', 'pt-BR', 'ru', 'tr', 'sv-SE', 'sr'],
     ],
 
     'add-ons' => [
