@@ -151,7 +151,7 @@ if ($json) {
     } else {
         // Only one locale
         if (isset($json_data[$current_filename][$locale])) {
-            $single_locale_json[$current_filename]['it'] = $json_data[$current_filename][$locale];
+            $single_locale_json[$current_filename][$locale] = $json_data[$current_filename][$locale];
             echo Json::output($single_locale_json, false, true);
         } else {
             // Unknown locale
