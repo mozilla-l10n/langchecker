@@ -37,6 +37,7 @@ if ($cli_locale != 'all' && ! in_array($cli_locale, $locamotion_locales)) {
 // We only support import from mozilla.org
 $current_website = $sites[0];
 $updated_files = [];
+$import_errors = '';
 
 // Create list of files to analyze
 if ($cli_filename == 'all') {
@@ -113,6 +114,13 @@ foreach ($file_list as $current_filename) {
         // Import data from locamotion
         $locamotion_import = LangManager::importLocamotion($locale_data, $current_filename, $current_locale, $locamotion_repo);
 
+        // Check for errors, even if there are no imported strings
+        if ($locamotion_import['errors']) {
+            foreach ($locamotion_import['errors'] as $error_message) {
+                $import_errors .= "* {$error_message}\n";
+            }
+        }
+
         if (! $locamotion_import['imported']) {
             continue;
         } else {
@@ -134,5 +142,11 @@ if ($updated_files) {
     foreach ($updated_files as $filename) {
         $result .= "* {$filename}\n";
     }
+    Utils::logger($result);
+}
+
+if ($import_errors) {
+    $result = "\nThere are errors in the source files:\n";
+    $result .= $import_errors;
     Utils::logger($result);
 }

@@ -255,12 +255,15 @@ class LangManager
      * @param   string   $current_filename  Analyzed file
      * @param   string   $current_locale    Requested locale
      * @param   string   $lomocation_repo   Path to local clone of Locamotion's repository
-     * @return  array                       Result of import (boolean), updated strings (array)
+     * @return  array                       Result of import (boolean), errors (array), updated strings (array)
      */
     public static function importLocamotion($locale_data, $current_filename, $current_locale, $locamotion_repo)
     {
-        $result['imported'] = false;
-        $result['strings'] = [];
+        $result = [
+          'imported' => false,
+          'errors'   => [],
+          'strings'  => []
+        ];
 
         Utils::logger("== {$current_locale} ==");
 
@@ -282,7 +285,6 @@ class LangManager
         }
 
         if ($po_exists) {
-
             if ($local_import) {
                 $po_strings = self::loadPoFile($file_path);
             } else {
@@ -299,7 +301,10 @@ class LangManager
                 foreach ($po_strings as $string_id => $translation) {
                     if (isset($locale_data['strings'][$string_id])) {
                         // String is available in the local lang file, check if is different
-                        if ($po_strings[$string_id] !== $locale_data['strings'][$string_id]) {
+                        if (Utils::startsWith($po_strings[$string_id], ';')) {
+                            // Translations can't start with ";"
+                            $result['errors'][] = "({$current_locale} - {$current_filename}): translation starts with ;\n{$po_strings[$string_id]}";
+                        } elseif ($po_strings[$string_id] !== $locale_data['strings'][$string_id]) {
                             // Translation in the .po file is different
                             Utils::logger("Updated translation: {$string_id} => {$translation}");
                             $locale_data['strings'][$string_id] = $translation;
@@ -331,29 +336,36 @@ class LangManager
     /*
      * Read local .po file, return updated strings
      *
-     * @param   string   $po_filename   Path to po file
-     * @param   array    $locale_data   Array of data for locale file
-     * @return  array                   Result of import (boolean), updated strings (array)
+     * @param   string   $po_filename     Path to po file
+     * @param   array    $locale_data     Array of data for locale file
+     * @param   boolean  $output_message  True (default) to output messages in console
+     * @return  array                     Result of import (boolean), errors (array), updated strings (array)
      */
-    public static function importLocalPoFile($po_filename, $locale_data)
+    public static function importLocalPoFile($po_filename, $locale_data, $output_message = true)
     {
         $result = [
           'imported' => false,
+          'errors'   => [],
           'strings'  => []
         ];
 
         // Read po file
         $po_strings = self::loadPoFile($po_filename);
 
-        if (count($po_strings) == 0) {
+        if (count($po_strings) == 0 && $output_message) {
             Utils::logger('.po file is empty.');
         } else {
             foreach ($po_strings as $string_id => $translation) {
                 if (isset($locale_data['strings'][$string_id])) {
                     // String is available in the local lang file, check if is different
-                    if ($po_strings[$string_id] !== $locale_data['strings'][$string_id]) {
+                    if (Utils::startsWith($po_strings[$string_id], ';')) {
+                        // Translations can't start with ";"
+                        $result['errors'][] = "Translation starts with ;\n{$po_strings[$string_id]}";
+                    } elseif ($po_strings[$string_id] !== $locale_data['strings'][$string_id]) {
                         // Translation in the .po file is different
-                        Utils::logger("Updated translation: {$string_id} => {$translation}");
+                        if ($output_message) {
+                            Utils::logger("Updated translation: {$string_id} => {$translation}");
+                        }
                         $locale_data['strings'][$string_id] = $translation;
                         $result['imported'] = true;
                     }
@@ -362,10 +374,12 @@ class LangManager
             $result['strings'] = $locale_data['strings'];
         }
 
-        if ($result['imported']) {
-            Utils::logger('Data imported.');
-        } else {
-            Utils::logger('No data imported.');
+        if ($output_message) {
+            if ($result['imported']) {
+                Utils::logger('Data imported.');
+            } else {
+                Utils::logger('No data imported.');
+            }
         }
 
         return $result;
