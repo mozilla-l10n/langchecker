@@ -27,7 +27,7 @@ msgstr "¡Inovando <span>para ti!</span>"
 
 #: download.lang:17
 msgid "Fast, flexible, <span>secure</span>"
-msgstr "Rápido, flexible, <span>seguro</span>"
+msgstr "Rápido, flexible, seguro"
 
 #: download.lang:21
 msgid "Thanks for choosing Firefox!"
@@ -44,3 +44,11 @@ msgstr ""
 #: identical string
 msgid "Download"
 msgstr "Download"
+
+#: translation starting with ;
+msgid "Download test"
+msgstr ";Scarica test"
+
+#: empty translation
+msgid "Empty"
+msgstr "test"

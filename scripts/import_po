@@ -46,3 +46,11 @@ if ($po_import['imported']) {
     Utils::fileForceContent($cli_lang_filename, $content);
     Utils::logger("New strings saved in {$cli_lang_filename}.");
 }
+
+if ($po_import['errors']) {
+    $import_errors = "\nThere are errors in the source files:\n";
+    foreach ($po_import['errors'] as $error_message) {
+        $import_errors .= "* {$error_message}\n";
+    }
+    Utils::logger($import_errors);
+}
