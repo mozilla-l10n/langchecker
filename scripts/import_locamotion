@@ -36,6 +36,7 @@ if ($cli_locale != 'all' && ! in_array($cli_locale, $locamotion_locales)) {
 
 // We only support import from mozilla.org
 $current_website = $sites[0];
+$updated_files = [];
 
 // Create list of files to analyze
 if ($cli_filename == 'all') {
@@ -117,6 +118,7 @@ foreach ($file_list as $current_filename) {
         } else {
             // Use strings imported from Locamotion as locale data
             $locale_data['strings'] = $locamotion_import['strings'];
+            $updated_files[] = "({$current_locale}) {$current_filename}";
         }
 
         $content = LangManager::buildLangFile($reference_data, $locale_data, $current_locale, $eol);
@@ -124,5 +126,13 @@ foreach ($file_list as $current_filename) {
         $result .= "{$current_locale}: {$current_filename}\n";
     }
 
+    Utils::logger($result);
+}
+
+if ($updated_files) {
+    $result = "\nList of updated files:\n";
+    foreach ($updated_files as $filename) {
+        $result .= "* {$filename}\n";
+    }
     Utils::logger($result);
 }
