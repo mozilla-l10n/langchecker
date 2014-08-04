@@ -413,11 +413,11 @@ $langfiles_subsets = [
         'mozorg/home.lang'                      => $mozillaorg,
         'mozorg/mission.lang'                   => $mozillaorg,
         'mozorg/about/manifesto.lang'           =>
-            ['ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'de', 'el', 'es-AR',
-             'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'fur',
-             'fy-NL', 'gl', 'hr', 'hu', 'id', 'it', 'ja', 'ko', 'mk',
-             'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
-             'sr', 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW'],
+            ['ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de', 'dsb', 'el',
+             'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'fur',
+             'fy-NL', 'gl', 'hr', 'hsb', 'hu', 'id', 'it', 'ja', 'ko', 'km',
+             'mk', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
+             'sr', 'sv-SE', 'tr', 'vi', 'xh', 'zh-CN', 'zh-TW'],
         'mozorg/about/history.lang'             =>
             ['ar', 'bg', 'ca', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'eu', 'fr', 'hr', 'fy-NL', 'gl', 'id', 'it', 'lt', 'ms', 'nl',
