@@ -419,13 +419,13 @@ $langfiles_subsets = [
              'mk', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
              'sr', 'sv-SE', 'tr', 'vi', 'xh', 'zh-CN', 'zh-TW'],
         'mozorg/about/history.lang'             =>
-            ['ar', 'bg', 'ca', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
-             'es-MX', 'eu', 'fr', 'hr', 'fy-NL', 'gl', 'id', 'it', 'lt', 'ms', 'nl',
-             'pa-IN', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'ta', 'tr',
-             'zh-CN', 'zh-TW'],
+            ['ar', 'bg', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR', 'es-CL',
+             'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
+             'it', 'km', 'lt', 'ms', 'nl', 'pa-IN', 'pl', 'pt-BR', 'ro', 'ru',
+             'sk', 'sl', 'sq', 'sr', 'ta', 'tr', 'uz', 'zh-CN', 'zh-TW'],
         'mozorg/about/history-details.lang'     =>
-            ['ca', 'de', 'es-CL', 'eu', 'fr', 'gl', 'it', 'pa-IN', 'ro', 'sk', 'sq',
-             'zh-TW'],
+            ['ca', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu', 'fr', 'gl',
+             'hsb', 'it', 'km', 'pa-IN', 'ro', 'sk', 'sq', 'uz', 'zh-TW'],
         'mozorg/contribute.lang'                =>
             ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
