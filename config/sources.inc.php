@@ -529,7 +529,7 @@ $langfiles_subsets = [
     'firefoxos-marketing' => [
         'screenshots.lang'  => ['cs', 'de', 'el', 'es-ES', 'hr', 'hu',
                                 'fr', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
-        'screenshots_tarako.lang'  => ['hi-IN', 'ta'],
+        'screenshots_tarako.lang'  => ['hi-IN', 'ru', 'ta'],
         'marketplace_l10n_feed.lang' => ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it', 'ja',
                                          'mk', 'pl', 'pt-BR', 'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN'],
     ],
