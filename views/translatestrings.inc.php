@@ -3,11 +3,11 @@ namespace Langchecker;
 ?>
 <script>
   function showhide(id) {
-    val = document.getElementById(id).style.display;
-    if (val == '') {
-        document.getElementById(id).style.display='none';
+    table = document.getElementById('table' + id);
+    if (table.style.display == '') {
+        table.style.display='none';
     } else {
-        document.getElementById(id).style.display='';
+        table.style.display='';
     }
 
     return false;
@@ -93,10 +93,10 @@ foreach ($all_strings as $string_id => $available_translations) {
         $header_string .= "</a>";
     }
 
-    echo "<p><a href='#' style='color:green' onclick='showhide(\"table$counter\");'>{$header_string}</p>\n";
+    echo "<p id='string{$counter}'><a href='#string{$counter}' style='color: #008000;' onclick='showhide(\"{$counter}\");'>{$header_string}</p>\n";
 
     // Display sub-table with localizations for this string
-    echo "<table style='width:100%; display: {$show_status};' id='table$counter' class='translations'>\n";
+    echo "<table style='width:100%; display: {$show_status};' id='table{$counter}' class='translations'>\n";
 
     $total_translations = count($available_translations);
     $covered_locales = array_keys($available_translations);
