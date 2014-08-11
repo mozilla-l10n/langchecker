@@ -384,12 +384,12 @@ $langfiles_subsets = [
              'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
              'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
         'foundation/annualreport/2012/index.lang' =>
-            ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
+            ['ar', 'ast', 'csb', 'de', 'el', 'eo', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it',
              'ja', 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl',
              'pt-BR', 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
         'foundation/annualreport/2012/faq.lang' =>
-            ['ar', 'ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
+            ['ar', 'ast', 'csb', 'de', 'el', 'eo', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it',
              'ja', 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl',
              'pt-BR', 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
