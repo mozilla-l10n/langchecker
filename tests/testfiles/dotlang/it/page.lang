@@ -43,3 +43,11 @@ Seconda stringa con %(num)s etichette
 
 ;Obsolete string
 Stringa obsoleta
+
+
+;Third string with %s tags
+Terza stringa con variabile mancante
+
+
+;Fourth string with 90%% coverage
+Quarta stringa con copertura al 90%

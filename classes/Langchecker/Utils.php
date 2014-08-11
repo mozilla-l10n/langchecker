@@ -92,7 +92,7 @@ class Utils
     public static function highlightPythonVar($origin)
     {
         $origin = htmlspecialchars($origin);
-        $regex = '#%\(' . '[a-z0-9._-]+' . '\)s#';
+        $regex = '#%(\([a-z0-9._-]+\)s|[s%])#';
         preg_match_all($regex, $origin, $matches);
         foreach ($matches[0] as $python_var) {
             $origin = str_replace($python_var, "<em>${python_var}</em>", $origin);

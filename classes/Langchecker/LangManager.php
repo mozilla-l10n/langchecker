@@ -55,8 +55,9 @@ class LangManager
                     // Store in translated strings
                     $analysis_data['Translated'][] = $key;
 
-                    // Test if all Python variables are present
-                    $regex = '#%\(' . '[a-z0-9._-]+' .'\)s#';
+                    /* Test if all Python variables are present, analyzing both
+                     * format %(var)s or %s, or 'escaped' percentage sign (%%) */
+                    $regex = '#%(\([a-z0-9._-]+\)s|[s%])#';
                     preg_match_all($regex, $reference_data['strings'][$key], $matches1);
                     preg_match_all($regex, $val, $matches2);
 
