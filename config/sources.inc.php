@@ -417,7 +417,7 @@ $langfiles_subsets = [
              'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'fur',
              'fy-NL', 'gl', 'hr', 'hsb', 'hu', 'id', 'it', 'ja', 'ko', 'km',
              'mk', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
-             'sr', 'sv-SE', 'tr', 'vi', 'xh', 'zh-CN', 'zh-TW'],
+             'sr', 'sv-SE', 'tr', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW'],
         'mozorg/about/history.lang'             =>
             ['ar', 'bg', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR', 'es-CL',
              'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
