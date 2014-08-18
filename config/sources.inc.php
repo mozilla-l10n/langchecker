@@ -133,6 +133,7 @@ $deadline = [
     'mozorg/about/manifesto.lang'         => '2014-08-31',
     'mozorg/mission.lang'                 => '2013-12-31',
     'mozorg/products.lang'                => '2013-12-31',
+    'homefeeds.lang'                      => '2014-08-25',
 ];
 
 $firefoxhealthreport_lang = [
