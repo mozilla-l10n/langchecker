@@ -111,7 +111,7 @@ $no_active_tag = [
 
 $deadline = [
     // Australis release
-    'firefox/desktop/index.lang'          => '2014-05-27', // was 2014-04-27
+    'firefox/desktop/index.lang'          => '2014-08-31', // was 2014-04-27
     'firefox/desktop/customize.lang'      => '2014-05-27', // was 2014-04-27
     'firefox/desktop/fast.lang'           => '2014-05-27', // was 2014-04-27
     'firefox/desktop/trust.lang'          => '2014-05-27', // was 2014-04-27
@@ -119,27 +119,20 @@ $deadline = [
     'firefox/os/index.lang'               => '2014-07-15',
     'firefox/os/devices.lang'             => '2014-07-15',
     'firefox/sync.lang'                   => '2014-05-27', // was 2014-04-27
-    'aug2014_a.lang'                      => '2014-08-15',
-    'aug2014_b.lang'                      => '2014-08-15',
-    'aug2014_c.lang'                      => '2014-08-15',
-    'aug2014_d.lang'                      => '2014-08-15',
-    'mozorg/home.lang'                    => '2014-05-27',
+    'mozorg/home.lang'                    => '2014-08-31',
     'tabzilla/tabzilla.lang'              => '2014-04-27',
     'firefox/australis/firefox_tour.lang' => '2014-04-27',
-    'mozorg/plugincheck.lang'             => '2013-12-31',
+    'mozorg/plugincheck.lang'             => '2014-08-31',
     'download_button.lang'                => '2013-12-31',
     'firefox/new.lang'                    => '2013-12-31',
     'firefox/channel.lang'                => '2013-12-31',
     'firefox/whatsnew.lang'               => '2013-12-31',
     'firefox/installer-help.lang'         => '2013-12-31',
     'lightbeam/lightbeam.lang'            => '2014-05-27',
-    'mozorg/about.lang'                   => '2013-12-31',
-    'mozorg/about/manifesto.lang'         => '2014-07-02',
+    'mozorg/about.lang'                   => '2014-08-31',
+    'mozorg/about/manifesto.lang'         => '2014-08-31',
     'mozorg/mission.lang'                 => '2013-12-31',
     'mozorg/products.lang'                => '2013-12-31',
-    'worldcup.lang'                       => '2014-06-06',
-    'homefeeds.lang'                      => '2014-06-06',
-    'updater.lang'                        => '2014-07-03',
 ];
 
 $firefoxhealthreport_lang = [
