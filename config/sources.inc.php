@@ -166,6 +166,7 @@ $firefox_updater_lang = [
 ];
 
 $fxos_marketing_lang = [
+    'screenshots_dolphin.lang' => false,
     'screenshots.lang' => false,
     'screenshots_tarako.lang' => false,
     'marketplace_l10n_feed.lang' => false,
@@ -521,6 +522,7 @@ $langfiles_subsets = [
     ],
 
     'firefoxos-marketing' => [
+        'screenshots_dolphin.lang'  => ['bn-BD'],
         'screenshots.lang'  => ['cs', 'de', 'el', 'es-ES', 'hr', 'hu',
                                 'fr', 'it', 'pl', 'pt-BR', 'ro', 'sr'],
         'screenshots_tarako.lang'  => ['hi-IN', 'ru', 'ta'],
