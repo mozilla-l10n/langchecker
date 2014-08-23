@@ -134,6 +134,11 @@ $deadline = [
     'mozorg/mission.lang'                 => '2013-12-31',
     'mozorg/products.lang'                => '2013-12-31',
     'homefeeds.lang'                      => '2014-08-25',
+    'sep2014_a.lang'                       => '2014-09-15',
+    'sep2014_b.lang'                       => '2014-09-15',
+    'sep2014_c.lang'                       => '2014-09-15',
+    'sep2014_d.lang'                       => '2014-09-15',
+    'sep2014_e.lang'                       => '2014-09-15',
 ];
 
 $firefoxhealthreport_lang = [
@@ -154,6 +159,11 @@ $snippets_lang = [
     'aug2014_b.lang' => true,
     'aug2014_c.lang' => true,
     'aug2014_d.lang' => true,
+    'sep2014_a.lang' => true,
+    'sep2014_b.lang' => true,
+    'sep2014_c.lang' => true,
+    'sep2014_d.lang' => true,
+    'sep2014_e.lang' => true,
 ];
 
 $addons_lang = [
@@ -510,6 +520,11 @@ $langfiles_subsets = [
         'aug2014_b.lang' => ['bn-BD', 'cs', 'hr', 'mk'],
         'aug2014_c.lang' => ['de', 'fr', 'pl', 'nl', 'sl', 'sq', 'zh-TW'],
         'aug2014_d.lang' => ['el', 'es-CL', 'es-MX', 'it', 'ja', 'pt-BR', 'ru', 'tr', 'sv-SE', 'sr'],
+        'sep2014_a.lang' => ['cs', 'de', 'es-ES', 'fr', 'it', 'pl'],
+        'sep2014_b.lang' => ['id', 'ja', 'ko', 'nb-NO', 'nl', 'ru', 'zh-CN'],
+        'sep2014_c.lang' => ['bn-BD', 'el', 'hi-IN', 'hu'],
+        'sep2014_d.lang' => ['pt-BR'],
+        'sep2014_e.lang' => ['sq'],
     ],
 
     'add-ons' => [
