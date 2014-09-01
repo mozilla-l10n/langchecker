@@ -49,3 +49,11 @@ String with %(num)s tags
 
 ;Second string with %(num)s tags
 Second string with %(num)s tags
+
+
+;Third string with %s tags
+Third string with %s tags
+
+
+;Fourth string with 90%% coverage
+Fourth string with 90%% coverage
