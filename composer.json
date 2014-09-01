@@ -1,8 +1,7 @@
 {
     "require": {
         "atoum/atoum" : "dev-master",
-        "sunra/php-simple-html-dom-parser": "dev-master",
-        "sepia/po-parser": "3.0.4"
+        "sepia/po-parser": "3.0.5"
     },
 
     "require-dev": {
