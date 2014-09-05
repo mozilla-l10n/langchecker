@@ -10,9 +10,10 @@ $public_repo7  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/snippets/';
 $public_repo8  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/';
 $public_repo9  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/';
 $public_repo10 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/';
+$public_repo11 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxtiles/';
 
 // This is to avoid a warning in shell mode
-if (!isset($_SERVER['SERVER_NAME'])) {
+if (! isset($_SERVER['SERVER_NAME'])) {
     $_SERVER['SERVER_NAME'] = '';
 }
 
@@ -134,11 +135,11 @@ $deadline = [
     'mozorg/mission.lang'                 => '2013-12-31',
     'mozorg/products.lang'                => '2013-12-31',
     'homefeeds.lang'                      => '2014-08-25',
-    'sep2014_a.lang'                       => '2014-09-15',
-    'sep2014_b.lang'                       => '2014-09-15',
-    'sep2014_c.lang'                       => '2014-09-15',
-    'sep2014_d.lang'                       => '2014-09-15',
-    'sep2014_e.lang'                       => '2014-09-15',
+    'sep2014_a.lang'                      => '2014-09-15',
+    'sep2014_b.lang'                      => '2014-09-15',
+    'sep2014_c.lang'                      => '2014-09-15',
+    'sep2014_d.lang'                      => '2014-09-15',
+    'sep2014_e.lang'                      => '2014-09-15',
 ];
 
 $firefoxhealthreport_lang = [
@@ -180,6 +181,10 @@ $fxos_marketing_lang = [
     'screenshots.lang' => false,
     'screenshots_tarako.lang' => false,
     'marketplace_l10n_feed.lang' => false,
+];
+
+$firefox_tiles_lang = [
+    'tiles.lang' => true,
 ];
 
 $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
@@ -330,6 +335,17 @@ $sites =
         'en-US', // source locale
         $public_repo10,
         $fxos_marketing_lang,
+    ],
+
+    10 => [
+        'firefox-tiles',
+        $repo11,
+        '',
+        $mozilla,
+        array_keys($firefox_tiles_lang),
+        'en-US', // source locale
+        $public_repo11,
+        $firefox_tiles_lang,
     ],
 ];
 
