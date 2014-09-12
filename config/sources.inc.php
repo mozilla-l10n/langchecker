@@ -63,6 +63,7 @@ $mozillaorg_lang = [
     'foundation/annualreport/2012/index.lang' => true,
     'foundation/annualreport/2012/faq.lang'   => false,
     'foundationsection.lang'                  => false,
+    'legal/index.lang'                        => true,
     'lightbeam/lightbeam.lang'                => false,
     'main.lang'                               => true,
     'marketplace/marketplace.lang'            => true,
@@ -111,29 +112,29 @@ $no_active_tag = [
 
 
 $deadline = [
-    // Australis release
-    'firefox/desktop/index.lang'          => '2014-08-31', // was 2014-04-27
-    'firefox/desktop/customize.lang'      => '2014-05-27', // was 2014-04-27
-    'firefox/desktop/fast.lang'           => '2014-05-27', // was 2014-04-27
-    'firefox/desktop/trust.lang'          => '2014-05-27', // was 2014-04-27
-    'firefox/desktop/tips.lang'           => '2014-05-27', // was 2014-04-20
+    'download_button.lang'                => '2013-12-31',
+    'firefox/australis/firefox_tour.lang' => '2014-04-27',
+    'firefox/channel.lang'                => '2013-12-31',
+    'firefox/desktop/index.lang'          => '2014-08-31',
+    'firefox/desktop/customize.lang'      => '2014-05-27',
+    'firefox/desktop/fast.lang'           => '2014-05-27',
+    'firefox/desktop/trust.lang'          => '2014-05-27',
+    'firefox/desktop/tips.lang'           => '2014-05-27',
+    'firefox/installer-help.lang'         => '2013-12-31',
+    'firefox/new.lang'                    => '2013-12-31',
     'firefox/os/index.lang'               => '2014-07-15',
     'firefox/os/devices.lang'             => '2014-07-15',
-    'firefox/sync.lang'                   => '2014-05-27', // was 2014-04-27
-    'mozorg/home.lang'                    => '2014-08-31',
-    'tabzilla/tabzilla.lang'              => '2014-04-27',
-    'firefox/australis/firefox_tour.lang' => '2014-04-27',
-    'mozorg/plugincheck.lang'             => '2014-08-31',
-    'download_button.lang'                => '2013-12-31',
-    'firefox/new.lang'                    => '2013-12-31',
-    'firefox/channel.lang'                => '2013-12-31',
+    'firefox/sync.lang'                   => '2014-09-26',
     'firefox/whatsnew.lang'               => '2013-12-31',
-    'firefox/installer-help.lang'         => '2013-12-31',
+    'legal/index.lang'                    => '2014-09-26',
     'lightbeam/lightbeam.lang'            => '2014-05-27',
     'mozorg/about.lang'                   => '2014-08-31',
     'mozorg/about/manifesto.lang'         => '2014-08-31',
+    'mozorg/home.lang'                    => '2014-09-26',
     'mozorg/mission.lang'                 => '2013-12-31',
+    'mozorg/plugincheck.lang'             => '2014-08-31',
     'mozorg/products.lang'                => '2013-12-31',
+    'tabzilla/tabzilla.lang'              => '2014-04-27',
     'homefeeds.lang'                      => '2014-08-25',
     'sep2014_a.lang'                      => '2014-09-15',
     'sep2014_b.lang'                      => '2014-09-15',
@@ -417,6 +418,7 @@ $langfiles_subsets = [
         'foundationsection.lang'                =>
             ['de', 'cs', 'fr', 'es-ES', 'gl', 'hu', 'id', 'it', 'nl',
              'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
+        'legal/index.lang'                      => $firefox_os,
         'lightbeam/lightbeam.lang'              =>
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
              'eu', 'fr', 'fy-NL', 'it', 'ja', 'nl', 'pl', 'sq', 'tr',
