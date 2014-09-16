@@ -126,7 +126,7 @@ $deadline = [
     'firefox/os/devices.lang'             => '2014-07-15',
     'firefox/sync.lang'                   => '2014-09-26',
     'firefox/whatsnew.lang'               => '2013-12-31',
-    'legal/index.lang'                    => '2014-09-26',
+    'legal/index.lang'                    => '2014-10-12',
     'lightbeam/lightbeam.lang'            => '2014-05-27',
     'mozorg/about.lang'                   => '2014-08-31',
     'mozorg/about/manifesto.lang'         => '2014-08-31',
@@ -418,7 +418,7 @@ $langfiles_subsets = [
         'foundationsection.lang'                =>
             ['de', 'cs', 'fr', 'es-ES', 'gl', 'hu', 'id', 'it', 'nl',
              'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
-        'legal/index.lang'                      => $firefox_os,
+        'legal/index.lang'                      => ['it'], # $firefox_os,
         'lightbeam/lightbeam.lang'              =>
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
              'eu', 'fr', 'fy-NL', 'it', 'ja', 'nl', 'pl', 'sq', 'tr',
