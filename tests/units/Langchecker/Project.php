@@ -59,21 +59,45 @@ class Project extends atoum\test
         require_once TEST_FILES . 'config/sources.php';
 
         return [
-            [$sites[0], 'file1.lang', true],
-            [$sites[0], 'file2.lang', false],
-            [$sites[1], 'file3.lang', false],
+            [$sites[0], 'file1.lang', 'en-US', true],
+            [$sites[0], 'file2.lang', 'en-US', false],
+            [$sites[0], 'file2.lang', 'fr', true],
+            [$sites[1], 'file3.lang', 'en-US', false],
         ];
     }
 
     /**
      * @dataProvider isCriticalFileDP
      */
-    public function testIsCriticalFile($a, $b, $c)
+    public function testIsCriticalFile($a, $b, $c, $d)
     {
         $obj = new _Project();
         $this
-            ->boolean($obj->isCriticalFile($a, $b))
-                ->isEqualTo($c);
+            ->boolean($obj->isCriticalFile($a, $b, $c))
+                ->isEqualTo($d);
+    }
+
+    public function getFileFlagsDP()
+    {
+        require_once TEST_FILES . 'config/sources.php';
+
+        return [
+            [$sites[0], 'file1.lang', 'en-US', []],
+            [$sites[0], 'file2.lang', 'en-US', ['testflag1']],
+            [$sites[0], 'file2.lang', 'fr', ['testflag1', 'testflag2']],
+            [$sites[1], 'file3.lang', 'en-US', []],
+        ];
+    }
+
+    /**
+     * @dataProvider getFileFlagsDP
+     */
+    public function testGetFileFlags($a, $b, $c, $d)
+    {
+        $obj = new _Project();
+        $this
+            ->array($obj->getFileFlags($a, $b, $c))
+                ->isEqualTo($d);
     }
 
     public function isSupportedLocaleDP()

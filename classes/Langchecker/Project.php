@@ -70,15 +70,50 @@ class Project
      *
      * @param   array    $website   Website data
      * @param   string   $filename  File name
+     * @param   string   $locale    Locale
      * @return  boolean             True if file is marked as critical
      */
-    public static function isCriticalFile($website, $filename)
+    public static function isCriticalFile($website, $filename, $locale)
     {
         if (isset($website[7][$filename])) {
-            return $website[7][$filename];
+            $flags = $website[7][$filename];
+            if (isset($flags['critical'])) {
+                if (in_array($locale, $flags['critical']) ||
+                    in_array('all', $flags['critical'])) {
+                    return true;
+                }
+            }
         }
 
         return false;
+    }
+
+    /*
+     * Return a list of flags associated to the file
+     *
+     * @param   array    $website   Website data
+     * @param   string   $filename  File name
+     * @param   string   $locale    Locale
+     * @return  array               Array of flags for this file+locale
+     */
+    public static function getFileFlags($website, $filename, $locale)
+    {
+        $file_flags = [];
+        if (isset($website[7][$filename])) {
+            $flags = $website[7][$filename];
+            if (is_array($flags)) {
+                foreach ($flags as $flag => $locales) {
+                    if ($flag != 'critical' &&
+                        (in_array($locale, $locales) ||
+                         in_array('all', $locales))) {
+                            $file_flags[] = $flag;
+                    }
+                }
+            }
+            sort($file_flags);
+        }
+
+        return $file_flags;
     }
 
     /*

@@ -33,10 +33,16 @@ foreach ($sites as $website) {
             $export_data[$website_name][$filename]['obsolete'] = count($locale_analysis['Obsolete']);
             $export_data[$website_name][$filename]['translated'] = count($locale_analysis['Translated']);
 
-            if (Project::isCriticalFile($website, $filename)) {
+            if (Project::isCriticalFile($website, $filename, $current_locale)) {
                 $export_data[$website_name][$filename]['critical'] = true;
             } else {
                 $export_data[$website_name][$filename]['critical'] = false;
+            }
+
+            // Flags
+            $file_flags = Project::getFileFlags($website, $filename, $current_locale);
+            if ($file_flags) {
+                $export_data[$website_name][$filename]['flags'] = $file_flags;
             }
 
             // Some files have a deadline
