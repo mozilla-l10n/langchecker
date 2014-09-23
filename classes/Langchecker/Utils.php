@@ -117,6 +117,26 @@ class Utils
     }
 
     /*
+     * Return
+     *
+     * @param   string $filename  File to analyze
+     * @return  int               Timestamp of last commit from SVN, or local if that fails
+     */
+    public function getSVNCommitTimestamp($filename)
+    {
+        exec("svn info --xml {$filename} 2>/dev/null", $output, $return_code);
+
+        if ($return_code) {
+            return filemtime($filename);
+        }
+
+        $file = new \SimpleXMLElement(implode('', $output));
+        $date = new \DateTime($file->entry->commit->date);
+
+        return $date->getTimestamp();
+    }
+
+    /*
      * Print error, quit application if requested
      *
      * @param  string  $message  Message to display

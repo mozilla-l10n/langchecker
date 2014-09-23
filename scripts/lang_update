@@ -15,11 +15,13 @@ $cli_website  = Utils::getCliParam(2, $argv, '0');                   // Which we
 $cli_locale   = Utils::getCliParam(3, $argv, 'all');                 // Which locale are we analyzing? No default
 $single_file_mode = $cli_filename != 'all' && $cli_locale != 'all';  // One locale, one file
 
-if (! isset($sites[$cli_website])) {
+$lang_based_sites = Project::getWebsitesByDataType($sites, 'lang');
+
+if (! isset($lang_based_sites[$cli_website])) {
     Utils::logger("Unknown website #{$cli_website}.", "quit");
 }
 
-$current_website = $sites[$cli_website];
+$current_website = $lang_based_sites[$cli_website];
 
 // Create list of files to analyze
 if ($cli_filename == 'all') {
@@ -91,7 +93,7 @@ foreach ($file_list as $current_filename) {
         }
 
         // Incorporate strings from other lang files
-        // $temp_data = LangManager::loadSource($sites[0], $current_locale, 'main.lang');
+        // $temp_data = LangManager::loadSource($lang_based_sites[0], $current_locale, 'main.lang');
         // $locale_data['strings'] = array_merge($locale_data['strings'], $temp_data['strings']);
 
         // Exceptions are managed in LangManager::manageStringExceptions

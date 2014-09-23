@@ -20,7 +20,8 @@ $sites = [
         ['file1.lang', 'file2.lang'],
         'en-GB',
         '/public/repo1/',
-        $priorities
+        $priorities,
+        'lang',
     ],
 
     1 => [
@@ -31,7 +32,8 @@ $sites = [
         ['file3.lang', 'file4.lang'],
         'en-US',
         '/public/repo2/',
-        []
+        [],
+        'lang',
     ],
 
     2 => [
@@ -42,7 +44,20 @@ $sites = [
         ['page.lang'],
         'en-US',
         '/public/repo3/',
-        []
+        [],
+        'lang',
+    ],
+
+    3 => [
+        'txt_test',
+        __DIR__ . '/../txt/',
+        '',
+        ['en-US', 'it'],
+        ['email1.txt', 'email2.txt', 'email3.txt', 'email4.txt', 'email5.txt'],
+        'en-US',
+        '/public/repo3/',
+        [],
+        'raw',
     ],
 ];
 

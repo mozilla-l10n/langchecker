@@ -4,9 +4,10 @@ namespace Langchecker;
 use \Transvision\Json;
 
 $output_array = [];
+$lang_based_sites = Project::getWebsitesByDataType($sites, 'lang');
 if ($website != '' && $filename != '') {
-    if (isset($sites[$website])) {
-        $current_website = $sites[$website];
+    if (isset($lang_based_sites[$website])) {
+        $current_website = $lang_based_sites[$website];
         $current_filename = $filename;
         if (in_array($current_filename, Project::getWebsiteFiles($current_website))) {
             $output_array = array_values(Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets));

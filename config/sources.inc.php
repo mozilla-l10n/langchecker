@@ -247,6 +247,67 @@ $lang_flags['firefox-tiles'] = [
     'tiles.lang' => [ 'critical' => ['all'] ],
 ];
 
+$getinvolved_autoreplies = [
+    'templates/mozorg/contribute-2015/activism.txt',
+    'templates/mozorg/contribute-2015/coding_addons.txt',
+    'templates/mozorg/contribute-2015/coding_cloud.txt',
+    'templates/mozorg/contribute-2015/coding_firefox.txt',
+    'templates/mozorg/contribute-2015/coding_firefoxos.txt',
+    'templates/mozorg/contribute-2015/coding_marketplace.txt',
+    'templates/mozorg/contribute-2015/coding_webcompat.txt',
+    'templates/mozorg/contribute-2015/coding_webdev.txt',
+    'templates/mozorg/contribute-2015/dontknow.txt',
+    'templates/mozorg/contribute-2015/education_fellowships.txt',
+    'templates/mozorg/contribute-2015/education_hive.txt',
+    'templates/mozorg/contribute-2015/education_sciencelab.txt',
+    'templates/mozorg/contribute-2015/education_webmaker.txt',
+    'templates/mozorg/contribute-2015/l10n_product.txt',
+    'templates/mozorg/contribute-2015/l10n_tools.txt',
+    'templates/mozorg/contribute-2015/l10n_web.txt',
+    'templates/mozorg/contribute-2015/qa_addons.txt',
+    'templates/mozorg/contribute-2015/qa_general.txt',
+    'templates/mozorg/contribute-2015/qa_marketplace.txt',
+    'templates/mozorg/contribute-2015/qa_webcompat.txt',
+    'templates/mozorg/contribute-2015/sumo_sumo.txt',
+    'templates/mozorg/contribute-2015/sumo_webcompat.txt',
+    'templates/mozorg/contribute-2015/writing_addons.txt',
+    'templates/mozorg/contribute-2015/writing_journalism.txt',
+    'templates/mozorg/contribute-2015/writing_marketplace.txt',
+    'templates/mozorg/contribute-2015/writing_social.txt',
+    'templates/mozorg/contribute-2015/writing_txt_devs.txt',
+    'templates/mozorg/contribute-2015/writing_txt_users.txt',
+];
+$lang_flags['contribute-autoreplies'] = [
+    'templates/mozorg/contribute-2015/activism.txt'              => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/coding_addons.txt'         => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/coding_cloud.txt'          => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/coding_firefox.txt'        => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/coding_firefoxos.txt'      => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/coding_marketplace.txt'    => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/coding_webcompat.txt'      => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/coding_webdev.txt'         => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/dontknow.txt'              => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/education_fellowships.txt' => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/education_hive.txt'        => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/education_sciencelab.txt'  => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/education_webmaker.txt'    => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/l10n_product.txt'          => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/l10n_tools.txt'            => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/l10n_web.txt'              => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/qa_addons.txt'             => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/qa_general.txt'            => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/qa_marketplace.txt'        => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/qa_webcompat.txt'          => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/sumo_sumo.txt'             => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/sumo_webcompat.txt'        => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/writing_addons.txt'        => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/writing_journalism.txt'    => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/writing_marketplace.txt'   => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/writing_social.txt'        => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/writing_txt_devs.txt'      => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/writing_txt_users.txt'     => [ 'optional' => ['all'] ],
+];
+
 $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
                     'ja', 'ko',  'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'zh-CN', 'zh-TW'];
 
@@ -269,6 +330,10 @@ $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', '
 $fxos_marketing = ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr', 'hu', 'it', 'ja',
                    'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'ta', 'tr', 'zh-CN'];
 
+$getinvolved_autoreplies_locales = ['bn-BD', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'ff', 'fr',
+                                    'hi-IN', 'hr', 'id', 'it', 'ms', 'nl', 'pl', 'pt-BR', 'ru',
+                                    'sq', 'sr', 'tr', 'zh-CN', 'zh-TW'];
+
 /* Array structure for single website
 *
 *   [
@@ -280,6 +345,7 @@ $fxos_marketing = ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr'
 *       5 reference locale,
 *       6 url to public repo,
 *       7 array of flags,
+*       8 type of files (lang, raw)
 *   ]
 *
 */
@@ -295,6 +361,7 @@ $sites =
         'en-GB', // source locale
         $public_repo1,
         $lang_flags['www.mozilla.org'],
+        'lang',
     ],
 
     1 => [
@@ -306,6 +373,7 @@ $sites =
         'en-US', // source locale
         $public_repo2,
         [],
+        'lang',
     ],
 
     2 => [
@@ -318,6 +386,7 @@ $sites =
         'en-GB', // source locale
         $public_repo3,
         [],
+        'lang',
     ],
 
     3 => [
@@ -329,6 +398,7 @@ $sites =
         'en-US', // source locale
         $public_repo4,
         [],
+        'lang',
     ],
 
     4 => [
@@ -340,6 +410,7 @@ $sites =
         'en-US', // source locale
         $public_repo5,
         $lang_flags['about:healthreport'],
+        'lang',
     ],
 
     5 => [
@@ -351,6 +422,7 @@ $sites =
         'en-US', // source locale
         $public_repo6,
         $lang_flags['slogans'],
+        'lang',
     ],
 
     6 => [
@@ -362,6 +434,7 @@ $sites =
         'en-US', // source locale
         $public_repo7,
         $lang_flags['snippets'],
+        'lang',
     ],
 
     7 => [
@@ -373,6 +446,7 @@ $sites =
         'en-US', // source locale
         $public_repo8,
         $lang_flags['add-ons'],
+        'lang',
     ],
 
     8 => [
@@ -384,6 +458,7 @@ $sites =
         'en-US', // source locale
         $public_repo9,
         $lang_flags['firefox-updater'],
+        'lang',
     ],
 
     9 => [
@@ -395,6 +470,7 @@ $sites =
         'en-US', // source locale
         $public_repo10,
         $lang_flags['firefoxos-marketing'],
+        'lang',
     ],
 
     10 => [
@@ -406,6 +482,19 @@ $sites =
         'en-US', // source locale
         $public_repo11,
         $lang_flags['firefox-tiles'],
+        'lang',
+    ],
+
+    11 => [
+        'contribute-autoreplies',
+        $repo1,
+        'locales/',
+        $getinvolved_autoreplies_locales,
+        $getinvolved_autoreplies,
+        'en-GB', // source locale
+        $public_repo1,
+        $lang_flags['contribute-autoreplies'],
+        'raw',
     ],
 ];
 
