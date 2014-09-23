@@ -418,7 +418,7 @@ $langfiles_subsets = [
         'foundationsection.lang'                =>
             ['de', 'cs', 'fr', 'es-ES', 'gl', 'hu', 'id', 'it', 'nl',
              'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
-        'legal/index.lang'                      => ['it'], # $firefox_os,
+        'legal/index.lang'                      => $firefox_os,
         'lightbeam/lightbeam.lang'              =>
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
              'eu', 'fr', 'fy-NL', 'it', 'ja', 'nl', 'pl', 'sq', 'tr',
