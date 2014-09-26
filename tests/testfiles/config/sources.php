@@ -1,8 +1,14 @@
 <?php
 
 $priorities = [
-    'file1.lang' => true,
-    'file2.lang' => false,
+    'file1.lang' => [
+        'critical' => ['all']
+    ],
+    'file2.lang' => [
+        'critical' => ['fr'],
+        'testflag1' => ['all'],
+        'testflag2' => ['fr'],
+    ],
 ];
 
 $sites = [
