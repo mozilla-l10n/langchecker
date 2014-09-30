@@ -230,6 +230,41 @@ class Project extends atoum\test
                 ->isEqualTo($c);
     }
 
+    public function testGetWebsitesByDataType()
+    {
+        require_once TEST_FILES . 'config/sources.php';
+
+        $obj = new _Project();
+        $this
+            ->integer(count($obj->getWebsitesByDataType($sites, 'lang')))
+                ->isEqualTo(3);
+
+        $this
+            ->integer(count($obj->getWebsitesByDataType($sites, 'raw')))
+                ->isEqualTo(1);
+    }
+
+    public function getWebsiteDataTypeDP()
+    {
+        require_once TEST_FILES . 'config/sources.php';
+
+        return [
+            [$sites[0], 'lang'],
+            [$sites[3], 'raw'],
+        ];
+    }
+
+    /**
+     * @dataProvider getWebsiteDataTypeDP
+     */
+    public function testGetWebsiteDataType($a, $b)
+    {
+        $obj = new _Project();
+        $this
+            ->string($obj->getWebsiteDataType($a))
+                ->isEqualTo($b);
+    }
+
     public function getUserBaseCoverageDP()
     {
         $adu = [

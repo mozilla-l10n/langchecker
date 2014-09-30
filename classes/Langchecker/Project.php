@@ -180,6 +180,35 @@ class Project
     }
 
     /*
+     * Return websites that use a specific data type as source
+     *
+     * @param   array   $sites    Array of all supported websites
+     * @param   array   $type     Type of data (lang, raw)
+     * @return  array             Array of website records
+     */
+    public static function getWebsitesByDataType($sites, $type)
+    {
+        foreach ($sites as $key => $site) {
+            if (self::getWebsiteDataType($site) != $type) {
+                unset($sites[$key]);
+            }
+        }
+
+        return $sites;
+    }
+
+    /*
+     * Return data type used by website
+     *
+     * @param   array   $website  Website data
+     * @return  string            Type of data (lang, raw)
+     */
+    public static function getWebsiteDataType($website)
+    {
+        return $website[8];
+    }
+
+    /*
      * Return user base coverage for list of locales
      *
      * @param   array   $locales  Array of locales

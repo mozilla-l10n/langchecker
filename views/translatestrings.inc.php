@@ -21,7 +21,7 @@ $show_status = isset($_GET['show']) ? 'auto' : 'none';
 
 $supported_file = false;
 // Search which website has the requested file
-foreach ($sites as $site) {
+foreach (Project::getWebsitesByDataType($sites, 'lang') as $site) {
     if (in_array($current_filename, Project::getWebsiteFiles($site))) {
         $current_website = $site;
         $supported_file = true;

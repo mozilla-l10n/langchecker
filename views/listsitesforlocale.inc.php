@@ -11,13 +11,13 @@ $current_locale = $locale;
 $html_output = '';
 $bugwebsite = 'www.mozilla.org';
 
-foreach ($sites as $current_website) {
+foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     $reference_locale = Project::getReferenceLocale($current_website);
     $repo = Project::getPublicRepoPath($current_website, $current_locale);
     $website_name = Project::getWebsiteName($current_website);
 
     $html_output .= "\n<div class='website'>\n";
-    $html_output .= "  <h2>{$website_name}</h2>\n";
+    $html_output .= "  <h2 id='{$website_name}'><a href='#{$website_name}'>{$website_name}</a><span class='datasource'>lang</span></h2>\n";
     $html_output .= "  <p>Repository: <a href='{$repo}'>{$repo}</a></p>\n";
 
     $done_files = '';
@@ -175,6 +175,81 @@ foreach ($sites as $current_website) {
     }
 
     $html_output .= "</div>\n";
+}
+
+foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
+    $repo = Project::getPublicRepoPath($current_website, $current_locale);
+    $website_name = Project::getWebsiteName($current_website);
+
+    $html_output .= "\n<div class='website'>\n";
+    $html_output .= "  <h2 id='{$website_name}'><a href='#{$website_name}'>{$website_name}</a><span class='datasource'>raw</span></h2>\n";
+    $html_output .= "  <p>Repository: <a href='{$repo}'>{$repo}</a></p>\n";
+
+    $html_rows = '';
+    $done_files = '';
+    foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
+        if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
+            // File is not managed for this website+locale, ignore it
+            continue;
+        }
+
+        $file_analysis = RawManager::compareRawFiles($current_website, $current_locale, $current_filename);
+        $cmp_result = $file_analysis['cmp_result'];
+
+        if ($cmp_result == 'ok') {
+            // File is translated, store it for later and move on to the next file
+            $done_files .=   "<a class='filedone activated'>" . basename($current_filename) . "</a>\n";
+            continue;
+        }
+
+        if (in_array('optional', Project::getFileFlags($current_website, $current_filename, $current_locale)) &&
+            $cmp_result != 'untranslated' && $cmp_result != 'outdated') {
+            // If a file is optional, it can be deleted from locale repository without generating errors
+            // But if it's outdated or untranslated, we display it
+            continue;
+        }
+
+        if ($file_analysis['reference_exists']) {
+            $reference_link = "<a href='{$file_analysis['reference_url']}'>Reference file</a> " .
+                              "<span class='last_update' title='last update'>(" .
+                              date ("Y-m-d H:i", $file_analysis['reference_lastupdate']) . ")</span>";
+        } else {
+            $reference_link = "-";
+        }
+        if ($file_analysis['locale_exists']) {
+            $locale_link = "<a href='{$file_analysis['locale_url']}'>Locale file</a> " .
+                           "<span class='last_update' title='last update'>(" .
+                           date ("Y-m-d H:i", $file_analysis['locale_lastupdate']) . ")</span>";
+        } else {
+            $locale_link = "-";
+        }
+
+        $html_rows .= "  <tr>\n" .
+                        "    <td class='maincolumn'>" . basename($current_filename) . "</td>\n" .
+                        "    <td><span class='rawstatus {$cmp_result}'>" . str_replace('_', ' ', $cmp_result) . "</span></td>\n" .
+                        "    <td>{$reference_link}</td>\n" .
+                        "    <td>{$locale_link}</td>\n" .
+                        "  </tr>\n";
+    }
+
+    if ($done_files != '') {
+        // We have complete files
+        $html_output .= "<h3>DONE</h3>\n{$done_files}\n<p>";
+    }
+
+    if ($html_rows != '') {
+        $html_output .= "  <p>Note: for 'raw' files – like text files – we can only rely on update dates. Warnings or errors for <em>optional</em> files are not displayed.<br>" .
+                        "  </p>\n" .
+                        "<table class='rawfiles'>\n" .
+                        "  <tr>\n" .
+                        "    <th>Filename</th>\n" .
+                        "    <th>Status</th>\n" .
+                        "    <th>Reference file</th>\n" .
+                        "    <th>Locale file</th>\n" .
+                        "  </tr>\n" .
+                        $html_rows .
+                        "</table>\n</div>";
+    }
 }
 
 if (! $supported_locale) {

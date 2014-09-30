@@ -12,9 +12,13 @@ foreach ($mozilla as $current_locale) {
     $locale_with_errors = false;
     $locale_htmloutput = "\n      <h2>Locale: <a href='?locale={$current_locale}' target='_blank'>{$current_locale}</a></h2>\n";
 
-    foreach ($sites as $current_website) {
+    foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
+        $website_with_errors = false;
         if (Project::isSupportedLocale($current_website, $current_locale)) {
             $repo = Project::getPublicRepoPath($current_website, $current_locale);
+            $current_website_name = Project::getWebsiteName($current_website);
+            $opening_div = "      <div class='website'>\n" .
+                           "        <h2>{$current_website_name}</h2>\n";
 
             foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
                 if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
@@ -26,15 +30,11 @@ foreach ($mozilla as $current_locale) {
                 $reference_locale = Project::getReferenceLocale($current_website);
                 $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
-                $current_website_name = Project::getWebsiteName($current_website);
-                $opening_div = "      <div class='website'>\n" .
-                               "        <h2>{$current_website_name}</h2>\n";
-
                 // If the .lang file does not exist, warn and skip this file
                 $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
                 if (! is_file($locale_filename)) {
-                    if (! $locale_with_errors) {
-                        $locale_with_errors = true;
+                    if (! $website_with_errors) {
+                        $website_with_errors = true;
                         $locale_htmloutput .= $opening_div;
                     }
                     $locale_htmloutput .= "        <p>File missing: {$locale_filename}</p>\n";
@@ -46,8 +46,8 @@ foreach ($mozilla as $current_locale) {
                 $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
 
                 if (count($locale_analysis['python_vars']) != 0) {
-                    if (! $locale_with_errors) {
-                        $locale_with_errors = true;
+                    if (! $website_with_errors) {
+                        $website_with_errors = true;
                         $locale_htmloutput .= $opening_div;
                     }
                     $locale_htmloutput .= "        <p>Repository: <a href='{$repo}'>{$repo}</a></p>\n";
@@ -75,8 +75,8 @@ foreach ($mozilla as $current_locale) {
 
                 // Check if the lang file is not in UTF-8 or US-ASCII
                 if (Utils::isUTF8($locale_filename) == false) {
-                   if (! $locale_with_errors) {
-                        $locale_with_errors = true;
+                   if (! $website_with_errors) {
+                        $website_with_errors = true;
                         $locale_htmloutput .= $opening_div;
                     }
                     $locale_htmloutput .= "        <p><strong>{$current_filename}</strong> is not saved in UTF8</p>\n";
@@ -84,8 +84,8 @@ foreach ($mozilla as $current_locale) {
 
                 // Display errors on missing strings
                 if (count($locale_analysis['Missing'])) {
-                    if (! $locale_with_errors) {
-                        $locale_with_errors = true;
+                    if (! $website_with_errors) {
+                        $website_with_errors = true;
                         $locale_htmloutput .= $opening_div;
                     }
                     $locale_htmloutput .= "        <p>Missing strings in {$current_filename}</p>\n";
@@ -97,8 +97,8 @@ foreach ($mozilla as $current_locale) {
                     $extra_tags = array_diff($locale_file_tags, $reference_data['tags']);
                     if (count($extra_tags)) {
                         foreach ($extra_tags as $extra_tag) {
-                            if (! $locale_with_errors) {
-                                $locale_with_errors = true;
+                            if (! $website_with_errors) {
+                                $website_with_errors = true;
                                 $locale_htmloutput .= $opening_div;
                             }
                             $locale_htmloutput .= "        <p>Unknown tag <strong>{$extra_tag}</strong> in {$current_filename}</p>\n";
@@ -124,8 +124,8 @@ foreach ($mozilla as $current_locale) {
                         foreach ($locale_file_tags as $locale_tag) {
                             if (in_array($locale_tag, $incomplete_tags)) {
                                 // Tag is enabled, but strings are still missing
-                                if (! $locale_with_errors) {
-                                    $locale_with_errors = true;
+                                if (! $website_with_errors) {
+                                    $website_with_errors = true;
                                     $locale_htmloutput .= $opening_div;
                                 }
                                 $locale_htmloutput .= "<p>Tag <strong>{$locale_tag}</strong> is enabled but the following strings are still missing:</p>\n<ul>\n</li>\n";
@@ -144,8 +144,8 @@ foreach ($mozilla as $current_locale) {
                     $missing_tags = array_diff($source_file_tags, $locale_file_tags);
                     foreach ($missing_tags as $missing_tag) {
                         if (! in_array($missing_tag, $incomplete_tags)) {
-                            if (! $locale_with_errors) {
-                                $locale_with_errors = true;
+                            if (! $website_with_errors) {
+                                $website_with_errors = true;
                                 $locale_htmloutput .= $opening_div;
                             }
                             $locale_htmloutput .= "<p>Tag <strong>{$missing_tag}</strong> is missing in {$current_filename}.</p>\n";
@@ -154,15 +154,60 @@ foreach ($mozilla as $current_locale) {
                 }
             }
         }
+
+        if ($website_with_errors) {
+            $locale_htmloutput .= "      </div>\n\n";
+            if (! $locale_with_errors) {
+                $locale_with_errors = true;
+            }
+        }
     }
+
+    foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
+        $website_with_errors = false;
+        if (Project::isSupportedLocale($current_website, $current_locale)) {
+            $repo = Project::getPublicRepoPath($current_website, $current_locale);
+            $current_website_name = Project::getWebsiteName($current_website);
+            $opening_div = "      <div class='website'>\n" .
+                           "        <h2>{$current_website_name}</h2>\n";
+
+            foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
+                if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
+                    // File is not managed for this website+locale, ignore it
+                    continue;
+                }
+
+                $file_analysis = RawManager::compareRawFiles($current_website, $current_locale, $current_filename);
+
+                $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
+
+                if (! in_array('optional', Project::getFileFlags($current_website, $current_filename, $current_locale)) &&
+                    ! $file_analysis['locale_exists']) {
+                    if (! $website_with_errors) {
+                        $website_with_errors = true;
+                        $locale_htmloutput .= $opening_div;
+                    }
+                    $locale_htmloutput .= "        <p>File missing: {$locale_filename}</p>\n";
+                    continue;
+                }
+            }
+        }
+
+        if ($website_with_errors) {
+            $locale_htmloutput .= "      </div>\n\n";
+            if (! $locale_with_errors) {
+                $locale_with_errors = true;
+            }
+        }
+    }
+
     if ($locale_with_errors) {
-        $locale_htmloutput .= "      </div>\n\n";
         $htmloutput .= $locale_htmloutput;
     }
 }
 
 // Checks on reference files
-foreach ($sites as $current_website) {
+foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     $reference_with_errors = false;
 
     $current_website_name = Project::getWebsiteName($current_website);
@@ -186,6 +231,34 @@ foreach ($sites as $current_website) {
                 $reference_output .= "        <li>" . htmlspecialchars($string_id) . "</li>\n";
             }
             $reference_output .= "</ul>\n";
+        }
+    }
+
+    if ($reference_with_errors) {
+        $reference_output .= "      </div>\n\n";
+        $htmloutput .= $reference_output;
+    }
+}
+
+foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
+    $reference_with_errors = false;
+
+    $current_website_name = Project::getWebsiteName($current_website);
+    $reference_locale = Project::getReferenceLocale($current_website);
+
+    $reference_output = "      <h2>Reference locale: {$reference_locale}</h2>\n";
+    $opening_div = "      <div class='website'>\n" .
+                   "        <h2>{$current_website_name}</h2>\n";
+
+    foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
+        $file_analysis = RawManager::compareRawFiles($current_website, $current_locale, $current_filename);
+
+        if (! $file_analysis['reference_exists']) {
+            if (! $reference_with_errors) {
+                $reference_with_errors = true;
+                $reference_output .= $opening_div;
+            }
+            $reference_output .= "        <p><strong>{$current_filename}</strong> is missing</p>\n";
         }
     }
 

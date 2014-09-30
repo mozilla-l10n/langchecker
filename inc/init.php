@@ -1,6 +1,8 @@
 <?php
 namespace Langchecker;
 
+date_default_timezone_set('Europe/Paris');
+
 // Server shortcuts
 $approot   = __DIR__ . '/../';
 $libs      = $approot . 'libs/';
