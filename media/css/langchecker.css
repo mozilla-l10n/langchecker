@@ -158,6 +158,14 @@ tfoot td {
     background-color: #f5f1e8;
 }
 
+tr.tabletotals {
+    font-weight: bold;
+}
+
+tr.tabletotals th {
+    background-color: #fff;
+}
+
 /* View: listsitesforlocale */
 
 div.website {
