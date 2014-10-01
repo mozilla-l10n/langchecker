@@ -1,0 +1,98 @@
+#!/usr/bin/env php
+<?php
+namespace Langchecker;
+
+use \Transvision\Json;
+
+$command_help = "import_transvision_id - Import missing translations for a specific string ID from Transvision API and store them in the lang file\n" .
+                "Usage: import_transvision_id [filename] [repo] [string_id]\n\n" .
+                "Example: import_transvision_id main.lang aurora mobile/android/base/sync_strings.dtd:fxaccount_status_legal \n" .
+                "(if not already translated import translations from aurora in main.lang)\n\n";
+$min_parameters = 3;
+$missing_parameter = "This command needs more parameters, please check import_transvision_id --help.\n";
+
+require_once __DIR__ . '/../inc/cli_init.php';
+
+// User provided variables
+$cli_filename = Utils::getCliParam(1, $argv, 'main.lang');     // Which file are we comparing?
+$cli_repo     = Utils::getCliParam(2, $argv, 'aurora');        // Which repo are we using as source?
+$cli_stringid = Utils::getCliParam(3, $argv, '') ;             // Which string do we need?
+
+// This script only works for mozilla.org
+$current_website = $sites[0];
+
+// Load reference strings
+$reference_locale = Project::getReferenceLocale($current_website);
+$reference_filename = Project::getLocalFilePath($current_website, $reference_locale, $cli_filename);
+if (! file_exists($reference_filename)) {
+    Utils::logger("Reference file does not exist: {$reference_filename}", 'quit');
+}
+$reference_data = LangManager::loadSource($current_website, $reference_locale, $cli_filename);
+Utils::logger("Reference English file: {$reference_filename}");
+
+// Check if the repository is valid
+if ($cli_repo != 'aurora') {
+    $repositories = Json::fetch('http://transvision.mozfr.org/api/v1/repositories/');
+    if (! in_array($cli_repo, $repositories)) {
+        $message = "Repository {$cli_repo} does not exist. \n" .
+                   'Available repositories: ' . implode(', ', $repositories);
+        Utils::logger($message, 'quit');
+    }
+}
+
+// Get list of supported locales for this repo from Transvision
+$supported_locales = Json::fetch("http://transvision.mozfr.org/api/v1/locales/{$cli_repo}/");
+$locale_list = array_intersect(
+    Project::getSupportedLocales($current_website, $cli_filename, $langfiles_subsets),
+    $supported_locales
+);
+
+// I need to use en-GB as reference locale for API queries on mozilla_org
+if ($cli_repo == 'mozilla_org') {
+    $source_locale = 'en-GB';
+} else {
+    $source_locale = 'en-US';
+}
+
+// Get the translations
+$translations = Json::fetch("http://transvision.mozfr.org/api/v1/entity/{$cli_repo}/?id={$cli_stringid}");
+if (count($translations) <= 1) {
+    Utils::logger('Request returned no results. Please check the string ID', 'quit');
+}
+$source_string = $translations[$source_locale];
+// Remove empty translations
+$translations = array_filter($translations);
+
+foreach ($locale_list as $current_locale) {
+    // For each locale, load existing locale file
+    $locale_data = LangManager::loadSource($current_website, $current_locale, $cli_filename);
+    $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $cli_filename);
+
+    if (file_exists($locale_filename)) {
+        $file_content = file($locale_filename);
+        $eol = Utils::checkEOL($file_content[0]);
+    } else {
+        // File is missing, ignoring locale completely
+        Utils::logger("File does not exist for {$current_locale}. Run lang_update to fix it.");
+        continue;
+    }
+
+    if (! isset($locale_data['strings'][$source_string])) {
+        Utils::logger("Requested string does not exist for {$current_locale}. Run lang_update to fix it.");
+        continue;
+    }
+
+    if ($locale_data['strings'][$source_string] != $source_string) {
+        Utils::logger("Requested string is already translated for {$current_locale}.");
+    } else {
+        $translated_string = $translations[$current_locale];
+        // Mark as {ok} if identical
+        if ($translated_string == $source_string) {
+            $translated_string .= ' {ok}';
+        }
+        $locale_data['strings'][$source_string] = $translated_string;
+        Utils::logger("Updating string for {$current_locale}.");
+        $content = LangManager::buildLangFile($reference_data, $locale_data, $current_locale, $eol);
+        Utils::fileForceContent($locale_filename, $content);
+    }
+}
