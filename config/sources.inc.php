@@ -628,7 +628,7 @@ $langfiles_subsets = [
         'firefox/desktop/tips.lang'             =>
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu',
              'fr', 'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl',
-             'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'zh-CN', 'zh-TW'],
+             'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'sv-SE', 'zh-CN', 'zh-TW'],
         'firefox/geolocation.lang'              =>
             ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
              'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
