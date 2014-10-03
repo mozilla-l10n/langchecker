@@ -86,6 +86,7 @@ $mozillaorg_lang = [
     'mozorg/plugincheck.lang',
     'mozorg/products.lang',
     'mozorg/home.lang',
+    'mozorg/home/index.lang',
     'mozspaces.lang',
     'newsletter.lang',
     'privacy/privacy-day.lang',
@@ -133,7 +134,7 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/contribute.lang'                  => [ 'critical' => ['all'] ],
     'mozorg/contribute-stories.lang'          => [ 'critical' => ['all'] ],
     'mozorg/plugincheck.lang'                 => [ 'critical' => ['all'] ],
-    'mozorg/home.lang'                        => [ 'critical' => ['all'] ],
+    'mozorg/home/index.lang'                  => [ 'critical' => ['all'] ],
     'newsletter.lang'                         => [ 'critical' => ['all'] ],
     'upgradedialog.lang'                      => [ 'critical' => ['all'] ],
 ];
@@ -180,7 +181,7 @@ $deadline = [
     'mozorg/about/manifesto.lang'         => '2014-08-31',
     'mozorg/contribute.lang'              => '2014-10-14',
     'mozorg/contribute-stories.lang'      => '2014-10-14',
-    'mozorg/home.lang'                    => '2014-09-26',
+    'mozorg/home/index.lang'              => '2014-10-14',
     'mozorg/mission.lang'                 => '2013-12-31',
     'mozorg/plugincheck.lang'             => '2014-08-31',
     'mozorg/products.lang'                => '2013-12-31',
@@ -585,6 +586,7 @@ $langfiles_subsets = [
              'tr', 'zh-CN', 'zh-TW'],
         'mozorg/about.lang'                     => $mozillaorg,
         'mozorg/home.lang'                      => $mozillaorg,
+        'mozorg/home/index.lang'                => $mozillaorg,
         'mozorg/mission.lang'                   => $mozillaorg,
         'mozorg/about/manifesto.lang'           =>
             ['ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de', 'dsb', 'el',
