@@ -177,12 +177,9 @@ foreach ($mozilla as $current_locale) {
                     continue;
                 }
 
-                $file_analysis = RawManager::compareRawFiles($current_website, $current_locale, $current_filename);
-
                 $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
-
                 if (! in_array('optional', Project::getFileFlags($current_website, $current_filename, $current_locale)) &&
-                    ! $file_analysis['locale_exists']) {
+                    ! file_exists($locale_filename)) {
                     if (! $website_with_errors) {
                         $website_with_errors = true;
                         $locale_htmloutput .= $opening_div;
@@ -251,9 +248,8 @@ foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
                    "        <h2>{$current_website_name}</h2>\n";
 
     foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
-        $file_analysis = RawManager::compareRawFiles($current_website, $current_locale, $current_filename);
-
-        if (! $file_analysis['reference_exists']) {
+        $reference_filename = Project::getLocalFilePath($current_website, $reference_locale, $current_filename);
+        if (! file_exists($reference_filename)) {
             if (! $reference_with_errors) {
                 $reference_with_errors = true;
                 $reference_output .= $opening_div;
