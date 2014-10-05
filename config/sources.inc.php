@@ -507,12 +507,12 @@ $mwc_locales = ['ca', 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
 
 $firefox_os = ['bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et',
                'fr', 'fy-NL', 'hi-IN', 'hr', 'hu', 'ja', 'it', 'ko', 'mk',
-               'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'ta', 'zh-CN',
+               'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'ta', 'zh-CN',
                'zh-TW'];
 
 $firefox_os_partial = ['bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX',
                'fr', 'fy-NL', 'hi-IN', 'hr', 'hu', 'ja', 'it', 'ko', 'mk',
-               'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'ta', 'zh-CN',
+               'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'ta', 'zh-CN',
                'zh-TW'];
 
 $langfiles_subsets = [
