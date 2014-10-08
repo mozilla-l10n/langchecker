@@ -312,10 +312,12 @@ $lang_flags['contribute-autoreplies'] = [
 ];
 
 $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
-                    'ja', 'ko',  'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'zh-CN', 'zh-TW'];
+                    'ja', 'ko',  'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sv-SE', 'zh-CN',
+                    'zh-TW'];
 
-$marketplacebadge_locales = ['bg', 'bn-BD', 'ca', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr', 'hu', 'it',
-                             'ja', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr', 'sr-Latn', 'ta', 'tr'];
+$marketplacebadge_locales = ['bg', 'bn-BD', 'ca', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN',
+                             'hr', 'hu', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
+                             'sr', 'sr-Latn', 'sv-SE', 'ta', 'tr'];
 
 $snippets_locales = ['bn-BD', 'cs', 'da', 'de', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'hr', 'hu',
                      'id', 'it', 'ja', 'ko', 'nb-NO', 'mk', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
