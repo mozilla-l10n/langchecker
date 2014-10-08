@@ -6,13 +6,13 @@ $command_help = "mark_active - Add the ## active ## tag to complete lang files o
                 "Usage: mark_active [filename]\n\n" .
                 "Example: mark_active firefox/new.lang\n";
 $min_parameters = 1;
-$missing_parameter = "This command needs more parameters, please check import_po --help.\n";
+$missing_parameter = "This command needs more parameters, please check mark_active --help.\n";
 
 require_once __DIR__ . '/../inc/cli_init.php';
 
 // Only mozilla.org
 $current_website = $sites[0];
-$current_filename = Utils::secureText($argv[1]);
+$current_filename = Utils::getCliParam(1, $argv, '');
 
 if (in_array($current_filename, $no_active_tag)) {
     die("This file is not supposed to be activated.\n");

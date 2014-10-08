@@ -137,6 +137,8 @@ class LangManager
             $tags = $locale_data['tags'];
             // Ignore tags not available in reference
             $tags = array_intersect($tags, $reference_data['tags']);
+            // Put tags in alphabetical order
+            sort($tags);
             foreach ($tags as $tag) {
                 echo "## {$tag} ##{$eol}";
             }

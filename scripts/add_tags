@@ -1,0 +1,76 @@
+#!/usr/bin/env php
+<?php
+namespace Langchecker;
+
+$command_help = "add_tags - Add missing tags to files on www.mozilla.org\n" .
+                "Usage: add_tags [filename]\n\n" .
+                "Example: add_tags firefox/new.lang\n";
+$min_parameters = 1;
+$missing_parameter = "This command needs more parameters, please check add_tags --help.\n";
+
+require_once __DIR__ . '/../inc/cli_init.php';
+
+// Only mozilla.org
+$current_website = $sites[0];
+$current_filename = Utils::getCliParam(1, $argv, '');
+
+// Read reference data once
+$reference_locale = Project::getReferenceLocale($current_website);
+$reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+
+if (! isset($reference_data['tags'])) {
+    Utils::logger('File doesn\'t have any tags.', 'quit');
+}
+$source_file_tags = $reference_data['tags'];
+
+$supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+foreach ($supported_locales as $current_locale) {
+    if ($current_locale == $reference_locale) {
+        // Ignore reference language
+        continue;
+    }
+    if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
+        // If the .lang file does not exist, just skip the locale for this file
+        continue;
+    }
+    $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
+    $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
+    $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
+
+    if (isset($reference_data['tag_bindings']) && $locale_analysis['activated']) {
+        if (isset($locale_data['tags'])) {
+            $locale_file_tags = $locale_data['tags'];
+        } else {
+            $locale_file_tags = [];
+        }
+
+        // Get tags not completely localized
+        $incomplete_tagged_strings = [];
+        foreach ($reference_data['tag_bindings'] as $string_id => $bound_tag) {
+            if (in_array($string_id, $locale_analysis['Missing']) ||
+                in_array($string_id, $locale_analysis['Identical'])) {
+                $incomplete_tagged_strings[$bound_tag][] = $string_id;
+            }
+        }
+        $incomplete_tags = array_unique(array_keys($incomplete_tagged_strings));
+
+        $tags_to_add = [];
+        $missing_tags = array_diff($source_file_tags, $locale_file_tags);
+        foreach ($missing_tags as $missing_tag) {
+            if (! in_array($missing_tag, $incomplete_tags)) {
+                $tags_to_add[] = $missing_tag;
+            }
+        }
+        $tags_to_add = array_unique($tags_to_add);
+
+        if ($tags_to_add) {
+            $locale_data['tags'] = array_merge($locale_file_tags, $tags_to_add);
+            $file_content = file($locale_filename);
+            $eol = Utils::checkEOL($file_content[0]);
+            $content = LangManager::buildLangFile($reference_data, $locale_data, $current_locale, $eol);
+            Utils::fileForceContent($locale_filename, $content);
+            $message = "{$current_locale}: added tags " . implode(', ', $tags_to_add);
+            Utils::logger($message);
+        }
+    }
+}
