@@ -176,7 +176,6 @@ $deadline = [
     'firefox/sync.lang'                   => '2014-09-26',
     'firefox/whatsnew.lang'               => '2013-12-31',
     'legal/index.lang'                    => '2014-10-14',
-    'lightbeam/lightbeam.lang'            => '2014-05-27',
     'mozorg/about.lang'                   => '2014-08-31',
     'mozorg/about/manifesto.lang'         => '2014-08-31',
     'mozorg/contribute.lang'              => '2014-10-14',
@@ -336,7 +335,7 @@ $fxos_marketing = ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr'
 
 $getinvolved_autoreplies_locales = ['bn-BD', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'ff', 'fr',
                                     'hi-IN', 'hr', 'id', 'it', 'ms', 'nl', 'pl', 'pt-BR', 'ru',
-                                    'sq', 'sr', 'tr', 'zh-CN', 'zh-TW'];
+                                    'sq', 'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW'];
 
 /* Array structure for single website
 *
@@ -573,8 +572,8 @@ $langfiles_subsets = [
         'legal/index.lang'                      => $firefox_os,
         'lightbeam/lightbeam.lang'              =>
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
-             'eu', 'fr', 'fy-NL', 'it', 'ja', 'nl', 'pl', 'sq', 'tr',
-             'zh-CN'],
+             'eu', 'fr', 'fy-NL', 'it', 'ja', 'nl', 'pl', 'sq', 'sv-SE',
+             'tr', 'zh-CN'],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
         'marketplace/partners.lang'             => ['fr', 'es-ES', 'pt-BR'],
@@ -598,20 +597,21 @@ $langfiles_subsets = [
             ['ar', 'bg', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR', 'es-CL',
              'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
              'it', 'km', 'lt', 'ms', 'nl', 'pa-IN', 'pl', 'pt-BR', 'ro', 'ru',
-             'sk', 'sl', 'sq', 'sr', 'ta', 'tr', 'uz', 'zh-CN', 'zh-TW'],
+             'sk', 'sl', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uz', 'zh-CN', 'zh-TW'],
         'mozorg/about/history-details.lang'     =>
             ['ca', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu', 'fr', 'gl',
-             'hsb', 'it', 'km', 'pa-IN', 'ro', 'sk', 'sq', 'uz', 'zh-TW'],
+             'hsb', 'it', 'km', 'pa-IN', 'ro', 'sk', 'sq', 'sv-SE', 'uz',
+             'zh-TW'],
         'mozorg/contribute.lang'                =>
             ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
              'it', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl',
-             'sq', 'sr', 'ta', 'tr', 'zh-CN', 'zh-TW'],
+             'sq', 'sr', 'sv-SE', 'ta', 'tr', 'zh-CN', 'zh-TW'],
         'mozorg/contribute-stories.lang'        =>
             ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
              'it', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl',
-             'sq', 'sr', 'ta', 'tr', 'zh-CN', 'zh-TW'],
+             'sq', 'sr', 'sv-SE', 'ta', 'tr', 'zh-CN', 'zh-TW'],
         'mozorg/plugincheck.lang'               => $mozillaorg,
         'mozorg/products.lang'                  => $mozillaorg,
         'mozspaces.lang'                        => ['de', 'fr'],
