@@ -264,6 +264,7 @@ $getinvolved_autoreplies = [
     'templates/mozorg/contribute-2015/education_hive.txt',
     'templates/mozorg/contribute-2015/education_sciencelab.txt',
     'templates/mozorg/contribute-2015/education_webmaker.txt',
+    'templates/mozorg/contribute-2015/generic_template.txt',
     'templates/mozorg/contribute-2015/l10n_product.txt',
     'templates/mozorg/contribute-2015/l10n_tools.txt',
     'templates/mozorg/contribute-2015/l10n_web.txt',
@@ -294,6 +295,7 @@ $lang_flags['contribute-autoreplies'] = [
     'templates/mozorg/contribute-2015/education_hive.txt'        => [ 'optional' => ['all'] ],
     'templates/mozorg/contribute-2015/education_sciencelab.txt'  => [ 'optional' => ['all'] ],
     'templates/mozorg/contribute-2015/education_webmaker.txt'    => [ 'optional' => ['all'] ],
+    'templates/mozorg/contribute-2015/generic_template.txt'      => [ 'optional' => ['all'] ],
     'templates/mozorg/contribute-2015/l10n_product.txt'          => [ 'optional' => ['all'] ],
     'templates/mozorg/contribute-2015/l10n_tools.txt'            => [ 'optional' => ['all'] ],
     'templates/mozorg/contribute-2015/l10n_web.txt'              => [ 'optional' => ['all'] ],
@@ -335,9 +337,10 @@ $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', '
 $fxos_marketing = ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr', 'hu', 'it', 'ja',
                    'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'ta', 'tr', 'zh-CN'];
 
-$getinvolved_autoreplies_locales = ['bn-BD', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'ff', 'fr',
-                                    'hi-IN', 'hr', 'id', 'it', 'ms', 'nl', 'pl', 'pt-BR', 'ru',
-                                    'sq', 'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW'];
+$getinvolved_locales = ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+                        'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id', 'it', 'lt',
+                        'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'sv-SE',
+                        'ta', 'tr', 'zh-CN', 'zh-TW'];
 
 /* Array structure for single website
 *
@@ -494,7 +497,7 @@ $sites =
         'contribute-autoreplies',
         $repo1,
         'locales/',
-        $getinvolved_autoreplies_locales,
+        $getinvolved_locales,
         $getinvolved_autoreplies,
         'en-GB', // source locale
         $public_repo1,
@@ -604,16 +607,8 @@ $langfiles_subsets = [
             ['ca', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu', 'fr', 'gl',
              'hsb', 'it', 'km', 'pa-IN', 'ro', 'sk', 'sq', 'sv-SE', 'uz',
              'zh-TW'],
-        'mozorg/contribute.lang'                =>
-            ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
-             'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
-             'it', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl',
-             'sq', 'sr', 'sv-SE', 'ta', 'tr', 'zh-CN', 'zh-TW'],
-        'mozorg/contribute-stories.lang'        =>
-            ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
-             'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id',
-             'it', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl',
-             'sq', 'sr', 'sv-SE', 'ta', 'tr', 'zh-CN', 'zh-TW'],
+        'mozorg/contribute.lang'                => $getinvolved_locales,
+        'mozorg/contribute-stories.lang'        => $getinvolved_locales,
         'mozorg/plugincheck.lang'               => $mozillaorg,
         'mozorg/products.lang'                  => $mozillaorg,
         'mozspaces.lang'                        => ['de', 'fr'],
