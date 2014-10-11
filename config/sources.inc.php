@@ -22,7 +22,7 @@ include __DIR__ . '/adu.inc.php';
 
 $locamotion_locales = ['ach', 'af', 'bn-BD', 'cy', 'dsb', 'en-ZA', 'es-MX', 'ff',
                        'gd', 'hi-IN', 'hsb', 'km', 'ku', 'ms', 'my', 'oc', 'si',
-                       'son', 'ta', 'ur', 'uz', 'vi', 'xh'];
+                       'son', 'ta', 'ur', 'uz', 'vi', 'xh', 'zu'];
 
 /*
     Locales removed from locamotion import because of commits on SVN
@@ -171,8 +171,8 @@ $deadline = [
     'firefox/desktop/tips.lang'           => '2014-05-27',
     'firefox/installer-help.lang'         => '2013-12-31',
     'firefox/new.lang'                    => '2013-12-31',
-    'firefox/os/index.lang'               => '2014-07-15',
-    'firefox/os/devices.lang'             => '2014-07-15',
+    'firefox/os/index.lang'               => '2014-10-31',
+    'firefox/os/devices.lang'             => '2014-10-31',
     'firefox/sync.lang'                   => '2014-09-26',
     'firefox/whatsnew.lang'               => '2013-12-31',
     'legal/index.lang'                    => '2014-10-14',
@@ -182,15 +182,9 @@ $deadline = [
     'mozorg/contribute-stories.lang'      => '2014-10-14',
     'mozorg/home/index.lang'              => '2014-10-14',
     'mozorg/mission.lang'                 => '2013-12-31',
-    'mozorg/plugincheck.lang'             => '2014-08-31',
+    'mozorg/plugincheck.lang'             => '2014-10-14',
     'mozorg/products.lang'                => '2013-12-31',
-    'tabzilla/tabzilla.lang'              => '2014-04-27',
-    'homefeeds.lang'                      => '2014-08-25',
-    'sep2014_a.lang'                      => '2014-09-15',
-    'sep2014_b.lang'                      => '2014-09-15',
-    'sep2014_c.lang'                      => '2014-09-15',
-    'sep2014_d.lang'                      => '2014-09-15',
-    'sep2014_e.lang'                      => '2014-09-15',
+    'tabzilla/tabzilla.lang'              => '2014-10-14',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang'];
@@ -509,15 +503,10 @@ $sites =
 $mwc_locales = ['ca', 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
 'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'];
 
-$firefox_os = ['bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX', 'et',
-               'fr', 'fy-NL', 'hi-IN', 'hr', 'hu', 'ja', 'it', 'ko', 'mk',
-               'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'ta', 'zh-CN',
-               'zh-TW'];
-
-$firefox_os_partial = ['bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX',
-               'fr', 'fy-NL', 'hi-IN', 'hr', 'hu', 'ja', 'it', 'ko', 'mk',
-               'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'ta', 'zh-CN',
-               'zh-TW'];
+$firefox_os = ['af', 'bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX',
+               'et', 'fr', 'fy-NL', 'hi-IN', 'hr', 'hu', 'ja', 'it', 'ko', 'mk',
+               'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'ta',
+               'xh', 'zh-CN', 'zh-TW', 'zu'];
 
 $langfiles_subsets = [
     'www.mozilla.org' =>
@@ -534,8 +523,8 @@ $langfiles_subsets = [
         'firefox/speed.lang'                    => ['pt-BR'],
         'firefox/os/devices.lang'               => $firefox_os,
         'firefox/os/index.lang'                 => $firefox_os,
-        'firefox/os/faq.lang'                   => $firefox_os_partial,
-        'firefox/partners/index.lang'           => $firefox_os_partial,
+        'firefox/os/faq.lang'                   => $firefox_os,
+        'firefox/partners/index.lang'           => $firefox_os,
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
         'mwc2014_promos.lang'                   => $mwc_locales,
         'firefox/whatsnew.lang'                 => ['hu', 'pl'],
