@@ -59,7 +59,7 @@ foreach ($mozilla as $current_locale) {
                     foreach ($locale_analysis['python_vars'] as $stringid => $python_error) {
                         $locale_htmloutput .= "              <table class='python'>
                 <tr>
-                  <th><strong style='color:red'>{$python_error['var']}</strong> in the English string is missing in:</th>
+                  <th>Check the following variables: <strong style='color:red'>{$python_error['var']}</strong></th>
                 </tr>
                 <tr>
                   <td>" . Utils::highlightPythonVar($stringid) . "</td>

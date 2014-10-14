@@ -58,12 +58,32 @@ class LangManager
                     /* Test if all Python variables are present, analyzing both
                      * format %(var)s or %s, or 'escaped' percentage sign (%%) */
                     $regex = '#%(\([a-z0-9._-]+\)s|[s%])#';
-                    preg_match_all($regex, $reference_data['strings'][$key], $matches1);
-                    preg_match_all($regex, $val, $matches2);
+                    preg_match_all($regex, $reference_data['strings'][$key], $matches_reference);
+                    preg_match_all($regex, $val, $matches_locale);
 
-                    if ($matches1[0] != $matches2[0]) {
-                        foreach ($matches1[0] as $python_var) {
-                            if (! in_array($python_var, $matches2[0])) {
+                    if ($matches_reference[0] != $matches_locale[0]) {
+                        /* Locale and reference have different variables. Count
+                         * instances of each variable and compare them. */
+                        $count_occurences = function ($value, $array) {
+                            // Count occurences of $value in $array
+                            $count_values = array_count_values($array);
+                            $occurences = isset($count_values[$value]) ?
+                                          $count_values[$value] :
+                                          0;
+
+                            return $occurences;
+                        };
+
+                        foreach ($matches_reference[0] as $python_var) {
+                            if ($count_occurences($python_var, $matches_locale[0]) != $count_occurences($python_var, $matches_reference[0])) {
+                                $analysis_data['python_vars'][$key]['text'] = $val;
+                                $analysis_data['python_vars'][$key]['var'] = $python_var;
+                            }
+                        }
+
+                        // Check if locale has extra variables
+                        foreach ($matches_locale[0] as $python_var) {
+                            if (! in_array($python_var, $matches_reference[0])) {
                                 $analysis_data['python_vars'][$key]['text'] = $val;
                                 $analysis_data['python_vars'][$key]['var'] = $python_var;
                             }

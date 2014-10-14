@@ -51,3 +51,11 @@ Terza stringa con variabile mancante
 
 ;Fourth string with 90%% coverage
 Quarta stringa con copertura al 90%
+
+
+;Fifth string with %(one)s, %(two)s
+Quinta stringa con %(one)s, %(two)s e ancora %(two)s
+
+
+;Sixth string with %(one)s
+Sesta stringa con %(one)s e %(two)s
