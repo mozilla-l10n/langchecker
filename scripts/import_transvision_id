@@ -86,8 +86,9 @@ foreach ($locale_list as $current_locale) {
         Utils::logger("Requested string is already translated for {$current_locale}.");
     } else {
         $translated_string = $translations[$current_locale];
-        // Mark as {ok} if identical
-        if ($translated_string == $source_string) {
+        // Mark as {ok} if identical, if it's not mozilla_org
+        if ($translated_string == $source_string &&
+            $cli_repo != 'mozilla_org') {
             $translated_string .= ' {ok}';
         }
         $locale_data['strings'][$source_string] = $translated_string;
