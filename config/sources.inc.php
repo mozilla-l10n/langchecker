@@ -42,6 +42,7 @@ $mozillaorg_lang = [
     'download_button.lang',
     'esr.lang',
     'euballot.lang',
+    'firefox/android/index.lang',
     'firefox/geolocation.lang',
     'firefox/new.lang',
     'firefox/channel.lang',
@@ -56,6 +57,7 @@ $mozillaorg_lang = [
     'firefox/desktop/fast.lang',
     'firefox/desktop/trust.lang',
     'firefox/desktop/tips.lang',
+    'firefox/privacy_tour/privacy_tour.lang',
     'firefox/sync.lang',
     'mwc2014_promos.lang',
     'firefox/whatsnew.lang',
@@ -100,6 +102,7 @@ $mozillaorg_lang = [
 $lang_flags['www.mozilla.org'] = [
     'download.lang'                           => [ 'critical' => ['all'] ],
     'download_button.lang'                    => [ 'critical' => ['all'] ],
+    'firefox/android/index.lang'              => [ 'critical' => ['all'] ],
     'firefox/new.lang'                        => [ 'critical' => ['all'] ],
     'firefox/channel.lang'                    => [ 'critical' => ['all'] ],
     'firefox/os/devices.lang'                 => [
@@ -118,6 +121,7 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/desktop/fast.lang'               => [ 'critical' => ['all'] ],
     'firefox/desktop/trust.lang'              => [ 'critical' => ['all'] ],
     'firefox/desktop/tips.lang'               => [ 'critical' => ['all'] ],
+    'firefox/privacy_tour/privacy_tour.lang'  => [ 'critical' => ['all'] ],
     'firefox/sync.lang'                       => [ 'critical' => ['all'] ],
     'mwc2014_promos.lang'                     => [ 'critical' => ['all'] ],
     'firefox/whatsnew.lang'                   => [ 'critical' => ['all'] ],
@@ -161,30 +165,32 @@ $no_active_tag = [
 ];
 
 $deadline = [
-    'download_button.lang'                => '2013-12-31',
-    'firefox/australis/firefox_tour.lang' => '2014-04-27',
-    'firefox/channel.lang'                => '2013-12-31',
-    'firefox/desktop/index.lang'          => '2014-08-31',
-    'firefox/desktop/customize.lang'      => '2014-05-27',
-    'firefox/desktop/fast.lang'           => '2014-05-27',
-    'firefox/desktop/trust.lang'          => '2014-05-27',
-    'firefox/desktop/tips.lang'           => '2014-05-27',
-    'firefox/installer-help.lang'         => '2013-12-31',
-    'firefox/new.lang'                    => '2013-12-31',
-    'firefox/os/index.lang'               => '2014-10-31',
-    'firefox/os/devices.lang'             => '2014-10-31',
-    'firefox/sync.lang'                   => '2014-09-26',
-    'firefox/whatsnew.lang'               => '2013-12-31',
-    'legal/index.lang'                    => '2014-10-14',
-    'mozorg/about.lang'                   => '2014-08-31',
-    'mozorg/about/manifesto.lang'         => '2014-08-31',
-    'mozorg/contribute.lang'              => '2014-10-14',
-    'mozorg/contribute-stories.lang'      => '2014-10-14',
-    'mozorg/home/index.lang'              => '2014-10-14',
-    'mozorg/mission.lang'                 => '2013-12-31',
-    'mozorg/plugincheck.lang'             => '2014-10-14',
-    'mozorg/products.lang'                => '2013-12-31',
-    'tabzilla/tabzilla.lang'              => '2014-10-14',
+    'download_button.lang'                   => '2014-10-27',
+    'firefox/android/index.lang'             => '2014-10-27',
+    'firefox/australis/firefox_tour.lang'    => '2014-04-27',
+    'firefox/channel.lang'                   => '2013-12-31',
+    'firefox/desktop/index.lang'             => '2014-08-31',
+    'firefox/desktop/customize.lang'         => '2014-05-27',
+    'firefox/desktop/fast.lang'              => '2014-05-27',
+    'firefox/desktop/trust.lang'             => '2014-05-27',
+    'firefox/desktop/tips.lang'              => '2014-05-27',
+    'firefox/installer-help.lang'            => '2013-12-31',
+    'firefox/new.lang'                       => '2013-12-31',
+    'firefox/os/index.lang'                  => '2014-10-31',
+    'firefox/os/devices.lang'                => '2014-10-31',
+    'firefox/privacy_tour/privacy_tour.lang' => '2014-11-04',
+    'firefox/sync.lang'                      => '2014-09-26',
+    'firefox/whatsnew.lang'                  => '2013-12-31',
+    'legal/index.lang'                       => '2014-10-14',
+    'mozorg/about.lang'                      => '2014-08-31',
+    'mozorg/about/manifesto.lang'            => '2014-08-31',
+    'mozorg/contribute.lang'                 => '2014-10-14',
+    'mozorg/contribute-stories.lang'         => '2014-10-14',
+    'mozorg/home/index.lang'                 => '2014-10-14',
+    'mozorg/mission.lang'                    => '2013-12-31',
+    'mozorg/plugincheck.lang'                => '2014-10-14',
+    'mozorg/products.lang'                   => '2013-12-31',
+    'tabzilla/tabzilla.lang'                 => '2014-10-31',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang'];
@@ -335,6 +341,11 @@ $getinvolved_locales = ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
                         'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id', 'it', 'lt',
                         'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'sv-SE',
                         'ta', 'tr', 'zh-CN', 'zh-TW'];
+
+$privacy_tour_locales = ['ast', 'da', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+                         'fi', 'fr', 'fy-NL', 'he', 'hu', 'it', 'ja', 'ko',
+                         'lv', 'nb-NO', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm',
+                         'ru', 'sk', 'sl', 'zh-TW'];
 
 /* Array structure for single website
 *
@@ -508,6 +519,14 @@ $firefox_os = ['af', 'bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX',
                'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'ta',
                'xh', 'zh-CN', 'zh-TW', 'zu'];
 
+$android_locales = ['an', 'as', 'be', 'bn-IN', 'ca', 'cs', 'cy', 'da', 'de',
+                    'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff', 'fr',
+                    'fy-NL', 'ga-IE', 'gd', 'gu-IN', 'hi-IN', 'hu', 'hy-AM',
+                    'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv',
+                    'ml', 'mr', 'ms', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl',
+                    'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'sv-SE',
+                    'ta', 'te', 'th', 'tr', 'uk', 'zh-CN', 'zh-TW'];
+
 $langfiles_subsets = [
     'www.mozilla.org' =>
     [
@@ -518,6 +537,7 @@ $langfiles_subsets = [
             ['bg', 'hr', 'cs', 'da', 'nl', 'en-GB', 'et', 'fi', 'fr',
              'de', 'el', 'hu', 'it', 'lv', 'lt', 'nb-NO', 'pl', 'pt-PT',
              'ro', 'sk', 'sl', 'es-ES', 'sv-SE'],
+        'firefox/android/index.lang'            => $android_locales,
         'firefox/new.lang'                      => $mozilla,
         'firefox/channel.lang'                  => $mozilla,
         'firefox/speed.lang'                    => ['pt-BR'],
@@ -539,6 +559,7 @@ $langfiles_subsets = [
              'zh-CN', 'zh-TW'],
         'firefoxos/firefoxos.lang'              =>
             ['fr', 'es-AR', 'es-ES', 'fy-NL', 'nl', 'pl', 'pt-BR'],
+        'firefox/privacy_tour/privacy_tour.lang' => $privacy_tour_locales,
         'firefoxtesting.lang'                   => $mozilla,
         'foundation/annualreport/2011.lang'     =>
             ['ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
