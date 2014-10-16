@@ -141,7 +141,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
                 foreach ($locale_analysis['python_vars'] as $stringid => $python_error) {
                     $todo_files .= "              <table class='python'>
                 <tr>
-                  <th><strong style='color:red'>{$python_error['var']}</strong> in the English string is missing in:</th>
+                  <th>Check the following variables: <strong style='color:red'>{$python_error['var']}</strong></th>
                 </tr>
                 <tr>
                   <td>" . Utils::highlightPythonVar($stringid) . "</td>

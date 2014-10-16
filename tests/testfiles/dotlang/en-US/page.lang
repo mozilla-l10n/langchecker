@@ -57,3 +57,11 @@ Third string with %s tags
 
 ;Fourth string with 90%% coverage
 Fourth string with 90%% coverage
+
+
+;Fifth string with %(one)s, %(two)s
+Fifth string with %(one)s, %(two)s
+
+
+;Sixth string with %(one)s
+Sixth string with %(one)s
