@@ -524,7 +524,7 @@ $android_locales = ['an', 'as', 'be', 'bn-IN', 'ca', 'cs', 'cy', 'da', 'de',
                     'fy-NL', 'ga-IE', 'gd', 'gu-IN', 'hi-IN', 'hu', 'hy-AM',
                     'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv',
                     'ml', 'mr', 'ms', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl',
-                    'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'sv-SE',
+                    'pt-BR', 'pt-PT', 'ro', 'ru', 'sq', 'sk', 'sl', 'sv-SE',
                     'ta', 'te', 'th', 'tr', 'uk', 'zh-CN', 'zh-TW'];
 
 $langfiles_subsets = [
