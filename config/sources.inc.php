@@ -562,22 +562,22 @@ $langfiles_subsets = [
         'firefox/privacy_tour/privacy_tour.lang' => $privacy_tour_locales,
         'firefoxtesting.lang'                   => $mozilla,
         'foundation/annualreport/2011.lang'     =>
-            ['ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
+            ['ast', 'cs', 'de', 'el', 'eo', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
              'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
              'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
         'foundation/annualreport/2011faq.lang'  =>
-            ['ast', 'cs', 'csb', 'de', 'el', 'eo', 'es-AR',
+            ['ast', 'cs', 'de', 'el', 'eo', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
              'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR', 'sq',
              'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
         'foundation/annualreport/2012/index.lang' =>
-            ['ar', 'ast', 'csb', 'de', 'el', 'eo', 'es-AR',
+            ['ar', 'ast', 'de', 'el', 'eo', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it',
              'ja', 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl',
              'pt-BR', 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
         'foundation/annualreport/2012/faq.lang' =>
-            ['ar', 'ast', 'csb', 'de', 'el', 'eo', 'es-AR',
+            ['ar', 'ast', 'de', 'el', 'eo', 'es-AR',
              'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it',
              'ja', 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl',
              'pt-BR', 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW'],
@@ -663,7 +663,7 @@ $langfiles_subsets = [
     [
         'fhr.lang' =>
             ['af', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg', 'bn-BD',
-             'bn-IN', 'br', 'bs', 'ca', 'cs', 'csb', 'cy', 'da', 'de',
+             'bn-IN', 'br', 'bs', 'ca', 'cs', 'cy', 'da', 'de',
              'dsb', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
              'et', 'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
              'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM',
@@ -671,7 +671,7 @@ $langfiles_subsets = [
              'lij', 'lt', 'lv', 'mai', 'mk', 'ml', 'mr', 'ms',
              'my', 'nb-NO', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN',
              'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si',
-             'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta',
+             'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta',
              'te', 'th', 'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'zh-CN',
              'zh-TW', 'zu'],
     ],
