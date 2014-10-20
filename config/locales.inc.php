@@ -22,7 +22,7 @@ $mozilla = [
 $mozilla = array_diff($mozilla, ['en-ZA', 'es']);
 
 // dropped locales
-$mozilla = array_diff($mozilla, ['mn', 'ta-LK', 'ak', 'lg','nso', 'sah', 'wo']);
+$mozilla = array_diff($mozilla, ['ak', 'csb', 'lg', 'mn', 'nso', 'sah', 'sw', 'ta-LK', 'wo']);
 
 sort($mozilla);
 
