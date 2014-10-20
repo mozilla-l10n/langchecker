@@ -361,3 +361,27 @@ ul#locales {
     -moz-column-count: 6;
     width: 80%;
 }
+
+/* action=count */
+
+table#count_summary {
+    margin-top: 1em;
+}
+
+table#count_summary th,
+table#count_summary td {
+    margin: 0 1em;
+}
+
+table#count_summary td + td {
+    text-align: left;
+    word-spacing: 0.3em;
+}
+
+table#count_summary td:nth-child(3) {
+    max-width: 30em;
+}
+
+table#count_summary .help {
+    cursor: help;
+}

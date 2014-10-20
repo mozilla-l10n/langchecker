@@ -4,7 +4,6 @@ namespace Langchecker;
 use \Transvision\Json;
 
 $todo  = [];
-$total = [];
 
 // We consider only mozilla.org, so $sites[0]
 $current_website = $sites[0];
@@ -17,7 +16,6 @@ foreach ($mozilla as $current_locale) {
     }
 
     $todo[$current_locale]  = 0;
-    $total[$current_locale] = 0;
 
     foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
         // Skip the loop if we don't have this lang file for the locale
@@ -38,25 +36,107 @@ foreach ($mozilla as $current_locale) {
 }
 
 arsort($todo);
-$locales_done = 0;
 
 if ($json) {
     die(Json::output($todo, false, true));
 }
 
-echo '<table>';
-echo '<tr><th>locale</th><th>Untranslated</th></tr>';
+// General table with missing strings per locale
 
+$rows = '';
 foreach ($todo as $key => $val) {
     if ($val == 0) {
         $class = 'class="dim"';
-        $locales_done++;
     } else {
         $class = '';
     }
 
-    echo "<tr {$class}><td><a href='./?locale={$key}'>{$key}</a></td><td>{$val}</td></tr>\n";
+    $rows .= "<tr {$class}><td><a href='./?locale={$key}'>{$key}</a></td><td>{$val}</td></tr>\n";
 }
 
-echo "<tr><td colspan='2'>{$locales_done} locales done</td></tr>\n";
-echo "</table>\n";
+$general_table = "
+<table>
+    <tr>
+        <th>Locale</th>
+        <th>Untranslated</th>
+    </tr>
+{$rows}
+    <tr>
+        <th>Total</th>
+        <td><strong>" . count($mozilla) . "</strong></td>
+    </tr>
+</table>
+";
+
+/* Summary table code */
+
+// Those are tips displayed when hovering the row header
+$title = [
+    'perfect'  => 'Everything is translated',
+    'good'     => 'Less than 50 missing strings',
+    'average'  => 'Between 50 and 200 missing strings',
+    'bad'      => 'Between 200 and 500 missing strings',
+    'very bad' => 'More than 500 missing strings',
+];
+
+$results = [];
+
+foreach ($todo as $key => $val) {
+    if ($val == 0) {
+        $results['perfect'][] = $key;
+        continue;
+    }
+
+    if ($val < 50) {
+        $results['good'][] = $key;
+        continue;
+    }
+
+    if ($val < 200 && $val > 50) {
+        $results['average'][] = $key;
+        continue;
+    }
+
+    if ($val < 500 && $val > 200) {
+        $results['bad'][] = $key;
+        continue;
+    }
+
+    $results['very bad'][] = $key;
+}
+
+$rows = '';
+foreach(array_reverse($results) as $category => $values) {
+    sort($values);
+    $th  = ucfirst($category);
+    $tip = $title[$category];
+    $td1 = count($values);
+    $td2 = implode(', ', $values);
+    $on_locamotion = implode(', ', array_intersect($values, $locamotion_locales));
+    $rows .= "
+    <tr>
+        <th title='{$tip}' class='help'>{$th}</th>
+        <td>{$td1}</td>
+        <td>{$td2}</td>
+        <td>{$on_locamotion}</td>
+    </tr>";
+}
+
+$summary_table = "
+<table id='count_summary'>
+    <tr>
+        <th colspan='5'>Web Parts Completion Summary</th>
+    </tr>
+    <tr>
+        <th>State</th>
+        <th>Count</th>
+        <th>Locales</th>
+        <th>On locamotion</th>
+    </tr>
+{$rows}
+</table>
+";
+
+print '<h2>General Completion of Web Parts</h2>';
+print $general_table;
+print $summary_table;
