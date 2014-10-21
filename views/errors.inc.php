@@ -138,9 +138,15 @@ foreach ($mozilla as $current_locale) {
                     }
 
                     // Get all missing tags completely localized
-                    $source_file_tags = isset($reference_data['tags'])
-                                        ? $reference_data['tags']
-                                        : [];
+                    if (isset($reference_data['tags'])) {
+                        /* I ignore tags not bound to strings for this report, so using unique
+                         *  values of 'tag_bindings' instead of using 'tags' from reference data
+                         */
+                        $source_file_tags = array_unique(array_values($reference_data['tag_bindings']));
+                    } else {
+                        $source_file_tags = [];
+                    }
+
                     $missing_tags = array_diff($source_file_tags, $locale_file_tags);
                     foreach ($missing_tags as $missing_tag) {
                         if (! in_array($missing_tag, $incomplete_tags)) {
