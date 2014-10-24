@@ -20,9 +20,10 @@ if (! isset($_SERVER['SERVER_NAME'])) {
 require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
-$locamotion_locales = ['ach', 'af', 'bn-BD', 'cy', 'dsb', 'en-ZA', 'es-MX', 'ff',
-                       'gd', 'hi-IN', 'hsb', 'km', 'ku', 'ms', 'my', 'oc', 'si',
-                       'son', 'ta', 'ur', 'uz', 'vi', 'xh', 'zu'];
+$locamotion_locales = ['ach', 'af', 'bn-BD', 'bn-IN', 'cy', 'dsb', 'en-ZA',
+                       'es-MX', 'ff', 'gd', 'hi-IN', 'hsb', 'km', 'ku', 'ms',
+                       'my', 'oc', 'si', 'son', 'ta', 'ur', 'uz', 'vi', 'xh',
+                       'zu'];
 
 /*
     Locales removed from locamotion import because of commits on SVN
