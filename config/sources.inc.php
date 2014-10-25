@@ -195,6 +195,11 @@ $deadline = [
     'mozorg/plugincheck.lang'                => '2014-10-14',
     'mozorg/products.lang'                   => '2013-12-31',
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
+    'nov2014_a.lang'                         => '2014-11-05',
+    'nov2014_b.lang'                         => '2014-11-05',
+    'nov2014_c.lang'                         => '2014-11-05',
+    'nov2014_d.lang'                         => '2014-11-05',
+    'nov2014_e.lang'                         => '2014-11-05',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang'];
@@ -222,13 +227,18 @@ $snippets_lang = [
     'sep2014_c.lang',
     'sep2014_d.lang',
     'sep2014_e.lang',
+    'nov2014_a.lang',
+    'nov2014_b.lang',
+    'nov2014_c.lang',
+    'nov2014_d.lang',
+    'nov2014_e.lang',
 ];
 $lang_flags['snippets'] = [
-    'sep2014_a.lang' => [ 'critical' => ['all'] ],
-    'sep2014_b.lang' => [ 'critical' => ['all'] ],
-    'sep2014_c.lang' => [ 'critical' => ['all'] ],
-    'sep2014_d.lang' => [ 'critical' => ['all'] ],
-    'sep2014_e.lang' => [ 'critical' => ['all'] ],
+    'nov2014_a.lang' => [ 'critical' => ['all'] ],
+    'nov2014_b.lang' => [ 'critical' => ['all'] ],
+    'nov2014_c.lang' => [ 'critical' => ['all'] ],
+    'nov2014_d.lang' => [ 'critical' => ['all'] ],
+    'nov2014_e.lang' => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['homefeeds.lang', 'worldcup.lang'];
@@ -325,12 +335,10 @@ $marketplacebadge_locales = ['bg', 'bn-BD', 'ca', 'cs', 'de', 'el', 'es-ES', 'fr
                              'hr', 'hu', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
                              'sr', 'sr-Latn', 'sv-SE', 'ta', 'tr'];
 
-$snippets_locales = ['bn-BD', 'cs', 'da', 'de', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'hr', 'hu',
-                     'id', 'it', 'ja', 'ko', 'nb-NO', 'mk', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
-                     'sr', 'tr', 'sv-SE', 'zh-CN', 'zh-TW'];
-
-$snippets_main_locales = ['cs', 'de', 'el', 'es-ES', 'fr', 'hu', 'id', 'it', 'ja', 'ko',
-                          'pl', 'pt-BR', 'ru', 'sr', 'vi', 'zh-CN', 'zh-TW'];
+$snippets_locales = ['ast', 'bn-BD', 'cs', 'da', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+                     'fi', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'hu', 'id', 'it', 'lv', 'ja', 'ko',
+                     'nb-NO', 'nn-NO', 'mk', 'nl', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk',
+                     'sl', 'sq', 'sr', 'tr', 'sv-SE', 'zh-CN', 'zh-TW'];
 
 $addons_locales = ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'pt-BR'];
 
@@ -700,9 +708,6 @@ $langfiles_subsets = [
 
     'snippets' =>
     [
-        'jan2014.lang' => $snippets_main_locales,
-        'apr2014.lang' => $snippets_locales,
-        'may2014.lang' => $snippets_locales,
         'jun2014.lang' => ['de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id', 'it', 'nl', 'pl', 'pt-BR', 'sr'],
         'aug2014_a.lang' => ['es-ES'],
         'aug2014_b.lang' => ['bn-BD', 'cs', 'hr', 'mk'],
@@ -713,6 +718,13 @@ $langfiles_subsets = [
         'sep2014_c.lang' => ['bn-BD', 'el', 'hi-IN', 'hu'],
         'sep2014_d.lang' => ['pt-BR'],
         'sep2014_e.lang' => ['sq'],
+        'nov2014_a.lang' => ['ast', 'da', 'es-AR', 'es-CL', 'es-MX', 'fi', 'fy-NL',
+                             'he', 'ko', 'lv', 'nb-NO', 'nn-NO', 'pa-IN', 'rm', 'sk',
+                             'sl', 'zh-TW'],
+        'nov2014_b.lang' => ['ja'],
+        'nov2014_c.lang' => ['es-ES', 'hu'],
+        'nov2014_d.lang' => ['de', 'fr', 'it', 'pl', 'pt-BR', 'ru'],
+        'nov2014_e.lang' => ['el', 'hi-IN', 'mk', 'sr'],
     ],
 
     'add-ons' => [
