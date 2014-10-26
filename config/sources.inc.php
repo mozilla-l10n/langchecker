@@ -214,10 +214,6 @@ $lang_flags['slogans'] = [
 ];
 
 $snippets_lang = [
-    'jan2014.lang',
-    'apr2014.lang',
-    'may2014.lang',
-    'jun2014.lang',
     'aug2014_a.lang',
     'aug2014_b.lang',
     'aug2014_c.lang',
