@@ -533,11 +533,11 @@ $firefox_os = ['af', 'bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX',
 
 $android_locales = ['an', 'as', 'be', 'bn-IN', 'ca', 'cs', 'cy', 'da', 'de',
                     'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff', 'fr',
-                    'fy-NL', 'ga-IE', 'gd', 'gu-IN', 'hi-IN', 'hu', 'hy-AM',
-                    'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv',
-                    'ml', 'mr', 'ms', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl',
-                    'pt-BR', 'pt-PT', 'ro', 'ru', 'sq', 'sk', 'sl', 'sv-SE',
-                    'ta', 'te', 'th', 'tr', 'uk', 'zh-CN', 'zh-TW'];
+                    'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN', 'hi-IN', 'hu',
+                    'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt',
+                    'lv', 'ml', 'mr', 'ms', 'nb-NO', 'nl', 'or', 'pa-IN',
+                    'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sq', 'sk', 'sl',
+                    'sv-SE', 'ta', 'te', 'th', 'tr', 'uk', 'zh-CN', 'zh-TW'];
 
 $langfiles_subsets = [
     'www.mozilla.org' =>
