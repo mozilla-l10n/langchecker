@@ -32,6 +32,8 @@ if ($current_filename == '' || ! in_array($current_filename, Project::getWebsite
 
 $complete_locales_count = 0;
 $complete_locales_list = [];
+$activated_locales_count = 0;
+$activated_locales_list = [];
 $json_data = [];
 
 $reference_locale = Project::getReferenceLocale($current_website);
@@ -121,30 +123,28 @@ if ($website_data_source == 'lang') {
         $json_data[$current_filename][$current_locale]['activated'] = $active;
         if ($active) {
             echo "      <td class='activated'>active</td>\n";
+            $activated_locales_count++;
+            $activated_locales_list[] = $current_locale;
         } else {
             echo "      <td></td>\n";
         }
         echo "    </tr>\n";
     }
 
-    $coverage = Project::getUserBaseCoverage($complete_locales_list, $adu) . '%';
+    $coverage_complete = Project::getUserBaseCoverage($complete_locales_list, $adu) . '%';
+    $coverage_activated = Project::getUserBaseCoverage($activated_locales_list, $adu) . '%';
 
-    echo '
+    echo "
       </tbody>
       <tfoot>
         <tr>
-          <td colspan= "7">'
-            . $complete_locales_count
-            . ' perfect locales ('
-            . round($complete_locales_count/count($supported_locales)*100)
-            . '%)<br>'
-            . $coverage
-            . ' of our l10n user base'
-            . '</td>
+          <td colspan= '7'>
+            Complete locales: {$complete_locales_count} (" . round($complete_locales_count/count($supported_locales)*100) . "%) - {$coverage_complete} of our l10n user base<br/>
+            Activated locales: {$activated_locales_count} (" . round($activated_locales_count/count($supported_locales)*100) . "%) - {$coverage_activated} of our l10n user base
+          </td>
         </tr>
       </tfoot>
-    </table>
-    ';
+    </table>\n";
 } else {
     // Websites using raw files
     echo '
