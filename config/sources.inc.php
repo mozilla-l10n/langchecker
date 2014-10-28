@@ -205,6 +205,7 @@ $deadline = [
     'nov2014_d.lang'                         => '2014-11-05',
     'nov2014_e.lang'                         => '2014-11-05',
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
+    'privacycoach.lang'                      => '2014-11-07',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang'];
