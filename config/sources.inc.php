@@ -242,9 +242,9 @@ $lang_flags['snippets'] = [
     'nov2014_e.lang' => [ 'critical' => ['all'] ],
 ];
 
-$addons_lang = ['homefeeds.lang', 'worldcup.lang'];
+$addons_lang = ['homefeeds.lang', 'worldcup.lang', 'privacycoach.lang'];
 $lang_flags['add-ons'] = [
-    'worldcup.lang' => [ 'critical' => ['all'] ],
+    // 'worldcup.lang' => [ 'critical' => ['all'] ],
 ];
 
 $firefox_updater_lang = ['updater.lang'];
@@ -730,8 +730,9 @@ $langfiles_subsets = [
     ],
 
     'add-ons' => [
-        'worldcup.lang'  => $addons_locales,
-        'homefeeds.lang' => $addons_locales
+        'worldcup.lang'     => $addons_locales,
+        'homefeeds.lang'    => $addons_locales,
+        'privacycoach.lang' => ['de', 'fr', 'es-ES', 'es-MX', 'hu', 'id', 'ja', 'pl', 'pt-BR', 'ru']
     ],
 
     'firefox-updater' => [
