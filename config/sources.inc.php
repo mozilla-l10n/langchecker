@@ -11,6 +11,7 @@ $public_repo8  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/';
 $public_repo9  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/';
 $public_repo10 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/';
 $public_repo11 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxtiles/';
+$public_repo12 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/googleplay/';
 
 // This is to avoid a warning in shell mode
 if (! isset($_SERVER['SERVER_NAME'])) {
@@ -206,6 +207,7 @@ $deadline = [
     'nov2014_e.lang'                         => '2014-11-05',
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
     'privacycoach.lang'                      => '2014-11-07',
+    'description_page.lang'                  => '2014-11-09',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang'];
@@ -264,6 +266,11 @@ $lang_flags['firefoxos-marketing'] = [];
 $firefox_tiles_lang = ['tiles.lang'];
 $lang_flags['firefox-tiles'] = [
     'tiles.lang' => [ 'critical' => ['all'] ],
+];
+
+$google_play_lang = ['description_page.lang'];
+$lang_flags['google-play'] = [
+    'description_page.lang' => [ 'critical' => ['de', 'fr'] ],
 ];
 
 $getinvolved_autoreplies = [
@@ -360,6 +367,22 @@ $privacy_tour_locales = ['ast', 'da', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                          'fi', 'fr', 'fy-NL', 'he', 'hu', 'it', 'ja', 'ko',
                          'lv', 'nb-NO', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm',
                          'ru', 'sk', 'sl', 'zh-TW'];
+
+$mwc_locales = ['ca', 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
+'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'];
+
+$firefox_os = ['af', 'bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX',
+               'et', 'fr', 'fy-NL', 'hi-IN', 'hr', 'hu', 'ja', 'it', 'ko', 'mk',
+               'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'ta',
+               'xh', 'zh-CN', 'zh-TW', 'zu'];
+
+$android_locales = ['an', 'as', 'be', 'bn-IN', 'ca', 'cs', 'cy', 'da', 'de',
+                    'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff', 'fr',
+                    'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN', 'hi-IN', 'hu',
+                    'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt',
+                    'lv', 'ml', 'mr', 'ms', 'nb-NO', 'nl', 'or', 'pa-IN',
+                    'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sq', 'sk', 'sl',
+                    'sv-SE', 'ta', 'te', 'th', 'tr', 'uk', 'zh-CN', 'zh-TW'];
 
 /* Array structure for single website
 *
@@ -523,23 +546,19 @@ $sites =
         $lang_flags['contribute-autoreplies'],
         'raw',
     ],
+
+    12 => [
+        'google-play',
+        $repo12,
+        '',
+        $android_locales,
+        $google_play_lang,
+        'en-US', // source locale
+        $public_repo12,
+        $lang_flags['google-play'],
+        'lang',
+    ],
 ];
-
-$mwc_locales = ['ca', 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
-'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW'];
-
-$firefox_os = ['af', 'bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX',
-               'et', 'fr', 'fy-NL', 'hi-IN', 'hr', 'hu', 'ja', 'it', 'ko', 'mk',
-               'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'ta',
-               'xh', 'zh-CN', 'zh-TW', 'zu'];
-
-$android_locales = ['an', 'as', 'be', 'bn-IN', 'ca', 'cs', 'cy', 'da', 'de',
-                    'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff', 'fr',
-                    'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN', 'hi-IN', 'hu',
-                    'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt',
-                    'lv', 'ml', 'mr', 'ms', 'nb-NO', 'nl', 'or', 'pa-IN',
-                    'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sq', 'sk', 'sl',
-                    'sv-SE', 'ta', 'te', 'th', 'tr', 'uk', 'zh-CN', 'zh-TW'];
 
 $langfiles_subsets = [
     'www.mozilla.org' =>
@@ -738,6 +757,10 @@ $langfiles_subsets = [
 
     'firefox-updater' => [
         'updater.lang'  => $firefox_updater_locales,
+    ],
+
+    'google-play' => [
+        'description_page.lang'  => $android_locales,
     ],
 
     'firefoxos-marketing' => [
