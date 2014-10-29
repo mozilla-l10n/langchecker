@@ -733,7 +733,7 @@ $langfiles_subsets = [
     'add-ons' => [
         'worldcup.lang'     => $addons_locales,
         'homefeeds.lang'    => $addons_locales,
-        'privacycoach.lang' => ['de', 'fr', 'es-ES', 'es-MX', 'hu', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'zh-TW']
+        'privacycoach.lang' => ['cs', 'de', 'fr', 'es-ES', 'es-MX', 'hu', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'zh-TW']
     ],
 
     'firefox-updater' => [
