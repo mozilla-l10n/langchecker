@@ -172,6 +172,7 @@ $no_active_tag = [
 ];
 
 $deadline = [
+    'description_page.lang'                  => '2014-11-09', //google-play project
     'download_button.lang'                   => '2014-10-27',
     'firefox/android/index.lang'             => '2014-10-27',
     'firefox/australis/firefox_tour.lang'    => '2014-04-27',
@@ -205,9 +206,8 @@ $deadline = [
     'nov2014_c.lang'                         => '2014-11-05',
     'nov2014_d.lang'                         => '2014-11-05',
     'nov2014_e.lang'                         => '2014-11-05',
+    'privacycoach.lang'                      => '2014-11-07',  // add-ons project
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
-    'privacycoach.lang'                      => '2014-11-07',
-    'description_page.lang'                  => '2014-11-09',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang'];
@@ -245,7 +245,7 @@ $lang_flags['snippets'] = [
     'nov2014_e.lang' => [ 'critical' => ['all'] ],
 ];
 
-$addons_lang = ['homefeeds.lang', 'worldcup.lang', 'privacycoach.lang'];
+$addons_lang = ['homefeeds.lang', 'privacycoach.lang', 'worldcup.lang'];
 $lang_flags['add-ons'] = [
     // 'worldcup.lang' => [ 'critical' => ['all'] ],
 ];
@@ -257,6 +257,7 @@ $lang_flags['firefox-updater'] = [
 
 $fxos_marketing_lang = [
     'marketplace_l10n_feed.lang',
+    'screenshots_2_0.lang',
     'screenshots_dolphin.lang',
     'screenshots.lang',
     'screenshots_tarako.lang',
@@ -355,8 +356,8 @@ $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', '
                             'nl', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sl', 'sv-SE', 'th', 'tr', 'vi',
                             'zh-CN', 'zh-TW'];
 
-$fxos_marketing = ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr', 'hu', 'it', 'ja',
-                   'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'ta', 'tr', 'zh-CN'];
+$fxos_marketing = ['af', 'bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr', 'hu', 'it', 'ja',
+                   'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'ta', 'tr', 'xh', 'zh-CN', 'zu'];
 
 $getinvolved_locales = ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
                         'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id', 'it', 'lt',
@@ -752,24 +753,25 @@ $langfiles_subsets = [
     'add-ons' => [
         'worldcup.lang'     => $addons_locales,
         'homefeeds.lang'    => $addons_locales,
-        'privacycoach.lang' => ['cs', 'de', 'fr', 'es-ES', 'es-MX', 'hu', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'zh-TW']
+        'privacycoach.lang' => ['cs', 'de', 'es-ES', 'es-MX', 'fr', 'hu', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'zh-TW']
     ],
 
     'firefox-updater' => [
-        'updater.lang'  => $firefox_updater_locales,
+        'updater.lang' => $firefox_updater_locales,
     ],
 
     'google-play' => [
-        'description_page.lang'  => $android_locales,
+        'description_page.lang' => $android_locales,
     ],
 
     'firefoxos-marketing' => [
         'marketplace_l10n_feed.lang' => ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it', 'ja',
                                          'mk', 'pl', 'pt-BR', 'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN'],
-        'screenshots_dolphin.lang'  => ['bn-BD'],
+        'screenshots_2_0.lang' => ['af', 'xh', 'zu'],
+        'screenshots_dolphin.lang' => ['bn-BD'],
         'screenshots.lang'  => ['cs', 'de', 'el', 'es-ES', 'hr', 'hu',
                                 'fr', 'it', 'mk', 'pl', 'pt-BR', 'ro',
                                 'sr'],
-        'screenshots_tarako.lang'  => ['hi-IN', 'ru', 'ta'],
+        'screenshots_tarako.lang' => ['hi-IN', 'ru', 'ta'],
     ],
 ];
