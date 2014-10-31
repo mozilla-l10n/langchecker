@@ -245,7 +245,7 @@ $lang_flags['snippets'] = [
     'nov2014_e.lang' => [ 'critical' => ['all'] ],
 ];
 
-$addons_lang = ['homefeeds.lang', 'privacycoach.lang', 'worldcup.lang'];
+$addons_lang = ['privacycoach.lang'];
 $lang_flags['add-ons'] = [
     // 'worldcup.lang' => [ 'critical' => ['all'] ],
 ];
@@ -350,7 +350,7 @@ $snippets_locales = ['ast', 'bn-BD', 'cs', 'da', 'de', 'el', 'es-AR', 'es-CL', '
                      'nb-NO', 'nn-NO', 'mk', 'nl', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk',
                      'sl', 'sq', 'sr', 'tr', 'sv-SE', 'zh-CN', 'zh-TW'];
 
-$addons_locales = ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'pt-BR'];
+$addons_locales = ['cs', 'de', 'es-ES', 'es-MX', 'fr', 'hu', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'zh-TW'];
 
 $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', 'id', 'it', 'ja',
                             'nl', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sl', 'sv-SE', 'th', 'tr', 'vi',
@@ -751,9 +751,7 @@ $langfiles_subsets = [
     ],
 
     'add-ons' => [
-        'worldcup.lang'     => $addons_locales,
-        'homefeeds.lang'    => $addons_locales,
-        'privacycoach.lang' => ['cs', 'de', 'es-ES', 'es-MX', 'fr', 'hu', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'zh-TW']
+        'privacycoach.lang' => $addons_locales
     ],
 
     'firefox-updater' => [
