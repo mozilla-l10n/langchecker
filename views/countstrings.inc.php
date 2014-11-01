@@ -5,33 +5,42 @@ use \Transvision\Json;
 
 $todo  = [];
 
-// We consider only mozilla.org, so $sites[0]
-$current_website = $sites[0];
-$reference_locale = Project::getReferenceLocale($current_website);
-
 foreach ($mozilla as $current_locale) {
-    // Ignore reference language
-    if ($current_locale == $reference_locale) {
-        continue;
-    }
 
-    $todo[$current_locale]  = 0;
+    $todo[$current_locale] = 0;
 
-    foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
-        // Skip the loop if we don't have this lang file for the locale
-        if (! Project::isSupportedLocale($current_website, $current_locale, $langfiles_subsets, $current_filename)) {
+    foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
+
+        $reference_locale = Project::getReferenceLocale($current_website);
+
+        // Ignore reference language
+        if ($current_locale == $reference_locale) {
             continue;
         }
 
-        // Skip the locale for this file if it's missing
-        if (! is_file(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
-            continue;
+        foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
+
+            // Skip the loop if we don't have this lang file for the locale
+            if (! Project::isSupportedLocale($current_website, $current_locale, $langfiles_subsets, $current_filename)) {
+                continue;
+            }
+
+            // Skip the locale for this file if it's missing
+            if (! is_file(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
+                continue;
+            }
+
+            // Skip the locale if we do have a lang file but don't need it for the locale
+            if (isset($langfiles_subsets[$current_website[0]][$current_filename])
+                && ! in_array($current_locale, $langfiles_subsets[$current_website[0]][$current_filename])) {
+                continue;
+            }
+
+            $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+            $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
+
+            $todo[$current_locale] += count($locale_analysis['Identical']) + count($locale_analysis['Missing']);
         }
-
-        $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
-        $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
-
-        $todo[$current_locale] += count($locale_analysis['Identical']) + count($locale_analysis['Missing']);
     }
 }
 
