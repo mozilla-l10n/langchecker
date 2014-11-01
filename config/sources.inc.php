@@ -350,7 +350,7 @@ $snippets_locales = ['ast', 'bn-BD', 'cs', 'da', 'de', 'el', 'es-AR', 'es-CL', '
                      'nb-NO', 'nn-NO', 'mk', 'nl', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk',
                      'sl', 'sq', 'sr', 'tr', 'sv-SE', 'zh-CN', 'zh-TW'];
 
-$addons_locales = ['cs', 'de', 'es-ES', 'es-MX', 'fr', 'hu', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'zh-TW'];
+$addons_locales = ['cs', 'de', 'es-ES', 'es-MX', 'fr', 'hu', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'sq', 'zh-TW'];
 
 $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', 'id', 'it', 'ja',
                             'nl', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sl', 'sv-SE', 'th', 'tr', 'vi',
