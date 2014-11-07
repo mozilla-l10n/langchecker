@@ -52,6 +52,7 @@ $mozillaorg_lang = [
     'firefox/desktop/index.lang',
     'firefox/desktop/tips.lang',
     'firefox/desktop/trust.lang',
+    'firefox/developer.lang',
     'firefox/geolocation.lang',
     'firefox/includes/mwc_2014_schedule.lang',
     'firefox/independent.lang',
@@ -590,6 +591,7 @@ $langfiles_subsets = [
              'fr', 'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl',
              'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'sv-SE', 'zh-CN', 'zh-TW'],
         'firefox/desktop/trust.lang'            => $mozilla,
+        'firefox/developer.lang'                => $mozilla,
         'firefox/geolocation.lang'              =>
             ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
              'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
