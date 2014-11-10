@@ -21,6 +21,8 @@ $mozilla = [
 
 $mozilla = array_diff($mozilla, ['en-ZA', 'es']);
 
+$mozillaorg = array_diff($mozilla, ['en-GB', 'es', 'lg', 'sw']);
+
 // dropped locales
 $mozilla = array_diff($mozilla, ['ak', 'csb', 'lg', 'mn', 'nso', 'sah', 'sw', 'ta-LK', 'wo']);
 
