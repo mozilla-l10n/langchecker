@@ -20,13 +20,11 @@ $mozilla = [
 ];
 
 $mozilla = array_diff($mozilla, ['en-ZA', 'es']);
-
-$mozillaorg = array_diff($mozilla, ['en-GB', 'es', 'lg', 'sw']);
-
-// dropped locales
+// Remove dropped locales
 $mozilla = array_diff($mozilla, ['ak', 'csb', 'lg', 'mn', 'nso', 'sah', 'sw', 'ta-LK', 'wo']);
-
 sort($mozilla);
+
+$mozillaorg = array_diff($mozilla, ['en-GB']);
 
 $startpage36 = [
     'af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
