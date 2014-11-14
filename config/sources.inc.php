@@ -779,7 +779,7 @@ $langfiles_subsets = [
         'screenshots_dolphin.lang' => ['bn-BD'],
         'screenshots.lang'  => ['cs', 'de', 'el', 'es-ES', 'hr', 'hu',
                                 'fr', 'it', 'mk', 'pl', 'pt-BR', 'ro',
-                                'sr'],
+                                'ru', 'sr'],
         'screenshots_tarako.lang' => ['hi-IN', 'ru', 'ta'],
     ],
 ];
