@@ -202,11 +202,9 @@ $deadline = [
     'mozorg/mission.lang'                    => '2013-12-31',
     'mozorg/plugincheck.lang'                => '2014-10-14',
     'mozorg/products.lang'                   => '2013-12-31',
-    'nov2014_a.lang'                         => '2014-11-05',
-    'nov2014_b.lang'                         => '2014-11-05',
-    'nov2014_c.lang'                         => '2014-11-05',
-    'nov2014_d.lang'                         => '2014-11-05',
-    'nov2014_e.lang'                         => '2014-11-05',
+    'dec2014_a.lang'                         => '2014-12-04',
+    'dec2014_b.lang'                         => '2014-12-04',
+    'dec2014_c.lang'                         => '2014-12-04',
     'privacycoach.lang'                      => '2014-11-07',  // add-ons project
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
 ];
@@ -237,13 +235,14 @@ $snippets_lang = [
     'nov2014_c.lang',
     'nov2014_d.lang',
     'nov2014_e.lang',
+    'dec2014_a.lang',
+    'dec2014_b.lang',
+    'dec2014_c.lang',
 ];
 $lang_flags['snippets'] = [
-    'nov2014_a.lang' => [ 'critical' => ['all'] ],
-    'nov2014_b.lang' => [ 'critical' => ['all'] ],
-    'nov2014_c.lang' => [ 'critical' => ['all'] ],
-    'nov2014_d.lang' => [ 'critical' => ['all'] ],
-    'nov2014_e.lang' => [ 'critical' => ['all'] ],
+    'dec2014_a.lang' => [ 'critical' => ['all'] ],
+    'dec2014_b.lang' => [ 'critical' => ['all'] ],
+    'dec2014_c.lang' => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -758,6 +757,9 @@ $langfiles_subsets = [
         'nov2014_c.lang' => ['es-ES', 'hu'],
         'nov2014_d.lang' => ['de', 'fr', 'it', 'pl', 'pt-BR', 'ru'],
         'nov2014_e.lang' => ['el', 'hi-IN', 'mk', 'sr'],
+        'dec2014_a.lang' => ['de', 'es-ES', 'fr', 'id', 'pt-BR', 'ru'],
+        'dec2014_b.lang' => ['ja'],
+        'dec2014_c.lang' => ['sr'],
     ],
 
     'add-ons' => [
