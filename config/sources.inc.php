@@ -587,7 +587,7 @@ $langfiles_subsets = [
         'firefox/desktop/index.lang'            => $mozilla,
         'firefox/desktop/tips.lang'             =>
             ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu',
-             'fr', 'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl',
+             'fr', 'gd', 'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl',
              'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'sv-SE', 'zh-CN', 'zh-TW'],
         'firefox/desktop/trust.lang'            => $mozilla,
         'firefox/developer.lang'                => $mozilla,
@@ -606,7 +606,7 @@ $langfiles_subsets = [
         'firefox/new.lang'                      => $mozilla,
         'firefox/nightly_firstrun.lang'         =>
             ['ar', 'ast', 'cs', 'de', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
-             'fa', 'fr', 'fy-NL', 'gl', 'he', 'hu', 'id', 'it', 'ja', 'kk', 'ko',
+             'fa', 'fr', 'fy-NL', 'gd', 'gl', 'he', 'hu', 'id', 'it', 'ja', 'kk', 'ko',
              'lt', 'lv', 'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-PT', 'ru', 'sk',
              'sv-SE', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW'],
         'firefox/os/devices.lang'               => $firefox_os,
@@ -672,7 +672,7 @@ $langfiles_subsets = [
         'mozorg/about/manifesto.lang'           =>
             ['ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de', 'dsb', 'el',
              'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'fur',
-             'fy-NL', 'gl', 'hr', 'hsb', 'hu', 'id', 'it', 'ja', 'ko', 'km',
+             'fy-NL', 'gd', 'gl', 'hr', 'hsb', 'hu', 'id', 'it', 'ja', 'ko', 'km',
              'mk', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
              'sr', 'sv-SE', 'tr', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW'],
         'mozorg/about/history-details.lang'     =>
