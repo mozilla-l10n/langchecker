@@ -378,6 +378,7 @@ $firefox_os = ['af', 'bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX',
                'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'ta',
                'xh', 'zh-CN', 'zh-TW', 'zu'];
 
+// Source : http://hg.mozilla.org/releases/mozilla-release/raw-file/85d4fdc6d572/mobile/android/locales/maemo-locales
 $android_locales = ['an', 'as', 'be', 'bn-IN', 'ca', 'cs', 'cy', 'da', 'de',
                     'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff', 'fr',
                     'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN', 'hi-IN', 'hu',
@@ -386,12 +387,16 @@ $android_locales = ['an', 'as', 'be', 'bn-IN', 'ca', 'cs', 'cy', 'da', 'de',
                     'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sq', 'sk', 'sl',
                     'sv-SE', 'ta', 'te', 'th', 'tr', 'uk', 'zh-CN', 'zh-TW'];
 
+// List provided by Release-drivers, needs access to a Google Play publishing account
 $google_play_locales = ['af', 'ar', 'be', 'bg', 'cs', 'ca', 'da', 'de', 'el',
                         'en-GB', 'es-MX', 'es-ES', 'et', 'fa', 'fi', 'fr',
                         'hi-IN', 'hu', 'hr', 'id', 'it', 'he', 'ja', 'ko',
                         'lt', 'lv', 'ms', 'nl', 'nb-NO', 'pl', 'pt-BR',
                         'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'sr', 'sv-SE',
                         'sw', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW', 'zu'];
+
+// Locales that we do support and that Google Play supports too
+$google_play_target = array_intersect($android_locales, $google_play_locales);
 
 /* Array structure for single website
 *
@@ -560,7 +565,7 @@ $sites =
         'google-play',
         $repo12,
         '',
-        $google_play_locales,
+        $google_play_target,
         $google_play_lang,
         'en-US', // source locale
         $public_repo12,
@@ -771,7 +776,7 @@ $langfiles_subsets = [
     ],
 
     'google-play' => [
-        'description_page.lang' => $google_play_locales,
+        'description_page.lang' => $google_play_target,
     ],
 
     'firefoxos-marketing' => [
