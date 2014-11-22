@@ -588,9 +588,11 @@ $langfiles_subsets = [
         'firefox/desktop/fast.lang'             => $mozilla,
         'firefox/desktop/index.lang'            => $mozilla,
         'firefox/desktop/tips.lang'             =>
-            ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu',
-             'fr', 'gd', 'gl', 'fy-NL', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl',
-             'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'sv-SE', 'zh-CN', 'zh-TW'],
+            ['af', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR', 'es-CL',
+            'es-ES', 'es-MX', 'eu', 'ff', 'fr', 'gd', 'gl', 'fy-NL', 'he',
+            'hi-IN', 'hsb', 'hu', 'id', 'it', 'ja', 'km', 'ms', 'nl',
+             'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sv-SE',
+             'uz', 'xh', 'zh-CN', 'zh-TW'],
         'firefox/desktop/trust.lang'            => $mozilla,
         'firefox/developer.lang'                => $mozilla,
         'firefox/geolocation.lang'              =>
@@ -655,9 +657,9 @@ $langfiles_subsets = [
              'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
         'legal/index.lang'                      => $firefox_os,
         'lightbeam/lightbeam.lang'              =>
-            ['ca', 'cs', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
-             'eu', 'fr', 'fy-NL', 'it', 'ja', 'nl', 'pl', 'sq', 'sv-SE',
-             'tr', 'zh-CN'],
+            ['ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR', 'es-CL',
+             'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL', 'hsb', 'it', 'ja',
+             'km', 'ms', 'nl', 'pl', 'sq', 'sv-SE', 'tr', 'zh-CN'],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
         'marketplace/partners.lang'             => ['fr', 'es-ES', 'pt-BR'],
@@ -674,9 +676,10 @@ $langfiles_subsets = [
         'mozorg/about/manifesto.lang'           =>
             ['ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de', 'dsb', 'el',
              'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'fur',
-             'fy-NL', 'gd', 'gl', 'hr', 'hsb', 'hu', 'id', 'it', 'ja', 'ko', 'km',
-             'mk', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
-             'sr', 'sv-SE', 'tr', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW'],
+             'fy-NL', 'gd', 'gl', 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it',
+             'ja', 'ko', 'km', 'mk', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
+             'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'uz', 'vi', 'xh',
+             'zh-CN', 'zh-TW'],
         'mozorg/about/history-details.lang'     =>
             ['ca', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu', 'fr', 'gl',
              'hsb', 'it', 'km', 'pa-IN', 'ro', 'sk', 'sq', 'sv-SE', 'uz',
