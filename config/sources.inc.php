@@ -141,7 +141,6 @@ $lang_flags['www.mozilla.org'] = [
     'main.lang'                               => [ 'critical' => ['all'] ],
     'marketplace/marketplace.lang'            => [ 'critical' => ['all'] ],
     'mobile.lang'                             => [ 'critical' => ['all'] ],
-    'mozorg/contribute.lang'                  => [ 'critical' => ['all'] ],
     'mozorg/contribute/index.lang'            => [ 'critical' => ['all'] ],
     'mozorg/contribute/stories.lang'          => [ 'critical' => ['all'] ],
     'mozorg/home/index.lang'                  => [ 'critical' => ['all'] ],
@@ -195,7 +194,6 @@ $deadline = [
     'legal/index.lang'                       => '2014-10-14',
     'mozorg/about.lang'                      => '2014-08-31',
     'mozorg/about/manifesto.lang'            => '2014-08-31',
-    'mozorg/contribute.lang'                 => '2014-01-10',
     'mozorg/contribute/index.lang'           => '2014-11-24',
     'mozorg/contribute/stories.lang'         => '2014-11-24',
     'mozorg/home/index.lang'                 => '2014-11-24',
@@ -357,7 +355,7 @@ $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', '
 $fxos_marketing = ['af', 'bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr', 'hu', 'it', 'ja',
                    'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'ta', 'tr', 'xh', 'zh-CN', 'zu'];
 
-$getinvolved_locales = ['ar', 'bg', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+$getinvolved_locales = ['ar', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
                         'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id', 'it', 'lt',
                         'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'sv-SE',
                         'ta', 'tr', 'zh-CN', 'zh-TW'];
