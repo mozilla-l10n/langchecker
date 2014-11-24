@@ -357,7 +357,7 @@ $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', '
 $fxos_marketing = ['af', 'bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr', 'hu', 'it', 'ja',
                    'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'ta', 'tr', 'xh', 'zh-CN', 'zu'];
 
-$getinvolved_locales = ['ar', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+$getinvolved_locales = ['ar', 'bg', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
                         'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id', 'it', 'lt',
                         'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'sv-SE',
                         'ta', 'tr', 'zh-CN', 'zh-TW'];
