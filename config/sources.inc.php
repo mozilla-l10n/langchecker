@@ -146,7 +146,9 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/home/index.lang'                  => [ 'critical' => ['all'] ],
     'mozorg/plugincheck.lang'                 => [ 'critical' => ['all'] ],
     'mwc2014_promos.lang'                     => [ 'critical' => ['all'] ],
-    'newsletter.lang'                         => [ 'critical' => ['all'] ],
+    'newsletter.lang'                         => [
+        'critical' => ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'],
+    ],
     'upgradedialog.lang'                      => [ 'critical' => ['all'] ],
 ];
 
@@ -333,6 +335,7 @@ $deadline = [
     'mozorg/mission.lang'                    => '2013-12-31',
     'mozorg/plugincheck.lang'                => '2014-10-14',
     'mozorg/products.lang'                   => '2013-12-31',
+    'newsletter.lang'                        => '2014-12-08',
     'dec2014_a.lang'                         => '2014-12-04',
     'dec2014_c.lang'                         => '2014-12-04',
     'privacycoach.lang'                      => '2014-11-07',  // add-ons project
