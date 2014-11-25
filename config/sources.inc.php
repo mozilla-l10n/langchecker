@@ -150,60 +150,9 @@ $lang_flags['www.mozilla.org'] = [
     'upgradedialog.lang'                      => [ 'critical' => ['all'] ],
 ];
 
-$no_active_tag = [
-    'download.lang',
-    'download_button.lang',
-    'esr.lang',
-    'euballot.lang',
-    'firefox/includes/mwc_2014_schedule.lang',
-    'firefoxflicks.lang',
-    'firefoxlive.lang',
-    'firefoxtesting.lang',
-    'foundationsection.lang',
-    'main.lang',
-    'marketplace/marketplace.lang',
-    'marketplace/partners.lang',
-    'mobile.lang',
-    'mozspaces.lang',
-    'mwc2014_promos.lang',
-    'newsletter.lang',
-    'snippets.lang',
-    'upgradepromos.lang',
-];
-
-$deadline = [
-    'description_page.lang'                  => '2014-11-09', //google-play project
-    'download_button.lang'                   => '2014-10-27',
-    'firefox/android/index.lang'             => '2014-10-27',
-    'firefox/australis/firefox_tour.lang'    => '2014-04-27',
-    'firefox/channel.lang'                   => '2014-11-24',
-    'firefox/desktop/customize.lang'         => '2014-05-27',
-    'firefox/desktop/fast.lang'              => '2014-05-27',
-    'firefox/desktop/index.lang'             => '2014-08-31',
-    'firefox/desktop/tips.lang'              => '2014-05-27',
-    'firefox/desktop/trust.lang'             => '2014-11-24',
-    'firefox/independent.lang'               => '2014-11-09',
-    'firefox/installer-help.lang'            => '2013-12-31',
-    'firefox/new.lang'                       => '2014-11-09',
-    'firefox/os/devices.lang'                => '2014-11-24',
-    'firefox/os/index.lang'                  => '2014-10-31',
-    'firefox/privacy_tour/privacy_tour.lang' => '2014-11-04',
-    'firefox/sync.lang'                      => '2014-11-09',
-    'firefox/tiles.lang'                     => '2014-11-09',
-    'firefox/whatsnew.lang'                  => '2013-12-31',
-    'legal/index.lang'                       => '2014-10-14',
-    'mozorg/about.lang'                      => '2014-08-31',
-    'mozorg/about/manifesto.lang'            => '2014-08-31',
-    'mozorg/contribute/index.lang'           => '2014-11-24',
-    'mozorg/contribute/stories.lang'         => '2014-11-24',
-    'mozorg/home/index.lang'                 => '2014-11-24',
-    'mozorg/mission.lang'                    => '2013-12-31',
-    'mozorg/plugincheck.lang'                => '2014-10-14',
-    'mozorg/products.lang'                   => '2013-12-31',
-    'dec2014_a.lang'                         => '2014-12-04',
-    'dec2014_c.lang'                         => '2014-12-04',
-    'privacycoach.lang'                      => '2014-11-07',  // add-ons project
-    'tabzilla/tabzilla.lang'                 => '2014-10-31',
+$startpage36_lang = ['fx36start.lang'];
+$lang_flags['start.mozilla.org'] = [
+    'fx36start.lang'                          => [ 'critical' => ['all'] ],
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang'];
@@ -300,6 +249,7 @@ $getinvolved_autoreplies = [
     'templates/mozorg/contribute-2015/writing_txt_devs.txt',
     'templates/mozorg/contribute-2015/writing_txt_users.txt',
 ];
+
 $lang_flags['contribute-autoreplies'] = [
     'templates/mozorg/contribute-2015/activism.txt'              => [ 'optional' => ['all'] ],
     'templates/mozorg/contribute-2015/coding_addons.txt'         => [ 'optional' => ['all'] ],
@@ -330,6 +280,63 @@ $lang_flags['contribute-autoreplies'] = [
     'templates/mozorg/contribute-2015/writing_social.txt'        => [ 'optional' => ['all'] ],
     'templates/mozorg/contribute-2015/writing_txt_devs.txt'      => [ 'optional' => ['all'] ],
     'templates/mozorg/contribute-2015/writing_txt_users.txt'     => [ 'optional' => ['all'] ],
+];
+
+$no_active_tag = [
+    'download.lang',
+    'download_button.lang',
+    'esr.lang',
+    'euballot.lang',
+    'firefox/includes/mwc_2014_schedule.lang',
+    'firefoxflicks.lang',
+    'firefoxlive.lang',
+    'firefoxtesting.lang',
+    'foundationsection.lang',
+    'main.lang',
+    'marketplace/marketplace.lang',
+    'marketplace/partners.lang',
+    'mobile.lang',
+    'mozspaces.lang',
+    'mwc2014_promos.lang',
+    'newsletter.lang',
+    'snippets.lang',
+    'upgradepromos.lang',
+];
+
+$deadline = [
+    'description_page.lang'                  => '2014-11-09', //google-play project
+    'download_button.lang'                   => '2014-10-27',
+    'firefox/android/index.lang'             => '2014-10-27',
+    'firefox/australis/firefox_tour.lang'    => '2014-04-27',
+    'firefox/channel.lang'                   => '2014-11-24',
+    'firefox/desktop/customize.lang'         => '2014-05-27',
+    'firefox/desktop/fast.lang'              => '2014-05-27',
+    'firefox/desktop/index.lang'             => '2014-08-31',
+    'firefox/desktop/tips.lang'              => '2014-05-27',
+    'firefox/desktop/trust.lang'             => '2014-11-24',
+    'firefox/independent.lang'               => '2014-11-09',
+    'firefox/installer-help.lang'            => '2013-12-31',
+    'firefox/new.lang'                       => '2014-11-09',
+    'firefox/os/devices.lang'                => '2014-11-24',
+    'firefox/os/index.lang'                  => '2014-10-31',
+    'firefox/privacy_tour/privacy_tour.lang' => '2014-11-04',
+    'firefox/sync.lang'                      => '2014-11-09',
+    'firefox/tiles.lang'                     => '2014-11-09',
+    'firefox/whatsnew.lang'                  => '2013-12-31',
+    'fx36start.lang'                         => '2014-12-04',
+    'legal/index.lang'                       => '2014-10-14',
+    'mozorg/about.lang'                      => '2014-08-31',
+    'mozorg/about/manifesto.lang'            => '2014-08-31',
+    'mozorg/contribute/index.lang'           => '2014-11-24',
+    'mozorg/contribute/stories.lang'         => '2014-11-24',
+    'mozorg/home/index.lang'                 => '2014-11-24',
+    'mozorg/mission.lang'                    => '2013-12-31',
+    'mozorg/plugincheck.lang'                => '2014-10-14',
+    'mozorg/products.lang'                   => '2013-12-31',
+    'dec2014_a.lang'                         => '2014-12-04',
+    'dec2014_c.lang'                         => '2014-12-04',
+    'privacycoach.lang'                      => '2014-11-07',  // add-ons project
+    'tabzilla/tabzilla.lang'                 => '2014-10-31',
 ];
 
 $slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
@@ -428,10 +435,10 @@ $sites =
         $repo2,
         'locale/',
         $startpage36,
-        ['fx36start.lang'],
+        $startpage36_lang,
         'en-US', // source locale
         $public_repo2,
-        [],
+        $lang_flags['start.mozilla.org'],
         'lang',
     ],
 
