@@ -22,7 +22,7 @@ require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
 $locamotion_locales = ['ach', 'af', 'bn-BD', 'cy', 'dsb', 'en-ZA',
-                       'es-MX', 'ff', 'gd', 'hi-IN', 'hsb', 'km', 'ku', 'ms',
+                       'es-MX', 'ff', 'gd', 'hi-IN', 'hsb', 'km', 'ms',
                        'my', 'oc', 'si', 'son', 'ta', 'ur', 'uz', 'vi', 'xh',
                        'zu'];
 
@@ -605,7 +605,7 @@ $langfiles_subsets = [
              'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
              'es-MX', 'et', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
              'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hu', 'hy-AM', 'id', 'is',
-             'it', 'ja', 'ka', 'kk', 'kn', 'ko', 'ku', 'lt', 'lv', 'mk', 'ml', 'mr',
+             'it', 'ja', 'ka', 'kk', 'kn', 'ko', 'lt', 'lv', 'mk', 'ml', 'mr',
              'nb-NO', 'nl', 'nn-NO', 'oc', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
              'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'ta',
              'te', 'th', 'tr', 'uk', 'vi', 'zh-CN'],
@@ -722,7 +722,7 @@ $langfiles_subsets = [
              'dsb', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
              'et', 'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
              'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM',
-             'id', 'is', 'it', 'ja', 'ka', 'kk', 'km', 'kn', 'ko', 'ku',
+             'id', 'is', 'it', 'ja', 'ka', 'kk', 'km', 'kn', 'ko',
              'lij', 'lt', 'lv', 'mai', 'mk', 'ml', 'mr', 'ms',
              'my', 'nb-NO', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN',
              'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si',
