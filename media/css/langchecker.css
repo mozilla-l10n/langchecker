@@ -359,6 +359,7 @@ td.even {
 
 ul#locales {
     -moz-column-count: 6;
+    -webkit-column-count: 6;
     width: 80%;
 }
 
