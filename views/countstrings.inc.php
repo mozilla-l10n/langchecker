@@ -55,7 +55,7 @@ if ($json) {
 $rows = '';
 foreach ($todo as $key => $val) {
     if ($val == 0) {
-        $class = 'class="dim"';
+        $class = 'class="count_complete"';
     } else {
         $class = '';
     }
