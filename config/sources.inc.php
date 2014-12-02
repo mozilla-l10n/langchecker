@@ -370,6 +370,8 @@ $getinvolved_locales = ['ar', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'el', 'es-AR', 'e
                         'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'sv-SE',
                         'ta', 'tr', 'uk', 'zh-CN', 'zh-TW'];
 
+$getinvolved_locales_oldpage = ['hr', 'lt', 'ro', 'ta'];
+
 $privacy_tour_locales = ['ast', 'da', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                          'fi', 'fr', 'fy-NL', 'he', 'hu', 'it', 'ja', 'ko',
                          'lv', 'nb-NO', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm',
@@ -697,7 +699,7 @@ $langfiles_subsets = [
              'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
              'it', 'km', 'lt', 'ms', 'nl', 'pa-IN', 'pl', 'pt-BR', 'ro', 'ru',
              'sk', 'sl', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uz', 'zh-CN', 'zh-TW'],
-        'mozorg/contribute.lang'                => $getinvolved_locales,
+        'mozorg/contribute.lang'                => $getinvolved_locales_oldpage,
         'mozorg/contribute/index.lang'          => $getinvolved_locales,
         'mozorg/contribute/stories.lang'        => $getinvolved_locales,
         'mozorg/plugincheck.lang'               => $mozillaorg,
