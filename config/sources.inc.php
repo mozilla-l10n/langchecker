@@ -368,7 +368,7 @@ $fxos_marketing = ['af', 'bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN'
 $getinvolved_locales = ['ar', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
                         'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id', 'it', 'lt',
                         'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'sv-SE',
-                        'ta', 'tr', 'zh-CN', 'zh-TW'];
+                        'ta', 'tr', 'uk', 'zh-CN', 'zh-TW'];
 
 $privacy_tour_locales = ['ast', 'da', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                          'fi', 'fr', 'fy-NL', 'he', 'hu', 'it', 'ja', 'ko',
