@@ -47,10 +47,10 @@ body {
     min-width: 800px;
 }
 
-.sand #outer-wrapper {
-    background: #f5f1e8 url(../img/sandstone/bg-sand.png) repeat-x top left;
+#outer-wrapper {
     background: url(../img/sandstone/bg-gradient-sand.png) repeat-x 0 0,
-                url(../img/sandstone/bg-sand.png) repeat 0 0, #f5f1e8;
+                url(../img/sandstone/bg-sand.png) repeat 0 0,
+                #f5f1e8;
     height: 100%;
 }
 
@@ -132,25 +132,25 @@ caption.filename {
     padding: 6px;
 }
 
-tr.dim {
+.count_complete {
     color: #ddd;
 }
 
-td.tags_column {
+.tags_cell {
     text-align: left;
     font-size: 11px;
 }
 
-td.activated {
+.activated_cell {
     background-color: #92cc6e;
     color: #92cc6e;
 }
 
-td.lightlink a {
+.lightlink_cell a {
     color: #c7edff;
 }
 
-td.linklocale a {
+.linklocale_cell a {
     font-weight: bold;
 }
 
@@ -168,14 +168,14 @@ tr.tabletotals th {
 
 /* View: listsitesforlocale */
 
-div.website {
+.website_container {
     border: 1px solid #78756f;
     margin: 0 0 10px 0;
     padding: 0 10px;
     background-color: #faf8f2;
 }
 
-a.filedone {
+.file_done {
     display: inline-block;
     color: #FFF;
     background: #78756f;
@@ -183,26 +183,26 @@ a.filedone {
     margin: 2px;
 }
 
-a.activated {
+.file_activated {
     border-right: 8px solid #92cc6e;
 }
 
-a.notactivated {
+.file_notactivated {
     border-right: 8px solid #ff5252;
 }
 
-a.notutf8:after {
+.file_notutf8:after {
     content: " (Not in UTF-8 !)";
     color: #ffbd52;
     font-weight: bold;
 }
 
-div.filename {
+.file_container {
     background-color: #fff;
     padding: 5px;
 }
 
-div.filename h3.filename {
+.file_container .filename {
     display: inline-block;
     margin: 0 0 10px 0;
     padding: 2px 1em;
@@ -213,15 +213,15 @@ div.filename h3.filename {
     font-size: 120%;
 }
 
-div.filename h3.filename a:link,
-div.filename h3.filename a:visited,
-div.filename h3.filename a:hover,
-div.filename h3.filename a:active
+.file_container .filename a:link,
+.file_container .filename a:visited,
+.file_container .filename a:hover,
+.file_container .filename a:active
 {
     color: #fff;
 }
 
-div.filename table.side {
+.file_container .sidetable {
     float: right;
     margin: 0 0 20px 20px;
 }
@@ -260,7 +260,7 @@ div.tip blockquote {
     color: rgba(80, 80, 80, 1)
 }
 
-span.datasource {
+.datasource {
     font-size: 12px;
     padding: 0.2em 0.4em;
     border-radius: 0.25em;
@@ -313,7 +313,7 @@ span.datasource {
 
 /* List pages */
 
-table.listpages tr td:first-child {
+.listpages tr td:first-child {
     text-align: left;
     min-width: 250px;
     padding: 2px 6px;
@@ -333,7 +333,7 @@ table.listpages tr td:first-child {
     margin: 0 2px;
 }
 
-td.done {
+.donelocales_cell {
     text-align: left;
     font-style: italic;
     color: #808080;
@@ -347,43 +347,44 @@ td.done {
     width: 5em;
 }
 
-td.odd {
+.odd_row {
     background-color: #fff;
 }
 
-td.even {
+.even_row {
     background-color: #faf6ed;
 }
 
 /* List locales */
 
-ul#locales {
-    -webkit-column-count: 6;
+#locales {
     -moz-column-count: 6;
+    -webkit-column-count: 6;
+    -ms-column-count: 6;
     column-count: 6;
     width: 80%;
 }
 
 /* action=count */
 
-table#count_summary {
+#count_summary {
     margin-top: 1em;
 }
 
-table#count_summary th,
-table#count_summary td {
+#count_summary th,
+#count_summary td {
     margin: 0 1em;
 }
 
-table#count_summary td + td {
+#count_summary td + td {
     text-align: left;
     word-spacing: 0.3em;
 }
 
-table#count_summary td:nth-child(3) {
+#count_summary td:nth-child(3) {
     max-width: 30em;
 }
 
-table#count_summary .help {
+#count_summary .help {
     cursor: help;
 }

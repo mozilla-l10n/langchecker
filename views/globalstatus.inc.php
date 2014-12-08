@@ -78,7 +78,7 @@ if ($website_data_source == 'lang') {
         $todo = count($locale_analysis['Identical']) + count($locale_analysis['Missing']);
         $total = $todo + count($locale_analysis['Translated']);
 
-        $cssclass = ($todo/$total>0.60) ? ' lightlink' : '';
+        $cssclass = ($todo/$total>0.60) ? ' lightlink_cell' : '';
         $color = 'rgba(255, 0, 0, ' . $todo/$total . ')';
 
         if ($todo == 0) {
@@ -87,7 +87,7 @@ if ($website_data_source == 'lang') {
         }
 
         echo "    <tr>\n";
-        echo "      <td class='linklocale{$cssclass}' style='background-color: {$color}'>\n";
+        echo "      <td class='linklocale_cell {$cssclass}' style='background-color: {$color}'>\n";
         echo "        <a href='./?locale={$current_locale}#{$current_filename}'>{$current_locale}</a>\n";
         echo "      </td>\n";
 
@@ -112,7 +112,7 @@ if ($website_data_source == 'lang') {
                 },
                 $locale_tags
             );
-            echo "      <td class='tags_column'>" . implode('<br>', $locale_tags) ."</td>\n";
+            echo "      <td class='tags_cell'>" . implode('<br>', $locale_tags) ."</td>\n";
         } else {
             echo "      <td></td>\n";
             $json_data[$current_filename][$current_locale]['tags'] = [];
@@ -122,7 +122,7 @@ if ($website_data_source == 'lang') {
         $active = $locale_analysis['activated'];
         $json_data[$current_filename][$current_locale]['activated'] = $active;
         if ($active) {
-            echo "      <td class='activated'>active</td>\n";
+            echo "      <td class='activated_cell'>active</td>\n";
             $activated_locales_count++;
             $activated_locales_list[] = $current_locale;
         } else {

@@ -16,7 +16,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     $repo = Project::getPublicRepoPath($current_website, $current_locale);
     $website_name = Project::getWebsiteName($current_website);
 
-    $html_output .= "\n<div class='website'>\n";
+    $html_output .= "\n<div class='website_container'>\n";
     $html_output .= "  <h2 id='{$website_name}'><a href='#{$website_name}'>{$website_name}</a><span class='datasource'>lang</span></h2>\n";
     $html_output .= "  <p>Repository: <a href='{$repo}'>{$repo}</a></p>\n";
 
@@ -65,14 +65,14 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
 
         if (! in_array($current_filename, $no_active_tag) &&
             $website_name == 'www.mozilla.org') {
-            $status = $locale_analysis['activated'] ? ' activated' : ' notactivated';
+            $status = $locale_analysis['activated'] ? ' file_activated' : ' file_notactivated';
         } else {
-            $status = ' activated';
+            $status = ' file_activated';
         }
 
         // check if the lang file is in utf8
         if (Utils::isUTF8($locale_filename) == false) {
-            $status .= ' notutf8';
+            $status .= ' file_notutf8';
         }
 
         $count_identical = count($locale_analysis['Identical']);
@@ -81,11 +81,11 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
 
         if ($count_identical + $count_missing + $count_errors == 0) {
             // File is complete
-            $done_files .= "  <a href='#{$current_filename}' class='filedone{$status}'>{$current_filename}</a>\n";
+            $done_files .= "  <a href='#{$current_filename}' class='file_done{$status}'>{$current_filename}</a>\n";
         } else {
-            $todo_files .= "  <div class='filename' id='{$current_filename}'>\n" .
+            $todo_files .= "  <div class='file_container' id='{$current_filename}'>\n" .
                            "    <h3 class='filename'><a href='#{$current_filename}'>{$current_filename}</a></h3>\n" .
-                           "    <table class='side'>\n" .
+                           "    <table class='sidetable'>\n" .
                            "      <thead>\n" .
                            "        <tr>\n" .
                            "          <th>Identical</th>\n" .
@@ -181,7 +181,7 @@ foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
     $repo = Project::getPublicRepoPath($current_website, $current_locale);
     $website_name = Project::getWebsiteName($current_website);
 
-    $html_output .= "\n<div class='website'>\n";
+    $html_output .= "\n<div class='website_container'>\n";
     $html_output .= "  <h2 id='{$website_name}'><a href='#{$website_name}'>{$website_name}</a><span class='datasource'>raw</span></h2>\n";
     $html_output .= "  <p>Repository: <a href='{$repo}'>{$repo}</a></p>\n";
 
@@ -198,7 +198,7 @@ foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
 
         if ($cmp_result == 'ok') {
             // File is translated, store it for later and move on to the next file
-            $done_files .=   "<a class='filedone activated'>" . basename($current_filename) . "</a>\n";
+            $done_files .=   "<a class='file_done activated'>" . basename($current_filename) . "</a>\n";
             continue;
         }
 

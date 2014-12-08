@@ -17,7 +17,7 @@ foreach ($mozilla as $current_locale) {
         if (Project::isSupportedLocale($current_website, $current_locale)) {
             $repo = Project::getPublicRepoPath($current_website, $current_locale);
             $current_website_name = Project::getWebsiteName($current_website);
-            $opening_div = "      <div class='website'>\n" .
+            $opening_div = "      <div class='website_container'>\n" .
                            "        <h2>{$current_website_name}</h2>\n";
 
             foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
@@ -51,7 +51,7 @@ foreach ($mozilla as $current_locale) {
                         $locale_htmloutput .= $opening_div;
                     }
                     $locale_htmloutput .= "        <p>Repository: <a href='{$repo}'>{$repo}</a></p>\n";
-                    $locale_htmloutput .= "        <div class='filename' id='{$current_filename}'>\n";
+                    $locale_htmloutput .= "        <div class='file_container' id='{$current_filename}'>\n";
                     $locale_htmloutput .= "          <h3 class='filename'><a href='#{$current_filename}'>{$current_filename}</a></h3>\n";
 
                     $locale_htmloutput .= "          <h3>Errors in variables in the sentence:</h3>\n";
@@ -174,7 +174,7 @@ foreach ($mozilla as $current_locale) {
         if (Project::isSupportedLocale($current_website, $current_locale)) {
             $repo = Project::getPublicRepoPath($current_website, $current_locale);
             $current_website_name = Project::getWebsiteName($current_website);
-            $opening_div = "      <div class='website'>\n" .
+            $opening_div = "      <div class='website_container'>\n" .
                            "        <h2>{$current_website_name}</h2>\n";
 
             foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
@@ -217,7 +217,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     $reference_locale = Project::getReferenceLocale($current_website);
 
     $reference_output = "      <h2>Reference locale: {$reference_locale}</h2>\n";
-    $opening_div = "      <div class='website'>\n" .
+    $opening_div = "      <div class='website_container'>\n" .
                    "        <h2>{$current_website_name}</h2>\n";
 
     foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
@@ -250,7 +250,7 @@ foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
     $reference_locale = Project::getReferenceLocale($current_website);
 
     $reference_output = "      <h2>Reference locale: {$reference_locale}</h2>\n";
-    $opening_div = "      <div class='website'>\n" .
+    $opening_div = "      <div class='website_container'>\n" .
                    "        <h2>{$current_website_name}</h2>\n";
 
     foreach (Project::getWebsiteFiles($current_website) as $current_filename) {

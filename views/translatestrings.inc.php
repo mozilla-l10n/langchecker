@@ -103,7 +103,7 @@ foreach ($all_strings as $string_id => $available_translations) {
 
     $displayed_rows = 0;
     foreach ($available_translations as $current_locale => $translation) {
-        $css_class = ($displayed_rows & 1) ? 'odd' : 'even';
+        $css_class = ($displayed_rows & 1) ? 'odd_row' : 'even_row';
         echo "<tr class='{$css_class}'>\n"
              . "  <th>{$current_locale}</th>\n"
              . "  <td>" . htmlspecialchars($translation) . "</td>\n"
@@ -111,7 +111,7 @@ foreach ($all_strings as $string_id => $available_translations) {
         $displayed_rows++;
     }
 
-    echo "<tr>\n  <td colspan='2' class='done'>Number of locales done: {$total_translations}"
+    echo "<tr>\n  <td colspan='2' class='donelocales_cell'>Number of locales done: {$total_translations}"
         . ' (' . Project::getUserBaseCoverage($covered_locales, $adu) . '% of our l10n user base)'
         . "  </td>\n</tr>\n</table>\n";
 
