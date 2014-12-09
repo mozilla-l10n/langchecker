@@ -669,7 +669,7 @@ $langfiles_subsets = [
         'lightbeam/lightbeam.lang'              =>
             ['ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR', 'es-CL',
              'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL', 'hsb', 'it', 'ja',
-             'km', 'ms', 'nl', 'pl', 'sq', 'sv-SE', 'tr', 'zh-CN'],
+             'km', 'ms', 'nl', 'pl', 'son', 'sq', 'sv-SE', 'tr', 'zh-CN'],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
         'marketplace/partners.lang'             => ['fr', 'es-ES', 'pt-BR'],
@@ -692,13 +692,14 @@ $langfiles_subsets = [
              'zh-CN', 'zh-TW'],
         'mozorg/about/history-details.lang'     =>
             ['ca', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu', 'fr', 'gl',
-             'hsb', 'it', 'km', 'pa-IN', 'ro', 'sk', 'sq', 'sv-SE', 'uz',
-             'zh-TW'],
+             'hsb', 'it', 'km', 'pa-IN', 'ro', 'sk', 'son', 'sq', 'sv-SE',
+             'uz', 'zh-TW'],
         'mozorg/about/history.lang'             =>
             ['ar', 'bg', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR', 'es-CL',
              'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
              'it', 'km', 'lt', 'ms', 'nl', 'pa-IN', 'pl', 'pt-BR', 'ro', 'ru',
-             'sk', 'sl', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uz', 'zh-CN', 'zh-TW'],
+             'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uz', 'zh-CN',
+             'zh-TW'],
         'mozorg/contribute.lang'                => $getinvolved_locales_oldpage,
         'mozorg/contribute/index.lang'          => $getinvolved_locales,
         'mozorg/contribute/stories.lang'        => $getinvolved_locales,
