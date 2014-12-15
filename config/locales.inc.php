@@ -14,8 +14,8 @@ $mozilla = [
     'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ka', 'kk', 'kn',
     'km', 'ko', 'ku', 'lg', 'lij', 'lt', 'lv', 'mai', 'mk', 'ml', 'mr',
     'ms', 'my', 'nb-NO', 'nl', 'nn-NO', 'nso', 'oc', 'or', 'pa-IN',
-    'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'son',
-    'sq', 'sr', 'sv-SE', 'sw', 'ta', 'ta-LK', 'te', 'th', 'tr', 'uk',
+    'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sat', 'si', 'sk', 'sl',
+    'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'ta-LK', 'te', 'th', 'tr', 'uk',
     'ur', 'uz', 'vi', 'wo', 'xh', 'zh-CN', 'zh-TW', 'zu',
 ];
 

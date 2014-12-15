@@ -23,8 +23,8 @@ include __DIR__ . '/adu.inc.php';
 
 $locamotion_locales = ['ach', 'af', 'bn-BD', 'cy', 'dsb', 'en-ZA',
                        'es-MX', 'ff', 'gd', 'hi-IN', 'hsb', 'km', 'ms',
-                       'my', 'oc', 'si', 'son', 'ta', 'ur', 'uz', 'vi', 'xh',
-                       'zu'];
+                       'my', 'oc', 'sat', 'si', 'son', 'ta', 'ur', 'uz',
+                       'vi', 'xh', 'zu'];
 
 /*
     Locales removed from locamotion import because of commits on SVN
@@ -731,7 +731,7 @@ $langfiles_subsets = [
              'id', 'is', 'it', 'ja', 'ka', 'kk', 'km', 'kn', 'ko',
              'lij', 'lt', 'lv', 'mai', 'mk', 'ml', 'mr', 'ms',
              'my', 'nb-NO', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN',
-             'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si',
+             'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sat', 'si',
              'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta',
              'te', 'th', 'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'zh-CN',
              'zh-TW', 'zu'],
