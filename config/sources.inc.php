@@ -68,6 +68,7 @@ $mozillaorg_lang = [
     'firefox/sync.lang',
     'firefox/tiles.lang',
     'firefox/whatsnew.lang',
+    'firefox/dnt.lang',
     'firefoxflicks.lang',
     'firefoxlive.lang',
     'firefoxos/firefoxos.lang',
@@ -632,6 +633,7 @@ $langfiles_subsets = [
         'firefox/sync.lang'                     => $mozilla,
         'firefox/tiles.lang'                    => $mozilla,
         'firefox/whatsnew.lang'                 => ['hu', 'pl'],
+        'firefox/dnt.lang'                      => ['ja', 'zh-TW'],
         'firefoxflicks.lang'                    =>
             ['ar', 'bg', 'de', 'fa', 'fr', 'gl', 'es-ES', 'hu', 'id',
              'it', 'ja', 'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
