@@ -53,6 +53,7 @@ $mozillaorg_lang = [
     'firefox/desktop/tips.lang',
     'firefox/desktop/trust.lang',
     'firefox/developer.lang',
+    'firefox/dnt.lang',
     'firefox/geolocation.lang',
     'firefox/includes/mwc_2014_schedule.lang',
     'firefox/independent.lang',
@@ -68,7 +69,6 @@ $mozillaorg_lang = [
     'firefox/sync.lang',
     'firefox/tiles.lang',
     'firefox/whatsnew.lang',
-    'firefox/dnt.lang',
     'firefoxflicks.lang',
     'firefoxlive.lang',
     'firefoxos/firefoxos.lang',
@@ -343,13 +343,14 @@ $deadline = [
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
 ];
 
-$slogans_locales = ['bg', 'ca', 'cs', 'de', 'el', 'el', 'es-ES', 'fr', 'hu', 'hr', 'it',
-                    'ja', 'ko',  'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sv-SE', 'zh-CN',
-                    'zh-TW'];
+$slogans_locales = ['af', 'bg', 'ca', 'cs', 'de', 'el', 'es-ES', 'fr',
+                    'hr', 'hu', 'it', 'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr',
+                    'sr-Latn', 'sv-SE', 'xh', 'zh-CN', 'zh-TW', 'zu'];
 
-$marketplacebadge_locales = ['bg', 'bn-BD', 'ca', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN',
-                             'hr', 'hu', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
-                             'sr', 'sr-Latn', 'sv-SE', 'ta', 'tr'];
+$marketplacebadge_locales = ['af', 'bg', 'bn-BD', 'ca', 'cs', 'de', 'el',
+                             'es-ES', 'fr', 'hi-IN', 'hr', 'hu', 'it', 'ja',
+                             'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr',
+                             'sr-Latn', 'sv-SE', 'ta', 'tr', 'xh', 'zu'];
 
 $snippets_locales = ['ast', 'bn-BD', 'cs', 'da', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                      'fi', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'hu', 'id', 'it', 'lv', 'ja', 'ko',
@@ -606,6 +607,7 @@ $langfiles_subsets = [
              'uz', 'xh', 'zh-CN', 'zh-TW'],
         'firefox/desktop/trust.lang'            => $mozilla,
         'firefox/developer.lang'                => $mozilla,
+        'firefox/dnt.lang'                      => ['ja', 'zh-TW'],
         'firefox/geolocation.lang'              =>
             ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
              'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
@@ -633,7 +635,6 @@ $langfiles_subsets = [
         'firefox/sync.lang'                     => $mozilla,
         'firefox/tiles.lang'                    => $mozilla,
         'firefox/whatsnew.lang'                 => ['hu', 'pl'],
-        'firefox/dnt.lang'                      => ['ja', 'zh-TW'],
         'firefoxflicks.lang'                    =>
             ['ar', 'bg', 'de', 'fa', 'fr', 'gl', 'es-ES', 'hu', 'id',
              'it', 'ja', 'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'],
