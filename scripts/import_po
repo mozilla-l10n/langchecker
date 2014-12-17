@@ -32,7 +32,7 @@ Utils::logger("lang file (destination):\n{$cli_lang_filename}\n");
 $reference_data = DotLangParser::parseFile($cli_lang_filename, true);
 $locale_data = DotLangParser::parseFile($cli_lang_filename, false);
 
-$po_import = LangManager::importLocalPoFile($cli_po_filename, $locale_data);
+$po_import = GetTextManager::importLocalPoFile($cli_po_filename, $locale_data);
 
 if ($po_import['imported']) {
     // I have strings to save

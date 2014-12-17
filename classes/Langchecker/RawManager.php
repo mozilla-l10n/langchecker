@@ -1,7 +1,7 @@
 <?php
 namespace Langchecker;
 
-/*
+/**
  * RawManager class
  *
  * This class is used to compare reference and localized "raw" files.
@@ -9,16 +9,18 @@ namespace Langchecker;
  * (e.g. text files), so we can only determine their status based on
  * content comparison (through sha1 hashes) and dates.
  *
+ *
  * @package Langchecker
  */
 class RawManager
 {
-    /*
+    /**
      * Compare reference and localized raw file
      *
      * @param   array   $website   Website data
      * @param   string  $locale    Locale to analyze
      * @param   string  $filename  File to analyze
+     *
      * @return  array              Results from comparison
      */
     public static function compareRawFiles($website, $locale, $filename)

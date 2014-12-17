@@ -112,7 +112,7 @@ foreach ($file_list as $current_filename) {
         }
 
         // Import data from locamotion
-        $locamotion_import = LangManager::importLocamotion($locale_data, $current_filename, $current_locale, $locamotion_repo);
+        $locamotion_import = GetTextManager::importLocamotion($locale_data, $current_filename, $current_locale, $locamotion_repo);
 
         // Check for errors, even if there are no imported strings
         if ($locamotion_import['errors']) {

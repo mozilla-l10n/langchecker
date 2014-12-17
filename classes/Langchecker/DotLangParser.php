@@ -1,7 +1,7 @@
 <?php
 namespace Langchecker;
 
-/*
+/**
  * DotLangParser class
  *
  * This class is for all the methods we use to read .lang files
@@ -11,12 +11,15 @@ namespace Langchecker;
  */
 class DotLangParser
 {
-    /*
+    /**
      * Load file, remove empty lines and return an array of strings
      *
-     * @param   string          $path         Filename to analyze
-     * @param   boolean         $show_errors  Display or not errors in case of missing file
-     * @return  array/boolean                 Cleaned up array of lines, or false if file is missing
+     * @param   string   $path         Filename to analyze
+     * @param   boolean  $show_errors  Display or not errors in case of
+     *                                 missing file
+     *
+     * @return  mixed                  Cleaned up array of lines (array),
+     *                                 or false if file is missing
      */
     public static function getFile($path, $show_errors = true)
     {
@@ -36,11 +39,13 @@ class DotLangParser
         return $file_content;
     }
 
-    /*
+    /**
      * Read file of strings and return an array with all relevant data.
      *
      * @param   string   $path              Full path to filename to analyze
-     * @param   boolean  $reference_locale  If I'm currently analyzing the reference locale
+     * @param   boolean  $reference_locale  If I'm currently analyzing the
+     *                                      reference locale
+     *
      * @return  array                       Extracted data
      */
     public static function parseFile($path, $reference_locale = false)
@@ -70,8 +75,7 @@ class DotLangParser
 
                 // Other tags like ## promo_news ##, but not meta data
                 if (Utils::startsWith($current_line, '##') &&
-                    ! Utils::startsWith($current_line, '## NOTE:') &&
-                    ! Utils::startsWith($current_line, '## TAG:')) {
+                    ! Utils::startsWith($current_line, ['## NOTE:', '## TAG:', '## MAX_LENGTH:'])) {
                     $dotlang_data['tags'][] = trim(str_replace('##', '', $current_line));
                     continue;
                 }
@@ -96,7 +100,7 @@ class DotLangParser
                         $dotlang_data['duplicates'][] = $reference;
                     }
 
-                    if (Utils::startsWith($translation, ';') || Utils::startsWith($translation, '#')) {
+                    if (Utils::startsWith($translation, [';', '#'])) {
                         /* Empty translation: what I'm reading as translation is either the next reference string
                          * or the next meta tag (comment, tag binding). I consider this string untranslated.
                          */
@@ -123,14 +127,19 @@ class DotLangParser
                             if (! Utils::startsWith($file_content[$j], '#')) {
                                 break;
                             }
-                            // Tag bindings
-                            if (Utils::startsWith($file_content[$j], '## TAG:')) {
-                                $dotlang_data['tag_bindings'][$reference] = Utils::leftStrip($file_content[$j], '## TAG:');
-                            }
                             // Comments
                             if (Utils::startsWith($file_content[$j], '#') &&
                                 ! Utils::startsWith($file_content[$j], '##')) {
                                 $dotlang_data['comments'][$reference][] = Utils::leftStrip($file_content[$j], '#');
+                            } else {
+                                // Tag bindings
+                                if (Utils::startsWith($file_content[$j], '## TAG:')) {
+                                    $dotlang_data['tag_bindings'][$reference] = Utils::leftStrip($file_content[$j], '## TAG:');
+                                }
+                                // Length limits
+                                if (Utils::startsWith($file_content[$j], '## MAX_LENGTH:')) {
+                                    $dotlang_data['max_lengths'][$reference] = intval(Utils::leftStrip($file_content[$j], '## MAX_LENGTH:'));
+                                }
                             }
                             $j--;
                         }

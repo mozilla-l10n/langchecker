@@ -10,8 +10,9 @@
 
     "autoload": {
         "psr-0": {
-            "Transvision": "classes/",
-            "Langchecker": "classes/"
+            "Langchecker": "classes/",
+            "Webdashboard": "classes/",
+            "Transvision": "classes/"
         }
     }
 }
