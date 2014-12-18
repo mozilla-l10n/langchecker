@@ -55,6 +55,7 @@ $mozillaorg_lang = [
     'firefox/developer.lang',
     'firefox/dnt.lang',
     'firefox/geolocation.lang',
+    'firefox/hello.lang',
     'firefox/includes/mwc_2014_schedule.lang',
     'firefox/independent.lang',
     'firefox/installer-help.lang',
@@ -118,6 +119,7 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/desktop/index.lang'              => [ 'critical' => ['all'] ],
     'firefox/desktop/trust.lang'              => [ 'critical' => ['all'] ],
     'firefox/desktop/tips.lang'               => [ 'critical' => ['all'] ],
+    'firefox/hello.lang'                      => [ 'critical' => ['all'] ],
     'firefox/independent.lang'                => [ 'critical' => ['all'] ],
     'firefox/installer-help.lang'             => [ 'critical' => ['all'] ],
     'firefox/os/devices.lang'                 => [
@@ -317,6 +319,7 @@ $deadline = [
     'firefox/desktop/index.lang'             => '2014-08-31',
     'firefox/desktop/tips.lang'              => '2014-05-27',
     'firefox/desktop/trust.lang'             => '2014-11-24',
+    'firefox/hello.lang'                     => '2015-01-11',
     'firefox/independent.lang'               => '2014-11-09',
     'firefox/installer-help.lang'            => '2013-12-31',
     'firefox/new.lang'                       => '2014-11-09',
@@ -367,9 +370,11 @@ $firefox_updater_locales = ['ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', '
 $fxos_marketing = ['af', 'bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr', 'hu', 'it', 'ja',
                    'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'ta', 'tr', 'xh', 'zh-CN', 'zu'];
 
-$getinvolved_locales = ['ar', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
-                        'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id', 'it', 'lt',
-                        'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'sq', 'sr', 'sv-SE',
+$getinvolved_locales = ['ar', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'el',
+                        'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr',
+                        'fy-NL', 'he', 'hi-IN', 'hr', 'id', 'it',
+                        'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro',
+                        'ru', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                         'ta', 'tr', 'uk', 'zh-CN', 'zh-TW'];
 
 $getinvolved_locales_oldpage = ['hr', 'lt', 'ro', 'ta'];
@@ -607,7 +612,8 @@ $langfiles_subsets = [
              'uz', 'xh', 'zh-CN', 'zh-TW'],
         'firefox/desktop/trust.lang'            => $mozilla,
         'firefox/developer.lang'                => $mozilla,
-        'firefox/dnt.lang'                      => ['ja', 'zh-TW'],
+        'firefox/dnt.lang'                      => ['cy', 'dsb', 'hsb', 'ja',
+                                                    'son', 'zh-TW'],
         'firefox/geolocation.lang'              =>
             ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
              'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
@@ -618,6 +624,7 @@ $langfiles_subsets = [
              'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
              'ta', 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN'],
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
+        'firefox/hello.lang'                    => $mozilla,
         'firefox/independent.lang'              => $mozilla,
         'firefox/installer-help.lang'           => $mozilla,
         'firefox/new.lang'                      => $mozilla,
