@@ -188,10 +188,22 @@ $snippets_lang = [
     'nov2014_e.lang',
     'dec2014_a.lang',
     'dec2014_c.lang',
+    'jan2015a_a.lang',
+    'jan2015a_b.lang',
+    'jan2015a_c.lang',
+    'jan2015a_d.lang',
+    'jan2015b_a.lang',
+    'jan2015b_b.lang',
 ];
 $lang_flags['snippets'] = [
     'dec2014_a.lang' => [ 'critical' => ['all'] ],
     'dec2014_c.lang' => [ 'critical' => ['all'] ],
+    'jan2015a_a.lang' => [ 'critical' => ['all'] ],
+    'jan2015a_b.lang' => [ 'critical' => ['all'] ],
+    'jan2015a_c.lang' => [ 'critical' => ['all'] ],
+    'jan2015a_d.lang' => [ 'critical' => ['all'] ],
+    'jan2015b_a.lang' => [ 'critical' => ['all'] ],
+    'jan2015b_b.lang' => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -340,8 +352,12 @@ $deadline = [
     'mozorg/plugincheck.lang'                => '2014-10-14',
     'mozorg/products.lang'                   => '2013-12-31',
     'newsletter.lang'                        => '2014-12-08',
-    'dec2014_a.lang'                         => '2014-12-04',
-    'dec2014_c.lang'                         => '2014-12-04',
+    'jan2015a_a.lang'                        => '2015-01-06',
+    'jan2015a_b.lang'                        => '2015-01-06',
+    'jan2015a_c.lang'                        => '2015-01-06',
+    'jan2015a_d.lang'                        => '2015-01-06',
+    'jan2015b_a.lang'                        => '2015-01-20',
+    'jan2015b_b.lang'                        => '2015-01-20',
     'privacycoach.lang'                      => '2014-11-07',  // add-ons project
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
 ];
@@ -785,6 +801,12 @@ $langfiles_subsets = [
         'nov2014_e.lang' => ['el', 'hi-IN', 'mk', 'sr'],
         'dec2014_a.lang' => ['de', 'es-ES', 'fr', 'id', 'pt-BR', 'ru'],
         'dec2014_c.lang' => ['sr'],
+        'jan2015a_a.lang' => ['hr'],
+        'jan2015a_b.lang' => ['el', 'hi-IN', 'hu', 'mk', 'sr'],
+        'jan2015a_c.lang' => ['de', 'es-ES', 'pt-BR'],
+        'jan2015a_d.lang' => ['fr', 'pl'],
+        'jan2015b_a.lang' => ['de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
+        'jan2015b_b.lang' => ['el', 'hu', 'it', 'ja', 'nl'],
     ],
 
     'add-ons' => [
