@@ -103,6 +103,7 @@ $mozillaorg_lang = [
     'privacy/privacy-day.lang',
     'snippets.lang',
     'tabzilla/tabzilla.lang',
+    'thunderbird/start/release.lang',
     'upgradedialog.lang',
     'upgradepromos.lang',
 ];
@@ -153,6 +154,7 @@ $lang_flags['www.mozilla.org'] = [
         'critical' => ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'],
     ],
     'upgradedialog.lang'                      => [ 'critical' => ['all'] ],
+    'thunderbird/start/release.lang'          => [ 'critical' => ['all'] ],
 ];
 
 $startpage36_lang = ['fx36start.lang'];
@@ -360,6 +362,7 @@ $deadline = [
     'jan2015b_b.lang'                        => '2015-01-20',
     'privacycoach.lang'                      => '2014-11-07',  // add-ons project
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
+    'thunderbird/start/release.lang'         => '2015-01-31',
 ];
 
 $slogans_locales = ['af', 'bg', 'ca', 'cs', 'de', 'el', 'es-ES', 'fr',
@@ -752,6 +755,7 @@ $langfiles_subsets = [
         'upgradedialog.lang'                    => $startpage36,
         'upgradepromos.lang'                    =>
             ['de', 'es-ES', 'fr', 'it', 'pl', 'ru', 'pt-BR'],
+        'thunderbird/start/release.lang'        => $thunderbird_release,
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
