@@ -153,8 +153,8 @@ $lang_flags['www.mozilla.org'] = [
     'newsletter.lang'                         => [
         'critical' => ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'],
     ],
-    'upgradedialog.lang'                      => [ 'critical' => ['all'] ],
     'thunderbird/start/release.lang'          => [ 'critical' => ['all'] ],
+    'upgradedialog.lang'                      => [ 'critical' => ['all'] ],
 ];
 
 $startpage36_lang = ['fx36start.lang'];
@@ -337,7 +337,6 @@ $deadline = [
     'firefox/independent.lang'               => '2014-11-09',
     'firefox/installer-help.lang'            => '2013-12-31',
     'firefox/new.lang'                       => '2014-11-09',
-    'firefox/os/devices.lang'                => '2014-11-24',
     'firefox/os/index.lang'                  => '2014-10-31',
     'firefox/privacy_tour/privacy_tour.lang' => '2014-11-04',
     'firefox/sync.lang'                      => '2014-11-09',
@@ -752,10 +751,10 @@ $langfiles_subsets = [
         'newsletter.lang'                       => $mozillaorg,
         'snippets.lang'                         => $mozillaorg,
         'tabzilla/tabzilla.lang'                => $mozillaorg,
+        'thunderbird/start/release.lang'        => $thunderbird_release,
         'upgradedialog.lang'                    => $startpage36,
         'upgradepromos.lang'                    =>
             ['de', 'es-ES', 'fr', 'it', 'pl', 'ru', 'pt-BR'],
-        'thunderbird/start/release.lang'        => $thunderbird_release,
     ],
 
     'start.mozilla.org' => ['fx36start.lang' => $startpage36],
