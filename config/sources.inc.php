@@ -153,7 +153,6 @@ $lang_flags['www.mozilla.org'] = [
     'newsletter.lang'                         => [
         'critical' => ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'],
     ],
-    'thunderbird/start/release.lang'          => [ 'critical' => ['all'] ],
     'upgradedialog.lang'                      => [ 'critical' => ['all'] ],
 ];
 
