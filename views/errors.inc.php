@@ -45,32 +45,48 @@ foreach ($mozilla as $current_locale) {
                 $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
                 $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
 
-                if (count($locale_analysis['python_vars']) != 0) {
-                    if (! $website_with_errors) {
-                        $website_with_errors = true;
-                        $locale_htmloutput .= $opening_div;
-                    }
-                    $locale_htmloutput .= "        <p>Repository: <a href='{$repo}'>{$repo}</a></p>\n";
-                    $locale_htmloutput .= "        <div class='file_container' id='{$current_filename}'>\n";
-                    $locale_htmloutput .= "          <h3 class='filename'><a href='#{$current_filename}'>{$current_filename}</a></h3>\n";
+                // Check errors
+                if (LangManager::countErrors($locale_analysis['errors'])) {
+                    if (LangManager::countErrors($locale_analysis['errors'], 'python')) {
+                        if (! $website_with_errors) {
+                            $website_with_errors = true;
+                            $locale_htmloutput .= $opening_div;
+                        }
+                        $locale_htmloutput .= "        <p>Repository: <a href='{$repo}'>{$repo}</a></p>\n";
+                        $locale_htmloutput .= "        <div class='file_container' id='{$current_filename}'>\n";
+                        $locale_htmloutput .= "          <h3 class='filename'><a href='#{$current_filename}'>{$current_filename}</a></h3>\n";
 
-                    $locale_htmloutput .= "          <h3>Errors in variables in the sentence:</h3>\n";
-                    $locale_htmloutput .= "          <ul>\n";
-                    foreach ($locale_analysis['python_vars'] as $stringid => $python_error) {
-                        $locale_htmloutput .= "              <table class='python'>
-                <tr>
-                  <th>Check the following variables: <strong style='color:red'>{$python_error['var']}</strong></th>
-                </tr>
-                <tr>
-                  <td>" . Utils::highlightPythonVar($stringid) . "</td>
-                </tr>
-                <tr>
-                  <td>" . Utils::highlightPythonVar($python_error['text']) . "</td>
-                </tr>
-              </table>\n";
+                        $locale_htmloutput .= "          <h3>Errors in variables in the sentence:</h3>\n";
+                        $locale_htmloutput .= "          <ul>\n";
+                        foreach ($locale_analysis['errors']['python'] as $stringid => $python_error) {
+                            $locale_htmloutput .= "              <table class='python'>
+                    <tr>
+                      <th>Check the following variables: <strong style='color:red'>{$python_error['var']}</strong></th>
+                    </tr>
+                    <tr>
+                      <td>" . Utils::highlightPythonVar($stringid) . "</td>
+                    </tr>
+                    <tr>
+                      <td>" . Utils::highlightPythonVar($python_error['text']) . "</td>
+                    </tr>
+                  </table>\n";
+                        }
+                        $locale_htmloutput .= "          </ul>\n";
+                        $locale_htmloutput .= "        </div>\n";
                     }
-                    $locale_htmloutput .= "          </ul>\n";
-                    $locale_htmloutput .= "        </div>\n";
+
+                    if (LangManager::countErrors($locale_analysis['errors'], 'length')) {
+                        if (! $website_with_errors) {
+                            $website_with_errors = true;
+                            $locale_htmloutput .= $opening_div;
+                        }
+                        $locale_htmloutput .= "\n    <h3>{$current_filename}</h3><p>Some strings are longer than allowed:</p>\n";
+                        $locale_htmloutput .= "    <ul>\n";
+                        foreach ($locale_analysis['errors']['length'] as $stringid => $length_error) {
+                            $locale_htmloutput .= "<li>" . htmlspecialchars($length_error['text']) . "<br/><em>Currently {$length_error['current']} characters long (maximum allowed {$length_error['limit']})</em></li>";
+                            }
+                        $locale_htmloutput .= "    </ul>\n";
+                    }
                 }
 
                 // Check if the lang file is not in UTF-8 or US-ASCII
@@ -128,7 +144,7 @@ foreach ($mozilla as $current_locale) {
                                     $website_with_errors = true;
                                     $locale_htmloutput .= $opening_div;
                                 }
-                                $locale_htmloutput .= "<p>Tag <strong>{$locale_tag}</strong> is enabled but the following strings are still missing:</p>\n<ul>\n</li>\n";
+                                $locale_htmloutput .= "<h3>{$current_filename}</h3><p>Tag <strong>{$locale_tag}</strong> is enabled but the following strings are still missing:</p>\n<ul>\n</li>\n";
                                 foreach ($incomplete_tagged_strings[$locale_tag] as $string_id) {
                                     $locale_htmloutput .= "<li>" . htmlspecialchars($string_id) . "</li>\n";
                                 }
@@ -224,6 +240,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
         // Load reference strings
         $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
+        // Check for duplicate strings
         if (isset($reference_data['duplicates'])) {
             if (! $reference_with_errors) {
                 $reference_with_errors = true;
@@ -234,6 +251,19 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
                 $reference_output .= "        <li>" . htmlspecialchars($string_id) . "</li>\n";
             }
             $reference_output .= "</ul>\n";
+        }
+
+        // Check for max length errors
+        if (isset($reference_data['max_lengths'])) {
+            foreach ($reference_data['max_lengths'] as $reference_string => $max_length) {
+                if ($max_length == 0) {
+                    if (! $reference_with_errors) {
+                        $reference_with_errors = true;
+                        $reference_output .= $opening_div;
+                    }
+                    $reference_output .= "<h3>{$current_filename}</h3><p>The following string has a maximum length of 0 characters:</p><ul><li>" . htmlspecialchars($reference_string) . "</li></ul>\n";
+                }
+            }
         }
     }
 

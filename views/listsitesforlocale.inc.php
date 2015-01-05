@@ -1,5 +1,8 @@
 <?php
 namespace Langchecker;
+
+use \Webdashboard\Bugzilla as _Bugzilla;
+
 ?>
 <p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/?locale=<?=$locale?>">Back to Web Dashboard</a></p>
 <h1>Lang format file checker <span><?=$locale?></span></h1>
@@ -52,7 +55,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
                        . 'All&priority=--&product=' . $bugwebsite . '&qa_contact=' . $qa_contact
                        . '&rep_platform=All&short_desc=%5Bl10n%3A ' . $current_locale . '%5D%20updated%20'
                        .  $current_filename . '%20file%20for%20' . $website_name .'&target_milestone=---&version=unspecified'
-                       . '&format=__default__&cf_locale=' . $current_locale . '%20%2F%20';
+                       . '&format=__default__&cf_locale=' . urlencode(_Bugzilla::getBugzillaLocaleField($current_locale, 'www'));
 
         // Load reference strings
         $reference_filename = Project::getLocalFilePath($current_website, $reference_locale, $current_filename);
@@ -77,7 +80,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
 
         $count_identical = count($locale_analysis['Identical']);
         $count_missing = count($locale_analysis['Missing']);
-        $count_errors = count($locale_analysis['python_vars']);
+        $count_errors = LangManager::countErrors($locale_analysis['errors']);
 
         if ($count_identical + $count_missing + $count_errors == 0) {
             // File is complete
@@ -89,28 +92,30 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
                            "      <thead>\n" .
                            "        <tr>\n" .
                            "          <th>Identical</th>\n" .
-                           "          <th>Translated</th>\n" .
+                           "          <th>Trans.</th>\n" .
                            "          <th>Missing</th>\n" .
+                           "          <th>Errors</th>\n" .
                            "        </tr>\n" .
                            "      </thead>\n" .
                            "      <tbody>\n" .
                            "        <tr>\n" .
-                           "          <td>" . count($locale_analysis['Identical']) . "</td>" .
+                           "          <td>{$count_identical}</td>" .
                            "          <td>" . count($locale_analysis['Translated']) . "</td>" .
-                           "          <td>" . count($locale_analysis['Missing']) . "</td>" .
+                           "          <td>{$count_missing}</td>" .
+                           "          <td>{$count_errors}</td>" .
                            "        </tr>\n" .
                            "        <tr>\n" .
-                           "          <td colspan='3'>\n" .
+                           "          <td colspan='4'>\n" .
                            "            <a href='{$reference_url}'>Original English source file</a>\n" .
                            "          </td>\n" .
                            "        </tr>\n" .
                            "        <tr>\n" .
-                           "          <td colspan='3'>\n" .
+                           "          <td colspan='4'>\n" .
                            "            <a href='{$locale_url}'>Your translated file</a>\n" .
                            "          </td>\n" .
                            "        </tr>\n" .
                            "        <tr>\n" .
-                           "          <td colspan='3'>\n" .
+                           "          <td colspan='4'>\n" .
                            "            <a href='{$bugzilla_link}'>Attach your updated file to Bugzilla</a>\n" .
                            "          </td>\n" .
                            "        </tr>\n" .
@@ -135,23 +140,34 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
                 $todo_files .= "    </ul>\n";
             }
 
-            if ($count_errors > 0) {
-                $todo_files .= "\n    <h3>Errors in variables in the sentence:</h3>\n";
-                $todo_files .= "    <ul>\n";
-                foreach ($locale_analysis['python_vars'] as $stringid => $python_error) {
-                    $todo_files .= "              <table class='python'>
-                <tr>
-                  <th>Check the following variables: <strong style='color:red'>{$python_error['var']}</strong></th>
-                </tr>
-                <tr>
-                  <td>" . Utils::highlightPythonVar($stringid) . "</td>
-                </tr>
-                <tr>
-                  <td>" . Utils::highlightPythonVar($python_error['text']) . "</td>
-                </tr>
-              </table>\n";
+            if (LangManager::countErrors($locale_analysis['errors'])) {
+                    if (LangManager::countErrors($locale_analysis['errors'], 'python')) {
+                        $todo_files .= "\n    <h3>Errors in variables in the sentence:</h3>\n";
+                        $todo_files .= "    <ul>\n";
+                        foreach ($locale_analysis['errors']['python'] as $stringid => $python_error) {
+                            $todo_files .= "              <table class='python'>
+                        <tr>
+                          <th>Check the following variables: <strong style='color:red'>{$python_error['var']}</strong></th>
+                        </tr>
+                        <tr>
+                          <td>" . Utils::highlightPythonVar($stringid) . "</td>
+                        </tr>
+                        <tr>
+                          <td>" . Utils::highlightPythonVar($python_error['text']) . "</td>
+                        </tr>
+                      </table>\n";
+                            }
+                        $todo_files .= "    </ul>\n";
                     }
-                $todo_files .= "    </ul>\n";
+
+                    if (LangManager::countErrors($locale_analysis['errors'], 'length')) {
+                        $todo_files .= "\n    <h3>Some strings are longer than allowed:</h3>\n";
+                        $todo_files .= "    <ul>\n";
+                        foreach ($locale_analysis['errors']['length'] as $stringid => $length_error) {
+                            $todo_files .= "<li>" . htmlspecialchars($length_error['text']) . "<br/><em>Currently {$length_error['current']} characters long (maximum allowed {$length_error['limit']})</em></li>";
+                            }
+                        $todo_files .= "    </ul>\n";
+                    }
             }
             $todo_files .= "  </div>\n";
 

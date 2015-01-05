@@ -45,3 +45,13 @@ Bonjour
 ;String with tag
 Chaîne avec étiquette
 
+
+## MAX_LENGTH: 12
+;Save file
+Save file
+
+
+## MAX_LENGTH: ABC
+;Save file wrong
+Save file wrong
+

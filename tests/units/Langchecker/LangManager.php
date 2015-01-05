@@ -37,18 +37,18 @@ class LangManager extends atoum\test
 
         $this
             ->integer(count($analysis_data['Translated']))
-                ->isEqualTo(12);
+                ->isEqualTo(13);
 
         $this
-            ->integer(count($analysis_data['python_vars']))
+            ->integer(count($analysis_data['errors']['python']))
                 ->isEqualTo(5);
 
         $this
-            ->string($analysis_data['python_vars']['String with %(num)s tags']['text'])
+            ->string($analysis_data['errors']['python']['String with %(num)s tags']['text'])
                 ->isEqualTo('Stringa con etichette e variabile sbagliata');
 
         $this
-            ->string($analysis_data['python_vars']['String with %(num)s tags']['var'])
+            ->string($analysis_data['errors']['python']['String with %(num)s tags']['var'])
                 ->isEqualTo('%(num)s');
 
         $this
@@ -77,76 +77,33 @@ class LangManager extends atoum\test
                 ->isTrue();
     }
 
-    public function testLoadPoFile()
+    public function testCountErrors()
     {
-        $filepath = TEST_FILES . 'gettext/test.po';
+        require_once TEST_FILES . 'config/sources.php';
         $obj = new _LangManager();
 
-        $strings = $obj->loadPoFile($filepath);
+        $reference_data = $obj->loadSource($sites[2], 'en-US', 'page.lang');
+        $locale_data = $obj->loadSource($sites[2], 'it', 'page.lang');
+        $analysis_data = $obj->analyzeLangFile($sites[2], 'it', 'page.lang', $reference_data);
 
-        // Total number of strings
         $this
-            ->integer(count($strings))
-                ->isEqualTo(9);
+            ->integer($obj->countErrors($analysis_data['errors'], 'all'))
+                ->isEqualTo(6);
 
-        // Identical string
         $this
-            ->string($strings['Download'])
-                ->isEqualTo('Download {ok}');
+            ->integer($obj->countErrors($analysis_data['errors']))
+                ->isEqualTo(6);
 
-        // Single line string
         $this
-            ->string($strings['Different by Design'])
-                ->isEqualTo('De todos. Para todos');
+            ->integer($obj->countErrors($analysis_data['errors'], 'python'))
+                ->isEqualTo(5);
 
-        // Multiline string
         $this
-            ->string($strings['As a non-profit, we’re free to innovate on your behalf without any pressure to compromise.'])
-                ->isEqualTo('Como una organización sin fines de lucro, somos libres de innovar en tu nombre sin presión o compromiso alguno.');
-    }
-
-    public function testImportLocalPoFile()
-    {
-        $po_filepath = TEST_FILES . 'gettext/test.po';
-        $lang_filepath = TEST_FILES . 'gettext/test.lang';
-        $obj = new _LangManager();
-
-        $locale_data = _DotLangParser::parseFile($lang_filepath, false);
-        $po_import = $obj->importLocalPoFile($po_filepath, $locale_data, false);
-
-        // I should have imported data
-        $this
-            ->boolean($po_import['imported'])
-                ->isTrue();
-
-        // I should have one error
-        $this
-            ->integer(count($po_import['errors']))
+            ->integer($obj->countErrors($analysis_data['errors'], 'length'))
                 ->isEqualTo(1);
 
-        // Test one translated string
         $this
-            ->string($po_import['strings']['Innovating <span>for you</span>'])
-                ->isEqualTo('¡Inovando <span>para ti!</span>');
-
-        // Test one translated string in both lang and po file (second has precedence)
-        $this
-            ->string($po_import['strings']['Fast, flexible, <span>secure</span>'])
-                ->isEqualTo('Rápido, flexible, seguro');
-
-        // Empty translation in .po file, existing in .lang file
-        $this
-            ->string($po_import['strings']['Empty'])
-                ->isEqualTo('test');
-
-        // Test one identical string
-        $this
-            ->string($po_import['strings']['Download'])
-                ->isEqualTo('Download {ok}');
-
-        // Test one translation starting with ; (should be ignored)
-        $this
-            ->string($po_import['strings']['Download test'])
-                ->isEqualTo('Download test');
+            ->integer($obj->countErrors($analysis_data['errors'], 'random'))
+                ->isEqualTo(0);
     }
 }

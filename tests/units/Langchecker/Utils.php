@@ -54,21 +54,43 @@ class Utils extends atoum\test
     public function startsWithDP()
     {
         return [
-            ['test string', 't'],
-            [';test string', ';'],
-            ['## TAG: test string', '## TAG:'],
+            ['test string', 't', true],
+            [';test string', ';', true],
+            ['## TAG: test string', '## TAG:', true],
+            ['test string', ['t'], true],
+            ['## TAG: test string', ['## TAG:', '## NOTE:'], true],
+            ['## active ##', ['## TAG:', '## NOTE:'], false],
         ];
     }
 
     /**
      * @dataProvider startsWithDP
      */
-    public function testStartsWith($a, $b)
+    public function testStartsWith($a, $b, $c)
     {
         $obj = new _Utils();
         $this
             ->boolean($obj->startsWith($a, $b))
-                ->isTrue();
+                ->isEqualTo($c);
+    }
+
+    public function getLengthDP()
+    {
+        return [
+            ['Le cheval  blanc ', 17],
+            ['મારુ ઘર પાનું બતાવો', 19],
+        ];
+    }
+
+    /**
+     * @dataProvider getLengthDP
+     */
+    public function testGetLength($a, $b)
+    {
+        $obj = new _Utils();
+        $this
+            ->integer($obj->getLength($a))
+                ->isEqualTo($b);
     }
 
     public function secureTextDP()

@@ -33,6 +33,12 @@ class DotLangParser extends atoum\test
                     '## TAG: bound tag',
                     ';String with tag',
                     'Chaîne avec étiquette',
+                    '## MAX_LENGTH: 12',
+                    ';Save file',
+                    'Save file',
+                    '## MAX_LENGTH: ABC',
+                    ';Save file wrong',
+                    'Save file wrong'
                 ]
             ],
         ];
@@ -127,5 +133,17 @@ class DotLangParser extends atoum\test
         $this
             ->string($dotlang_data['tag_bindings']['String with tag'])
                 ->isEqualTo('bound tag');
+
+        // Check character limits
+        $this
+            ->integer(count($dotlang_data['max_lengths']))
+                ->isEqualTo(2);
+        $this
+            ->integer($dotlang_data['max_lengths']['Save file'])
+                ->isEqualTo(12);
+
+        $this
+            ->integer($dotlang_data['max_lengths']['Save file wrong'])
+                ->isEqualTo(0);
     }
 }

@@ -49,7 +49,7 @@ foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
 
             $todo = count($locale_analysis['Identical']) +
                     count($locale_analysis['Missing']) +
-                    count($locale_analysis['python_vars']);
+                    LangManager::countErrors($locale_analysis['errors']);
             $activation_status = $locale_analysis['activated'] ? 'yes' : 'no';
 
             if (($todo == 0) && ($activation_status == 'no')) {

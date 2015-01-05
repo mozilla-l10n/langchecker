@@ -87,7 +87,7 @@ h1 span {
     box-shadow: 1px 1px 6px #4a412e;
     font-size: 15px;
     height: 50px;
-    line-height: 50px;
+    line-height: 3.3;
     margin: 0;
     padding: 0 20px;
     position: absolute;
@@ -183,6 +183,10 @@ tr.tabletotals th {
     margin: 2px;
 }
 
+.file_done:hover {
+    color: #56c7fc;
+}
+
 .file_activated {
     border-right: 8px solid #92cc6e;
 }
@@ -224,6 +228,7 @@ tr.tabletotals th {
 .file_container .sidetable {
     float: right;
     margin: 0 0 20px 20px;
+    font-size: 0.9em;
 }
 
 table.python {

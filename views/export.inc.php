@@ -37,6 +37,7 @@ foreach ($sites as $website) {
                 $export_data[$website_name][$displayed_filename]['missing'] = count($locale_analysis['Missing']);
                 $export_data[$website_name][$displayed_filename]['obsolete'] = count($locale_analysis['Obsolete']);
                 $export_data[$website_name][$displayed_filename]['translated'] = count($locale_analysis['Translated']);
+                $export_data[$website_name][$displayed_filename]['errors'] = LangManager::countErrors($locale_analysis['errors']);
             } else {
                 $file_analysis = RawManager::compareRawFiles($website, $current_locale, $filename);
                 $cmp_result = $file_analysis['cmp_result'];
