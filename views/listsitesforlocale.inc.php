@@ -14,6 +14,8 @@ $current_locale = $locale;
 $html_output = '';
 $bugwebsite = 'www.mozilla.org';
 
+$bugzilla_locale_name = urlencode(Bugzilla::getBugzillaLocaleField($current_locale, 'www'));
+
 foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     $reference_locale = Project::getReferenceLocale($current_website);
     $repo = Project::getPublicRepoPath($current_website, $current_locale);
@@ -55,7 +57,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
                        . 'All&priority=--&product=' . $bugwebsite . '&qa_contact=' . $qa_contact
                        . '&rep_platform=All&short_desc=%5Bl10n%3A ' . $current_locale . '%5D%20updated%20'
                        .  $current_filename . '%20file%20for%20' . $website_name .'&target_milestone=---&version=unspecified'
-                       . '&format=__default__&cf_locale=' . urlencode(_Bugzilla::getBugzillaLocaleField($current_locale, 'www'));
+                       . '&format=__default__&cf_locale=' . $bugzilla_locale_name;
 
         // Load reference strings
         $reference_filename = Project::getLocalFilePath($current_website, $reference_locale, $current_filename);
