@@ -14,7 +14,7 @@ $current_locale = $locale;
 $html_output = '';
 $bugwebsite = 'www.mozilla.org';
 
-$bugzilla_locale_name = urlencode(Bugzilla::getBugzillaLocaleField($current_locale, 'www'));
+$bugzilla_locale_name = urlencode(_Bugzilla::getBugzillaLocaleField($current_locale, 'www'));
 
 foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     $reference_locale = Project::getReferenceLocale($current_website);
