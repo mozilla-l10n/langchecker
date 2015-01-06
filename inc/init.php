@@ -1,5 +1,6 @@
 <?php
 namespace Langchecker;
+use Symfony\VarDumper;
 
 date_default_timezone_set('Europe/Paris');
 
@@ -25,3 +26,8 @@ $locale   = Utils::getQueryParam('locale');        // Which locale are we analys
 $project  = Utils::getQueryParam('project');
 $serial   = Utils::getQueryParam('serial', false); // Do we want serialize data for the webdashboard?
 $website  = Utils::getQueryParam('website');       // Which website are we looking at?
+
+// Cache class
+define('CACHE_ENABLED', true);
+define('CACHE_PATH', __DIR__ . '/../cache/');
+define('CACHE_TIME', 7200);

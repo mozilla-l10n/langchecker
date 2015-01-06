@@ -1,7 +1,7 @@
 <?php
 namespace Langchecker;
 
-use \Webdashboard\Bugzilla as _Bugzilla;
+use \Bugzilla\Bugzilla;
 
 ?>
 <p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/?locale=<?=$locale?>">Back to Web Dashboard</a></p>
@@ -14,7 +14,7 @@ $current_locale = $locale;
 $html_output = '';
 $bugwebsite = 'www.mozilla.org';
 
-$bugzilla_locale_name = urlencode(_Bugzilla::getBugzillaLocaleField($current_locale, 'www'));
+$bugzilla_locale_name = urlencode(Bugzilla::getBugzillaLocaleField($current_locale, 'www'));
 
 foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     $reference_locale = Project::getReferenceLocale($current_website);

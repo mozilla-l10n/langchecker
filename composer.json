@@ -1,18 +1,31 @@
 {
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/mozilla-l10n/phpclass-bugzilla"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/mozilla-l10n/phpclass-cache"
+        }
+    ],
+
     "require": {
-        "atoum/atoum" : "dev-master",
+        "atoum/atoum": "dev-master",
+        "mozillal10n/bugzilla": "0.*",
+        "mozillal10n/cache": "0.*",
         "sepia/po-parser": "3.0.5"
     },
 
     "require-dev": {
-        "raveren/kint" : "dev-1.0.0-wip"
+        "symfony/var-dumper": "~2.6"
     },
 
     "autoload": {
         "psr-0": {
             "Langchecker": "classes/",
-            "Webdashboard": "classes/",
             "Transvision": "classes/"
-        }
+        },
+        "files": ["helpers/debug.php"]
     }
 }
