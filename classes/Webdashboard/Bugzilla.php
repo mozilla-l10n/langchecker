@@ -177,7 +177,7 @@ class Bugzilla {
      *
      * @return  string                "Locale / Language name" for Bugzilla queries
      */
-    public static function getBugzillaLocaleField($locale, $component = 'www', $log_errors = true) {
+    public static function getBugzillaLocaleField($locale, $component = 'www', $log_errors = false) {
         $locale_web = "{$locale}-www";
         if ($component == 'www' && isset(self::$locales_mappings[$locale_web])) {
             // This locale has a specific language name for www.mozilla.org
