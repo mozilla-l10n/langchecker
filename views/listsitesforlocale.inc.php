@@ -21,6 +21,11 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     $repo = Project::getPublicRepoPath($current_website, $current_locale);
     $website_name = Project::getWebsiteName($current_website);
 
+    if (! Project::isSupportedLocale($current_website, $current_locale)) {
+        // Locale is not supported for this website, move to the next
+        continue;
+    }
+
     $html_output .= "\n<div class='website_container'>\n";
     $html_output .= "  <h2 id='{$website_name}'><a href='#{$website_name}'>{$website_name}</a><span class='datasource'>lang</span></h2>\n";
     $html_output .= "  <p>Repository: <a href='{$repo}'>{$repo}</a></p>\n";
@@ -198,6 +203,11 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
 foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
     $repo = Project::getPublicRepoPath($current_website, $current_locale);
     $website_name = Project::getWebsiteName($current_website);
+
+    if (! Project::isSupportedLocale($current_website, $current_locale)) {
+        // Locale is not supported for this website, move to the next
+        continue;
+    }
 
     $html_output .= "\n<div class='website_container'>\n";
     $html_output .= "  <h2 id='{$website_name}'><a href='#{$website_name}'>{$website_name}</a><span class='datasource'>raw</span></h2>\n";
