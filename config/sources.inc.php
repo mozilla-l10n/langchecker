@@ -21,10 +21,12 @@ if (! isset($_SERVER['SERVER_NAME'])) {
 require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
-$locamotion_locales = ['ach', 'af', 'bn-BD', 'cy', 'dsb', 'en-ZA',
-                       'es-MX', 'ff', 'gd', 'hi-IN', 'hsb', 'km', 'ms',
-                       'my', 'oc', 'sat', 'si', 'son', 'ta', 'ur', 'uz',
-                       'vi', 'xh', 'zu'];
+$locamotion_locales = [
+    'ach', 'af', 'bn-BD', 'cy', 'dsb', 'ee', 'en-ZA', 'es-MX', 'ff',
+    'gd', 'ha', 'hi-IN', 'hsb', 'ig', 'km', 'ln', 'ms', 'my', 'oc',
+    'sat', 'si', 'son', 'sw', 'ta', 'ur', 'uz', 'vi', 'wo', 'xh',
+    'yo', 'zu'
+];
 
 /*
     Locales removed from locamotion import because of commits on SVN
@@ -383,10 +385,11 @@ $android_locales = [
 ];
 
 $firefox_os = [
-    'af', 'bn-BD', 'bg', 'ca' ,'cs', 'de', 'el', 'es-ES', 'es-MX',
-    'et', 'fr', 'fy-NL', 'hi-IN', 'hr', 'hu', 'ja', 'it', 'ko', 'mk',
-    'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'ta',
-    'xh', 'zh-CN', 'zh-TW', 'zu'
+    'af', 'bg', 'bn-BD', 'ca' , 'cs', 'de', 'ee', 'el', 'es-ES',
+    'es-MX', 'et', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
+    'ig', 'it', 'ja', 'ko', 'ln', 'mk', 'nl', 'pl', 'pt-BR',
+    'ro', 'ru', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'wo', 'xh',
+    'yo', 'zh-CN', 'zh-TW', 'zu'
 ];
 
 $firefox_updater_locales = [
@@ -396,9 +399,10 @@ $firefox_updater_locales = [
 ];
 
 $fxos_marketing = [
-    'af', 'bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hr',
-    'hu', 'it', 'ja', 'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn',
-    'ta', 'tr', 'xh', 'zh-CN', 'zu'
+    'af', 'bg', 'bn-BD', 'cs', 'de', 'ee', 'el', 'es-ES', 'fr',
+    'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it', 'ja', 'ln', 'mk',
+    'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'sw', 'ta',
+    'tr', 'wo', 'xh', 'yo', 'zh-CN', 'zu'
 ];
 
 $getinvolved_locales = [
@@ -427,9 +431,11 @@ $marketing = [
 ];
 
 $marketplacebadge_locales = [
-    'af', 'bg', 'bn-BD', 'ca', 'cs', 'de', 'el', 'es-ES', 'fr', 'hi-IN',
-    'hr', 'hu', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sr',
-    'sr-Latn', 'sv-SE', 'ta', 'tr', 'xh', 'zu'
+    'af', 'bg', 'bn-BD', 'ca', 'cs', 'de', 'ee', 'el',
+    'es-ES', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
+    'ja', 'ln', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
+    'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tr', 'wo',
+    'xh', 'yo', 'zu'
 ];
 
 $mwc_locales = [
@@ -444,9 +450,10 @@ $privacy_tour_locales = [
 ];
 
 $slogans_locales = [
-    'af', 'bg', 'ca', 'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it',
-    'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sv-SE', 'xh',
-    'zh-CN', 'zh-TW', 'zu'
+    'af', 'bg', 'ca', 'cs', 'de', 'ee', 'el', 'es-ES', 'fr',
+    'ha', 'hr', 'hu', 'ig', 'it', 'ja', 'ko', 'ln', 'pl',
+    'pt-BR', 'ro', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'wo',
+    'xh', 'yo', 'zh-CN', 'zh-TW', 'zu'
 ];
 
 $snippets_locales = [
@@ -882,7 +889,8 @@ $langfiles_subsets = [
     'firefoxos-marketing' => [
         'marketplace_l10n_feed.lang' => ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it', 'ja',
                                          'mk', 'pl', 'pt-BR', 'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN'],
-        'screenshots_2_0.lang' => ['af', 'ja', 'xh', 'zu'],
+        'screenshots_2_0.lang' => ['af', 'ee', 'ha', 'ig', 'ja', 'ln',
+                                   'sw', 'wo', 'xh', 'yo', 'zu'],
         'screenshots_dolphin.lang' => ['bn-BD'],
         'screenshots.lang'  => ['cs', 'de', 'el', 'es-ES', 'hr', 'hu',
                                 'fr', 'it', 'mk', 'pl', 'pt-BR', 'ro',
