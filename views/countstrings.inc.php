@@ -3,77 +3,92 @@ namespace Langchecker;
 
 use \Transvision\Json;
 
-$todo  = [];
+$untranslated = [];
+$translated = [];
+$file_count = [];
+$all_strings = [];
 
 foreach ($mozilla as $current_locale) {
-
-    $todo[$current_locale] = 0;
-
+    // Initialize locale
+    $untranslated[$current_locale] = 0;
+    $translated[$current_locale] = 0;
+    $file_count[$current_locale] = 0;
     foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
-
         $reference_locale = Project::getReferenceLocale($current_website);
-
         // Ignore reference language
         if ($current_locale == $reference_locale) {
             continue;
         }
-
         foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
-
             // Skip the loop if we don't have this lang file for the locale
             if (! Project::isSupportedLocale($current_website, $current_locale, $langfiles_subsets, $current_filename)) {
                 continue;
             }
-
             // Skip the locale for this file if it's missing
             if (! is_file(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
                 continue;
             }
-
             // Skip the locale if we do have a lang file but don't need it for the locale
             if (isset($langfiles_subsets[$current_website[0]][$current_filename])
                 && ! in_array($current_locale, $langfiles_subsets[$current_website[0]][$current_filename])) {
                 continue;
             }
-
             $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
             $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
 
-            $todo[$current_locale] += count($locale_analysis['Identical']) + count($locale_analysis['Missing']);
+            $untranslated[$current_locale] += count($locale_analysis['Identical']) + count($locale_analysis['Missing']);
+            $translated[$current_locale] += count($locale_analysis['Translated']);
+            $file_count[$current_locale] += 1;
         }
     }
+    $all_strings[$current_locale] = $untranslated[$current_locale] + $translated[$current_locale];
 }
 
-arsort($todo);
+// I need locales with more untranslated strings first
+arsort($untranslated);
 
 if ($json) {
-    die(Json::output($todo, false, true));
+    die(Json::output($untranslated, false, true));
 }
 
-// General table with missing strings per locale
-
+// General table with untranslated/translated strings per locale
 $rows = '';
-foreach ($todo as $key => $val) {
-    if ($val == 0) {
+foreach ($untranslated as $locale => $untranslated_count) {
+    if ($untranslated_count == 0) {
         $class = 'class="count_complete"';
     } else {
         $class = '';
     }
 
-    $rows .= "<tr {$class}><td><a href='./?locale={$key}'>{$key}</a></td><td>{$val}</td></tr>\n";
+    $rows .= "<tr {$class}>" .
+             "  <td><a href='./?locale={$locale}'>{$locale}</a></td>\n" .
+             "  <td>{$untranslated_count}</td>\n" .
+             "  <td>{$translated[$locale]}</td>\n" .
+             "  <td>{$all_strings[$locale]}</td>\n" .
+             "  <td>{$file_count[$locale]}</td>\n" .
+             "</tr>\n";
 }
 
 $general_table = "
-<table>
+<table class='sortable'>
+  <thead>
     <tr>
         <th>Locale</th>
         <th>Untranslated</th>
-    </tr>
-{$rows}
-    <tr>
+        <th>Translated</th>
         <th>Total</th>
+        <th>Files</th>
+    </tr>
+  </thead>
+  <tbody>
+{$rows}
+  </tbody>
+  <tfooter>
+    <tr>
+        <th colspan='4'>Number of locales</th>
         <td><strong>" . count($mozilla) . "</strong></td>
     </tr>
+  </tfooter>
 </table>
 ";
 
@@ -90,7 +105,7 @@ $title = [
 
 $results = [];
 
-foreach ($todo as $key => $val) {
+foreach ($untranslated as $key => $val) {
     if ($val == 0) {
         $results['perfect'][] = $key;
         continue;
