@@ -889,7 +889,8 @@ $langfiles_subsets = [
     'firefoxos-marketing' => [
         'marketplace_l10n_feed.lang' => ['bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it', 'ja',
                                          'mk', 'pl', 'pt-BR', 'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN'],
-        'screenshots_2_0.lang' => ['af', 'ee', 'ha', 'ig', 'ja', 'ln',
+        'screenshots_2_0.lang' => ['af', 'cs', 'de', 'ee', 'el', 'es-ES',
+                                   'ha', 'ig', 'ja', 'ln', 'pl', 'pt-BR',
                                    'sw', 'wo', 'xh', 'yo', 'zu'],
         'screenshots_dolphin.lang' => ['bn-BD'],
         'screenshots.lang'  => ['cs', 'de', 'el', 'es-ES', 'hr', 'hu',
