@@ -23,9 +23,9 @@ include __DIR__ . '/adu.inc.php';
 
 $locamotion_locales = [
     'ach', 'af', 'bn-BD', 'cy', 'dsb', 'ee', 'en-ZA', 'es-MX', 'ff',
-    'gd', 'ha', 'hi-IN', 'hsb', 'ig', 'km', 'ln', 'ms', 'my', 'oc',
-    'sat', 'si', 'son', 'sw', 'ta', 'ur', 'uz', 'vi', 'wo', 'xh',
-    'yo', 'zu'
+    'gd', 'ha', 'hi-IN', 'hr', 'hsb', 'ig', 'km', 'ln', 'ms', 'my',
+    'oc', 'sat', 'si', 'son', 'sw', 'ta', 'ur', 'uz', 'vi', 'wo',
+    'xh', 'yo', 'zu'
 ];
 
 /*
@@ -339,7 +339,7 @@ $deadline = [
     'firefox/hello.lang'                     => '2015-01-11',
     'firefox/independent.lang'               => '2014-11-09',
     'firefox/installer-help.lang'            => '2013-12-31',
-    'firefox/new.lang'                       => '2014-11-09',
+    'firefox/new.lang'                       => '2015-01-31',
     'firefox/os/index.lang'                  => '2014-10-31',
     'firefox/privacy_tour/privacy_tour.lang' => '2014-11-04',
     'firefox/sync.lang'                      => '2014-11-09',
@@ -349,8 +349,8 @@ $deadline = [
     'legal/index.lang'                       => '2014-10-14',
     'mozorg/about.lang'                      => '2014-08-31',
     'mozorg/about/manifesto.lang'            => '2014-08-31',
-    'mozorg/contribute/index.lang'           => '2014-11-24',
-    'mozorg/contribute/stories.lang'         => '2014-11-24',
+    'mozorg/contribute/index.lang'           => '2015-01-31',
+    'mozorg/contribute/stories.lang'         => '2015-01-31',
     'mozorg/home/index.lang'                 => '2014-11-24',
     'mozorg/mission.lang'                    => '2013-12-31',
     'mozorg/plugincheck.lang'                => '2014-10-14',
