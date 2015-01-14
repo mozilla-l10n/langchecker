@@ -515,7 +515,7 @@ $sites =
         'locales/',
         $mozillaorg,
         $mozillaorg_lang,
-        'en-GB', // source locale
+        'en-US', // source locale
         $public_repo1,
         $lang_flags['www.mozilla.org'],
         'lang',
@@ -648,7 +648,7 @@ $sites =
         'locales/',
         $getinvolved_locales,
         $getinvolved_autoreplies,
-        'en-GB', // source locale
+        'en-US', // source locale
         $public_repo1,
         $lang_flags['contribute-autoreplies'],
         'raw',
