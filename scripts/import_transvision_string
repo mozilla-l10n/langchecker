@@ -52,12 +52,7 @@ $locale_list = array_intersect(
     $supported_locales
 );
 
-// I need to use en-GB as reference locale for API queries on mozilla_org
-if ($cli_repo == 'mozilla_org') {
-    $source_locale = 'en-GB';
-} else {
-    $source_locale = 'en-US';
-}
+$source_locale = 'en-US';
 
 foreach ($locale_list as $current_locale) {
     // For each locale, load existing locale file

@@ -21,7 +21,7 @@ sort($mozilla);
 /* $mozillaorg is the list of locales supported on mozilla.org
  * Remove locales not supported on mozilla.org from the full array
  */
-$mozillaorg = array_diff($mozilla, ['en-GB', 'en-ZA', 'es', 'sr-Latn']);
+$mozillaorg = array_diff($mozilla, ['en-ZA', 'es', 'sr-Latn']);
 
 /* List of locales we support on desktop (Firefox). We need to remove
  * locales used only for Gaia (es, sr-Latn), locales working only on Gaia
