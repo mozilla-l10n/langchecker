@@ -199,16 +199,24 @@ $snippets_lang = [
     'jan2015a_d.lang',
     'jan2015b_a.lang',
     'jan2015b_b.lang',
+    'feb2015_a.lang',
+    'feb2015_b.lang',
+    'feb2015_c.lang',
+    'feb2015_d.lang',
+    'feb2015_e.lang',
 ];
 $lang_flags['snippets'] = [
-    'dec2014_a.lang' => [ 'critical' => ['all'] ],
-    'dec2014_c.lang' => [ 'critical' => ['all'] ],
     'jan2015a_a.lang' => [ 'critical' => ['all'] ],
     'jan2015a_b.lang' => [ 'critical' => ['all'] ],
     'jan2015a_c.lang' => [ 'critical' => ['all'] ],
     'jan2015a_d.lang' => [ 'critical' => ['all'] ],
     'jan2015b_a.lang' => [ 'critical' => ['all'] ],
     'jan2015b_b.lang' => [ 'critical' => ['all'] ],
+    'feb2015_a.lang'  => [ 'critical' => ['all'] ],
+    'feb2015_b.lang'  => [ 'critical' => ['all'] ],
+    'feb2015_c.lang'  => [ 'critical' => ['all'] ],
+    'feb2015_d.lang'  => [ 'critical' => ['all'] ],
+    'feb2015_e.lang'  => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -328,6 +336,11 @@ $no_active_tag = [
 $deadline = [
     'description_page.lang'                  => '2014-11-09', //google-play project
     'download_button.lang'                   => '2014-10-27',
+    'feb2015_a.lang'                         => '2015-02-04',
+    'feb2015_b.lang'                         => '2015-02-04',
+    'feb2015_c.lang'                         => '2015-02-04',
+    'feb2015_d.lang'                         => '2015-02-04',
+    'feb2015_e.lang'                         => '2015-02-04',
     'firefox/android/index.lang'             => '2014-10-27',
     'firefox/australis/firefox_tour.lang'    => '2014-04-27',
     'firefox/channel.lang'                   => '2014-11-24',
@@ -346,6 +359,12 @@ $deadline = [
     'firefox/tiles.lang'                     => '2014-11-09',
     'firefox/whatsnew.lang'                  => '2013-12-31',
     'fx36start.lang'                         => '2014-12-04',
+    'jan2015a_a.lang'                        => '2015-01-06',
+    'jan2015a_b.lang'                        => '2015-01-06',
+    'jan2015a_c.lang'                        => '2015-01-06',
+    'jan2015a_d.lang'                        => '2015-01-06',
+    'jan2015b_a.lang'                        => '2015-01-20',
+    'jan2015b_b.lang'                        => '2015-01-20',
     'legal/index.lang'                       => '2014-10-14',
     'mozorg/about.lang'                      => '2014-08-31',
     'mozorg/about/manifesto.lang'            => '2014-08-31',
@@ -357,12 +376,6 @@ $deadline = [
     'mozorg/products.lang'                   => '2013-12-31',
     'privacy/privacy-day.lang'               => '2015-01-27',
     'newsletter.lang'                        => '2014-12-08',
-    'jan2015a_a.lang'                        => '2015-01-06',
-    'jan2015a_b.lang'                        => '2015-01-06',
-    'jan2015a_c.lang'                        => '2015-01-06',
-    'jan2015a_d.lang'                        => '2015-01-06',
-    'jan2015b_a.lang'                        => '2015-01-20',
-    'jan2015b_b.lang'                        => '2015-01-20',
     'privacycoach.lang'                      => '2014-11-07',  // add-ons project
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
     'thunderbird/start/release.lang'         => '2015-01-31',
@@ -872,6 +885,11 @@ $langfiles_subsets = [
         'jan2015a_d.lang' => ['fr', 'pl'],
         'jan2015b_a.lang' => ['de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
         'jan2015b_b.lang' => ['el', 'hu', 'it', 'ja', 'nl'],
+        'feb2015_a.lang'   => ['de', 'es-ES', 'pt-BR', 'ru'],
+        'feb2015_b.lang'   => ['fr'],
+        'feb2015_c.lang'   => ['id', 'it', 'ja', 'nl', ],
+        'feb2015_d.lang'   => ['el', 'hu', 'sr'],
+        'feb2015_e.lang'   => ['pl'],
     ],
 
     'add-ons' => [
