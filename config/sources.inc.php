@@ -388,14 +388,16 @@ $addons_locales = [
     'pt-BR', 'ru', 'sq', 'zh-TW'
 ];
 
-// Source : http://hg.mozilla.org/releases/mozilla-release/raw-file/85d4fdc6d572/mobile/android/locales/maemo-locales
+// Source: http://hg.mozilla.org/releases/mozilla-release/raw-file/c13c3b4992cf/mobile/android/locales/maemo-locales
+// Added 'az' (requested)
 $android_locales = [
-    'an', 'as', 'be', 'bn-IN', 'ca', 'cs', 'cy', 'da', 'de', 'es-AR',
-    'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff', 'fr', 'fy-NL', 'ga-IE',
-    'gd', 'gl' ,'gu-IN', 'hi-IN', 'hu', 'hy-AM', 'id', 'is', 'it',
-    'ja', 'kk', 'kn', 'ko', 'lt', 'lv', 'ml', 'mr', 'ms', 'nb-NO',
-    'nl', 'or', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sq',
-    'sk', 'sl', 'sv-SE', 'ta', 'te', 'th', 'tr', 'uk', 'zh-CN', 'zh-TW'
+    'an', 'as', 'az', 'be', 'bn-IN', 'br', 'ca', 'cs', 'cy', 'da',
+    'de', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff',
+    'fr', 'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN', 'hi-IN', 'hu',
+    'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv',
+    'ml', 'mr', 'ms', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl', 'pt-BR',
+    'pt-PT', 'ro', 'ru', 'sq', 'sk', 'sl', 'sv-SE', 'ta', 'te',
+    'th', 'tr', 'uk', 'zh-CN', 'zh-TW'
 ];
 
 $firefox_os = [
@@ -420,7 +422,7 @@ $fxos_marketing = [
 ];
 
 $getinvolved_locales = [
-    'ar', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL',
+    'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL',
     'es-ES', 'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id', 'it',
     'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'son', 'sq',
     'sr', 'sv-SE', 'ta', 'tr', 'uk', 'zh-CN', 'zh-TW'
