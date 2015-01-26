@@ -708,7 +708,7 @@ $langfiles_subsets = [
         'firefox/desktop/trust.lang'            => $mozillaorg,
         'firefox/developer.lang'                => $mozillaorg,
         'firefox/dnt.lang'                      => ['cy', 'dsb', 'hsb', 'ja',
-                                                    'son', 'zh-TW'],
+                                                    'son', 'uz', 'zh-TW'],
         'firefox/geolocation.lang'              =>
             ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
              'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
@@ -815,7 +815,7 @@ $langfiles_subsets = [
         'mwc2014_promos.lang'                   => $mwc_locales,
         'privacy/privacy-day.lang'              =>
             ['ca', 'cs', 'cy', 'de', 'dsb', 'es-CL', 'es-ES', 'fr', 'hsb', 
-             'id', 'nl', 'pt-BR', 'ru', 'sq', 'zh-TW'],
+             'id', 'nl', 'pt-BR', 'ru', 'son', 'sq', 'zh-TW'],
         'newsletter.lang'                       => $mozillaorg,
         'snippets.lang'                         => $mozillaorg,
         'tabzilla/tabzilla.lang'                => $mozillaorg,
