@@ -110,7 +110,11 @@ foreach ($mozilla as $current_locale) {
                 // If locale has tags, display errors on unknown tags
                 if (isset($locale_data['tags'])) {
                     $locale_file_tags = $locale_data['tags'];
-                    $extra_tags = array_diff($locale_file_tags, $reference_data['tags']);
+                    if (isset($reference_data['tags'])) {
+                        $extra_tags = array_diff($locale_file_tags, $reference_data['tags']);
+                    } else {
+                        $extra_tags = $locale_file_tags;
+                    }
                     if (count($extra_tags)) {
                         foreach ($extra_tags as $extra_tag) {
                             if (! $website_with_errors) {
