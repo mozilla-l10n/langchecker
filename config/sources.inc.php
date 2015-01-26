@@ -815,7 +815,7 @@ $langfiles_subsets = [
         'mwc2014_promos.lang'                   => $mwc_locales,
         'privacy/privacy-day.lang'              =>
             ['ca', 'cs', 'cy', 'de', 'dsb', 'es-CL', 'es-ES', 'fr', 'fy-NL',
-             'hsb', 'id', 'nl', 'pt-BR', 'ru', 'son', 'sq', 'zh-TW'],
+             'hsb', 'id', 'it', 'nl', 'pt-BR', 'ru', 'son', 'sq', 'zh-TW'],
         'newsletter.lang'                       => $mozillaorg,
         'snippets.lang'                         => $mozillaorg,
         'tabzilla/tabzilla.lang'                => $mozillaorg,
