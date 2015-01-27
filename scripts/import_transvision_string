@@ -81,9 +81,8 @@ foreach ($locale_list as $current_locale) {
         if (count($translations) > 0) {
             // I use the first string available
             $translated_string = reset($translations)[$cli_string];
-            // Mark as {ok} if identical, if it's not mozilla_org
-            if ($translated_string == $cli_string &&
-                $cli_repo != 'mozilla_org') {
+            // Mark as {ok} if identical
+            if ($translated_string == $cli_string) {
                 $translated_string .= ' {ok}';
             }
             $locale_data['strings'][$cli_string] = $translated_string;
