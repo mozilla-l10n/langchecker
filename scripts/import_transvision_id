@@ -80,15 +80,18 @@ foreach ($locale_list as $current_locale) {
     if ($locale_data['strings'][$source_string] != $source_string) {
         Utils::logger("Requested string is already translated for {$current_locale}.");
     } else {
-        $translated_string = $translations[$current_locale];
-        // Mark as {ok} if identical, if it's not mozilla_org
-        if ($translated_string == $source_string &&
-            $cli_repo != 'mozilla_org') {
-            $translated_string .= ' {ok}';
+        if (! isset($translations[$current_locale])) {
+            Utils::logger("Requested string is not available on Transvision for {$current_locale}.");
+        } else {
+            $translated_string = $translations[$current_locale];
+            // Mark as {ok} if identical
+            if ($translated_string == $source_string) {
+                $translated_string .= ' {ok}';
+            }
+            $locale_data['strings'][$source_string] = $translated_string;
+            Utils::logger("Updating string for {$current_locale}.");
+            $content = LangManager::buildLangFile($reference_data, $locale_data, $current_locale, $eol);
+            Utils::fileForceContent($locale_filename, $content);
         }
-        $locale_data['strings'][$source_string] = $translated_string;
-        Utils::logger("Updating string for {$current_locale}.");
-        $content = LangManager::buildLangFile($reference_data, $locale_data, $current_locale, $eol);
-        Utils::fileForceContent($locale_filename, $content);
     }
 }
