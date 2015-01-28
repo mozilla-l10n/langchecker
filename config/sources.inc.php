@@ -104,6 +104,7 @@ $mozillaorg_lang = [
     'mozspaces.lang',
     'mwc2014_promos.lang',
     'newsletter.lang',
+    'privacy/index.lang',
     'privacy/privacy-day.lang',
     'snippets.lang',
     'tabzilla/tabzilla.lang',
@@ -331,6 +332,7 @@ $no_active_tag = [
     'mozspaces.lang',
     'mwc2014_promos.lang',
     'newsletter.lang',
+    'privacy/index.lang',
     'snippets.lang',
     'upgradepromos.lang',
 ];
@@ -816,6 +818,7 @@ $langfiles_subsets = [
         'mozorg/products.lang'                  => $mozillaorg,
         'mozspaces.lang'                        => ['de', 'fr'],
         'mwc2014_promos.lang'                   => $mwc_locales,
+        'privacy/index.lang'                    => $firefox_os,
         'privacy/privacy-day.lang'              =>
             ['ca', 'cs', 'cy', 'de', 'dsb', 'es-AR', 'es-CL',
              'es-ES', 'fr', 'fy-NL', 'hsb', 'id', 'it', 'nl',
