@@ -92,9 +92,12 @@ foreach ($file_list as $current_filename) {
             $eol = PHP_EOL;
         }
 
-        // Incorporate strings from other lang files
+        /* Incorporate strings from other lang files.
+         * Keep $locale_date['strings'] as last parameter of array_merge to
+         * avoid overwriting existing strings.
+         */
         // $temp_data = LangManager::loadSource($lang_based_sites[0], $current_locale, 'main.lang');
-        // $locale_data['strings'] = array_merge($locale_data['strings'], $temp_data['strings']);
+        // $locale_data['strings'] = array_merge($temp_data['strings'], $locale_data['strings']);
 
         // Exceptions are managed in LangManager::manageStringExceptions
 
