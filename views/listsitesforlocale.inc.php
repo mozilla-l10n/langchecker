@@ -58,11 +58,11 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
                        . '%20SVN%29&component=L10N&contenttypeentry=&contenttypemethod=autodetect'
                        . '&contenttypeselection=text%2Fplain&data=&dependson=&description=&flag_type-4=X'
                        . '&flag_type-418=X&flag_type-419=X&flag_type-506=X&flag_type-507=X&form_name=enter_bug'
-                       . '&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys='
-                       . 'All&priority=--&product=' . $bugwebsite . '&qa_contact=' . $qa_contact
+                       . '&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=All'
+                       . '&priority=--&product=' . $bugwebsite . '&qa_contact=' . $qa_contact
                        . '&rep_platform=All&short_desc=%5Bl10n%3A ' . $current_locale . '%5D%20updated%20'
-                       .  $current_filename . '%20file%20for%20' . $website_name .'&target_milestone=---&version=unspecified'
-                       . '&format=__default__&cf_locale=' . $bugzilla_locale_name;
+                       . $current_filename . '%20file%20for%20' . $website_name .'&target_milestone=---'
+                       . '&version=Development%2FStaging&format=__default__&cf_locale=' . $bugzilla_locale_name;
 
         // Load reference strings
         $reference_filename = Project::getLocalFilePath($current_website, $reference_locale, $current_filename);

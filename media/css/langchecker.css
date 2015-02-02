@@ -323,6 +323,26 @@ div.tip blockquote {
     padding: 2px 6px;
 }
 
+/* Opt-in pages */
+.optin_filename {
+    text-align: left;
+    min-width: 250px;
+    padding: 2px 6px;
+}
+
+.optin_status span {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.optin_status .no {
+    color: #ffbd52;
+}
+
+.optin_status .yes {
+    color: #92cc6e;
+}
+
 /* Translate page */
 
 .tag,

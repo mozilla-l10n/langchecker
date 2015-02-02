@@ -116,30 +116,30 @@ $mozillaorg_lang = [
 $lang_flags['www.mozilla.org'] = [
     'download.lang'                           => [ 'critical' => ['all'] ],
     'download_button.lang'                    => [ 'critical' => ['all'] ],
-    'firefox/android/index.lang'              => [ 'critical' => ['all'] ],
+    'firefox/android/index.lang'              =>[
+        'critical' => ['all'],
+        'opt-in'   => ['all']
+    ],
     'firefox/australis/firefox_tour.lang'     => [ 'critical' => ['all'] ],
     'firefox/australis/fx36_tour.lang'        => [ 'critical' => ['all'] ],
     'firefox/channel.lang'                    => [ 'critical' => ['all'] ],
+    'firefox/desktop/tips.lang'               => [ 'opt-in'   => ['all'] ],
     'firefox/new.lang'                        => [ 'critical' => ['all'] ],
     'firefox/desktop/customize.lang'          => [ 'critical' => ['all'] ],
     'firefox/desktop/fast.lang'               => [ 'critical' => ['all'] ],
     'firefox/desktop/index.lang'              => [ 'critical' => ['all'] ],
     'firefox/desktop/trust.lang'              => [ 'critical' => ['all'] ],
-    'firefox/desktop/tips.lang'               => [ 'critical' => ['all'] ],
+    'firefox/desktop/tips.lang'               => [
+        'critical' => ['all'],
+        'opt-in'   => ['all']
+    ],
+    'firefox/dnt.lang'                        => [ 'opt-in'   => ['all'] ],
     'firefox/hello.lang'                      => [ 'critical' => ['all'] ],
     'firefox/independent.lang'                => [ 'critical' => ['all'] ],
     'firefox/installer-help.lang'             => [ 'critical' => ['all'] ],
-    'firefox/os/devices.lang'                 => [
-        'critical'   => ['all'],
-        'firefox os' => ['all'],
-    ],
-    'firefox/os/faq.lang'                 => [
-        'firefox os' => ['all'],
-    ],
-    'firefox/os/index.lang'                   => [
-        'critical'   => ['all'],
-        'firefox os' => ['all'],
-    ],
+    'firefox/geolocation.lang'                => [ 'opt-in'   => ['all'] ],
+    'firefox/os/devices.lang'                 => [ 'critical' => ['all'] ],
+    'firefox/os/index.lang'                   => [ 'critical' => ['all'] ],
     'firefox/privacy_tour/privacy_tour.lang'  => [ 'critical' => ['all'] ],
     'firefox/sync.lang'                       => [ 'critical' => ['all'] ],
     'firefox/tiles.lang'                      => [ 'critical' => ['all'] ],
@@ -148,17 +148,28 @@ $lang_flags['www.mozilla.org'] = [
     'firefoxtesting.lang'                     => [ 'critical' => ['all'] ],
     'foundation/annualreport/2012/index.lang' => [ 'critical' => ['all'] ],
     'legal/index.lang'                        => [ 'critical' => ['all'] ],
+    'lightbeam/lightbeam.lang'                => [ 'opt-in'   => ['all'] ],
     'main.lang'                               => [ 'critical' => ['all'] ],
     'marketplace/marketplace.lang'            => [ 'critical' => ['all'] ],
     'mobile.lang'                             => [ 'critical' => ['all'] ],
-    'mozorg/contribute/index.lang'            => [ 'critical' => ['all'] ],
-    'mozorg/contribute/stories.lang'          => [ 'critical' => ['all'] ],
+    'mozorg/about/manifesto.lang'             => [ 'opt-in'   => ['all'] ],
+    'mozorg/about/history.lang'               => [ 'opt-in'   => ['all'] ],
+    'mozorg/about/history-details.lang'       => [ 'opt-in'   => ['all'] ],
+    'mozorg/contribute/index.lang'            => [
+        'critical' => ['all'],
+        'opt-in'   => ['all']
+    ],
+    'mozorg/contribute/stories.lang'          => [
+        'critical' => ['all'],
+        'opt-in'   => ['all']
+    ],
     'mozorg/home/index.lang'                  => [ 'critical' => ['all'] ],
     'mozorg/plugincheck.lang'                 => [ 'critical' => ['all'] ],
     'mwc2014_promos.lang'                     => [ 'critical' => ['all'] ],
     'newsletter.lang'                         => [
         'critical' => ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'],
     ],
+    'privacy/privacy-day.lang'                => [ 'opt-in'   => ['all'] ],
     'thunderbird/start/release.lang'          => [ 'critical' => ['all'] ],
     'upgradedialog.lang'                      => [ 'critical' => ['all'] ],
 ];
