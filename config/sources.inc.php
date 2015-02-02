@@ -491,7 +491,7 @@ $startpage36 = [
     'he', 'hi-IN', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko',
     'lt', 'lv', 'mk', 'ml', 'mr', 'nb-NO', 'nl', 'nn-NO',
     'or', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si', 'sk',
-    'sl', 'sq', 'sr', 'sv-SE', 'ta', 'ta-LK', 'te', 'th', 'tr', 'uk',
+    'sl', 'sq', 'sr', 'sv-SE', 'ta', 'te', 'th', 'tr', 'uk',
     'vi', 'zh-CN', 'zh-TW'
 ];
 
@@ -507,7 +507,7 @@ $thunderbird_release = [
     'en-GB', 'es-AR', 'es-ES', 'et', 'eu', 'fi', 'fr', 'fy-NL', 'ga-IE',
     'gd', 'gl', 'he', 'hr', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ko',
     'lt', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm',
-    'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'ta-LK', 'tr',
+    'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr',
     'uk', 'vi', 'zh-CN', 'zh-TW'
 ];
 
