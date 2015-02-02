@@ -424,6 +424,18 @@ class Project extends atoum\test
             ],
             [
                 [
+                    'action'   => 'optin',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',                ],
+                [
+                    'file'         => 'optin',
+                    'template'     => 'template',
+                ],
+            ],            [
+                [
                     'action'   => 'translate',
                     'filename' => '',
                     'json'     => false,

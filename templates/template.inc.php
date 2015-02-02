@@ -7,7 +7,7 @@
   <script src="./media/js/sorttable.js"></script>
   <link href="./media/css/langchecker.css" rel="stylesheet">
 </head>
-<body>
+<body id="<?=$viewname?>">
 <?php echo "<!-- Current view: {$viewname} -->\n"; ?>
 <div id="outer-wrapper">
     <div id="wrapper">

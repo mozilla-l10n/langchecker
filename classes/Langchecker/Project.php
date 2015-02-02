@@ -296,6 +296,9 @@ class Project
                 case 'listpages':
                     $result['file'] = 'listpages';
                     break;
+                case 'optin':
+                    $result['file'] = 'optin';
+                    break;
                 case 'translate':
                     $result['file'] = 'translatestrings';
                     break;
