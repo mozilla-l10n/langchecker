@@ -58,6 +58,9 @@ foreach ($sites as $website) {
                 $export_data[$website_name][$displayed_filename]['flags'] = $file_flags;
             }
 
+            // Stage URL
+            $export_data[$website_name][$displayed_filename]['url'] = Project::getLocalizedURL($reference_data, $current_locale);
+
             // Some files have a deadline
             if (isset($deadline[$filename])) {
                 $export_data[$website_name][$displayed_filename]['deadline'] = $deadline[$filename];
