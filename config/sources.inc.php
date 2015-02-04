@@ -724,7 +724,7 @@ $langfiles_subsets = [
         'firefox/desktop/trust.lang'            => $mozillaorg,
         'firefox/developer.lang'                => $mozillaorg,
         'firefox/dnt.lang'                      => 
-            ['cs' 'cy', 'de', 'dsb', 'hsb', 'ja', 'son', 'sq', 'sv-SE',
+            ['cs', 'cy', 'de', 'dsb', 'hsb', 'ja', 'son', 'sq', 'sv-SE',
              'uz', 'zh-TW'],
         'firefox/geolocation.lang'              =>
             ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
