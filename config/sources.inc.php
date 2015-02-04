@@ -733,7 +733,7 @@ $langfiles_subsets = [
              'it', 'ja', 'ka', 'kk', 'kn', 'ko', 'lt', 'lv', 'mk', 'ml', 'mr',
              'nb-NO', 'nl', 'nn-NO', 'oc', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
              'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
-             'ta', 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN'],
+             'ta', 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW'],
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
         'firefox/hello.lang'                    => $mozillaorg,
         'firefox/independent.lang'              => $mozillaorg,
@@ -791,7 +791,8 @@ $langfiles_subsets = [
         'lightbeam/lightbeam.lang'              =>
             ['ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR', 'es-CL',
              'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL', 'hsb', 'it', 'ja',
-             'km', 'ms', 'nl', 'pl', 'son', 'sq', 'sv-SE', 'tr', 'zh-CN'],
+             'km', 'ms', 'nl', 'pl', 'son', 'sq', 'sv-SE', 'tr',
+             'zh-CN', 'zh-TW'],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
         'marketplace/partners.lang'             => ['fr', 'es-ES', 'pt-BR'],
