@@ -724,7 +724,7 @@ $langfiles_subsets = [
         'firefox/desktop/trust.lang'            => $mozillaorg,
         'firefox/developer.lang'                => $mozillaorg,
         'firefox/dnt.lang'                      => 
-           ['cy', 'de', 'dsb', 'hsb', 'ja', 'son', 'uz', 'zh-TW'],
+           ['cy', 'de', 'dsb', 'hsb', 'ja', 'son', 'sv-SE', 'uz', 'zh-TW'],
         'firefox/geolocation.lang'              =>
             ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
              'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
@@ -833,7 +833,7 @@ $langfiles_subsets = [
         'privacy/privacy-day.lang'              =>
             ['ca', 'cs', 'cy', 'de', 'dsb', 'es-AR', 'es-CL',
              'es-ES', 'es-MX', 'fr', 'fy-NL', 'hsb', 'id', 'it',
-             'nl', 'pt-BR', 'ru', 'son', 'sq', 'zh-TW'],
+             'nl', 'pt-BR', 'ru', 'son', 'sv-SE', 'sq', 'zh-TW'],
         'newsletter.lang'                       => $mozillaorg,
         'snippets.lang'                         => $mozillaorg,
         'tabzilla/tabzilla.lang'                => $mozillaorg,
