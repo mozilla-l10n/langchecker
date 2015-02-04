@@ -5,7 +5,7 @@ namespace Langchecker;
       <h1>List of indexed pages</h1>
 <?php
 
-$htmloutput = '';
+$html_output = '';
 $displayed_sites = [];
 
 if ($website != '' && isset($sites[$website])) {
@@ -19,12 +19,12 @@ foreach ($displayed_sites as $site_index => $current_website) {
     $website_data_source = Project::getWebsiteDataType($current_website);
 
     if ($website_data_source == 'lang') {
-        $table_headers = "<th>Filename</th><th>Status</th><th>Translations</th><th>Strings</th><th>Words</th>";
+        $table_headers = "<th>Filename</th><th>URL</th><th>Status</th><th>Translations</th><th>Strings</th><th>Words</th>";
     } else {
         $table_headers = "<th>Filename</th>\n<th>Status</th>\n\n";
     }
-    $htmloutput .= "\n\t<h2 id='{$websitename}'><a href='#{$websitename}'>{$websitename}</a></h2>\n";
-    $htmloutput .= "\t<table class='listpages'>
+    $html_output .= "\n\t<h2 id='{$websitename}'><a href='#{$websitename}'>{$websitename}</a></h2>\n";
+    $html_output .= "\t<table class='listpages'>
         <thead>
             <tr>{$table_headers}</tr>
         </thead>
@@ -36,49 +36,50 @@ foreach ($displayed_sites as $site_index => $current_website) {
     foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
         if ($website_data_source == 'lang') {
             $reference_locale = Project::getReferenceLocale($current_website);
-            $ref_lang_file = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+            $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
             $get_words = function($item) {
                 return str_word_count(strip_tags($item));
             };
 
-            $nb_words = array_sum(array_map($get_words, $ref_lang_file['strings']));
-            $nb_strings = count($ref_lang_file['strings']);
+            $nb_words = array_sum(array_map($get_words, $reference_data['strings']));
+            $nb_strings = count($reference_data['strings']);
             $total_strings += $nb_strings;
             $total_words += $nb_words;
             $total_files++;
 
-            $htmloutput .= "<tr>\n" .
-                           "  <td>{$current_filename}</td>\n" .
-                           "  <td><a href='?locale=all&amp;website={$site_index}&amp;file={$current_filename}'>Status</a></td>\n" .
-                           "  <td><a href='?website={$site_index}&amp;file={$current_filename}&amp;action=translate&amp;show'>Show</a></td>\n" .
-                           "  <td>{$nb_strings}</td>\n" .
-                           "  <td>{$nb_words}</td>\n" .
-                           "</tr>\n";
+            $html_output .= "<tr>\n" .
+                            "  <td>{$current_filename}</td>\n" .
+                            '  <td>' .  Project::getLocalizedURL($reference_data, '', 'html') . "</td>\n" .
+                            "  <td><a class='table_small_link' href='?locale=all&amp;website={$site_index}&amp;file={$current_filename}'>Status</a></td>\n" .
+                            "  <td><a class='table_small_link' href='?website={$site_index}&amp;file={$current_filename}&amp;action=translate&amp;show'>Show</a></td>\n" .
+                            "  <td>{$nb_strings}</td>\n" .
+                            "  <td>{$nb_words}</td>\n" .
+                            "</tr>\n";
         } else {
-            $htmloutput .= "<tr>\n" .
-                           "  <td>" . basename($current_filename) . "</td>\n" .
-                           "  <td><a href='?locale=all&amp;website={$site_index}&amp;file={$current_filename}'>Status</a></td>\n" .
-                           "</tr>\n";
+            $html_output .= "<tr>\n" .
+                            "  <td>" . basename($current_filename) . "</td>\n" .
+                            "  <td><a class='table_small_link' href='?locale=all&amp;website={$site_index}&amp;file={$current_filename}'>Status</a></td>\n" .
+                            "</tr>\n";
         }
     }
 
     $total_files .= ($total_files != 1) ? ' files' : ' file';
 
     if ($website_data_source == 'lang') {
-        $htmloutput .= "<tr class=\"tabletotals\">\n" .
-                       "  <th colspan=\"2\">Total</th>\n" .
-                       "  <td>{$total_files}</td>\n" .
-                       "  <td>{$total_strings}</td>\n" .
-                       "  <td>{$total_words}</td>\n" .
-                       "</tr>\n";
+        $html_output .= "<tr class=\"tabletotals\">\n" .
+                        "  <th colspan=\"3\">Total</th>\n" .
+                        "  <td>{$total_files}</td>\n" .
+                        "  <td>{$total_strings}</td>\n" .
+                        "  <td>{$total_words}</td>\n" .
+                        "</tr>\n";
     }
 
-    $htmloutput .= "    </tbody>\n</table>\n\n";
+    $html_output .= "    </tbody>\n</table>\n\n";
 }
 
-if ($htmloutput == '') {
+if ($html_output == '') {
     echo "<p>No files available.</p>";
 } else {
-    echo $htmloutput;
+    echo $html_output;
 }

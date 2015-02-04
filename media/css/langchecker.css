@@ -165,6 +165,12 @@ tr.tabletotals th {
     background-color: #fff;
 }
 
+.table_small_link {
+    text-transform: uppercase;
+    padding: 0 3px;
+    font-size: 0.85em;
+}
+
 /* View: listsitesforlocale */
 
 .website_container {

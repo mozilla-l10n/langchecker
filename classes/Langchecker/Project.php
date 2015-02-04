@@ -224,6 +224,37 @@ class Project
     }
 
     /**
+     * Return localized URL for stage (if available)
+     *
+     * @param   array   $reference_data  Data for reference locale
+     * @param   string  $locale          Requested locale, empty to get the
+     *                                   generic URL without locale code
+     * @param   string  $type            If the return value is a plain URL or
+     *                                   HTML link
+     *
+     * @return  string                   Localized URL
+     */
+    public static function getLocalizedURL($reference_data, $locale = '', $type = 'txt')
+    {
+        if (! isset($reference_data['url'])) {
+            // No URL available for this page
+
+            return '-';
+        }
+
+        // If $locale is empty, I need to remove the slash before %LOCALE%
+        $page_url = str_replace(
+                        ['%LOCALE%', '//', ':/'],
+                        [$locale, '/', '://'],
+                        $reference_data['url']
+                    );
+
+        return ($type == 'html')
+            ?  "<a href='{$page_url}' class='table_small_link'>view</a>"
+            : $page_url;
+    }
+
+    /**
      * Return user base coverage for list of locales
      *
      * @param   array   $locales  Array of locales

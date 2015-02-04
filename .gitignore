@@ -1,3 +1,4 @@
+cache/*.cache
 config/settings.inc.php
 composer.phar
 composer.lock

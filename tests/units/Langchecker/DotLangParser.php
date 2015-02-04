@@ -19,6 +19,7 @@ class DotLangParser extends atoum\test
                     '## active ##',
                     '## I am a tag ##',
                     '## NOTE: I am metadata',
+                    '## URL: https://www-dev.allizom.org/about/history',
                     '# I am a comment',
                     ';Browser',
                     'Navigateur',
@@ -81,11 +82,15 @@ class DotLangParser extends atoum\test
             ->array($dotlang_data['filedescription'])
                 ->isEqualTo(['I am metadata']);
 
+        // Check file stage URL
+        $this
+            ->string($dotlang_data['url'])
+                ->isEqualTo('https://www-dev.allizom.org/about/history');
+
         // Check tags
         $this
             ->array($dotlang_data['tags'])
                 ->isEqualTo(['I am a tag']);
-
 
         // Check duplicates (not relevant for localized files)
         $this

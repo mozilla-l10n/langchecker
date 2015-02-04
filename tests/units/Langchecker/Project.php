@@ -265,6 +265,53 @@ class Project extends atoum\test
                 ->isEqualTo($b);
     }
 
+    public function getLocalizedURLDP()
+    {
+        return [
+            [
+                ['url' => 'https://www-dev.allizom.org/%LOCALE%/firefox'],
+                'it',
+                'txt',
+                'https://www-dev.allizom.org/it/firefox'
+            ],
+            [
+                ['url' => 'https://www-dev.allizom.org/%LOCALE%/firefox'],
+                'it',
+                'html',
+                '<a href=\'https://www-dev.allizom.org/it/firefox\' class=\'table_small_link\'>view</a>'
+            ],
+            [
+                ['url' => 'https://www.allizom.org/firefox'],
+                'it',
+                'txt',
+                'https://www.allizom.org/firefox'
+            ],
+            [
+                ['url' => 'https://www.mozilla.org/%LOCALE%/firefox'],
+                '',
+                'txt',
+                'https://www.mozilla.org/firefox'
+            ],
+            [
+                [],
+                '',
+                'txt',
+                '-'
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider getLocalizedURLDP
+     */
+    public function testGetLocalizedURL($a, $b, $c, $d)
+    {
+        $obj = new _Project();
+        $this
+            ->string($obj->getLocalizedURL($a, $b, $c))
+                ->isEqualTo($d);
+    }
+
     public function getUserBaseCoverageDP()
     {
         $adu = [

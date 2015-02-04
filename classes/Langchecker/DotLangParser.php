@@ -51,9 +51,18 @@ class DotLangParser
     public static function parseFile($path, $reference_locale = false)
     {
         $dotlang_data = [];
-        // In case the file is missing we set an empty array
+        // In case the file is missing we set an empty array for strings
         $dotlang_data['strings'] = [];
         $file_content = self::getFile($path);
+
+        // All meta tags in format “## METATAG:”, but not file tags (“## TAGNAME ##”)
+        $meta_tags = ['NOTE', 'TAG', 'MAX_LENGTH', 'URL'];
+        $meta_tags = array_map(
+                        function ($tag) {
+                            return "## {$tag}:";
+                        },
+                        $meta_tags
+                     );
 
         if ($file_content !== false) {
             // First pass: extract strings and metadata (tags, active status) relevant for all locales.
@@ -69,13 +78,19 @@ class DotLangParser
 
                 // Get file description
                 if (Utils::startsWith($current_line, '## NOTE:')) {
-                    $dotlang_data['filedescription'][] = Utils::leftStrip($current_line, '## NOTE:');
+                    $dotlang_data['filedescription'][] = trim(Utils::leftStrip($current_line, '## NOTE:'));
+                    continue;
+                }
+
+                // Get file stage URL
+                if (Utils::startsWith($current_line, '## URL:')) {
+                    $dotlang_data['url'] = trim(Utils::leftStrip($current_line, '## URL:'));
                     continue;
                 }
 
                 // Other tags like ## promo_news ##, but not meta data
                 if (Utils::startsWith($current_line, '##') &&
-                    ! Utils::startsWith($current_line, ['## NOTE:', '## TAG:', '## MAX_LENGTH:'])) {
+                    ! Utils::startsWith($current_line, $meta_tags)) {
                     $dotlang_data['tags'][] = trim(str_replace('##', '', $current_line));
                     continue;
                 }

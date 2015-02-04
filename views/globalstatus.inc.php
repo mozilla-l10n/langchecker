@@ -54,6 +54,7 @@ if ($website_data_source == 'lang') {
           <th>Missing</th>
           <th>Obsolete</th>
           <th>Tags</th>
+          <th>URL</th>
           <th>Activated</th>
         </tr>
       </thead>
@@ -118,6 +119,9 @@ if ($website_data_source == 'lang') {
             $json_data[$current_filename][$current_locale]['tags'] = [];
         }
 
+        // URL to stage server
+        echo '      <td>'  .  Project::getLocalizedURL($reference_data, $current_locale, 'html') . "</td>\n";
+
         // Activation status
         $active = $locale_analysis['activated'];
         $json_data[$current_filename][$current_locale]['activated'] = $active;
@@ -138,7 +142,7 @@ if ($website_data_source == 'lang') {
       </tbody>
       <tfoot>
         <tr>
-          <td colspan= '7'>
+          <td colspan= '8'>
             Complete locales: {$complete_locales_count} (" . round($complete_locales_count/count($supported_locales)*100) . "%) - {$coverage_complete} of our l10n user base<br/>
             Activated locales: {$activated_locales_count} (" . round($activated_locales_count/count($supported_locales)*100) . "%) - {$coverage_activated} of our l10n user base
           </td>

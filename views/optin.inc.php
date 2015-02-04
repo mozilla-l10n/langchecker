@@ -30,6 +30,7 @@ $html_output .= "<h1>List of optional pages for <span>{$current_locale}</span></
     <thead>
       <tr>
         <th>Filename</th>
+        <th>URL</th>
         <th>Strings</th>
         <th>Words</th>
         <th>Opted-in</th>
@@ -42,14 +43,14 @@ $bugzilla_locale_name = urlencode(Bugzilla::getBugzillaLocaleField($current_loca
 
 foreach ($optin_pages as $current_filename => $supported_locales) {
     $reference_locale = Project::getReferenceLocale($current_website);
-    $ref_lang_file = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+    $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
     $get_words = function($item) {
         return str_word_count(strip_tags($item));
     };
 
-    $nb_words = array_sum(array_map($get_words, $ref_lang_file['strings']));
-    $nb_strings = count($ref_lang_file['strings']);
+    $nb_words = array_sum(array_map($get_words, $reference_data['strings']));
+    $nb_strings = count($reference_data['strings']);
 
     if (in_array($current_locale, $supported_locales)) {
         $status = '<span class=\'yes\'>yes</span>';
@@ -70,11 +71,12 @@ foreach ($optin_pages as $current_filename => $supported_locales) {
                        . '&format=__default__&cf_locale=' . $bugzilla_locale_name;
 
         $status = '<span class=\'no\'>no</span> ';
-        $actions = "<a href='{$bugzilla_link}' title='File a bug to request this page'>Opt-in</a>";
+        $actions = "<a href='{$bugzilla_link}' class='table_small_link' title='File a bug to request this page'>Opt-in</a>";
     }
 
     $html_output .= "<tr>\n" .
                    "  <td class='optin_filename'>{$current_filename}</td>\n" .
+                   '  <td>' .  Project::getLocalizedURL($reference_data, $current_locale, 'html') . "</td>\n" .
                    "  <td>{$nb_strings}</td>\n" .
                    "  <td>{$nb_words}</td>\n" .
                    "  <td class='optin_status'>{$status}</td>\n" .
