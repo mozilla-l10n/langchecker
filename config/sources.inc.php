@@ -723,9 +723,9 @@ $langfiles_subsets = [
              'uz', 'xh', 'zh-CN', 'zh-TW'],
         'firefox/desktop/trust.lang'            => $mozillaorg,
         'firefox/developer.lang'                => $mozillaorg,
-        'firefox/dnt.lang'                      => 
-            ['cs', 'cy', 'de', 'dsb', 'es-CL', 'hsb', 'ja', 'son', 'sq',
-             'sv-SE', 'uz', 'zh-TW'],
+        'firefox/dnt.lang'                      =>
+            ['cs', 'cy', 'de', 'dsb', 'es-CL', 'hsb', 'ja', 'pt-BR', 'son',
+             'sq', 'sv-SE', 'uz', 'zh-TW'],
         'firefox/geolocation.lang'              =>
             ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
              'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
@@ -792,8 +792,8 @@ $langfiles_subsets = [
         'lightbeam/lightbeam.lang'              =>
             ['ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR', 'es-CL',
              'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL', 'hsb', 'it', 'ja',
-             'km', 'ms', 'nl', 'pl', 'son', 'sq', 'sv-SE', 'tr',
-             'zh-CN', 'zh-TW'],
+             'km', 'ms', 'nl', 'pl', 'pt-BR', 'son', 'sq', 'sv-SE',
+             'tr', 'zh-CN', 'zh-TW'],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
         'marketplace/partners.lang'             => ['fr', 'es-ES', 'pt-BR'],
@@ -816,8 +816,8 @@ $langfiles_subsets = [
              'zh-CN', 'zh-TW'],
         'mozorg/about/history-details.lang'     =>
             ['ca', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu', 'fr', 'gl',
-             'hsb', 'it', 'km', 'pa-IN', 'ro', 'sk', 'son', 'sq', 'sv-SE',
-             'uz', 'zh-TW'],
+             'hsb', 'it', 'km', 'pa-IN', 'pt-BR', 'ro', 'sk', 'son', 'sq',
+             'sv-SE', 'uz', 'zh-TW'],
         'mozorg/about/history.lang'             =>
             ['ar', 'bg', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR', 'es-CL',
              'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',

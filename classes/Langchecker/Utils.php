@@ -48,7 +48,7 @@ class Utils
      */
     public static function startsWith($haystack, $needles)
     {
-        foreach((array) $needles as $prefix) {
+        foreach ((array) $needles as $prefix) {
             if (! strncmp($haystack, $prefix, mb_strlen($prefix))) {
                 return true;
             }
