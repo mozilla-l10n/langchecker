@@ -108,7 +108,7 @@ if ($website_data_source == 'lang') {
             $json_data[$current_filename][$current_locale]['tags'] = $locale_tags;
             // Remove _promo from tags
             $locale_tags = array_map(
-                function($element) {
+                function ($element) {
                     return str_replace('promo_', '', $element);
                 },
                 $locale_tags

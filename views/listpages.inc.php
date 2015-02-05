@@ -38,7 +38,7 @@ foreach ($displayed_sites as $site_index => $current_website) {
             $reference_locale = Project::getReferenceLocale($current_website);
             $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
-            $get_words = function($item) {
+            $get_words = function ($item) {
                 return str_word_count(strip_tags($item));
             };
 

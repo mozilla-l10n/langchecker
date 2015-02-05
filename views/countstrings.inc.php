@@ -130,7 +130,7 @@ foreach ($untranslated as $key => $val) {
 }
 
 $rows = '';
-foreach(array_reverse($results) as $category => $values) {
+foreach (array_reverse($results) as $category => $values) {
     sort($values);
     $th  = ucfirst($category);
     $tip = $title[$category];
