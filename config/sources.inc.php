@@ -404,11 +404,11 @@ $addons_locales = [
 ];
 
 // Source: http://hg.mozilla.org/releases/mozilla-release/raw-file/c13c3b4992cf/mobile/android/locales/maemo-locales
-// Added 'az' (requested)
+// Added: az, dsb, hsb (requested)
 $android_locales = [
     'an', 'as', 'az', 'be', 'bn-IN', 'br', 'ca', 'cs', 'cy', 'da',
-    'de', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff',
-    'fr', 'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN', 'hi-IN', 'hu',
+    'de', 'dsb', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff',
+    'fr', 'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN', 'hi-IN', 'hsb', 'hu',
     'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv',
     'ml', 'mr', 'ms', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl', 'pt-BR',
     'pt-PT', 'ro', 'ru', 'sq', 'sk', 'sl', 'sv-SE', 'ta', 'te',
@@ -437,13 +437,14 @@ $fxos_marketing = [
 ];
 
 $getinvolved_locales = [
-    'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'el', 'es-AR', 'es-CL',
-    'es-ES', 'es-MX', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'id', 'it',
-    'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sl', 'son', 'sq',
-    'sr', 'sv-SE', 'ta', 'tr', 'uk', 'zh-CN', 'zh-TW'
+    'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
+    'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'he',
+    'hi-IN', 'hr', 'hsb', 'id', 'it', 'lt', 'ms', 'nl', 'pl',
+    'pt-BR', 'ro', 'ru', 'sl', 'son', 'sq', 'sr', 'sv-SE',
+    'ta', 'tr', 'uk', 'zh-CN', 'zh-TW'
 ];
 
-$getinvolved_locales_oldpage = ['hr', 'lt', 'ro', 'ta'];
+$getinvolved_locales_oldpage = ['dsb', 'hr', 'hsb', 'lt', 'ro', 'ta'];
 
 // List provided by Release-drivers, needs access to a Google Play publishing account
 $google_play_locales = [
@@ -727,14 +728,16 @@ $langfiles_subsets = [
             ['cs', 'cy', 'de', 'dsb', 'es-CL', 'hsb', 'ja', 'pt-BR', 'son',
              'sq', 'sv-SE', 'uz', 'zh-TW'],
         'firefox/geolocation.lang'              =>
-            ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
-             'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES',
-             'es-MX', 'et', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
-             'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hu', 'hy-AM', 'id', 'is',
-             'it', 'ja', 'ka', 'kk', 'kn', 'ko', 'lt', 'lv', 'mk', 'ml', 'mr',
-             'nb-NO', 'nl', 'nn-NO', 'oc', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
-             'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
-             'ta', 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW'],
+            ['af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN',
+             'ca', 'cs', 'cy', 'da', 'de', 'dsb', 'el', 'en-GB',
+             'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et', 'eu',
+             'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN',
+             'he', 'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is',
+             'it', 'ja', 'ka', 'kk', 'kn', 'ko', 'lt', 'lv', 'mk',
+             'ml', 'mr', 'nb-NO', 'nl', 'nn-NO', 'oc', 'pa-IN',
+             'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si', 'sk',
+             'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'te', 'th', 'tr',
+             'uk', 'vi', 'zh-CN', 'zh-TW'],
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
         'firefox/hello.lang'                    => $mozillaorg,
         'firefox/independent.lang'              => $mozillaorg,
