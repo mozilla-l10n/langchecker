@@ -1,8 +1,6 @@
 <?php
 namespace Langchecker;
 
-use \Bugzilla\Bugzilla;
-
 ?>
 <p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/?locale=<?=$locale?>">Back to Web Dashboard</a></p>
 <h1>Lang format file checker <span><?=$locale?></span></h1>
@@ -12,9 +10,8 @@ use \Bugzilla\Bugzilla;
 $supported_locale = false;
 $current_locale = $locale;
 $html_output = '';
-$bugwebsite = 'www.mozilla.org';
 
-$bugzilla_locale_name = urlencode(Bugzilla::getBugzillaLocaleField($current_locale, 'www'));
+$bugzilla_locale = urlencode(Bugzilla::getBugzillaLocaleField($current_locale, 'www'));
 
 foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     $reference_locale = Project::getReferenceLocale($current_website);
@@ -44,25 +41,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
         }
 
         $supported_locale = true;
-
-        if ($locale == 'fa') {
-            $qa_contact = 'persian.fa@localization.bugs';
-        } else {
-            $qa_contact = 'pascalc@gmail.com';
-        }
-
-        $bugzilla_link = 'https://bugzilla.mozilla.org/enter_bug.cgi?alias=&assigned_to=pascalc%40gmail.com'
-                       . '&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=normal&bug_status=NEW'
-                       . '&comment=%28Attach%20your%20updated%20' . $current_filename . '%20file%20to%20'
-                       . 'this%20bug%20or%20indicate%20the%20revision%20number%20of%20your%20commit%20in'
-                       . '%20SVN%29&component=L10N&contenttypeentry=&contenttypemethod=autodetect'
-                       . '&contenttypeselection=text%2Fplain&data=&dependson=&description=&flag_type-4=X'
-                       . '&flag_type-418=X&flag_type-419=X&flag_type-506=X&flag_type-507=X&form_name=enter_bug'
-                       . '&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=All'
-                       . '&priority=--&product=' . $bugwebsite . '&qa_contact=' . $qa_contact
-                       . '&rep_platform=All&short_desc=%5Bl10n%3A ' . $current_locale . '%5D%20updated%20'
-                       . $current_filename . '%20file%20for%20' . $website_name .'&target_milestone=---'
-                       . '&version=Development%2FStaging&format=__default__&cf_locale=' . $bugzilla_locale_name;
+        $bugzilla_link = Bugzilla::getNewBugLink($current_locale, $bugzilla_locale, 'upload', [$current_filename]);
 
         // Load reference strings
         $reference_filename = Project::getLocalFilePath($current_website, $reference_locale, $current_filename);
