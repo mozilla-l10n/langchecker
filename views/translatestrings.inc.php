@@ -1,5 +1,6 @@
 <?php
 namespace Langchecker;
+
 ?>
 <script>
   function showhide(id) {
@@ -54,10 +55,14 @@ foreach ($supported_locales as $current_locale) {
 }
 
 // Colors used to display tags
-$bg_colors = ['#459E09', '#B29EF9', '#2D68BA', '#E39530', '#D6D6D4',
-              '#E3309E', '#FF4040', '#F5F562', '#F562C7', '#C0FCF2'];
-$font_colors = ['#FFF', '#FFF', '#FFF', '#FFF', '#000',
-                '#FFF', '#FFF', '#000', '#FFF', '#000'];
+$bg_colors = [
+    '#459E09', '#B29EF9', '#2D68BA', '#E39530', '#D6D6D4',
+    '#E3309E', '#FF4040', '#F5F562', '#F562C7', '#C0FCF2',
+];
+$font_colors = [
+    '#FFF', '#FFF', '#FFF', '#FFF', '#000',
+    '#FFF', '#FFF', '#000', '#FFF', '#000',
+];
 
 if (isset($reference_data['tag_bindings'])) {
     $tag_bindings = $reference_data['tag_bindings'];

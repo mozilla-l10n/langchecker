@@ -14,10 +14,10 @@ class Utils
     /**
      * Remove a substring from the left of a string, return the trimmed result
      *
-     * @param   string  $origin     Original string
-     * @param   string  $substring  Substring to remove
+     * @param string $origin    Original string
+     * @param string $substring Substring to remove
      *
-     * @return  string              Resulting string
+     * @return string Resulting string
      */
     public static function leftStrip($origin, $substring)
     {
@@ -27,9 +27,9 @@ class Utils
     /**
      * Return a string without extra tags like {ok}
      *
-     * @param   string  $origin  Original string
+     * @param string $origin Original string
      *
-     * @return  string           String cleaned from extra-tags
+     * @return string String cleaned from extra-tags
      */
     public static function cleanString($origin)
     {
@@ -40,11 +40,11 @@ class Utils
      * Check if $haystack starts with a string in $needles.
      * $needles can be a string or an array of strings.
      *
-     * @param   string   $haystack  String to analyse
-     * @param   array    $needles   The string to look for
+     * @param string $haystack String to analyse
+     * @param array  $needles  The string to look for
      *
-     * @return  boolean  True       if the $haystack string starts with a
-     *                              string in $needles
+     * @return boolean True       if the $haystack string starts with a
+     *                 string in $needles
      */
     public static function startsWith($haystack, $needles)
     {
@@ -60,9 +60,9 @@ class Utils
     /**
      * Get multibyte UTF-8 string length, html tags stripped
      *
-     * @param   string  $str  A multibyte string
+     * @param string $str A multibyte string
      *
-     * @return  int           The length of the string after removing all html
+     * @return int The length of the string after removing all html
      */
     public static function getLength($str)
     {
@@ -72,16 +72,16 @@ class Utils
     /**
      * Function sanitizing a string or an array of strings.
      *
-     * @param   mixed         $origin    String/Array of strings to sanitize
-     * @param   boolean       $isarray   If $origin must be treated as array
+     * @param mixed   $origin  String/Array of strings to sanitize
+     * @param boolean $isarray If $origin must be treated as array
      *
-     * @return  mixed                    Sanitized string or array
+     * @return mixed Sanitized string or array
      */
     public static function secureText($origin, $isarray = true)
     {
         if (! is_array($origin)) {
             // If $origin is a string, always return a string
-            $origin  = array($origin);
+            $origin  = [$origin];
             $isarray = false;
         }
 
@@ -111,9 +111,9 @@ class Utils
     /**
      * Highlight Python variables in string
      *
-     * @param   array   $origin  Original string
+     * @param array $origin Original string
      *
-     * @return  string           String withon Python variables marked with <em>
+     * @return string String withon Python variables marked with <em>
      */
     public static function highlightPythonVar($origin)
     {
@@ -130,9 +130,9 @@ class Utils
     /**
      * Return false if file is not in UTF-8 or US-Ascii format
      *
-     * @param   string   $filename  File to analyze
+     * @param string $filename File to analyze
      *
-     * @return  boolean             False if file is in the wrong encoding
+     * @return boolean False if file is in the wrong encoding
      */
     public static function isUTF8($filename)
     {
@@ -146,10 +146,10 @@ class Utils
     /**
      * Return
      *
-     * @param   string  $filename  File to analyze
+     * @param string $filename File to analyze
      *
-     * @return  int                Timestamp of last commit from SVN,
-     *                             or local if that fails
+     * @return int Timestamp of last commit from SVN,
+     *             or local if that fails
      */
     public function getSVNCommitTimestamp($filename)
     {
@@ -168,8 +168,8 @@ class Utils
     /**
      * Print error, quit application if requested
      *
-     * @param  string  $message  Message to display
-     * @param  string  $action   If 'quit', leave the app
+     * @param string $message Message to display
+     * @param string $action  If 'quit', leave the app
      */
     public static function logger($message, $action = '')
     {
@@ -182,9 +182,9 @@ class Utils
     /**
      * Check type of EOL used in the file
      *
-     * @param   string  $line  First line of the file
+     * @param string $line First line of the file
      *
-     * @return  string         End of line characters, default Unix "\n"
+     * @return string End of line characters, default Unix "\n"
      */
     public static function checkEOL($line)
     {
@@ -198,8 +198,8 @@ class Utils
     /**
      * Save file in path, create folders if necessary
      *
-     * @param  string  $path     File path
-     * @param  string  $content  File content
+     * @param string $path    File path
+     * @param string $content File content
      */
     public static function fileForceContent($path, $content)
     {
@@ -219,12 +219,13 @@ class Utils
     /**
      * Read GET parameter if set, or fallback
      *
-     * @param   string  $param     GET parameter to check
-     * @param   string  $fallback  Optional fallback value
+     * @param string $param    GET parameter to check
+     * @param string $fallback Optional fallback value
      *
-     * @return  string             Parameter value, or fallback
+     * @return string Parameter value, or fallback
      */
-    public static function getQueryParam($param, $fallback = '') {
+    public static function getQueryParam($param, $fallback = '')
+    {
         if (isset($_GET[$param])) {
             return is_bool($fallback)
                    ? true
@@ -237,13 +238,14 @@ class Utils
     /**
      * Read CLI parameter if set, or fallback
      *
-     * @param   integer  $paramnum  Argument number
-     * @param   array    $options   Array of parameters
-     * @param   string   $fallback  Optional fallback value
+     * @param integer $paramnum Argument number
+     * @param array   $options  Array of parameters
+     * @param string  $fallback Optional fallback value
      *
-     * @return  string              Parameter value, or fallback
+     * @return string Parameter value, or fallback
      */
-    public static function getCliParam($paramnum, $options, $fallback = '') {
+    public static function getCliParam($paramnum, $options, $fallback = '')
+    {
         if (isset($options[$paramnum])) {
             return self::secureText($options[$paramnum]);
         }

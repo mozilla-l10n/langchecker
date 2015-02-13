@@ -14,11 +14,11 @@ class LangManager
     /**
      * Load file, remove empty lines and return an array of strings
      *
-     * @param   array   $website   Website data
-     * @param   string  $locale    Locale to analyze
-     * @param   string  $filename  File to analyze
+     * @param array  $website  Website data
+     * @param string $locale   Locale to analyze
+     * @param string $filename File to analyze
      *
-     * @return  array              Data parsed from lang file
+     * @return array Data parsed from lang file
      */
     public static function loadSource($website, $locale, $filename)
     {
@@ -31,13 +31,14 @@ class LangManager
     /**
      * Check string for Python errors
      *
-     * @param   string  $reference    Reference string
-     * @param   string  $translation  Translation
-     * @param   string  $errors       Current errors
+     * @param string $reference   Reference string
+     * @param string $translation Translation
+     * @param string $errors      Current errors
      *
-     * @return  array                 Python errors
+     * @return array Python errors
      */
-    public static function checkPythonErrors($reference, $translation, $errors) {
+    public static function checkPythonErrors($reference, $translation, $errors)
+    {
         /* Test if all Python variables are present, analyzing both
          * format %(var)s or %s, or 'escaped' percentage sign (%%) */
         $regex = '#%(\([a-z0-9._-]+\)s|[s%])#';
@@ -59,9 +60,9 @@ class LangManager
 
             foreach ($matches_reference[0] as $python_var) {
                 if ($count_occurences($python_var, $matches_locale[0]) != $count_occurences($python_var, $matches_reference[0])) {
-                    $errors[$reference] =[
+                    $errors[$reference] = [
                         'text' => $translation,
-                        'var'  => $python_var
+                        'var'  => $python_var,
                     ];
                 }
             }
@@ -69,9 +70,9 @@ class LangManager
             // Check if locale has extra variables
             foreach ($matches_locale[0] as $python_var) {
                 if (! in_array($python_var, $matches_reference[0])) {
-                    $errors[$reference] =[
+                    $errors[$reference] = [
                         'text' => $translation,
-                        'var'  => $python_var
+                        'var'  => $python_var,
                     ];
                 }
             }
@@ -83,14 +84,15 @@ class LangManager
     /**
      * Check string for length errors
      *
-     * @param   string   $reference    Reference string
-     * @param   string   $translation  Translation
-     * @param   integer  $limit        Max length for this string
-     * @param   string   $errors       Current errors
+     * @param string  $reference   Reference string
+     * @param string  $translation Translation
+     * @param integer $limit       Max length for this string
+     * @param string  $errors      Current errors
      *
-     * @return  array                  Length errors
+     * @return array Length errors
      */
-    public static function checkLengthErrors($reference, $translation, $limit, $errors) {
+    public static function checkLengthErrors($reference, $translation, $limit, $errors)
+    {
         $str_length = Utils::getLength($translation);
         if ($str_length > $limit) {
             $errors[$reference] = [
@@ -106,12 +108,12 @@ class LangManager
     /**
      * Load file, remove empty lines and return an array of strings
      *
-     * @param   array   $website         Website data
-     * @param   string  $locale          Locale to analyze
-     * @param   string  $filename        File to analyze
-     * @param   array   $reference_data  Array with data from reference locale
+     * @param array  $website        Website data
+     * @param string $locale         Locale to analyze
+     * @param string $filename       File to analyze
+     * @param array  $reference_data Array with data from reference locale
      *
-     * @return  array                    Analysis data
+     * @return array Analysis data
      */
     public static function analyzeLangFile($website, $locale, $filename, $reference_data)
     {
@@ -176,11 +178,11 @@ class LangManager
     /**
      * Check if a string is localized
      *
-     * @param   string   $string_id       String id to check
-     * @param   array    $locale_data     Array with data for locale
-     * @param   array    $reference_data  Array with data for reference locale
+     * @param string $string_id      String id to check
+     * @param array  $locale_data    Array with data for locale
+     * @param array  $reference_data Array with data for reference locale
      *
-     * @return  boolean                   True if string is localized
+     * @return boolean True if string is localized
      */
     public static function isStringLocalized($string_id, $locale_data, $reference_data)
     {
@@ -197,12 +199,12 @@ class LangManager
     /**
      * Create lang file content
      *
-     * @param   array   $reference_data  Array with data for reference locale
-     * @param   array   $locale_data     Array with data for locale
-     * @param   string  $current_locale  Requested locale
-     * @param   string  $eol             EOL character to use
+     * @param array  $reference_data Array with data for reference locale
+     * @param array  $locale_data    Array with data for locale
+     * @param string $current_locale Requested locale
+     * @param string $eol            EOL character to use
      *
-     * @return  string                   Lang file content
+     * @return string Lang file content
      */
     public static function buildLangFile($reference_data, $locale_data, $current_locale, $eol)
     {
@@ -282,11 +284,11 @@ class LangManager
     /**
      * Manage string exceptions
      *
-     * @param   string  $string_id       String we need to manage
-     * @param   string  $translation     Current translation
-     * @param   string  $current_locale  Requested locale
+     * @param string $string_id      String we need to manage
+     * @param string $translation    Current translation
+     * @param string $current_locale Requested locale
      *
-     * @return  array                    Modified reference and translated strings
+     * @return array Modified reference and translated strings
      */
     public static function manageStringExceptions($string_id, $translation, $current_locale)
     {
@@ -312,10 +314,10 @@ class LangManager
     /**
      * Return count of all errors
      *
-     * @param   array    $errors      Array of errors generated by analyzeLangFile
-     * @param   array    $error_type  Type of error to count (optional)
+     * @param array $errors     Array of errors generated by analyzeLangFile
+     * @param array $error_type Type of error to count (optional)
      *
-     * @return  integer               Count of errors
+     * @return integer Count of errors
      */
     public static function countErrors($errors, $error_type = 'all')
     {

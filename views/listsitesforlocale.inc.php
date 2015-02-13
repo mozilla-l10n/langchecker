@@ -127,11 +127,11 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
             }
 
             if (LangManager::countErrors($locale_analysis['errors'])) {
-                    if (LangManager::countErrors($locale_analysis['errors'], 'python')) {
-                        $todo_files .= "\n    <h3>Errors in variables in the sentence:</h3>\n";
-                        $todo_files .= "    <ul>\n";
-                        foreach ($locale_analysis['errors']['python'] as $stringid => $python_error) {
-                            $todo_files .= "              <table class='python'>
+                if (LangManager::countErrors($locale_analysis['errors'], 'python')) {
+                    $todo_files .= "\n    <h3>Errors in variables in the sentence:</h3>\n";
+                    $todo_files .= "    <ul>\n";
+                    foreach ($locale_analysis['errors']['python'] as $stringid => $python_error) {
+                        $todo_files .= "              <table class='python'>
                         <tr>
                           <th>Check the following variables: <strong style='color:red'>{$python_error['var']}</strong></th>
                         </tr>
@@ -142,18 +142,18 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
                           <td>" . Utils::highlightPythonVar($python_error['text']) . "</td>
                         </tr>
                       </table>\n";
-                            }
-                        $todo_files .= "    </ul>\n";
                     }
+                    $todo_files .= "    </ul>\n";
+                }
 
-                    if (LangManager::countErrors($locale_analysis['errors'], 'length')) {
-                        $todo_files .= "\n    <h3>Some strings are longer than allowed:</h3>\n";
-                        $todo_files .= "    <ul>\n";
-                        foreach ($locale_analysis['errors']['length'] as $stringid => $length_error) {
-                            $todo_files .= "<li>" . htmlspecialchars($length_error['text']) . "<br/><em>Currently {$length_error['current']} characters long (maximum allowed {$length_error['limit']})</em></li>";
-                            }
-                        $todo_files .= "    </ul>\n";
+                if (LangManager::countErrors($locale_analysis['errors'], 'length')) {
+                    $todo_files .= "\n    <h3>Some strings are longer than allowed:</h3>\n";
+                    $todo_files .= "    <ul>\n";
+                    foreach ($locale_analysis['errors']['length'] as $stringid => $length_error) {
+                        $todo_files .= "<li>" . htmlspecialchars($length_error['text']) . "<br/><em>Currently {$length_error['current']} characters long (maximum allowed {$length_error['limit']})</em></li>";
                     }
+                    $todo_files .= "    </ul>\n";
+                }
             }
             $todo_files .= "  </div>\n";
 
@@ -219,14 +219,14 @@ foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
         if ($file_analysis['reference_exists']) {
             $reference_link = "<a href='{$file_analysis['reference_url']}'>Reference file</a> " .
                               "<span class='last_update' title='last update'>(" .
-                              date ("Y-m-d H:i", $file_analysis['reference_lastupdate']) . ")</span>";
+                              date("Y-m-d H:i", $file_analysis['reference_lastupdate']) . ")</span>";
         } else {
             $reference_link = "-";
         }
         if ($file_analysis['locale_exists']) {
             $locale_link = "<a href='{$file_analysis['locale_url']}'>Locale file</a> " .
                            "<span class='last_update' title='last update'>(" .
-                           date ("Y-m-d H:i", $file_analysis['locale_lastupdate']) . ")</span>";
+                           date("Y-m-d H:i", $file_analysis['locale_lastupdate']) . ")</span>";
         } else {
             $locale_link = "-";
         }

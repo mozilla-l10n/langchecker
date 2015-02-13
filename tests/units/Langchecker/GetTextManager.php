@@ -2,8 +2,8 @@
 namespace tests\units\Langchecker;
 
 use atoum;
-use Langchecker\GetTextManager as _GetTextManager;
 use Langchecker\DotLangParser as _DotLangParser;
+use Langchecker\GetTextManager as _GetTextManager;
 
 require_once __DIR__ . '/../bootstrap.php';
 

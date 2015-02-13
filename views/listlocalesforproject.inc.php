@@ -1,7 +1,7 @@
 <?php
 namespace Langchecker;
 
-use \Transvision\Json;
+use Transvision\Json;
 
 $output_array = [];
 $lang_based_sites = Project::getWebsitesByDataType($sites, 'lang');

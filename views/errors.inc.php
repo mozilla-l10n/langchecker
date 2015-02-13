@@ -1,5 +1,6 @@
 <?php
 namespace Langchecker;
+
 ?>
       <p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/">Back to Web Dashboard</a></p>
       <h1>Display errors for all locales</h1>
@@ -84,14 +85,14 @@ foreach ($mozilla as $current_locale) {
                         $locale_htmloutput .= "    <ul>\n";
                         foreach ($locale_analysis['errors']['length'] as $stringid => $length_error) {
                             $locale_htmloutput .= "<li>" . htmlspecialchars($length_error['text']) . "<br/><em>Currently {$length_error['current']} characters long (maximum allowed {$length_error['limit']})</em></li>";
-                            }
+                        }
                         $locale_htmloutput .= "    </ul>\n";
                     }
                 }
 
                 // Check if the lang file is not in UTF-8 or US-ASCII
                 if (Utils::isUTF8($locale_filename) == false) {
-                   if (! $website_with_errors) {
+                    if (! $website_with_errors) {
                         $website_with_errors = true;
                         $locale_htmloutput .= $opening_div;
                     }

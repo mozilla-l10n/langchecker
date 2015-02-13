@@ -103,7 +103,7 @@ class Utils extends atoum\test
             ['%0Ate%0Dst', false, 'test'],
             ['%0Ate%0Dst', true, 'test'],
             ['&test', false, '&amp;test'],
-            [['test%0D', '%0Atest'], false, 'test']
+            [['test%0D', '%0Atest'], false, 'test'],
         ];
     }
 
@@ -123,7 +123,7 @@ class Utils extends atoum\test
         require_once TEST_FILES . 'config/sources.php';
 
         return [
-            [['test%0D', '%0Atest'], true, ['test', 'test']]
+            [['test%0D', '%0Atest'], true, ['test', 'test']],
         ];
     }
 
@@ -267,7 +267,7 @@ class Utils extends atoum\test
         $obj = new _Utils();
 
         $options = [
-            1 => 'test'
+            1 => 'test',
         ];
 
         // Missing string param

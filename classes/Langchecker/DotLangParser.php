@@ -14,12 +14,12 @@ class DotLangParser
     /**
      * Load file, remove empty lines and return an array of strings
      *
-     * @param   string   $path         Filename to analyze
-     * @param   boolean  $show_errors  Display or not errors in case of
-     *                                 missing file
+     * @param string  $path        Filename to analyze
+     * @param boolean $show_errors Display or not errors in case of
+     *                             missing file
      *
-     * @return  mixed                  Cleaned up array of lines (array),
-     *                                 or false if file is missing
+     * @return mixed Cleaned up array of lines (array),
+     *               or false if file is missing
      */
     public static function getFile($path, $show_errors = true)
     {
@@ -27,6 +27,7 @@ class DotLangParser
             if ($show_errors) {
                 Utils::logger("{$path} does not exist.");
             }
+
             return false;
         }
 
@@ -42,11 +43,11 @@ class DotLangParser
     /**
      * Read file of strings and return an array with all relevant data.
      *
-     * @param   string   $path              Full path to filename to analyze
-     * @param   boolean  $reference_locale  If I'm currently analyzing the
-     *                                      reference locale
+     * @param string  $path             Full path to filename to analyze
+     * @param boolean $reference_locale If I'm currently analyzing the
+     *                                  reference locale
      *
-     * @return  array                       Extracted data
+     * @return array Extracted data
      */
     public static function parseFile($path, $reference_locale = false)
     {

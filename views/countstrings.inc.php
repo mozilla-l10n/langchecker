@@ -1,7 +1,7 @@
 <?php
 namespace Langchecker;
 
-use \Transvision\Json;
+use Transvision\Json;
 
 $untranslated = [];
 $translated = [];
