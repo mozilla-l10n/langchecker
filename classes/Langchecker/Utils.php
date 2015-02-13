@@ -151,7 +151,7 @@ class Utils
      * @return int Timestamp of last commit from SVN,
      *             or local if that fails
      */
-    public function getSVNCommitTimestamp($filename)
+    public static function getSVNCommitTimestamp($filename)
     {
         exec("svn info --xml {$filename} 2>/dev/null", $output, $return_code);
 
