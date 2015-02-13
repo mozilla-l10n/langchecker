@@ -1,7 +1,7 @@
 <?php
 namespace Langchecker;
 
-use \Transvision\Json;
+use Transvision\Json;
 
 $json_data = [];
 
@@ -87,5 +87,4 @@ if (! $string_id) {
     } else {
         echo Json::output($json_data, false, true);
     }
-
 }

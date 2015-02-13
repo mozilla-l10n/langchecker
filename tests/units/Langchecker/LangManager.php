@@ -3,7 +3,6 @@ namespace tests\units\Langchecker;
 
 use atoum;
 use Langchecker\LangManager as _LangManager;
-use Langchecker\DotLangParser as _DotLangParser;
 
 require_once __DIR__ . '/../bootstrap.php';
 
@@ -59,7 +58,6 @@ class LangManager extends atoum\test
             ->boolean($obj->isStringLocalized('Test', $locale_data, $reference_data))
                 ->isFalse();
     }
-
 
     public function testBuildLangFile()
     {

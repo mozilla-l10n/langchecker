@@ -17,11 +17,11 @@ class RawManager
     /**
      * Compare reference and localized raw file
      *
-     * @param   array   $website   Website data
-     * @param   string  $locale    Locale to analyze
-     * @param   string  $filename  File to analyze
+     * @param array  $website  Website data
+     * @param string $locale   Locale to analyze
+     * @param string $filename File to analyze
      *
-     * @return  array              Results from comparison
+     * @return array Results from comparison
      */
     public static function compareRawFiles($website, $locale, $filename)
     {

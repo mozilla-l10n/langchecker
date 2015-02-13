@@ -113,7 +113,6 @@ class Project extends atoum\test
         ];
     }
 
-
     /**
      * @dataProvider isSupportedLocaleDP
      */
@@ -272,31 +271,31 @@ class Project extends atoum\test
                 ['url' => 'https://www-dev.allizom.org/%LOCALE%/firefox'],
                 'it',
                 'txt',
-                'https://www-dev.allizom.org/it/firefox'
+                'https://www-dev.allizom.org/it/firefox',
             ],
             [
                 ['url' => 'https://www-dev.allizom.org/%LOCALE%/firefox'],
                 'it',
                 'html',
-                '<a href=\'https://www-dev.allizom.org/it/firefox\' class=\'table_small_link\'>view</a>'
+                '<a href=\'https://www-dev.allizom.org/it/firefox\' class=\'table_small_link\'>view</a>',
             ],
             [
                 ['url' => 'https://www.allizom.org/firefox'],
                 'it',
                 'txt',
-                'https://www.allizom.org/firefox'
+                'https://www.allizom.org/firefox',
             ],
             [
                 ['url' => 'https://www.mozilla.org/%LOCALE%/firefox'],
                 '',
                 'txt',
-                'https://www.mozilla.org/firefox'
+                'https://www.mozilla.org/firefox',
             ],
             [
                 [],
                 '',
                 'txt',
-                '-'
+                '-',
             ],
         ];
     }
@@ -315,11 +314,11 @@ class Project extends atoum\test
     public function getUserBaseCoverageDP()
     {
         $adu = [
-            'en-US' => '10000',
-            'fr'    => '2000',
-            'it'    => '1000',
-            'en-GB' => '500',
-            'ja'    => '250',
+            'en-US'     => '10000',
+            'fr'        => '2000',
+            'it'        => '1000',
+            'en-GB'     => '500',
+            'ja'        => '250',
             'ja-JP-mac' => '250',
         ];
 

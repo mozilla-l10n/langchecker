@@ -15,9 +15,9 @@ class GetTextManager
      * Read .po file and return array of translated (not fuzzy)
      * strings [original]=>translation
      *
-     * @param   string  $path  Path to the file to read
+     * @param string $path Path to the file to read
      *
-     * @return  array          Array of strings
+     * @return array Array of strings
      */
     public static function loadPoFile($path)
     {
@@ -45,20 +45,20 @@ class GetTextManager
     /**
      * Read .po file from Locamotion's github repository, return updated strings
      *
-     * @param   array    $locale_data       Array of data for locale file
-     * @param   string   $current_filename  Analyzed file
-     * @param   string   $current_locale    Requested locale
-     * @param   string   $lomocation_repo   Path to local clone of Locamotion's repository
+     * @param array  $locale_data      Array of data for locale file
+     * @param string $current_filename Analyzed file
+     * @param string $current_locale   Requested locale
+     * @param string $lomocation_repo  Path to local clone of Locamotion's repository
      *
-     * @return  array                       Result of import (boolean), errors (array),
-     *                                      updated strings (array)
+     * @return array Result of import (boolean), errors (array),
+     *               updated strings (array)
      */
     public static function importLocamotion($locale_data, $current_filename, $current_locale, $locamotion_repo)
     {
         $result = [
           'imported' => false,
           'errors'   => [],
-          'strings'  => []
+          'strings'  => [],
         ];
 
         Utils::logger("== {$current_locale} ==");
@@ -132,19 +132,19 @@ class GetTextManager
     /**
      * Read local .po file, return updated strings
      *
-     * @param   string   $po_filename     Path to po file
-     * @param   array    $locale_data     Array of data for locale file
-     * @param   boolean  $output_message  True (default) to output messages in console
+     * @param string  $po_filename    Path to po file
+     * @param array   $locale_data    Array of data for locale file
+     * @param boolean $output_message True (default) to output messages in console
      *
-     * @return  array                     Result of import (boolean), errors (array),
-     *                                    updated strings (array)
+     * @return array Result of import (boolean), errors (array),
+     *               updated strings (array)
      */
     public static function importLocalPoFile($po_filename, $locale_data, $output_message = true)
     {
         $result = [
           'imported' => false,
           'errors'   => [],
-          'strings'  => []
+          'strings'  => [],
         ];
 
         // Read po file

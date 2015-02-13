@@ -39,8 +39,8 @@ class DotLangParser extends atoum\test
                     'Save file',
                     '## MAX_LENGTH: ABC',
                     ';Save file wrong',
-                    'Save file wrong'
-                ]
+                    'Save file wrong',
+                ],
             ],
         ];
     }

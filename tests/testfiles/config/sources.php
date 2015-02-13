@@ -2,10 +2,10 @@
 
 $priorities = [
     'file1.lang' => [
-        'critical' => ['all']
+        'critical' => ['all'],
     ],
     'file2.lang' => [
-        'critical' => ['fr'],
+        'critical'  => ['fr'],
         'testflag1' => ['all'],
         'testflag2' => ['fr'],
     ],
@@ -63,6 +63,6 @@ $sites = [
 
 $langfiles_subsets = [
     'reponame1' => [
-        'file1.lang' => ['fr']
+        'file1.lang' => ['fr'],
     ],
 ];

@@ -16,15 +16,14 @@ class Bugzilla extends _Bugzilla
     /**
      * Return URL to file a bug on Bugzilla.
      *
-     * @param   string  $locale           Locale code
-     * @param   string  $bugzilla_locale  Locale component name on Bugzilla
-     * @param   string  $bug_type         Type of bug to file (opt-in, upload)
-     * @param   array   $files            Single file name, or array of file
-     *                                    names
+     * @param string $locale          Locale code
+     * @param string $bugzilla_locale Locale component name on Bugzilla
+     * @param string $bug_type        Type of bug to file (opt-in, upload)
+     * @param array  $files           Single file name, or array of file
+     *                                names
      *
-     * @return  string                    URL to file the bug on Bugzilla
+     * @return string URL to file the bug on Bugzilla
      */
-
     public static function getNewBugLink($locale, $bugzilla_locale, $bug_type, $files)
     {
         if ($bug_type == 'opt-in') {

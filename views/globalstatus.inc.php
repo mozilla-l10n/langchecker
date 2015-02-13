@@ -1,7 +1,7 @@
 <?php
 namespace Langchecker;
 
-use \Transvision\Json;
+use Transvision\Json;
 
 ob_start();
 
@@ -9,13 +9,13 @@ ob_start();
 $current_filename = $filename;
 
 if (! isset($sites[$website])) {
-  // This website is not available
-  if ($json) {
-    http_response_code(400);
-    die("{$website} is not a supported website. Check the value and try again.");
-  } else {
-    die("<p>This website is not supported.</p>");
-  }
+    // This website is not available
+    if ($json) {
+        http_response_code(400);
+        die("{$website} is not a supported website. Check the value and try again.");
+    } else {
+        die("<p>This website is not supported.</p>");
+    }
 }
 
 $current_website = $sites[$website];
@@ -113,7 +113,7 @@ if ($website_data_source == 'lang') {
                 },
                 $locale_tags
             );
-            echo "      <td class='tags_cell'>" . implode('<br>', $locale_tags) ."</td>\n";
+            echo "      <td class='tags_cell'>" . implode('<br>', $locale_tags) . "</td>\n";
         } else {
             echo "      <td></td>\n";
             $json_data[$current_filename][$current_locale]['tags'] = [];

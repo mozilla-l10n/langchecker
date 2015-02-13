@@ -14,9 +14,9 @@ class Project
     /**
      * Return reference locale for website
      *
-     * @param   array   $website  Website data
+     * @param array $website Website data
      *
-     * @return  string            Reference locale
+     * @return string Reference locale
      */
     public static function getReferenceLocale($website)
     {
@@ -30,12 +30,12 @@ class Project
     /**
      * Return supported locales for website
      *
-     * @param   array   $website            Website data
-     * @param   string  $filename           File name, default empty
-     * @param   array   $langfiles_subsets  Array of supported locales for
-     *                                      specific file, default empty
+     * @param array  $website           Website data
+     * @param string $filename          File name, default empty
+     * @param array  $langfiles_subsets Array of supported locales for
+     *                                  specific file, default empty
      *
-     * @return  array                       Supported locales
+     * @return array Supported locales
      */
     public static function getSupportedLocales($website, $filename = '', $langfiles_subsets = [])
     {
@@ -57,13 +57,13 @@ class Project
     /**
      * Check if locale is supported for website
      *
-     * @param   array    $website            Website data
-     * @param   string   $locale             Requested locale
-     * @param   string   $filename           File name, default empty
-     * @param   array    $langfiles_subsets  Array of supported locales for
-     *                                       specific file, default empty
+     * @param array  $website           Website data
+     * @param string $locale            Requested locale
+     * @param string $filename          File name, default empty
+     * @param array  $langfiles_subsets Array of supported locales for
+     *                                  specific file, default empty
      *
-     * @return  boolean                      True if locale is supported
+     * @return boolean True if locale is supported
      */
     public static function isSupportedLocale($website, $locale, $filename = '', $langfiles_subsets = [])
     {
@@ -74,11 +74,11 @@ class Project
     /**
      * Check if file is marked as critical
      *
-     * @param   array    $website   Website data
-     * @param   string   $filename  File name
-     * @param   string   $locale    Locale
+     * @param array  $website  Website data
+     * @param string $filename File name
+     * @param string $locale   Locale
      *
-     * @return  boolean             True if file is marked as critical
+     * @return boolean True if file is marked as critical
      */
     public static function isCriticalFile($website, $filename, $locale)
     {
@@ -98,11 +98,11 @@ class Project
     /**
      * Return a list of flags associated to the file
      *
-     * @param   array    $website   Website data
-     * @param   string   $filename  File name
-     * @param   string   $locale    Locale
+     * @param array  $website  Website data
+     * @param string $filename File name
+     * @param string $locale   Locale
      *
-     * @return  array               Array of flags for this file+locale
+     * @return array Array of flags for this file+locale
      */
     public static function getFileFlags($website, $filename, $locale)
     {
@@ -114,7 +114,7 @@ class Project
                     if ($flag != 'critical' &&
                         (in_array($locale, $locales) ||
                          in_array('all', $locales))) {
-                            $file_flags[] = $flag;
+                        $file_flags[] = $flag;
                     }
                 }
             }
@@ -127,9 +127,9 @@ class Project
     /**
      * Return website's name
      *
-     * @param   array   $website  Website data
+     * @param array $website Website data
      *
-     * @return  string            Website name
+     * @return string Website name
      */
     public static function getWebsiteName($website)
     {
@@ -139,9 +139,9 @@ class Project
     /**
      * Return list of files managed for website
      *
-     * @param   array  $website  Website data
+     * @param array $website Website data
      *
-     * @return  array            Array of managed files, sorted alphabetically
+     * @return array Array of managed files, sorted alphabetically
      */
     public static function getWebsiteFiles($website)
     {
@@ -154,11 +154,11 @@ class Project
     /**
      * Return full local path to filename
      *
-     * @param   array   $website   Website data
-     * @param   string  $locale    Requested locale
-     * @param   string  $filename  File name
+     * @param array  $website  Website data
+     * @param string $locale   Requested locale
+     * @param string $filename File name
      *
-     * @return  string             Path to file
+     * @return string Path to file
      */
     public static function getLocalFilePath($website, $locale, $filename)
     {
@@ -168,11 +168,11 @@ class Project
     /**
      * Return full public path to filename
      *
-     * @param   array   $website   Website data
-     * @param   string  $locale    Requested locale
-     * @param   string  $filename  File name
+     * @param array  $website  Website data
+     * @param string $locale   Requested locale
+     * @param string $filename File name
      *
-     * @return  string             Path to file
+     * @return string Path to file
      */
     public static function getPublicFilePath($website, $locale, $filename)
     {
@@ -182,10 +182,10 @@ class Project
     /**
      * Return website path repo
      *
-     * @param   array   $website  Website data
-     * @param   string  $locale   Requested locale
+     * @param array  $website Website data
+     * @param string $locale  Requested locale
      *
-     * @return  string            Path to file
+     * @return string Path to file
      */
     public static function getPublicRepoPath($website, $locale)
     {
@@ -195,10 +195,10 @@ class Project
     /**
      * Return websites that use a specific data type as source
      *
-     * @param   array   $sites    Array of all supported websites
-     * @param   array   $type     Type of data (lang, raw)
+     * @param array $sites Array of all supported websites
+     * @param array $type  Type of data (lang, raw)
      *
-     * @return  array             Array of website records
+     * @return array Array of website records
      */
     public static function getWebsitesByDataType($sites, $type)
     {
@@ -214,9 +214,9 @@ class Project
     /**
      * Return data type used by website
      *
-     * @param   array   $website  Website data
+     * @param array $website Website data
      *
-     * @return  string            Type of data (lang, raw)
+     * @return string Type of data (lang, raw)
      */
     public static function getWebsiteDataType($website)
     {
@@ -226,13 +226,13 @@ class Project
     /**
      * Return localized URL for stage (if available)
      *
-     * @param   array   $reference_data  Data for reference locale
-     * @param   string  $locale          Requested locale, empty to get the
-     *                                   generic URL without locale code
-     * @param   string  $type            If the return value is a plain URL or
-     *                                   HTML link
+     * @param array  $reference_data Data for reference locale
+     * @param string $locale         Requested locale, empty to get the
+     *                               generic URL without locale code
+     * @param string $type           If the return value is a plain URL or
+     *                               HTML link
      *
-     * @return  string                   Localized URL
+     * @return string Localized URL
      */
     public static function getLocalizedURL($reference_data, $locale = '', $type = 'txt')
     {
@@ -257,9 +257,9 @@ class Project
     /**
      * Return user base coverage for list of locales
      *
-     * @param   array   $locales  Array of locales
+     * @param array $locales Array of locales
      *
-     * @return  string            Percent value of our coverage for the user base
+     * @return string Percent value of our coverage for the user base
      */
     public static function getUserBaseCoverage($locales, $adu)
     {
@@ -284,10 +284,10 @@ class Project
     /**
      * Return name of the view based on the request parameters
      *
-     * @param   array   $request  Array of params extracted from URL
+     * @param array $request Array of params extracted from URL
      *
-     * @return  array             Array with name of the file to use, if we need
-     *                            a template or not and its name
+     * @return array Array with name of the file to use, if we need
+     *               a template or not and its name
      */
     public static function selectView($request)
     {

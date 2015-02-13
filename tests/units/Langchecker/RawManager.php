@@ -2,8 +2,8 @@
 namespace tests\units\Langchecker;
 
 use atoum;
-use Langchecker\RawManager as _RawManager;
 use Langchecker\Project as _Project;
+use Langchecker\RawManager as _RawManager;
 
 require_once __DIR__ . '/../bootstrap.php';
 
@@ -32,7 +32,6 @@ class RawManager extends atoum\test
         $this
             ->string($file_analysis['cmp_result'])
                 ->isEqualTo($d);
-
     }
 
     public function testOutdatedCompareRawFiles()
@@ -53,6 +52,5 @@ class RawManager extends atoum\test
         $this
             ->string($file_analysis['cmp_result'])
                 ->isEqualTo('outdated');
-
     }
 }
