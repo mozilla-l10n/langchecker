@@ -10,3 +10,13 @@ before_script:
 script:
   - vendor/atoum/atoum/bin/atoum -d tests/units/
   - vendor/bin/php-cs-fixer --diff --dry-run -v fix
+notifications:
+  irc:
+    channels:
+      - "irc.mozilla.org#l10n-tools"
+    on_success: always
+    on_failure: always
+    use_notice: true
+    template:
+      - "%{repository} ; %{commit} (%{author}) : %{message} "
+      - "Build details: %{build_url} ; changes: %{compare_url}"
