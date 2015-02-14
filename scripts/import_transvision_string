@@ -2,7 +2,7 @@
 <?php
 namespace Langchecker;
 
-use \Transvision\Json;
+use Transvision\Json;
 
 $command_help = "import_transvision_string - Import missing translations for a specific string from Transvision API and store them in the lang file\n" .
                 "Usage: import_transvision_string [filename] [repo] [string]\n\n" .
@@ -16,7 +16,7 @@ require_once __DIR__ . '/../inc/cli_init.php';
 // User provided variables
 $cli_filename = Utils::getCliParam(1, $argv, 'main.lang');     // Which file are we comparing?
 $cli_repo     = Utils::getCliParam(2, $argv, 'aurora');        // Which repo are we using as source?
-$cli_string   = Utils::getCliParam(3, $argv, '') ;             // Which string do we need?
+$cli_string   = Utils::getCliParam(3, $argv, '');             // Which string do we need?
 
 // This script only works for mozilla.org
 $current_website = $sites[0];
