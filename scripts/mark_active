@@ -55,5 +55,4 @@ foreach ($supported_locales as $current_locale) {
     } else {
         print "{$current_locale}/{$current_filename}: file is not ready.\n";
     }
-
 }
