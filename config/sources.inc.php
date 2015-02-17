@@ -218,19 +218,17 @@ $snippets_lang = [
     'feb2015_c.lang',
     'feb2015_d.lang',
     'feb2015_e.lang',
+    'mar2015_a.lang',
+    'mar2015_b.lang',
 ];
 $lang_flags['snippets'] = [
-    'jan2015a_a.lang' => [ 'critical' => ['all'] ],
-    'jan2015a_b.lang' => [ 'critical' => ['all'] ],
-    'jan2015a_c.lang' => [ 'critical' => ['all'] ],
-    'jan2015a_d.lang' => [ 'critical' => ['all'] ],
-    'jan2015b_a.lang' => [ 'critical' => ['all'] ],
-    'jan2015b_b.lang' => [ 'critical' => ['all'] ],
     'feb2015_a.lang'  => [ 'critical' => ['all'] ],
     'feb2015_b.lang'  => [ 'critical' => ['all'] ],
     'feb2015_c.lang'  => [ 'critical' => ['all'] ],
     'feb2015_d.lang'  => [ 'critical' => ['all'] ],
     'feb2015_e.lang'  => [ 'critical' => ['all'] ],
+    'mar2015_a.lang'  => [ 'critical' => ['all'] ],
+    'mar2015_b.lang'  => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -382,6 +380,8 @@ $deadline = [
     'jan2015b_a.lang'                        => '2015-01-20',
     'jan2015b_b.lang'                        => '2015-01-20',
     'legal/index.lang'                       => '2015-02-23',
+    'mar2015_a.lang'                         => '2015-03-02',
+    'mar2015_b.lang'                         => '2015-03-02',
     'mozorg/about.lang'                      => '2014-08-31',
     'mozorg/about/manifesto.lang'            => '2014-08-31',
     'mozorg/contribute/index.lang'           => '2015-01-31',
@@ -968,6 +968,8 @@ $langfiles_subsets = [
         'feb2015_c.lang'   => ['id', 'it', 'ja', 'nl'],
         'feb2015_d.lang'   => ['el', 'hu', 'sr'],
         'feb2015_e.lang'   => ['pl'],
+        'mar2015_a.lang'   => ['de', 'es-ES', 'fr', 'pt-BR', 'ru'],
+        'mar2015_b.lang'   => ['el', 'hu', 'id', 'it', 'ja', 'nl', 'pl'],
     ],
 
     'add-ons' => [
