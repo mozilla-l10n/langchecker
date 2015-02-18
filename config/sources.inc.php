@@ -405,14 +405,14 @@ $addons_locales = [
 ];
 
 // Source: http://hg.mozilla.org/releases/mozilla-release/raw-file/c13c3b4992cf/mobile/android/locales/maemo-locales
-// Added: az, dsb, hsb (requested)
+// Added: az, dsb, hsb (requested), sat
 $android_locales = [
     'an', 'as', 'az', 'be', 'bn-IN', 'br', 'ca', 'cs', 'cy', 'da',
     'de', 'dsb', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff',
     'fr', 'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN', 'hi-IN', 'hsb', 'hu',
     'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv',
     'ml', 'mr', 'ms', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl', 'pt-BR',
-    'pt-PT', 'ro', 'ru', 'sq', 'sk', 'sl', 'sv-SE', 'ta', 'te',
+    'pt-PT', 'ro', 'ru', 'sat', 'sq', 'sk', 'sl', 'sv-SE', 'ta', 'te',
     'th', 'tr', 'uk', 'zh-CN', 'zh-TW',
 ];
 
@@ -735,7 +735,7 @@ $langfiles_subsets = [
         'firefox/dnt.lang'                      =>
             [
                 'cs', 'cy', 'de', 'dsb', 'es-CL', 'hsb', 'it', 'ja',
-                'pt-BR', 'son', 'sq', 'sv-SE', 'uz', 'zh-TW',
+                'pt-BR', 'sat', 'son', 'sq', 'sv-SE', 'uz', 'zh-TW',
             ],
         'firefox/geolocation.lang'              =>
             [
@@ -746,7 +746,7 @@ $langfiles_subsets = [
                 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM',
                 'id', 'is', 'it', 'ja', 'ka', 'kk', 'kn', 'ko', 'lt',
                 'lv', 'mk', 'ml', 'mr', 'nb-NO', 'nl', 'nn-NO', 'oc',
-                'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru',
+                'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sat',
                 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta',
                 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
             ],
@@ -831,7 +831,7 @@ $langfiles_subsets = [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL',
                 'hsb', 'it', 'ja', 'km', 'ms', 'nl', 'pl',
-                'pt-BR', 'son', 'sq', 'sv-SE', 'tr', 'zh-CN',
+                'pt-BR', 'sat', 'son', 'sq', 'sv-SE', 'tr', 'zh-CN',
                 'zh-TW',
             ],
         'main.lang'                             => $mozillaorg,
@@ -856,14 +856,14 @@ $langfiles_subsets = [
                 'eu', 'fi', 'fr', 'fur', 'fy-NL', 'gd', 'gl',
                 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it', 'ja',
                 'km', 'ko', 'mk', 'ms', 'nl', 'pl', 'pt-BR',
-                'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
+                'ro', 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'tr', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/history-details.lang'     =>
             [
                 'ca', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu',
                 'fr', 'gl', 'hsb', 'it', 'km', 'pa-IN', 'pt-BR',
-                'ro', 'sk', 'son', 'sq', 'sv-SE', 'uz', 'zh-TW',
+                'ro', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uz', 'zh-TW',
             ],
         'mozorg/about/history.lang'             =>
             [
@@ -871,7 +871,7 @@ $langfiles_subsets = [
                 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fr',
                 'fy-NL', 'gl', 'hr', 'hsb', 'id', 'it', 'km',
                 'lt', 'ms', 'nl', 'pa-IN', 'pl', 'pt-BR', 'ro',
-                'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
+                'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'ta', 'tr', 'uz', 'zh-CN', 'zh-TW',
             ],
         'mozorg/contribute.lang'                => $getinvolved_locales_oldpage,
