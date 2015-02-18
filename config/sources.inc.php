@@ -715,12 +715,12 @@ $langfiles_subsets = [
                 'nl', 'pl', 'pt-PT', 'ro', 'sk', 'sl', 'sv-SE',
             ],
         'firefox/android/index.lang'            => $android_locales,
-        'firefox/australis/firefox_tour.lang'   => $mozillaorg,
-        'firefox/australis/fx36_tour.lang'      => $mozillaorg,
-        'firefox/channel.lang'                  => $mozillaorg,
-        'firefox/desktop/customize.lang'        => $mozillaorg,
-        'firefox/desktop/fast.lang'             => $mozillaorg,
-        'firefox/desktop/index.lang'            => $mozillaorg,
+        'firefox/australis/firefox_tour.lang'   => $firefox_desktop,
+        'firefox/australis/fx36_tour.lang'      => $firefox_desktop,
+        'firefox/channel.lang'                  => $mozillaorg, // Has Firefox for Android download buttons
+        'firefox/desktop/customize.lang'        => $firefox_desktop,
+        'firefox/desktop/fast.lang'             => $firefox_desktop,
+        'firefox/desktop/index.lang'            => $firefox_desktop,
         'firefox/desktop/tips.lang'             =>
             [
                 'af', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR',
@@ -730,8 +730,8 @@ $langfiles_subsets = [
                 'sk', 'sl', 'son', 'sq', 'sv-SE', 'uz', 'xh',
                 'zh-CN', 'zh-TW',
             ],
-        'firefox/desktop/trust.lang'            => $mozillaorg,
-        'firefox/developer.lang'                => $mozillaorg,
+        'firefox/desktop/trust.lang'            => $firefox_desktop,
+        'firefox/developer.lang'                => $firefox_desktop,
         'firefox/dnt.lang'                      =>
             [
                 'cs', 'cy', 'de', 'dsb', 'es-CL', 'hsb', 'it', 'ja',
@@ -751,10 +751,10 @@ $langfiles_subsets = [
                 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
             ],
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
-        'firefox/hello.lang'                      => $mozillaorg,
-        'firefox/independent.lang'                => $mozillaorg,
-        'firefox/installer-help.lang'             => $mozillaorg,
-        'firefox/new.lang'                        => $mozillaorg,
+        'firefox/hello.lang'                      => $firefox_desktop,
+        'firefox/independent.lang'                => $firefox_desktop,
+        'firefox/installer-help.lang'             => $firefox_desktop,
+        'firefox/new.lang'                        => $firefox_desktop,
         'firefox/nightly_firstrun.lang'           =>
             [
                 'ar', 'ast', 'cs', 'de', 'eo', 'es-AR', 'es-CL',
@@ -772,7 +772,7 @@ $langfiles_subsets = [
         'firefox/privacy_tour/privacy_tour.lang' => $privacy_tour_locales,
         'firefox/speed.lang'                     => ['pt-BR'],
         'firefox/sync.lang'                      => $mozillaorg,
-        'firefox/tiles.lang'                     => $mozillaorg,
+        'firefox/tiles.lang'                     => $firefox_desktop,
         'firefox/whatsnew.lang'                  => ['hu', 'pl'],
         'firefoxflicks.lang'                     =>
             [
