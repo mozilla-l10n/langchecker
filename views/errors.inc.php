@@ -258,6 +258,17 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
             $reference_output .= "</ul>\n";
         }
 
+        // Check for strings "translated" in the source
+        foreach ($reference_data['strings'] as $string_id => $string_value) {
+            if ($string_id != $string_value) {
+                if (! $reference_with_errors) {
+                    $reference_with_errors = true;
+                    $reference_output .= $opening_div;
+                }
+                $reference_output .= "<h3>{$current_filename}</h3><p>The following string has different values for reference and translation:</p><ul><li>" . htmlspecialchars($string_id) . "</li></ul>\n";
+            }
+        }
+
         // Check for max length errors
         if (isset($reference_data['max_lengths'])) {
             foreach ($reference_data['max_lengths'] as $reference_string => $max_length) {
