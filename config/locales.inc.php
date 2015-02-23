@@ -31,3 +31,6 @@ $firefox_desktop = array_diff(
     $mozilla,
     ['ee', 'es', 'ha', 'ig', 'ln', 'my', 'sr-Latn', 'sw', 'wo', 'yo']
 );
+
+// List of locales with active newsletter
+$newsletter_locales = ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'];
