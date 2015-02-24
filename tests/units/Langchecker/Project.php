@@ -480,7 +480,21 @@ class Project extends atoum\test
                     'file'         => 'optin',
                     'template'     => 'template',
                 ],
-            ],            [
+            ],
+            [
+                [
+                    'action'   => 'snippets',
+                    'filename' => '',
+                    'json'     => false,
+                    'locale'   => 'it',
+                    'serial'   => false,
+                    'website'  => '',                ],
+                [
+                    'file'         => 'snippets_api',
+                    'template'     => '',
+                ],
+            ],
+            [
                 [
                     'action'   => 'translate',
                     'filename' => '',

@@ -330,6 +330,10 @@ class Project
                 case 'optin':
                     $result['file'] = 'optin';
                     break;
+                case 'snippets':
+                    $result['file'] = 'snippets_api';
+                    $result['template'] = '';
+                    break;
                 case 'translate':
                     $result['file'] = 'translatestrings';
                     break;
