@@ -82,9 +82,6 @@ if (! $string_id) {
         exit;
     }
 
-    if (isset($_GET['callback'])) {
-        echo Json::output($json_data, $_GET['callback'], true);
-    } else {
-        echo Json::output($json_data, false, true);
-    }
+    $callback = isset($_GET['callback']) ? $_GET['callback'] : false;
+    exit(Json::output($json_data, $callback, true));
 }

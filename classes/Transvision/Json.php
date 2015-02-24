@@ -42,4 +42,18 @@ class Json
     {
         return json_decode(file_get_contents($uri), true);
     }
+
+    /**
+     * Return HTTP code 400 and an error if the API call is incorrect
+     *
+     * @param string $error Error message
+     *
+     * @return string Display error message
+     */
+    public static function invalidAPICall($error)
+    {
+        http_response_code(400);
+
+        return self::output(['error' => $error], false, true);
+    }
 }
