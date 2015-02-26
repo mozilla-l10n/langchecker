@@ -32,14 +32,15 @@ if ($current_filename == '' || ! in_array($current_filename, Project::getWebsite
 
 $complete_locales_count = 0;
 $complete_locales_list = [];
-$activated_locales_count = 0;
-$activated_locales_list = [];
 $json_data = [];
 
 $reference_locale = Project::getReferenceLocale($current_website);
 
 if ($website_data_source == 'lang') {
     // Websites using .lang files
+    $activated_locales_count = 0;
+    $activated_locales_list = [];
+    $file_activable = ! in_array($current_filename, $no_active_tag);
     $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
     $translation_link = "?website={$website}&amp;file={$current_filename}&amp;action=translate";
@@ -136,16 +137,20 @@ if ($website_data_source == 'lang') {
     }
 
     $coverage_complete = Project::getUserBaseCoverage($complete_locales_list, $adu) . '%';
-    $coverage_activated = Project::getUserBaseCoverage($activated_locales_list, $adu) . '%';
 
     echo "
       </tbody>
       <tfoot>
         <tr>
           <td colspan= '8'>
-            Complete locales: {$complete_locales_count} (" . round($complete_locales_count/count($supported_locales)*100) . "%) - {$coverage_complete} of our l10n user base<br/>
-            Activated locales: {$activated_locales_count} (" . round($activated_locales_count/count($supported_locales)*100) . "%) - {$coverage_activated} of our l10n user base
-          </td>
+            Complete locales: {$complete_locales_count} (" . round($complete_locales_count/count($supported_locales)*100) . "%) - {$coverage_complete} of our l10n user base<br/>\n";
+    if ($file_activable) {
+        $coverage_activated = Project::getUserBaseCoverage($activated_locales_list, $adu) . '%';
+        echo "Activated locales: {$activated_locales_count} (" . round($activated_locales_count/count($supported_locales)*100) . "%) - {$coverage_activated} of our l10n user base\n";
+    } else {
+        echo "This file is not supposed to be activated\n";
+    }
+    echo "          </td>
         </tr>
       </tfoot>
     </table>\n";
