@@ -734,7 +734,7 @@ $langfiles_subsets = [
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'ff', 'fr', 'fy-NL',
                 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id', 'it',
                 'ja', 'km', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
-                'sk', 'sl', 'son', 'sq', 'sv-SE', 'uz', 'xh',
+                'sk', 'sl', 'son', 'sq', 'sv-SE', 'uk', 'uz', 'xh',
                 'zh-CN', 'zh-TW',
             ],
         'firefox/desktop/trust.lang'            => $firefox_desktop,
@@ -742,7 +742,8 @@ $langfiles_subsets = [
         'firefox/dnt.lang'                      =>
             [
                 'cs', 'cy', 'de', 'dsb', 'es-CL', 'hsb', 'it', 'ja',
-                'pt-BR', 'sat', 'son', 'sq', 'sv-SE', 'uz', 'zh-TW',
+                'pt-BR', 'sat', 'son', 'sq', 'sv-SE', 'uk', 'uz',
+                'zh-TW',
             ],
         'firefox/geolocation.lang'              =>
             [
@@ -840,8 +841,8 @@ $langfiles_subsets = [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL',
                 'hsb', 'it', 'ja', 'km', 'ms', 'nl', 'pl',
-                'pt-BR', 'sat', 'son', 'sq', 'sv-SE', 'tr', 'zh-CN',
-                'zh-TW',
+                'pt-BR', 'sat', 'son', 'sq', 'sv-SE', 'tr',
+                'uk', 'zh-CN', 'zh-TW',
             ],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
@@ -858,21 +859,12 @@ $langfiles_subsets = [
         'mozorg/home.lang'                      => $mozillaorg,
         'mozorg/home/index.lang'                => $mozillaorg,
         'mozorg/mission.lang'                   => $mozillaorg,
-        'mozorg/about/manifesto.lang'           =>
-            [
-                'ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de',
-                'dsb', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
-                'eu', 'fi', 'fr', 'fur', 'fy-NL', 'gd', 'gl',
-                'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it', 'ja',
-                'km', 'ko', 'mk', 'ms', 'nl', 'pl', 'pt-BR',
-                'ro', 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
-                'tr', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
-            ],
         'mozorg/about/history-details.lang'     =>
             [
                 'ca', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu',
                 'fr', 'gl', 'hsb', 'it', 'km', 'pa-IN', 'pt-BR',
-                'ro', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uz', 'zh-TW',
+                'ro', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk',
+                'uz', 'zh-TW',
             ],
         'mozorg/about/history.lang'             =>
             [
@@ -881,7 +873,17 @@ $langfiles_subsets = [
                 'fy-NL', 'gl', 'hr', 'hsb', 'id', 'it', 'km',
                 'lt', 'ms', 'nl', 'pa-IN', 'pl', 'pt-BR', 'ro',
                 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
-                'ta', 'tr', 'uz', 'zh-CN', 'zh-TW',
+                'ta', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
+            ],
+        'mozorg/about/manifesto.lang'           =>
+            [
+                'ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de',
+                'dsb', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+                'eu', 'fi', 'fr', 'fur', 'fy-NL', 'gd', 'gl',
+                'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it', 'ja',
+                'km', 'ko', 'mk', 'ms', 'nl', 'pl', 'pt-BR',
+                'ro', 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
+                'tr', 'uk', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
             ],
         'mozorg/contribute.lang'                => $getinvolved_locales_oldpage,
         'mozorg/contribute/index.lang'          => $getinvolved_locales,
@@ -896,7 +898,8 @@ $langfiles_subsets = [
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hsb', 'id', 'it',
-                'nl', 'pt-BR', 'ru', 'son', 'sq', 'sv-SE', 'zh-TW',
+                'nl', 'pt-BR', 'ru', 'son', 'sq', 'sv-SE', 'uk',
+                'zh-TW',
             ],
         'newsletter.lang'                       => $mozillaorg,
         'snippets.lang'                         => $mozillaorg,
