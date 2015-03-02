@@ -19,7 +19,7 @@ if (! isset($_SERVER['SERVER_NAME'])) {
 }
 
 require __DIR__ . '/settings.inc.php';
-include __DIR__ . '/adu.inc.php';
+include __DIR__ . '/adu.inc.php';m
 
 $locamotion_locales = [
     'ach', 'af', 'bn-BD', 'ca', 'cy', 'dsb', 'ee', 'en-ZA', 'es-MX', 'ff',
@@ -886,7 +886,7 @@ $langfiles_subsets = [
             ],
         'mozorg/about/manifesto.lang'           =>
             [
-                'ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de',
+                'af', 'ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de',
                 'dsb', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fi', 'fr', 'fur', 'fy-NL', 'gd', 'gl',
                 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it', 'ja',
