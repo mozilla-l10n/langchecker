@@ -49,9 +49,14 @@ foreach ($displayed_sites as $site_index => $current_website) {
             $total_words += $nb_words;
             $total_files++;
 
-            $html_output .= "<tr>\n" .
-                            "  <td>{$current_filename}</td>\n" .
-                            '  <td>' .  Project::getLocalizedURL($reference_data, '', 'html') . "</td>\n" .
+            $html_output .= "<tr>\n";
+            // Check if the file is obsolete for all locales
+            if (in_array('obsolete', Project::getFileFlags($current_website, $current_filename, 'all'))) {
+                $html_output .= "  <td class='obsolete' title='Obsolete file'>{$current_filename}</td>\n";
+            } else {
+                $html_output .= "  <td>{$current_filename}</td>\n";
+            }
+            $html_output .= '  <td>' .  Project::getLocalizedURL($reference_data, '', 'html') . "</td>\n" .
                             "  <td><a class='table_small_link' href='?locale=all&amp;website={$site_index}&amp;file={$current_filename}'>Status</a></td>\n" .
                             "  <td><a class='table_small_link' href='?website={$site_index}&amp;file={$current_filename}&amp;action=translate&amp;show'>Show</a></td>\n" .
                             "  <td>{$nb_strings}</td>\n" .

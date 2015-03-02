@@ -20,19 +20,18 @@ foreach ($mozilla as $current_locale) {
             continue;
         }
         foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
-            // Skip the loop if we don't have this lang file for the locale
-            if (! Project::isSupportedLocale($current_website, $current_locale, $langfiles_subsets, $current_filename)) {
+            if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets) ||
+                ! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename)) ||
+                in_array('obsolete', Project::getFileFlags($current_website, $current_filename, $current_locale))) {
+                /*
+                 * Ignore file for this locale if:
+                 * - It's not supported
+                 * - It doesn't exist
+                 * - It's marked as obsolete
+                 */
                 continue;
             }
-            // Skip the locale for this file if it's missing
-            if (! is_file(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
-                continue;
-            }
-            // Skip the locale if we do have a lang file but don't need it for the locale
-            if (isset($langfiles_subsets[$current_website[0]][$current_filename])
-                && ! in_array($current_locale, $langfiles_subsets[$current_website[0]][$current_filename])) {
-                continue;
-            }
+
             $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
             $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
 

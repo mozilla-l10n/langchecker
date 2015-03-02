@@ -22,12 +22,14 @@ foreach ($sites as $website) {
                                   $filename :
                                   basename($filename);
 
+            $file_flags = Project::getFileFlags($website, $filename, $current_locale);
+
             if ($website_data_source == 'lang') {
                 // Load reference strings
                 $reference_data = LangManager::loadSource($website, $reference_locale, $filename);
                 $locale_filename = Project::getLocalFilePath($website, $current_locale, $filename);
-                if (! is_file($locale_filename)) {
-                    // File is missing
+                if (! is_file($locale_filename) || in_array('obsolete', $file_flags)) {
+                    // File is missing or marked as obsolete
                     continue;
                 }
 
@@ -53,7 +55,6 @@ foreach ($sites as $website) {
             }
 
             // Flags
-            $file_flags = Project::getFileFlags($website, $filename, $current_locale);
             if ($file_flags) {
                 $export_data[$website_name][$displayed_filename]['flags'] = $file_flags;
             }
