@@ -119,6 +119,7 @@ $mozillaorg_lang = [
 $lang_flags['www.mozilla.org'] = [
     'download.lang'                           => [ 'critical' => ['all'] ],
     'download_button.lang'                    => [ 'critical' => ['all'] ],
+    'euballot.lang'                           => [ 'obsolete' => ['all'] ],
     'firefox/android/index.lang'              => [
         'critical' => ['all'],
         'opt-in'   => ['all'],
@@ -142,13 +143,17 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/installer-help.lang'             => [ 'critical' => ['all'] ],
     'firefox/geolocation.lang'                => [ 'opt-in'   => ['all'] ],
     'firefox/os/devices.lang'                 => [ 'critical' => ['all'] ],
+    'firefox/os/index.lang'                   => [ 'obsolete' => ['all'] ],
     'firefox/os/index-new.lang'               => [ 'critical' => ['all'] ],
     'firefox/privacy_tour/privacy_tour.lang'  => [ 'critical' => ['all'] ],
     'firefox/sync.lang'                       => [ 'critical' => ['all'] ],
     'firefox/tiles.lang'                      => [ 'critical' => ['all'] ],
     'firefox/whatsnew.lang'                   => [ 'critical' => ['all'] ],
+    'firefoxflicks.lang'                      => [ 'obsolete' => ['all'] ],
+    'firefoxlive.lang'                        => [ 'obsolete' => ['all'] ],
     'firefoxos/firefoxos.lang'                => [ 'critical' => ['all'] ],
-    'firefoxtesting.lang'                     => [ 'critical' => ['all'] ],
+    'firefoxtesting.lang'                     => [ 'obsolete' => ['all'] ],
+    'foundationsection.lang'                  => [ 'obsolete' => ['all'] ],
     'foundation/annualreport/2012/index.lang' => [ 'critical' => ['all'] ],
     'legal/index.lang'                        => [ 'critical' => ['all'] ],
     'lightbeam/lightbeam.lang'                => [ 'opt-in'   => ['all'] ],
@@ -158,6 +163,7 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/about/manifesto.lang'             => [ 'opt-in'   => ['all'] ],
     'mozorg/about/history.lang'               => [ 'opt-in'   => ['all'] ],
     'mozorg/about/history-details.lang'       => [ 'opt-in'   => ['all'] ],
+    'mozorg/contribute.lang'                  => [ 'obsolete' => ['all'] ],
     'mozorg/contribute/index.lang'            => [
         'critical' => ['all'],
         'opt-in'   => ['all'],
@@ -166,8 +172,10 @@ $lang_flags['www.mozilla.org'] = [
         'critical' => ['all'],
         'opt-in'   => ['all'],
     ],
+    'mozorg/home.lang'                        => [ 'obsolete' => ['all'] ],
     'mozorg/home/index.lang'                  => [ 'critical' => ['all'] ],
     'mozorg/plugincheck.lang'                 => [ 'critical' => ['all'] ],
+    'mozspaces.lang'                          => [ 'obsolete' => ['all'] ],
     'newsletter/ios.lang'                     => [
         'critical' => $newsletter_locales,
     ],
@@ -175,6 +183,7 @@ $lang_flags['www.mozilla.org'] = [
         'critical' => $newsletter_locales,
     ],
     'privacy/privacy-day.lang'                => [ 'opt-in'   => ['all'] ],
+    'snippets.lang'                           => [ 'obsolete' => ['all'] ],
     'thunderbird/start/release.lang'          => [ 'critical' => ['all'] ],
     'upgradedialog.lang'                      => [ 'critical' => ['all'] ],
 ];

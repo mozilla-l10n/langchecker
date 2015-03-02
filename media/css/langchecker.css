@@ -329,6 +329,10 @@ div.tip blockquote {
     padding: 2px 6px;
 }
 
+.obsolete {
+    color: #999;
+}
+
 /* Opt-in pages */
 .optin_filename {
     text-align: left;
