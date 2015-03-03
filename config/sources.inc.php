@@ -742,7 +742,7 @@ $langfiles_subsets = [
                 'af', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'ff', 'fr', 'fy-NL',
                 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id', 'it',
-                'ja', 'km', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
+                'ja', 'km', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
                 'sk', 'sl', 'son', 'sq', 'sv-SE', 'uk', 'uz', 'xh',
                 'zh-CN', 'zh-TW',
             ],
@@ -751,7 +751,7 @@ $langfiles_subsets = [
         'firefox/dnt.lang'                      =>
             [
                 'cs', 'cy', 'de', 'dsb', 'es-CL', 'hsb', 'it', 'ja',
-                'pt-BR', 'sat', 'son', 'sq', 'sv-SE', 'uk', 'uz',
+                'lt', 'pt-BR', 'sat', 'son', 'sq', 'sv-SE', 'uk', 'uz',
                 'zh-TW',
             ],
         'firefox/geolocation.lang'              =>
@@ -849,7 +849,7 @@ $langfiles_subsets = [
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL',
-                'hsb', 'it', 'ja', 'km', 'ms', 'nl', 'pl',
+                'hsb', 'it', 'ja', 'km', 'lt', 'ms', 'nl', 'pl',
                 'pt-BR', 'sat', 'son', 'sq', 'sv-SE', 'tr',
                 'uk', 'zh-CN', 'zh-TW',
             ],
@@ -871,7 +871,7 @@ $langfiles_subsets = [
         'mozorg/about/history-details.lang'     =>
             [
                 'ca', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu',
-                'fr', 'gl', 'hsb', 'it', 'km', 'pa-IN', 'pt-BR',
+                'fr', 'gl', 'hsb', 'it', 'km', 'lt', 'pa-IN', 'pt-BR',
                 'ro', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk',
                 'uz', 'zh-TW',
             ],
@@ -890,7 +890,7 @@ $langfiles_subsets = [
                 'dsb', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fi', 'fr', 'fur', 'fy-NL', 'gd', 'gl',
                 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it', 'ja',
-                'km', 'ko', 'mk', 'ms', 'nl', 'pl', 'pt-BR',
+                'km', 'ko', 'lt', 'mk', 'ms', 'nl', 'pl', 'pt-BR',
                 'ro', 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'tr', 'uk', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
             ],
@@ -907,7 +907,7 @@ $langfiles_subsets = [
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hsb', 'id', 'it',
-                'nl', 'pt-BR', 'ru', 'son', 'sq', 'sv-SE', 'uk',
+                'lt', 'nl', 'pt-BR', 'ru', 'son', 'sq', 'sv-SE', 'uk',
                 'zh-TW',
             ],
         'newsletter.lang'                       => $mozillaorg,
