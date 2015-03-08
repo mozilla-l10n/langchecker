@@ -22,7 +22,7 @@ require __DIR__ . '/settings.inc.php';
 include __DIR__ . '/adu.inc.php';
 
 $locamotion_locales = [
-    'ach', 'af', 'bn-BD', 'ca', 'cy', 'dsb', 'ee', 'en-ZA', 'es-MX', 'ff',
+    'ach', 'af', 'bn-BD', 'br', 'ca', 'cy', 'dsb', 'ee', 'en-ZA', 'es-MX', 'ff',
     'gd', 'ha', 'hi-IN', 'hr', 'hsb', 'ig', 'km', 'ln', 'lt', 'ms', 'my',
     'oc', 'sat', 'si', 'son', 'sw', 'ta', 'ur', 'uz', 'vi', 'wo',
     'xh', 'yo', 'zu',
