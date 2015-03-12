@@ -380,7 +380,7 @@ $deadline = [
     'firefox/hello.lang'                     => '2015-03-12',
     'firefox/independent.lang'               => '2014-11-09',
     'firefox/installer-help.lang'            => '2013-12-31',
-    'firefox/new.lang'                       => '2015-03-12',
+    'firefox/new.lang'                       => '2015-03-27',
     'firefox/os/index-new.lang'              => '2015-03-01',
     'firefox/partners/index.lang'            => '2015-03-01',
     'firefox/privacy_tour/privacy_tour.lang' => '2014-11-04',
@@ -397,13 +397,13 @@ $deadline = [
     'legal/index.lang'                       => '2015-02-23',
     'mar2015_a.lang'                         => '2015-03-02',
     'mar2015_b.lang'                         => '2015-03-02',
-    'mozorg/about.lang'                      => '2014-08-31',
+    'mozorg/about.lang'                      => '2015-03-27',
     'mozorg/about/manifesto.lang'            => '2014-08-31',
     'mozorg/contribute/index.lang'           => '2015-01-31',
     'mozorg/contribute/stories.lang'         => '2015-01-31',
     'mozorg/home/index.lang'                 => '2015-03-12',
     'mozorg/mission.lang'                    => '2013-12-31',
-    'mozorg/plugincheck.lang'                => '2015-03-12',
+    'mozorg/plugincheck.lang'                => '2015-03-27',
     'mozorg/products.lang'                   => '2013-12-31',
     'privacy/privacy-day.lang'               => '2015-01-27',
     'newsletter/ios.lang'                    => '2015-03-12',
@@ -433,7 +433,7 @@ $android_locales = [
 ];
 
 $firefox_os = [
-    'af', 'bg', 'bn-BD', 'ca' , 'cs', 'de', 'ee', 'el', 'es-ES',
+    'af', 'ar', 'bg', 'bn-BD', 'ca' , 'cs', 'de', 'ee', 'el', 'es-ES',
     'es-MX', 'et', 'ff', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
     'ig', 'it', 'ja', 'ko', 'ln', 'mk', 'nl', 'pl', 'pt-BR',
     'ro', 'ru', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'wo', 'xh',
@@ -499,7 +499,7 @@ $privacy_tour_locales = [
 ];
 
 $slogans_locales = [
-    'af', 'bg', 'ca', 'cs', 'de', 'ee', 'el', 'es-ES', 'ff',
+    'af', 'ar', 'bg', 'ca', 'cs', 'de', 'ee', 'el', 'es-ES', 'ff',
     'fr', 'ha', 'hr', 'hu', 'ig', 'it', 'ja', 'ko', 'ln', 'pl',
     'pt-BR', 'ro', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'wo',
     'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
@@ -1000,7 +1000,7 @@ $langfiles_subsets = [
             ],
         'screenshots_2_0.lang' =>
             [
-                'af', 'cs', 'de', 'ee', 'el', 'es-ES', 'ha', 'ig',
+                'af', 'ar', 'cs', 'de', 'ee', 'el', 'es-ES', 'ha', 'ig',
                 'ja', 'ln', 'pl', 'pt-BR', 'sw', 'wo', 'xh', 'yo',
                 'zu',
             ],
