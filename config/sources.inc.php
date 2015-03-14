@@ -238,6 +238,7 @@ $snippets_lang = [
     'feb2015_e.lang',
     'mar2015_a.lang',
     'mar2015_b.lang',
+    'apr2015.lang',
 ];
 $lang_flags['snippets'] = [
     'feb2015_a.lang'  => [ 'critical' => ['all'] ],
@@ -247,6 +248,7 @@ $lang_flags['snippets'] = [
     'feb2015_e.lang'  => [ 'critical' => ['all'] ],
     'mar2015_a.lang'  => [ 'critical' => ['all'] ],
     'mar2015_b.lang'  => [ 'critical' => ['all'] ],
+    'apr2015.lang'    => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -366,13 +368,9 @@ $no_active_tag = [
 ];
 
 $deadline = [
+    'apr2015.lang'                           => '2015-04-02',
     'description_page.lang'                  => '2014-11-09', //google-play project
     'download_button.lang'                   => '2014-10-27',
-    'feb2015_a.lang'                         => '2015-02-04',
-    'feb2015_b.lang'                         => '2015-02-04',
-    'feb2015_c.lang'                         => '2015-02-04',
-    'feb2015_d.lang'                         => '2015-02-04',
-    'feb2015_e.lang'                         => '2015-02-04',
     'firefox/android/index.lang'             => '2014-10-27',
     'firefox/australis/fx36_tour.lang'       => '2015-02-23',
     'firefox/channel.lang'                   => '2014-11-24',
@@ -393,15 +391,7 @@ $deadline = [
     'firefox/tiles.lang'                     => '2014-11-09',
     'firefox/whatsnew.lang'                  => '2013-12-31',
     'fx36start.lang'                         => '2014-12-04',
-    'jan2015a_a.lang'                        => '2015-01-06',
-    'jan2015a_b.lang'                        => '2015-01-06',
-    'jan2015a_c.lang'                        => '2015-01-06',
-    'jan2015a_d.lang'                        => '2015-01-06',
-    'jan2015b_a.lang'                        => '2015-01-20',
-    'jan2015b_b.lang'                        => '2015-01-20',
     'legal/index.lang'                       => '2015-02-23',
-    'mar2015_a.lang'                         => '2015-03-02',
-    'mar2015_b.lang'                         => '2015-03-02',
     'mozorg/about.lang'                      => '2015-03-26',
     'mozorg/about/manifesto.lang'            => '2014-08-31',
     'mozorg/contribute/index.lang'           => '2015-01-31',
@@ -984,6 +974,7 @@ $langfiles_subsets = [
         'feb2015_e.lang'   => ['pl'],
         'mar2015_a.lang'   => ['de', 'es-ES', 'fr', 'pt-BR', 'ru'],
         'mar2015_b.lang'   => ['el', 'hu', 'id', 'it', 'ja', 'nl', 'pl'],
+        'apr2015.lang'     => ['de', 'es-ES', 'fr', 'pt-BR', 'ru'],
     ],
 
     'add-ons' => [
