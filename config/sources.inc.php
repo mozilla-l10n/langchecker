@@ -77,6 +77,7 @@ $mozillaorg_lang = [
     'firefox/sync.lang',
     'firefox/tiles.lang',
     'firefox/whatsnew.lang',
+    'firefox/whatsnew-fx37.lang',
     'firefoxflicks.lang',
     'firefoxlive.lang',
     'firefoxos/firefoxos.lang',
@@ -152,6 +153,7 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/sync.lang'                       => [ 'critical' => ['all'] ],
     'firefox/tiles.lang'                      => [ 'critical' => ['all'] ],
     'firefox/whatsnew.lang'                   => [ 'critical' => ['all'] ],
+    'firefox/firefox/whatsnew-fx37.lang'      => [ 'critical' => ['all'] ],
     'firefoxflicks.lang'                      => [ 'obsolete' => ['all'] ],
     'firefoxlive.lang'                        => [ 'obsolete' => ['all'] ],
     'firefoxos/firefoxos.lang'                => [ 'critical' => ['all'] ],
@@ -390,6 +392,7 @@ $deadline = [
     'firefox/sync.lang'                      => '2015-03-12',
     'firefox/tiles.lang'                     => '2014-11-09',
     'firefox/whatsnew.lang'                  => '2013-12-31',
+    'firefox/whatsnew-fx37.lang'             => '2015-03-30',
     'fx36start.lang'                         => '2014-12-04',
     'legal/index.lang'                       => '2015-02-23',
     'mozorg/about.lang'                      => '2015-03-26',
@@ -789,6 +792,7 @@ $langfiles_subsets = [
         'firefox/sync.lang'                      => $mozillaorg,
         'firefox/tiles.lang'                     => $firefox_desktop,
         'firefox/whatsnew.lang'                  => ['hu', 'pl'],
+        'firefox/whatsnew-fx37.lang'             => ['de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'id', 'pt-BR'],
         'firefoxflicks.lang'                     =>
             [
                 'ar', 'bg', 'de', 'es-ES', 'fa', 'fr', 'gl', 'hu',
