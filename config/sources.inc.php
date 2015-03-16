@@ -527,11 +527,11 @@ $surveys = [
 // Thundebird locales on Release channel
 // Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
 $thunderbird_release = [
-    'ar', 'ast', 'be', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'da', 'de', 'el',
-    'en-GB', 'es-AR', 'es-ES', 'et', 'eu', 'fi', 'fr', 'fy-NL', 'ga-IE',
-    'gd', 'gl', 'he', 'hr', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ko',
-    'lt', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm',
-    'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr',
+    'ar', 'ast', 'be', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'da', 'de', 'dsb',
+    'el', 'en-GB', 'es-AR', 'es-ES', 'et', 'eu', 'fi', 'fr', 'fy-NL', 
+    'ga-IE', 'gd', 'gl', 'he', 'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is', 
+    'it', 'ja', 'ko', 'lt', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 
+    'pt-PT', 'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr',
     'uk', 'vi', 'zh-CN', 'zh-TW',
 ];
 
