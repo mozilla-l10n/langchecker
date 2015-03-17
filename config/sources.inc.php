@@ -1006,7 +1006,7 @@ $langfiles_subsets = [
                 'ja', 'ln', 'pl', 'pt-BR', 'sw', 'wo', 'xh', 'yo',
                 'zu',
             ],
-        'screenshots_dolphin.lang' => ['bn-BD'],
+        'screenshots_dolphin.lang' => ['bn-BD', 'bn-IN', 'hi-IN', 'ta'],
         'screenshots.lang'         =>
             [
                 'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it',
