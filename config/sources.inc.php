@@ -431,10 +431,10 @@ $android_locales = [
 ];
 
 $firefox_os = [
-    'af', 'ar', 'bg', 'bn-BD', 'ca' , 'cs', 'de', 'ee', 'el', 'es-ES',
-    'es-MX', 'et', 'ff', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
-    'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mk', 'nl', 'pl', 'pt-BR',
-    'ro', 'ru', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'wo', 'xh',
+    'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca' , 'cs', 'de', 'ee',
+    'el', 'es-ES', 'es-MX', 'et', 'ff', 'fr', 'fy-NL', 'ha', 'hi-IN',
+    'hr', 'hu', 'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mk', 'nl', 'pl',
+    'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'wo', 'xh',
     'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
 
