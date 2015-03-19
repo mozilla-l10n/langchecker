@@ -884,7 +884,7 @@ $langfiles_subsets = [
                 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'ta', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
-        'mozorg/about/leadership.lang'          => ['de', 'dsb', 'hsb', 'sv-SE'],
+        'mozorg/about/leadership.lang'          => ['cs', 'de', 'dsb', 'hsb', 'sv-SE'],
         'mozorg/about/manifesto.lang'           =>
             [
                 'af', 'ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de',
