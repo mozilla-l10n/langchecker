@@ -153,7 +153,7 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/sync.lang'                       => [ 'critical' => ['all'] ],
     'firefox/tiles.lang'                      => [ 'critical' => ['all'] ],
     'firefox/whatsnew.lang'                   => [ 'critical' => ['all'] ],
-    'firefox/firefox/whatsnew-fx37.lang'      => [ 'critical' => ['all'] ],
+    'firefox/whatsnew-fx37.lang'              => [ 'critical' => ['all'] ],
     'firefoxflicks.lang'                      => [ 'obsolete' => ['all'] ],
     'firefoxlive.lang'                        => [ 'obsolete' => ['all'] ],
     'firefoxos/firefoxos.lang'                => [ 'critical' => ['all'] ],
