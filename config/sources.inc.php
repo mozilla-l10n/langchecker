@@ -19,7 +19,14 @@ if (! isset($_SERVER['SERVER_NAME'])) {
 }
 
 require __DIR__ . '/settings.inc.php';
-include __DIR__ . '/adu.inc.php';
+
+// Real data is in adi.inc.php, not under VCS
+if (is_file(__DIR__ . '/adi.inc.php')) {
+    include __DIR__ . '/adi.inc.php';
+} else {
+    // Fake data to not break the app outside of production
+    include __DIR__ . '/fake_adi.inc.php';
+}
 
 $locamotion_locales = [
     'ach', 'af', 'bn-BD', 'br', 'brx', 'ca', 'cy', 'dsb', 'ee', 'en-ZA', 'es-MX', 'ff',

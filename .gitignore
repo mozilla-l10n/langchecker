@@ -1,5 +1,6 @@
 cache/*.cache
 config/settings.inc.php
+config/adi.inc.php
 composer.phar
 composer.lock
 locales

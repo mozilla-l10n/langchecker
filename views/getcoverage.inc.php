@@ -1,8 +1,6 @@
 <?php
 namespace Langchecker;
 
-include __DIR__ . '/../config/adu.inc.php';
-
 if (! isset($_GET['locales'])) {
     die('ERROR: missing list of locales.');
 }
