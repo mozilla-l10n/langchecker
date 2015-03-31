@@ -756,8 +756,8 @@ $langfiles_subsets = [
         'firefox/dnt.lang'                      =>
             [
                 'cs', 'cy', 'de', 'dsb', 'es-CL', 'fr', 'hsb', 'it', 'ja',
-                'lt', 'pt-BR', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
-                'zh-TW',
+                'lt', 'nl ,'pt-BR', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk',
+                'uz', 'zh-TW',
             ],
         'firefox/family/index.lang'             => $firefox_desktop,
         'firefox/geolocation.lang'              =>
