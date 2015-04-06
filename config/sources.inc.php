@@ -877,7 +877,7 @@ $langfiles_subsets = [
         'mozorg/mission.lang'                   => $mozillaorg,
         'mozorg/about/history-details.lang'     =>
             [
-                'ca', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu',
+                'ca', 'cs', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu',
                 'fr', 'gl', 'hsb', 'it', 'km', 'lt', 'pa-IN', 'pt-BR',
                 'ro', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk',
                 'uz', 'zh-TW',
