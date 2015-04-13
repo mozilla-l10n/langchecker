@@ -1009,8 +1009,8 @@ $langfiles_subsets = [
             ],
         'screenshots_2_0.lang' =>
             [
-                'af', 'ar', 'cs', 'de', 'ee', 'el', 'es-ES', 'ha', 'ig',
-                'ja', 'ln', 'pl', 'pt-BR', 'sw', 'wo', 'xh', 'yo',
+                'af', 'ar', 'cs', 'de', 'ee', 'el', 'es-ES', 'fr', 'ha',
+                'ig', 'ja', 'ln', 'pl', 'pt-BR', 'sw', 'wo', 'xh', 'yo',
                 'zu',
             ],
         'screenshots_dolphin.lang' => ['bn-BD', 'bn-IN', 'hi-IN', 'ta'],
