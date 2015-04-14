@@ -755,7 +755,7 @@ $langfiles_subsets = [
         'firefox/developer.lang'                => $firefox_desktop,
         'firefox/dnt.lang'                      =>
             [
-                'cs', 'cy', 'de', 'dsb', 'es-CL', 'fr', 'hsb', 'it', 'ja',
+                'cs', 'cy', 'de', 'dsb', 'es-CL', 'fr', 'fy-NL', 'hsb', 'it', 'ja',
                 'lt', 'nl' ,'pt-BR', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk',
                 'uz', 'zh-TW',
             ],
