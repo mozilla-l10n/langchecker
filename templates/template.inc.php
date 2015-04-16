@@ -18,7 +18,7 @@
 </div>
 <?php
     echo "<!-- Elapsed time (s): " . round((microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]), 4) . " -->\n";
-    echo "<!-- Memory usage (MB): " . round(memory_get_peak_usage(true)/(1024*1024), 2) . " -->\n";
+    echo "<!-- Memory usage (MB): " . round(memory_get_peak_usage(true) / (1024 * 1024), 2) . " -->\n";
 ?>
 </body>
 </html>
