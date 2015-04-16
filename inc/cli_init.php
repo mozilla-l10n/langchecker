@@ -11,7 +11,7 @@ if (isset($argv[1])) {
 }
 
 if (isset($min_parameters)) {
-    if (count($argv) < $min_parameters+1) {
+    if (count($argv) < $min_parameters + 1) {
         die($missing_parameter);
     }
 }

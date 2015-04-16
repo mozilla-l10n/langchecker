@@ -278,7 +278,7 @@ class Project
         }
         $locales = array_intersect_key($adu, array_flip($locales));
 
-        return number_format(array_sum($locales) / (array_sum($adu) - $english_adu) *100, 2);
+        return number_format(array_sum($locales) / (array_sum($adu) - $english_adu) * 100, 2);
     }
 
     /**

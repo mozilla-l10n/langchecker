@@ -96,8 +96,8 @@ class DotLangParser
                     continue;
                 }
 
-                if ($i < $lines-1) {
-                    $next_line = $file_content[$i+1];
+                if ($i < $lines - 1) {
+                    $next_line = $file_content[$i + 1];
                 } else {
                     $next_line = '';
                 }
@@ -137,7 +137,7 @@ class DotLangParser
                     if (Utils::startsWith($current_line, ';')) {
                         // I have a reference string
                         $reference = Utils::leftStrip($current_line, ';');
-                        $j = $i-1;
+                        $j = $i - 1;
                         while ($j > 0) {
                             // Stop if I find a line not starting with #
                             if (! Utils::startsWith($file_content[$j], '#')) {

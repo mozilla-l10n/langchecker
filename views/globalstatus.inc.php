@@ -80,8 +80,8 @@ if ($website_data_source == 'lang') {
         $todo = count($locale_analysis['Identical']) + count($locale_analysis['Missing']);
         $total = $todo + count($locale_analysis['Translated']);
 
-        $cssclass = ($todo/$total>0.60) ? ' lightlink_cell' : '';
-        $color = 'rgba(255, 0, 0, ' . $todo/$total . ')';
+        $cssclass = ($todo / $total > 0.60) ? ' lightlink_cell' : '';
+        $color = 'rgba(255, 0, 0, ' . $todo / $total . ')';
 
         if ($todo == 0) {
             $complete_locales_count++;
@@ -143,10 +143,10 @@ if ($website_data_source == 'lang') {
       <tfoot>
         <tr>
           <td colspan= '8'>
-            Complete locales: {$complete_locales_count} (" . round($complete_locales_count/count($supported_locales)*100) . "%) - {$coverage_complete} of our l10n user base<br/>\n";
+            Complete locales: {$complete_locales_count} (" . round($complete_locales_count / count($supported_locales) * 100) . "%) - {$coverage_complete} of our l10n user base<br/>\n";
     if ($file_activable) {
         $coverage_activated = Project::getUserBaseCoverage($activated_locales_list, $adu) . '%';
-        echo "Activated locales: {$activated_locales_count} (" . round($activated_locales_count/count($supported_locales)*100) . "%) - {$coverage_activated} of our l10n user base\n";
+        echo "Activated locales: {$activated_locales_count} (" . round($activated_locales_count / count($supported_locales) * 100) . "%) - {$coverage_activated} of our l10n user base\n";
     } else {
         echo "This file is not supposed to be activated\n";
     }
@@ -209,7 +209,7 @@ if ($website_data_source == 'lang') {
           <td colspan= "2">'
             . $complete_locales_count
             . ' translated locales ('
-            . round($complete_locales_count/count($supported_locales)*100)
+            . round($complete_locales_count / count($supported_locales) * 100)
             . '%)<br>'
             . $coverage
             . ' of our l10n user base'
