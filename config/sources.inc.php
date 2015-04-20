@@ -31,7 +31,7 @@ if (is_file(__DIR__ . '/adi.inc.php')) {
 $locamotion_locales = [
     'ach', 'af', 'br', 'brx', 'ca', 'cy', 'dsb', 'ee', 'en-ZA', 'es-MX', 'ff',
     'ga-IE', 'gd', 'ha', 'hi-IN', 'hr', 'hsb', 'ig', 'km', 'ln', 'lt', 'ms', 'my',
-    'oc', 'sat', 'si', 'son', 'sw', 'ta', 'ur', 'uz', 'vi', 'wo',
+    'oc', 'pt-PT', 'sat', 'si', 'son', 'sw', 'ta', 'ur', 'uz', 'vi', 'wo',
     'xh', 'yo', 'zu',
 ];
 
