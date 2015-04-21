@@ -13,7 +13,7 @@ $mozilla = [
     'my', 'nb-NO', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN', 'pl',
     'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sat', 'si', 'sk',
     'sl', 'son', 'sq', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta',
-    'te', 'th', 'tr', 'uk', 'ur', 'uz', 'vi', 'wo', 'xh',
+    'te', 'th', 'tl', 'tr', 'uk', 'ur', 'uz', 'vi', 'wo', 'xh',
     'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
 sort($mozilla);
