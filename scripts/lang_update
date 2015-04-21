@@ -103,12 +103,13 @@ foreach ($file_list as $current_filename) {
          *    available.
          */
         $import_files = [];
+        $import_website = 0; // Default mozilla.org
         foreach ($import_files as $import_filename) {
-            $import_data = LangManager::loadSource($lang_based_sites[0], $current_locale, $import_filename);
+            $import_data = LangManager::loadSource($lang_based_sites[$import_website], $current_locale, $import_filename);
             $common_strings = array_intersect(
-                                array_keys($import_data['strings']),
-                                array_keys($locale_data['strings'])
-                              );
+                array_keys($import_data['strings']),
+                array_keys($locale_data['strings'])
+            );
             foreach ($common_strings as $string_id) {
                 if ($locale_data['strings'][$string_id] == $string_id &&
                     $import_data['strings'][$string_id] != $string_id) {

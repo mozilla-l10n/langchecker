@@ -32,7 +32,7 @@ Utils::logger("Reference English file: {$reference_filename}");
 
 // Check if the repository is valid
 if ($cli_repo != 'aurora') {
-    $repositories = Json::fetch('http://transvision.mozfr.org/api/v1/repositories/');
+    $repositories = Json::fetch('https://transvision.mozfr.org/api/v1/repositories/');
     if (! in_array($cli_repo, $repositories)) {
         $message = "Repository {$cli_repo} does not exist. \n" .
                    'Available repositories: ' . implode(', ', $repositories);
@@ -41,7 +41,7 @@ if ($cli_repo != 'aurora') {
 }
 
 // Get list of supported locales for this repo from Transvision
-$supported_locales = Json::fetch("http://transvision.mozfr.org/api/v1/locales/{$cli_repo}/");
+$supported_locales = Json::fetch("https://transvision.mozfr.org/api/v1/locales/{$cli_repo}/");
 $locale_list = array_intersect(
     Project::getSupportedLocales($current_website, $cli_filename, $langfiles_subsets),
     $supported_locales
@@ -50,7 +50,7 @@ $locale_list = array_intersect(
 $source_locale = 'en-US';
 
 // Get the translations
-$translations = Json::fetch("http://transvision.mozfr.org/api/v1/entity/{$cli_repo}/?id={$cli_stringid}");
+$translations = Json::fetch("https://transvision.mozfr.org/api/v1/entity/{$cli_repo}/?id={$cli_stringid}");
 if (count($translations) <= 1) {
     Utils::logger('Request returned no results. Please check the string ID', 'quit');
 }
