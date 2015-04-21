@@ -29,9 +29,10 @@ if (is_file(__DIR__ . '/adi.inc.php')) {
 }
 
 $locamotion_locales = [
-    'ach', 'af', 'br', 'brx', 'ca', 'cy', 'dsb', 'ee', 'en-ZA', 'es-MX', 'ff',
-    'ga-IE', 'gd', 'ha', 'hi-IN', 'hr', 'hsb', 'ig', 'km', 'ln', 'lt', 'ms', 'my',
-    'oc', 'pt-PT', 'sat', 'si', 'son', 'sw', 'ta', 'ur', 'uz', 'vi', 'wo',
+    'ach', 'af', 'br', 'brx', 'ca', 'cy', 'dsb', 'ee', 'en-ZA',
+    'es-MX', 'ff', 'ga-IE', 'gd', 'ha', 'hi-IN', 'hr', 'hsb',
+    'ig', 'km', 'ln', 'lt', 'ms', 'my', 'oc', 'pt-PT', 'sat',
+    'si', 'son', 'sw', 'ta', 'tl', 'ur', 'uz', 'vi', 'wo',
     'xh', 'yo', 'zu',
 ];
 
@@ -441,8 +442,8 @@ $firefox_os = [
     'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca' , 'cs', 'de', 'ee',
     'el', 'es-ES', 'es-MX', 'et', 'ff', 'fr', 'fy-NL', 'ha', 'hi-IN',
     'hr', 'hu', 'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mk', 'nl', 'pl',
-    'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'wo', 'xh',
-    'yo', 'zh-CN', 'zh-TW', 'zu',
+    'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'tl', 'wo',
+    'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
 
 $firefox_updater_locales = [
@@ -488,7 +489,7 @@ $marketplacebadge_locales = [
     'af', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
     'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
     'ja', 'ln', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
-    'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tr', 'wo',
+    'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tr', 'wo',
     'xh', 'yo', 'zu',
 ];
 
@@ -506,7 +507,7 @@ $privacy_tour_locales = [
 $slogans_locales = [
     'af', 'ar', 'bg', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el', 'es-ES', 'ff',
     'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it', 'ja', 'ko', 'ln', 'pl',
-    'pt-BR', 'ro', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'wo',
+    'pt-BR', 'ro', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'wo',
     'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
 
