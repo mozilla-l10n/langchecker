@@ -65,16 +65,24 @@ class GetTextManager
 
         $local_import = $locamotion_repo != '' ? true : false;
 
+        // Some locales need to me mapped (pt-PT is pt for Pootle)
+        $locale_mapping = [
+            'pt-PT' => 'pt',
+        ];
+        $locamotion_locale = isset($locale_mapping[$current_locale]) ?
+                             $locale_mapping[$current_locale] :
+                             $current_locale;
+
         if ($local_import) {
             // Import from local clone
             $file_path = $locamotion_repo .
-                         str_replace('-', '_', $current_locale)
+                         str_replace('-', '_', $locamotion_locale)
                          . '/' . $current_filename . '.po';
             $po_exists = file_exists($file_path);
         } else {
             // Import data from remote
             $locamotion_url = 'https://raw.githubusercontent.com/translate/mozilla-lang/master/'
-                              . str_replace('-', '_', $current_locale)
+                              . str_replace('-', '_', $locamotion_locale)
                               . '/' . $current_filename . '.po';
             $http_response = get_headers($locamotion_url, 1)[0];
             $po_exists = strstr($http_response, '200') ? true : false;

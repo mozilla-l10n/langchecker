@@ -37,7 +37,7 @@ if (! isset($reference_data['strings'][$cli_string])) {
 
 // Check if the repository is valid
 if ($cli_repo != 'aurora') {
-    $repositories = Json::fetch('http://transvision.mozfr.org/api/v1/repositories/');
+    $repositories = Json::fetch('https://transvision.mozfr.org/api/v1/repositories/');
     if (! in_array($cli_repo, $repositories)) {
         $message = "Repository {$cli_repo} does not exist.\n" .
                    'Available repositories: ' . implode(', ', $repositories);
@@ -46,7 +46,7 @@ if ($cli_repo != 'aurora') {
 }
 
 // Get list of supported locales for this repo from Transvision
-$supported_locales = Json::fetch("http://transvision.mozfr.org/api/v1/locales/{$cli_repo}/");
+$supported_locales = Json::fetch("https://transvision.mozfr.org/api/v1/locales/{$cli_repo}/");
 $locale_list = array_intersect(
     Project::getSupportedLocales($current_website, $cli_filename, $langfiles_subsets),
     $supported_locales
@@ -77,7 +77,7 @@ foreach ($locale_list as $current_locale) {
         Utils::logger("Requested string is already translated for {$current_locale}.");
     } else {
         $search_string = htmlentities($cli_string);
-        $translations = Json::fetch("http://transvision.mozfr.org/api/v1/search/strings/{$cli_repo}/{$source_locale}/{$current_locale}/{$search_string}/?perfect_match=1&amp;perfect_match=1");
+        $translations = Json::fetch("https://transvision.mozfr.org/api/v1/search/strings/{$cli_repo}/{$source_locale}/{$current_locale}/{$search_string}/?perfect_match=1&amp;perfect_match=1");
         if (count($translations) > 0) {
             // I use the first string available
             $translated_string = reset($translations)[$cli_string];
