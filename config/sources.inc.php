@@ -486,7 +486,7 @@ $marketing = [
 ];
 
 $marketplacebadge_locales = [
-    'af', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
+    'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
     'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
     'ja', 'ln', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
     'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tr', 'wo',
