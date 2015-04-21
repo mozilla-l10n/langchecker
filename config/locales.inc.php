@@ -29,7 +29,7 @@ $mozillaorg = array_diff($mozilla, ['en-ZA', 'es', 'sr-Latn']);
  */
 $firefox_desktop = array_diff(
     $mozilla,
-    ['ee', 'es', 'ha', 'ig', 'ln', 'my', 'sr-Latn', 'sw', 'wo', 'yo']
+    ['ee', 'es', 'ha', 'ig', 'ln', 'my', 'sr-Latn', 'sw', 'tl', 'wo', 'yo']
 );
 
 // List of locales with active newsletter
