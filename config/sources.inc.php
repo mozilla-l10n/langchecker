@@ -440,10 +440,11 @@ $android_locales = [
 
 $firefox_os = [
     'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca' , 'cs', 'de', 'ee',
-    'el', 'es-ES', 'es-MX', 'et', 'ff', 'fr', 'fy-NL', 'ha', 'hi-IN',
-    'hr', 'hu', 'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mk', 'nl', 'pl',
-    'pt-BR', 'ro', 'ru', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'tl', 'wo',
-    'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
+    'el', 'es-ES', 'es-MX', 'et', 'ff', 'fr', 'fy-NL', 'ha',
+    'hi-IN', 'hr', 'hu', 'id', 'ig', 'it', 'ja', 'ko', 'ln',
+    'mk', 'my', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr',
+    'sv-SE', 'sw', 'ta', 'tl', 'wo', 'xh', 'yo', 'zh-CN',
+    'zh-TW', 'zu',
 ];
 
 $firefox_updater_locales = [
@@ -486,11 +487,11 @@ $marketing = [
 ];
 
 $marketplacebadge_locales = [
-    'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
-    'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
-    'ja', 'ln', 'my', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
-    'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tr', 'wo',
-    'xh', 'yo', 'zu',
+    'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de',
+    'ee', 'el', 'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr',
+    'hu', 'ig', 'it', 'ja', 'ln', 'my', 'nl', 'pl', 'pt-BR',
+    'ro', 'ru', 'sk', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta',
+    'tl', 'tr', 'wo', 'xh', 'yo', 'zu',
 ];
 
 $mwc_locales = [
@@ -505,10 +506,11 @@ $privacy_tour_locales = [
 ];
 
 $slogans_locales = [
-    'af', 'ar', 'bg', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el', 'es-ES', 'ff',
-    'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it', 'ja', 'ko', 'ln', 'my',
-    'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'wo',
-    'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
+    'af', 'ar', 'bg', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
+    'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
+    'ja', 'ko', 'ln', 'my', 'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn',
+    'sv-SE', 'sw', 'ta', 'tl', 'wo', 'xh', 'yo', 'zh-CN',
+    'zh-TW', 'zu',
 ];
 
 $snippets_locales = [
