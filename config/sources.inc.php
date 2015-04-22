@@ -249,16 +249,15 @@ $snippets_lang = [
     'mar2015_a.lang',
     'mar2015_b.lang',
     'apr2015.lang',
+    'may2015_a.lang',
+    'may2015_b.lang',
 ];
 $lang_flags['snippets'] = [
-    'feb2015_a.lang'  => [ 'critical' => ['all'] ],
-    'feb2015_b.lang'  => [ 'critical' => ['all'] ],
-    'feb2015_c.lang'  => [ 'critical' => ['all'] ],
-    'feb2015_d.lang'  => [ 'critical' => ['all'] ],
-    'feb2015_e.lang'  => [ 'critical' => ['all'] ],
     'mar2015_a.lang'  => [ 'critical' => ['all'] ],
     'mar2015_b.lang'  => [ 'critical' => ['all'] ],
     'apr2015.lang'    => [ 'critical' => ['all'] ],
+    'may2015_a.lang'  => [ 'critical' => ['all'] ],
+    'may2015_b.lang'  => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -403,6 +402,8 @@ $deadline = [
     'firefox/whatsnew-fx37.lang'             => '2015-03-30',
     'fx36start.lang'                         => '2014-12-04',
     'legal/index.lang'                       => '2015-02-23',
+    'may2015_a.lang'                         => '2015-05-10',
+    'may2015_b.lang'                         => '2015-05-10',
     'mozorg/about.lang'                      => '2015-03-26',
     'mozorg/about/manifesto.lang'            => '2014-08-31',
     'mozorg/contribute/index.lang'           => '2015-01-31',
@@ -989,6 +990,8 @@ $langfiles_subsets = [
         'mar2015_a.lang'   => ['de', 'es-ES', 'fr', 'pt-BR', 'ru'],
         'mar2015_b.lang'   => ['el', 'hu', 'id', 'it', 'ja', 'nl', 'pl'],
         'apr2015.lang'     => ['de', 'es-ES', 'fr', 'pt-BR', 'ru'],
+        'may2015_a.lang'   => ['de', 'fr', 'ru'],
+        'may2015_b.lang'   => ['es-ES', 'pt-BR'],
     ],
 
     'add-ons' => [
