@@ -251,6 +251,7 @@ $snippets_lang = [
     'apr2015.lang',
     'may2015_a.lang',
     'may2015_b.lang',
+    'spring2015.lang',
 ];
 $lang_flags['snippets'] = [
     'mar2015_a.lang'  => [ 'critical' => ['all'] ],
@@ -258,6 +259,7 @@ $lang_flags['snippets'] = [
     'apr2015.lang'    => [ 'critical' => ['all'] ],
     'may2015_a.lang'  => [ 'critical' => ['all'] ],
     'may2015_b.lang'  => [ 'critical' => ['all'] ],
+    'spring2015.lang' => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -416,6 +418,7 @@ $deadline = [
     'newsletter/ios.lang'                    => '2015-03-12',
     'newsletter.lang'                        => '2015-03-02',
     'privacycoach.lang'                      => '2014-11-07',  // add-ons project
+    'spring2015.lang'                        => '2015-05-24',
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
     'thunderbird/start/release.lang'         => '2015-01-31',
 ];
@@ -992,6 +995,8 @@ $langfiles_subsets = [
         'apr2015.lang'     => ['de', 'es-ES', 'fr', 'pt-BR', 'ru'],
         'may2015_a.lang'   => ['de', 'fr', 'ru'],
         'may2015_b.lang'   => ['es-ES', 'pt-BR'],
+        'spring2015.lang'  => ['de', 'es-ES', 'fr', 'hu', 'it', 'ja',
+                               'pl', 'pt-BR', 'ru', ],
     ],
 
     'add-ons' => [
