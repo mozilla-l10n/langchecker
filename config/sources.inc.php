@@ -488,7 +488,7 @@ $marketing = [
 $marketplacebadge_locales = [
     'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
     'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
-    'ja', 'ln', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
+    'ja', 'ln', 'my', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
     'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tr', 'wo',
     'xh', 'yo', 'zu',
 ];
@@ -506,8 +506,8 @@ $privacy_tour_locales = [
 
 $slogans_locales = [
     'af', 'ar', 'bg', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el', 'es-ES', 'ff',
-    'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it', 'ja', 'ko', 'ln', 'pl',
-    'pt-BR', 'ro', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'wo',
+    'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it', 'ja', 'ko', 'ln', 'my',
+    'pl', 'pt-BR', 'ro', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'wo',
     'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
 
