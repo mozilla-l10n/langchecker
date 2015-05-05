@@ -17,8 +17,16 @@
 	</div>
 </div>
 <?php
-    echo "<!-- Elapsed time (s): " . round((microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]), 4) . " -->\n";
-    echo "<!-- Memory usage (MB): " . round(memory_get_peak_usage(true) / (1024 * 1024), 2) . " -->\n";
+$time   = 'Elapsed time (s): ' . round((microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]), 4);
+$memory = 'Memory usage (MB): ' . round(memory_get_peak_usage(true) / (1024 * 1024), 2);
+
+print "<!-- " . $time . " -->\n";
+print "<!-- " . $memory . " -->\n";
+
+if (defined('DEBUG') && DEBUG) {
+    error_log($time);
+    error_log($memory);
+}
 ?>
 </body>
 </html>
