@@ -442,9 +442,9 @@ $addons_locales = [
 ];
 
 // Source: http://hg.mozilla.org/releases/mozilla-release/raw-file/c13c3b4992cf/mobile/android/locales/maemo-locales
-// Added: az, dsb, hsb (requested), sat
+// Added: af, az, dsb, hsb (requested), sat
 $android_locales = [
-    'an', 'as', 'az', 'be', 'bn-IN', 'br', 'ca', 'cs', 'cy', 'da',
+    'af', 'an', 'as', 'az', 'be', 'bn-IN', 'br', 'ca', 'cs', 'cy', 'da',
     'de', 'dsb', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff',
     'fr', 'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN', 'hi-IN', 'hsb', 'hu',
     'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv',
