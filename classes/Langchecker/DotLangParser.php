@@ -12,6 +12,14 @@ namespace Langchecker;
 class DotLangParser
 {
     /**
+     * We store in this variable the result of lang files already parsed because
+     * parsing is CPU intensive
+     *
+     * @var array
+     */
+    private static $parsed_files = [];
+
+    /**
      * Load file, remove empty lines and return an array of strings
      *
      * @param string  $path        Filename to analyze
@@ -51,19 +59,20 @@ class DotLangParser
      */
     public static function parseFile($path, $reference_locale = false)
     {
-        $dotlang_data = [];
-        // In case the file is missing we set an empty array for strings
-        $dotlang_data['strings'] = [];
+        // Check if we haven't already parsed the file
+        if (isset(self::$parsed_files[$path])) {
+            return self::$parsed_files[$path];
+        }
+
         $file_content = self::getFile($path);
 
-        // All meta tags in format “## METATAG:”, but not file tags (“## TAGNAME ##”)
-        $meta_tags = ['NOTE', 'TAG', 'MAX_LENGTH', 'URL'];
-        $meta_tags = array_map(
-                        function ($tag) {
-                            return "## {$tag}:";
-                        },
-                        $meta_tags
-                     );
+        $dotlang_data = [];
+
+        // In case the file is missing we set an empty array for strings
+        $dotlang_data['strings'] = [];
+
+        // Make sure there's always an activation status to avoid controls later
+        $dotlang_data['activated'] = false;
 
         if ($file_content !== false) {
             // First pass: extract strings and metadata (tags, active status) relevant for all locales.
@@ -78,20 +87,24 @@ class DotLangParser
                 }
 
                 // Get file description
-                if (Utils::startsWith($current_line, '## NOTE:')) {
+                if (empty($dotlang_data['strings']) // File description is always before strings
+                    && Utils::startsWith($current_line, '## NOTE:')) {
                     $dotlang_data['filedescription'][] = trim(Utils::leftStrip($current_line, '## NOTE:'));
                     continue;
                 }
 
                 // Get file stage URL
-                if (Utils::startsWith($current_line, '## URL:')) {
+                if (! isset($dotlang_data['url'])
+                    && empty($dotlang_data['strings']) // URL is always before strings
+                    && Utils::startsWith($current_line, '## URL:')) {
                     $dotlang_data['url'] = trim(Utils::leftStrip($current_line, '## URL:'));
                     continue;
                 }
 
                 // Other tags like ## promo_news ##, but not meta data
-                if (Utils::startsWith($current_line, '##') &&
-                    ! Utils::startsWith($current_line, $meta_tags)) {
+                if (Utils::startsWith($current_line, '##')
+                    && empty($dotlang_data['strings']) // Other tags are  always before strings
+                    && ! Utils::startsWith($current_line, self::getMetaTags())) {
                     $dotlang_data['tags'][] = trim(str_replace('##', '', $current_line));
                     continue;
                 }
@@ -102,14 +115,12 @@ class DotLangParser
                     $next_line = '';
                 }
 
-                if (Utils::startsWith($current_line, ';') &&
-                    ! empty($next_line)) {
+                if (! empty($next_line) && Utils::startsWith($current_line, ';')) {
                     // Source strings start with ";". I have a reference string followed by something
                     $reference = Utils::leftStrip($current_line, ';');
                     $translation = trim($next_line);
 
-                    if (isset($dotlang_data['strings'][$reference]) &&
-                        $reference_locale) {
+                    if (isset($dotlang_data['strings'][$reference]) && $reference_locale) {
                         /* String is already stored, it's a duplicated string. If it's the reference
                          * locale I save the string ID to issue a warning where necessary.
                          */
@@ -122,55 +133,86 @@ class DotLangParser
                          */
                         $dotlang_data['strings'][$reference] = $reference;
                         continue;
-                    } else {
-                        // Store the translation
-                        $dotlang_data['strings'][$reference] = $translation;
                     }
+
+                    // Store the translation
+                    $dotlang_data['strings'][$reference] = $translation;
+
                     $i++;
                 }
             }
 
             // Second pass: extract only metadata (comments, tag bindings) for reference locale.
             if ($reference_locale) {
-                for ($i = 0, $lines = count($file_content); $i < $lines; $i++) {
-                    $current_line = $file_content[$i];
-                    if (Utils::startsWith($current_line, ';')) {
-                        // I have a reference string
-                        $reference = Utils::leftStrip($current_line, ';');
-                        $j = $i - 1;
-                        while ($j > 0) {
-                            // Stop if I find a line not starting with #
-                            if (! Utils::startsWith($file_content[$j], '#')) {
-                                break;
-                            }
-                            // Comments
-                            if (Utils::startsWith($file_content[$j], '#') &&
-                                ! Utils::startsWith($file_content[$j], '##')) {
-                                $dotlang_data['comments'][$reference][] = Utils::leftStrip($file_content[$j], '#');
-                            } else {
-                                // Tag bindings
-                                if (Utils::startsWith($file_content[$j], '## TAG:')) {
-                                    $dotlang_data['tag_bindings'][$reference] = Utils::leftStrip($file_content[$j], '## TAG:');
-                                }
-                                // Length limits
-                                if (Utils::startsWith($file_content[$j], '## MAX_LENGTH:')) {
-                                    $dotlang_data['max_lengths'][$reference] = intval(Utils::leftStrip($file_content[$j], '## MAX_LENGTH:'));
-                                }
-                            }
-                            $j--;
-                        }
-                        // Invert order of comments if available
-                        if (isset($dotlang_data['comments'][$reference])) {
-                            $dotlang_data['comments'][$reference] = array_reverse($dotlang_data['comments'][$reference]);
-                        }
-                    }
-                }
+                $dotlang_data = array_merge($dotlang_data, self::extractReferenceMetaData($file_content));
+                self::$parsed_files[$path] = $dotlang_data;
             }
         }
 
-        // Make sure there's always an activation status to avoid controls later
-        if (! isset($dotlang_data['activated'])) {
-            $dotlang_data['activated'] = false;
+        return $dotlang_data;
+    }
+
+    /**
+     * Provide all meta tags in format “## METATAG:”
+     *
+     * @return array All the meta tags we use with the right formatting
+     */
+    public static function getMetaTags()
+    {
+        // All meta tags in format “## METATAG:”, but not file tags (“## TAGNAME ##”)
+        $meta_tags = ['NOTE', 'TAG', 'MAX_LENGTH', 'URL'];
+        $meta_tags = array_map(
+            function ($tag) {
+                return "## {$tag}:";
+            },
+            $meta_tags
+        );
+
+        return $meta_tags;
+    }
+
+    /**
+     *  Extract the metadata in English reference file
+     *
+     * @param array $file_content Content of a lang file
+     *
+     * @return array Parsed lang file with the associated reference metadata
+     */
+    private static function extractReferenceMetaData($file_content)
+    {
+        $dotlang_data = [];
+        for ($i = 0, $lines = count($file_content); $i < $lines; $i++) {
+            $current_line = $file_content[$i];
+            if (Utils::startsWith($current_line, ';')) {
+                // I have a reference string
+                $reference = Utils::leftStrip($current_line, ';');
+                $j = $i - 1;
+                while ($j > 0) {
+                    // Stop if I find a line not starting with #
+                    if (! Utils::startsWith($file_content[$j], '#')) {
+                        break;
+                    }
+                    // Comments
+                    if (Utils::startsWith($file_content[$j], '#') &&
+                        ! Utils::startsWith($file_content[$j], '##')) {
+                        $dotlang_data['comments'][$reference][] = Utils::leftStrip($file_content[$j], '#');
+                    } else {
+                        // Tag bindings
+                        if (Utils::startsWith($file_content[$j], '## TAG:')) {
+                            $dotlang_data['tag_bindings'][$reference] = Utils::leftStrip($file_content[$j], '## TAG:');
+                        }
+                        // Length limits
+                        if (Utils::startsWith($file_content[$j], '## MAX_LENGTH:')) {
+                            $dotlang_data['max_lengths'][$reference] = intval(Utils::leftStrip($file_content[$j], '## MAX_LENGTH:'));
+                        }
+                    }
+                    $j--;
+                }
+                // Invert order of comments if available
+                if (isset($dotlang_data['comments'][$reference])) {
+                    $dotlang_data['comments'][$reference] = array_reverse($dotlang_data['comments'][$reference]);
+                }
+            }
         }
 
         return $dotlang_data;

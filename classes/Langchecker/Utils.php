@@ -21,7 +21,12 @@ class Utils
      */
     public static function leftStrip($origin, $substring)
     {
-        return trim(substr($origin, mb_strlen($substring)));
+        // Lang file common cases: reference string or comment
+        if ($substring === ';' || $substring === '#') {
+            return trim(mb_substr($origin, 1));
+        }
+
+        return trim(mb_substr($origin, mb_strlen($substring)));
     }
 
     /**
@@ -41,15 +46,25 @@ class Utils
      * $needles can be a string or an array of strings.
      *
      * @param string $haystack String to analyse
-     * @param array  $needles  The string to look for
+     * @param array  $needles  The strings to look for
      *
      * @return boolean True       if the $haystack string starts with a
      *                 string in $needles
      */
     public static function startsWith($haystack, $needles)
     {
-        foreach ((array) $needles as $prefix) {
-            if (! strncmp($haystack, $prefix, mb_strlen($prefix))) {
+        // Lang file common case: reference string
+        if ($needles === ';') {
+            return $haystack[0] == ';';
+        }
+
+        // Lang file common case: comment
+        if ($needles === '#') {
+            return $haystack[0] == '#';
+        }
+
+        foreach ((array) $needles as $needle) {
+            if (mb_strpos($haystack, $needle, 0) === 0) {
                 return true;
             }
         }
@@ -136,9 +151,13 @@ class Utils
      */
     public static function isUTF8($filename)
     {
-        $info = finfo_open(FILEINFO_MIME_ENCODING);
-        $type = finfo_buffer($info, file_get_contents($filename));
-        finfo_close($info);
+        $magic = '/usr/share/file/magic';
+        $magic = file_exists($magic)
+            ? $magic
+            : null;
+
+        $f = new \finfo(FILEINFO_MIME_ENCODING, $magic);
+        $type = $f->file($filename);
 
         return ($type == 'utf-8' || $type == 'us-ascii') ? true : false;
     }

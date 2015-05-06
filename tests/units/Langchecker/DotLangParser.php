@@ -151,4 +151,12 @@ class DotLangParser extends atoum\test
             ->integer($dotlang_data['max_lengths']['Save file wrong'])
                 ->isEqualTo(0);
     }
+
+    public function testgetMetaTags()
+    {
+        $obj = new _DotLangParser();
+        $this
+            ->array($obj->getMetaTags())
+                ->isEqualTo(['## NOTE:', '## TAG:', '## MAX_LENGTH:', '## URL:']);
+    }
 }
