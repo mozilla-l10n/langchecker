@@ -1,3 +1,4 @@
+.phpintel/
 cache/*.cache
 config/settings.inc.php
 config/adi.inc.php
