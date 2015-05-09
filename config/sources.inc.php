@@ -187,7 +187,6 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/contribute.lang'                  => [ 'obsolete' => ['all'] ],
     'mozorg/contribute/friends.lang'          => [
         'critical' => ['es-ES', 'pt-BR'],
-        'opt-in'   => ['all'],
     ],
     'mozorg/contribute/index.lang'            => [
         'critical' => ['all'],
