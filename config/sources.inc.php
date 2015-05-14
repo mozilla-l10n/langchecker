@@ -929,7 +929,7 @@ $langfiles_subsets = [
                 'tr', 'uk', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
             ],
         'mozorg/contribute.lang'                => $getinvolved_locales_oldpage,
-        'mozorg/contribute/friends.lang'        => ['es-ES', 'pt-BR'],
+        'mozorg/contribute/friends.lang'        => ['cs', 'es-ES', 'fr', 'pt-BR'],
         'mozorg/contribute/index.lang'          => $getinvolved_locales,
         'mozorg/contribute/stories.lang'        => $getinvolved_locales,
         'mozorg/plugincheck.lang'               => $mozillaorg,
