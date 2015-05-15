@@ -81,6 +81,7 @@ $mozillaorg_lang = [
     'firefox/os/index-new.lang',
     'firefox/os/tv.lang',
     'firefox/partners/index.lang',
+    'firefox/pocket.lang',
     'firefox/privacy_tour/privacy_tour.lang',
     'firefox/sendto.lang',
     'firefox/speed.lang',
@@ -162,6 +163,7 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/os/devices.lang'                 => [ 'critical' => ['all'] ],
     'firefox/os/index.lang'                   => [ 'obsolete' => ['all'] ],
     'firefox/os/index-new.lang'               => [ 'critical' => ['all'] ],
+    'firefox/pocket.lang'                     => [ 'critical' => ['all'] ],
     'firefox/privacy_tour/privacy_tour.lang'  => [ 'critical' => ['all'] ],
     'firefox/sendto.lang'                     => [ 'critical' => ['all'] ],
     'firefox/sync.lang'                       => [ 'critical' => ['all'] ],
@@ -818,6 +820,10 @@ $langfiles_subsets = [
         'firefox/os/index-new.lang'              => $firefox_os,
         'firefox/os/tv.lang'                     => $firefox_os,
         'firefox/partners/index.lang'            => $firefox_os,
+        'firefox/pocket.lang'                    =>
+            [
+                'de', 'es-ES', 'ja', 'ru',
+            ],
         'firefox/privacy_tour/privacy_tour.lang' => $privacy_tour_locales,
         'firefox/speed.lang'                     => ['pt-BR'],
         'firefox/sync.lang'                      => $mozillaorg,
