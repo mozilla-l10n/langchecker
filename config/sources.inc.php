@@ -287,6 +287,7 @@ $lang_flags['firefox-updater'] = [
 $fxos_marketing_lang = [
     'marketplace_l10n_feed.lang',
     'screenshots_2_0.lang',
+    'screenshots_2_0_b.lang',
     'screenshots_dolphin.lang',
     'screenshots.lang',
     'screenshots_tarako.lang',
@@ -1046,9 +1047,13 @@ $langfiles_subsets = [
             ],
         'screenshots_2_0.lang' =>
             [
-                'af', 'ar', 'cs', 'de', 'ee', 'el', 'es-ES', 'fr', 'ha',
-                'ig', 'ja', 'ln', 'pl', 'pt-BR', 'sw', 'wo', 'xh', 'yo',
-                'zu',
+                'af', 'cs', 'de', 'el', 'es-ES', 'ja', 'ln',
+                'pl', 'pt-BR', 'xh', 'zu',
+            ],
+        'screenshots_2_0_b.lang' =>
+            [
+                'ar', 'ee', 'ff', 'fr', 'ha', 'ig', 'sw',
+                'wo', 'yo',
             ],
         'screenshots_dolphin.lang' => ['bn-BD', 'bn-IN', 'hi-IN', 'ta'],
         'screenshots.lang'         =>
