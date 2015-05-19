@@ -12,6 +12,13 @@ namespace Langchecker;
 class LangManager
 {
     /**
+     * We store in this variable if we need to check for errors when analysing lang files
+     *
+     * @var boolean
+     */
+    public static $error_checking = true;
+
+    /**
      * Load file, remove empty lines and return an array of strings
      *
      * @param array  $website  Website data
@@ -139,21 +146,24 @@ class LangManager
                     // Store in translated strings
                     $analysis_data['Translated'][] = $reference;
 
-                    // Search for Python errors
-                    $analysis_data['errors']['python'] = self::checkPythonErrors(
-                        $reference,
-                        $translation,
-                        $analysis_data['errors']['python']
-                    );
-
-                    if (isset($reference_data['max_lengths'][$reference])) {
-                        // Search for strings too long
-                        $analysis_data['errors']['length'] = self::checkLengthErrors(
+                    // Error Checking is not needed everytime we use analyseLangFile()
+                    if (self::$error_checking) {
+                        // Search for Python errors
+                        $analysis_data['errors']['python'] = self::checkPythonErrors(
                             $reference,
                             $translation,
-                            $reference_data['max_lengths'][$reference],
-                            $analysis_data['errors']['length']
+                            $analysis_data['errors']['python']
                         );
+
+                        if (isset($reference_data['max_lengths'][$reference])) {
+                            // Search for strings too long
+                            $analysis_data['errors']['length'] = self::checkLengthErrors(
+                                $reference,
+                                $translation,
+                                $reference_data['max_lengths'][$reference],
+                                $analysis_data['errors']['length']
+                            );
+                        }
                     }
                 } elseif ($translation === '') {
                     // Store in missing strings
