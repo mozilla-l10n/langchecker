@@ -20,19 +20,31 @@ class DotLangParser
     private static $parsed_files = [];
 
     /**
+     * We store in this variable if we want to extract file metadata for a view.
+     *
+     * @var boolean
+     */
+    public static $extract_metadata = true;
+
+    /**
+     * Logging errors has a performance impact avoid on public views
+     *
+     * @var boolean
+     */
+    public static $log_errors = true;
+
+    /**
      * Load file, remove empty lines and return an array of strings
      *
-     * @param string  $path        Filename to analyze
-     * @param boolean $show_errors Display or not errors in case of
-     *                             missing file
+     * @param string $path Filename to analyze
      *
      * @return mixed Cleaned up array of lines (array),
      *               or false if file is missing
      */
-    public static function getFile($path, $show_errors = true)
+    public static function getFile($path)
     {
         if (! is_file($path)) {
-            if ($show_errors) {
+            if (self::$log_errors) {
                 Utils::logger("{$path} does not exist.");
             }
 
@@ -76,8 +88,12 @@ class DotLangParser
 
         if ($file_content !== false) {
             // First pass: extract strings and metadata (tags, active status) relevant for all locales.
-            for ($i = 0, $lines = count($file_content); $i < $lines; $i++) {
-                $current_line = $file_content[$i];
+            $lines = count($file_content);
+            foreach ($file_content as $i => $current_line) {
+                if (! self::$extract_metadata && Utils::startsWith($current_line, '#')) {
+                    continue;
+                }
+
                 /* First line may contain an activation status
                  * Tags are read with regexp "^## (\w+) ##", so trailing spaces can be ignored
                  */
@@ -102,8 +118,8 @@ class DotLangParser
                 }
 
                 // Other tags like ## promo_news ##, but not meta data
-                if (Utils::startsWith($current_line, '##')
-                    && empty($dotlang_data['strings']) // Other tags are  always before strings
+                if (empty($dotlang_data['strings']) // Other tags are  always before strings
+                    && Utils::startsWith($current_line, '##')
                     && ! Utils::startsWith($current_line, self::getMetaTags())) {
                     $dotlang_data['tags'][] = trim(str_replace('##', '', $current_line));
                     continue;
@@ -127,24 +143,31 @@ class DotLangParser
                         $dotlang_data['duplicates'][] = $reference;
                     }
 
-                    if (Utils::startsWith($translation, [';', '#'])) {
-                        /* Empty translation: what I'm reading as translation is either the next reference string
-                         * or the next meta tag (comment, tag binding). I consider this string untranslated.
-                         */
-                        $dotlang_data['strings'][$reference] = $reference;
+                    // If we don't extract metadata, we shouldn't test for #
+                    $markers = self::$extract_metadata
+                        ? [';', '#']
+                        : [';'];
+
+                    // We test the most common scenario first: reference string followed by a translation
+                    if (! Utils::startsWith($translation, $markers)) {
+                        // Store the translation
+                        $dotlang_data['strings'][$reference] = $translation;
                         continue;
                     }
 
-                    // Store the translation
-                    $dotlang_data['strings'][$reference] = $translation;
-
-                    $i++;
+                    /* Empty translation: what I'm reading as translation is either the next reference string
+                     * or the next meta tag (comment, tag binding). I consider this string untranslated.
+                     */
+                    $dotlang_data['strings'][$reference] = $reference;
                 }
             }
 
-            // Second pass: extract only metadata (comments, tag bindings) for reference locale.
             if ($reference_locale) {
-                $dotlang_data = array_merge($dotlang_data, self::extractReferenceMetaData($file_content));
+                // Second pass: extract only metadata (comments, tag bindings) for reference locale.
+                if (self::$extract_metadata) {
+                    $dotlang_data = array_merge($dotlang_data, self::extractReferenceMetaData($file_content));
+                }
+                // Store reference locale data statically because it is used multiple times
                 self::$parsed_files[$path] = $dotlang_data;
             }
         }

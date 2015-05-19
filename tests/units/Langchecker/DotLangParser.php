@@ -59,8 +59,8 @@ class DotLangParser extends atoum\test
     public function testGetFileMissing()
     {
         $obj = new _DotLangParser();
-        $this
-            ->boolean($obj->getFile('fakefile', false))
+        _DotLangParser::$log_errors = false;
+        $this->boolean($obj->getFile('fakefile', false))
                 ->isFalse();
     }
 
