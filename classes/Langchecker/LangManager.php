@@ -148,12 +148,14 @@ class LangManager
 
                     // Error Checking is not needed everytime we use analyseLangFile()
                     if (self::$error_checking) {
-                        // Search for Python errors
-                        $analysis_data['errors']['python'] = self::checkPythonErrors(
-                            $reference,
-                            $translation,
-                            $analysis_data['errors']['python']
-                        );
+                        // Search for Python errors only if there are '%' in the string
+                        if (mb_strpos($reference, '%') !== false) {
+                            $analysis_data['errors']['python'] = self::checkPythonErrors(
+                                $reference,
+                                $translation,
+                                $analysis_data['errors']['python']
+                            );
+                        }
 
                         if (isset($reference_data['max_lengths'][$reference])) {
                             // Search for strings too long
