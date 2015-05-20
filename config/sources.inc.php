@@ -412,6 +412,7 @@ $deadline = [
     'firefox/new.lang'                       => '2015-03-26',
     'firefox/os/index-new.lang'              => '2015-04-09',
     'firefox/partners/index.lang'            => '2015-03-01',
+    'firefox/pocket.lang'                    => '2015-06-01',
     'firefox/privacy_tour/privacy_tour.lang' => '2014-11-04',
     'firefox/sendto.lang'                    => '2015-06-01',
     'firefox/sync.lang'                      => '2015-06-01',
