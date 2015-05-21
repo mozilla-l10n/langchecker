@@ -263,14 +263,19 @@ $snippets_lang = [
     'may2015_a.lang',
     'may2015_b.lang',
     'spring2015.lang',
+    'jun2015_a.lang',
+    'jun2015_b.lang',
+    'jun2015_c.lang',
+    'jun2015_d.lang',
 ];
 $lang_flags['snippets'] = [
-    'mar2015_a.lang'  => [ 'critical' => ['all'] ],
-    'mar2015_b.lang'  => [ 'critical' => ['all'] ],
-    'apr2015.lang'    => [ 'critical' => ['all'] ],
     'may2015_a.lang'  => [ 'critical' => ['all'] ],
     'may2015_b.lang'  => [ 'critical' => ['all'] ],
     'spring2015.lang' => [ 'critical' => ['all'] ],
+    'jun2015_a.lang'  => [ 'critical' => ['all'] ],
+    'jun2015_b.lang'  => [ 'critical' => ['all'] ],
+    'jun2015_c.lang'  => [ 'critical' => ['all'] ],
+    'jun2015_d.lang'  => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -419,6 +424,10 @@ $deadline = [
     'firefox/whatsnew_38.lang'               => '2015-06-01',
     'firefox/whatsnew-fx37.lang'             => '2015-03-30',
     'fx36start.lang'                         => '2014-12-04',
+    'jun2015_a.lang'                         => '2015-06-14',
+    'jun2015_b.lang'                         => '2015-06-14',
+    'jun2015_c.lang'                         => '2015-06-14',
+    'jun2015_d.lang'                         => '2015-06-14',
     'legal/index.lang'                       => '2015-02-23',
     'main.lang'                              => '2015-06-01',
     'may2015_a.lang'                         => '2015-05-10',
@@ -536,7 +545,7 @@ $slogans_locales = [
 ];
 
 $snippets_locales = [
-    'ast', 'bn-BD', 'cs', 'da', 'de', 'el', 'es-AR', 'es-CL', 'es-ES',
+    'ast', 'bn-BD', 'cs', 'da', 'de', 'el', 'es', 'es-AR', 'es-CL', 'es-ES',
     'es-MX', 'fi', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'hu', 'id', 'it',
     'lv', 'ja', 'ko', 'nb-NO', 'nn-NO', 'mk', 'nl', 'pa-IN', 'pl',
     'pt-BR', 'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'tr', 'sv-SE',
@@ -1023,6 +1032,10 @@ $langfiles_subsets = [
         'may2015_b.lang'   => ['es-ES', 'pt-BR'],
         'spring2015.lang'  => ['de', 'es-ES', 'fr', 'hu', 'it', 'ja',
                                'pl', 'pt-BR', 'ru', ],
+        'jun2015_a.lang'   => ['de', 'fr'],
+        'jun2015_b.lang'   => ['ja'],
+        'jun2015_c.lang'   => ['ru'],
+        'jun2015_d.lang'   => ['es', 'pt-BR'],
     ],
 
     'add-ons' => [
