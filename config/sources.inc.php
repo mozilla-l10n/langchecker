@@ -836,10 +836,10 @@ $langfiles_subsets = [
         'firefox/privacy_tour/privacy_tour.lang' => $privacy_tour_locales,
         'firefox/speed.lang'                     => ['pt-BR'],
         'firefox/sync.lang'                      => $mozillaorg,
-        'firefox/sendto.lang'                    => $mozillaorg,
+        'firefox/sendto.lang'                    => $firefox_desktop,
         'firefox/tiles.lang'                     => $firefox_desktop,
         'firefox/whatsnew.lang'                  => ['hu', 'pl'],
-        'firefox/whatsnew_38.lang'               => $mozillaorg,
+        'firefox/whatsnew_38.lang'               => $firefox_desktop,
         'firefox/whatsnew-fx37.lang'             => ['de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'id', 'pt-BR'],
         'firefoxflicks.lang'                     =>
             [
