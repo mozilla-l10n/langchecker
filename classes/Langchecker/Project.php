@@ -28,6 +28,18 @@ class Project
     }
 
     /**
+     * Return supported files for website
+     *
+     * @param array $website Website data
+     *
+     * @return array Supported Files
+     */
+    public static function getSupportedFiles($website)
+    {
+        return $website[4];
+    }
+
+    /**
      * Return supported locales for website
      *
      * @param array  $website           Website data

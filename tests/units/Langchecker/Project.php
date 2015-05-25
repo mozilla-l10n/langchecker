@@ -29,6 +29,27 @@ class Project extends atoum\test
                 ->isEqualTo($b);
     }
 
+    public function getSupportedFilesDP()
+    {
+        require_once TEST_FILES . 'config/sources.php';
+
+        return [
+            [$sites[0], ['file1.lang', 'file2.lang']],
+            [$sites[2], ['page.lang']],
+        ];
+    }
+
+    /**
+     * @dataProvider getSupportedFilesDP
+     */
+    public function testGetSupportedFiles($a, $b)
+    {
+        $obj = new _Project();
+        $this
+            ->array($obj->getSupportedFiles($a))
+                ->isEqualTo($b);
+    }
+
     public function getSupportedLocalesDP()
     {
         require_once TEST_FILES . 'config/sources.php';

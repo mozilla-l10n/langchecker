@@ -23,7 +23,7 @@ $local_import     = $cli_import_type == 'remote' ? false : true;
 // Exit if trying to import from local without a local repo set
 if ($local_import) {
     if (! isset($locamotion_repo)) {
-        Utils::logger("Can't import from local clone, 'locamotion_repo' is not set in config/settings.inc.php.", "quit");
+        Utils::logger('Can\'t import from local clone, "locamotion_repo" is not set in config/settings.inc.php.', 'quit');
     }
 } else {
     // Set $locamotion_repo to '' for remote import
@@ -31,7 +31,7 @@ if ($local_import) {
 }
 
 if ($cli_locale != 'all' && ! in_array($cli_locale, $locamotion_locales)) {
-    Utils::logger("{$cli_locale} is not a Locamotion locale.", "quit");
+    Utils::logger("{$cli_locale} is not a Locamotion locale.", 'quit');
 }
 
 // We only support import from mozilla.org
@@ -46,7 +46,7 @@ if ($cli_filename == 'all') {
     if (! in_array($cli_filename, Project::getWebsiteFiles($current_website))) {
         // File is not supported
         $website_name = Project::getWebsiteName($current_website);
-        Utils::logger("File {$cli_filename} is not supported for {$website_name}", "quit");
+        Utils::logger("File {$cli_filename} is not supported for {$website_name}", 'quit');
     }
     $file_list[] = $cli_filename;
 }
