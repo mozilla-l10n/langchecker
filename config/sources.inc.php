@@ -472,11 +472,12 @@ $android_locales = [
 
 $firefox_os = [
     'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca' , 'cs',
-    'de', 'ee', 'el', 'es-ES', 'es-MX', 'et', 'ff', 'fr',
-    'fy-NL', 'ha', 'hi-IN', 'hr', 'hu', 'id', 'ig', 'it',
-    'ja', 'ko', 'ln', 'mk', 'my', 'nl', 'pl', 'pt-BR',
-    'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta',
-    'tl', 'tn', 'wo', 'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
+    'de', 'ee', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+    'et', 'ff', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
+    'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mk', 'my', 'nl',
+    'pl', 'pt-BR', 'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE',
+    'sw', 'ta', 'tl', 'tn', 'wo', 'xh', 'yo', 'zh-CN',
+    'zh-TW', 'zu',
 ];
 
 $firefox_updater_locales = [
