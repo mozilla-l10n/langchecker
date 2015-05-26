@@ -499,8 +499,6 @@ $getinvolved_locales = [
     'ta', 'tr', 'uk', 'zh-CN', 'zh-TW',
 ];
 
-$getinvolved_locales_oldpage = ['dsb', 'hr', 'hsb', 'lt', 'ro', 'ta'];
-
 // List provided by Release-drivers, needs access to a Google Play publishing account
 $google_play_locales = [
     'af', 'ar', 'be', 'bg', 'cs', 'ca', 'da', 'de', 'el', 'en-GB',
@@ -943,7 +941,7 @@ $langfiles_subsets = [
                 'ro', 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'tr', 'uk', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
             ],
-        'mozorg/contribute.lang'                => $getinvolved_locales_oldpage,
+        'mozorg/contribute.lang'                => $getinvolved_locales,
         'mozorg/contribute/friends.lang'        => ['cs', 'es-ES', 'fr', 'pt-BR'],
         'mozorg/contribute/index.lang'          => $getinvolved_locales,
         'mozorg/contribute/stories.lang'        => $getinvolved_locales,
