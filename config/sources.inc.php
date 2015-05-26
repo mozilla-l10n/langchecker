@@ -87,6 +87,7 @@ $mozillaorg_lang = [
     'firefox/speed.lang',
     'firefox/sync.lang',
     'firefox/tiles.lang',
+    'firefox/update.lang',
     'firefox/whatsnew.lang',
     'firefox/whatsnew_38.lang',
     'firefox/whatsnew-fx37.lang',
@@ -167,7 +168,8 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/sendto.lang'                     => [ 'critical' => ['all'] ],
     'firefox/sync.lang'                       => [ 'critical' => ['all'] ],
     'firefox/tiles.lang'                      => [ 'critical' => ['all'] ],
-    'firefox/whatsnew.lang'                   => [ 'critical' => ['all'] ],
+    'firefox/update.lang'                     => [ 'obsolete' => ['all'] ],
+    'firefox/whatsnew.lang'                   => [ 'obsolete' => ['all'] ],
     'firefox/whatsnew_38.lang'                => [ 'critical' => ['all'] ],
     'firefox/whatsnew-fx37.lang'              => [ 'critical' => ['all'] ],
     'firefoxflicks.lang'                      => [ 'obsolete' => ['all'] ],
@@ -420,7 +422,6 @@ $deadline = [
     'firefox/sendto.lang'                    => '2015-06-01',
     'firefox/sync.lang'                      => '2015-06-01',
     'firefox/tiles.lang'                     => '2014-11-09',
-    'firefox/whatsnew.lang'                  => '2013-12-31',
     'firefox/whatsnew_38.lang'               => '2015-06-01',
     'firefox/whatsnew-fx37.lang'             => '2015-03-30',
     'fx36start.lang'                         => '2014-12-04',
@@ -471,11 +472,12 @@ $android_locales = [
 
 $firefox_os = [
     'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca' , 'cs',
-    'de', 'ee', 'el', 'es-ES', 'es-MX', 'et', 'ff', 'fr',
-    'fy-NL', 'ha', 'hi-IN', 'hr', 'hu', 'id', 'ig', 'it',
-    'ja', 'ko', 'ln', 'mk', 'my', 'nl', 'pl', 'pt-BR',
-    'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta',
-    'tl', 'tn', 'wo', 'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
+    'de', 'ee', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+    'et', 'ff', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
+    'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mk', 'my', 'nl',
+    'pl', 'pt-BR', 'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE',
+    'sw', 'ta', 'tl', 'tn', 'wo', 'xh', 'yo', 'zh-CN',
+    'zh-TW', 'zu',
 ];
 
 $firefox_updater_locales = [
@@ -836,7 +838,8 @@ $langfiles_subsets = [
         'firefox/sync.lang'                      => $mozillaorg,
         'firefox/sendto.lang'                    => $firefox_desktop,
         'firefox/tiles.lang'                     => $firefox_desktop,
-        'firefox/whatsnew.lang'                  => ['hu', 'pl'],
+        'firefox/update.lang'                    => $firefox_desktop,
+        'firefox/whatsnew.lang'                  => $firefox_desktop,
         'firefox/whatsnew_38.lang'               => $firefox_desktop,
         'firefox/whatsnew-fx37.lang'             => ['de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'id', 'pt-BR'],
         'firefoxflicks.lang'                     =>
