@@ -300,7 +300,10 @@ $fxos_marketing_lang = [
 ];
 $lang_flags['firefoxos-marketing'] = [];
 
-$firefox_tiles_lang = ['tiles.lang'];
+$firefox_tiles_lang = [
+    'suggestedtiles_infographic.lang',
+    'tiles.lang',
+];
 $lang_flags['firefox-tiles'] = [
     'tiles.lang' => [ 'critical' => ['all'] ],
 ];
@@ -568,6 +571,8 @@ $surveys = [
     'pt-BR', 'ru', 'tr', 'vi', 'zh-CN', 'zh-TW',
 ];
 
+$tiles_locales = array_merge(['es'], $firefox_desktop);
+
 // Thundebird locales on Release channel
 // Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
 $thunderbird_release = [
@@ -724,7 +729,7 @@ $sites =
         'firefox-tiles',
         $repo11,
         '',
-        $firefox_desktop,
+        $tiles_locales,
         $firefox_tiles_lang,
         'en-US', // source locale
         $public_repo11,
@@ -1078,5 +1083,10 @@ $langfiles_subsets = [
                 'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr',
             ],
         'screenshots_tarako.lang' => ['hi-IN', 'ru', 'ta'],
+    ],
+
+    'firefox-tiles' => [
+        'suggestedtiles_infographic.lang' => ['de', 'es', 'fr'],
+        'tiles.lang'                      => $firefox_desktop,
     ],
 ];
