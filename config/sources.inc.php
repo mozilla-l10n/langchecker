@@ -930,7 +930,10 @@ $langfiles_subsets = [
                 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'ta', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
-        'mozorg/about/leadership.lang'          => ['cs', 'de', 'dsb', 'hsb', 'it', 'sv-SE'],
+        'mozorg/about/leadership.lang'          =>
+            [
+                'cs', 'de', 'dsb', 'hsb', 'it', 'sl', 'sv-SE',
+            ],
         'mozorg/about/manifesto.lang'           =>
             [
                 'af', 'ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de',
@@ -955,8 +958,8 @@ $langfiles_subsets = [
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hsb', 'id', 'it',
-                'lt', 'nl', 'pt-BR', 'ru', 'son', 'sq', 'sv-SE', 'uk',
-                'zh-TW',
+                'lt', 'nl', 'pt-BR', 'ru', 'sl', 'son', 'sq', 'sv-SE',
+                'uk', 'zh-TW',
             ],
         'newsletter.lang'                       => $mozillaorg,
         'snippets.lang'                         => $mozillaorg,
