@@ -25,14 +25,13 @@ foreach ($sites as $website) {
             $file_flags = Project::getFileFlags($website, $filename, $current_locale);
 
             if ($website_data_source == 'lang') {
-                // Load reference strings
-                $reference_data = LangManager::loadSource($website, $reference_locale, $filename);
                 $locale_filename = Project::getLocalFilePath($website, $current_locale, $filename);
-                if (! is_file($locale_filename) || in_array('obsolete', $file_flags)) {
+                if (! is_file($locale_filename) || Project::isObsoleteFile($website, $filename, $current_locale)) {
                     // File is missing or marked as obsolete
                     continue;
                 }
-
+                // Load reference strings
+                $reference_data = LangManager::loadSource($website, $reference_locale, $filename);
                 $locale_analysis = LangManager::analyzeLangFile($website, $current_locale, $filename, $reference_data);
 
                 $export_data[$website_name][$displayed_filename]['identical'] = count($locale_analysis['Identical']);

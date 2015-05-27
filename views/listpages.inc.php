@@ -51,7 +51,7 @@ foreach ($displayed_sites as $site_index => $current_website) {
 
             $html_output .= "<tr>\n";
             // Check if the file is obsolete for all locales
-            if (in_array('obsolete', Project::getFileFlags($current_website, $current_filename, 'all'))) {
+            if (Project::isObsoleteFile($current_website, $current_filename, 'all')) {
                 $html_output .= "  <td class='obsolete' title='Obsolete file'>{$current_filename}</td>\n";
             } else {
                 $html_output .= "  <td>{$current_filename}</td>\n";

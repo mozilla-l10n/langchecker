@@ -3,9 +3,11 @@
 $priorities = [
     'file1.lang' => [
         'critical' => ['all'],
+        'obsolete' => ['fr'],
     ],
     'file2.lang' => [
         'critical'  => ['fr'],
+        'obsolete'  => ['all'],
         'testflag1' => ['all'],
         'testflag2' => ['fr'],
     ],

@@ -33,7 +33,7 @@ foreach ($mozilla as $current_locale) {
             }
 
             // File marked as obsolete
-            if (in_array('obsolete', Project::getFileFlags($current_website, $current_filename, $current_locale))) {
+            if (Project::isObsoleteFile($current_website, $current_filename, $current_locale)) {
                 continue;
             }
 

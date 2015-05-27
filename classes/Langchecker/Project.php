@@ -96,6 +96,20 @@ class Project
     }
 
     /**
+     * Check if file is marked as obsolete
+     *
+     * @param array  $website  Website data
+     * @param string $filename File name
+     * @param string $locale   Locale
+     *
+     * @return boolean True if file is marked as obsolete
+     */
+    public static function isObsoleteFile($website, $filename, $locale)
+    {
+        return in_array('obsolete', self::getFileFlags($website, $filename, $locale));
+    }
+
+    /**
      * Return a list of flags associated to the file
      *
      * @param array  $website  Website data

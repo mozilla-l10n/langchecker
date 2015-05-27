@@ -18,6 +18,10 @@ if (in_array($current_filename, $no_active_tag)) {
     die("This file is not supposed to be activated.\n");
 }
 
+if (Project::isObsoleteFile($current_website, $current_filename, 'all')) {
+    die("This file is obsolete and is not supposed to be activated.\n");
+}
+
 // Read reference data once
 $reference_locale = Project::getReferenceLocale($current_website);
 $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);

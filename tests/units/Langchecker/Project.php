@@ -77,14 +77,37 @@ class Project extends atoum\test
                 ->isEqualTo($d);
     }
 
+    public function isObsoleteFileDP()
+    {
+        require_once TEST_FILES . 'config/sources.php';
+
+        return [
+            [$sites[0], 'file1.lang', 'all', false],
+            [$sites[0], 'file1.lang', 'fr', true],
+            [$sites[0], 'file2.lang', 'en-US', true],
+            [$sites[0], 'file2.lang', 'all', true],
+        ];
+    }
+
+    /**
+     * @dataProvider isObsoleteFileDP
+     */
+    public function testIsObsoleteFile($a, $b, $c, $d)
+    {
+        $obj = new _Project();
+        $this
+            ->boolean($obj->isObsoleteFile($a, $b, $c))
+                ->isEqualTo($d);
+    }
+
     public function getFileFlagsDP()
     {
         require_once TEST_FILES . 'config/sources.php';
 
         return [
             [$sites[0], 'file1.lang', 'en-US', []],
-            [$sites[0], 'file2.lang', 'en-US', ['testflag1']],
-            [$sites[0], 'file2.lang', 'fr', ['testflag1', 'testflag2']],
+            [$sites[0], 'file2.lang', 'en-US', ['obsolete', 'testflag1']],
+            [$sites[0], 'file2.lang', 'fr', ['obsolete', 'testflag1', 'testflag2']],
             [$sites[1], 'file3.lang', 'en-US', []],
         ];
     }
