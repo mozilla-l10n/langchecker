@@ -966,7 +966,7 @@ $langfiles_subsets = [
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hsb', 'id', 'it',
-                'lt', 'nl', 'pt-BR', 'ru', 'sl', 'son', 'sq', 'sv-SE',
+                'lt', 'nl', 'pt-BR', 'ru', 'son', 'sq', 'sv-SE',
                 'uk', 'zh-TW',
             ],
         'newsletter.lang'                       => $mozillaorg,
