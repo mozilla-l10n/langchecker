@@ -31,15 +31,19 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     $todo_files = '';
 
     foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
-        if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets) ||
-            ! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename)) ||
-            in_array('obsolete', Project::getFileFlags($current_website, $current_filename, $current_locale))) {
-            /*
-             * Ignore file for this locale if:
-             * - It's not supported
-             * - It doesn't exist
-             * - It's marked as obsolete
-             */
+
+        // File not supported
+        if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
+            continue;
+        }
+
+        // File marked as obsolete
+        if (Project::isObsoleteFile($current_website, $current_filename, $current_locale)) {
+            continue;
+        }
+
+        // File doesn't exist
+        if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
             continue;
         }
 

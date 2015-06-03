@@ -131,6 +131,13 @@ caption.filename {
     padding: 6px;
 }
 
+.obsolete_warning {
+    display: block;
+    color: #f00;
+    font-weight: bold;
+    font-size: 15px;
+}
+
 .count_complete {
     color: #ddd;
 }

@@ -45,6 +45,10 @@ foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
                 // If the .lang file does not exist, just skip the locale for this file
                 continue;
             }
+            if (Project::isObsoleteFile($current_website, $current_filename, $current_locale)) {
+                // If the .lang file is obsolete, skip it
+                continue;
+            }
 
             $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
 

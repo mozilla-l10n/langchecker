@@ -46,7 +46,13 @@ if ($website_data_source == 'lang') {
     $translation_link = "?website={$website}&amp;file={$current_filename}&amp;action=translate";
     echo '
     <table class="sortable globallist">
-      <caption class="filename"><a href="' . $translation_link . '" title="View available translations for this file">' . $current_filename . '</a></caption>
+      <caption class="filename">
+        <a href="' . $translation_link . '" title="View available translations for this file">' . $current_filename . '</a>';
+    if (Project::isObsoleteFile($current_website, $current_filename, 'all')) {
+        echo '<span class="obsolete_warning">(this file is obsolete)</span>';
+    }
+    echo '
+      </caption>
       <thead>
         <tr>
           <th>Locale</th>
