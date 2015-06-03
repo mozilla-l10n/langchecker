@@ -1,0 +1,103 @@
+#!/usr/bin/env php
+<?php
+namespace Langchecker;
+
+$command_help = "untracked_files - List local lang files not tracked by langchecker\n" .
+                "Usage: untracked_files [websiteid] [locale]\n\n" .
+                "Example: untracked_files\n" .
+                "(list untracked files on mozilla.org for all locales)\n" .
+                "Example: untracked_files 1 fr\n" .
+                "(list all untracked files on website with ID 1 for French)\n" .
+                "Example: untracked_files 1 locamotion\n" .
+                "(list all untracked files on website with ID 1 for Locamotion locales)\n";
+
+require_once __DIR__ . '/../inc/cli_init.php';
+
+// User provided variables
+$cli_website  = Utils::getCliParam(1, $argv, '0');                   // Which website are we looking at? Default www.mozilla.org
+$cli_locale   = Utils::getCliParam(2, $argv, 'all');                 // Which locale are we analyzing? Default all locales
+
+$lang_based_sites = Project::getWebsitesByDataType($sites, 'lang');
+
+if (! isset($lang_based_sites[$cli_website])) {
+    Utils::logger("Unknown website #{$cli_website}.", 'quit');
+}
+$current_website = $lang_based_sites[$cli_website];
+
+// Create list of locales to analyze
+$reference_locale = false;
+if ($cli_locale == 'all') {
+    $locale_list = Project::getSupportedLocales($current_website);
+} elseif ($cli_locale == 'locamotion') {
+    $locale_list = $locamotion_locales;
+} else {
+    if ($cli_locale == Project::getReferenceLocale($current_website)) {
+        // Analyzing the reference locale
+        $reference_locale = true;
+    } else {
+        // It's a standard locale, check if it's supported
+        if (! Project::isSupportedLocale($current_website, $cli_locale)) {
+            Utils::logger("Unsupported locale #{$cli_locale}.", 'quit');
+        }
+    }
+    $locale_list = [$cli_locale];
+}
+
+// Create list of local .lang files
+$file_list = [];
+foreach ($locale_list as $locale) {
+    $locale_path = Project::getLocalFilePath($current_website, $locale, '');
+    $directory = new \RecursiveDirectoryIterator($locale_path);
+    $iterator = new \RecursiveIteratorIterator($directory);
+    $filtered_iterator = new \RegexIterator($iterator, '/^.+\.lang$/i', \RecursiveRegexIterator::GET_MATCH);
+    foreach ($filtered_iterator as $file_name => $file) {
+        $file_list[] = [
+            'full_path'     => $file_name,
+            'relative_path' => Utils::leftStrip($file_name, $locale_path),
+            'locale'        => $locale,
+        ];
+    }
+}
+sort($file_list);
+
+// Check if the .lang files available locally are actually tracked by langchecker
+$untracked_files = [];
+$ignored_files = [
+    'firefox/all.lang', # Currently localized for 'ja'
+    'newsletter/confirm.lang',
+    'newsletter/existing.lang',
+    'newsletter/mozilla-and-you.lang',
+    'newsletter/updated.lang',
+    'legal/terms/acceptable-use.lang',
+    'legal/terms/firefox-hello.lang',
+    'legal/terms/mozilla.lang',
+    'privacy/notices/firefox-hello.lang',
+    'privacy/notices/firefox.lang',
+];
+$supported_files = Project::getSupportedFiles($current_website);
+
+// Add all files not supported for this website
+foreach ($file_list as $single_file) {
+    if (! in_array($single_file['relative_path'], $supported_files)
+        && ! in_array($single_file['relative_path'], $ignored_files)) {
+        $untracked_files[] = $single_file['full_path'];
+    }
+}
+
+// Add all files not supported for the specific locale
+if (! $reference_locale) {
+    foreach ($file_list as $single_file) {
+        if (! Project::isSupportedLocale($current_website, $single_file['locale'], $single_file['relative_path'], $langfiles_subsets)
+            && ! in_array($single_file['relative_path'], $ignored_files)) {
+            $untracked_files[] = $single_file['full_path'];
+        }
+    }
+}
+
+// Sort and remove duplicates and sort
+sort($untracked_files);
+$untracked_files = array_unique($untracked_files);
+
+foreach ($untracked_files as $file_name) {
+    echo "{$file_name}\n";
+}

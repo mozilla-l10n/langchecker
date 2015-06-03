@@ -18,7 +18,7 @@ $single_file_mode = $cli_filename != 'all' && $cli_locale != 'all';  // One loca
 $lang_based_sites = Project::getWebsitesByDataType($sites, 'lang');
 
 if (! isset($lang_based_sites[$cli_website])) {
-    Utils::logger("Unknown website #{$cli_website}.", "quit");
+    Utils::logger("Unknown website #{$cli_website}.", 'quit');
 }
 
 $current_website = $lang_based_sites[$cli_website];
@@ -30,7 +30,7 @@ if ($cli_filename == 'all') {
     if (! in_array($cli_filename, Project::getWebsiteFiles($current_website))) {
         // File is not supported
         $website_name = Project::getWebsiteName($current_website);
-        Utils::logger("File {$cli_filename} is not supported for website #{$cli_website} ({$website_name}).", "quit");
+        Utils::logger("File {$cli_filename} is not supported for website #{$cli_website} ({$website_name}).", 'quit');
     }
     $file_list[] = $cli_filename;
 }
