@@ -1,10 +1,12 @@
+sudo: false
 language: php
 php:
   - 5.5
   - 5.6
 before_script:
   ## Composer
-  - composer install
+  - composer self-update
+  - composer install --no-interaction --prefer-source
   ## Travis configuration
   - cp config/settings.inc.php.ini config/settings.inc.php
 script:
@@ -20,3 +22,5 @@ notifications:
     template:
       - "%{repository} ; %{commit} (%{author}) : %{message} "
       - "Build details: %{build_url} ; changes: %{compare_url}"
+matrix:
+  fast_finish: true
