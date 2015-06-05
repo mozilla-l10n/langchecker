@@ -301,11 +301,13 @@ $fxos_marketing_lang = [
 $lang_flags['firefoxos-marketing'] = [];
 
 $firefox_tiles_lang = [
+    'careers.lang',
     'suggestedtiles_infographic.lang',
     'tiles.lang',
 ];
 $lang_flags['firefox-tiles'] = [
-    'tiles.lang' => [ 'critical' => ['all'] ],
+    'tiles.lang'   => [ 'critical' => ['all'] ],
+    'careers.lang' => [ 'critical' => ['de', 'fr'] ],
 ];
 
 $google_play_lang = ['description_page.lang'];
@@ -402,7 +404,8 @@ $no_active_tag = [
 
 $deadline = [
     'apr2015.lang'                           => '2015-04-02',
-    'description_page.lang'                  => '2014-11-09', //google-play project
+    'careers.lang'                           => '2015-06-10', // tiles project
+    'description_page.lang'                  => '2014-11-09', // google-play project
     'download_button.lang'                   => '2015-06-01',
     'firefox/android/index.lang'             => '2015-06-01',
     'firefox/australis/fx36_tour.lang'       => '2015-02-23',
@@ -1085,6 +1088,7 @@ $langfiles_subsets = [
     ],
 
     'firefox-tiles' => [
+        'careers.lang'                    => ['de', 'fr'],
         'suggestedtiles_infographic.lang' => ['de', 'es', 'fr'],
         'tiles.lang'                      => $firefox_desktop,
     ],
