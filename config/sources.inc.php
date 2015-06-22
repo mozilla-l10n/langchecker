@@ -443,7 +443,6 @@ $deadline = [
     'mozorg/mission.lang'                    => '2013-12-31',
     'mozorg/plugincheck.lang'                => '2015-06-01',
     'mozorg/products.lang'                   => '2013-12-31',
-    'privacy/privacy-day.lang'               => '2015-01-27',
     'newsletter/ios.lang'                    => '2015-03-12',
     'newsletter.lang'                        => '2015-03-02',
     'privacycoach.lang'                      => '2014-11-07',  // add-ons project
@@ -793,8 +792,8 @@ $langfiles_subsets = [
         'firefox/dnt.lang'                      =>
             [
                 'cs', 'cy', 'de', 'dsb', 'es-CL', 'fr', 'fy-NL', 'hsb', 'it', 'ja',
-                'lt', 'nl' ,'pt-BR', 'sat', 'sk', 'sl', 'son', 'sq', 'sv-SE', 'uk',
-                'uz', 'zh-TW',
+                'lt', 'nl' ,'pt-BR', 'ro', 'sat', 'sk', 'sl', 'son', 'sq', 'sv-SE',
+                'uk', 'uz', 'zh-TW',
             ],
         'firefox/family/index.lang'             => $firefox_desktop,
         'firefox/geolocation.lang'              =>
@@ -962,7 +961,7 @@ $langfiles_subsets = [
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hsb', 'id', 'it',
-                'lt', 'nl', 'pt-BR', 'ru', 'son', 'sq', 'sv-SE',
+                'lt', 'nl', 'pt-BR', 'ro', 'ru', 'son', 'sq', 'sv-SE',
                 'uk', 'zh-TW',
             ],
         'newsletter.lang'                       => $mozillaorg,
