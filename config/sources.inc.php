@@ -798,7 +798,7 @@ $langfiles_subsets = [
         'firefox/family/index.lang'             => $firefox_desktop,
         'firefox/geolocation.lang'              =>
             [
-                'af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN',
+                'af', 'ar', 'as', 'ast', 'az', 'be', 'bg', 'bn-BD', 'bn-IN',
                 'ca', 'cs', 'cy', 'da', 'de', 'dsb', 'el', 'en-GB',
                 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et', 'eu',
                 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl',
