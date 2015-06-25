@@ -900,7 +900,7 @@ $langfiles_subsets = [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL',
                 'hsb', 'it', 'ja', 'km', 'lt', 'ms', 'nl', 'pl',
-                'pt-BR', 'sat', 'son', 'sq', 'sv-SE', 'tr',
+                'pt-BR', 'ro', 'sat', 'son', 'sq', 'sv-SE', 'tr',
                 'uk', 'zh-CN', 'zh-TW',
             ],
         'main.lang'                             => $mozillaorg,
