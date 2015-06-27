@@ -790,7 +790,7 @@ $langfiles_subsets = [
         'firefox/desktop/tips.lang'             =>
             [
                 'af', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR',
-                'es-CL', 'es-ES', 'es-MX', 'eu', 'ff', 'fr', 'fy-NL',
+                'es-CL', 'es-ES', 'es-MX', 'eu', 'ff', 'fr', 'fy-NL', 'ga-IE',
                 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id', 'it',
                 'ja', 'km', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
                 'sk', 'sl', 'son', 'sq', 'sv-SE', 'uk', 'uz', 'xh',
