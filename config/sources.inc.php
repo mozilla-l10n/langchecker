@@ -505,8 +505,8 @@ $fxos_marketing = [
 $getinvolved_locales = [
     'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
     'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'he',
-    'hi-IN', 'hr', 'hsb', 'id', 'it', 'lt', 'ms', 'nl', 'pl',
-    'pt-BR', 'ro', 'ru', 'sl', 'son', 'sq', 'sr', 'sv-SE',
+    'hi-IN', 'hr', 'hsb', 'id', 'it', 'ko', 'lt', 'ms', 'nl',
+    'pl', 'pt-BR', 'ro', 'ru', 'sl', 'son', 'sq', 'sr', 'sv-SE',
     'ta', 'tr', 'uk', 'zh-CN', 'zh-TW',
 ];
 
@@ -790,19 +790,19 @@ $langfiles_subsets = [
         'firefox/desktop/tips.lang'             =>
             [
                 'af', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR',
-                'es-CL', 'es-ES', 'es-MX', 'eu', 'ff', 'fr', 'fy-NL', 'ga-IE',
-                'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id', 'it',
-                'ja', 'km', 'lt', 'ms', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
-                'sk', 'sl', 'son', 'sq', 'sv-SE', 'uk', 'uz', 'xh',
-                'zh-CN', 'zh-TW',
+                'es-CL', 'es-ES', 'es-MX', 'eu', 'ff', 'fr', 'fy-NL',
+                'ga-IE', 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id',
+                'it', 'ja', 'km', 'ko', 'lt', 'ms', 'nl', 'pl', 'pt-BR',
+                'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sv-SE', 'uk', 'uz',
+                'xh', 'zh-CN', 'zh-TW',
             ],
         'firefox/desktop/trust.lang'            => $firefox_desktop,
         'firefox/developer.lang'                => $firefox_desktop,
         'firefox/dnt.lang'                      =>
             [
-                'cs', 'cy', 'de', 'dsb', 'es-CL', 'fr', 'fy-NL', 'hsb', 'it', 'ja',
-                'lt', 'nl' ,'pt-BR', 'ro', 'sat', 'sk', 'sl', 'son', 'sq', 'sv-SE',
-                'uk', 'uz', 'zh-TW',
+                'cs', 'cy', 'de', 'dsb', 'es-CL', 'fr', 'fy-NL', 'hsb', 'it',
+                'ja', 'ko', 'lt', 'nl' ,'pt-BR', 'ro', 'sat', 'sk', 'sl',
+                'son', 'sq', 'sv-SE', 'uk', 'uz', 'zh-TW',
             ],
         'firefox/family/index.lang'             => $firefox_desktop,
         'firefox/geolocation.lang'              =>
@@ -908,9 +908,9 @@ $langfiles_subsets = [
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL',
-                'hsb', 'it', 'ja', 'km', 'lt', 'ms', 'nl', 'pl',
-                'pt-BR', 'ro', 'sat', 'son', 'sq', 'sv-SE', 'tr',
-                'uk', 'zh-CN', 'zh-TW',
+                'hsb', 'it', 'ko', 'ja', 'km', 'lt', 'ms', 'nl',
+                'pl', 'pt-BR', 'ro', 'sat', 'son', 'sq', 'sv-SE',
+                'tr', 'uk', 'zh-CN', 'zh-TW',
             ],
         'main.lang'                             => $mozillaorg,
         'marketplace/marketplace.lang'          => ['fr', 'es-ES', 'pl', 'pt-BR'],
@@ -928,23 +928,24 @@ $langfiles_subsets = [
         'mozorg/mission.lang'                   => $mozillaorg,
         'mozorg/about/history-details.lang'     =>
             [
-                'ca', 'cs', 'cy', 'de', 'dsb', 'es-CL', 'es-MX', 'eu',
-                'fr', 'gl', 'hsb', 'it', 'km', 'lt', 'pa-IN', 'pt-BR',
-                'ro', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk',
-                'uz', 'zh-TW',
+                'ca', 'cs', 'cy', 'de', 'dsb', 'es-CL', 'es-MX',
+                'eu', 'fr', 'gl', 'hsb', 'it', 'km', 'ko', 'lt',
+                'pa-IN', 'pt-BR', 'ro', 'sat', 'sk', 'son', 'sq',
+                'sv-SE', 'uk', 'uz', 'zh-TW',
             ],
         'mozorg/about/history.lang'             =>
             [
                 'af', 'ar', 'bg', 'ca', 'cs', 'cy', 'de', 'dsb', 'el',
                 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fr',
-                'fy-NL', 'gl', 'hr', 'hsb', 'id', 'it', 'km',
+                'fy-NL', 'gl', 'hr', 'hsb', 'id', 'it', 'km', 'ko',
                 'lt', 'ms', 'nl', 'pa-IN', 'pl', 'pt-BR', 'ro',
                 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'ta', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/leadership.lang'          =>
             [
-                'cs', 'de', 'dsb', 'hsb', 'it', 'pt-BR', 'sl', 'sv-SE',
+                'cs', 'de', 'dsb', 'hsb', 'it', 'ko', 'pt-BR',
+                'sl', 'sv-SE',
             ],
         'mozorg/about/manifesto.lang'           =>
             [
@@ -970,8 +971,8 @@ $langfiles_subsets = [
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hsb', 'id', 'it',
-                'lt', 'nl', 'pt-BR', 'ro', 'ru', 'son', 'sq', 'sv-SE',
-                'uk', 'zh-TW',
+                'ko', 'lt', 'nl', 'pt-BR', 'ro', 'ru', 'son', 'sq',
+                'sv-SE', 'uk', 'zh-TW',
             ],
         'newsletter.lang'                       => $mozillaorg,
         'snippets.lang'                         => $mozillaorg,
