@@ -470,13 +470,14 @@ $addons_locales = [
 // Source: http://hg.mozilla.org/releases/mozilla-release/raw-file/c13c3b4992cf/mobile/android/locales/maemo-locales
 // Added: af, az, dsb, hsb (requested), sat
 $android_locales = [
-    'af', 'an', 'as', 'az', 'be', 'bn-IN', 'br', 'ca', 'cs', 'cy', 'da',
-    'de', 'dsb', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fi', 'ff',
-    'fr', 'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN', 'hi-IN', 'hsb', 'hu',
-    'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv',
-    'ml', 'mr', 'ms', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl', 'pt-BR',
-    'pt-PT', 'ro', 'ru', 'sat', 'sq', 'sk', 'sl', 'sv-SE', 'ta', 'te',
-    'th', 'tr', 'uk', 'zh-CN', 'zh-TW',
+    'af', 'an', 'as', 'az', 'be', 'bn-IN', 'br', 'ca', 'cak',
+    'cs', 'cy', 'da', 'de', 'dsb', 'eo', 'es-AR', 'es-ES',
+    'es-MX', 'et', 'eu', 'fi', 'ff', 'fr', 'fy-NL', 'ga-IE',
+    'gd', 'gl' ,'gu-IN', 'hi-IN', 'hsb', 'hu', 'hy-AM', 'id',
+    'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv', 'ml',
+    'mr', 'ms', 'my', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl', 'pt-BR',
+    'pt-PT', 'ro', 'ru', 'sat', 'sq', 'sk', 'sl', 'sv-SE',
+    'ta', 'te', 'tsz', 'th', 'tr', 'uk', 'zh-CN', 'zh-TW',
 ];
 
 $firefox_os = [
@@ -823,7 +824,7 @@ $langfiles_subsets = [
         'firefox/hello.lang'                      => $firefox_locales,
         'firefox/independent.lang'                => $firefox_locales,
         'firefox/installer-help.lang'             => $firefox_locales,
-        'firefox/ios.lang'                        => $mozillaorg,
+        'firefox/ios.lang'                        => $firefox_locales,
         'firefox/new.lang'                        => array_merge($firefox_locales, $fennec_locales),
         'firefox/nightly_firstrun.lang'           =>
             [
