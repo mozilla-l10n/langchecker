@@ -29,11 +29,11 @@ if (is_file(__DIR__ . '/adi.inc.php')) {
 }
 
 $locamotion_locales = [
-    'ach', 'af', 'bm', 'br', 'ca', 'cy', 'dsb', 'ee',
+    'ach', 'af', 'bm', 'br', 'ca', 'cak', 'cy', 'dsb', 'ee',
     'en-ZA', 'es-MX', 'ff', 'fi', 'ga-IE', 'gd', 'ha', 'hi-IN',
     'hr', 'hsb', 'ig', 'km', 'kok', 'ks', 'ln', 'lt', 'lv', 'ms',
     'my', 'nn-NO', 'oc', 'pt-PT', 'sat', 'si', 'son', 'sw', 'ta',
-    'tl', 'tn', 'ur', 'uz', 'vi', 'wo', 'xh', 'yo', 'zu',
+    'tl', 'tn', 'tsz', 'ur', 'uz', 'vi', 'wo', 'xh', 'yo', 'zu',
 ];
 
 /*
@@ -577,7 +577,7 @@ $surveys = [
     'pt-BR', 'ru', 'tr', 'vi', 'zh-CN', 'zh-TW',
 ];
 
-$tiles_locales = array_merge(['es'], $firefox_desktop);
+$tiles_locales = array_merge(['es'], $firefox_locales);
 
 // Thundebird locales on Release channel
 // Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
@@ -663,7 +663,7 @@ $sites =
         'about:healthreport',
         $repo5,
         'locale/',
-        $firefox_desktop,
+        $firefox_locales,
         $firefoxhealthreport_lang,
         'en-US', // source locale
         $public_repo5,
@@ -781,12 +781,12 @@ $langfiles_subsets = [
                 'nl', 'pl', 'pt-PT', 'ro', 'sk', 'sl', 'sv-SE',
             ],
         'firefox/android/index.lang'            => $android_locales,
-        'firefox/australis/firefox_tour.lang'   => $firefox_desktop,
-        'firefox/australis/fx36_tour.lang'      => $firefox_desktop,
+        'firefox/australis/firefox_tour.lang'   => $firefox_locales,
+        'firefox/australis/fx36_tour.lang'      => $firefox_locales,
         'firefox/channel.lang'                  => $mozillaorg, // Has Firefox for Android download buttons
-        'firefox/desktop/customize.lang'        => $firefox_desktop,
-        'firefox/desktop/fast.lang'             => $firefox_desktop,
-        'firefox/desktop/index.lang'            => $firefox_desktop,
+        'firefox/desktop/customize.lang'        => $firefox_locales,
+        'firefox/desktop/fast.lang'             => $firefox_locales,
+        'firefox/desktop/index.lang'            => $firefox_locales,
         'firefox/desktop/tips.lang'             =>
             [
                 'af', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR',
@@ -796,15 +796,15 @@ $langfiles_subsets = [
                 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sv-SE', 'uk', 'uz',
                 'xh', 'zh-CN', 'zh-TW',
             ],
-        'firefox/desktop/trust.lang'            => $firefox_desktop,
-        'firefox/developer.lang'                => $firefox_desktop,
+        'firefox/desktop/trust.lang'            => $firefox_locales,
+        'firefox/developer.lang'                => $firefox_locales,
         'firefox/dnt.lang'                      =>
             [
                 'cs', 'cy', 'de', 'dsb', 'es-CL', 'fr', 'fy-NL', 'hsb', 'it',
                 'ja', 'ko', 'lt', 'nl' ,'pt-BR', 'ro', 'sat', 'sk', 'sl',
                 'son', 'sq', 'sv-SE', 'uk', 'uz', 'zh-TW',
             ],
-        'firefox/family/index.lang'             => $firefox_desktop,
+        'firefox/family/index.lang'             => $firefox_locales,
         'firefox/geolocation.lang'              =>
             [
                 'af', 'ar', 'as', 'ast', 'az', 'be', 'bg', 'bn-BD', 'bn-IN',
@@ -820,11 +820,11 @@ $langfiles_subsets = [
             ],
         'firefox/includes/mwc_2014_schedule.lang' => $mwc_locales,
         'firefox/includes/mwc_2015_schedule.lang' => $mwc_locales,
-        'firefox/hello.lang'                      => $firefox_desktop,
-        'firefox/independent.lang'                => $firefox_desktop,
-        'firefox/installer-help.lang'             => $firefox_desktop,
+        'firefox/hello.lang'                      => $firefox_locales,
+        'firefox/independent.lang'                => $firefox_locales,
+        'firefox/installer-help.lang'             => $firefox_locales,
         'firefox/ios.lang'                        => $mozillaorg,
-        'firefox/new.lang'                        => $firefox_desktop,
+        'firefox/new.lang'                        => array_merge($firefox_locales, $fennec_locales),
         'firefox/nightly_firstrun.lang'           =>
             [
                 'ar', 'ast', 'cs', 'de', 'eo', 'es-AR', 'es-CL',
@@ -846,11 +846,11 @@ $langfiles_subsets = [
         'firefox/privacy_tour/privacy_tour.lang' => $privacy_tour_locales,
         'firefox/speed.lang'                     => ['pt-BR'],
         'firefox/sync.lang'                      => $mozillaorg,
-        'firefox/sendto.lang'                    => $firefox_desktop,
-        'firefox/tiles.lang'                     => $firefox_desktop,
-        'firefox/update.lang'                    => $firefox_desktop,
-        'firefox/whatsnew.lang'                  => $firefox_desktop,
-        'firefox/whatsnew_38.lang'               => $firefox_desktop,
+        'firefox/sendto.lang'                    => $firefox_locales,
+        'firefox/tiles.lang'                     => $firefox_locales,
+        'firefox/update.lang'                    => $firefox_locales,
+        'firefox/whatsnew.lang'                  => $firefox_locales,
+        'firefox/whatsnew_38.lang'               => $firefox_locales,
         'firefox/whatsnew-fx37.lang'             => ['de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'id', 'pt-BR'],
         'firefoxflicks.lang'                     =>
             [
@@ -987,7 +987,7 @@ $langfiles_subsets = [
 
     'about:healthreport' =>
     [
-        'fhr.lang' => $firefox_desktop,
+        'fhr.lang' => $firefox_locales,
     ],
 
     'surveys' =>
@@ -1096,6 +1096,6 @@ $langfiles_subsets = [
     'firefox-tiles' => [
         'careers.lang'                    => ['de', 'fr'],
         'suggestedtiles_infographic.lang' => ['de', 'es', 'fr'],
-        'tiles.lang'                      => $firefox_desktop,
+        'tiles.lang'                      => $firefox_locales,
     ],
 ];
