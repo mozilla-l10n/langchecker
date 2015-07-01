@@ -11,8 +11,7 @@ $current_filename = $filename;
 if (! isset($sites[$website])) {
     // This website is not available
     if ($json) {
-        http_response_code(400);
-        die("{$website} is not a supported website. Check the value and try again.");
+        die(Json::invalidAPICall("{$website} is not a supported website. Check the value and try again."));
     } else {
         die("<p>This website is not supported.</p>");
     }
@@ -23,8 +22,7 @@ $website_data_source = Project::getWebsiteDataType($current_website);
 
 if ($current_filename == '' || ! in_array($current_filename, Project::getWebsiteFiles($current_website))) {
     if ($json) {
-        http_response_code(400);
-        die("File {$current_filename} does not exist. Check the value and try again.");
+        die(Json::invalidAPICall("File {$current_filename} does not exist. Check the value and try again."));
     } else {
         die("<p>ERROR: file {$current_filename} does not exist</p>");
     }
@@ -239,8 +237,7 @@ if ($json) {
             echo Json::output($single_locale_json, false, true);
         } else {
             // Unknown locale
-            http_response_code(400);
-            die("Unknown locale: {$locale}. Check the value and try again.");
+            die(Json::invalidAPICall("Unknown locale: {$locale}. Check the value and try again."));
         }
     }
 } else {
