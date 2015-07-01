@@ -987,7 +987,7 @@ $langfiles_subsets = [
 
     'about:healthreport' =>
     [
-        'fhr.lang' => $firefox_locales,
+        'fhr.lang' => array_merge($firefox_locales, $fennec_locales),
     ],
 
     'surveys' =>
