@@ -554,6 +554,20 @@ class Project extends atoum\test
             ],
             [
                 [
+                    'action'   => 'translate',
+                    'filename' => '',
+                    'json'     => true,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',
+                ],
+                [
+                    'file'         => 'translatestrings',
+                    'template'     => '',
+                ],
+            ],
+            [
+                [
                     'action'   => '',
                     'filename' => 'test.lang',
                     'json'     => false,
