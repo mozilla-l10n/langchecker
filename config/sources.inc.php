@@ -306,10 +306,12 @@ $firefox_tiles_lang = [
     'careers.lang',
     'suggestedtiles_infographic.lang',
     'tiles.lang',
+    'tiles_jul2015.lang',
 ];
 $lang_flags['firefox-tiles'] = [
-    'tiles.lang'   => [ 'critical' => ['all'] ],
-    'careers.lang' => [ 'critical' => ['de', 'fr'] ],
+    'careers.lang'       => [ 'critical' => ['de', 'fr'] ],
+    'tiles.lang'         => [ 'critical' => ['all'] ],
+    'tiles_jul2015.lang' => [ 'critical' => ['all'] ],
 ];
 
 $google_play_lang = ['description_page.lang'];
@@ -405,7 +407,6 @@ $no_active_tag = [
 ];
 
 $deadline = [
-    'apr2015.lang'                           => '2015-04-02',
     'careers.lang'                           => '2015-06-10', // tiles project
     'description_page.lang'                  => '2014-11-09', // google-play project
     'download_button.lang'                   => '2015-06-01',
@@ -437,13 +438,8 @@ $deadline = [
     'jul2015_b.lang'                         => '2015-07-13',
     'jul2015_c.lang'                         => '2015-07-13',
     'jun2015_a.lang'                         => '2015-06-14',
-    'jun2015_b.lang'                         => '2015-06-14',
-    'jun2015_c.lang'                         => '2015-06-14',
-    'jun2015_d.lang'                         => '2015-06-14',
     'legal/index.lang'                       => '2015-02-23',
     'main.lang'                              => '2015-06-01',
-    'may2015_a.lang'                         => '2015-05-10',
-    'may2015_b.lang'                         => '2015-05-10',
     'mozorg/about.lang'                      => '2015-03-26',
     'mozorg/about/manifesto.lang'            => '2014-08-31',
     'mozorg/contribute/index.lang'           => '2015-01-31',
@@ -457,6 +453,7 @@ $deadline = [
     'privacycoach.lang'                      => '2014-11-07',  // add-ons project
     'spring2015.lang'                        => '2015-05-24',
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
+    'tiles_jul2015.lang'                     => '2015-07-13',
     'thunderbird/start/release.lang'         => '2015-01-31',
 ];
 
@@ -1098,5 +1095,6 @@ $langfiles_subsets = [
         'careers.lang'                    => ['de', 'fr'],
         'suggestedtiles_infographic.lang' => ['de', 'es', 'fr'],
         'tiles.lang'                      => $firefox_locales,
+        'tiles_jul2015.lang'              => ['de', 'es', 'fr', 'pt-BR', 'ru'],
     ],
 ];
