@@ -362,6 +362,9 @@ class Project
                     break;
                 case 'translate':
                     $result['file'] = 'translatestrings';
+                    if ($request['json']) {
+                        $result['template'] = '';
+                    }
                     break;
             }
 

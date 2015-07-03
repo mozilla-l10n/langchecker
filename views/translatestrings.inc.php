@@ -1,7 +1,10 @@
 <?php
 namespace Langchecker;
 
-?>
+use Transvision\Json;
+
+if (! $json) {
+    ?>
 <script>
   function showhide(id) {
     table = document.getElementById('table' + id);
@@ -15,6 +18,8 @@ namespace Langchecker;
   }
 </script>
 <?php
+
+}
 
 // $filename is set in /inc/init.php
 $current_filename = $filename != '' ? $filename : 'snippets.lang';
@@ -31,7 +36,12 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $site) {
 }
 
 if (! $supported_file) {
-    die("<p>ERROR: file {$filename} does not exist</p>");
+    $error_message = "<p>ERROR: file {$filename} does not exist</p>";
+    if ($json) {
+        die(Json::invalidAPICall($error_message));
+    } else {
+        die($error_message);
+    }
 }
 
 $reference_locale = Project::getReferenceLocale($current_website);
@@ -52,6 +62,11 @@ foreach ($supported_locales as $current_locale) {
             $all_strings[$string_id][$current_locale] = Utils::cleanString($locale_data['strings'][$string_id]);
         }
     }
+}
+
+// If request output is JSON, we're ready
+if ($json) {
+    die(Json::output($all_strings, false, true));
 }
 
 // Colors used to display tags
