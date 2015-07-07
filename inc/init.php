@@ -17,6 +17,11 @@ require_once $approot . 'vendor/autoload.php';
 require $conf . 'locales.inc.php';
 require $conf . 'sources.inc.php';
 
+// Override sources for functional tests both locally and on Travis
+if (getenv('TRAVIS') || getenv('AUTOMATED_TESTS')) {
+    require $approot . 'tests/testfiles/config/sources.php';
+}
+
 // User provided variables
 $action   = Utils::getQueryParam('action');
 $filename = Utils::getQueryParam('file');

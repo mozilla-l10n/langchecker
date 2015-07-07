@@ -61,6 +61,17 @@ $sites = [
         [],
         'raw',
     ],
+    6 => [
+        'snippets',
+        __DIR__ . '/../dotlang/',
+        '',
+        ['en-US', 'it'],
+        ['page.lang'],
+        'en-US',
+        '/public/repo6/',
+        [],
+        'lang',
+    ],
 ];
 
 $langfiles_subsets = [
@@ -68,3 +79,7 @@ $langfiles_subsets = [
         'file1.lang' => ['fr'],
     ],
 ];
+
+$snippets_locales = ['fr', 'it'];
+
+$mozilla = ['en-US', 'fr', 'it'];

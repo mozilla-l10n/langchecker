@@ -280,7 +280,7 @@ class Project extends atoum\test
         $obj = new _Project();
         $this
             ->integer(count($obj->getWebsitesByDataType($sites, 'lang')))
-                ->isEqualTo(3);
+                ->isEqualTo(4);
 
         $this
             ->integer(count($obj->getWebsitesByDataType($sites, 'raw')))
