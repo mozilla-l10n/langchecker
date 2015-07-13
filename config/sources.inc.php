@@ -943,7 +943,7 @@ $langfiles_subsets = [
         'mozorg/about/leadership.lang'          =>
             [
                 'cs', 'de', 'dsb', 'hsb', 'it', 'ko', 'pt-BR',
-                'sl', 'sv-SE',
+                'ro', 'sl', 'sv-SE',
             ],
         'mozorg/about/manifesto.lang'           =>
             [
