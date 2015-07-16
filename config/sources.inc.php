@@ -480,12 +480,19 @@ $android_locales = [
 $firefox_os = [
     'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca' , 'cs',
     'de', 'ee', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
-    'et', 'ff', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
+    'ff', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
     'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mk', 'my', 'nl',
     'pl', 'pt-BR', 'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE',
     'sw', 'ta', 'tl', 'tn', 'wo', 'xh', 'yo', 'zh-CN',
     'zh-TW', 'zu',
 ];
+
+/* We have some extra locales on some pages, but they're not shipping and we
+ * don't want to ask them to translate 600 strings.
+ */
+$firefox_os_consumer = array_merge($firefox_os, ['et']);
+$firefox_os_legal = array_merge($firefox_os, ['et']);
+$firefox_os_tv = array_merge($firefox_os, ['et']);
 
 $firefox_updater_locales = [
     'ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', 'id', 'it', 'ja',
@@ -834,8 +841,8 @@ $langfiles_subsets = [
             ],
         'firefox/os/devices.lang'                => $firefox_os,
         'firefox/os/faq.lang'                    => $firefox_os,
-        'firefox/os/index-new.lang'              => $firefox_os,
-        'firefox/os/tv.lang'                     => $firefox_os,
+        'firefox/os/index-new.lang'              => $firefox_os_consumer,
+        'firefox/os/tv.lang'                     => $firefox_os_tv,
         'firefox/partners/index.lang'            => $firefox_os,
         'firefox/pocket.lang'                    =>
             [
@@ -901,7 +908,7 @@ $langfiles_subsets = [
                 'cs', 'de', 'es-ES', 'fr', 'gl', 'hu', 'id', 'it',
                 'nl', 'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW',
             ],
-        'legal/index.lang'                      => $firefox_os,
+        'legal/index.lang'                      => $firefox_os_legal,
         'lightbeam/lightbeam.lang'              =>
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'es-AR',
