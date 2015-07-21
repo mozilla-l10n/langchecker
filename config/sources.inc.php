@@ -11,7 +11,7 @@ $public_repo8  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/';
 $public_repo9  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/';
 $public_repo10 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/';
 $public_repo11 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxtiles/';
-$public_repo12 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/googleplay/';
+$public_repo12 = 'https://github.com/mozilla-l10n/appstores/tree/master/';
 
 // This is to avoid a warning in shell mode
 if (! isset($_SERVER['SERVER_NAME'])) {
