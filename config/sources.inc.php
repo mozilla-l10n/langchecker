@@ -30,10 +30,11 @@ if (is_file(__DIR__ . '/adi.inc.php')) {
 
 $locamotion_locales = [
     'ach', 'af', 'bm', 'br', 'ca', 'cak', 'cy', 'dsb', 'ee',
-    'en-ZA', 'es-MX', 'ff', 'fi', 'ga-IE', 'gd', 'ha', 'hi-IN',
-    'hr', 'hsb', 'ig', 'km', 'kok', 'ks', 'ln', 'lt', 'lv', 'ms',
-    'my', 'nn-NO', 'oc', 'pt-PT', 'sat', 'si', 'son', 'sw', 'ta',
-    'tl', 'tn', 'tsz', 'ur', 'uz', 'vi', 'wo', 'xh', 'yo', 'zu',
+    'en-ZA', 'es-MX', 'ff', 'fi', 'ga-IE', 'gd', 'ha',
+    'hi-IN', 'hr', 'hsb', 'ig', 'km', 'kok', 'ks', 'ln',
+    'lt', 'lv', 'mg', 'ms', 'my', 'nn-NO', 'oc', 'pt-PT',
+    'sat', 'si', 'son', 'sw', 'ta', 'tl', 'tn', 'tsz', 'ur',
+    'uz', 'vi', 'wo', 'xh', 'yo', 'zu',
 ];
 
 /*
@@ -493,7 +494,7 @@ $firefox_os = [
     'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca' , 'cs',
     'de', 'ee', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
     'ff', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
-    'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mk', 'my', 'nl',
+    'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mg', 'mk', 'my', 'nl',
     'pl', 'pt-BR', 'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE',
     'sw', 'ta', 'tl', 'tn', 'wo', 'xh', 'yo', 'zh-CN',
     'zh-TW', 'zu',
@@ -546,7 +547,7 @@ $marketing = [
 $marketplacebadge_locales = [
     'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de',
     'ee', 'el', 'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr',
-    'hu', 'ig', 'it', 'ja', 'ln', 'my', 'nl', 'pl', 'pt-BR',
+    'hu', 'ig', 'it', 'ja', 'ln', 'mg', 'my', 'nl', 'pl', 'pt-BR',
     'ro', 'ru', 'sk', 'son', 'sr', 'sr-Latn', 'sv-SE', 'sw',
     'ta', 'tl', 'tn', 'tr', 'wo', 'xh', 'yo', 'zu',
 ];
@@ -565,7 +566,7 @@ $privacy_tour_locales = [
 $slogans_locales = [
     'af', 'ar', 'bg', 'bm', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
     'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
-    'ja', 'ko', 'ln', 'my', 'pl', 'pt-BR', 'ro', 'son', 'sr',
+    'ja', 'ko', 'ln', 'mg', 'my', 'pl', 'pt-BR', 'ro', 'son', 'sr',
     'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tn', 'wo', 'xh',
     'yo', 'zh-CN', 'zh-TW', 'zu',
 ];

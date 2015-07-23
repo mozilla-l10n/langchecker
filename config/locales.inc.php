@@ -10,7 +10,7 @@ $mozilla = [
     'gl', 'gu-IN', 'ha', 'he', 'hi-IN', 'hr', 'hsb', 'hu',
     'hy-AM', 'id', 'ig', 'is', 'it', 'ja', 'ka', 'kk', 'km',
     'kn', 'ko', 'kok', 'ks', 'lij', 'ln', 'lt', 'lv', 'mai',
-    'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'nn-NO',
+    'mg', 'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'nn-NO',
     'oc', 'or', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro',
     'ru', 'sat', 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sr-Latn',
     'sv-SE', 'sw', 'ta', 'te', 'th', 'tl', 'tn', 'tr', 'tsz', 'uk',
@@ -25,7 +25,7 @@ $mozillaorg = array_diff($mozilla, ['en-ZA', 'es', 'sr-Latn']);
 
 // List of locales only working on Firefox OS
 $fxos_locales = [
-    'bm', 'ee', 'es', 'ha', 'ig', 'ln', 'sr-Latn',
+    'bm', 'ee', 'es', 'ha', 'ig', 'ln', 'mg', 'sr-Latn',
     'sw', 'tl', 'tn', 'wo', 'yo',
 ];
 
