@@ -503,7 +503,7 @@ $firefox_os = [
 /* We have some extra locales on some pages, but they're not shipping and we
  * don't want to ask them to translate 600 strings.
  */
-$firefox_os_consumer = array_merge($firefox_os, ['et']);
+$firefox_os_consumer = array_merge($firefox_os, ['et', 'uk']);
 $firefox_os_legal = array_merge($firefox_os, ['et']);
 $firefox_os_tv = array_merge($firefox_os, ['et']);
 
