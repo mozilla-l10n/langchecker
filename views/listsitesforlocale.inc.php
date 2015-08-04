@@ -172,6 +172,14 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
                                "     Example: </p><blockquote>;Plugins<br/>Plugins {ok}</blockquote>\n" .
                                "  </div>\n";
             }
+
+            if (LangManager::countErrors($locale_analysis['errors'], 'python')) {
+                $todo_files .= "  <div class='tip'>\n" .
+                               "    <p><strong>Tip:</strong> This file contains variables that can use the following formats:  \n" .
+                               "    </p><blockquote><strong>%(variable)s</strong>, <strong>%s</strong>, or <strong>%%</strong> (“escaped” percentage sign).</blockquote>\n" .
+                               "    <p>Make sure to keep these variables unchanged: don’t translate the text between brackets, or remove the “s” after the closing bracket.</p>\n" .
+                               "  </div>\n";
+            }
         }
     }
 

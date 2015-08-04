@@ -138,6 +138,26 @@ class Utils extends atoum\test
                 ->isEqualTo($c);
     }
 
+    public function getPythonVariablesDP()
+    {
+        return [
+            ['test string', []],
+            ['test %(var)s', ['%(var)s']],
+            ['test %(var)s, %% and %s', ['%(var)s', '%%', '%s']],
+        ];
+    }
+
+    /**
+     * @dataProvider getPythonVariablesDP
+     */
+    public function testGetPythonVariables($a, $b)
+    {
+        $obj = new _Utils();
+        $this
+            ->array($obj->getPythonVariables($a))
+                ->isEqualTo($b);
+    }
+
     public function highlightPythonVarDP()
     {
         return [
