@@ -124,18 +124,32 @@ class Utils
     }
 
     /**
+     * Get Python variables from a string. Checking for
+     * %(var)s, %s, and %% ('escaped' percentage sign)
+     *
+     * @param array $origin Original string
+     *
+     * @return array Python variables
+     */
+    public static function getPythonVariables($origin)
+    {
+        $regex = '#%(\([a-z0-9._-]+\)s|[s%])#';
+        preg_match_all($regex, $origin, $matches);
+
+        return $matches[0];
+    }
+
+    /**
      * Highlight Python variables in string
      *
      * @param array $origin Original string
      *
-     * @return string String withon Python variables marked with <em>
+     * @return string String with Python variables marked with <em>
      */
     public static function highlightPythonVar($origin)
     {
         $origin = htmlspecialchars($origin);
-        $regex = '#%(\([a-z0-9._-]+\)s|[s%])#';
-        preg_match_all($regex, $origin, $matches);
-        foreach ($matches[0] as $python_var) {
+        foreach (self::getPythonVariables($origin) as $python_var) {
             $origin = str_replace($python_var, "<em>${python_var}</em>", $origin);
         }
 

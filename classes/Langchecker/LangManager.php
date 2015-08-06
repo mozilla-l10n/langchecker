@@ -48,25 +48,24 @@ class LangManager
     {
         /* Test if all Python variables are present, analyzing both
          * format %(var)s or %s, or 'escaped' percentage sign (%%) */
-        $regex = '#%(\([a-z0-9._-]+\)s|[s%])#';
-        preg_match_all($regex, $reference, $matches_reference);
-        preg_match_all($regex, $translation, $matches_locale);
+        $matches_reference = Utils::getPythonVariables($reference);
+        $matches_locale = Utils::getPythonVariables($translation);
 
-        if ($matches_reference[0] != $matches_locale[0]) {
+        if ($matches_reference != $matches_locale) {
             /* Locale and reference have different variables. Count
              * instances of each variable and compare them. */
-            $count_occurences = function ($value, $array) {
-                // Count occurences of $value in $array
+            $count_occurrences = function ($value, $array) {
+                // Count occurrences of $value in $array
                 $count_values = array_count_values($array);
-                $occurences = isset($count_values[$value]) ?
+                $occurrences = isset($count_values[$value]) ?
                               $count_values[$value] :
                               0;
 
-                return $occurences;
+                return $occurrences;
             };
 
-            foreach ($matches_reference[0] as $python_var) {
-                if ($count_occurences($python_var, $matches_locale[0]) != $count_occurences($python_var, $matches_reference[0])) {
+            foreach ($matches_reference as $python_var) {
+                if ($count_occurrences($python_var, $matches_locale) != $count_occurrences($python_var, $matches_reference)) {
                     $errors[$reference] = [
                         'text' => $translation,
                         'var'  => $python_var,
@@ -75,8 +74,8 @@ class LangManager
             }
 
             // Check if locale has extra variables
-            foreach ($matches_locale[0] as $python_var) {
-                if (! in_array($python_var, $matches_reference[0])) {
+            foreach ($matches_locale as $python_var) {
+                if (! in_array($python_var, $matches_reference)) {
                     $errors[$reference] = [
                         'text' => $translation,
                         'var'  => $python_var,
