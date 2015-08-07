@@ -990,7 +990,7 @@ $langfiles_subsets = [
         'privacy/privacy-day.lang'              =>
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fr', 'fy-NL', 'hsb', 'id', 'it',
+                'es-ES', 'es-MX', 'fr', 'fy-NL', 'hsb', 'id', 'it', 'ja',
                 'ko', 'lt', 'nl', 'pt-BR', 'ro', 'ru', 'son', 'sq',
                 'sv-SE', 'uk', 'zh-TW',
             ],
