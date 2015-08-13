@@ -275,6 +275,7 @@ $snippets_lang = [
     'aug2015_b.lang',
     'aug2015_c.lang',
     'aug2015_win10.lang',
+    'sep2015.lang',
 ];
 $lang_flags['snippets'] = [
     'may2015_a.lang'     => [ 'critical' => ['all'] ],
@@ -291,6 +292,7 @@ $lang_flags['snippets'] = [
     'aug2015_b.lang'     => [ 'critical' => ['all'] ],
     'aug2015_c.lang'     => [ 'critical' => ['all'] ],
     'aug2015_win10.lang' => [ 'critical' => ['all'] ],
+    'sep2015.lang'       => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -319,12 +321,14 @@ $firefox_tiles_lang = [
     'tiles.lang',
     'tiles_jul2015.lang',
     'tiles_aug2015.lang',
+    'tiles_sep2015.lang',
 ];
 $lang_flags['firefox-tiles'] = [
     'careers.lang'       => [ 'critical' => ['de', 'fr'] ],
     'tiles.lang'         => [ 'critical' => ['all'] ],
     'tiles_jul2015.lang' => [ 'critical' => ['all'] ],
     'tiles_aug2015.lang' => [ 'critical' => ['all'] ],
+    'tiles_sep2015.lang' => [ 'critical' => ['all'] ],
 ];
 
 $google_play_lang = ['description_page.lang'];
@@ -463,10 +467,12 @@ $deadline = [
     'mozorg/products.lang'                   => '2013-12-31',
     'newsletter/ios.lang'                    => '2015-03-12',
     'newsletter.lang'                        => '2015-03-02',
+    'sep2015.lang'                           => '2015-09-10',
     'spring2015.lang'                        => '2015-05-24',
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
     'tiles_aug2015.lang'                     => '2015-08-07',
     'tiles_jul2015.lang'                     => '2015-07-13',
+    'tiles_sep2015.lang'                     => '2015-09-10',
     'thunderbird/start/release.lang'         => '2015-01-31',
 ];
 
@@ -1077,6 +1083,7 @@ $langfiles_subsets = [
         'aug2015_b.lang'     => ['es', 'pt-BR'],
         'aug2015_c.lang'     => ['el', 'id', 'pl'],
         'aug2015_win10.lang' => ['de', 'es', 'fr', 'hu', 'it', 'ja', 'pl', 'pt-BR', 'ru'],
+        'sep2015.lang'       => ['de', 'es', 'fr', 'pt-BR', 'ru'],
     ],
 
     'add-ons' => [
@@ -1123,5 +1130,6 @@ $langfiles_subsets = [
         'tiles.lang'                      => $firefox_locales,
         'tiles_jul2015.lang'              => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'tiles_aug2015.lang'              => ['de', 'es', 'fr', 'hu', 'it', 'ja', 'pl', 'pt-BR', 'ru'],
+        'tiles_sep2015.lang'              => ['de', 'es', 'fr', 'pt-BR', 'ru'],
     ],
 ];
