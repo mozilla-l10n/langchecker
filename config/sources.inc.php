@@ -219,6 +219,15 @@ $lang_flags['start.mozilla.org'] = [
     'fx36start.lang'                          => [ 'critical' => ['all'] ],
 ];
 
+$surveys_lang = [
+    'survey1.lang',
+    'survey2.lang',
+    'survey3.lang',
+    'survey4.lang',
+    'survey5.lang',
+    'getinvolved_march2014.lang',
+];
+
 $firefoxhealthreport_lang = ['fhr.lang'];
 $lang_flags['about:healthreport'] = [
     'fhr.lang' => [ 'critical' => ['all'] ],
@@ -661,11 +670,8 @@ $sites =
         $repo3,
         '',
         $surveys,
-        [
-            'survey1.lang', 'survey2.lang', 'survey3.lang', 'survey4.lang',
-            'survey5.lang', 'getinvolved_march2014.lang',
-        ],
-        'en-GB', // source locale
+        $surveys_lang,
+        'en-US', // source locale
         $public_repo3,
         [],
         'lang',
