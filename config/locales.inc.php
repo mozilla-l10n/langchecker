@@ -1,6 +1,9 @@
 <?php
 
-// $mozilla is the list of all locales supported on Langchecker
+/* $mozilla is the list of all locales supported on Langchecker.
+ * Don't forget to update other relevant arrays in this file when adding
+ * new locales.
+ */
 $mozilla = [
     'ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg',
     'bm',  'bn-BD', 'bn-IN', 'br', 'brx', 'bs', 'ca', 'cak', 'cs',
@@ -44,3 +47,20 @@ $firefox_locales = array_diff(
 
 // List of locales with active newsletter
 $newsletter_locales = ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'];
+
+/* List of Mozilla's locales supported by SurveyGizmo.
+ * Ref. http://help.surveygizmo.com/help/article/link/create-a-translated-survey#available-languages
+ */
+$surveygizmo = [
+    'af', 'an', 'ar', 'as', 'az', 'be', 'bg', 'bm', 'bn-IN',
+    'br', 'bs', 'ca', 'cs', 'cy', 'da', 'de', 'ee', 'el',
+    'en-GB', 'eo', 'es-ES', 'es-MX', 'et', 'eu', 'fa', 'ff',
+    'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN', 'ha',
+    'he', 'hi-IN', 'hr', 'hu', 'hy-AM', 'id', 'ig', 'is', 'it',
+    'ja', 'ka', 'kk', 'km', 'kn', 'ko', 'ks', 'ln', 'lt',
+    'lv', 'mg', 'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl',
+    'nn-NO', 'oc', 'or', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm',
+    'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'sw',
+    'ta', 'te', 'th', 'tl', 'tn', 'tr', 'uk', 'ur', 'uz',
+    'vi', 'wo', 'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
+];

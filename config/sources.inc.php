@@ -220,12 +220,13 @@ $lang_flags['start.mozilla.org'] = [
 ];
 
 $surveys_lang = [
+    'getinvolved_march2014.lang',
+    'survey_hello_fx42.lang',
     'survey1.lang',
     'survey2.lang',
     'survey3.lang',
     'survey4.lang',
     'survey5.lang',
-    'getinvolved_march2014.lang',
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang'];
@@ -478,6 +479,7 @@ $deadline = [
     'newsletter.lang'                        => '2015-03-02',
     'sep2015.lang'                           => '2015-09-10',
     'spring2015.lang'                        => '2015-05-24',
+    'survey_hello_fx42.lang'                 => '2015-09-11',
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
     'tiles_aug2015.lang'                     => '2015-08-07',
     'tiles_jul2015.lang'                     => '2015-07-13',
@@ -1030,6 +1032,7 @@ $langfiles_subsets = [
         'survey4.lang'               => ['de', 'es-AR', 'es-ES', 'es-MX', 'fr', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'tr', 'vi', 'zh-CN'],
         'survey5.lang'               => ['de', 'fr', 'pl'],
         'getinvolved_march2014.lang' => ['es-ES', 'id', 'pt-BR', 'zh-CN'],
+        'survey_hello_fx42.lang'     => array_intersect($firefox_locales, $surveygizmo),
     ],
 
     'marketing' => ['julyevent.lang' => ['de', 'es-ES', 'fr', 'it', 'id', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW']],
