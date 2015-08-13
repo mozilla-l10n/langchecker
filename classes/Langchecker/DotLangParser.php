@@ -210,7 +210,7 @@ class DotLangParser
                 // I have a reference string
                 $reference = Utils::leftStrip($current_line, ';');
                 $j = $i - 1;
-                while ($j > 0) {
+                while ($j >= 0) {
                     // Stop if I find a line not starting with #
                     if (! Utils::startsWith($file_content[$j], '#')) {
                         break;

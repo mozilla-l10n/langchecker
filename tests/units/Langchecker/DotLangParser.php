@@ -150,6 +150,21 @@ class DotLangParser extends atoum\test
         $this
             ->integer($dotlang_data['max_lengths']['Save file wrong'])
                 ->isEqualTo(0);
+
+        // Test a second file only with comments
+        $test_file = TEST_FILES . 'dotlang/test_comments.lang';
+        $dotlang_data = $obj->parseFile($test_file, true);
+        $this
+            ->integer(count($dotlang_data['comments']))
+                ->isEqualTo(2);
+
+        $this
+            ->integer(count($dotlang_data['comments']['Mail']))
+                ->isEqualTo(2);
+
+        $this
+            ->string($dotlang_data['comments']['Mail'][1])
+                ->isEqualTo('Second comment');
     }
 
     public function testgetMetaTags()
