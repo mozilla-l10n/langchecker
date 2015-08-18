@@ -1,0 +1,48 @@
+#!/usr/bin/env php
+<?php
+namespace Langchecker;
+
+$command_help = "mark_not_active - Remove the ## active ## tag from files on www.mozilla.org\n" .
+                "Usage: mark_not_active [filename]\n\n" .
+                "Example: mark_not_active firefox/new.lang\n";
+$min_parameters = 1;
+$missing_parameter = "This command needs more parameters, please check mark_not_active --help.\n";
+
+require_once __DIR__ . '/../inc/cli_init.php';
+
+// Only mozilla.org
+$current_website = $sites[0];
+$current_filename = Utils::getCliParam(1, $argv, '');
+
+// Read reference data only once
+$reference_locale = Project::getReferenceLocale($current_website);
+$reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+$supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+
+foreach ($supported_locales as $current_locale) {
+    if ($current_locale == $reference_locale) {
+        // Ignore reference language
+        continue;
+    }
+
+    $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
+    if (! file_exists($locale_filename)) {
+        // If the .lang file does not exist, just skip the locale for this file
+        continue;
+    }
+
+    $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
+    if ($locale_data['activated']) {
+        // File is activated, remove status
+        $locale_data['activated'] = false;
+
+        $file_content = file($locale_filename);
+        $eol = Utils::checkEOL($file_content[0]);
+
+        $content = LangManager::buildLangFile($reference_data, $locale_data, $current_locale, $eol);
+        Utils::fileForceContent($locale_filename, $content);
+        Utils::logger("{$current_locale}/{$current_filename}: removed active tag.\n");
+    } else {
+        Utils::logger("{$current_locale}/{$current_filename}: file is not active.\n");
+    }
+}
