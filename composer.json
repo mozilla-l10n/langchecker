@@ -17,6 +17,7 @@
     "require": {
         "mozillal10n/bugzilla": "0.*",
         "mozillal10n/cache": "0.*",
+        "phpoffice/phpexcel": "1.8.*",
         "sepia/po-parser": "3.0.5"
     },
 

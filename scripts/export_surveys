@@ -1,0 +1,92 @@
+#!/usr/bin/env php
+<?php
+namespace Langchecker;
+
+/* This script is used to export surveys in Excel files that can be imported
+ * in SurveyGizmo. Each locale will be exported in a single .xls file, only
+ * completely localized files are exported.
+ */
+
+$command_help = "export_survey - Export survey in .xls format for SurveyGizmo\n" .
+                "Usage: export_survey [filename] [export_path]\n\n" .
+                "Example: export_survey hello_survey.lang ~/cvs\n";
+$min_parameters = 2;
+$missing_parameter = "This command needs more parameters, please check export_survey --help.\n";
+
+require_once __DIR__ . '/../inc/cli_init.php';
+
+// Only surveys
+$current_website = $sites[2];
+$current_filename = Utils::getCliParam(1, $argv, '');
+$export_path = Utils::getCliParam(2, $argv, '');
+
+if (! file_exists($export_path)) {
+    Utils::logger("The specified export path {$export_path} does not exist.", 'quit');
+}
+$export_path = realpath($export_path);
+
+if (! in_array($current_filename, Project::getWebsiteFiles($current_website))) {
+    // File is not supported
+    Utils::logger("File {$current_filename} is not supported.", 'quit');
+}
+
+// Load reference strings
+$reference_locale = Project::getReferenceLocale($current_website);
+$reference_filename = Project::getLocalFilePath($current_website, $reference_locale, $current_filename);
+if (! file_exists($reference_filename)) {
+    Utils::logger("Reference English file is missing ({$reference_filename}).", 'quit');
+}
+Utils::logger("Reference English file: {$reference_filename}");
+$reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+
+// Get all supported locales for this file
+$locale_list = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+
+$result = '';
+foreach ($locale_list as $current_locale) {
+    // Check if the file is completely localized
+    $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
+    $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
+
+    $todo = count($locale_analysis['Identical']) +
+            count($locale_analysis['Missing']) +
+            LangManager::countErrors($locale_analysis['errors']);
+    if ($todo == 0) {
+        // Load existing strings for this locale
+        $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
+
+        // Create new PHPExcel object
+        $objPHPExcel = new \PHPExcel();
+        $objPHPExcel->getActiveSheet()->setCellValue('A1', 'Key');
+        $objPHPExcel->getActiveSheet()->setCellValue('B1', 'Default Text');
+        $objPHPExcel->getActiveSheet()->setCellValue('C1', 'Translation');
+
+        // Export strings in export_path/current_locale.xls
+        $output_filename = "{$export_path}/{$current_locale}.xls";
+
+        $current_line = 2;
+        foreach ($reference_data['strings'] as $string_id => $string_value) {
+            // Export an empty cell if the string is not localized
+            if (LangManager::isStringLocalized($string_id, $locale_data, $reference_data)) {
+                $translation = Utils::cleanString($locale_data['strings'][$string_id]);
+            } else {
+                $translation = '';
+            }
+
+            if (! isset($reference_data['comments'][$string_id])) {
+                Utils::logger("String «{$string_id}» is missing a comment. Please fix the files to proceed.", 'quit');
+            }
+
+            $objPHPExcel->getActiveSheet()->setCellValue("A{$current_line}", end($reference_data['comments'][$string_id]));
+            $objPHPExcel->getActiveSheet()->setCellValue("B{$current_line}", $string_value);
+            $objPHPExcel->getActiveSheet()->setCellValue("C{$current_line}", $translation);
+            $current_line++;
+        }
+
+        $objWriter = new \PHPExcel_Writer_Excel2007($objPHPExcel);
+        $objWriter->save($output_filename);
+        $result .= "{$current_locale}: {$current_filename}\n";
+    }
+}
+
+Utils::logger($result);
