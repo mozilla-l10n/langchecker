@@ -128,6 +128,7 @@ $mozillaorg_lang = [
     'privacy/privacy-day.lang',
     'snippets.lang',
     'tabzilla/tabzilla.lang',
+    'thunderbird/index.lang',
     'thunderbird/start/release.lang',
     'upgradedialog.lang',
     'upgradepromos.lang',
@@ -1009,6 +1010,7 @@ $langfiles_subsets = [
         'newsletter.lang'                       => $mozillaorg,
         'snippets.lang'                         => $mozillaorg,
         'tabzilla/tabzilla.lang'                => $mozillaorg,
+        'thunderbird/index.lang'                => $thunderbird_release,
         'thunderbird/start/release.lang'        => $thunderbird_release,
         'upgradedialog.lang'                    => $startpage36,
         'upgradepromos.lang'                    =>
