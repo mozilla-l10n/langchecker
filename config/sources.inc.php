@@ -608,11 +608,6 @@ $startpage36 = [
     'vi', 'zh-CN', 'zh-TW',
 ];
 
-$surveys = [
-    'de', 'es-AR', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'ko', 'pl',
-    'pt-BR', 'ru', 'tr', 'vi', 'zh-CN', 'zh-TW',
-];
-
 $tiles_locales = array_merge(['es'], $firefox_locales);
 
 // Thundebird locales on Release channel
@@ -672,7 +667,7 @@ $sites =
         'surveys',
         $repo3,
         '',
-        $surveys,
+        $mozillaorg,
         $surveys_lang,
         'en-US', // source locale
         $public_repo3,
