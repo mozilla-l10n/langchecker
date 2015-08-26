@@ -125,6 +125,7 @@ $mozillaorg_lang = [
     'newsletter/ios.lang',
     'newsletter.lang',
     'privacy/index.lang',
+    'privacy/principles.lang',
     'privacy/privacy-day.lang',
     'snippets.lang',
     'tabzilla/tabzilla.lang',
@@ -461,6 +462,7 @@ $deadline = [
     'firefox/independent.lang'               => '2014-11-09',
     'firefox/installer-help.lang'            => '2013-12-31',
     'firefox/new.lang'                       => '2015-03-26',
+    'firefox/os/faq.lang'                    => '2015-09-15',
     'firefox/os/index-new.lang'              => '2015-04-09',
     'firefox/partners/index.lang'            => '2015-03-01',
     'firefox/pocket.lang'                    => '2015-06-01',
@@ -484,6 +486,7 @@ $deadline = [
     'mozorg/products.lang'                   => '2013-12-31',
     'newsletter/ios.lang'                    => '2015-03-12',
     'newsletter.lang'                        => '2015-03-02',
+    'privacy/principles.lang'                => '2015-09-15',
     'sep2015.lang'                           => '2015-09-10',
     'spring2015.lang'                        => '2015-05-24',
     'survey_hello_fx42.lang'                 => '2015-09-11',
@@ -1003,6 +1006,7 @@ $langfiles_subsets = [
         'mwc2014_promos.lang'                   => $mwc_locales,
         'newsletter/ios.lang'                   => $newsletter_locales,
         'privacy/index.lang'                    => $firefox_os,
+        'privacy/principles.lang'               => $mozillaorg,
         'privacy/privacy-day.lang'              =>
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
