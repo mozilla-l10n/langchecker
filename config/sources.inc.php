@@ -290,6 +290,7 @@ $snippets_lang = [
     'aug2015_c.lang',
     'aug2015_win10.lang',
     'sep2015.lang',
+    'sep2015_ios.lang',
 ];
 $lang_flags['snippets'] = [
     'may2015_a.lang'     => [ 'critical' => ['all'] ],
@@ -307,6 +308,7 @@ $lang_flags['snippets'] = [
     'aug2015_c.lang'     => [ 'critical' => ['all'] ],
     'aug2015_win10.lang' => [ 'critical' => ['all'] ],
     'sep2015.lang'       => [ 'critical' => ['all'] ],
+    'sep2015_ios.lang'   => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -490,6 +492,7 @@ $deadline = [
     'newsletter.lang'                        => '2015-03-02',
     'privacy/principles.lang'                => '2015-09-15',
     'sep2015.lang'                           => '2015-09-10',
+    'sep2015_ios.lang'                       => '2015-09-24',
     'spring2015.lang'                        => '2015-05-24',
     'survey_hello_fx42.lang'                 => '2015-09-11',
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
@@ -1108,6 +1111,7 @@ $langfiles_subsets = [
         'aug2015_c.lang'     => ['el', 'id', 'pl'],
         'aug2015_win10.lang' => ['de', 'es', 'fr', 'hu', 'it', 'ja', 'pl', 'pt-BR', 'ru'],
         'sep2015.lang'       => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'sep2015_ios.lang'   => ['de'],
     ],
 
     'add-ons' => [
