@@ -161,6 +161,16 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
                     }
                     $todo_files .= "    </ul>\n";
                 }
+
+                if (LangManager::countErrors($locale_analysis['errors'], 'ignoredstrings')) {
+                    $todo_files .= "\n    <h3>The following strings will be ignored:</h3>\n";
+                    $todo_files .= "    <ul>\n";
+                    foreach ($locale_analysis['errors']['ignoredstrings'] as $stringid) {
+                        $todo_files .= '<li>' . htmlspecialchars($stringid) . "</li>\n";
+                    }
+                    $todo_files .= "    </ul>\n";
+                    $todo_files .= "<p>This is usually caused by tools trying to store multiline strings (not supported in .lang files).</p>\n";
+                }
             }
             $todo_files .= "  </div>\n";
 

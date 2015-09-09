@@ -25,6 +25,8 @@ class DotLangParser extends atoum\test
                     'Navigateur',
                     ';Mail',
                     'Courrier',
+                    '2nd line',
+                    '3rd line',
                     '# another comment',
                     ';Hello',
                     'Bonjour',
@@ -97,6 +99,11 @@ class DotLangParser extends atoum\test
             ->boolean(isset($dotlang_data['duplicates']))
                 ->isFalse();
 
+        // Check multiline strings errors
+        $this
+            ->array($dotlang_data['errors']['ignoredstrings'])
+                ->isEqualTo(['2nd line', '3rd line']);
+
         // Check translation of one string
         $this
             ->string($dotlang_data['strings']['Hello'])
@@ -130,6 +137,11 @@ class DotLangParser extends atoum\test
         $this
             ->boolean(in_array('Hello', $dotlang_data['duplicates']))
                 ->isTrue();
+
+        // Check multiline strings errors
+        $this
+            ->array($dotlang_data['errors']['ignoredstrings'])
+                ->isEqualTo(['2nd line', '3rd line']);
 
         // Check bound tags
         $this

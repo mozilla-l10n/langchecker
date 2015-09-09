@@ -216,6 +216,7 @@ tr.tabletotals th {
 .file_container {
     background-color: #fff;
     padding: 5px;
+    min-height: 140px;
 }
 
 .file_container .filename {

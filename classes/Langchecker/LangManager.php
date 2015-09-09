@@ -131,8 +131,9 @@ class LangManager
             'Missing'    => [],
             'Obsolete'   => [],
             'errors'     => [
-                'length' => [],
-                'python' => [],
+                'ignoredstrings' => [],
+                'length'         => [],
+                'python'         => [],
             ],
             'tags'       => [],
         ];
@@ -166,6 +167,9 @@ class LangManager
                                 $analysis_data['errors']['length']
                             );
                         }
+
+                        // Copy ignored strings errors to data analysis
+                        $analysis_data['errors']['ignoredstrings'] = $locale_data['errors']['ignoredstrings'];
                     }
                 } elseif ($translation === '') {
                     // Store in missing strings
