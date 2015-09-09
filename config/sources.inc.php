@@ -852,7 +852,7 @@ $langfiles_subsets = [
                 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'fr',
                 'fy-NL', 'hsb', 'it', 'ja', 'ko', 'lt', 'nl',
                 'pt-BR', 'ro', 'sat', 'sk', 'sl', 'son', 'sq',
-                'sv-SE', 'uk', 'uz', 'zh-TW',
+                'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
         'firefox/family/index.lang'             => $firefox_locales,
         'firefox/geolocation.lang'              =>
@@ -984,7 +984,7 @@ $langfiles_subsets = [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'es-MX',
                 'eu', 'fr', 'gl', 'hsb', 'it', 'km', 'ko', 'lt',
                 'pa-IN', 'pt-BR', 'ro', 'sat', 'sk', 'son', 'sq',
-                'sv-SE', 'uk', 'uz', 'zh-TW',
+                'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/history.lang'             =>
             [
@@ -998,7 +998,7 @@ $langfiles_subsets = [
         'mozorg/about/leadership.lang'          =>
             [
                 'cs', 'de', 'dsb', 'en-GB', 'hsb', 'it', 'ko', 'pt-BR',
-                'ro', 'sl', 'sv-SE',
+                'ro', 'sl', 'sv-SE', 'zh-CN',
             ],
         'mozorg/about/manifesto.lang'           =>
             [
@@ -1026,7 +1026,7 @@ $langfiles_subsets = [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hsb', 'id', 'it', 'ja',
                 'ko', 'lt', 'nl', 'pt-BR', 'ro', 'ru', 'son', 'sq',
-                'sv-SE', 'uk', 'zh-TW',
+                'sv-SE', 'uk', 'zh-CN', 'zh-TW',
             ],
         'newsletter.lang'                       => $mozillaorg,
         'snippets.lang'                         => $mozillaorg,
