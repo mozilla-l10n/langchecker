@@ -86,19 +86,23 @@ class LangManager extends atoum\test
 
         $this
             ->integer($obj->countErrors($analysis_data['errors'], 'all'))
-                ->isEqualTo(6);
+                ->isEqualTo(7);
 
         $this
             ->integer($obj->countErrors($analysis_data['errors']))
-                ->isEqualTo(6);
-
-        $this
-            ->integer($obj->countErrors($analysis_data['errors'], 'python'))
-                ->isEqualTo(5);
+                ->isEqualTo(7);
 
         $this
             ->integer($obj->countErrors($analysis_data['errors'], 'length'))
                 ->isEqualTo(1);
+
+        $this
+            ->integer($obj->countErrors($analysis_data['errors'], 'ignoredstrings'))
+                ->isEqualTo(1);
+
+        $this
+            ->integer($obj->countErrors($analysis_data['errors'], 'python'))
+                ->isEqualTo(5);
 
         $this
             ->integer($obj->countErrors($analysis_data['errors'], 'random'))

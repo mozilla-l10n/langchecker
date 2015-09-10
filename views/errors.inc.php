@@ -87,6 +87,20 @@ foreach ($mozilla as $current_locale) {
                         }
                         $locale_htmloutput .= "    </ul>\n";
                     }
+
+                    if (LangManager::countErrors($locale_analysis['errors'], 'ignoredstrings')) {
+                        if (! $website_with_errors) {
+                            $website_with_errors = true;
+                            $locale_htmloutput .= $opening_div;
+                        }
+                        $locale_htmloutput .= "\n    <h3>{$current_filename}</h3><p>The following strings will be ignored:</p>\n";
+                        $locale_htmloutput .= "    <ul>\n";
+                        foreach ($locale_analysis['errors']['ignoredstrings'] as $stringid) {
+                            $locale_htmloutput .= '<li>' . htmlspecialchars($stringid) . "</li>\n";
+                        }
+                        $locale_htmloutput .= "    </ul>\n";
+                        $locale_htmloutput .= "<p>This is usually caused by tools trying to store multiline strings (not supported in .lang files).</p>\n";
+                    }
                 }
 
                 // Check if the lang file is not in UTF-8 or US-ASCII
