@@ -131,9 +131,10 @@ class LangManager
             'Missing'    => [],
             'Obsolete'   => [],
             'errors'     => [
-                'python' => [],
                 'length' => [],
+                'python' => [],
             ],
+            'tags'       => [],
         ];
 
         foreach ($locale_data['strings'] as $reference => $translation) {
@@ -181,6 +182,11 @@ class LangManager
             if (! isset($locale_data['strings'][$reference])) {
                 $analysis_data['Missing'][] = $reference;
             }
+        }
+
+        // Copy tags if available
+        if (isset($locale_data['tags'])) {
+            $analysis_data['tags'] = $locale_data['tags'];
         }
 
         return $analysis_data;

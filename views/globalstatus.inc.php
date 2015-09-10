@@ -79,7 +79,6 @@ if ($website_data_source == 'lang') {
 
         // Read locale data
         $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
-        $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
 
         $todo = count($locale_analysis['Identical']) + count($locale_analysis['Missing']);
         $total = $todo + count($locale_analysis['Translated']);
@@ -107,8 +106,8 @@ if ($website_data_source == 'lang') {
         }
 
         // Tags
-        if (isset($locale_data['tags'])) {
-            $locale_tags = $locale_data['tags'];
+        if (isset($locale_analysis['tags'])) {
+            $locale_tags = $locale_analysis['tags'];
             sort($locale_tags);
             $json_data[$current_filename][$current_locale]['tags'] = $locale_tags;
             // Remove _promo from tags
