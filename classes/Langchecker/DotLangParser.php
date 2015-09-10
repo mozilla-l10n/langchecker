@@ -76,19 +76,17 @@ class DotLangParser
             return self::$parsed_files[$path];
         }
 
+        // Set up some basic data to avoid further checks later
+        $dotlang_data = [
+            'activated' => false,
+            'strings'   => [],
+            'errors'    => [
+                'ignoredstrings' => [],
+            ],
+        ];
+
         $file_content = self::getFile($path);
-
-        $dotlang_data = [];
-
-        // In case the file is missing we set an empty array for strings
-        $dotlang_data['strings'] = [];
-
-        // Make sure there's always an activation status to avoid controls later
-        $dotlang_data['activated'] = false;
-
-        // Create an empty array for ignored strings to avoid controls later
-        $dotlang_data['errors']['ignoredstrings'] = [];
-
+        // Stop if the file is empty
         if (! $file_content) {
             return $dotlang_data;
         }
@@ -96,37 +94,24 @@ class DotLangParser
         for ($i = 0, $lines = count($file_content); $i < $lines; $i++) {
             $current_line = $file_content[$i];
 
+            // Ignore comments and metadata if we're only interested in strings
             if (! self::$extract_metadata && Utils::startsWith($current_line, '#')) {
                 continue;
             }
 
-            /* First line may contain an activation status
-             * Tags are read with regexp "^## (\w+) ##", so trailing spaces can be ignored
+            /* First line may contain an activation status.
+             * In Bedrock tags are read with regexp "^## (\w+) ##", so
+             * trailing spaces can be safely ignored
              */
             if ($i == 0 && rtrim($current_line) == '## active ##') {
                 $dotlang_data['activated'] = true;
                 continue;
             }
 
-            if (self::$extract_metadata) {
-                // Get file description
-                if (empty($dotlang_data['strings']) // File description is always before strings
-                    && Utils::startsWith($current_line, '## NOTE:')) {
-                    $dotlang_data['filedescription'][] = trim(Utils::leftStrip($current_line, '## NOTE:'));
-                    continue;
-                }
-
-                // Get demo URL
-                if (! isset($dotlang_data['url'])
-                    && empty($dotlang_data['strings']) // URL is always before strings
-                    && Utils::startsWith($current_line, '## URL:')) {
-                    $dotlang_data['url'] = trim(Utils::leftStrip($current_line, '## URL:'));
-                    continue;
-                }
-            }
-
-            // Other tags like ## promo_news ##, but not meta data
-            if (empty($dotlang_data['strings']) // Other tags are  always before strings
+            /* Other tags like ## promo_news ##, but not meta data
+             * These tags are always before strings.
+             */
+            if (empty($dotlang_data['strings'])
                 && Utils::startsWith($current_line, '##')
                 && ! Utils::startsWith($current_line, self::getMetaTags())) {
                 $dotlang_data['tags'][] = trim(str_replace('##', '', $current_line));
@@ -173,7 +158,7 @@ class DotLangParser
             }
 
             if (trim($current_line) != '' && ! Utils::startsWith($current_line, '#')) {
-                // If I reach this point I have a stray line of text that won't be used
+                // If I reach this point I have a stray line of text that won't be used. Report an error
                 array_push($dotlang_data['errors']['ignoredstrings'], $current_line);
             }
         }
@@ -219,10 +204,27 @@ class DotLangParser
     private static function extractReferenceMetaData($file_content)
     {
         $dotlang_data = [];
+        $parsed_strings = false;
         for ($i = 0, $lines = count($file_content); $i < $lines; $i++) {
             $current_line = $file_content[$i];
+
+            if (! $parsed_strings) {
+                // Get file descriptions (always before strings)
+                if (Utils::startsWith($current_line, '## NOTE:')) {
+                    $dotlang_data['filedescription'][] = trim(Utils::leftStrip($current_line, '## NOTE:'));
+                    continue;
+                }
+
+                // Get demo URL (always before strings)
+                if (Utils::startsWith($current_line, '## URL:')) {
+                    $dotlang_data['url'] = trim(Utils::leftStrip($current_line, '## URL:'));
+                    continue;
+                }
+            }
+
             if (Utils::startsWith($current_line, ';')) {
                 // I have a reference string
+                $parsed_strings = true;
                 $reference = Utils::leftStrip($current_line, ';');
                 $j = $i - 1;
                 while ($j >= 0) {
