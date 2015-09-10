@@ -43,7 +43,6 @@ foreach ($mozilla as $current_locale) {
                 }
 
                 // Extract data from locale
-                $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
                 $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
 
                 // Check errors
@@ -109,8 +108,8 @@ foreach ($mozilla as $current_locale) {
                 }
 
                 // If locale has tags, display errors on unknown tags
-                if (isset($locale_data['tags'])) {
-                    $locale_file_tags = $locale_data['tags'];
+                if (isset($locale_analysis['tags'])) {
+                    $locale_file_tags = $locale_analysis['tags'];
                     if (isset($reference_data['tags'])) {
                         $extra_tags = array_diff($locale_file_tags, $reference_data['tags']);
                     } else {
