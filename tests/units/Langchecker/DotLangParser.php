@@ -79,16 +79,6 @@ class DotLangParser extends atoum\test
             ->boolean($dotlang_data['activated'])
                 ->isTrue();
 
-        // Check file description
-        $this
-            ->array($dotlang_data['filedescription'])
-                ->isEqualTo(['I am metadata']);
-
-        // Check file stage URL
-        $this
-            ->string($dotlang_data['url'])
-                ->isEqualTo('https://www-dev.allizom.org/about/history');
-
         // Check tags
         $this
             ->array($dotlang_data['tags'])
@@ -124,6 +114,16 @@ class DotLangParser extends atoum\test
          */
         $test_file = TEST_FILES . 'dotlang/toto.lang';
         $dotlang_data = $obj->parseFile($test_file, true);
+
+        // Check file description
+        $this
+            ->array($dotlang_data['filedescription'])
+                ->isEqualTo(['I am metadata']);
+
+        // Check file stage URL
+        $this
+            ->string($dotlang_data['url'])
+                ->isEqualTo('https://www-dev.allizom.org/about/history');
 
         // Check comments
         $this
