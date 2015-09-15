@@ -27,6 +27,13 @@ $reference_locale = Project::getReferenceLocale($current_website);
 $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
 $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+$results = [
+    'activated'  => [],
+    'active'     => [],
+    'errors'     => [],
+    'incomplete' => [],
+];
+
 foreach ($supported_locales as $current_locale) {
     if ($current_locale == $reference_locale) {
         // Ignore reference language
@@ -49,14 +56,32 @@ foreach ($supported_locales as $current_locale) {
             $eol = Utils::checkEOL($file_content[0]);
             $write_status = file_put_contents($locale_filename, "## active ##{$eol}" . implode($file_content));
             if ($write_status === false) {
-                print "{$current_locale}/{$current_filename}: there was an error writing the file.\n";
+                array_push($results['errors'], $current_locale);
             } else {
-                print "{$current_locale}/{$current_filename}: added active tag.\n";
+                array_push($results['activated'], $current_locale);
             }
         } else {
-            print "{$current_locale}/{$current_filename}: file already has the active tag.\n";
+            array_push($results['active'], $current_locale);
         }
     } else {
-        print "{$current_locale}/{$current_filename}: file is not ready.\n";
+        array_push($results['incomplete'], $current_locale);
     }
 }
+
+// Make sure there's something to display
+$results = array_map(
+    function ($element) {
+        if (count($element) == 0) {
+            $element = ['-'];
+        }
+
+        return $element;
+    },
+    $results
+);
+
+print "\nResults for {$current_filename}:";
+print "\n\nActivated: " . implode(', ', $results['activated']);
+print "\n\nAlready activated: " . implode(', ', $results['active']);
+print "\n\nIncomplete: " . implode(', ', $results['incomplete']);
+print "\n\nWrite errors: " . implode(', ', $results['errors']) . "\n";
