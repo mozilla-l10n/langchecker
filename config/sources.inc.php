@@ -293,6 +293,10 @@ $snippets_lang = [
     'aug2015_win10.lang',
     'sep2015.lang',
     'sep2015_ios.lang',
+    'oct2015_a.lang',
+    'oct2015_b.lang',
+    'oct2015_c.lang',
+    'oct2015_mofo.lang',
 ];
 $lang_flags['snippets'] = [
     'may2015_a.lang'     => [ 'critical' => ['all'] ],
@@ -311,6 +315,10 @@ $lang_flags['snippets'] = [
     'aug2015_win10.lang' => [ 'critical' => ['all'] ],
     'sep2015.lang'       => [ 'critical' => ['all'] ],
     'sep2015_ios.lang'   => [ 'critical' => ['all'] ],
+    'oct2015_a.lang'     => [ 'critical' => ['all'] ],
+    'oct2015_b.lang'     => [ 'critical' => ['all'] ],
+    'oct2015_c.lang'     => [ 'critical' => ['all'] ],
+    'oct2015_mofo.lang'  => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -340,6 +348,7 @@ $firefox_tiles_lang = [
     'tiles_jul2015.lang',
     'tiles_aug2015.lang',
     'tiles_sep2015.lang',
+    'tiles_oct2015.lang',
 ];
 $lang_flags['firefox-tiles'] = [
     'careers.lang'       => [ 'critical' => ['de', 'fr'] ],
@@ -347,6 +356,7 @@ $lang_flags['firefox-tiles'] = [
     'tiles_jul2015.lang' => [ 'critical' => ['all'] ],
     'tiles_aug2015.lang' => [ 'critical' => ['all'] ],
     'tiles_sep2015.lang' => [ 'critical' => ['all'] ],
+    'tiles_oct2015.lang' => [ 'critical' => ['all'] ],
 ];
 
 $google_play_lang = [
@@ -493,6 +503,10 @@ $deadline = [
     'mozorg/products.lang'                   => '2013-12-31',
     'newsletter/ios.lang'                    => '2015-03-12',
     'newsletter.lang'                        => '2015-03-02',
+    'oct2015_a.lang'                         => '2015-10-11',
+    'oct2015_b.lang'                         => '2015-10-11',
+    'oct2015_c.lang'                         => '2015-10-11',
+    'oct2015_mofo.lang'                      => '2015-10-11',
     'privacy/principles.lang'                => '2015-09-15',
     'sep2015.lang'                           => '2015-09-10',
     'sep2015_ios.lang'                       => '2015-09-24',
@@ -502,6 +516,7 @@ $deadline = [
     'tiles_aug2015.lang'                     => '2015-08-07',
     'tiles_jul2015.lang'                     => '2015-07-13',
     'tiles_sep2015.lang'                     => '2015-09-10',
+    'tiles_oct2015.lang'                     => '2015-10-11',
     'thunderbird/start/release.lang'         => '2015-01-31',
 ];
 
@@ -1116,6 +1131,10 @@ $langfiles_subsets = [
         'aug2015_win10.lang' => ['de', 'es', 'fr', 'hu', 'it', 'ja', 'pl', 'pt-BR', 'ru'],
         'sep2015.lang'       => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'sep2015_ios.lang'   => ['de'],
+        'oct2015_a.lang'     => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'oct2015_b.lang'     => ['hu', 'ro'],
+        'oct2015_c.lang'     => ['it', 'pl'],
+        'oct2015_mofo.lang'  => ['de'],
     ],
 
     'add-ons' => [
@@ -1164,5 +1183,6 @@ $langfiles_subsets = [
         'tiles_jul2015.lang'              => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'tiles_aug2015.lang'              => ['de', 'es', 'fr', 'hu', 'it', 'ja', 'pl', 'pt-BR', 'ru'],
         'tiles_sep2015.lang'              => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'tiles_oct2015.lang'              => ['de', 'es', 'fr', 'pt-BR', 'ru'],
     ],
 ];
