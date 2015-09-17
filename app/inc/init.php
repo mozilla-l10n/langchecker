@@ -4,22 +4,23 @@ namespace Langchecker;
 date_default_timezone_set('Europe/Paris');
 
 // Server shortcuts
-$approot   = __DIR__ . '/../';
-$libs      = $approot . 'libs/';
-$conf      = $approot . 'config/';
-$views     = $approot . 'views/';
-$templates = $approot . 'templates/';
+$root_folder      = __DIR__ . '/../../';
+$app_folder       = $root_folder . 'app/';
+$libs_folder      = $app_folder . 'libs/';
+$conf_folder      = $app_folder . 'config/';
+$views_folder     = $app_folder . 'views/';
+$templates_folder = $app_folder . 'templates/';
 
 // Autoloading of composer dependencies
-require_once $approot . 'vendor/autoload.php';
+require_once $root_folder . 'vendor/autoload.php';
 
 // App-wide variables
-require $conf . 'locales.inc.php';
-require $conf . 'sources.inc.php';
+require $conf_folder . 'locales.inc.php';
+require $conf_folder . 'sources.inc.php';
 
 // Override sources for functional tests both locally and on Travis
 if (getenv('TRAVIS') || getenv('AUTOMATED_TESTS')) {
-    require $approot . 'tests/testfiles/config/sources.php';
+    require $root_folder . 'tests/testfiles/config/sources.php';
 }
 
 // User provided variables
@@ -33,5 +34,12 @@ $website  = Utils::getQueryParam('website');       // Which website are we looki
 
 // Cache class
 define('CACHE_ENABLED', true);
-define('CACHE_PATH', __DIR__ . '/../cache/');
+define('CACHE_PATH', $root_folder . 'cache/');
 define('CACHE_TIME', 7200);
+
+// URL used to include web assets
+if (! isset($webroot_folder)) {
+    die('$webroot_folder setting is missing from app/config/settings.inc.php. Please update your settings file.');
+} else {
+    $assets_folder = $webroot_folder . 'web/assets';
+}

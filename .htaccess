@@ -1,0 +1,12 @@
+# Rewrite all requests to the controller
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # See https://bugzilla.mozilla.org/show_bug.cgi?id=1197501
+    RewriteCond %{REQUEST_URI}::$1 ^(/.+)(.+)::\2$
+    RewriteRule ^(.*)$ - [E=BASE:%1]
+
+    # Existing files are not redirected
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule (.*) %{ENV:BASE}index.php [L,QSA]
+</IfModule>

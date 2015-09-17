@@ -18,7 +18,11 @@ if (! isset($_SERVER['SERVER_NAME'])) {
     $_SERVER['SERVER_NAME'] = '';
 }
 
-require __DIR__ . '/settings.inc.php';
+$settings_file = __DIR__ . '/settings.inc.php';
+if (! file_exists($settings_file)) {
+    die('File app/config/settings.inc.php is missing. Please check your configuration.');
+}
+require $settings_file;
 
 // Real data is in adi.inc.php, not under VCS
 if (is_file(__DIR__ . '/adi.inc.php')) {
