@@ -52,18 +52,17 @@ class Project
     public static function getSupportedLocales($website, $filename = '', $langfiles_subsets = [])
     {
         $website_name = $website[0];
-        if ($filename == '' ||
-            ! isset($langfiles_subsets[$website_name])) {
-            return $website[3];
+        // Default: use the website's supported locales
+        $supported_locales = $website[3];
+        if ($filename != '' &&
+            isset($langfiles_subsets[$website_name]) &&
+            isset($langfiles_subsets[$website_name][$filename])) {
+            $supported_locales = $langfiles_subsets[$website_name][$filename];
         }
+        // Make sure locales are sorted
+        sort($supported_locales);
 
-        if (isset($langfiles_subsets[$website_name][$filename])) {
-            if (is_array($langfiles_subsets[$website_name][$filename])) {
-                return $langfiles_subsets[$website_name][$filename];
-            }
-        }
-
-        return $website[3];
+        return $supported_locales;
     }
 
     /**

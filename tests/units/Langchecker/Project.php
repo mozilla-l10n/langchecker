@@ -59,8 +59,8 @@ class Project extends atoum\test
             [$sites[0], '', $langfiles_subsets, ['en-US', 'fr']],
             [$sites[0], 'file1.lang', $langfiles_subsets, ['fr']],
             [$sites[0], 'file2.lang', $langfiles_subsets, ['en-US', 'fr']],
-            [$sites[1], 'missing.lang', $langfiles_subsets, ['en-US', 'fr', 'de']],
-            [$sites[1], 'file3.lang', $langfiles_subsets, ['en-US', 'fr', 'de']],
+            [$sites[1], 'missing.lang', $langfiles_subsets, ['de', 'en-US', 'fr']],
+            [$sites[1], 'file3.lang', $langfiles_subsets, ['de', 'en-US', 'fr']],
         ];
     }
 
