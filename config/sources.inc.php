@@ -360,12 +360,13 @@ $lang_flags['firefox-tiles'] = [
     'tiles_oct2015.lang' => [ 'critical' => ['all'] ],
 ];
 
-$google_play_lang = [
+$appstores_lang = [
     'description_page.lang',
     'description_beta_page.lang',
+    'apple_description_release.lang',
 ];
 
-$lang_flags['google-play'] = [
+$lang_flags['appstores'] = [
     'description_page.lang' => [ 'critical' => ['de', 'fr'] ],
 ];
 
@@ -462,8 +463,9 @@ $deadline = [
     'aug2015_c.lang'                         => '2015-08-14',
     'aug2015_win10.lang'                     => '2015-08-07',
     'careers.lang'                           => '2015-06-10', // tiles project
-    'description_page.lang'                  => '2014-11-09', // google-play project
-    'description_beta_page.lang'             => '2015-09-30', // google-play project
+    'description_page.lang'                  => '2014-11-09', // appstores project
+    'description_beta_page.lang'             => '2015-09-30', // appstores project
+    'apple_description_release.lang'         => '2015-09-30', // appstores project
     'download_button.lang'                   => '2015-06-01',
     'firefox/android/index.lang'             => '2015-08-10',
     'firefox/channel.lang'                   => '2014-11-24',
@@ -590,6 +592,10 @@ $google_play_locales = [
 
 // Locales that we do support and that Google Play supports too
 $google_play_target = array_intersect($android_locales, $google_play_locales);
+
+$apple_store_target = [
+    'fr'
+];
 
 $marketing = [
     'de', 'es-ES', 'fr', 'it', 'id', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
@@ -821,14 +827,14 @@ $sites =
     ],
 
     12 => [
-        'google-play',
+        'appstores',
         $repo12,
         '',
         $google_play_target,
-        $google_play_lang,
+        $appstores_lang,
         'en-US', // source locale
         $public_repo12,
-        $lang_flags['google-play'],
+        $lang_flags['appstores'],
         'lang',
     ],
 ];
@@ -1147,9 +1153,10 @@ $langfiles_subsets = [
         'updater.lang' => $firefox_updater_locales,
     ],
 
-    'google-play' => [
-        'description_page.lang'      => $google_play_target,
-        'description_beta_page.lang' => $google_play_target,
+    'appstores' => [
+        'description_page.lang'          => $google_play_target,
+        'description_beta_page.lang'     => $google_play_target,
+        'apple_description_release.lang' => $apple_store_target,
     ],
 
     'firefoxos-marketing' => [
