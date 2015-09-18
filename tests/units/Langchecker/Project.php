@@ -367,9 +367,9 @@ class Project extends atoum\test
         ];
 
         return [
-            [['it'], $adu, '28.57'],
-            [['fr'], $adu, '57.14'],
-            [['it', 'fr'], $adu, '85.71'],
+            [['it'], $adu, '25.00'],
+            [['fr'], $adu, '50.00'],
+            [['it', 'fr'], $adu, '75.00'],
         ];
     }
 
