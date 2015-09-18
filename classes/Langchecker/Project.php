@@ -294,7 +294,7 @@ class Project
             unset($adu['ja-JP-mac']);
         }
 
-        $englishes = ['en-GB', 'en-US', 'en-ZA'];
+        $englishes = ['en-US', 'en-ZA'];
         $english_adu = 0;
         foreach ($englishes as $english) {
             if (isset($adu[$english])) {
