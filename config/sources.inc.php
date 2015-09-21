@@ -597,7 +597,7 @@ $google_play_locales = [
 $google_play_target = array_intersect($android_locales, $google_play_locales);
 
 $apple_store_target = [
-    'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN',
+    'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
 ];
 
 $marketing = [
