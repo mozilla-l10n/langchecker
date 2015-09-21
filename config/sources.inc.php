@@ -367,7 +367,10 @@ $appstores_lang = [
 ];
 
 $lang_flags['appstores'] = [
-    'description_page.lang' => [ 'critical' => ['de', 'fr'] ],
+    'description_page.lang'          => [ 'critical' => ['de', 'fr'] ],
+    'apple_description_release.lang' => [
+        'critical' => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN'],
+    ],
 ];
 
 $getinvolved_autoreplies = [
@@ -465,7 +468,7 @@ $deadline = [
     'careers.lang'                           => '2015-06-10', // tiles project
     'description_page.lang'                  => '2014-11-09', // appstores project
     'description_beta_page.lang'             => '2015-09-30', // appstores project
-    'apple_description_release.lang'         => '2015-09-30', // appstores project
+    'apple_description_release.lang'         => '2015-10-10', // appstores project
     'download_button.lang'                   => '2015-06-01',
     'firefox/android/index.lang'             => '2015-08-10',
     'firefox/channel.lang'                   => '2014-11-24',
@@ -594,7 +597,7 @@ $google_play_locales = [
 $google_play_target = array_intersect($android_locales, $google_play_locales);
 
 $apple_store_target = [
-    'fr'
+    'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN',
 ];
 
 $marketing = [
