@@ -1171,8 +1171,8 @@ $langfiles_subsets = [
             ],
         'screenshots_2_0.lang' =>
             [
-                'af', 'cs', 'de', 'el', 'es-ES', 'ja', 'ln',
-                'pl', 'pt-BR', 'xh', 'zu',
+                'af', 'cs', 'de', 'es-ES', 'ja', 'pt-BR',
+                'xh', 'zu',
             ],
         'screenshots_2_0_b.lang' =>
             [
