@@ -655,10 +655,10 @@ $tiles_locales = array_merge(['es'], $firefox_locales);
 /*
  * Thundebird locales on Release channel
  * Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
- * Opt-in locales: az, cy
+ * Opt-in locale: az
  */
 $thunderbird_release = [
-    'ar', 'ast', 'az', 'be', 'bg', 'bn-BD', 'br', 'ca', 'cs',
+    'ar', 'ast', 'az', 'be', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy',
     'da', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-ES', 'et',
     'eu', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hr',
     'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ko', 'lt',
