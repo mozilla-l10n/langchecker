@@ -58,10 +58,10 @@ foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
             $activation_status = $locale_analysis['activated'] ? 'yes' : 'no';
 
             if (($todo == 0) && ($activation_status == 'no')) {
-                $svn_path = 'http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/locales/' . $current_locale . '/' . $current_filename;
+                $git_path = 'https://github.com/mozilla-l10n/www.mozilla.org/tree/master/' . $current_locale . '/' . $current_filename;
                 $table_rows .= "  <tr>\n";
                 $table_rows .= '    <td><a href="./?locale=' . $current_locale . '" title="See full status of this locale">' . $current_locale . "</a></td>\n";
-                $table_rows .= '    <td><a href="' . $svn_path . '" target="_blank" title="Open this file on SVN">' . $current_filename . "</a></td>\n";
+                $table_rows .= '    <td><a href="' . $git_path . '" target="_blank" title="Open this file on GitHub">' . $current_filename . "</a></td>\n";
                 $table_rows .= '    <td>' . count($locale_analysis['Identical']) . "</td>\n";
                 $table_rows .= '    <td>' . count($locale_analysis['Translated']) . "</td>\n";
                 $table_rows .= '    <td>' . count($locale_analysis['Missing']) . "</td>\n";

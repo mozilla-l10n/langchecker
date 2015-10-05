@@ -308,6 +308,27 @@ class Project extends atoum\test
                 ->isEqualTo($b);
     }
 
+    public function getWebsiteLocalRepositoryDP()
+    {
+        require_once TEST_FILES . 'config/sources.php';
+
+        return [
+            [$sites[0], '/private/repo1/'],
+            [$sites[1], '/private/repo2/'],
+        ];
+    }
+
+    /**
+     * @dataProvider getWebsiteLocalRepositoryDP
+     */
+    public function testGetWebsiteLocalRepository($a, $b)
+    {
+        $obj = new _Project();
+        $this
+            ->string($obj->getWebsiteLocalRepository($a))
+                ->isEqualTo($b);
+    }
+
     public function getLocalizedURLDP()
     {
         return [

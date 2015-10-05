@@ -4,8 +4,8 @@ namespace Langchecker;
 
 $command_help = "import_po - Import local .po file in local .lang file\n" .
                 "Usage: import_po [pofile] [langfile]\n\n" .
-                "Example: import_po test.po /svn/it/main.lang\n" .
-                "(import test.po into /svn/it/main.lang)\n";
+                "Example: import_po test.po /git/it/main.lang\n" .
+                "(import test.po into /git/it/main.lang)\n";
 $min_parameters = 2;
 $missing_parameter = "This command needs more parameters, please check import_po --help.\n";
 
