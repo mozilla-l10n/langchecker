@@ -927,7 +927,7 @@ $langfiles_subsets = [
         'firefox/partners/index.lang'            => $firefox_os,
         'firefox/pocket.lang'                    =>
             [
-                'de', 'es-ES', 'ja', 'ru',
+                'de', 'es-ES', 'fr', 'ja', 'ru',
             ],
         'firefox/privacy_tour/privacy_tour.lang' => $privacy_tour_locales,
         'firefox/private-browsing.lang'          => $firefox_locales,
