@@ -1,6 +1,9 @@
 <?php
 namespace Langchecker;
 
+use Sepia\FileHandler;
+use Sepia\PoParser;
+
 /**
  * GetTextManager class
  *
@@ -21,8 +24,9 @@ class GetTextManager
      */
     public static function loadPoFile($path)
     {
-        $po_parser = new \Sepia\PoParser();
-        $po_strings = $po_parser->read($path);
+        $file_handler = new FileHandler($path);
+        $po_parser    = new PoParser($file_handler);
+        $po_strings   = $po_parser->parse();
 
         $po_data = [];
         if (count($po_strings) > 0) {
