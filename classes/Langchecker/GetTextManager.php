@@ -31,15 +31,24 @@ class GetTextManager
         $po_data = [];
         if (count($po_strings) > 0) {
             foreach ($po_strings as $entry) {
-                if (!isset($entry['fuzzy']) && implode($entry['msgstr']) != '') {
-                    if (implode($entry['msgid']) == implode($entry['msgstr'])) {
-                        // Add {ok} if the translation is identical to the English string
-                        $string_status = ' {ok}';
-                    } else {
-                        $string_status = '';
-                    }
-                    $po_data[implode($entry['msgid'])] = trim(implode($entry['msgstr']) . $string_status);
+                // We don't take fuzzy strings
+                if (isset($entry['flags']) && in_array('fuzzy', $entry['flags'])) {
+                    continue;
                 }
+
+                // We don't take empty strings
+                if (implode($entry['msgstr']) == '') {
+                    continue;
+                }
+
+                $string_status = '';
+
+                // Add {ok} if the translation is identical to the English string
+                if (implode($entry['msgid']) == implode($entry['msgstr'])) {
+                    $string_status .= ' {ok}';
+                }
+
+                $po_data[implode($entry['msgid'])] = trim(implode($entry['msgstr']) . $string_status);
             }
         }
 
