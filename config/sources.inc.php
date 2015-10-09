@@ -1,6 +1,6 @@
 <?php
 
-$public_repo1  = 'https://svn.mozilla.org/projects/mozilla.com/trunk/';
+$public_repo1  = 'https://github.com/mozilla-l10n/www.mozilla.org';
 $public_repo2  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/';
 $public_repo3  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/';
 $public_repo4  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
@@ -695,11 +695,11 @@ $sites =
     0 => [
         'www.mozilla.org',
         $repo1,
-        'locales/',
+        '',
         $mozillaorg,
         $mozillaorg_lang,
         'en-US', // source locale
-        $public_repo1,
+        $public_repo1 . '/tree/master/',
         $lang_flags['www.mozilla.org'],
         'lang',
     ],
@@ -827,11 +827,11 @@ $sites =
     11 => [
         'contribute-autoreplies',
         $repo1,
-        'locales/',
+        '',
         $getinvolved_locales,
         $getinvolved_autoreplies,
         'en-US', // source locale
-        $public_repo1,
+        $public_repo1 . '/tree/master/',
         $lang_flags['contribute-autoreplies'],
         'raw',
     ],

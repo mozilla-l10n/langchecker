@@ -34,7 +34,10 @@ class RawManager
             $reference_content = sha1_file($reference_filename);
             $results['reference_exists'] = true;
             $results['reference_url'] = Project::getPublicFilePath($website, $reference_locale, $filename);
-            $results['reference_lastupdate'] = Utils::getSVNCommitTimestamp($reference_filename);
+            $results['reference_lastupdate'] = Utils::getGitCommitTimestamp(
+                $reference_filename,
+                Project::getWebsiteLocalRepository($website)
+            );
         } else {
             $results['reference_exists'] = false;
             $results['cmp_result'] = 'missing_reference';
@@ -46,7 +49,10 @@ class RawManager
             $locale_content = sha1_file($locale_filename);
             $results['locale_exists'] = true;
             $results['locale_url'] = Project::getPublicFilePath($website, $locale, $filename);
-            $results['locale_lastupdate'] = Utils::getSVNCommitTimestamp($locale_filename);
+            $results['locale_lastupdate'] = Utils::getGitCommitTimestamp(
+                $locale_filename,
+                Project::getWebsiteLocalRepository($website)
+            );
 
             if ($results['reference_exists']) {
                 if ($locale_content == $reference_content) {

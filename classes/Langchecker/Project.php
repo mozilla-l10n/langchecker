@@ -249,6 +249,18 @@ class Project
     }
 
     /**
+     * Return the path to the local repository used by the website
+     *
+     * @param array $website Website data
+     *
+     * @return string Local path to the repository
+     */
+    public static function getWebsiteLocalRepository($website)
+    {
+        return $website[1];
+    }
+
+    /**
      * Return localized URL for stage (if available)
      *
      * @param array  $reference_data Data for reference locale

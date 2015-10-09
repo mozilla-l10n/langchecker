@@ -41,9 +41,9 @@ class Bugzilla extends _Bugzilla
                 $bug_body = "Please add '{$locale}' to the list of supported locales for {$files[0]} on www.mozilla.org";
             }
         } else {
-            // Bug to request upload of updated files to SVN
-            $bug_title = "[l10n: {$locale}] Updated file '{$files[0]}' for SVN repository";
-            $bug_body = "(Attach your updated {$files[0]} file to this bug or indicate the revision number of your commit in SVN)";
+            // Bug to request upload of updated files to GitHub
+            $bug_title = "[l10n: {$locale}] Updated file '{$files[0]}' for GitHub repository";
+            $bug_body = "(Attach your updated {$files[0]} file to this bug or indicate the changeset of your commit in GitHub)";
         }
 
         $bug_link = 'https://bugzilla.mozilla.org/enter_bug.cgi?alias=&assigned_to=francesco.lodolo%40gmail.com' .
