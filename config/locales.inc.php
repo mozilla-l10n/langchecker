@@ -12,7 +12,7 @@ $mozilla = [
     'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
     'gl', 'gu-IN', 'ha', 'he', 'hi-IN', 'hr', 'hsb', 'hu',
     'hy-AM', 'id', 'ig', 'is', 'it', 'ja', 'ka', 'kk', 'km',
-    'kn', 'ko', 'kok', 'ks', 'lij', 'ln', 'lt', 'lv', 'mai',
+    'kn', 'ko', 'kok', 'ks', 'lij', 'ln', 'lo', 'lt', 'lv', 'mai',
     'mg', 'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'nn-NO',
     'oc', 'or', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro',
     'ru', 'sat', 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sr-Latn',
@@ -33,7 +33,7 @@ $fxos_locales = [
 ];
 
 // List of locales only working on Fennec
-$fennec_locales = ['cak', 'my', 'tsz'];
+$fennec_locales = ['cak', 'lo', 'my', 'tsz'];
 
 /* List of locales we support on desktop (Firefox). We need to remove
  * locales used only for Gaia (es, sr-Latn), locales working only on Gaia
@@ -44,6 +44,9 @@ $firefox_locales = array_diff(
     $fxos_locales,
     $fennec_locales
 );
+
+// All locales working on Firefox desktop + Android
+$firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
 
 // List of locales with active newsletter
 $newsletter_locales = ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'];

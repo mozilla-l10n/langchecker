@@ -31,7 +31,7 @@ if (is_file(__DIR__ . '/adi.inc.php')) {
 $locamotion_locales = [
     'ach', 'af', 'bm', 'br', 'ca', 'cak', 'cy', 'dsb', 'ee',
     'en-ZA', 'es-MX', 'fa', 'ff', 'fi', 'ga-IE', 'gd', 'ha',
-    'hi-IN', 'hr', 'hsb', 'ig', 'km', 'kok', 'ks', 'ln',
+    'hi-IN', 'hr', 'hsb', 'ig', 'km', 'kok', 'ks', 'ln', 'lo',
     'lt', 'lv', 'mg', 'ms', 'my', 'nn-NO', 'oc', 'pt-PT',
     'sat', 'si', 'son', 'sw', 'ta', 'tl', 'tn', 'tsz', 'ur',
     'uz', 'vi', 'wo', 'xh', 'yo', 'zu',
@@ -744,7 +744,7 @@ $sites =
         'about:healthreport',
         $repo5,
         'locale/',
-        $firefox_locales,
+        $firefox_desktop_android,
         $firefoxhealthreport_lang,
         'en-US', // source locale
         $public_repo5,
@@ -906,7 +906,7 @@ $langfiles_subsets = [
         'firefox/hello.lang'                      => $firefox_locales,
         'firefox/installer-help.lang'             => $firefox_locales,
         'firefox/ios.lang'                        => $firefox_locales,
-        'firefox/new.lang'                        => array_merge($firefox_locales, $fennec_locales),
+        'firefox/new.lang'                        => $firefox_desktop_android,
         'firefox/nightly_firstrun.lang'           =>
             [
                 'ar', 'ast', 'cs', 'de', 'eo', 'es-AR', 'es-CL',
@@ -1078,7 +1078,7 @@ $langfiles_subsets = [
 
     'about:healthreport' =>
     [
-        'fhr.lang' => array_merge($firefox_locales, $fennec_locales),
+        'fhr.lang' => $firefox_desktop_android,
     ],
 
     'surveys' =>
