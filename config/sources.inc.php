@@ -587,7 +587,7 @@ $getinvolved_locales = [
     'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
     'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'he',
     'hi-IN', 'hr', 'hsb', 'id', 'it', 'ko', 'lt', 'ms', 'nl',
-    'pl', 'pt-BR', 'ro', 'ru', 'sl', 'son', 'sq', 'sr', 'sv-SE',
+    'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl', 'son', 'sq', 'sr', 'sv-SE',
     'ta', 'tr', 'uk', 'zh-CN', 'zh-TW',
 ];
 
@@ -875,8 +875,8 @@ $langfiles_subsets = [
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'ff', 'fr', 'fy-NL',
                 'ga-IE', 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id',
                 'it', 'ja', 'km', 'ko', 'lt', 'ms', 'nl', 'pl', 'pt-BR',
-                'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sv-SE', 'uk', 'uz',
-                'xh', 'zh-CN', 'zh-TW',
+                'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sv-SE',
+                'uk', 'uz', 'xh', 'zh-CN', 'zh-TW',
             ],
         'firefox/desktop/trust.lang'            => $firefox_locales,
         'firefox/developer.lang'                => $firefox_locales,
@@ -884,7 +884,7 @@ $langfiles_subsets = [
             [
                 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'fr',
                 'fy-NL', 'hsb', 'it', 'ja', 'ko', 'lt', 'nl',
-                'pt-BR', 'ro', 'sat', 'sk', 'sl', 'son', 'sq',
+                'pt-BR', 'pt-PT', 'ro', 'sat', 'sk', 'sl', 'son', 'sq',
                 'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
         'firefox/family/index.lang'             => $firefox_locales,
@@ -996,7 +996,7 @@ $langfiles_subsets = [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fr', 'fy-NL',
                 'hi-IN', 'hsb', 'it', 'ko', 'ja', 'km', 'lt', 'ms', 'nl',
-                'pl', 'pt-BR', 'ro', 'sat', 'son', 'sq', 'sv-SE',
+                'pl', 'pt-BR', 'pt-PT', 'ro', 'sat', 'son', 'sq', 'sv-SE',
                 'tr', 'uk', 'zh-CN', 'zh-TW',
             ],
         'main.lang'                             => $mozillaorg,
@@ -1018,7 +1018,7 @@ $langfiles_subsets = [
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'es-MX',
                 'eu', 'fr', 'gl', 'hsb', 'it', 'km', 'ko', 'lt',
-                'pa-IN', 'pt-BR', 'ro', 'sat', 'sk', 'son', 'sq',
+                'pa-IN', 'pt-BR', 'pt-PT', 'ro', 'sat', 'sk', 'son', 'sq',
                 'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/history.lang'             =>
@@ -1026,14 +1026,14 @@ $langfiles_subsets = [
                 'af', 'ar', 'bg', 'ca', 'cs', 'cy', 'de', 'dsb', 'el',
                 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fr',
                 'fy-NL', 'gl', 'hr', 'hsb', 'id', 'it', 'km', 'ko',
-                'lt', 'ms', 'nl', 'pa-IN', 'pl', 'pt-BR', 'ro',
+                'lt', 'ms', 'nl', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'ro',
                 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'ta', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/leadership.lang'          =>
             [
                 'af', 'cs', 'de', 'dsb', 'en-GB', 'hsb', 'it', 'ko',
-                'pt-BR', 'ro', 'sl', 'sv-SE', 'uk', 'zh-CN',
+                'pt-BR', 'pt-PT', 'ro', 'sl', 'sv-SE', 'uk', 'zh-CN',
             ],
         'mozorg/about/manifesto.lang'           =>
             [
@@ -1041,7 +1041,7 @@ $langfiles_subsets = [
                 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fi', 'fr', 'fur', 'fy-NL', 'gd', 'gl',
                 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it', 'ja',
-                'km', 'ko', 'lt', 'mk', 'ms', 'nl', 'pl', 'pt-BR',
+                'km', 'ko', 'lt', 'mk', 'ms', 'nl', 'pl', 'pt-BR', 'pt-PT',
                 'ro', 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'tr', 'uk', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
             ],
