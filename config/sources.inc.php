@@ -369,11 +369,15 @@ $appstores_lang = [
     'description_page.lang',
     'description_beta_page.lang',
     'apple_description_release.lang',
+    'android_42_release.lang',
 ];
 
 $lang_flags['appstores'] = [
     'description_page.lang'          => [ 'critical' => ['de', 'fr'] ],
     'apple_description_release.lang' => [
+        'critical' => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN'],
+    ],
+    'android_42_release.lang' => [
         'critical' => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN'],
     ],
 ];
@@ -474,6 +478,7 @@ $deadline = [
     'description_page.lang'                  => '2014-11-09', // appstores project
     'description_beta_page.lang'             => '2015-09-30', // appstores project
     'apple_description_release.lang'         => '2015-10-10', // appstores project
+    'android_42_release.lang'                => '2015-10-15', // appstores project
     'download_button.lang'                   => '2015-06-01',
     'firefox/android/index.lang'             => '2015-11-02',
     'firefox/channel.lang'                   => '2014-11-24',
@@ -1169,6 +1174,7 @@ $langfiles_subsets = [
         'description_page.lang'          => $google_play_target,
         'description_beta_page.lang'     => $google_play_target,
         'apple_description_release.lang' => $apple_store_target,
+        'android_42_release.lang'        => $apple_store_target, // yeah, marketing...
     ],
 
     'firefoxos-marketing' => [
