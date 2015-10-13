@@ -30,9 +30,9 @@
 
     "autoload": {
         "psr-0": {
-            "Langchecker": "classes/",
-            "Transvision": "classes/"
+            "Langchecker": "app/classes/",
+            "Transvision": "app/classes/"
         },
-        "files": ["helpers/debug.php"]
+        "files": ["app/helpers/debug.php"]
     }
 }

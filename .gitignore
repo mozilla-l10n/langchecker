@@ -1,8 +1,7 @@
 .phpintel/
+app/config/settings.inc.php
+app/config/adi.inc.php
 cache/*.cache
-config/settings.inc.php
-config/adi.inc.php
 composer.phar
 composer.lock
-locales
 vendor/

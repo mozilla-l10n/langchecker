@@ -14,7 +14,7 @@ putenv("AUTOMATED_TESTS=true");
 
 // Launch PHP dev server in the background
 chdir(INSTALL_ROOT);
-exec('php -S 0.0.0.0:8083 > /dev/null 2>&1 & echo $!', $output);
+exec('php -S 0.0.0.0:8083 -t web/> /dev/null 2>&1 & echo $!', $output);
 
 // We will need the pid to kill it, beware, this is the pid of the php server started above
 $pid = $output[0];

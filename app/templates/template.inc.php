@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>.lang files checker on Mozilla sites</title>
-  <link rel="shortcut icon" href="./media/img/favicon.ico">
-  <script src="./media/js/sorttable.js"></script>
-  <link href="./media/css/langchecker.css" rel="stylesheet">
+  <link rel="shortcut icon" href="<?=$assets_folder?>/img/favicon.ico">
+  <script src="<?=$assets_folder?>/js/sorttable.js"></script>
+  <link href="<?=$assets_folder?>/css/langchecker.css" rel="stylesheet">
 </head>
 <body id="<?=$viewname?>">
 <?php echo "<!-- Current view: {$viewname} -->\n"; ?>
