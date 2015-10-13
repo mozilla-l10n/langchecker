@@ -41,5 +41,5 @@ define('CACHE_TIME', 7200);
 if (! isset($webroot_folder)) {
     die('$webroot_folder setting is missing from app/config/settings.inc.php. Please update your settings file.');
 } else {
-    $assets_folder = $webroot_folder . 'web/assets';
+    $assets_folder = $webroot_folder . 'assets';
 }
