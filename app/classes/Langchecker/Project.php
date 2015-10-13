@@ -362,7 +362,12 @@ class Project
                     }
                     break;
                 case 'listpages':
-                    $result['file'] = 'listpages';
+                    if ($request['json']) {
+                        $result['file'] = 'listpages_api';
+                        $result['template'] = '';
+                    } else {
+                        $result['file'] = 'listpages';
+                    }
                     break;
                 case 'optin':
                     $result['file'] = 'optin';
