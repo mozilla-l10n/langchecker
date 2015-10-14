@@ -33,18 +33,13 @@ if (is_file(__DIR__ . '/adi.inc.php')) {
 }
 
 $locamotion_locales = [
-    'ach', 'af', 'bm', 'br', 'ca', 'cak', 'cy', 'dsb', 'ee',
+    'ach', 'af', 'bm', 'bn-BD', 'br', 'ca', 'cak', 'cy', 'dsb', 'ee',
     'en-ZA', 'es-MX', 'fa', 'ff', 'fi', 'ga-IE', 'gd', 'ha',
     'hi-IN', 'hr', 'hsb', 'ig', 'kk', 'km', 'kok', 'ks', 'ln', 'lo',
     'lt', 'lv', 'mg', 'ms', 'my', 'nn-NO', 'oc', 'pt-PT',
     'sat', 'si', 'son', 'sw', 'ta', 'tl', 'tn', 'tsz', 'ur',
     'uz', 'vi', 'wo', 'xh', 'yo', 'zu',
 ];
-
-/*
-    Locales removed from locamotion import because of commits on SVN
-    kk (20130427)
-*/
 
 /*
 If a file is not listed in $lang_flags, it's assumed to be non critical for all
