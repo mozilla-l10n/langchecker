@@ -4,8 +4,12 @@ namespace Langchecker;
 use Transvision\Json;
 
 $displayed_sites = [];
-if ($website != '' && isset($sites[$website])) {
-    $displayed_sites[$website] = $sites[$website];
+if ($website != '') {
+    if (isset($sites[$website])) {
+        $displayed_sites[$website] = $sites[$website];
+    } else {
+        die(Json::invalidAPICall("ERROR: the requested website ({$website}) is not supported."));
+    }
 } else {
     $displayed_sites = $sites;
 }

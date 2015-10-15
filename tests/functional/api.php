@@ -23,19 +23,21 @@ $pid = $output[0];
 sleep(3);
 
 $json = [
+    ['?action=count&json', 200, "{\n    \"it\": 6,\n    \"fr\": 0,\n    \"en-US\": 0\n}"],
+    ['?action=coverage&locales=foo', 400, "{\n    \"error\": \"ERROR: locales is not an array.\"\n}"],
+    ['?action=coverage', 400, "{\n    \"error\": \"ERROR: missing list of locales.\"\n}"],
     ['?action=listlocales&project=snippets&json', 200, "[\n    \"fr\",\n    \"it\"\n]"],
     ['?action=listlocales&json', 400, "[\n    \"Please check you request: provide a project name, or a valid couple website+file.\"\n]"],
     ['?action=listlocales&website=2&file=page.lang&json', 200, "[\n    \"en-US\",\n    \"it\"\n]"],
-    ['?action=count&json', 200, "{\n    \"it\": 6,\n    \"fr\": 0,\n    \"en-US\": 0\n}"],
-    ['?website=2&file=page.lang&json&locale=it', 200, "{\n    \"page.lang\": {\n        \"it\": {\n            \"Identical\": 2,\n            \"Translated\": 13,\n            \"Missing\": 1,\n            \"Obsolete\": 1,\n            \"tags\": [],\n            \"activated\": true\n        }\n    }\n}"],
-    ['?website=2&file=page.lang&json', 200, "{\n    \"page.lang\": {\n        \"it\": {\n            \"Identical\": 2,\n            \"Translated\": 13,\n            \"Missing\": 1,\n            \"Obsolete\": 1,\n            \"tags\": [],\n            \"activated\": true\n        }\n    }\n}"],
-    ['?website=foo&file=main.lang&json', 400, "{\n    \"error\": \"foo is not a supported website. Check the value and try again.\"\n}"],
+    ['?action=listpages&website=2&json', 200, "{\"parsing_test\":{\"page.lang\":{\"obsolete\":false,\"source_type\":\"lang\",\"supported_locales\":[\"en-US\",\"it\"],\"strings_count\":16,\"url\":\"-\",\"words_count\":51}}}"],
+    ['?action=listpages&website=9999&json', 400, "{\n    \"error\": \"ERROR: the requested website (9999) is not supported.\"\n}"],
     ['?action=snippets&locale=it', 200, "{\n    \"@@this is a test, do not remove@@\": \"Questo \u00e8 un test\",\n    \"Email\": \"Email\",\n    \"Fifth string with %(one)s, %(two)s\": \"Quinta stringa con %(one)s, %(two)s e ancora %(two)s\",\n    \"Fourth string with 90%% coverage\": \"Quarta stringa con copertura al 90%\",\n    \"Hello\": \"Ciao\",\n    \"Obsolete string\": \"Stringa obsoleta\",\n    \"Press center\": \"Sala stampa\",\n    \"Save file\": \"Salva file troppo lungo\",\n    \"Second string with %(num)s tags\": \"Seconda stringa con %(num)s etichette\",\n    \"Sixth string with %(one)s\": \"Sesta stringa con %(one)s e %(two)s\",\n    \"String with %(num)s tags\": \"Stringa con etichette e variabile sbagliata\",\n    \"String with multiple comments\": \"String con pi\u00f9 commenti\",\n    \"Third string with %s tags\": \"Terza stringa con variabile mancante\"\n}"],
-    ['?action=coverage&locales=foo', 400, "{\n    \"error\": \"ERROR: locales is not an array.\"\n}"],
-    ['?action=coverage', 400, "{\n    \"error\": \"ERROR: missing list of locales.\"\n}"],
-    ['?website=2&file=main.lang&json', 400, "{\n    \"error\": \"File main.lang does not exist. Check the value and try again.\"\n}"],
     ['?action=translate&file=foo.lang&json', 400, "{\n    \"error\": \"<p>ERROR: file foo.lang does not exist<\/p>\"\n}"],
     ['?action=translate&file=page.lang&json', 200, "{\n    \"Email\": {\n        \"it\": \"Email\"\n    },\n    \"Hello\": {\n        \"it\": \"Ciao\"\n    },\n    \"Save file\": {\n        \"it\": \"Salva file troppo lungo\"\n    },\n    \"01\": {\n        \"it\": \"1\"\n    },\n    \"String with multiple comments\": {\n        \"it\": \"String con pi\u00f9 commenti\"\n    },\n    \"Press center\": {\n        \"it\": \"Sala stampa\"\n    },\n    \"@@this is a test, do not remove@@\": {\n        \"it\": \"Questo \u00e8 un test\"\n    },\n    \"String with %(num)s tags\": {\n        \"it\": \"Stringa con etichette e variabile sbagliata\"\n    },\n    \"Second string with %(num)s tags\": {\n        \"it\": \"Seconda stringa con %(num)s etichette\"\n    },\n    \"Third string with %s tags\": {\n        \"it\": \"Terza stringa con variabile mancante\"\n    },\n    \"Fourth string with 90%% coverage\": {\n        \"it\": \"Quarta stringa con copertura al 90%\"\n    },\n    \"Fifth string with %(one)s, %(two)s\": {\n        \"it\": \"Quinta stringa con %(one)s, %(two)s e ancora %(two)s\"\n    },\n    \"Sixth string with %(one)s\": {\n        \"it\": \"Sesta stringa con %(one)s e %(two)s\"\n    }\n}"],
+    ['?website=2&file=page.lang&json&locale=it', 200, "{\n    \"page.lang\": {\n        \"it\": {\n            \"Identical\": 2,\n            \"Translated\": 13,\n            \"Missing\": 1,\n            \"Obsolete\": 1,\n            \"tags\": [],\n            \"activated\": true\n        }\n    }\n}"],
+    ['?website=2&file=page.lang&json', 200, "{\n    \"page.lang\": {\n        \"it\": {\n            \"Identical\": 2,\n            \"Translated\": 13,\n            \"Missing\": 1,\n            \"Obsolete\": 1,\n            \"tags\": [],\n            \"activated\": true\n        }\n    }\n}"],
+    ['?website=2&file=main.lang&json', 400, "{\n    \"error\": \"File main.lang does not exist. Check the value and try again.\"\n}"],
+    ['?website=foo&file=main.lang&json', 400, "{\n    \"error\": \"foo is not a supported website. Check the value and try again.\"\n}"],
 ];
 
 $text = [

@@ -21,8 +21,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $site) {
 
 if (! $supported_file) {
     // File is not managed, throw error
-    http_response_code(400);
-    die("File {$current_filename} is not supported. Check the file name and try again.");
+    die(Json::invalidAPICall("File {$current_filename} is not supported. Check the file name and try again."));
 }
 
 $reference_locale = Project::getReferenceLocale($current_website);
@@ -56,8 +55,7 @@ if (! $string_id) {
 
     if ($reference_string == '') {
         // String not found, throw error
-        http_response_code(400);
-        die("No string available with id: {$string_id}.");
+        die(Json::invalidAPICall("No string available with id: {$string_id}."));
     }
 
     $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
