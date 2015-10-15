@@ -535,6 +535,19 @@ class Project extends atoum\test
             ],
             [
                 [
+                    'action'   => 'listpages',
+                    'filename' => '',
+                    'json'     => true,
+                    'locale'   => '',
+                    'serial'   => false,
+                    'website'  => '',                ],
+                [
+                    'file'         => 'listpages_api',
+                    'template'     => '',
+                ],
+            ],
+            [
+                [
                     'action'   => 'optin',
                     'filename' => '',
                     'json'     => false,
