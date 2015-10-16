@@ -134,6 +134,10 @@ $mozillaorg_lang = [
     'privacy/privacy-day.lang',
     'snippets.lang',
     'tabzilla/tabzilla.lang',
+    'teach/smarton/index.lang',
+    'teach/smarton/security.lang',
+    'teach/smarton/surveillance.lang',
+    'teach/smarton/tracking.lang',
     'thunderbird/features.lang',
     'thunderbird/index.lang',
     'thunderbird/start/release.lang',
@@ -221,6 +225,22 @@ $lang_flags['www.mozilla.org'] = [
     ],
     'privacy/privacy-day.lang'                => [ 'opt-in'   => ['all'] ],
     'snippets.lang'                           => [ 'obsolete' => ['all'] ],
+    'teach/smarton/index.lang'                => [
+        'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
+        'opt-in'   => ['all'],
+    ],
+    'teach/smarton/security.lang'             => [
+        'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
+        'opt-in'   => ['all'],
+    ],
+    'teach/smarton/surveillance.lang'         => [
+        'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
+        'opt-in'   => ['all'],
+    ],
+    'teach/smarton/tracking.lang'             => [
+        'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
+        'opt-in'   => ['all'],
+    ],
     'thunderbird/start/release.lang'          => [ 'critical' => ['all'] ],
     'upgradedialog.lang'                      => [ 'critical' => ['all'] ],
 ];
@@ -528,6 +548,10 @@ $deadline = [
     'privacy/principles.lang'                => '2015-09-15',
     'survey_hello_fx42.lang'                 => '2015-09-11',
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
+    'teach/smarton/index.lang'               => '2015-11-02',
+    'teach/smarton/security.lang'            => '2015-12-01',
+    'teach/smarton/surveillance.lang'        => '2015-11-17',
+    'teach/smarton/tracking.lang'            => '2015-11-02',
     'tiles/tiles_sep2015.lang'               => '2015-09-10',
     'tiles/tiles_oct2015.lang'               => '2015-10-11',
     'tiles/tiles_nov2015.lang'               => '2015-11-02',
@@ -1047,6 +1071,22 @@ $langfiles_subsets = [
             ],
         'snippets.lang'                         => $mozillaorg,
         'tabzilla/tabzilla.lang'                => $mozillaorg,
+        'teach/smarton/index.lang'              =>
+            [
+                'de', 'es-ES', 'fr', 'it', 'pl',
+            ],
+        'teach/smarton/security.lang'           =>
+            [
+                'de', 'es-ES', 'fr', 'it', 'pl',
+            ],
+        'teach/smarton/surveillance.lang'       =>
+            [
+                'de', 'es-ES', 'fr', 'it', 'pl',
+            ],
+        'teach/smarton/tracking.lang'           =>
+            [
+                'de', 'es-ES', 'fr', 'it', 'pl',
+            ],
         'thunderbird/features.lang'             => $thunderbird_release,
         'thunderbird/index.lang'                => $thunderbird_release,
         'thunderbird/start/release.lang'        => $thunderbird_release,
