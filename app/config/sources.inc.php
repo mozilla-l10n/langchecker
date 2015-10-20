@@ -496,8 +496,8 @@ $no_active_tag = [
 $deadline = [
     'description_page.lang'                  => '2014-11-09', // appstores project
     'description_beta_page.lang'             => '2015-09-30', // appstores project
-    'apple_description_release.lang'         => '2015-10-10', // appstores project
-    'android_42_release.lang'                => '2015-10-15', // appstores project
+    'apple_description_release.lang'         => '2015-11-10', // appstores project
+    'android_42_release.lang'                => '2015-10-30', // appstores project
     'download_button.lang'                   => '2015-06-01',
     'firefox/android/index.lang'             => '2015-11-02',
     'firefox/channel.lang'                   => '2014-11-24',
@@ -629,7 +629,8 @@ $google_play_locales = [
 $google_play_target = array_intersect($android_locales, $google_play_locales);
 
 $apple_store_target = [
-    'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
+    'da', 'de', 'en-US', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'ko',
+    'nb-NO', 'nl', 'pt-BR', 'pt-PT', 'ru', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
 ];
 
 $marketing = [
@@ -1208,7 +1209,7 @@ $langfiles_subsets = [
         'description_page.lang'          => $google_play_target,
         'description_beta_page.lang'     => $google_play_target,
         'apple_description_release.lang' => $apple_store_target,
-        'android_42_release.lang'        => $apple_store_target, // yeah, marketing...
+        'android_42_release.lang'        => $google_play_target, // yeah, marketing...
     ],
 
     'firefoxos-marketing' => [
