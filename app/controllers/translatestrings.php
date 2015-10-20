@@ -3,24 +3,6 @@ namespace Langchecker;
 
 use Transvision\Json;
 
-if (! $json) {
-    ?>
-<script>
-  function showhide(id) {
-    table = document.getElementById('table' + id);
-    if (table.style.display == '') {
-        table.style.display='none';
-    } else {
-        table.style.display='';
-    }
-
-    return false;
-  }
-</script>
-<?php
-
-}
-
 // $filename is set in /inc/init.php
 $current_filename = $filename != '' ? $filename : 'snippets.lang';
 $show_status = isset($_GET['show']) ? 'auto' : 'none';
@@ -36,11 +18,11 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $site) {
 }
 
 if (! $supported_file) {
-    $error_message = "<p>ERROR: file {$filename} does not exist</p>";
+    $error_message = "ERROR: file {$filename} does not exist";
     if ($json) {
         die(Json::invalidAPICall($error_message));
     } else {
-        die($error_message);
+        Project::displayErrorTemplate($twig, $error_message);
     }
 }
 
@@ -64,7 +46,7 @@ foreach ($supported_locales as $current_locale) {
     }
 }
 
-// If request output is JSON, we're ready
+// If requested output is JSON, we're ready
 if ($json) {
     die(Json::output($all_strings, false, true));
 }
@@ -88,52 +70,53 @@ if (isset($reference_data['tag_bindings'])) {
     $available_tags = [];
 }
 
-echo "<p>Click on the green English strings to expand/collapse the translations done</p>\n";
-// Display all tags used in this page
-if (count($available_tags) > 0) {
-    echo "<p>Tags used in this page:\n";
+// Store all tags used in this page
+if (! empty($available_tags)) {
     foreach ($available_tags as $tag_number => $tag_text) {
-        $style = "style='background-color: {$bg_colors[$tag_number]}; color: {$font_colors[$tag_number]};'";
-        echo "<span class='taglist' {$style}>{$tag_text}</span>\n";
+        $template_tags[$tag_text] = [
+            'bg_color' => $bg_colors[$tag_number],
+            'color'    => $font_colors[$tag_number],
+            'text'     => $tag_text,
+        ];
     }
-    echo "</p>";
+} else {
+    $template_tags = [];
 }
-echo "<h2>{$current_filename}</h2>\n\n";
 
-$counter = 0;
+$string_list = [];
 foreach ($all_strings as $string_id => $available_translations) {
-    // Display paragraph with reference string
-    $header_string = trim(htmlspecialchars($string_id));
     if (isset($tag_bindings[$string_id])) {
-        $current_tag = $tag_bindings[$string_id];
-        $tag_number = array_search($current_tag, $available_tags);
-        $style = "style='background-color: {$bg_colors[$tag_number]}; color: {$font_colors[$tag_number]};'";
-        $header_string .= "</a><span title='Associated tag' class='tag' {$style}>" . $current_tag . "</span>";
+        $current_tag = $template_tags[$tag_bindings[$string_id]];
     } else {
-        $header_string .= "</a>";
+        $current_tag = '';
     }
-
-    echo "<p id='string{$counter}'><a href='#string{$counter}' style='color: #008000;' onclick='showhide(\"{$counter}\");'>{$header_string}</p>\n";
-
-    // Display sub-table with localizations for this string
-    echo "<table style='width:100%; display: {$show_status};' id='table{$counter}' class='translations'>\n";
-
-    $total_translations = count($available_translations);
-    $covered_locales = array_keys($available_translations);
 
     $displayed_rows = 0;
+    $translations = [];
     foreach ($available_translations as $current_locale => $translation) {
-        $css_class = ($displayed_rows & 1) ? 'odd_row' : 'even_row';
-        echo "<tr class='{$css_class}'>\n"
-             . "  <th>{$current_locale}</th>\n"
-             . "  <td>" . htmlspecialchars($translation) . "</td>\n"
-             . "</tr>\n";
+        $translations[] = [
+            'css_class'   => ($displayed_rows & 1) ? 'odd_row' : 'even_row',
+            'locale'      => $current_locale,
+            'translation' => $translation,
+        ];
         $displayed_rows++;
     }
 
-    echo "<tr>\n  <td colspan='2' class='donelocales_cell'>Number of locales done: {$total_translations}"
-        . ' (' . Project::getUserBaseCoverage($covered_locales, $adu) . '% of our l10n user base)'
-        . "  </td>\n</tr>\n</table>\n";
-
-    $counter++;
+    $covered_locales = array_keys($available_translations);
+    $string_list[] = [
+        'coverage'     => Project::getUserBaseCoverage($covered_locales, $adu),
+        'header'       => $string_id,
+        'tag'          => $current_tag,
+        'translations' => $translations,
+    ];
 }
+
+print $twig->render(
+    'translatestrings.twig',
+    [
+        'filename'    => $current_filename,
+        'show_status' => $show_status,
+        'string_list' => $string_list,
+        'tags'        => $template_tags,
+    ]
+);

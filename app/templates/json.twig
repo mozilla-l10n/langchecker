@@ -1,0 +1,5 @@
+<ul>
+{% for string in strings_list %}
+    <li><a href="{{ string.link }}">{{ string.string|raw }}</li>
+{% endfor %}
+</ul>

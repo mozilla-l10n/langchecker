@@ -1,0 +1,63 @@
+{% extends 'default.twig' %}
+
+{% block body %}
+    <h1>List of indexed pages</h1>
+    {% for website_name, website_data in files_list %}
+        <h2 id="{{ website_name }}"><a href="#{{ website_name }}">{{ website_name }}</a></h2>
+        {% if website_data.source_type == 'lang' %}
+            <table class="listpages">
+                <thead>
+                    <tr>
+                        <th>Filename</th>
+                        <th>URL</th>
+                        <th>Status</th>
+                        <th>Translations</th>
+                        <th>Strings</th>
+                        <th>Words</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for filename, file_data in website_data.files_website %}
+                    <tr>
+                        {% if file_data.obsolete %}
+                            <td class="obsolete" title="Obsolete file">
+                        {% else %}
+                            <td>
+                        {% endif %}
+                            {{ file_data.displayed_filename }}
+                        </td>
+                        <td>{{ getViewLink(file_data.page_url)|raw }}</td>
+                        <td><a class="table_small_link" href="./?locale=all&amp;website={{ website_data.site_index }}&amp;file={{ filename }}">Status</a></td>
+                        <td><a class="table_small_link" href="./?website={{ website_data.site_index }}&amp;file={{ filename }}&amp;action=translate&amp;show">Show</a></td>
+                        <td>{{ file_data.strings_count }}</td>
+                        <td>{{ file_data.words_count }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr class="tabletotals">
+                        <th colspan="3">Total</th>
+                        <td>{{ getPluralForm(website_data.total_files, 'file') }}</td>
+                        <td>{{ website_data.total_strings }}</td>
+                        <td>{{ website_data.total_words }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        {% else %}
+            <table class="listpages">
+                <thead>
+                    <tr>
+                        <th>Filename</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for filename, file_data in website_data.files_website %}
+                    <tr>
+                        <td>{{ file_data.displayed_filename }}</td>
+                        <td><a class="table_small_link" href="./?locale=all&amp;website={{ website_data.site_index }}&amp;file={{ filename }}">Status</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

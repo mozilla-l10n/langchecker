@@ -328,8 +328,7 @@ class Project
      */
     public static function selectView($request)
     {
-        // Default: use template called 'template', show list of locales
-        $result['template'] = 'template';
+        // Default: show list of locales
         $result['file'] = 'listlocales';
 
         // All URLs with 'action' don't require other values like locale, etc.
@@ -340,17 +339,12 @@ class Project
                     break;
                 case 'api':
                     $result['file'] = 'json';
-                    $result['template'] = '';
                     break;
                 case 'count':
                     $result['file'] = 'countstrings';
-                    if ($request['json']) {
-                        $result['template'] = '';
-                    }
                     break;
                 case 'coverage':
                     $result['file'] = 'getcoverage';
-                    $result['template'] = '';
                     break;
                 case 'errors':
                     $result['file'] = 'errors';
@@ -358,13 +352,11 @@ class Project
                 case 'listlocales':
                     if ($request['json']) {
                         $result['file'] = 'listlocalesforproject';
-                        $result['template'] = '';
                     }
                     break;
                 case 'listpages':
                     if ($request['json']) {
                         $result['file'] = 'listpages_api';
-                        $result['template'] = '';
                     } else {
                         $result['file'] = 'listpages';
                     }
@@ -374,13 +366,9 @@ class Project
                     break;
                 case 'snippets':
                     $result['file'] = 'snippets_api';
-                    $result['template'] = '';
                     break;
                 case 'translate':
                     $result['file'] = 'translatestrings';
-                    if ($request['json']) {
-                        $result['template'] = '';
-                    }
                     break;
             }
 
@@ -390,7 +378,7 @@ class Project
         if ($request['filename'] != '' && $request['website'] != '') {
             $result['file'] = 'globalstatus';
             if ($request['json']) {
-                $result['template'] = '';
+                $result['file'] = 'globalstatus_api';
             }
 
             return $result;
@@ -400,7 +388,6 @@ class Project
             $request['website'] == ''  &&
             ($request['serial'] || $request['json'])) {
             $result['file'] = 'export';
-            $result['template'] = '';
 
             return $result;
         }
@@ -412,5 +399,23 @@ class Project
         }
 
         return $result;
+    }
+
+    /**
+     * Display an error message on the default error template and quit.
+     *
+     * @param array  $template      Twig object
+     * @param string $error_message Error message to display
+     *
+     */
+    public static function displayErrorTemplate($template, $error_message)
+    {
+        $output = $template->render(
+            'error.twig',
+            [
+                'error_message' => $error_message,
+            ]
+        );
+        die($output);
     }
 }

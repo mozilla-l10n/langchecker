@@ -35,8 +35,7 @@ if ($website != '' && $filename != '') {
 
 if (count($output_array) == 0) {
     // No locales: either wrong values or not enought parameters
-    http_response_code(400);
-    $output_array[] = 'Please check you request: provide a project name, or a valid couple website+file.';
+    die(Json::invalidAPICall("ERROR: please check you request: provide a project name, or a valid couple website+file."));
 }
 
 echo Json::output($output_array, false, true);

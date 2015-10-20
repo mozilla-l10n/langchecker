@@ -1,34 +1,11 @@
 <?php
 namespace Langchecker;
 
-?>
-
-<p id="back"><a href="http://l10n.mozilla-community.org/webdashboard/">Back to Web Dashboard</a></p>
-<h1>Complete files not activated</h1>
-
-<?php
-
-$table_start_code = '<table class="sortable globallist">
-  <thead>
-    <tr>
-      <th>Locale</th>
-      <th>Filename</th>
-      <th>Identical</th>
-      <th>Translated</th>
-      <th>Missing</th>
-      <th>Obsolete</th>
-      <th>Activated</th>
-    </tr>
-  </thead>
-  <tbody>
-';
-$table_rows = '';
-$table_end_code = "\n</tbody>\n</table>";
-
 // We only consider mozilla.org for this view, so $sites[0]
 $current_website = $sites[0];
 $reference_locale = Project::getReferenceLocale($current_website);
 
+$files_list = [];
 foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
     // I need to check only files that can be activated
     if (! in_array($current_filename, $no_active_tag)) {
@@ -58,23 +35,21 @@ foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
             $activation_status = $locale_analysis['activated'] ? 'yes' : 'no';
 
             if (($todo == 0) && ($activation_status == 'no')) {
-                $git_path = 'https://github.com/mozilla-l10n/www.mozilla.org/tree/master/' . $current_locale . '/' . $current_filename;
-                $table_rows .= "  <tr>\n";
-                $table_rows .= '    <td><a href="./?locale=' . $current_locale . '" title="See full status of this locale">' . $current_locale . "</a></td>\n";
-                $table_rows .= '    <td><a href="' . $git_path . '" target="_blank" title="Open this file on GitHub">' . $current_filename . "</a></td>\n";
-                $table_rows .= '    <td>' . count($locale_analysis['Identical']) . "</td>\n";
-                $table_rows .= '    <td>' . count($locale_analysis['Translated']) . "</td>\n";
-                $table_rows .= '    <td>' . count($locale_analysis['Missing']) . "</td>\n";
-                $table_rows .= '    <td>' . count($locale_analysis['Obsolete']) . "</td>\n";
-                $table_rows .= '    <td>' . $activation_status . "</td>\n";
-                $table_rows .= "  </tr>\n";
+                $files_list[] = [
+                    'activated' => $activation_status,
+                    'filename'  => $current_filename,
+                    'locale'    => $current_locale,
+                    'strings'   => $locale_analysis,
+                    'url'       => Project::getPublicFilePath($current_website, $current_locale, $current_filename),
+                ];
             }
         }
     }
 }
 
-if ($table_rows == '') {
-    echo "<p>There are no complete files missing the active tag.</p>";
-} else {
-    echo $table_start_code . $table_rows . $table_end_code;
-}
+print $twig->render(
+    'activation.twig',
+    [
+        'files_list' => $files_list,
+    ]
+);

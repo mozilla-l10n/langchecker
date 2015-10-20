@@ -14,17 +14,7 @@ $request_params = [
 
 $view_selection = Project::selectView($request_params);
 
-if ($view_selection['template'] !== '') {
-    // I need to use a template
-    $template = $templates_folder . $view_selection['template'] . '.inc.php';
-    $view = $views_folder . $view_selection['file'] . '.inc.php';
-} else {
-    // No template (JSON output)
-    $template = $views_folder . $view_selection['file'] . '.inc.php';
-}
+// Initialize and set-up Twig template
+require_once __DIR__ . '/twig_init.php';
 
-$viewname = $view_selection['file'];
-
-ob_start();
-
-include $template;
+include $controllers_folder . $view_selection['file'] . '.php';

@@ -1,0 +1,56 @@
+{% extends 'default.twig' %}
+
+{% block js_files %}
+    <script src="{{ assets_folder }}/js/sorttable.js"></script>
+{% endblock %}
+
+{% block body %}
+    <h1>General Completion of Web Parts</h1>
+    <table class="sortable">
+        <thead>
+            <tr>
+                <th>Locale</th>
+                <th>Untranslated</th>
+                <th>Translated</th>
+                <th>Total</th>
+                <th>Files</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for locale, locale_data in locales_list %}
+                <tr {% if locale_data.css_class != '' %} class="{{ locale_data.css_class }}" {% endif %}>
+                    <td><a href="./?locale={{ locale }}">{{ locale }}</a></td>
+                    <td>{{ locale_data.untranslated }}</td>
+                    <td>{{ locale_data.translated }}</td>
+                    <td>{{ locale_data.total }}</td>
+                    <td>{{ locale_data.file_count }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfooter>
+            <tr>
+                <th colspan="4">Number of locales</th>
+                <td><strong>{{ count_locales }}</strong></td>
+            </tr>
+        </tfooter>
+    </table>
+    <table id="count_summary">
+        <tr>
+            <th colspan="5">Web Parts Completion Summary</th>
+        </tr>
+        <tr>
+            <th>State</th>
+            <th>Count</th>
+            <th>Locales</th>
+            <th>On locamotion</th>
+        </tr>
+        {% for row in summary_table_rows %}
+            <tr>
+                <th title="{{ row.tooltip }}" class="help">{{ row.header }}</th>
+                <td>{{ row.count }}</td>
+                <td>{{ row.locales }}</td>
+                <td>{{ row.locamotion }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

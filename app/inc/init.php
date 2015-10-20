@@ -4,12 +4,13 @@ namespace Langchecker;
 date_default_timezone_set('Europe/Paris');
 
 // Server shortcuts
-$root_folder      = __DIR__ . '/../../';
-$app_folder       = $root_folder . 'app/';
-$libs_folder      = $app_folder . 'libs/';
-$conf_folder      = $app_folder . 'config/';
-$views_folder     = $app_folder . 'views/';
-$templates_folder = $app_folder . 'templates/';
+$root_folder        = realpath(__DIR__ . '/../../') . '/';
+$app_folder         = $root_folder . 'app/';
+$conf_folder        = $app_folder . 'config/';
+$controllers_folder = $app_folder . 'controllers/';
+$libs_folder        = $app_folder . 'libs/';
+$templates_folder   = $app_folder . 'templates/';
+$views_folder       = $app_folder . 'views/';
 
 // Autoloading of composer dependencies
 require_once $root_folder . 'vendor/autoload.php';

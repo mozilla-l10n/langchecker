@@ -1,0 +1,44 @@
+{% extends 'default.twig' %}
+
+{% block body %}
+    <h1>List of optional pages for <span>{{ locale }}</span></h1>
+    {% if files_list|length == 0 %}
+        <p>There are no optional pages available at the moment.</p>
+    {% else %}
+        <table class="optinpages">
+            <thead>
+                <tr>
+                    <th>Filename</th>
+                    <th>URL</th>
+                    <th>Strings</th>
+                    <th>Words</th>
+                    <th>Deadline</th>
+                    <th>Opted-in</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for filename, file_data in files_list %}
+                <tr>
+                    <td class="optin_filename">{{ filename }}</td>
+                    <td>{{ getViewLink(file_data.page_url)|raw }}</td>
+                    <td>{{ file_data.strings }}</td>
+                    <td>{{ file_data.words }}</td>
+                    <td>{{ file_data.deadline }}</td>
+                    <td class='optin_status'><span class="{{ file_data.status }}">{{ file_data.status }}</span></td>
+                    <td class='optin_actions'>
+                    {% if file_data.action != '' %}
+                        <a href="{{ file_data.action }}" class="table_small_link" title="File a bug to request this page">Opt-in</a>
+                    {% else %}
+                        –
+                    {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if available_optins > 0 %}
+            <p>You can also <a href="{{ optin_url }}">file a bug to opt-in for all pages</a> currently available for your locale ({{ available_optins }})</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}
