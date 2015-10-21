@@ -4,7 +4,7 @@ $public_repo1  = 'https://github.com/mozilla-l10n/www.mozilla.org';
 $public_repo2  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/';
 $public_repo3  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/';
 $public_repo4  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
-$public_repo5  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxhealthreport/';
+$public_repo5  = 'https://github.com/mozilla-l10n/fhr-l10n/tree/master/';
 $public_repo6  = 'https://svn.mozilla.org/projects/granary/slogans/';
 $public_repo7  = 'https://github.com/mozilla-l10n/engagement-l10n/tree/master/';
 $public_repo8  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/';
@@ -761,7 +761,7 @@ $sites =
     4 => [
         'about:healthreport',
         $repo5,
-        'locale/',
+        '',
         $firefox_desktop_android,
         $firefoxhealthreport_lang,
         'en-US', // source locale
