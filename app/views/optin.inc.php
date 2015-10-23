@@ -77,7 +77,7 @@ $html_output .= "</tbody>
 if (count($available_optins) > 0) {
     $html_output .= '<p>You can also <a href="' .
                     Bugzilla::getNewBugLink($current_locale, $bugzilla_locale, 'opt-in', $available_optins) .
-                    '">file a bug to opt-in for all pages</a> currently unsupported (' .
+                    '">file a bug to opt-in for all pages</a> currently available for your locale (' .
                     count($available_optins) . ').</p>';
 }
 
