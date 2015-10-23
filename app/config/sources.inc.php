@@ -1038,8 +1038,9 @@ $langfiles_subsets = [
             ],
         'mozorg/about/leadership.lang'          =>
             [
-                'af', 'cs', 'de', 'dsb', 'en-GB', 'es-CL', 'hsb', 'it', 'ko',
-                'pt-BR', 'pt-PT', 'ro', 'sl', 'sv-SE', 'uk', 'zh-CN',
+                'af', 'cs', 'de', 'dsb', 'en-GB', 'es-CL',
+                'hsb', 'it', 'ko', 'pt-BR', 'pt-PT', 'ro',
+                'sl', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/manifesto.lang'           =>
             [
@@ -1074,19 +1075,23 @@ $langfiles_subsets = [
         'tabzilla/tabzilla.lang'                => $mozillaorg,
         'teach/smarton/index.lang'              =>
             [
-                'cs', 'de', 'es-CL', 'es-ES', 'fr', 'it', 'pl',
+                'cs', 'de', 'es-CL', 'es-ES', 'fr',
+                'it', 'pl', 'zh-TW',
             ],
         'teach/smarton/security.lang'           =>
             [
-                'cs', 'de', 'es-CL', 'es-ES', 'fr', 'it', 'pl',
+                'cs', 'de', 'es-CL', 'es-ES', 'fr',
+                'it', 'pl', 'zh-TW',
             ],
         'teach/smarton/surveillance.lang'       =>
             [
-                'cs', 'de', 'es-CL', 'es-ES', 'fr', 'it', 'pl',
+                'cs', 'de', 'es-CL', 'es-ES', 'fr',
+                'it', 'pl', 'zh-TW',
             ],
         'teach/smarton/tracking.lang'           =>
             [
-                'cs', 'de', 'es-CL', 'es-ES', 'fr', 'it', 'pl',
+                'cs', 'de', 'es-CL', 'es-ES', 'fr',
+                'it', 'pl', 'zh-TW',
             ],
         'thunderbird/features.lang'             => $thunderbird_release,
         'thunderbird/index.lang'                => $thunderbird_release,
