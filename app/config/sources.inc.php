@@ -1075,22 +1075,22 @@ $langfiles_subsets = [
         'tabzilla/tabzilla.lang'                => $mozillaorg,
         'teach/smarton/index.lang'              =>
             [
-                'cs', 'cy', 'de', 'es-CL', 'es-ES', 'fr',
+                'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
                 'it', 'pl', 'sq', 'zh-TW',
             ],
         'teach/smarton/security.lang'           =>
             [
-                'cs', 'de', 'es-CL', 'es-ES', 'fr',
+                'cs', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
                 'it', 'pl', 'sq', 'zh-TW',
             ],
         'teach/smarton/surveillance.lang'       =>
             [
-                'cs', 'de', 'es-CL', 'es-ES', 'fr',
+                'cs', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
                 'it', 'pl', 'sq', 'zh-TW',
             ],
         'teach/smarton/tracking.lang'           =>
             [
-                'cs', 'cy', 'de', 'es-CL', 'es-ES', 'fr',
+                'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
                 'it', 'pl', 'sq', 'zh-TW',
             ],
         'thunderbird/features.lang'             => $thunderbird_release,
