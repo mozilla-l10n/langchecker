@@ -19,6 +19,7 @@
                 <th>Translated</th>
                 <th>Missing</th>
                 <th>Obsolete</th>
+                <th>Errors</th>
                 <th>Tags</th>
                 <th>URL</th>
                 <th>Activated</th>
@@ -32,6 +33,7 @@
                 <td>{{ file.Translated }}</td>
                 <td>{{ file.Missing }}</td>
                 <td>{{ file.Obsolete }}</td>
+                <td>{{ file.Errors }}</td>
                 <td class="tags_cell">{{ file.tags|raw }}</td>
                 <td>{{ getViewLink(file.page_url)|raw }}</td>
                 {% if file.activated %}
@@ -44,7 +46,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan= "8">
+                <td colspan="9">
                     Complete locales: {{ complete_locales }} ({{ percentage_complete }}%) - {{ coverage_complete }}% of our l10n user base<br>
                     {% if file_activable %}
                         Activated locales: {{ activated_locales }} ({{ percentage_activated }}%) - {{ coverage_activated }}% of our l10n user base

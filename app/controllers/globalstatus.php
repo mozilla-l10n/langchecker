@@ -44,6 +44,9 @@ if ($website_data_source == 'lang') {
         $todo = count($locale_analysis['Identical']) + count($locale_analysis['Missing']);
         $total = $todo + count($locale_analysis['Translated']);
 
+        // If there are errors, consider them as unstranslated strings
+        $todo += LangManager::countErrors($locale_analysis['errors']);
+
         $css_class = ($todo / $total > 0.60) ? ' lightlink_cell' : '';
         $bg_color = 'rgba(255, 0, 0, ' . round($todo / $total, 2) . ')';
 
@@ -65,11 +68,14 @@ if ($website_data_source == 'lang') {
             'page_url'  => Project::getLocalizedURL($reference_data, $current_locale),
         ];
 
-        $keys = ['Identical', 'Translated', 'Missing', 'Obsolete'];
+        $keys = ['Errors', 'Identical', 'Missing', 'Obsolete', 'Translated'];
         foreach ($keys as $key) {
-            $counter = count($locale_analysis[$key])
-                       ? count($locale_analysis[$key])
-                       : '';
+            $counter = $key == 'Errors'
+                ? LangManager::countErrors($locale_analysis['errors'])
+                : count($locale_analysis[$key]);
+            if ($counter == 0) {
+                $counter = '';
+            }
             $files_list[$current_locale][$key] = $counter;
         }
 

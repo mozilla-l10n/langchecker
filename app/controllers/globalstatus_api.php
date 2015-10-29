@@ -36,11 +36,11 @@ if ($website_data_source == 'lang') {
         // Read locale data
         $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
 
-        $keys = ['Identical', 'Translated', 'Missing', 'Obsolete'];
+        $keys = ['Errors', 'Identical', 'Missing', 'Obsolete', 'Translated'];
         foreach ($keys as $key) {
-            $counter = count($locale_analysis[$key])
-                       ? count($locale_analysis[$key])
-                       : '';
+            $counter = $key == 'Errors'
+                ? LangManager::countErrors($locale_analysis['errors'])
+                : count($locale_analysis[$key]);
             $json_data[$current_filename][$current_locale][$key] = intval($counter);
         }
 
