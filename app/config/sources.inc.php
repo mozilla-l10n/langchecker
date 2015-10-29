@@ -1076,22 +1076,22 @@ $langfiles_subsets = [
         'teach/smarton/index.lang'              =>
             [
                 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
-                'it', 'pl', 'sq', 'zh-TW',
+                'it', 'pl', 'ro', 'sq', 'zh-TW',
             ],
         'teach/smarton/security.lang'           =>
             [
                 'cs', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
-                'it', 'pl', 'sq', 'zh-TW',
+                'it', 'pl', 'ro', 'sq', 'zh-TW',
             ],
         'teach/smarton/surveillance.lang'       =>
             [
                 'cs', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
-                'it', 'pl', 'sq', 'zh-TW',
+                'it', 'pl', 'ro', 'sq', 'zh-TW',
             ],
         'teach/smarton/tracking.lang'           =>
             [
                 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
-                'it', 'pl', 'sq', 'zh-TW',
+                'it', 'pl', 'ro', 'sq', 'zh-TW',
             ],
         'thunderbird/features.lang'             => $thunderbird_release,
         'thunderbird/index.lang'                => $thunderbird_release,
