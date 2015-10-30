@@ -1080,12 +1080,12 @@ $langfiles_subsets = [
             ],
         'teach/smarton/security.lang'           =>
             [
-                'cs', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
+                'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
                 'it', 'pl', 'ro', 'sq', 'zh-TW',
             ],
         'teach/smarton/surveillance.lang'       =>
             [
-                'cs', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
+                'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr',
                 'it', 'pl', 'ro', 'sq', 'zh-TW',
             ],
         'teach/smarton/tracking.lang'           =>
