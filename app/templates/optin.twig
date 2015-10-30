@@ -1,10 +1,19 @@
 {% extends 'default.twig' %}
 
+{% block js_files %}
+    <script src="{{ assets_folder }}/js/optin.js"></script>
+{% endblock %}
+
 {% block body %}
     <h1>List of optional pages for <span>{{ locale }}</span></h1>
     {% if files_list|length == 0 %}
         <p>There are no optional pages available at the moment.</p>
     {% else %}
+        <div id="noscript_warning">
+            Please enable JavaScript. This page won't work properly without it.
+        </div>
+        <p>Use the last column on the right to select the pages you want to enable for your locale.<br>
+           Then click the button at the bottom of the column to file a bug (you will need an account on Bugzilla).</p>
         <table class="optinpages">
             <thead>
                 <tr>
@@ -14,7 +23,7 @@
                     <th>Words</th>
                     <th>Deadline</th>
                     <th>Opted-in</th>
-                    <th>Actions</th>
+                    <th>Opt-in</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,18 +36,27 @@
                     <td>{{ file_data.deadline }}</td>
                     <td class='optin_status'><span class="{{ file_data.status }}">{{ file_data.status }}</span></td>
                     <td class='optin_actions'>
-                    {% if file_data.action != '' %}
-                        <a href="{{ file_data.action }}" class="table_small_link" title="File a bug to request this page">Opt-in</a>
+                    {% if file_data.opted_in %}
+                        ✓
                     {% else %}
-                        –
+                        <input type="checkbox" class="optin_checkbox" value="{{ filename }}">
                     {% endif %}
                     </td>
                 </tr>
             {% endfor %}
             </tbody>
+            {% if available_optins > 0 %}
+                <tfoot>
+                    <tr>
+                        <td colspan="6"></td>
+                        <td>
+                            <input type="hidden" id="base_url" value="{{ optin_url }}">
+                            <input type="hidden" id="locale_code" value="{{ locale }}">
+                            <input type="submit" id="bugzilla_button" value="OPT-IN!" disabled="disabled">
+                        </td>
+                    </tr>
+                </tfoot>
+            {% endif %}
         </table>
-        {% if available_optins > 0 %}
-            <p>You can also <a href="{{ optin_url }}">file a bug to opt-in for all pages</a> currently available for your locale ({{ available_optins }})</p>
-        {% endif %}
     {% endif %}
 {% endblock %}

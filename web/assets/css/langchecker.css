@@ -361,6 +361,29 @@ div.tip blockquote {
     color: #92cc6e;
 }
 
+#bugzilla_button {
+    margin: 5px 2px;
+    padding: 5px;
+    border: 1px solid #9e988b;
+    border-radius: 0.25em;
+    box-shadow: 2px 2px 3px #b8b1a2;
+}
+
+#bugzilla_button:hover {
+    background: #b8b1a2;
+}
+
+#bugzilla_button:active {
+    color: #fff;
+    background: #706c64;
+}
+
+#noscript_warning {
+    color: #f2294b;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
 /* Translate page */
 
 .tag,

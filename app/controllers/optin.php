@@ -36,7 +36,7 @@ foreach ($optin_pages as $current_filename => $supported_locales) {
     }
 
     $files_list[$current_filename] = [
-        'action'   => $locale_included ? '' : Bugzilla::getNewBugLink($current_locale, $bugzilla_locale, 'opt-in', [$current_filename]),
+        'opted_in' => $locale_included,
         'deadline' => isset($deadline[$current_filename]) ? $deadline[$current_filename] : '-',
         'page_url' => Project::getLocalizedURL($reference_data, $current_locale),
         'status'   => $locale_included ? 'yes' : 'no',

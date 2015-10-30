@@ -27,19 +27,9 @@ class Bugzilla extends _Bugzilla
     public static function getNewBugLink($locale, $bugzilla_locale, $bug_type, $files)
     {
         if ($bug_type == 'opt-in') {
-            // Bug to request optional pages
-            if (count($files) > 1) {
-                // Filing a bug for multiple files.
-                $bug_title = "[l10n: {$locale}] Add opt-in pages to '{$locale}'";
-                $bug_body = "Please add '{$locale}' to the list of supported locales for the following files on www.mozilla.org:\n";
-                foreach ($files as $filename) {
-                    $bug_body .= "* {$filename}\n";
-                }
-            } else {
-                // Filing a bug for a single file.
-                $bug_title = "[l10n: {$locale}] Add '{$locale}' to the list of supported locales for {$files[0]}";
-                $bug_body = "Please add '{$locale}' to the list of supported locales for {$files[0]} on www.mozilla.org";
-            }
+            // Bug to request optional pages. The bug body will be filed at run-time with JS
+            $bug_title = "[l10n: {$locale}] Add opt-in pages to '{$locale}'";
+            $bug_body = '';
         } else {
             // Bug to request upload of updated files to GitHub
             $bug_title = "[l10n: {$locale}] Updated file '{$files[0]}' for GitHub repository";
@@ -48,7 +38,6 @@ class Bugzilla extends _Bugzilla
 
         $bug_link = 'https://bugzilla.mozilla.org/enter_bug.cgi?alias=&assigned_to=francesco.lodolo%40gmail.com' .
                     '&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=normal&bug_status=NEW' .
-                    '&comment=' . urlencode($bug_body) .
                     '&component=L10N&contenttypeentry=&contenttypemethod=autodetect' .
                     '&contenttypeselection=text%2Fplain&data=&dependson=&description=&flag_type-4=X' .
                     '&flag_type-418=X&flag_type-419=X&flag_type-506=X&flag_type-507=X&form_name=enter_bug' .
@@ -56,7 +45,8 @@ class Bugzilla extends _Bugzilla
                     '&priority=--&product=www.mozilla.org&qa_contact=pascalc%40gmail.com' .
                     '&rep_platform=All&short_desc=' . urlencode($bug_title) .
                     '&target_milestone=---&version=Development%2FStaging' .
-                    '&format=__default__&cf_locale=' . $bugzilla_locale;
+                    '&format=__default__&cf_locale=' . $bugzilla_locale .
+                    '&comment=' . urlencode($bug_body);
 
         return $bug_link;
     }
