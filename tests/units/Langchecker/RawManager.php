@@ -48,7 +48,7 @@ class RawManager extends atoum\test
         touch($referencefile);
         touch(_Project::getLocalFilePath($website, 'it', $filename), $timestamp);
 
-        $file_analysis = $obj->compareRawFiles($website, 'it', $filename);
+        $file_analysis = $obj->compareRawFiles($website, 'it', $filename, false);
         $this
             ->string($file_analysis['cmp_result'])
                 ->isEqualTo('outdated');
