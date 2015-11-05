@@ -177,42 +177,6 @@ class Utils
     }
 
     /**
-     * Get the timestamp of a Git commit for a file
-     *
-     * @param string $filename File to analyze
-     * @param string $git_repo Path to the local Git repository
-     *
-     * @return int Timestamp of last commit from Git,
-     *             or local if that fails
-     */
-    public static function getGitCommitTimestamp($filename, $git_repo)
-    {
-        exec(
-            "git --work-tree={$git_repo} --git-dir={$git_repo}/.git log --follow -2 --format=%cd {$filename} 2>/dev/null",
-            $output,
-            $return_code
-        );
-
-        if ($return_code) {
-            return filemtime($filename);
-        }
-
-        /* On January 15 2015 we moved our reference content from the en-GB
-         * folder to the en-US folder. Unlike svn, Git considers that this is
-         * a file change, so we need to ignore this date otherwise many
-         * translations would be marked as incorrect. That's why we took 2 items
-         * in the file history.
-         */
-        if ($output[0] == 'Thu Jan 15 13:46:56 2015 +0000') {
-            $reference_date = $output[1];
-        } else {
-            $reference_date = $output[0];
-        }
-
-        return (new \DateTime($reference_date))->getTimestamp();
-    }
-
-    /**
      * Print error, quit application if requested
      *
      * @param string $message Message to display

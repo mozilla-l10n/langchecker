@@ -48,9 +48,45 @@ class RawManager extends atoum\test
         touch($referencefile);
         touch(_Project::getLocalFilePath($website, 'it', $filename), $timestamp);
 
-        $file_analysis = $obj->compareRawFiles($website, 'it', $filename, false);
+        $file_analysis = $obj->compareRawFiles($website, 'it', $filename);
         $this
             ->string($file_analysis['cmp_result'])
                 ->isEqualTo('outdated');
+    }
+
+    public function parseGitLogDP()
+    {
+        return [
+            [
+                'test/repo/zh-TW/templates/mozorg/emails/addons.txt',
+                1446649744,
+            ],
+            [
+                'test/repo/it/templates/mozorg/contribute-2015/writing_txt_users.txt',
+                1444454862,
+            ],
+            [
+                'test/repo/en-US/templates/mozorg/emails/infos.txt',
+                1439381409,
+            ],
+            [
+                'test/repo/en-US/templates/mozorg/contribute-2015/l10n_tools.txt',
+                1412875677,
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider parseGitLogDP
+     */
+    public function testparseGitLog($a, $b)
+    {
+        $obj = new _RawManager();
+        $git_log = file(TEST_FILES . 'misc/git_log.txt', FILE_IGNORE_NEW_LINES);
+        $timestamps = $obj->parseGitLog('test/repo/', $git_log);
+
+        $this
+            ->integer($timestamps[$a])
+                ->isEqualTo($b);
     }
 }
