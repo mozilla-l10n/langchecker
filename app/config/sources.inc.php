@@ -272,6 +272,7 @@ $lang_flags['slogans'] = [
 ];
 
 $engagement_lang = [
+    'ios/ios_ads_nov2015.lang',
     'snippets/aug2014_a.lang',
     'snippets/aug2014_b.lang',
     'snippets/aug2014_c.lang',
@@ -336,6 +337,7 @@ $engagement_lang = [
     'tiles/tiles_nov2015.lang',
 ];
 $lang_flags['engagement'] = [
+    'ios/ios_ads_nov2015.lang'       => [ 'critical' => ['all'] ],
     'snippets/may2015_a.lang'        => [ 'critical' => ['all'] ],
     'snippets/may2015_b.lang'        => [ 'critical' => ['all'] ],
     'snippets/spring2015.lang'       => [ 'critical' => ['all'] ],
@@ -524,6 +526,7 @@ $deadline = [
     'firefox/tracking-protection-tour.lang'  => '2015-11-02',
     'firefox/whatsnew_42.lang'               => '2015-11-02',
     'firefox/win10-welcome.lang'             => '2015-08-10',
+    'ios/ios_ads_nov2015.lang'               => '2015-11-18',
     'legal/index.lang'                       => '2015-02-23',
     'main.lang'                              => '2015-11-02',
     'mozorg/about.lang'                      => '2015-03-26',
@@ -1127,6 +1130,7 @@ $langfiles_subsets = [
 
     'engagement' =>
     [
+        'ios/ios_ads_nov2015.lang'              => ['de', 'fr'],
         'snippets/jun2014.lang'                 => ['de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id', 'it', 'nl', 'pl', 'pt-BR', 'sr'],
         'snippets/aug2014_a.lang'               => ['es-ES'],
         'snippets/aug2014_b.lang'               => ['bn-BD', 'cs', 'hr', 'mk'],
