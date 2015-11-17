@@ -2,25 +2,21 @@
 
 @font-face {
     font-family: 'Open Sans';
-    src: url(https://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.eot?#iefix2013) format('embedded-opentype'),
-         url(https://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.woff?2013) format('woff'),
-         url(https://www.mozilla.org/media/fonts/OpenSans-Regular-webfont.ttf?2013) format('truetype');
+    src: url(../fonts/OpenSans-Regular-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Open Sans';
-    src: url(https://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.eot?#iefix2013) format('embedded-opentype'),
-         url(https://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.woff?2013) format('woff'),
-         url(https://www.mozilla.org/media/fonts/OpenSans-Bold-webfont.ttf?2013) format('truetype');
+    src: url(../assets/fonts/OpenSans-Bold-webfont.woff) format('woff');
     font-weight: bold;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Open Sans';
-    src: url(https://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.eot?#iefix2013) format('embedded-opentype'),
-         url(https://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.woff?2013) format('woff'),
-         url(https://www.mozilla.org/media/fonts/OpenSans-Italic-webfont.ttf?2013) format('truetype');
+    src: url(../fonts/OpenSans-Italic-webfont.woff) format('woff');
     font-weight: normal;
     font-style: italic;
 }
