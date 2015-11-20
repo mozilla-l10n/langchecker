@@ -10,7 +10,7 @@ $mozilla = [
     'cy', 'da', 'de', 'dsb', 'ee', 'el', 'en-GB', 'en-ZA',
     'eo', 'es', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et',
     'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
-    'gl', 'gu-IN', 'ha', 'he', 'hi-IN', 'hr', 'hsb', 'hu',
+    'gl', 'gn', 'gu-IN', 'ha', 'he', 'hi-IN', 'hr', 'hsb', 'hu',
     'hy-AM', 'id', 'ig', 'is', 'it', 'ja', 'ka', 'kk', 'km',
     'kn', 'ko', 'kok', 'ks', 'lij', 'ln', 'lo', 'lt', 'lv', 'mai',
     'mg', 'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'nn-NO',
@@ -50,6 +50,16 @@ $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
 
 // List of locales with active newsletter
 $newsletter_locales = ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'];
+
+// List of locales working on Pootle
+$locamotion_locales = [
+    'ach', 'af', 'bm', 'bn-BD', 'br', 'ca', 'cak', 'cy', 'dsb',
+    'ee', 'en-ZA', 'es-MX', 'fa', 'ff', 'fi', 'ga-IE', 'gd',
+    'gn', 'ha', 'hi-IN', 'hr', 'hsb', 'ig', 'kk', 'km', 'kok',
+    'ks', 'ln', 'lo', 'lt', 'lv', 'mg', 'ms', 'my', 'nn-NO',
+    'oc', 'sat', 'si', 'son', 'sw', 'ta', 'tl', 'tn', 'tsz',
+    'ur', 'uz', 'vi', 'wo', 'xh', 'yo', 'zu',
+];
 
 /* List of Mozilla's locales supported by SurveyGizmo.
  * Ref. http://help.surveygizmo.com/help/article/link/create-a-translated-survey#available-languages
