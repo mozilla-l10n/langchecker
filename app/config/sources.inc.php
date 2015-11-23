@@ -557,7 +557,7 @@ $android_locales = [
 $firefox_os = [
     'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca' , 'cs',
     'de', 'ee', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
-    'ff', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
+    'fa', 'ff', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
     'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mg', 'mk', 'my', 'nl',
     'pl', 'pt-BR', 'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE',
     'sw', 'ta', 'tl', 'tn', 'wo', 'xh', 'yo', 'zh-CN',
