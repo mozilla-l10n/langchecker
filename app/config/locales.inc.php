@@ -57,8 +57,8 @@ $locamotion_locales = [
     'ee', 'en-ZA', 'es-MX', 'ff', 'fi', 'ga-IE', 'gd',
     'gn', 'ha', 'hi-IN', 'hr', 'hsb', 'ig', 'kk', 'km', 'kok',
     'ks', 'ln', 'lo', 'lt', 'lv', 'mai', 'mg', 'mr', 'ms',
-    'my', 'nn-NO', 'oc', 'or', 'sat', 'si', 'son', 'sw', 'ta', 'te',
-    'tl', 'tn', 'tsz', 'ur', 'uz', 'vi', 'wo', 'xh', 'yo', 'zu',
+    'my', 'nn-NO', 'oc', 'or', 'sat', 'son', 'sw', 'ta', 'te',
+    'tl', 'tn', 'tsz', 'ur', 'vi', 'wo', 'xh', 'yo', 'zu',
 ];
 
 /* List of Mozilla's locales supported by SurveyGizmo.
