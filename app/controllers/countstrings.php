@@ -1,8 +1,6 @@
 <?php
 namespace Langchecker;
 
-use Transvision\Json;
-
 LangManager::$error_checking = false;
 DotLangParser::$extract_metadata = false;
 DotLangParser::$log_errors = false;
@@ -57,7 +55,7 @@ arsort($untranslated);
 
 // For a JSON request data is ready
 if ($json) {
-    die(Json::output($untranslated, false, true));
+    die($json_object->outputContent($untranslated, false, true));
 }
 
 // General table with untranslated/translated strings per locale

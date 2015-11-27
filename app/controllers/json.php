@@ -1,8 +1,6 @@
 <?php
 namespace Langchecker;
 
-use Transvision\Json;
-
 $json_data = [];
 
 // $filename is set in /inc/init.php
@@ -21,7 +19,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $site) {
 
 if (! $supported_file) {
     // File is not managed, throw error
-    die(Json::invalidAPICall("File {$current_filename} is not supported. Check the file name and try again."));
+    die($json_object->outputError("File {$current_filename} is not supported. Check the file name and try again."));
 }
 
 $reference_locale = Project::getReferenceLocale($current_website);
@@ -59,7 +57,7 @@ if (! $string_id) {
 
     if ($reference_string == '') {
         // String not found, throw error
-        die(Json::invalidAPICall("No string available with id: {$string_id}."));
+        die($json_object->outputError("No string available with id: {$string_id}."));
     }
 
     $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
@@ -85,5 +83,5 @@ if (! $string_id) {
     }
 
     $callback = isset($_GET['callback']) ? $_GET['callback'] : false;
-    exit(Json::output($json_data, $callback, true));
+    die($json_object->outputContent($json_data, $callback, true));
 }

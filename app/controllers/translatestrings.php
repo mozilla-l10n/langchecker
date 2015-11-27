@@ -1,8 +1,6 @@
 <?php
 namespace Langchecker;
 
-use Transvision\Json;
-
 // $filename is set in /inc/init.php
 $current_filename = $filename != '' ? $filename : 'snippets.lang';
 $show_status = isset($_GET['show']) ? 'auto' : 'none';
@@ -20,7 +18,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $site) {
 if (! $supported_file) {
     $error_message = "ERROR: file {$filename} does not exist";
     if ($json) {
-        die(Json::invalidAPICall($error_message));
+        die($json_object->outputError($error_message));
     } else {
         Project::displayErrorTemplate($twig, $error_message);
     }
@@ -48,7 +46,7 @@ foreach ($supported_locales as $current_locale) {
 
 // If requested output is JSON, we're ready
 if ($json) {
-    die(Json::output($all_strings, false, true));
+    die($json_object->outputContent($all_strings, false, true));
 }
 
 // Colors used to display tags

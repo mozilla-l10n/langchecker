@@ -1,8 +1,6 @@
 <?php
 namespace Langchecker;
 
-use Transvision\Json;
-
 $output_array = [];
 $lang_based_sites = Project::getWebsitesByDataType($sites, 'lang');
 if ($website != '' && $filename != '') {
@@ -35,7 +33,7 @@ if ($website != '' && $filename != '') {
 
 if (count($output_array) == 0) {
     // No locales: either wrong values or not enought parameters
-    die(Json::invalidAPICall("ERROR: please check you request: provide a project name, or a valid couple website+file."));
+    die($json_object->outputError("ERROR: please check you request: provide a project name, or a valid couple website+file."));
 }
 
-echo Json::output($output_array, false, true);
+echo $json_object->outputContent($output_array, false, true);

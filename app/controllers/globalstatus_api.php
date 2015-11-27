@@ -1,19 +1,17 @@
 <?php
 namespace Langchecker;
 
-use Transvision\Json;
-
 // $filename is set in /inc/init.php
 $current_filename = $filename;
 if (! isset($sites[$website])) {
-    die(Json::invalidAPICall("{$website} is not a supported website. Check the value and try again."));
+    die($json_object->outputError("{$website} is not a supported website. Check the value and try again."));
 }
 
 $current_website = $sites[$website];
 $website_data_source = Project::getWebsiteDataType($current_website);
 
 if ($current_filename == '' || ! in_array($current_filename, Project::getWebsiteFiles($current_website))) {
-    die(Json::invalidAPICall("File {$current_filename} does not exist. Check the value and try again."));
+    die($json_object->outputError("File {$current_filename} does not exist. Check the value and try again."));
 }
 
 $json_data = [];
@@ -83,14 +81,14 @@ if ($website_data_source == 'lang') {
 }
 
 if ($locale == 'all' || $locale == '') {
-    echo Json::output($json_data, false, true);
+    echo $json_object->outputContent($json_data, false, true);
 } else {
     // Only one locale
     if (isset($json_data[$current_filename][$locale])) {
         $single_locale_json[$current_filename][$locale] = $json_data[$current_filename][$locale];
-        echo Json::output($single_locale_json, false, true);
+        echo $json_object->outputContent($single_locale_json, false, true);
     } else {
         // Unknown locale
-        die(Json::invalidAPICall("Unknown locale: {$locale}. Check the value and try again."));
+        die($json_object->outputError("Unknown locale: {$locale}. Check the value and try again."));
     }
 }

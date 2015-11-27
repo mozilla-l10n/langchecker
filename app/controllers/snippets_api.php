@@ -1,19 +1,17 @@
 <?php
 namespace Langchecker;
 
-use Transvision\Json;
-
 // This view works only for snippets (website ID 6)
 $current_website = $sites[6];
 $current_locale = $locale;
 $json_data = [];
 
 if ($locale == '') {
-    exit(Json::invalidAPICall('Missing locale code in the request'));
+    die($json_object->outputError('Missing locale code in the request'));
 }
 
 if (! Project::isSupportedLocale($current_website, $current_locale)) {
-    exit(Json::invalidAPICall('This locale is not supported for snippets'));
+    die($json_object->outputError('This locale is not supported for snippets'));
 }
 
 foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
@@ -38,4 +36,4 @@ foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
 ksort($json_data);
 
 $callback = isset($_GET['callback']) ? $_GET['callback'] : false;
-exit(Json::output($json_data, $callback, true));
+die($json_object->outputContent($json_data, $callback, true));
