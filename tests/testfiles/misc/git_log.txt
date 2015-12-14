@@ -1,0 +1,98 @@
+Wed Nov 4 23:09:04 2015 +0800
+zh-TW/templates/mozorg/emails/addons.txt
+
+Wed Nov 4 23:07:05 2015 +0800
+zh-TW/templates/mozorg/emails/coding.txt
+
+Wed Nov 4 23:05:02 2015 +0800
+zh-TW/templates/mozorg/emails/localization.txt
+
+Wed Oct 21 22:44:00 2015 +0200
+de/templates/mozorg/emails/other.txt
+
+Sat Oct 10 07:27:42 2015 +0200
+it/templates/mozorg/contribute-2015/activism.txt
+it/templates/mozorg/contribute-2015/coding_addons.txt
+it/templates/mozorg/contribute-2015/coding_cloud.txt
+it/templates/mozorg/contribute-2015/coding_firefox.txt
+it/templates/mozorg/contribute-2015/coding_firefoxos.txt
+it/templates/mozorg/contribute-2015/coding_marketplace.txt
+it/templates/mozorg/contribute-2015/coding_webcompat.txt
+it/templates/mozorg/contribute-2015/coding_webdev.txt
+it/templates/mozorg/contribute-2015/dontknow.txt
+it/templates/mozorg/contribute-2015/education_fellowships.txt
+it/templates/mozorg/contribute-2015/education_hive.txt
+it/templates/mozorg/contribute-2015/education_sciencelab.txt
+it/templates/mozorg/contribute-2015/education_webmaker.txt
+it/templates/mozorg/contribute-2015/l10n_product.txt
+it/templates/mozorg/contribute-2015/l10n_tools.txt
+it/templates/mozorg/contribute-2015/l10n_web.txt
+it/templates/mozorg/contribute-2015/qa_addons.txt
+it/templates/mozorg/contribute-2015/qa_general.txt
+it/templates/mozorg/contribute-2015/qa_marketplace.txt
+it/templates/mozorg/contribute-2015/qa_webcompat.txt
+it/templates/mozorg/contribute-2015/sumo_sumo.txt
+it/templates/mozorg/contribute-2015/sumo_webcompat.txt
+it/templates/mozorg/contribute-2015/writing_addons.txt
+it/templates/mozorg/contribute-2015/writing_journalism.txt
+it/templates/mozorg/contribute-2015/writing_marketplace.txt
+it/templates/mozorg/contribute-2015/writing_social.txt
+it/templates/mozorg/contribute-2015/writing_txt_devs.txt
+it/templates/mozorg/contribute-2015/writing_txt_users.txt
+
+Fri Sep 25 11:49:39 2015 +0000
+cy/templates/mozorg/contribute-2015/generic_template.txt
+
+Thu Sep 24 08:13:13 2015 +0000
+de/templates/mozorg/emails/other.txt
+
+Wed Aug 12 12:10:09 2015 +0000
+en-US/templates/mozorg/emails/documentation.txt
+en-US/templates/mozorg/emails/infos.txt
+en-US/templates/mozorg/emails/localization.txt
+
+Thu Jan 15 13:46:56 2015 +0000
+en-US/templates/mozorg/contribute-2015/READ_ME.txt
+en-US/templates/mozorg/contribute-2015/activism.txt
+en-US/templates/mozorg/contribute-2015/coding_addons.txt
+en-US/templates/mozorg/contribute-2015/coding_cloud.txt
+en-US/templates/mozorg/contribute-2015/coding_firefox.txt
+en-US/templates/mozorg/contribute-2015/coding_firefoxos.txt
+en-US/templates/mozorg/contribute-2015/coding_marketplace.txt
+en-US/templates/mozorg/contribute-2015/coding_webcompat.txt
+en-US/templates/mozorg/contribute-2015/coding_webdev.txt
+en-US/templates/mozorg/contribute-2015/dontknow.txt
+en-US/templates/mozorg/contribute-2015/education_fellowships.txt
+en-US/templates/mozorg/contribute-2015/education_hive.txt
+en-US/templates/mozorg/contribute-2015/education_sciencelab.txt
+en-US/templates/mozorg/contribute-2015/education_webmaker.txt
+en-US/templates/mozorg/contribute-2015/generic_template.txt
+en-US/templates/mozorg/contribute-2015/l10n_product.txt
+en-US/templates/mozorg/contribute-2015/l10n_tools.txt
+en-US/templates/mozorg/contribute-2015/l10n_web.txt
+en-US/templates/mozorg/contribute-2015/qa_addons.txt
+en-US/templates/mozorg/contribute-2015/qa_general.txt
+en-US/templates/mozorg/contribute-2015/qa_marketplace.txt
+en-US/templates/mozorg/contribute-2015/qa_webcompat.txt
+en-US/templates/mozorg/contribute-2015/sumo_sumo.txt
+en-US/templates/mozorg/contribute-2015/sumo_webcompat.txt
+en-US/templates/mozorg/contribute-2015/writing_addons.txt
+en-US/templates/mozorg/contribute-2015/writing_journalism.txt
+en-US/templates/mozorg/contribute-2015/writing_marketplace.txt
+en-US/templates/mozorg/contribute-2015/writing_social.txt
+en-US/templates/mozorg/contribute-2015/writing_txt_devs.txt
+en-US/templates/mozorg/contribute-2015/writing_txt_users.txt
+en-US/templates/mozorg/emails/addons.txt
+en-US/templates/mozorg/emails/coding.txt
+en-US/templates/mozorg/emails/design.txt
+en-US/templates/mozorg/emails/documentation.txt
+en-US/templates/mozorg/emails/education.txt
+en-US/templates/mozorg/emails/issues.txt
+en-US/templates/mozorg/emails/localization.txt
+en-US/templates/mozorg/emails/marketing.txt
+en-US/templates/mozorg/emails/marketplace.txt
+en-US/templates/mozorg/emails/other.txt
+en-US/templates/mozorg/emails/qa.txt
+en-US/templates/mozorg/emails/suggestions.txt
+en-US/templates/mozorg/emails/support.txt
+en-US/templates/mozorg/emails/webdev.txt
