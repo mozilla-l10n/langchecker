@@ -187,8 +187,11 @@ class Utils
      */
     public static function getGitCommitTimestamp($filename, $git_repo)
     {
-        exec("git --work-tree={$git_repo} --git-dir={$git_repo}/.git log --follow -2 --format=%cd {$filename} 2>/dev/null
-", $output, $return_code);
+        exec(
+            "git --work-tree={$git_repo} --git-dir={$git_repo}/.git log --follow -2 --format=%cd {$filename} 2>/dev/null",
+            $output,
+            $return_code
+        );
 
         if ($return_code) {
             return filemtime($filename);

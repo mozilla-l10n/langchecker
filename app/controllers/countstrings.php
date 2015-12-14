@@ -26,7 +26,6 @@ foreach ($mozilla as $current_locale) {
         }
 
         foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
-
             // File not supported
             if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
                 continue;
@@ -56,55 +55,26 @@ foreach ($mozilla as $current_locale) {
 // I need locales with more untranslated strings first
 arsort($untranslated);
 
+// For a JSON request data is ready
 if ($json) {
     die(Json::output($untranslated, false, true));
 }
 
 // General table with untranslated/translated strings per locale
-$rows = '';
+$locales_list = [];
 foreach ($untranslated as $locale => $untranslated_count) {
-    if ($untranslated_count == 0) {
-        $class = 'class="count_complete"';
-    } else {
-        $class = '';
-    }
-
-    $rows .= "<tr {$class}>" .
-             "  <td><a href='./?locale={$locale}'>{$locale}</a></td>\n" .
-             "  <td>{$untranslated_count}</td>\n" .
-             "  <td>{$translated[$locale]}</td>\n" .
-             "  <td>{$all_strings[$locale]}</td>\n" .
-             "  <td>{$file_count[$locale]}</td>\n" .
-             "</tr>\n";
+    $locales_list[$locale] = [
+        'css_class'    => ($untranslated_count == 0) ? 'count_complete' : '',
+        'file_count'   => $file_count[$locale],
+        'total'        => $all_strings[$locale],
+        'translated'   => $translated[$locale],
+        'untranslated' => $untranslated[$locale],
+    ];
 }
 
-$general_table = "
-<table class='sortable'>
-  <thead>
-    <tr>
-        <th>Locale</th>
-        <th>Untranslated</th>
-        <th>Translated</th>
-        <th>Total</th>
-        <th>Files</th>
-    </tr>
-  </thead>
-  <tbody>
-{$rows}
-  </tbody>
-  <tfooter>
-    <tr>
-        <th colspan='4'>Number of locales</th>
-        <td><strong>" . count($mozilla) . "</strong></td>
-    </tr>
-  </tfooter>
-</table>
-";
-
-/* Summary table code */
-
-// Those are tips displayed when hovering the row header
-$title = [
+// Summary table code
+// Those are tooltips displayed when hovering the row header
+$tooltips = [
     'perfect'  => 'Everything is translated',
     'good'     => 'Less than 50 missing strings',
     'average'  => 'Between 50 and 200 missing strings',
@@ -113,7 +83,6 @@ $title = [
 ];
 
 $results = [];
-
 foreach ($untranslated as $key => $val) {
     if ($val == 0) {
         $results['perfect'][] = $key;
@@ -138,38 +107,28 @@ foreach ($untranslated as $key => $val) {
     $results['very bad'][] = $key;
 }
 
-$rows = '';
+$summary_table_rows = [];
 foreach (array_reverse($results) as $category => $values) {
     sort($values);
     $th  = ucfirst($category);
-    $tip = $title[$category];
+    $tip = $tooltips[$category];
     $td1 = count($values);
     $td2 = implode(', ', $values);
     $on_locamotion = implode(', ', array_intersect($values, $locamotion_locales));
-    $rows .= "
-    <tr>
-        <th title='{$tip}' class='help'>{$th}</th>
-        <td>{$td1}</td>
-        <td>{$td2}</td>
-        <td>{$on_locamotion}</td>
-    </tr>";
+    $summary_table_rows[] = [
+        'header'     => $th,
+        'tooltip'    => $tip,
+        'count'      => $td1,
+        'locales'    => $td2,
+        'locamotion' => $on_locamotion,
+    ];
 }
 
-$summary_table = "
-<table id='count_summary'>
-    <tr>
-        <th colspan='5'>Web Parts Completion Summary</th>
-    </tr>
-    <tr>
-        <th>State</th>
-        <th>Count</th>
-        <th>Locales</th>
-        <th>On locamotion</th>
-    </tr>
-{$rows}
-</table>
-";
-
-print '<h2>General Completion of Web Parts</h2>';
-print $general_table;
-print $summary_table;
+print $twig->render(
+    'countstrings.twig',
+    [
+        'count_locales'      => count($mozilla),
+        'summary_table_rows' => $summary_table_rows,
+        'locales_list'       => $locales_list,
+    ]
+);

@@ -212,6 +212,10 @@ tr.tabletotals th {
 .file_container {
     background-color: #fff;
     padding: 5px;
+    margin-top: 15px;
+}
+
+.listsitesforlocale .file_container {
     min-height: 140px;
 }
 
@@ -377,11 +381,15 @@ div.tip blockquote {
     color: #808080;
 }
 
-.translations td {
+.translations_table {
+    width: 100%;
+}
+
+.translations_table td {
     text-align: left;
 }
 
-.translations th {
+.translations_table th {
     width: 5em;
 }
 
@@ -391,6 +399,10 @@ div.tip blockquote {
 
 .even_row {
     background-color: #faf6ed;
+}
+
+.translatestring a {
+    color: #008000;
 }
 
 /* List locales */
@@ -412,6 +424,7 @@ div.tip blockquote {
 #count_summary th,
 #count_summary td {
     margin: 0 1em;
+    padding: 0.5em;
 }
 
 #count_summary td + td {

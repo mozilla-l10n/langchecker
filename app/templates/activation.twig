@@ -1,0 +1,39 @@
+{% extends 'default.twig' %}
+
+{% block js_files %}
+    <script src="{{ assets_folder }}/js/sorttable.js"></script>
+{% endblock %}
+
+{% block body %}
+    <h1>Complete files not activated</h1>
+    {% if files_list|length == 0 %}
+        <p>There are no complete files missing the active tag.</p>
+    {% else %}
+        <table class="sortable globallist">
+            <thead>
+                <tr>
+                    <th>Locale</th>
+                    <th>Filename</th>
+                    <th>Identical</th>
+                    <th>Translated</th>
+                    <th>Missing</th>
+                    <th>Obsolete</th>
+                    <th>Activated</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for file in files_list %}
+                <tr>
+                    <td><a href="./?locale={{ file.locale }}" title="See full status of this locale">{{ file.locale }}</a></td>
+                    <td><a href="{{ file.url }}" target="_blank" title="Open this file on GitHub">{{ file.filename }}</a></td>
+                    <td>{{ file.strings.Identical|length }}</td>
+                    <td>{{ file.strings.Translated|length }}</td>
+                    <td>{{ file.strings.Missing|length }}</td>
+                    <td>{{ file.strings.Obsolete|length }}</td>
+                    <td>{{ file.activated }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

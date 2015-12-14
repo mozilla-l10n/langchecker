@@ -1,0 +1,42 @@
+{% extends 'default.twig' %}
+
+{% block js_files %}
+    <script src="{{ assets_folder }}/js/base.js"></script>
+{% endblock %}
+
+{% block body %}
+    <h2>{{ filename }}</h2>
+    {% if string_list|length > 0 %}
+        <p>Click on the green English strings to expand/collapse the translations done</p>
+        {% if tags|length > 0 %}
+            <p>Tags used in this page:
+            {% for tag in tags %}
+                <span class="taglist" style="background-color: {{ tag.bg_color }}; color: {{ tag.color }};">{{ tag.text }}</span>
+            {% endfor %}
+            </p>
+        {% endif %}
+        {% for string in string_list %}
+            <p id="string{{ loop.index }}" class="translatestring">
+                <a href="#string{{ loop.index }}" onclick="showhide('{{ loop.index }}');">{{ string.header }}</a>
+                {% if string.tag != '' %}
+                    <span title="Associated tag" class="tag" style="background-color: {{ string.tag.bg_color }}; color: {{ string.tag.color }};">{{ string.tag.text }}</span>
+                {% endif %}
+            </p>
+            <table style="display: {{ show_status }};" id="table{{ loop.index }}" class="translations_table">
+                <tbody>
+                    {% for translation in string.translations %}
+                        <tr class="{{ translation.css_class }}">
+                            <th>{{ translation.locale }}</th>
+                            <td>{{ translation.translation }}</td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="2" class="donelocales_cell">Number of locales done: {{ string.translations|length }} ({{ string.coverage }}% of our l10n user base)</td>
+                    </tr>
+                </tbody>
+            </table>
+        {% endfor %}
+    {% else %}
+        <p>There are currently no translations available for this file.</p>
+    {% endif %}
+{% endblock %}

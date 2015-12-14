@@ -39,7 +39,7 @@ foreach ($displayed_sites as $site_index => $current_website) {
                 'source_type'       => $website_data_source,
                 'supported_locales' => Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets),
                 'strings_count'     => $nb_strings,
-                'url'               => Project::getLocalizedURL($reference_data, '', 'txt'),
+                'url'               => Project::getLocalizedURL($reference_data, ''),
                 'words_count'       => $nb_words,
             ];
         } else {

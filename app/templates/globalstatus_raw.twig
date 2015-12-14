@@ -1,0 +1,29 @@
+{% extends 'default.twig' %}
+
+{% block body %}
+    <table class="sortable rawfiles">
+        <caption class="filename">{{ filename }}</caption>
+        <thead>
+            <tr>
+                <th>Locale</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for locale, file in files_list %}
+            <tr>
+                <td class="maincolumn"><a href="./?locale={{ locale }}#{{ website_name }}">{{ locale }}</a></td>
+                <td><span class="rawstatus {{ file.status }}">{{ file.pretty_status }}</span></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    {{ getPluralForm(complete_locales, 'translated locale') }} ({{ percentage }}%)<br/>
+                    {{ coverage }}% of our l10n user base
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

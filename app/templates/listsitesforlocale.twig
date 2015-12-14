@@ -1,0 +1,179 @@
+{% extends 'default.twig' %}
+
+{% block body %}
+    <h1>Lang format file checker <span>{{ locale }}</span></h1>
+    {% for website_name, website in websites %}
+        <div class="website_container">
+            <h2 id="{{ website_name }}"><a href="{{ website_name }}">{{ website_name }}</a><span class="datasource">{{ website.data_source }}</span></h2>
+            <p>Repository: <a href="{{ website.repository }}">{{ website.repository }}</a></p>
+            {% if website.data_source == 'lang' %}
+                {% if website.files_done|length > 0 %}
+                    <h3>DONE</h3>
+                    <p>
+                    {% for filename, status in website.files_done %}
+                        <a href="#{{ filename }}" class="file_done {{ status }}">{{ filename }}</a>
+                    {% endfor %}
+                    </p>
+                {% endif %}
+                {% if website.files_todo|length > 0 %}
+                    <h3>TODO</h3>
+                    <p>
+                    {% for filename, status in website.files_todo %}
+                        <div class="file_container" id="{{ filename }}">
+                            <h3 class="filename {{ status.file_status }}"><a href="#{{ filename }}">{{ filename }}</a></h3>
+                            <table class="sidetable">
+                                <thead>
+                                    <tr>
+                                        <th>Identical</th>
+                                        <th>Trans.</th>
+                                        <th>Missing</th>
+                                        <th>Errors</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{ status.count_identical }}</td>
+                                        <td>{{ status.count_translated }}</td>
+                                        <td>{{ status.count_missing }}</td>
+                                        <td>{{ status.count_errors }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <a href="{{ status.reference_url }}">Original English source file</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <a href="{{ status.locale_url }}">Your translated file</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <a href="{{ status.bugzilla_link }}">Attach your updated file to Bugzilla</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            {% if status.count_identical > 0 %}
+                                <h3>Strings identical to English:</h3>
+                                <ul>
+                                {% for string in status.strings_identical %}
+                                    <li>{{ string }}</li>
+                                {% endfor %}
+                                </ul>
+                                <div class="tip">
+                                    <p><strong>Tip:</strong> if it is expected that a string is identical
+                                        to the English one for your language, just add <code>{ok}</code>
+                                        to your string and it will no longer be listed as "identical".
+                                        Example: </p><blockquote>;Plugins<br/>Plugins {ok}</blockquote>
+                                </div>
+                            {% endif %}
+                            {% if status.count_missing > 0 %}
+                                <h3>Missing strings:</h3>
+                                <ul>
+                                {% for string in status.strings_missing %}
+                                    <li>{{ string }}</li>
+                                {% endfor %}
+                                </ul>
+                            {% endif %}
+                            {% for error in status.errors %}
+                                {% if error.type == 'ignored_strings' %}
+                                    <p>The following strings will be ignored:</p>
+                                    <ul>
+                                    {% for string_id in error.errors %}
+                                        <li>{{ string_id }}</li>
+                                    {% endfor %}
+                                    </ul>
+                                    <p>This is usually caused by tools trying to store multiline strings (not supported in .lang files).</p>
+                                {% elseif error.type == 'length' %}
+                                    <p>Some strings are longer than allowed:</p>
+                                    <ul>
+                                    {% for string_id, length_error in error.errors %}
+                                        <li>
+                                            {{ length_error.text }}<br/>
+                                            <em>Currently {{ length_error.current }} characters long (maximum allowed {{ length_error.limit }})</em>
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+                                {% elseif error.type == 'python' %}
+                                    <h3>Variable errors in:</h3>
+                                    <ul>
+                                    {% for string_id, python_error in error.errors %}
+                                        <table class="python">
+                                            <tr>
+                                                <th>Check the following variables: <strong style="color:red;">{{ python_error.var }}</strong></th>
+                                            </tr>
+                                            <tr>
+                                                <td>{{ highlightPythonVar(string_id)|raw }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>{{ highlightPythonVar(python_error.text)|raw }}</td>
+                                            </tr>
+                                        </table>
+                                    {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <h3>{{ error.title }}</h3>
+                                    <p>{{ error.message|raw }}</p>
+                                {% endif %}
+                                {% if status.python_note %}
+                                    <div class="tip">
+                                        <p><strong>Tip:</strong> This file contains variables that can use the following formats:</p>
+                                        <blockquote><strong>%(variable)s</strong>, <strong>%s</strong>, or <strong>%%</strong> (“escaped” percentage sign).</blockquote>
+                                        <p>Make sure to keep these variables unchanged: don’t translate the text between brackets, or remove the “s” after the closing bracket.</p>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                    </p>
+                {% endif %}
+            {% elseif website.data_source == 'raw' %}
+                {% if website.files_done|length > 0 %}
+                    <h3>DONE</h3>
+                    <p>
+                    {% for filename in website.files_done %}
+                        <a href="#{{ filename }}" class="file_done activated">{{ filename }}</a>
+                    {% endfor %}
+                    </p>
+                    {% if website.files_todo|length > 0 %}
+                        <p>Note: for 'raw' files – like text files – we can only rely on update dates. Warnings
+                            or errors for <em>optional</em> files are not displayed.</p>
+                        <table class="rawfiles">
+                            <tr>
+                                <th>Filename</th>
+                                <th>Status</th>
+                                <th>Reference file</th>
+                                <th>Locale file</th>
+                            </tr>
+                            {% for filename, status in website.files_todo %}
+                            <tr>
+                                <td class="maincolumn">{{ filename }}</td>
+                                <td><span class="rawstatus {{ status.css_class }}">{{ status.cmp_result }}</span></td>
+                                <td>
+                                {% if status.reference_url != '' %}
+                                    <a href="{{ status.reference_url }}">Reference file</a>
+                                    <span class="last_update" title="last update">{{ status.reference_lastupdate }}</span>
+                                {% else %}
+                                    –
+                                {% endif %}
+                                </td>
+                                <td>
+                                {% if status.locale_url != '' %}
+                                    <a href="{{ status.locale_url }}">Locale file</a>
+                                    <span class="last_update" title="last update">{{ status.locale_lastupdate }}</span>
+                                {% else %}
+                                    –
+                                {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        </div>
+    {% else %}
+        <p>This locale code is not supported on our sites.</p>
+    {% endfor %}
+{% endblock %}

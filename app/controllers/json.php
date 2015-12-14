@@ -28,21 +28,25 @@ $reference_locale = Project::getReferenceLocale($current_website);
 $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
 if (! $string_id) {
-    // Display list of links to strings
-    header("Content-type:text/html; charset=utf-8");
-    echo "<ul>\n";
+    $strings_list = [];
     foreach ($reference_data['strings'] as $current_string => $value) {
         $string_hash = sha1($current_string);
         if (isset($_GET['callback'])) {
-            $string_link = "?action=api&file={$current_filename}&stringid={$string_hash}&callback={$_GET['callback']}";
+            $string_link = "./?action=api&file={$current_filename}&stringid={$string_hash}&callback={$_GET['callback']}";
         } else {
-            $string_link = "?action=api&file={$current_filename}&stringid={$string_hash}";
+            $string_link = "./?action=api&file={$current_filename}&stringid={$string_hash}";
         }
-        echo "<li><a href='{$string_link}'>"
-             . htmlspecialchars($current_string)
-             . "</a></li>\n";
+        $strings_list[] = [
+            'link'   => $string_link,
+            'string' => htmlspecialchars($current_string),
+        ];
     }
-    echo "</ul>\n";
+    print $twig->render(
+        'json.twig',
+        [
+            'strings_list' => $strings_list,
+        ]
+    );
 } else {
     // I have a string_id to display, identify the reference string from provided hash
     $reference_string = '';

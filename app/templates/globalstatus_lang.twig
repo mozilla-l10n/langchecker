@@ -1,0 +1,60 @@
+{% extends 'default.twig' %}
+
+{% block js_files %}
+    <script src="{{ assets_folder }}/js/sorttable.js"></script>
+{% endblock %}
+
+{% block body %}
+    <table class="sortable globallist">
+        <caption class="filename">
+            <a href="./?website={{ website_id }}&amp;file={{ filename }}&amp;action=translate" title="View available translations for this file">{{ filename }}</a>
+            {% if obsolete %}
+                <span class="obsolete_warning">(this file is obsolete)</span>
+            {% endif %}
+        </caption>
+        <thead>
+            <tr>
+                <th>Locale</th>
+                <th>Identical</th>
+                <th>Translated</th>
+                <th>Missing</th>
+                <th>Obsolete</th>
+                <th>Errors</th>
+                <th>Tags</th>
+                <th>URL</th>
+                <th>Activated</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for locale, file in files_list %}
+            <tr>
+                <td class="linklocale_cell {{ file.css_class }}" style="background-color: {{ file.bg_color }}"><a href="./?locale={{ locale }}#{{ filename }}">{{ locale }}</a></td>
+                <td>{{ file.Identical }}</td>
+                <td>{{ file.Translated }}</td>
+                <td>{{ file.Missing }}</td>
+                <td>{{ file.Obsolete }}</td>
+                <td>{{ file.Errors }}</td>
+                <td class="tags_cell">{{ file.tags|raw }}</td>
+                <td>{{ getViewLink(file.page_url)|raw }}</td>
+                {% if file.activated %}
+                    <td class="activated_cell">active</td>
+                {% else %}
+                    <td></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="9">
+                    Complete locales: {{ complete_locales }} ({{ percentage_complete }}%) - {{ coverage_complete }}% of our l10n user base<br>
+                    {% if file_activable %}
+                        Activated locales: {{ activated_locales }} ({{ percentage_activated }}%) - {{ coverage_activated }}% of our l10n user base
+                    {% else %}
+                        This file is not supposed to be activated
+                    {% endif %}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

@@ -418,8 +418,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'activation',
-                    'template'     => 'template',
+                    'file' => 'activation',
                 ],
             ],
             [
@@ -432,8 +431,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'json',
-                    'template'     => '',
+                    'file' => 'json',
                 ],
             ],
             [
@@ -446,8 +444,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'countstrings',
-                    'template'     => 'template',
+                    'file' => 'countstrings',
                 ],
             ],
             [
@@ -460,8 +457,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'countstrings',
-                    'template'     => false,
+                    'file' => 'countstrings',
                 ],
             ],
             [
@@ -474,8 +470,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'getcoverage',
-                    'template'     => '',
+                    'file' => 'getcoverage',
                 ],
             ],
             [
@@ -488,8 +483,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'errors',
-                    'template'     => 'template',
+                    'file' => 'errors',
                 ],
             ],
             [
@@ -502,8 +496,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'listlocalesforproject',
-                    'template'     => '',
+                    'file' => 'listlocalesforproject',
                 ],
             ],
             [
@@ -516,8 +509,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'listlocales',
-                    'template'     => 'template',
+                    'file' => 'listlocales',
                 ],
             ],
             [
@@ -529,8 +521,7 @@ class Project extends atoum\test
                     'serial'   => false,
                     'website'  => '',                ],
                 [
-                    'file'         => 'listpages',
-                    'template'     => 'template',
+                    'file' => 'listpages',
                 ],
             ],
             [
@@ -542,8 +533,7 @@ class Project extends atoum\test
                     'serial'   => false,
                     'website'  => '',                ],
                 [
-                    'file'         => 'listpages_api',
-                    'template'     => '',
+                    'file' => 'listpages_api',
                 ],
             ],
             [
@@ -555,8 +545,7 @@ class Project extends atoum\test
                     'serial'   => false,
                     'website'  => '',                ],
                 [
-                    'file'         => 'optin',
-                    'template'     => 'template',
+                    'file' => 'optin',
                 ],
             ],
             [
@@ -568,8 +557,7 @@ class Project extends atoum\test
                     'serial'   => false,
                     'website'  => '',                ],
                 [
-                    'file'         => 'snippets_api',
-                    'template'     => '',
+                    'file' => 'snippets_api',
                 ],
             ],
             [
@@ -582,8 +570,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'translatestrings',
-                    'template'     => 'template',
+                    'file' => 'translatestrings',
                 ],
             ],
             [
@@ -596,8 +583,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'translatestrings',
-                    'template'     => '',
+                    'file' => 'translatestrings',
                 ],
             ],
             [
@@ -610,8 +596,7 @@ class Project extends atoum\test
                     'website'  => '0',
                 ],
                 [
-                    'file'         => 'globalstatus',
-                    'template'     => 'template',
+                    'file' => 'globalstatus',
                 ],
             ],
             [
@@ -624,8 +609,7 @@ class Project extends atoum\test
                     'website'  => '0',
                 ],
                 [
-                    'file'         => 'globalstatus',
-                    'template'     => 'template',
+                    'file' => 'globalstatus',
                 ],
             ],
             [
@@ -638,8 +622,7 @@ class Project extends atoum\test
                     'website'  => '0',
                 ],
                 [
-                    'file'         => 'globalstatus',
-                    'template'     => '',
+                    'file' => 'globalstatus_api',
                 ],
             ],
             [
@@ -652,8 +635,7 @@ class Project extends atoum\test
                     'website'  => '0',
                 ],
                 [
-                    'file'         => 'globalstatus',
-                    'template'     => '',
+                    'file' => 'globalstatus_api',
                 ],
             ],
             [
@@ -666,8 +648,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'export',
-                    'template'     => '',
+                    'file' => 'export',
                 ],
             ],
             [
@@ -680,8 +661,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'export',
-                    'template'     => '',
+                    'file' => 'export',
                 ],
             ],
             [
@@ -694,8 +674,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'listlocales',
-                    'template'     => 'template',
+                    'file'  => 'listlocales',
                 ],
             ],
             [
@@ -708,8 +687,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'listsitesforlocale',
-                    'template'     => 'template',
+                    'file' => 'listsitesforlocale',
                 ],
             ],
             [
@@ -722,8 +700,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'         => 'listlocales',
-                    'template'     => 'template',
+                    'file' => 'listlocales',
                 ],
             ],
         ];

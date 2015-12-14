@@ -1,0 +1,88 @@
+{% extends 'default.twig' %}
+
+{% block body %}
+    <h1>Display errors for all locales</h1>
+    {% for locale, website in errors %}
+        <h2>Locale: <a href="./?locale={{ locale }}" target="_blank">{{ locale }}</a></h2>
+        {% for website_name, website_errors in website %}
+            <div class="website_container">
+                <h2>{{ website_name }}</h2>
+                {% for filename, file_errors in website_errors %}
+                    <div class="file_container">
+                       <h3 class="filename">{{ filename }}</h3>
+                       {% for error in file_errors %}
+                            {% if error.type == 'duplicates' %}
+                                <p>There are duplicated strings:</p>
+                                <ul>
+                                {% for string_id in error.errors %}
+                                    <li>{{ string_id }}</li>
+                                {% endfor %}
+                                </ul>
+                            {% elseif error.type == 'ignored_strings' %}
+                                <p>The following strings will be ignored:</p>
+                                <ul>
+                                {% for string_id in error.errors %}
+                                    <li>{{ string_id }}</li>
+                                {% endfor %}
+                                </ul>
+                                <p>This is usually caused by tools trying to store multiline strings (not supported in .lang files).</p>
+                            {% elseif error.type == 'incomplete_tags' %}
+                                <p>Tag <strong>{{ error.tag }}</strong> is enabled but the following strings are still missing:</p></p>
+                                <ul>
+                                {% for string_id in error.errors %}
+                                    <li>{{ string_id }}</li>
+                                {% endfor %}
+                                </ul>
+                            {% elseif error.type == 'length' %}
+                                <p>Some strings are longer than allowed:</p>
+                                <ul>
+                                {% for string_id, length_error in error.errors %}
+                                    <li>
+                                        {{ length_error.text }}<br/>
+                                        <em>Currently {{ length_error.current }} characters long (maximum allowed {{ length_error.limit }})</em>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            {% elseif error.type == 'python' %}
+                                <p>Variable errors in:</p>
+                                <ul>
+                                {% for string_id, python_error in error.errors %}
+                                    <table class="python">
+                                        <tr>
+                                            <th>Check the following variables: <strong style="color:red;">{{ python_error.var }}</strong></th>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ highlightPythonVar(string_id)|raw }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ highlightPythonVar(python_error.text)|raw }}</td>
+                                        </tr>
+                                    </table>
+                                {% endfor %}
+                                </ul>
+                            {% elseif error.type == 'reference_diff' %}
+                                <p>The following strings have a different value for reference and translation:</p></p>
+                                <ul>
+                                {% for string_id in error.errors %}
+                                    <li>{{ string_id }}</li>
+                                {% endfor %}
+                                </ul>
+                            {% elseif error.type == 'zero_length' %}
+                                <p>The following string has a maximum length of 0 characters:</p></p>
+                                <ul>
+                                {% for string_id in error.errors %}
+                                    <li>{{ string_id }}</li>
+                                {% endfor %}
+                                </ul>
+                            {% else %}
+                                <p>{{ error.message|raw }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Everything looks good, no errors found.</p>
+    {% endfor %}
+{% endblock %}

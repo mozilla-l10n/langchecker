@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>.lang files checker on Mozilla sites</title>
+    <link rel="shortcut icon" href="{{ assets_folder }}/img/favicon.ico">
+    {% block js_files %}{% endblock %}
+    <link href="{{ assets_folder }}/css/langchecker.css" rel="stylesheet">
+</head>
+<body id="{{ view_name }}">
+    <!-- Current view: {{ view_name }} -->
+    <div id="outer-wrapper">
+        <div id="wrapper">
+            {% block nav %}
+                <p id="back"><a href="{{ webroot_folder }}">Back to Web Dashboard</a></p>
+            {% endblock %}
+            {% block body %}
+            {% endblock %}
+    	</div>
+    </div>
+    {{ displayPerformanceInformation()|raw }}
+</body>
+</html>

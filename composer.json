@@ -18,7 +18,8 @@
         "mozillal10n/bugzilla": "0.*",
         "mozillal10n/cache": "0.*",
         "phpoffice/phpexcel": "1.8.*",
-        "sepia/po-parser": "~4.0"
+        "sepia/po-parser": "~4.0",
+        "twig/twig": "~1.0"
     },
 
     "require-dev": {
