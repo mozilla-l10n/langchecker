@@ -1,14 +1,12 @@
 <?php
 namespace Langchecker;
 
-use Transvision\Json;
-
 $displayed_sites = [];
 if ($website != '') {
     if (isset($sites[$website])) {
         $displayed_sites[$website] = $sites[$website];
     } else {
-        die(Json::invalidAPICall("ERROR: the requested website ({$website}) is not supported."));
+        die($json_object->outputError("ERROR: the requested website ({$website}) is not supported."));
     }
 } else {
     $displayed_sites = $sites;
@@ -55,4 +53,4 @@ foreach ($displayed_sites as $site_index => $current_website) {
     }
 }
 
-die(Json::output($export_data, false, false));
+die($json_object->outputContent($export_data, false, false));

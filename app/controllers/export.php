@@ -1,8 +1,6 @@
 <?php
 namespace Langchecker;
 
-use Transvision\Json;
-
 $export_data = [];
 $current_locale = $locale;
 
@@ -81,5 +79,5 @@ if ($serial) {
 }
 
 if ($json) {
-    die(Json::output($export_data, false, true));
+    die($json_object->outputContent($export_data, false, true));
 }

@@ -2,8 +2,6 @@
 <?php
 namespace Langchecker;
 
-use Transvision\Json;
-
 $command_help = "import_transvision_id - Import missing translations for a specific string ID from Transvision API and store them in the lang file\n" .
                 "Usage: import_transvision_id [filename] [repo] [string_id]\n\n" .
                 "Example: import_transvision_id main.lang aurora mobile/android/base/sync_strings.dtd:fxaccount_status_legal \n" .
@@ -32,7 +30,9 @@ Utils::logger("Reference English file: {$reference_filename}");
 
 // Check if the repository is valid
 if ($cli_repo != 'aurora') {
-    $repositories = Json::fetch('https://transvision.mozfr.org/api/v1/repositories/');
+    $repositories = $json_object
+        ->setURI('https://transvision.mozfr.org/api/v1/repositories/')
+        ->fetchContent();
     if (! in_array($cli_repo, $repositories)) {
         $message = "Repository {$cli_repo} does not exist. \n" .
                    'Available repositories: ' . implode(', ', $repositories);
@@ -41,7 +41,9 @@ if ($cli_repo != 'aurora') {
 }
 
 // Get list of supported locales for this repo from Transvision
-$supported_locales = Json::fetch("https://transvision.mozfr.org/api/v1/locales/{$cli_repo}/");
+$supported_locales = $json_object
+    ->setURI("https://transvision.mozfr.org/api/v1/locales/{$cli_repo}/")
+    ->fetchContent();
 $locale_list = array_intersect(
     Project::getSupportedLocales($current_website, $cli_filename, $langfiles_subsets),
     $supported_locales
@@ -50,7 +52,9 @@ $locale_list = array_intersect(
 $source_locale = 'en-US';
 
 // Get the translations
-$translations = Json::fetch("https://transvision.mozfr.org/api/v1/entity/{$cli_repo}/?id={$cli_stringid}");
+$translations = $json_object
+    ->setURI("https://transvision.mozfr.org/api/v1/entity/{$cli_repo}/?id={$cli_stringid}")
+    ->fetchContent();
 if (count($translations) <= 1) {
     Utils::logger('Request returned no results. Please check the string ID', 'quit');
 }

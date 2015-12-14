@@ -2,8 +2,6 @@
 <?php
 namespace Langchecker;
 
-use Transvision\Json;
-
 $command_help = "import_transvision_string - Import missing translations for a specific string from Transvision API and store them in the lang file\n" .
                 "Usage: import_transvision_string [filename] [repo] [string]\n\n" .
                 "Example: import_transvision_string main.lang aurora \"Legal\" \n" .
@@ -37,7 +35,9 @@ if (! isset($reference_data['strings'][$cli_string])) {
 
 // Check if the repository is valid
 if ($cli_repo != 'aurora') {
-    $repositories = Json::fetch('https://transvision.mozfr.org/api/v1/repositories/');
+    $repositories = $json_object
+        ->setURI('https://transvision.mozfr.org/api/v1/repositories/')
+        ->fetchContent();
     if (! in_array($cli_repo, $repositories)) {
         $message = "Repository {$cli_repo} does not exist.\n" .
                    'Available repositories: ' . implode(', ', $repositories);
@@ -46,7 +46,9 @@ if ($cli_repo != 'aurora') {
 }
 
 // Get list of supported locales for this repo from Transvision
-$supported_locales = Json::fetch("https://transvision.mozfr.org/api/v1/locales/{$cli_repo}/");
+$supported_locales = $json_object
+    ->setURI("https://transvision.mozfr.org/api/v1/locales/{$cli_repo}/")
+    ->fetchContent();
 $locale_list = array_intersect(
     Project::getSupportedLocales($current_website, $cli_filename, $langfiles_subsets),
     $supported_locales
@@ -77,7 +79,9 @@ foreach ($locale_list as $current_locale) {
         Utils::logger("Requested string is already translated for {$current_locale}.");
     } else {
         $search_string = htmlentities($cli_string);
-        $translations = Json::fetch("https://transvision.mozfr.org/api/v1/search/strings/{$cli_repo}/{$source_locale}/{$current_locale}/{$search_string}/?perfect_match=1&amp;perfect_match=1");
+        $translations = $json_object
+            ->setURI("https://transvision.mozfr.org/api/v1/search/strings/{$cli_repo}/{$source_locale}/{$current_locale}/{$search_string}/?perfect_match=1&amp;perfect_match=1")
+            ->fetchContent();
         if (count($translations) > 0) {
             // I use the first string available
             $translated_string = reset($translations)[$cli_string];

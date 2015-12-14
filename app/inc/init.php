@@ -1,6 +1,8 @@
 <?php
 namespace Langchecker;
 
+use Json\Json;
+
 date_default_timezone_set('Europe/Paris');
 
 // Server shortcuts
@@ -23,6 +25,9 @@ require $conf_folder . 'sources.inc.php';
 if (getenv('TRAVIS') || getenv('AUTOMATED_TESTS')) {
     require $root_folder . 'tests/testfiles/config/sources.php';
 }
+
+// Re-usable JSON object
+$json_object = new Json;
 
 // User provided variables
 $action   = Utils::getQueryParam('action');
