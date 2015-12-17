@@ -320,6 +320,7 @@ $engagement_lang = [
     'snippets/nov2015_b.lang',
     'snippets/dec2015_a.lang',
     'snippets/dec2015_b.lang',
+    'snippets/jan2016.lang',
     'tiles/careers.lang',
     'tiles/suggestedtiles_infographic.lang',
     'tiles/tiles.lang',
@@ -328,23 +329,22 @@ $engagement_lang = [
     'tiles/tiles_sep2015.lang',
     'tiles/tiles_oct2015.lang',
     'tiles/tiles_nov2015.lang',
+    'tiles/tiles_jan2016.lang',
 ];
 $lang_flags['engagement'] = [
     'ios/ios_ads_nov2015.lang'       => [ 'critical' => ['all'] ],
-    'snippets/oct2015_a.lang'        => [ 'critical' => ['all'] ],
-    'snippets/oct2015_b.lang'        => [ 'critical' => ['all'] ],
-    'snippets/oct2015_c.lang'        => [ 'critical' => ['all'] ],
-    'snippets/oct2015_mofo.lang'     => [ 'critical' => ['all'] ],
     'snippets/fall2015.lang'         => [ 'critical' => ['all'] ],
     'snippets/nov2015_eoy_mofo.lang' => [ 'critical' => ['all'] ],
     'snippets/nov2015_a.lang'        => [ 'critical' => ['all'] ],
     'snippets/nov2015_b.lang'        => [ 'critical' => ['all'] ],
     'snippets/dec2015_a.lang'        => [ 'critical' => ['all'] ],
     'snippets/dec2015_b.lang'        => [ 'critical' => ['all'] ],
+    'snippets/jan2016.lang'          => [ 'critical' => ['all'] ],
     'tiles/careers.lang'             => [ 'critical' => ['de', 'fr'] ],
     'tiles/tiles.lang'               => [ 'critical' => ['all'] ],
     'tiles/tiles_oct2015.lang'       => [ 'critical' => ['all'] ],
     'tiles/tiles_nov2015.lang'       => [ 'critical' => ['all'] ],
+    'tiles/tiles_jan2016.lang'       => [ 'critical' => ['all'] ],
 ];
 
 $addons_lang = ['privacycoach.lang'];
@@ -511,16 +511,13 @@ $deadline = [
     'mozorg/home/index.lang'                 => '2015-11-30',
     'mozorg/plugincheck.lang'                => '2015-08-24',
     'newsletter/ios.lang'                    => '2015-03-12',
-    'snippets/oct2015_a.lang'                => '2015-10-11',
-    'snippets/oct2015_b.lang'                => '2015-10-11',
-    'snippets/oct2015_c.lang'                => '2015-10-11',
-    'snippets/oct2015_mofo.lang'             => '2015-10-11',
     'snippets/fall2015.lang'                 => '2015-11-02',
     'snippets/nov2015_eoy_mofo.lang'         => '2015-11-02',
     'snippets/nov2015_a.lang'                => '2015-11-14',
     'snippets/nov2015_b.lang'                => '2015-11-14',
     'snippets/dec2015_a.lang'                => '2015-12-14',
     'snippets/dec2015_b.lang'                => '2015-12-14',
+    'snippets/jan2016.lang'                  => '2016-01-14',
     'privacy/principles.lang'                => '2015-09-15',
     'survey_hello_fx42.lang'                 => '2015-09-11',
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
@@ -531,6 +528,7 @@ $deadline = [
     'tiles/tiles_sep2015.lang'               => '2015-09-10',
     'tiles/tiles_oct2015.lang'               => '2015-10-11',
     'tiles/tiles_nov2015.lang'               => '2015-11-02',
+    'tiles/tiles_jan2016.lang'               => '2016-01-14',
     'thunderbird/start/release.lang'         => '2015-01-31',
 ];
 
@@ -1175,6 +1173,7 @@ $langfiles_subsets = [
         'snippets/nov2015_b.lang'               => ['id', 'it', 'pl'],
         'snippets/dec2015_a.lang'               => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'snippets/dec2015_b.lang'               => ['id'],
+        'snippets/jan2016.lang'                 => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'tiles/careers.lang'                    => ['de', 'fr'],
         'tiles/suggestedtiles_infographic.lang' => ['de', 'es', 'fr'],
         'tiles/tiles.lang'                      => $firefox_locales,
@@ -1183,6 +1182,7 @@ $langfiles_subsets = [
         'tiles/tiles_sep2015.lang'              => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'tiles/tiles_oct2015.lang'              => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'tiles/tiles_nov2015.lang'              => ['de', 'es', 'fr', 'id', 'it', 'pl', 'pt-BR', 'ru'],
+        'tiles/tiles_jan2016.lang'              => ['de', 'es', 'fr', 'id', 'it', 'pl', 'pt-BR', 'ru'],
     ],
 
     'add-ons' => [
