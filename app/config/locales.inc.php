@@ -53,12 +53,13 @@ $newsletter_locales = ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'];
 
 // List of locales working on Pootle
 $locamotion_locales = [
-    'ach', 'af', 'bm', 'bn-BD', 'br', 'ca', 'cak', 'cy', 'dsb',
-    'ee', 'en-ZA', 'es-MX', 'ff', 'fi', 'ga-IE', 'gd',
-    'gn', 'ha', 'hi-IN', 'hr', 'hsb', 'ig', 'kk', 'km', 'kok',
-    'ks', 'ln', 'lo', 'lt', 'lv', 'mai', 'mg', 'mr', 'ms',
-    'my', 'nn-NO', 'oc', 'or', 'sat', 'son', 'sw', 'ta', 'te',
-    'tl', 'tn', 'tsz', 'ur', 'vi', 'wo', 'xh', 'yo', 'zu',
+    'ach', 'af', 'bm', 'bn-BD', 'br', 'ca', 'cak', 'cy',
+    'dsb', 'ee', 'en-ZA', 'es-MX', 'ff', 'fi', 'ga-IE',
+    'gn', 'ha', 'hi-IN', 'hr', 'hsb', 'ig', 'kk', 'km',
+    'kok', 'ks', 'ln', 'lo', 'lt', 'lv', 'mai', 'mg',
+    'mr', 'ms', 'my', 'nn-NO', 'oc', 'or', 'sat', 'son',
+    'sw', 'ta', 'te', 'tl', 'tn', 'tsz', 'ur', 'vi',
+    'wo', 'xh', 'yo', 'zu',
 ];
 
 /* List of Mozilla's locales supported by SurveyGizmo.
