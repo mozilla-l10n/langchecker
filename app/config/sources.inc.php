@@ -163,14 +163,12 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/installer-help.lang'             => [ 'critical' => ['all'] ],
     'firefox/ios.lang'                        => [ 'critical' => ['all'] ],
     'firefox/new.lang'                        => [ 'critical' => ['all'] ],
-    'firefox/os/devices.lang'                 => [ 'critical' => ['all'] ],
     'firefox/os/index-new.lang'               => [ 'critical' => ['all'] ],
     'firefox/pocket.lang'                     => [ 'critical' => ['all'] ],
     'firefox/privacy_tour/privacy_tour.lang'  => [ 'critical' => ['all'] ],
     'firefox/private-browsing.lang'           => [ 'critical' => ['all'] ],
     'firefox/sendto.lang'                     => [ 'critical' => ['all'] ],
     'firefox/sync.lang'                       => [ 'critical' => ['all'] ],
-    'firefox/tiles.lang'                      => [ 'critical' => ['all'] ],
     'firefox/tracking-protection-tour.lang'   => [ 'critical' => ['all'] ],
     'firefox/update.lang'                     => [ 'obsolete' => ['all'] ],
     'firefox/whatsnew.lang'                   => [ 'obsolete' => ['all'] ],
@@ -542,7 +540,7 @@ $addons_locales = [
 // Source: http://hg.mozilla.org/releases/mozilla-release/raw-file/c13c3b4992cf/mobile/android/locales/maemo-locales
 // Added: af, az, dsb, fa, hsb (requested), sat
 $android_locales = [
-    'af', 'an', 'as', 'az', 'be', 'bn-IN', 'br', 'ca', 'cak',
+    'af', 'an', 'as', 'az', 'be', 'bn-BD', 'bn-IN', 'br', 'ca', 'cak',
     'cs', 'cy', 'da', 'de', 'dsb', 'en-GB', 'eo', 'es-AR', 'es-ES',
     'es-MX', 'et', 'eu', 'fa', 'fi', 'ff', 'fr', 'fy-NL', 'ga-IE',
     'gd', 'gl' ,'gu-IN', 'hi-IN', 'hsb', 'hu', 'hy-AM', 'id',
