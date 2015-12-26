@@ -65,7 +65,7 @@ $sites = [
         'snippets',
         __DIR__ . '/../dotlang/',
         '',
-        ['en-US', 'it'],
+        ['en-US', 'fr', 'it'],
         ['page.lang'],
         'en-US',
         '/public/repo6/',

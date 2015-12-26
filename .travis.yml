@@ -3,10 +3,16 @@ language: php
 php:
   - 5.5
   - 5.6
-before_script:
-  ## Composer
+  - 7.0
+before_install:
+  ## Disable xdebug
+  - phpenv config-rm xdebug.ini
+  ## Update Composer
   - composer self-update
+install:
+  ## Install Composer dependencies
   - composer install --no-interaction --prefer-source
+before_script:
   ## Travis configuration
   - cp app/config/settings.inc.php.ini app/config/settings.inc.php
 script:

@@ -23,7 +23,7 @@ $pid = $output[0];
 sleep(3);
 
 $json = [
-    ['?action=count&json', 200, "{\n    \"it\": 6,\n    \"fr\": 0,\n    \"en-US\": 0\n}"],
+    ['?action=count&json', 200, "{\n    \"fr\": 16,\n    \"it\": 6,\n    \"en-US\": 0\n}"],
     ['?action=coverage&locales=foo', 400, "{\n    \"error\": \"ERROR: locales is not an array.\"\n}"],
     ['?action=coverage', 400, "{\n    \"error\": \"ERROR: missing list of locales.\"\n}"],
     ['?action=listlocales&project=snippets&json', 200, "[\n    \"fr\",\n    \"it\"\n]"],
