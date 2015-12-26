@@ -1,0 +1,72 @@
+## active ##
+## NOTE: this is a test file
+
+;Browser
+Browser
+
+
+# Comment for email string
+;Email
+Email
+
+
+;Hello
+Hello
+
+
+;Test
+Test
+
+
+## MAX_LENGTH: 12
+;Save file
+Save file
+
+
+## TAG: test_tag
+;01
+01
+
+
+# Comment 1
+# Comment 2
+;String with multiple comments
+String with multiple comments
+
+
+# This is the reference locale, shouldn't have a translation. Make sure we use the ID
+;Press center
+Oh press
+
+
+# This string will be managed as an exception for "it"
+;@@this is a test, do not remove@@
+@@this is a test@@
+
+
+;String with tag
+String with tag
+
+
+;String with %(num)s tags
+String with %(num)s tags
+
+
+;Second string with %(num)s tags
+Second string with %(num)s tags
+
+
+;Third string with %s tags
+Third string with %s tags
+
+
+;Fourth string with 90%% coverage
+Fourth string with 90%% coverage
+
+
+;Fifth string with %(one)s, %(two)s
+Fifth string with %(one)s, %(two)s
+
+
+;Sixth string with %(one)s
+Sixth string with %(one)s
