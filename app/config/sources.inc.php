@@ -8,8 +8,12 @@ if (! isset($_SERVER['SERVER_NAME'])) {
 $settings_file = __DIR__ . '/settings.inc.php';
 if (! file_exists($settings_file)) {
     die('File app/config/settings.inc.php is missing. Please check your configuration.');
+} else {
+    require $settings_file;
+    if (! isset($local_storage)) {
+        die('$local_storage is missing in your configuration file. Please update app/config/settings.inc.php');
+    }
 }
-require $settings_file;
 
 // Real data is in adi.inc.php, not under VCS
 if (is_file(__DIR__ . '/adi.inc.php')) {
@@ -18,6 +22,17 @@ if (is_file(__DIR__ . '/adi.inc.php')) {
     // Fake data to not break the app outside of production
     include __DIR__ . '/fake_adi.inc.php';
 }
+
+if (! isset($override_local)) {
+    // Make sure there is an array available to avoid further checks
+    $override_local = [];
+}
+
+$repo_local_path = function ($id, $folder) use ($local_storage, $override_local) {
+    return isset($override_local[$id]) ?
+        $override_local[$id] :
+        "{$local_storage}{$folder}/";
+};
 
 /*
  * List of supported repositories. Structure of the array
@@ -30,73 +45,73 @@ if (is_file(__DIR__ . '/adi.inc.php')) {
  */
 $repositories = [
     'www.mozilla.org' => [
-        'local_path'  => $repo1,
+        'local_path'  => $repo_local_path('www.mozilla.org', 'mozilla_org'),
         'public_path' => 'https://github.com/mozilla-l10n/www.mozilla.org/tree/master/',
         'repository'  => 'https://github.com/mozilla-l10n/www.mozilla.org',
         'vcs'         => 'git',
     ],
     'start.mozilla.org' => [
-        'local_path'  => $repo2,
+        'local_path'  => $repo_local_path('start.mozilla.org', 'fx36start'),
         'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/',
         'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/',
         'vcs'         => 'svn',
     ],
     'surveys' => [
-        'local_path'  => $repo3,
+        'local_path'  => $repo_local_path('surveys', 'surveys'),
         'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/',
         'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/',
         'vcs'         => 'svn',
     ],
     'marketing' => [
-        'local_path'  => $repo4,
+        'local_path'  => $repo_local_path('marketing', 'marketing'),
         'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/',
         'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/',
         'vcs'         => 'svn',
     ],
     'about:healthreport' => [
-        'local_path'  => $repo5,
+        'local_path'  => $repo_local_path('about:healthreport', 'fhr-l10n'),
         'public_path' => 'https://github.com/mozilla-l10n/fhr-l10n/tree/master/',
         'repository'  => 'https://github.com/mozilla-l10n/fhr-l10n',
         'vcs'         => 'git',
     ],
     'slogans' => [
-        'local_path'  => $repo6,
+        'local_path'  => $repo_local_path('slogans', 'slogans'),
         'public_path' => 'https://svn.mozilla.org/projects/granary/slogans/',
         'repository'  => 'https://svn.mozilla.org/projects/granary/slogans/',
         'vcs'         => 'svn',
     ],
     'engagement' => [
-        'local_path'  => $repo7,
+        'local_path'  => $repo_local_path('engagement', 'engagement-l10n'),
         'public_path' => 'https://github.com/mozilla-l10n/engagement-l10n/tree/master/',
         'repository'  => 'https://github.com/mozilla-l10n/engagement-l10n',
         'vcs'         => 'git',
     ],
     'add-ons' => [
-        'local_path'  => $repo8,
+        'local_path'  => $repo_local_path('add-ons', 'add-ons'),
         'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/',
         'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/',
         'vcs'         => 'svn',
     ],
     'firefox-updater' => [
-        'local_path'  => $repo9,
+        'local_path'  => $repo_local_path('firefox-updater', 'firefoxupdater'),
         'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/',
         'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/',
         'vcs'         => 'svn',
     ],
     'firefoxos-marketing' => [
-        'local_path'  => $repo10,
+        'local_path'  => $repo_local_path('firefoxos-marketing', 'firefoxos-marketing'),
         'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/',
         'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/',
         'vcs'         => 'svn',
     ],
     'contribute-autoreplies' => [
-        'local_path'  => $repo1,
+        'local_path'  => $repo_local_path('www.mozilla.org', 'mozilla_org'),
         'public_path' => 'https://github.com/mozilla-l10n/www.mozilla.org/tree/master/',
         'repository'  => 'https://github.com/mozilla-l10n/www.mozilla.org',
         'vcs'         => 'git',
     ],
     'appstores' => [
-        'local_path'  => $repo12,
+        'local_path'  => $repo_local_path('appstores', 'appstores'),
         'public_path' => 'https://github.com/mozilla-l10n/appstores/tree/master/',
         'repository'  => 'https://github.com/mozilla-l10n/appstores',
         'vcs'         => 'git',
