@@ -78,8 +78,15 @@ class GetTextManager
 
         $local_import = $locamotion_repo != '' ? true : false;
 
-        // Some locales need to me mapped (pt-PT is pt for Pootle)
+        /* Some locales need to me mapped because our systems and Pootle use
+         * different locale codes.
+         *
+         * Array format: local code => pootle code
+         *
+         * Use dashes and not underscores for Pootle, e.g. gn-PY (not gn_PY).
+         */
         $locale_mapping = [
+            'gn'    => 'gn-PY',
             'pt-PT' => 'pt',
         ];
         $locamotion_locale = isset($locale_mapping[$current_locale]) ?
