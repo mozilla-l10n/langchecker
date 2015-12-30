@@ -262,6 +262,10 @@ $lang_flags['slogans'] = [
 
 $engagement_lang = [
     'ios/ios_ads_nov2015.lang',
+    'snippets/2014/jan2014.lang',
+    'snippets/2014/apr2014.lang',
+    'snippets/2014/may2014.lang',
+    'snippets/2014/jun2014.lang',
     'snippets/2014/aug2014_a.lang',
     'snippets/2014/aug2014_b.lang',
     'snippets/2014/aug2014_c.lang',
@@ -1104,6 +1108,27 @@ $langfiles_subsets = [
     'engagement' =>
     [
         'ios/ios_ads_nov2015.lang'              => ['de', 'fr'],
+        'snippets/2014/jan2014.lang'            =>
+            [
+                'cs', 'de', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr',
+                'fy-NL', 'hu', 'id', 'it', 'ja', 'ko', 'nl', 'pl',
+                'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr',
+                'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW',
+            ],
+        'snippets/2014/apr2014.lang'            =>
+        [
+            'cs', 'da', 'de', 'el', 'es-CL', 'es-ES', 'es-MX',
+            'fr', 'fy-NL', 'hu', 'id', 'it', 'ja', 'ko', 'mk',
+            'nb-NO', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
+            'sl', 'sq', 'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
+        ],
+        'snippets/2014/may2014.lang'            =>
+        [
+            'cs', 'da', 'de', 'el', 'es-CL', 'es-ES', 'es-MX',
+            'fr', 'fy-NL', 'hu', 'id', 'it', 'ja', 'ko', 'mk',
+            'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
+            'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
+        ],
         'snippets/2014/jun2014.lang'            => ['de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id', 'it', 'nl', 'pl', 'pt-BR', 'sr'],
         'snippets/2014/aug2014_a.lang'          => ['es-ES'],
         'snippets/2014/aug2014_b.lang'          => ['bn-BD', 'cs', 'hr', 'mk'],
