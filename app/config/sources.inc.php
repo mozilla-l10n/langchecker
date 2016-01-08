@@ -1050,25 +1050,25 @@ $langfiles_subsets = [
         'tabzilla/tabzilla.lang'                => $mozillaorg,
         'teach/smarton/index.lang'              =>
             [
-                'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
+                'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'fa', 'fr', 'it', 'pl', 'pt-BR',
                 'ro', 'sq', 'sr', 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/security.lang'           =>
             [
-                'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
+                'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'fa', 'fr', 'it', 'pl', 'pt-BR',
                 'ro', 'sq', 'sr', 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/surveillance.lang'       =>
             [
-                'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
+                'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'fa', 'fr', 'it', 'pl', 'pt-BR',
                 'ro', 'sq', 'sr', 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/tracking.lang'           =>
             [
-                'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
+                'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'fa', 'fr', 'it', 'pl', 'pt-BR',
                 'ro', 'sq', 'sr', 'zh-CN', 'zh-TW',
             ],
