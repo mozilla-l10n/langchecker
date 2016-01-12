@@ -24,7 +24,7 @@ foreach ($sites as $website_id => $website_data) {
     $website_name = $website_data[0];
     $supported_websites[] = $website_name;
 
-    // Check supported Locales
+    // Check supported locales
     if (empty($website_data[3])) {
         $errors[] = "Website with ID {$website_id} ({$website_name}) doesn't support any locale.";
     } else {
@@ -54,7 +54,7 @@ foreach ($sites as $website_id => $website_data) {
         if (! empty($website_data[7])) {
             foreach ($website_data[7] as $filename => $flags) {
                 if (! in_array($filename, $website_files)) {
-                    $errors[] = "Website with ID {$website_id} ({$website_name}) has a flag for *$filename* but the file is not part of the website.";
+                    $errors[] = "Website with ID {$website_id} ({$website_name}) has a flag for *{$filename}* but the file is not part of the website.";
                 }
             }
         }
@@ -100,7 +100,7 @@ foreach ($langfiles_subsets as $website_name => $website_files) {
         // Check if supported locales are known
         $unknown_locales = array_diff($locales, $supported_locales);
         if (! empty($unknown_locales)) {
-            $errors[] = "File $filename for website {$website_name} in \$langfiles_subsets supports unknown locales: " . implode(', ', $unknown_locales) . '.';
+            $errors[] = "File {$filename} for website {$website_name} in \$langfiles_subsets supports unknown locales: " . implode(', ', $unknown_locales) . '.';
         }
     }
 }
