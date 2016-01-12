@@ -22,7 +22,7 @@ require $conf_folder . 'locales.inc.php';
 require $conf_folder . 'sources.inc.php';
 
 // Override sources for functional tests both locally and on Travis
-if (getenv('TRAVIS') || getenv('AUTOMATED_TESTS')) {
+if (getenv('AUTOMATED_TESTS')) {
     require $root_folder . 'tests/testfiles/config/sources.php';
 }
 

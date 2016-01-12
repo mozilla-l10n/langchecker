@@ -18,6 +18,7 @@ before_script:
 script:
   - vendor/atoum/atoum/bin/atoum -d tests/units/
   - php tests/functional/api.php
+  - php tests/integrity/source_integrity.php
   - vendor/bin/php-cs-fixer --diff --dry-run -v fix
 notifications:
   irc:
