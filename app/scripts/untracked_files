@@ -31,7 +31,6 @@ if (! isset($lang_based_sites[$cli_website])) {
 $current_website = $lang_based_sites[$cli_website];
 
 // Create list of locales to analyze
-$reference_locale = false;
 if ($cli_locale == 'all') {
     $locale_list = Project::getSupportedLocales($current_website);
     // Include also the reference locale
