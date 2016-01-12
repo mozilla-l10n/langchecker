@@ -76,7 +76,7 @@ $ignored_files = [
     'legal/terms/firefox-hello.lang',
     'legal/terms/mozilla.lang',
     'persona/about.lang',                   # Currently localized for 'ja'
-    'firefox/persona.lang',                 # Currently localized for 'ja'
+    'persona/persona.lang',                 # Currently localized for 'ja'
     'privacy/notices/firefox-hello.lang',
     'privacy/notices/firefox.lang',
 ];
