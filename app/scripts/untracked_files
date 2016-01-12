@@ -67,7 +67,7 @@ sort($file_list);
 // Check if the .lang files available locally are actually tracked by langchecker
 $untracked_files = [];
 $ignored_files = [
-    'firefox/all.lang', # Currently localized for 'ja'
+    'firefox/all.lang',                     # Currently localized for 'ja'
     'newsletter/confirm.lang',
     'newsletter/existing.lang',
     'newsletter/mozilla-and-you.lang',
@@ -75,6 +75,8 @@ $ignored_files = [
     'legal/terms/acceptable-use.lang',
     'legal/terms/firefox-hello.lang',
     'legal/terms/mozilla.lang',
+    'persona/about.lang',                   # Currently localized for 'ja'
+    'firefox/persona.lang',                 # Currently localized for 'ja'
     'privacy/notices/firefox-hello.lang',
     'privacy/notices/firefox.lang',
 ];
