@@ -3,19 +3,25 @@
 namespace Langchecker;
 
 $command_help = "untracked_files - List local lang files not tracked by langchecker\n" .
-                "Usage: untracked_files [websiteid] [locale]\n\n" .
+                "Usage: untracked_files [websiteid] [locale] [absolute]\n\n" .
+                "[websiteid] Website ID to analyze (e.g. 0 for mozilla.org)\n" .
+                "[locale]    Locale to analyze\n" .
+                "[absolute]  If the script should return absolute or relative paths\n" .
                 "Example: untracked_files\n" .
                 "(list untracked files on mozilla.org for all locales)\n" .
                 "Example: untracked_files 1 fr\n" .
                 "(list all untracked files on website with ID 1 for French)\n" .
+                "Example: untracked_files 1 fr true\n" .
+                "(list all untracked files on website with ID 1 for French, displaying absolute paths)\n" .
                 "Example: untracked_files 1 locamotion\n" .
                 "(list all untracked files on website with ID 1 for Locamotion locales)\n";
 
 require_once __DIR__ . '/../inc/cli_init.php';
 
 // User provided variables
-$cli_website  = Utils::getCliParam(1, $argv, '0');                   // Which website are we looking at? Default www.mozilla.org
-$cli_locale   = Utils::getCliParam(2, $argv, 'all');                 // Which locale are we analyzing? Default all locales
+$cli_website   = Utils::getCliParam(1, $argv, '0');   // Which website are we looking at? Default www.mozilla.org
+$cli_locale    = Utils::getCliParam(2, $argv, 'all'); // Which locale are we analyzing? Default all locales
+$absolute_path = Utils::getCliParam(3, $argv, '');    // Should return absolute paths?
 
 $lang_based_sites = Project::getWebsitesByDataType($sites, 'lang');
 
@@ -25,16 +31,14 @@ if (! isset($lang_based_sites[$cli_website])) {
 $current_website = $lang_based_sites[$cli_website];
 
 // Create list of locales to analyze
-$reference_locale = false;
 if ($cli_locale == 'all') {
     $locale_list = Project::getSupportedLocales($current_website);
+    // Include also the reference locale
+    $locale_list[] = Project::getReferenceLocale($current_website);
 } elseif ($cli_locale == 'locamotion') {
     $locale_list = $locamotion_locales;
 } else {
-    if ($cli_locale == Project::getReferenceLocale($current_website)) {
-        // Analyzing the reference locale
-        $reference_locale = true;
-    } else {
+    if ($cli_locale != Project::getReferenceLocale($current_website)) {
         // It's a standard locale, check if it's supported
         if (! Project::isSupportedLocale($current_website, $cli_locale)) {
             Utils::logger("Unsupported locale #{$cli_locale}.", 'quit');
@@ -76,25 +80,33 @@ $ignored_files = [
 ];
 $supported_files = Project::getSupportedFiles($current_website);
 
+$get_file_path = function ($file_info) use ($absolute_path) {
+
+    return $absolute_path != '' ?
+        $file_info['full_path'] :
+        $file_info['locale'] . '/' . $file_info['relative_path'];
+};
+
 // Add all files not supported for this website
 foreach ($file_list as $single_file) {
     if (! in_array($single_file['relative_path'], $supported_files)
         && ! in_array($single_file['relative_path'], $ignored_files)) {
-        $untracked_files[] = $single_file['full_path'];
+        $untracked_files[] = $get_file_path($single_file);
     }
 }
 
-// Add all files not supported for the specific locale
-if (! $reference_locale) {
-    foreach ($file_list as $single_file) {
-        if (! Project::isSupportedLocale($current_website, $single_file['locale'], $single_file['relative_path'], $langfiles_subsets)
+// Add all files not supported for the specific locale, excluding reference
+foreach ($file_list as $single_file) {
+    $locale = $single_file['locale'];
+    if ($locale != Project::getReferenceLocale($current_website)) {
+        if (! Project::isSupportedLocale($current_website, $locale, $single_file['relative_path'], $langfiles_subsets)
             && ! in_array($single_file['relative_path'], $ignored_files)) {
-            $untracked_files[] = $single_file['full_path'];
+            $untracked_files[] = $get_file_path($single_file);
         }
     }
 }
 
-// Sort and remove duplicates and sort
+// Sort and remove duplicates
 sort($untracked_files);
 $untracked_files = array_unique($untracked_files);
 
