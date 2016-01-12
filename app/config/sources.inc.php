@@ -502,7 +502,7 @@ $deadline = [
     'firefox/tiles.lang'                     => '2015-09-11',
     'firefox/tracking-protection-tour.lang'  => '2015-11-02',
     'firefox/whatsnew_42.lang'               => '2015-11-02',
-    'firefox/win10-welcome.lang'             => '2015-08-10',
+    'firefox/win10-welcome.lang'             => '2016-01-25',
     'ios/ios_ads_nov2015.lang'               => '2015-11-18',
     'legal/index.lang'                       => '2015-02-23',
     'main.lang'                              => '2015-11-02',
@@ -993,7 +993,8 @@ $langfiles_subsets = [
             ],
         'mozorg/404.lang'                       => $mozillaorg,
         'mozorg/about.lang'                     => $mozillaorg,
-        'mozorg/home/index.lang'                => $mozillaorg,
+        'mozorg/home/index.lang'                =>
+            array_diff($mozillaorg, ['ja']),
         'mozorg/mission.lang'                   => $mozillaorg,
         'mozorg/about/history-details.lang'     =>
             [
