@@ -186,7 +186,7 @@ $lang_flags['www.mozilla.org'] = [
         'critical' => $newsletter_locales,
     ],
     'mozorg/plugincheck.lang'                 => [ 'critical' => ['all'] ],
-    'privacy/privacy-day.lang'                => [ 'opt-in'   => ['all'] ],
+    'privacy/privacy-day.lang'                => [ 'obsolete' => ['all'] ],
     'teach/smarton/index.lang'                => [
         'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
         'opt-in'   => ['all'],
