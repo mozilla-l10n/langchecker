@@ -30,11 +30,29 @@ if (! isset($lang_based_sites[$cli_website])) {
 }
 $current_website = $lang_based_sites[$cli_website];
 
+/* We have some untracked files that need to be kept. Also Japanese has the
+ * habit of localizing pages on their own, and we don't want to remove them.
+ */
+$ignored_files = [
+    'newsletter/confirm.lang',
+    'newsletter/existing.lang',
+    'newsletter/mozilla-and-you.lang',
+    'newsletter/updated.lang',
+    'legal/terms/acceptable-use.lang',
+    'legal/terms/firefox-hello.lang',
+    'legal/terms/mozilla.lang',
+    'privacy/notices/firefox-hello.lang',
+    'privacy/notices/firefox.lang',
+];
+$ignored_locales = ['ja'];
+
 // Create list of locales to analyze
 if ($cli_locale == 'all') {
     $locale_list = Project::getSupportedLocales($current_website);
     // Include also the reference locale
     $locale_list[] = Project::getReferenceLocale($current_website);
+    // Remove ignored locales
+    $locale_list = array_diff($locale_list, $ignored_locales);
 } elseif ($cli_locale == 'locamotion') {
     $locale_list = $locamotion_locales;
 } else {
@@ -42,6 +60,9 @@ if ($cli_locale == 'all') {
         // It's a standard locale, check if it's supported
         if (! Project::isSupportedLocale($current_website, $cli_locale)) {
             Utils::logger("Unsupported locale #{$cli_locale}.", 'quit');
+        }
+        if (in_array($cli_locale, $ignored_locales)) {
+            Utils::logger("This locale #{$cli_locale} is currently ignored.", 'quit');
         }
     }
     $locale_list = [$cli_locale];
@@ -66,18 +87,6 @@ sort($file_list);
 
 // Check if the .lang files available locally are actually tracked by langchecker
 $untracked_files = [];
-$ignored_files = [
-    'firefox/all.lang',                     # Currently localized for 'ja'
-    'newsletter/confirm.lang',
-    'newsletter/existing.lang',
-    'newsletter/mozilla-and-you.lang',
-    'newsletter/updated.lang',
-    'legal/terms/acceptable-use.lang',
-    'legal/terms/firefox-hello.lang',
-    'legal/terms/mozilla.lang',
-    'privacy/notices/firefox-hello.lang',
-    'privacy/notices/firefox.lang',
-];
 $supported_files = Project::getSupportedFiles($current_website);
 
 $get_file_path = function ($file_info) use ($absolute_path) {
