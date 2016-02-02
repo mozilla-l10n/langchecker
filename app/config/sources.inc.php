@@ -119,10 +119,23 @@ $repositories = [
 ];
 
 /*
- * If a file is not listed in $lang_flags, it's assumed to be non critical
- * for all locales.
+ * Flags are defined for each website later in the file. For each file in
+ * a website it's possible to specify flags, and for which locales these flags
+ * are valid.
+ * Currently we're using flags to tag files as critical, obsolete and opt-in.
+ *
+ * If a file is not listed, it's assumed to be non critical for all locales.
  * If a flag is valid for all locales, set it to ['all']. If it's not,
  * set the flag to the array of locales.
+ *
+ * Example (a file critical for French but opt-in for all other locales):
+ * $lang_flags['website_name'] = [
+ *     'file.lang' => [
+ *         'critical' => ['fr'],
+ *         'opt-in'   => ['all'],
+ *     ],
+ * ];
+ *
  */
 $lang_flags = [];
 
