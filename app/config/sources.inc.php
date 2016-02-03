@@ -51,10 +51,10 @@ $repositories = [
         'vcs'         => 'git',
     ],
     'start.mozilla.org' => [
-        'local_path'  => $repo_local_path('start.mozilla.org', 'fx36start'),
-        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/',
-        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/',
-        'vcs'         => 'svn',
+        'local_path'  => $repo_local_path('start.mozilla.org', 'fx36start-l10n'),
+        'public_path' => 'https://github.com/mozilla-l10n/fx36start-l10n/tree/master/',
+        'repository'  => 'https://github.com/mozilla-l10n/fx36start-l10n',
+        'vcs'         => 'git',
     ],
     'surveys' => [
         'local_path'  => $repo_local_path('surveys', 'surveys'),
@@ -290,7 +290,7 @@ $lang_flags['www.mozilla.org'] = [
 
 $startpage36_lang = ['fx36start.lang'];
 $lang_flags['start.mozilla.org'] = [
-    'fx36start.lang'                          => [ 'critical' => ['all'] ],
+    'fx36start.lang' => [ 'critical' => ['all'] ],
 ];
 
 $surveys_lang = [
@@ -725,7 +725,7 @@ $sites =
     1 => [
         'start.mozilla.org',
         $repositories['start.mozilla.org']['local_path'],
-        'locale/',
+        '',
         $startpage36,
         $startpage36_lang,
         'en-US', // source locale
@@ -1031,7 +1031,9 @@ $langfiles_subsets = [
         'thunderbird/start/release.lang'        => $thunderbird_release,
     ],
 
-    'start.mozilla.org' => ['fx36start.lang' => $startpage36],
+    'start.mozilla.org' => [
+        'fx36start.lang' => $startpage36,
+    ],
 
     'about:healthreport' =>
     [
