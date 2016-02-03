@@ -68,12 +68,6 @@ $repositories = [
         'repository'  => 'https://github.com/mozilla-l10n/fhr-l10n',
         'vcs'         => 'git',
     ],
-    'slogans' => [
-        'local_path'  => $repo_local_path('slogans', 'slogans'),
-        'public_path' => 'https://svn.mozilla.org/projects/granary/slogans/',
-        'repository'  => 'https://svn.mozilla.org/projects/granary/slogans/',
-        'vcs'         => 'svn',
-    ],
     'engagement' => [
         'local_path'  => $repo_local_path('engagement', 'engagement-l10n'),
         'public_path' => 'https://github.com/mozilla-l10n/engagement-l10n/tree/master/',
@@ -87,10 +81,10 @@ $repositories = [
         'vcs'         => 'git',
     ],
     'firefoxos-marketing' => [
-        'local_path'  => $repo_local_path('firefoxos-marketing', 'firefoxos-marketing'),
-        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/',
-        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/',
-        'vcs'         => 'svn',
+        'local_path'  => $repo_local_path('firefoxos-marketing', 'fxosmarketing-l10n'),
+        'public_path' => 'https://github.com/mozilla-l10n/fxosmarketing-l10n/tree/master/',
+        'repository'  => 'https://github.com/mozilla-l10n/fxosmarketing-l10n',
+        'vcs'         => 'git',
     ],
     'contribute-autoreplies' => [
         'local_path'  => $repo_local_path('www.mozilla.org', 'mozilla_org'),
@@ -314,12 +308,6 @@ $lang_flags['about:healthreport'] = [
     'fhr.lang' => [ 'critical' => ['all'] ],
 ];
 
-$slogans_lang = ['firefoxos.lang', 'marketplacebadge.lang'];
-$lang_flags['slogans'] = [
-    'firefoxos.lang'        => [ 'critical' => ['all'] ],
-    'marketplacebadge.lang' => [ 'critical' => ['all'] ],
-];
-
 $engagement_lang = [
     'ios/ios_ads_nov2015.lang',
     'snippets/2014/jan2014.lang',
@@ -416,12 +404,14 @@ $lang_flags['add-ons'] = [
 ];
 
 $fxos_marketing_lang = [
-    'marketplace_l10n_feed.lang',
-    'screenshots_2_0.lang',
-    'screenshots_2_0_b.lang',
-    'screenshots_dolphin.lang',
-    'screenshots.lang',
-    'screenshots_tarako.lang',
+    'marketplace/marketplace_l10n_feed.lang',
+    'screenshots/screenshots_2_0.lang',
+    'screenshots/screenshots_2_0_b.lang',
+    'screenshots/screenshots_dolphin.lang',
+    'screenshots/screenshots.lang',
+    'screenshots/screenshots_tarako.lang',
+    'slogans/firefoxos.lang',
+    'slogans/marketplacebadge.lang',
 ];
 $lang_flags['firefoxos-marketing'] = [];
 
@@ -612,17 +602,28 @@ $firefox_os_consumer = array_merge($firefox_os, ['et', 'uk']);
 $firefox_os_legal = array_merge($firefox_os, ['et']);
 $firefox_os_tv = array_merge($firefox_os, ['et']);
 
-$firefox_updater_locales = [
-    'ar', 'cs', 'de', 'el', 'es-ES', 'fi', 'fr', 'hu', 'id', 'it', 'ja',
-    'nl', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sl', 'sv-SE', 'th', 'tr', 'vi',
-    'zh-CN', 'zh-TW',
+$fxos_marketing = [
+    'af', 'ar', 'bg', 'bm', 'bn-IN', 'bn-BD', 'ca', 'cs', 'de',
+    'ee', 'el', 'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu',
+    'ig', 'it', 'ja', 'ko', 'ln', 'mg', 'mk', 'my', 'pl', 'pt-BR',
+    'ro', 'son', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tn',
+    'tr', 'wo', 'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
 
-$fxos_marketing = [
-    'af', 'bg', 'bn-BD', 'cs', 'de', 'ee', 'el', 'es-ES', 'ff',
-    'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it', 'ja', 'ln', 'mk',
-    'pl', 'pt-BR', 'ro', 'ru', 'sr', 'sr-Latn', 'sw', 'ta',
-    'tr', 'wo', 'xh', 'yo', 'zh-CN', 'zu',
+$marketplacebadge_locales = [
+    'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de',
+    'ee', 'el', 'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr',
+    'hu', 'ig', 'it', 'ja', 'ln', 'mg', 'my', 'nl', 'pl', 'pt-BR',
+    'ro', 'ru', 'sk', 'son', 'sr', 'sr-Latn', 'sv-SE', 'sw',
+    'ta', 'tl', 'tn', 'tr', 'wo', 'xh', 'yo', 'zu',
+];
+
+$slogans_locales = [
+    'af', 'ar', 'bg', 'bm', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
+    'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
+    'ja', 'ko', 'ln', 'mg', 'my', 'pl', 'pt-BR', 'ro', 'son', 'sr',
+    'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tn', 'wo', 'xh',
+    'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
 
 $getinvolved_locales = [
@@ -650,14 +651,6 @@ $apple_store_target = [
     'nb-NO', 'nl', 'pt-BR', 'pt-PT', 'ru', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
 ];
 
-$marketplacebadge_locales = [
-    'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de',
-    'ee', 'el', 'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr',
-    'hu', 'ig', 'it', 'ja', 'ln', 'mg', 'my', 'nl', 'pl', 'pt-BR',
-    'ro', 'ru', 'sk', 'son', 'sr', 'sr-Latn', 'sv-SE', 'sw',
-    'ta', 'tl', 'tn', 'tr', 'wo', 'xh', 'yo', 'zu',
-];
-
 $mwc_locales = [
     'ca', 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
     'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW',
@@ -667,14 +660,6 @@ $privacy_tour_locales = [
     'ast', 'da', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX',  'fi', 'fr',
     'fy-NL', 'he', 'hu', 'it', 'ja', 'ko', 'lv', 'nb-NO', 'nn-NO',
     'pa-IN', 'pl', 'pt-BR', 'rm', 'ru', 'sk', 'sl', 'zh-TW',
-];
-
-$slogans_locales = [
-    'af', 'ar', 'bg', 'bm', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
-    'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
-    'ja', 'ko', 'ln', 'mg', 'my', 'pl', 'pt-BR', 'ro', 'son', 'sr',
-    'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tn', 'wo', 'xh',
-    'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
 
 $startpage36 = [
@@ -768,18 +753,6 @@ $sites =
         'en-US', // source locale
         $repositories['about:healthreport']['public_path'],
         $lang_flags['about:healthreport'],
-        'lang',
-    ],
-
-    5 => [
-        'slogans',
-        $repositories['slogans']['local_path'],
-        '',
-        $slogans_locales,
-        $slogans_lang,
-        'en-US', // source locale
-        $repositories['slogans']['public_path'],
-        $lang_flags['slogans'],
         'lang',
     ],
 
@@ -1074,11 +1047,6 @@ $langfiles_subsets = [
         'survey_hello_fx42.lang'     => array_intersect($firefox_locales, $surveygizmo),
     ],
 
-    'slogans' => [
-        'firefoxos.lang'        => $slogans_locales,
-        'marketplacebadge.lang' => $marketplacebadge_locales,
-    ],
-
     'engagement' =>
     [
         'ios/ios_ads_nov2015.lang'              => ['de', 'fr'],
@@ -1194,28 +1162,30 @@ $langfiles_subsets = [
     ],
 
     'firefoxos-marketing' => [
-        'marketplace_l10n_feed.lang' =>
+        'marketplace/marketplace_l10n_feed.lang' =>
             [
                 'bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr',
                 'hr', 'hu', 'it', 'ja', 'mk', 'pl', 'pt-BR',
                 'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN',
             ],
-        'screenshots_2_0.lang' =>
+        'screenshots/screenshots_2_0.lang' =>
             [
                 'af', 'cs', 'de', 'es-ES', 'ja', 'pt-BR',
                 'xh', 'zu',
             ],
-        'screenshots_2_0_b.lang' =>
+        'screenshots/screenshots_2_0_b.lang' =>
             [
                 'ar', 'ee', 'ff', 'fr', 'ha', 'ig', 'sw',
                 'wo', 'yo',
             ],
-        'screenshots_dolphin.lang' => ['bn-BD', 'bn-IN', 'hi-IN', 'ta'],
-        'screenshots.lang'         =>
+        'screenshots/screenshots_dolphin.lang' => ['bn-BD', 'bn-IN', 'hi-IN', 'ta'],
+        'screenshots/screenshots.lang'         =>
             [
                 'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it',
                 'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr',
             ],
-        'screenshots_tarako.lang' => ['hi-IN', 'ru', 'ta'],
+        'screenshots/screenshots_tarako.lang' => ['hi-IN', 'ru', 'ta'],
+        'slogans/firefoxos.lang'              => $slogans_locales,
+        'slogans/marketplacebadge.lang'       => $marketplacebadge_locales,
     ],
 ];
