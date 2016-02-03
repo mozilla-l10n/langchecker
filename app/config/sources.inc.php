@@ -81,10 +81,10 @@ $repositories = [
         'vcs'         => 'git',
     ],
     'add-ons' => [
-        'local_path'  => $repo_local_path('add-ons', 'add-ons'),
-        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/',
-        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/',
-        'vcs'         => 'svn',
+        'local_path'  => $repo_local_path('add-ons', 'addons-l10n'),
+        'public_path' => 'https://github.com/mozilla-l10n/addons-l10n/tree/master/',
+        'repository'  => 'https://github.com/mozilla-l10n/addons-l10n',
+        'vcs'         => 'git',
     ],
     'firefoxos-marketing' => [
         'local_path'  => $repo_local_path('firefoxos-marketing', 'firefoxos-marketing'),
