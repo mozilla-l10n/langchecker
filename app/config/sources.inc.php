@@ -92,12 +92,6 @@ $repositories = [
         'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/',
         'vcs'         => 'svn',
     ],
-    'firefox-updater' => [
-        'local_path'  => $repo_local_path('firefox-updater', 'firefoxupdater'),
-        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/',
-        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/',
-        'vcs'         => 'svn',
-    ],
     'firefoxos-marketing' => [
         'local_path'  => $repo_local_path('firefoxos-marketing', 'firefoxos-marketing'),
         'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/',
@@ -425,11 +419,6 @@ $lang_flags['engagement'] = [
 $addons_lang = ['privacycoach.lang'];
 $lang_flags['add-ons'] = [
     // 'worldcup.lang' => [ 'critical' => ['all'] ],
-];
-
-$firefox_updater_lang = ['updater.lang'];
-$lang_flags['firefox-updater'] = [
-    'updater.lang' => [ 'critical' => ['all'] ],
 ];
 
 $fxos_marketing_lang = [
@@ -840,18 +829,6 @@ $sites =
         'lang',
     ],
 
-    8 => [
-        'firefox-updater',
-        $repositories['firefox-updater']['local_path'],
-        '',
-        $firefox_updater_locales,
-        $firefox_updater_lang,
-        'en-US', // source locale
-        $repositories['firefox-updater']['public_path'],
-        $lang_flags['firefox-updater'],
-        'lang',
-    ],
-
     9 => [
         'firefoxos-marketing',
         $repositories['firefoxos-marketing']['local_path'],
@@ -1231,10 +1208,6 @@ $langfiles_subsets = [
 
     'add-ons' => [
         'privacycoach.lang' => $addons_locales,
-    ],
-
-    'firefox-updater' => [
-        'updater.lang' => $firefox_updater_locales,
     ],
 
     'appstores' => [
