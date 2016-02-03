@@ -621,7 +621,7 @@ $marketplacebadge_locales = [
 $slogans_locales = [
     'af', 'ar', 'bg', 'bm', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
     'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
-    'ja', 'ko', 'ln', 'mg', 'my', 'pl', 'pt-BR', 'ro', 'son', 'sr',
+    'ja', 'ko', 'ln', 'mg', 'mk', 'my', 'pl', 'pt-BR', 'ro', 'son', 'sr',
     'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tn', 'wo', 'xh',
     'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
