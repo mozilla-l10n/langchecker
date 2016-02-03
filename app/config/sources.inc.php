@@ -1,18 +1,5 @@
 <?php
 
-$public_repo1  = 'https://github.com/mozilla-l10n/www.mozilla.org';
-$public_repo2  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/';
-$public_repo3  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/';
-$public_repo4  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/';
-$public_repo5  = 'https://github.com/mozilla-l10n/fhr-l10n/tree/master/';
-$public_repo6  = 'https://svn.mozilla.org/projects/granary/slogans/';
-$public_repo7  = 'https://github.com/mozilla-l10n/engagement-l10n/tree/master/';
-$public_repo8  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/';
-$public_repo9  = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/';
-$public_repo10 = 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/';
-$public_repo11 = ''; // Free to use for new projects, was originally used for Tiles
-$public_repo12 = 'https://github.com/mozilla-l10n/appstores/tree/master/';
-
 // This is to avoid a warning in shell mode
 if (! isset($_SERVER['SERVER_NAME'])) {
     $_SERVER['SERVER_NAME'] = '';
@@ -21,8 +8,12 @@ if (! isset($_SERVER['SERVER_NAME'])) {
 $settings_file = __DIR__ . '/settings.inc.php';
 if (! file_exists($settings_file)) {
     die('File app/config/settings.inc.php is missing. Please check your configuration.');
+} else {
+    require $settings_file;
+    if (! isset($local_storage)) {
+        die('$local_storage is missing in your configuration file. Please update app/config/settings.inc.php');
+    }
 }
-require $settings_file;
 
 // Real data is in adi.inc.php, not under VCS
 if (is_file(__DIR__ . '/adi.inc.php')) {
@@ -32,12 +23,120 @@ if (is_file(__DIR__ . '/adi.inc.php')) {
     include __DIR__ . '/fake_adi.inc.php';
 }
 
+if (! isset($override_local)) {
+    // Make sure there is an array available to avoid further checks
+    $override_local = [];
+}
+
+$repo_local_path = function ($id, $folder) use ($local_storage, $override_local) {
+    return isset($override_local[$id]) ?
+        $override_local[$id] :
+        "{$local_storage}{$folder}/";
+};
+
 /*
-If a file is not listed in $lang_flags, it's assumed to be non critical for all
-locales.
-If a flag is valid for all locales, set it to ['all']. If it's not, set the flag
-to the array of locales.
-*/
+ * List of supported repositories. Structure of the array
+ * ID (website name)
+ * |
+ * |__ local_path  = Path to the local repository (must end with slash)
+ * |__ public_path = Path used to create links to individual files
+ * |__ repository  = URL of the repository (for cloning)
+ * |__ vcs         = Type of VCS (git, svn)
+ */
+$repositories = [
+    'www.mozilla.org' => [
+        'local_path'  => $repo_local_path('www.mozilla.org', 'mozilla_org'),
+        'public_path' => 'https://github.com/mozilla-l10n/www.mozilla.org/tree/master/',
+        'repository'  => 'https://github.com/mozilla-l10n/www.mozilla.org',
+        'vcs'         => 'git',
+    ],
+    'start.mozilla.org' => [
+        'local_path'  => $repo_local_path('start.mozilla.org', 'fx36start'),
+        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/',
+        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/fx36start/',
+        'vcs'         => 'svn',
+    ],
+    'surveys' => [
+        'local_path'  => $repo_local_path('surveys', 'surveys'),
+        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/',
+        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/',
+        'vcs'         => 'svn',
+    ],
+    'marketing' => [
+        'local_path'  => $repo_local_path('marketing', 'marketing'),
+        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/',
+        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/',
+        'vcs'         => 'svn',
+    ],
+    'about:healthreport' => [
+        'local_path'  => $repo_local_path('about:healthreport', 'fhr-l10n'),
+        'public_path' => 'https://github.com/mozilla-l10n/fhr-l10n/tree/master/',
+        'repository'  => 'https://github.com/mozilla-l10n/fhr-l10n',
+        'vcs'         => 'git',
+    ],
+    'slogans' => [
+        'local_path'  => $repo_local_path('slogans', 'slogans'),
+        'public_path' => 'https://svn.mozilla.org/projects/granary/slogans/',
+        'repository'  => 'https://svn.mozilla.org/projects/granary/slogans/',
+        'vcs'         => 'svn',
+    ],
+    'engagement' => [
+        'local_path'  => $repo_local_path('engagement', 'engagement-l10n'),
+        'public_path' => 'https://github.com/mozilla-l10n/engagement-l10n/tree/master/',
+        'repository'  => 'https://github.com/mozilla-l10n/engagement-l10n',
+        'vcs'         => 'git',
+    ],
+    'add-ons' => [
+        'local_path'  => $repo_local_path('add-ons', 'add-ons'),
+        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/',
+        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/add-ons/',
+        'vcs'         => 'svn',
+    ],
+    'firefox-updater' => [
+        'local_path'  => $repo_local_path('firefox-updater', 'firefoxupdater'),
+        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/',
+        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxupdater/',
+        'vcs'         => 'svn',
+    ],
+    'firefoxos-marketing' => [
+        'local_path'  => $repo_local_path('firefoxos-marketing', 'firefoxos-marketing'),
+        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/',
+        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/firefoxos-marketing/',
+        'vcs'         => 'svn',
+    ],
+    'contribute-autoreplies' => [
+        'local_path'  => $repo_local_path('www.mozilla.org', 'mozilla_org'),
+        'public_path' => 'https://github.com/mozilla-l10n/www.mozilla.org/tree/master/',
+        'repository'  => 'https://github.com/mozilla-l10n/www.mozilla.org',
+        'vcs'         => 'git',
+    ],
+    'appstores' => [
+        'local_path'  => $repo_local_path('appstores', 'appstores'),
+        'public_path' => 'https://github.com/mozilla-l10n/appstores/tree/master/',
+        'repository'  => 'https://github.com/mozilla-l10n/appstores',
+        'vcs'         => 'git',
+    ],
+];
+
+/*
+ * Flags are defined for each website later in the file. For each file in
+ * a website it's possible to specify flags, and for which locales these flags
+ * are valid.
+ * Currently we're using flags to tag files as critical, obsolete and opt-in.
+ *
+ * If a file is not listed, it's assumed to be non critical for all locales.
+ * If a flag is valid for all locales, set it to ['all']. If it's not,
+ * set the flag to the array of locales.
+ *
+ * Example (a file critical for French but opt-in for all other locales):
+ * $lang_flags['website_name'] = [
+ *     'file.lang' => [
+ *         'critical' => ['fr'],
+ *         'opt-in'   => ['all'],
+ *     ],
+ * ];
+ *
+ */
 $lang_flags = [];
 
 $mozillaorg_lang = [
@@ -647,144 +746,144 @@ $sites =
 [
     0 => [
         'www.mozilla.org',
-        $repo1,
+        $repositories['www.mozilla.org']['local_path'],
         '',
         $mozillaorg,
         $mozillaorg_lang,
         'en-US', // source locale
-        $public_repo1 . '/tree/master/',
+        $repositories['www.mozilla.org']['public_path'],
         $lang_flags['www.mozilla.org'],
         'lang',
     ],
 
     1 => [
         'start.mozilla.org',
-        $repo2,
+        $repositories['start.mozilla.org']['local_path'],
         'locale/',
         $startpage36,
         $startpage36_lang,
         'en-US', // source locale
-        $public_repo2,
+        $repositories['start.mozilla.org']['public_path'],
         $lang_flags['start.mozilla.org'],
         'lang',
     ],
 
     2 => [
         'surveys',
-        $repo3,
+        $repositories['surveys']['local_path'],
         '',
         $mozillaorg,
         $surveys_lang,
         'en-US', // source locale
-        $public_repo3,
+        $repositories['surveys']['public_path'],
         [],
         'lang',
     ],
 
     3 => [
         'marketing',
-        $repo4,
+        $repositories['marketing']['local_path'],
         '',
         $marketing,
         ['julyevent.lang'],
         'en-US', // source locale
-        $public_repo4,
+        $repositories['marketing']['public_path'],
         [],
         'lang',
     ],
 
     4 => [
         'about:healthreport',
-        $repo5,
+        $repositories['about:healthreport']['local_path'],
         '',
         $firefox_desktop_android,
         $firefoxhealthreport_lang,
         'en-US', // source locale
-        $public_repo5,
+        $repositories['about:healthreport']['public_path'],
         $lang_flags['about:healthreport'],
         'lang',
     ],
 
     5 => [
         'slogans',
-        $repo6,
+        $repositories['slogans']['local_path'],
         '',
         $slogans_locales,
         $slogans_lang,
         'en-US', // source locale
-        $public_repo6,
+        $repositories['slogans']['public_path'],
         $lang_flags['slogans'],
         'lang',
     ],
 
     6 => [
         'engagement',
-        $repo7,
+        $repositories['engagement']['local_path'],
         '',
         $engagement_locales,
         $engagement_lang,
         'en-US', // source locale
-        $public_repo7,
+        $repositories['engagement']['public_path'],
         $lang_flags['engagement'],
         'lang',
     ],
 
     7 => [
         'add-ons',
-        $repo8,
+        $repositories['add-ons']['local_path'],
         '',
         $addons_locales,
         $addons_lang,
         'en-US', // source locale
-        $public_repo8,
+        $repositories['add-ons']['public_path'],
         $lang_flags['add-ons'],
         'lang',
     ],
 
     8 => [
         'firefox-updater',
-        $repo9,
+        $repositories['firefox-updater']['local_path'],
         '',
         $firefox_updater_locales,
         $firefox_updater_lang,
         'en-US', // source locale
-        $public_repo9,
+        $repositories['firefox-updater']['public_path'],
         $lang_flags['firefox-updater'],
         'lang',
     ],
 
     9 => [
         'firefoxos-marketing',
-        $repo10,
+        $repositories['firefoxos-marketing']['local_path'],
         '',
         $fxos_marketing,
         $fxos_marketing_lang,
         'en-US', // source locale
-        $public_repo10,
+        $repositories['firefoxos-marketing']['public_path'],
         $lang_flags['firefoxos-marketing'],
         'lang',
     ],
 
     11 => [
         'contribute-autoreplies',
-        $repo1,
+        $repositories['contribute-autoreplies']['local_path'],
         '',
         $getinvolved_locales,
         $getinvolved_autoreplies,
         'en-US', // source locale
-        $public_repo1 . '/tree/master/',
+        $repositories['contribute-autoreplies']['public_path'],
         $lang_flags['contribute-autoreplies'],
         'raw',
     ],
 
     12 => [
         'appstores',
-        $repo12,
+        $repositories['appstores']['local_path'],
         '',
         $google_play_target,
         $appstores_lang,
         'en-US', // source locale
-        $public_repo12,
+        $repositories['appstores']['public_path'],
         $lang_flags['appstores'],
         'lang',
     ],

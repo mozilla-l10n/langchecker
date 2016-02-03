@@ -1,0 +1,65 @@
+#!/usr/bin/env php
+<?php
+namespace Langchecker;
+
+require_once __DIR__ . '/../inc/init.php';
+
+foreach ($repositories as $repository_id => $repository) {
+    $local_path = $repository['local_path'];
+    $vcs = $repository['vcs'];
+    if (! file_exists($local_path)) {
+        // Local repository doesn't exist, try to clone it
+        Utils::logger("Path for {$repository_id} does not exist ({$local_path}).");
+        switch ($vcs) {
+            case 'git':
+                Utils::logger("Creating Git repository: {$repository_id}.");
+                system(
+                    "git clone {$repository['repository']} {$local_path}",
+                    $return_code
+                );
+                break;
+
+            case 'svn':
+                Utils::logger("Creating SVN repository: {$repository_id}.");
+                system(
+                    "svn checkout {$repository['repository']} {$local_path}",
+                    $return_code
+                );
+                break;
+
+            default:
+                Utils::logger("Unknown VCS type ({$vcs}) for {$repository_id}.", 'quit');
+                $return_code = false;
+                break;
+        }
+        if ($return_code) {
+            Utils::logger("There was an error creating the repository for {$repository_id}.");
+        }
+    } else {
+        switch ($vcs) {
+            case 'git':
+                Utils::logger("Updating Git repository: {$repository_id}.");
+                system(
+                    "git --work-tree={$local_path} --git-dir={$local_path}.git pull origin master",
+                    $return_code
+                );
+                break;
+
+            case 'svn':
+                Utils::logger("Updating SVN repository: {$repository_id}.");
+                system(
+                    "svn update {$local_path}",
+                    $return_code
+                );
+                break;
+
+            default:
+                Utils::logger("Unknown VCS type ({$vcs}) for {$repository_id}.", 'quit');
+                $return_code = false;
+                break;
+        }
+        if ($return_code) {
+            Utils::logger("There was an error updating repository for {$repository_id}.");
+        }
+    }
+}
