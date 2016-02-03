@@ -62,12 +62,6 @@ $repositories = [
         'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/',
         'vcs'         => 'svn',
     ],
-    'marketing' => [
-        'local_path'  => $repo_local_path('marketing', 'marketing'),
-        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/',
-        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/marketing/',
-        'vcs'         => 'svn',
-    ],
     'about:healthreport' => [
         'local_path'  => $repo_local_path('about:healthreport', 'fhr-l10n'),
         'public_path' => 'https://github.com/mozilla-l10n/fhr-l10n/tree/master/',
@@ -656,10 +650,6 @@ $apple_store_target = [
     'nb-NO', 'nl', 'pt-BR', 'pt-PT', 'ru', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
 ];
 
-$marketing = [
-    'de', 'es-ES', 'fr', 'it', 'id', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
-];
-
 $marketplacebadge_locales = [
     'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de',
     'ee', 'el', 'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr',
@@ -765,18 +755,6 @@ $sites =
         $surveys_lang,
         'en-US', // source locale
         $repositories['surveys']['public_path'],
-        [],
-        'lang',
-    ],
-
-    3 => [
-        'marketing',
-        $repositories['marketing']['local_path'],
-        '',
-        $marketing,
-        ['julyevent.lang'],
-        'en-US', // source locale
-        $repositories['marketing']['public_path'],
         [],
         'lang',
     ],
@@ -1095,8 +1073,6 @@ $langfiles_subsets = [
         'getinvolved_march2014.lang' => ['es-ES', 'id', 'pt-BR', 'zh-CN'],
         'survey_hello_fx42.lang'     => array_intersect($firefox_locales, $surveygizmo),
     ],
-
-    'marketing' => ['julyevent.lang' => ['de', 'es-ES', 'fr', 'it', 'id', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW']],
 
     'slogans' => [
         'firefoxos.lang'        => $slogans_locales,
