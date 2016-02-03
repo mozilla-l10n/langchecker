@@ -17,7 +17,7 @@ $missing_parameter = "This command needs more parameters, please check export_su
 require_once __DIR__ . '/../inc/cli_init.php';
 
 // Only surveys
-$current_website = $sites[2];
+$current_website = $sites[6];
 $current_filename = Utils::getCliParam(1, $argv, '');
 $export_path = Utils::getCliParam(2, $argv, '');
 
