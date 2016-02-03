@@ -398,10 +398,12 @@ $lang_flags['engagement'] = [
     'tiles/2016/tiles_jan2016.lang'       => [ 'critical' => ['all'] ],
 ];
 
-$addons_lang = ['privacycoach.lang'];
-$lang_flags['add-ons'] = [
-    // 'worldcup.lang' => [ 'critical' => ['all'] ],
+$addons_lang = [
+    'homefeeds.lang',
+    'privacycoach.lang',
+    'worldcup.lang',
 ];
+$lang_flags['add-ons'] = [];
 
 $fxos_marketing_lang = [
     'marketplace/marketplace_l10n_feed.lang',
@@ -621,7 +623,7 @@ $marketplacebadge_locales = [
 $slogans_locales = [
     'af', 'ar', 'bg', 'bm', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
     'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
-    'ja', 'ko', 'ln', 'mg', 'my', 'pl', 'pt-BR', 'ro', 'son', 'sr',
+    'ja', 'ko', 'ln', 'mg', 'mk', 'my', 'pl', 'pt-BR', 'ro', 'son', 'sr',
     'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tn', 'wo', 'xh',
     'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
@@ -1151,7 +1153,9 @@ $langfiles_subsets = [
     ],
 
     'add-ons' => [
+        'homefeeds.lang'    => ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'ko', 'pt-BR'],
         'privacycoach.lang' => $addons_locales,
+        'worldcup.lang'     => ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'ko', 'pt-BR'],
     ],
 
     'appstores' => [
