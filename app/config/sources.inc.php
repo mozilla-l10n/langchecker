@@ -150,7 +150,6 @@ $mozillaorg_lang = [
     'firefox/os/faq.lang',
     'firefox/os/index-new.lang',
     'firefox/os/tv.lang',
-    'firefox/partners/index.lang',
     'firefox/pocket.lang',
     'firefox/privacy_tour/privacy_tour.lang',
     'firefox/private-browsing.lang',
@@ -229,7 +228,6 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/ios.lang'                        => [ 'critical' => ['all'] ],
     'firefox/new.lang'                        => [ 'critical' => ['all'] ],
     'firefox/os/index-new.lang'               => [ 'critical' => ['all'] ],
-    'firefox/partners/index.lang'             => [ 'obsolete' => ['all'] ],
     'firefox/pocket.lang'                     => [ 'critical' => ['all'] ],
     'firefox/privacy_tour/privacy_tour.lang'  => [ 'critical' => ['all'] ],
     'firefox/private-browsing.lang'           => [ 'critical' => ['all'] ],
@@ -885,7 +883,6 @@ $langfiles_subsets = [
         'firefox/os/faq.lang'                    => $firefox_os,
         'firefox/os/index-new.lang'              => $firefox_os_consumer,
         'firefox/os/tv.lang'                     => $firefox_os_tv,
-        'firefox/partners/index.lang'            => $firefox_os,
         'firefox/pocket.lang'                    =>
             [
                 'de', 'es-ES', 'fr', 'ja', 'ru',
