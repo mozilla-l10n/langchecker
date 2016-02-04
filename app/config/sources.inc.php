@@ -190,7 +190,6 @@ $mozillaorg_lang = [
     'newsletter.lang',
     'privacy/index.lang',
     'privacy/principles.lang',
-    'privacy/privacy-day.lang',
     'tabzilla/tabzilla.lang',
     'teach/smarton/index.lang',
     'teach/smarton/security.lang',
@@ -267,7 +266,6 @@ $lang_flags['www.mozilla.org'] = [
         'critical' => $newsletter_locales,
     ],
     'mozorg/plugincheck.lang'                 => [ 'critical' => ['all'] ],
-    'privacy/privacy-day.lang'                => [ 'obsolete' => ['all'] ],
     'teach/smarton/index.lang'                => [
         'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
         'opt-in'   => ['all'],
@@ -993,13 +991,6 @@ $langfiles_subsets = [
         'mozorg/products.lang'                  => $mozillaorg,
         'privacy/index.lang'                    => $firefox_os,
         'privacy/principles.lang'               => $mozillaorg,
-        'privacy/privacy-day.lang'              =>
-            [
-                'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fa', 'fr', 'fy-NL', 'hsb', 'id', 'it',
-                'ja', 'ko', 'lt', 'nl', 'pt-BR', 'ro', 'ru', 'son', 'sq',
-                'sv-SE', 'uk', 'zh-CN', 'zh-TW',
-            ],
         'tabzilla/tabzilla.lang'                => $mozillaorg,
         'teach/smarton/index.lang'              =>
             [
