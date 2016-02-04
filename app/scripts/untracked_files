@@ -72,15 +72,19 @@ if ($cli_locale == 'all') {
 $file_list = [];
 foreach ($locale_list as $locale) {
     $locale_path = Project::getLocalFilePath($current_website, $locale, '');
-    $directory = new \RecursiveDirectoryIterator($locale_path);
-    $iterator = new \RecursiveIteratorIterator($directory);
-    $filtered_iterator = new \RegexIterator($iterator, '/^.+\.lang$/i', \RecursiveRegexIterator::GET_MATCH);
-    foreach ($filtered_iterator as $file_name => $file) {
-        $file_list[] = [
-            'full_path'     => $file_name,
-            'relative_path' => Utils::leftStrip($file_name, $locale_path),
-            'locale'        => $locale,
-        ];
+    if (is_dir($locale_path)) {
+        $directory = new \RecursiveDirectoryIterator($locale_path);
+        $iterator = new \RecursiveIteratorIterator($directory);
+        $filtered_iterator = new \RegexIterator($iterator, '/^.+\.lang$/i', \RecursiveRegexIterator::GET_MATCH);
+        foreach ($filtered_iterator as $file_name => $file) {
+            $file_list[] = [
+                'full_path'     => $file_name,
+                'relative_path' => Utils::leftStrip($file_name, $locale_path),
+                'locale'        => $locale,
+            ];
+        }
+    } else {
+        Utils::logger("#{$locale} is supported by the website but folder is missing.");
     }
 }
 sort($file_list);

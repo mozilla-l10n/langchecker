@@ -665,7 +665,13 @@ $startpage36 = [
     'vi', 'zh-CN', 'zh-TW',
 ];
 
-$engagement_locales = array_merge(['es'], $firefox_locales);
+$engagement_locales = [
+    'ar', 'ast', 'bn-BD', 'cs', 'da', 'de', 'el', 'es', 'es-AR',
+    'es-CL', 'es-ES', 'es-MX', 'fi', 'fr', 'fy-NL', 'he', 'hi-IN',
+    'hr', 'hu', 'id', 'it', 'ja', 'ko', 'lv', 'mk', 'nb-NO', 'nl',
+    'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk', 'sl',
+    'sq', 'sr', 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW',
+];
 
 /*
  * Thundebird locales on Release channel
