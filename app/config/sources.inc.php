@@ -564,17 +564,19 @@ $addons_locales = [
     'pt-BR', 'ru', 'sq', 'zh-TW',
 ];
 
-// Source: http://hg.mozilla.org/releases/mozilla-release/raw-file/c13c3b4992cf/mobile/android/locales/maemo-locales
-// Added: af, az, dsb, fa, hsb (requested), sat
+// Source: http://hg.mozilla.org/releases/mozilla-aurora/file/53fa6882c8c5/mobile/android/locales/maemo-locales
+// Added: af, bn-BD, cak, fa, fi, sat, tsz
 $android_locales = [
-    'af', 'an', 'as', 'az', 'be', 'bn-BD', 'bn-IN', 'br', 'ca', 'cak',
-    'cs', 'cy', 'da', 'de', 'dsb', 'en-GB', 'eo', 'es-AR', 'es-ES',
-    'es-MX', 'et', 'eu', 'fa', 'fi', 'ff', 'fr', 'fy-NL', 'ga-IE',
-    'gd', 'gl' ,'gu-IN', 'hi-IN', 'hsb', 'hu', 'hy-AM', 'id',
-    'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv', 'ml',
-    'mr', 'ms', 'my', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl', 'pt-BR',
-    'pt-PT', 'ro', 'ru', 'sat', 'sq', 'sk', 'sl', 'sv-SE',
-    'ta', 'te', 'tsz', 'th', 'tr', 'uk', 'zh-CN', 'zh-TW',
+    'af', 'an', 'as', 'az', 'be', 'bn-BD', 'bn-IN', 'br',
+    'ca', 'cak', 'cs', 'cy', 'da', 'de', 'dsb', 'en-GB',
+    'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fa', 'ff',
+    'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN',
+    'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is',
+    'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv', 'mai',
+    'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'or', 'pa-IN',
+    'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'son', 'sq',
+    'sk', 'sl', 'sv-SE', 'ta', 'te', 'tsz', 'th', 'tr',
+    'uk', 'uz', 'zh-CN', 'zh-TW',
 ];
 
 $firefox_os = [
