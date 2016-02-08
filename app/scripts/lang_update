@@ -27,8 +27,8 @@ $current_website = $lang_based_sites[$cli_website];
 if ($cli_filename == 'all') {
     $file_list = Project::getWebsiteFiles($current_website);
 } else {
+    // File is not supported
     if (! in_array($cli_filename, Project::getWebsiteFiles($current_website))) {
-        // File is not supported
         $website_name = Project::getWebsiteName($current_website);
         Utils::logger("File {$cli_filename} is not supported for website #{$cli_website} ({$website_name}).", 'quit');
     }
@@ -65,11 +65,10 @@ foreach ($file_list as $current_filename) {
               ! Project::isSupportedLocale($current_website, $cli_locale, $current_filename, $langfiles_subsets)) {
         // Locale is not supported for this file
         Utils::logger("{$cli_locale}: {$current_filename} is not supported for this locale.");
+        // Stop if we're analyzing only this file for this locale, otherwise continue to next file
         if ($single_file_mode) {
-            // Analyzing only this file for this locale, we can stop
             exit;
         } else {
-            // Skip to the next file
             continue;
         }
     } else {
@@ -77,33 +76,34 @@ foreach ($file_list as $current_filename) {
         $locale_list = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
     }
 
-    $result = '';
-
     foreach ($locale_list as $current_locale) {
         // For each locale, load existing locale file
         $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
         $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
 
+        // Read file content and EOL character if file exists, otherwise use system end-of-line character
         if (file_exists($locale_filename)) {
             $file_content = file($locale_filename);
             $eol = Utils::checkEOL($file_content[0]);
         } else {
-            // If file is missing, use system end-of-line character
             $eol = PHP_EOL;
         }
 
-        /* Incorporate strings from other lang files. To enable import,
-         * add file names to $import_files (prior files have priority).
-         *
-         * Example: $import_files = ['firefox/new.lang', 'main.lang'];
-         *
-         * 1. Find strings in common between the two files.
-         * 2. For each common string, check if the current file has a
-         *    translation. If it doesn't, import it from other files if
-         *    available.
-         */
+        /*
+            Incorporate strings from other lang files. To enable import,
+            add file names to $import_files (prior files have priority).
+
+            Example: $import_files = ['firefox/new.lang', 'main.lang'];
+
+            1. Find strings in common between the two files.
+            2. For each common string, check if the current file has a
+               translation. If it doesn't, import it from other files if
+               available.
+
+            Default website is mozilla.org (id 0).
+        */
         $import_files = [];
-        $import_website = 0; // Default mozilla.org
+        $import_website = 0;
         foreach ($import_files as $import_filename) {
             $import_data = LangManager::loadSource($lang_based_sites[$import_website], $current_locale, $import_filename);
             $common_strings = array_intersect(
@@ -122,8 +122,7 @@ foreach ($file_list as $current_filename) {
 
         $content = LangManager::buildLangFile($reference_data, $locale_data, $current_locale, $eol);
         Utils::fileForceContent($locale_filename, $content);
-        $result .= "{$current_locale}: {$current_filename}\n";
     }
 
-    Utils::logger($result);
+    Utils::logger("{$current_filename}:\n" . implode(', ', $locale_list));
 }

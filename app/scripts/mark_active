@@ -10,7 +10,7 @@ $missing_parameter = "This command needs more parameters, please check mark_acti
 
 require_once __DIR__ . '/../inc/cli_init.php';
 
-// Only mozilla.org
+// This script is relevant only for mozilla.org
 $current_website = $sites[0];
 $current_filename = Utils::getCliParam(1, $argv, '');
 
@@ -35,12 +35,12 @@ $results = [
 ];
 
 foreach ($supported_locales as $current_locale) {
+    // Ignore locale if it's the reference language
     if ($current_locale == $reference_locale) {
-        // Ignore reference language
         continue;
     }
+    // If the .lang file does not exist, just skip the locale for this file
     if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
-        // If the .lang file does not exist, just skip the locale for this file
         continue;
     }
     $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
@@ -50,8 +50,8 @@ foreach ($supported_locales as $current_locale) {
             count($locale_analysis['Missing']) +
             LangManager::countErrors($locale_analysis['errors']);
     if ($todo == 0) {
+        // If file is ready and not activated, add the ## active ## tag
         if (! $locale_analysis['activated']) {
-            // File is ready, add ## active ## tag
             $file_content = file($locale_filename);
             $eol = Utils::checkEOL($file_content[0]);
             $write_status = file_put_contents($locale_filename, "## active ##{$eol}" . implode($file_content));
@@ -68,7 +68,7 @@ foreach ($supported_locales as $current_locale) {
     }
 }
 
-// Make sure there's something to display
+// Make sure there's something to display in console
 $results = array_map(
     function ($element) {
         if (count($element) == 0) {
@@ -81,7 +81,7 @@ $results = array_map(
 );
 
 print "\nResults for {$current_filename}:";
-print "\n\nActivated: " . implode(', ', $results['activated']);
-print "\n\nAlready activated: " . implode(', ', $results['active']);
-print "\n\nIncomplete: " . implode(', ', $results['incomplete']);
-print "\n\nWrite errors: " . implode(', ', $results['errors']) . "\n";
+print "\nActivated: " . implode(', ', $results['activated']);
+print "\nAlready activated: " . implode(', ', $results['active']);
+print "\nIncomplete: " . implode(', ', $results['incomplete']);
+print "\nWrite errors: " . implode(', ', $results['errors']) . "\n";
