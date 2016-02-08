@@ -34,7 +34,7 @@ if ($cli_locale != 'all' && ! in_array($cli_locale, $locamotion_locales)) {
     Utils::logger("{$cli_locale} is not a Locamotion locale.", 'quit');
 }
 
-// We only support import from mozilla.org
+// We only support import for mozilla.org
 $current_website = $sites[0];
 $updated_files = [];
 $import_errors = '';
@@ -43,8 +43,8 @@ $import_errors = '';
 if ($cli_filename == 'all') {
     $file_list = Project::getWebsiteFiles($current_website);
 } else {
+    // File is not supported
     if (! in_array($cli_filename, Project::getWebsiteFiles($current_website))) {
-        // File is not supported
         $website_name = Project::getWebsiteName($current_website);
         Utils::logger("File {$cli_filename} is not supported for {$website_name}", 'quit');
     }
@@ -56,7 +56,7 @@ foreach ($file_list as $current_filename) {
     $reference_locale = Project::getReferenceLocale($current_website);
     $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
     $reference_filename = Project::getLocalFilePath($current_website, $reference_locale, $current_filename);
-    Utils::logger("Reference English file: {$reference_filename}");
+    Utils::logger("----\nReference English file: {$reference_filename}");
 
     // Check if source file exists, if not continue to next file
     if (! file_exists($reference_filename)) {
@@ -81,11 +81,10 @@ foreach ($file_list as $current_filename) {
               ! Project::isSupportedLocale($current_website, $cli_locale, $current_filename, $langfiles_subsets)) {
         // Locale is not supported for this file
         Utils::logger("{$cli_locale}: {$current_filename} is not supported for this locale.");
+        // Stop if we're analyzing only this file for this locale, otherwise continue to next file
         if ($single_file_mode) {
-            // Analyzing only this file for this locale, we can stop
             exit;
         } else {
-            // Skip to the next file
             continue;
         }
     } else {
@@ -96,18 +95,18 @@ foreach ($file_list as $current_filename) {
         );
     }
 
-    $result = '';
-
+    $updated_locales = [];
+    $unchanged_locales = [];
     foreach ($locale_list as $current_locale) {
         // For each locale, load existing locale file
         $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
         $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
 
+        // Read file content and EOL character if file exists, otherwise use system end-of-line character
         if (file_exists($locale_filename)) {
             $file_content = file($locale_filename);
             $eol = Utils::checkEOL($file_content[0]);
         } else {
-            // If file is missing, use system end-of-line character
             $eol = PHP_EOL;
         }
 
@@ -122,31 +121,35 @@ foreach ($file_list as $current_filename) {
         }
 
         if (! $locamotion_import['imported']) {
+            $unchanged_locales[] = $current_locale;
             continue;
         } else {
             // Use strings imported from Locamotion as locale data
+            $updated_locales[] = $current_locale;
             $locale_data['strings'] = $locamotion_import['strings'];
             $updated_files[] = "({$current_locale}) {$current_filename}";
         }
 
         $content = LangManager::buildLangFile($reference_data, $locale_data, $current_locale, $eol);
         Utils::fileForceContent($locale_filename, $content);
-        $result .= "{$current_locale}: {$current_filename}\n";
     }
 
-    Utils::logger($result);
+    Utils::logger("Updated locales: " . implode(', ', $updated_locales));
+    Utils::logger("Unchanged locales: " . implode(', ', $unchanged_locales));
 }
 
 if ($updated_files) {
-    $result = "\nList of updated files:\n";
+    $result = "List of updated files:\n";
     foreach ($updated_files as $filename) {
         $result .= "* {$filename}\n";
     }
     Utils::logger($result);
+} else {
+    Utils::logger("----\nThere are no updated files from this import.");
 }
 
 if ($import_errors) {
-    $result = "\nThere are errors in the source files:\n";
+    $result = "There are errors in the source files:\n";
     $result .= $import_errors;
     Utils::logger($result);
 }

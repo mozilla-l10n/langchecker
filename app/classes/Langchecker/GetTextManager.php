@@ -74,17 +74,16 @@ class GetTextManager
           'strings'  => [],
         ];
 
-        Utils::logger("== {$current_locale} ==");
-
         $local_import = $locamotion_repo != '' ? true : false;
 
-        /* Some locales need to me mapped because our systems and Pootle use
-         * different locale codes.
-         *
-         * Array format: local code => pootle code
-         *
-         * Use dashes and not underscores for Pootle, e.g. gn-PY (not gn_PY).
-         */
+        /*
+            Some locales need to me mapped because our systems and Pootle use
+            different locale codes.
+
+            Array format: Langchecker code => Pootle code
+
+            Use dashes and not underscores for Pootle, e.g. gn-PY instead of gn_PY.
+        */
         $locale_mapping = [
             'gn'    => 'gn-PY',
             'pt-PT' => 'pt',
@@ -120,7 +119,7 @@ class GetTextManager
             }
 
             if (count($po_strings) == 0) {
-                Utils::logger('.po file is empty.');
+                Utils::logger("{$current_locale}: {$current_filename} is empty.");
             } else {
                 foreach ($po_strings as $string_id => $translation) {
                     if (isset($locale_data['strings'][$string_id])) {
@@ -130,7 +129,7 @@ class GetTextManager
                             $result['errors'][] = "({$current_locale} - {$current_filename}): translation starts with ;\n{$po_strings[$string_id]}";
                         } elseif ($po_strings[$string_id] !== $locale_data['strings'][$string_id]) {
                             // Translation in the .po file is different
-                            Utils::logger("Updated translation: {$string_id} => {$translation}");
+                            Utils::logger("Updated translation ({$current_locale}): {$string_id} => {$translation}");
                             $locale_data['strings'][$string_id] = $translation;
                             $result['imported'] = true;
                         }
@@ -142,16 +141,10 @@ class GetTextManager
             if ($local_import) {
                 Utils::logger("{$file_path} does not exist.");
             } else {
-                Utils::logger("{$locamotion_url} does not exist, http code was {$http_response}");
+                Utils::logger("{$locamotion_url} does not exist, HTTP response code was {$http_response}");
             }
 
             return $result;
-        }
-
-        if ($result['imported']) {
-            Utils::logger('Locamotion data extracted and added to local repository.');
-        } else {
-            Utils::logger('No new strings from Locamotion added to local repository.');
         }
 
         return $result;

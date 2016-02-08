@@ -10,7 +10,7 @@ $missing_parameter = "This command needs more parameters, please check add_tags 
 
 require_once __DIR__ . '/../inc/cli_init.php';
 
-// Only mozilla.org
+// This script is relevant only for mozilla.org
 $current_website = $sites[0];
 $current_filename = Utils::getCliParam(1, $argv, '');
 
@@ -19,18 +19,18 @@ $reference_locale = Project::getReferenceLocale($current_website);
 $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
 if (! isset($reference_data['tags'])) {
-    Utils::logger('File doesn\'t have any tags.', 'quit');
+    Utils::logger("File {$current_filename} doesn't have any tags.", 'quit');
 }
 $source_file_tags = $reference_data['tags'];
 
 $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
 foreach ($supported_locales as $current_locale) {
+    // Ignore locale if it's the reference language
     if ($current_locale == $reference_locale) {
-        // Ignore reference language
         continue;
     }
+    // If the .lang file does not exist, just skip the locale for this file
     if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
-        // If the .lang file does not exist, just skip the locale for this file
         continue;
     }
     $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);

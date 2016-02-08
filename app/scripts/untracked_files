@@ -30,9 +30,10 @@ if (! isset($lang_based_sites[$cli_website])) {
 }
 $current_website = $lang_based_sites[$cli_website];
 
-/* We have some untracked files that need to be kept. Also Japanese has the
- * habit of localizing pages on their own, and we don't want to remove them.
- */
+/*
+    We have some untracked files that need to be kept. Also Japanese has the
+    habit of localizing pages on their own, and we don't want to remove them.
+*/
 $ignored_files = [
     'newsletter/confirm.lang',
     'newsletter/existing.lang',

@@ -15,9 +15,10 @@ require_once __DIR__ . '/../inc/cli_init.php';
 $cli_po_filename   = realpath(Utils::getCliParam(1, $argv, ''));  // po file to import
 $cli_lang_filename = realpath(Utils::getCliParam(2, $argv, ''));  // lang file to use as destination
 
-/* If file doesn't exist, I need to use the original cli argument,
- * because cli_*_filename will be empty.
- */
+/*
+    If file doesn't exist, I need to use the original cli argument,
+    because cli_*_filename will be empty.
+*/
 if (! file_exists($cli_po_filename)) {
     die(Utils::getCliParam(1, $argv, '') . " does not exist.\n");
 }

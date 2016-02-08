@@ -2,10 +2,11 @@
 <?php
 namespace Langchecker;
 
-/* This script is used to export surveys in Excel files that can be imported
- * in SurveyGizmo. Each locale will be exported in a single .xls file, only
- * completely localized files are exported.
- */
+/*
+    This script is used to export surveys in Excel files that can be imported
+    in SurveyGizmo. Each locale will be exported in a single .xls file, only
+    completely localized files are exported.
+*/
 
 $command_help = "export_survey - Export survey in .xls format for SurveyGizmo\n" .
                 "Usage: export_survey [filename] [export_path]\n\n" .
