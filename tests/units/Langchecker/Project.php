@@ -423,19 +423,6 @@ class Project extends atoum\test
             ],
             [
                 [
-                    'action'   => 'api',
-                    'filename' => '',
-                    'json'     => false,
-                    'locale'   => '',
-                    'serial'   => false,
-                    'website'  => '',
-                ],
-                [
-                    'file' => 'json',
-                ],
-            ],
-            [
-                [
                     'action'   => 'count',
                     'filename' => '',
                     'json'     => false,

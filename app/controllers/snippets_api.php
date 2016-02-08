@@ -15,19 +15,20 @@ if (! Project::isSupportedLocale($current_website, $current_locale)) {
 }
 
 foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
+    // File is not managed for this website+locale, ignore it
     if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
-        // File is not managed for this website+locale, ignore it
         continue;
     }
+
+    // If the .lang file does not exist, just skip the locale for this file
     if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
-        // If the .lang file does not exist, just skip the locale for this file
         continue;
     }
 
     $locale_data = LangManager::loadSource($current_website, $current_locale, $current_filename);
     foreach ($locale_data['strings'] as $reference_string => $translated_string) {
+        // We're interested only in translated strings, also clean up {ok}
         if ($reference_string != $translated_string) {
-            // Interested only in translated strings, clean up {ok}
             $json_data[$reference_string] = Utils::cleanString($translated_string);
         }
     }
