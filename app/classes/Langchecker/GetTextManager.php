@@ -86,6 +86,7 @@ class GetTextManager
         */
         $locale_mapping = [
             'gn'    => 'gn-PY',
+            'ne-NP' => 'ne',
             'pt-PT' => 'pt',
         ];
         $locamotion_locale = isset($locale_mapping[$current_locale]) ?
