@@ -23,8 +23,8 @@ if (is_file(__DIR__ . '/adi.inc.php')) {
     include __DIR__ . '/fake_adi.inc.php';
 }
 
+// Make sure there is an array available to avoid further checks
 if (! isset($override_local)) {
-    // Make sure there is an array available to avoid further checks
     $override_local = [];
 }
 
@@ -35,14 +35,14 @@ $repo_local_path = function ($id, $folder) use ($local_storage, $override_local)
 };
 
 /*
- * List of supported repositories. Structure of the array
- * ID (website name)
- * |
- * |__ local_path  = Path to the local repository (must end with slash)
- * |__ public_path = Path used to create links to individual files
- * |__ repository  = URL of the repository (for cloning)
- * |__ vcs         = Type of VCS (git, svn)
- */
+    List of supported repositories. Structure of the array
+    ID (website name)
+    |
+    |__ local_path  = Path to the local repository (must end with slash)
+    |__ public_path = Path used to create links to individual files
+    |__ repository  = URL of the repository (for cloning)
+    |__ vcs         = Type of VCS (git, svn)
+*/
 $repositories = [
     'www.mozilla.org' => [
         'local_path'  => $repo_local_path('www.mozilla.org', 'mozilla_org'),
@@ -55,12 +55,6 @@ $repositories = [
         'public_path' => 'https://github.com/mozilla-l10n/fx36start-l10n/tree/master/',
         'repository'  => 'https://github.com/mozilla-l10n/fx36start-l10n',
         'vcs'         => 'git',
-    ],
-    'surveys' => [
-        'local_path'  => $repo_local_path('surveys', 'surveys'),
-        'public_path' => 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/',
-        'repository'  => 'https://svn.mozilla.org/projects/l10n-misc/trunk/surveys/',
-        'vcs'         => 'svn',
     ],
     'about:healthreport' => [
         'local_path'  => $repo_local_path('about:healthreport', 'fhr-l10n'),
@@ -101,24 +95,23 @@ $repositories = [
 ];
 
 /*
- * Flags are defined for each website later in the file. For each file in
- * a website it's possible to specify flags, and for which locales these flags
- * are valid.
- * Currently we're using flags to tag files as critical, obsolete and opt-in.
- *
- * If a file is not listed, it's assumed to be non critical for all locales.
- * If a flag is valid for all locales, set it to ['all']. If it's not,
- * set the flag to the array of locales.
- *
- * Example (a file critical for French but opt-in for all other locales):
- * $lang_flags['website_name'] = [
- *     'file.lang' => [
- *         'critical' => ['fr'],
- *         'opt-in'   => ['all'],
- *     ],
- * ];
- *
- */
+    Flags are defined for each website later in the file. For each file in
+    a website it's possible to specify flags, and for which locales these flags
+    are valid.
+    Currently we're using flags to tag files as critical, obsolete and opt-in.
+
+    If a file is not listed, it's assumed to be non critical for all locales.
+    If a flag is valid for all locales, set it to ['all']. If it's not,
+    set the flag to the array of locales.
+
+    Example (a file critical for French but opt-in for all other locales):
+    $lang_flags['website_name'] = [
+        'file.lang' => [
+            'critical' => ['fr'],
+            'opt-in'   => ['all'],
+        ],
+    ];
+*/
 $lang_flags = [];
 
 $mozillaorg_lang = [
@@ -284,16 +277,6 @@ $lang_flags['start.mozilla.org'] = [
     'fx36start.lang' => [ 'critical' => ['all'] ],
 ];
 
-$surveys_lang = [
-    'getinvolved_march2014.lang',
-    'survey_hello_fx42.lang',
-    'survey1.lang',
-    'survey2.lang',
-    'survey3.lang',
-    'survey4.lang',
-    'survey5.lang',
-];
-
 $firefoxhealthreport_lang = ['fhr.lang'];
 $lang_flags['about:healthreport'] = [
     'fhr.lang' => [ 'critical' => ['all'] ],
@@ -363,6 +346,7 @@ $engagement_lang = [
     'snippets/2015/dec2015_b.lang',
     'snippets/2016/jan2016.lang',
     'snippets/2016/feb2016.lang',
+    'surveys/survey_hello_fx42.lang',
     'tiles/careers.lang',
     'tiles/suggestedtiles_infographic.lang',
     'tiles/2015/tiles_jul2015.lang',
@@ -544,7 +528,7 @@ $deadline = [
     'snippets/2016/jan2016.lang'             => '2016-01-14',
     'snippets/2016/feb2016.lang'             => '2016-02-15',
     'privacy/principles.lang'                => '2015-09-15',
-    'survey_hello_fx42.lang'                 => '2015-09-11',
+    'surveys/survey_hello_fx42.lang'         => '2015-09-11',
     'tabzilla/tabzilla.lang'                 => '2014-10-31',
     'teach/smarton/index.lang'               => '2015-12-31',
     'teach/smarton/security.lang'            => '2015-11-17',
@@ -558,14 +542,15 @@ $deadline = [
 ];
 
 // List of locales
-
 $addons_locales = [
     'cs', 'de', 'es-ES', 'es-MX', 'fr', 'hu', 'id', 'it', 'ja', 'pl',
     'pt-BR', 'ru', 'sq', 'zh-TW',
 ];
 
-// Source: http://hg.mozilla.org/releases/mozilla-aurora/file/53fa6882c8c5/mobile/android/locales/maemo-locales
-// Added: af, bn-BD, cak, fa, fi, sat, tsz
+/*
+    Source: http://hg.mozilla.org/releases/mozilla-aurora/file/53fa6882c8c5/mobile/android/locales/maemo-locales
+    Added: af, bn-BD, cak, fa, fi, sat, tsz
+*/
 $android_locales = [
     'af', 'an', 'as', 'az', 'be', 'bn-BD', 'bn-IN', 'br',
     'ca', 'cak', 'cs', 'cy', 'da', 'de', 'dsb', 'en-GB',
@@ -589,9 +574,10 @@ $firefox_os = [
     'zh-TW', 'zu',
 ];
 
-/* We have some extra locales on some pages, but they're not shipping and we
- * don't want to ask them to translate 600 strings.
- */
+/*
+    We have some extra locales on some pages, but they're not shipping and we
+    don't want to ask them to translate 600 strings.
+*/
 $firefox_os_consumer = array_merge($firefox_os, ['et', 'uk']);
 $firefox_os_legal = array_merge($firefox_os, ['et']);
 $firefox_os_tv = array_merge($firefox_os, ['et']);
@@ -676,10 +662,10 @@ $engagement_locales = [
 ];
 
 /*
- * Thundebird locales on Release channel
- * Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
- * Opt-in locale: az
- */
+    Thundebird locales on Release channel
+    Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
+    Opt-in locale: az
+*/
 $thunderbird_release = [
     'ar', 'ast', 'az', 'be', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy',
     'da', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-ES', 'et',
@@ -690,20 +676,19 @@ $thunderbird_release = [
     'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
 ];
 
-/* Array structure for single website
-*
-*   [
-*       0 name,
-*       1 path to local repo,
-*       2 folder containing locale files,
-*       3 array of supported locale,
-*       4 array of supported file names,
-*       5 reference locale,
-*       6 url to public repo,
-*       7 array of flags,
-*       8 type of files (lang, raw)
-*   ]
-*
+/*
+    Array structure for single website:
+    [
+       0 name,
+       1 path to local repo,
+       2 folder containing locale files,
+       3 array of supported locale,
+       4 array of supported file names,
+       5 reference locale,
+       6 url to public repo,
+       7 array of flags,
+       8 type of files (lang, raw)
+    ]
 */
 
 $sites =
@@ -729,18 +714,6 @@ $sites =
         'en-US', // source locale
         $repositories['start.mozilla.org']['public_path'],
         $lang_flags['start.mozilla.org'],
-        'lang',
-    ],
-
-    2 => [
-        'surveys',
-        $repositories['surveys']['local_path'],
-        '',
-        $mozillaorg,
-        $surveys_lang,
-        'en-US', // source locale
-        $repositories['surveys']['public_path'],
-        [],
         'lang',
     ],
 
@@ -1028,17 +1001,6 @@ $langfiles_subsets = [
         'fhr.lang' => $firefox_desktop_android,
     ],
 
-    'surveys' =>
-    [
-        'survey1.lang'               => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pl', 'pt-BR', 'ru', 'tr', 'vi', 'zh-CN'],
-        'survey2.lang'               => ['de', 'es-ES', 'fr',  'it', 'pl', 'pt-BR', 'ru'],
-        'survey3.lang'               => ['de', 'es-ES', 'fr', 'it', 'ja', 'ko', 'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
-        'survey4.lang'               => ['de', 'es-AR', 'es-ES', 'es-MX', 'fr', 'id', 'ja', 'pl', 'pt-BR', 'ru', 'tr', 'vi', 'zh-CN'],
-        'survey5.lang'               => ['de', 'fr', 'pl'],
-        'getinvolved_march2014.lang' => ['es-ES', 'id', 'pt-BR', 'zh-CN'],
-        'survey_hello_fx42.lang'     => array_intersect($firefox_locales, $surveygizmo),
-    ],
-
     'engagement' =>
     [
         'ios/ios_ads_nov2015.lang'              => ['de', 'fr'],
@@ -1131,6 +1093,7 @@ $langfiles_subsets = [
         'snippets/2015/dec2015_b.lang'          => ['id'],
         'snippets/2016/jan2016.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'snippets/2016/feb2016.lang'            => ['de', 'es', 'fr', 'ru', 'pt-BR'],
+        'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
         'tiles/careers.lang'                    => ['de', 'fr'],
         'tiles/suggestedtiles_infographic.lang' => ['de', 'es', 'fr'],
         'tiles/2015/tiles_jul2015.lang'         => ['de', 'es', 'fr', 'pt-BR', 'ru'],
