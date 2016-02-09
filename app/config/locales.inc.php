@@ -13,11 +13,12 @@ $mozilla = [
     'gl', 'gn', 'gu-IN', 'ha', 'he', 'hi-IN', 'hr', 'hsb', 'hu',
     'hy-AM', 'id', 'ig', 'is', 'it', 'ja', 'ka', 'kk', 'km',
     'kn', 'ko', 'kok', 'ks', 'lij', 'ln', 'lo', 'lt', 'ltg', 'lv',
-    'mai', 'mg', 'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'nn-NO',
-    'oc', 'or', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro',
-    'ru', 'sat', 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sr-Latn',
-    'sv-SE', 'sw', 'ta', 'te', 'th', 'tl', 'tn', 'tr', 'tsz', 'uk',
-    'ur', 'uz', 'vi', 'wo', 'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
+    'mai', 'mg', 'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'ne-NP',
+    'nl', 'nn-NO', 'oc', 'or', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
+    'rm', 'ro', 'ru', 'sat', 'si', 'sk', 'sl', 'son', 'sq', 'sr',
+    'sr-Latn', 'sv-SE', 'sw', 'ta', 'te', 'th', 'tl', 'tn', 'tr',
+    'tsz', 'uk', 'ur', 'uz', 'vi', 'wo', 'xh', 'yo', 'zh-CN',
+    'zh-TW', 'zu',
 ];
 sort($mozilla);
 
@@ -57,8 +58,8 @@ $locamotion_locales = [
     'dsb', 'ee', 'en-ZA', 'es-MX', 'ff', 'fi', 'ga-IE',
     'gn', 'ha', 'hi-IN', 'hr', 'hsb', 'ig', 'kk', 'km',
     'kok', 'ks', 'ln', 'lo', 'lt', 'lv', 'mai', 'mg',
-    'mr', 'ms', 'my', 'nn-NO', 'oc', 'or', 'sat', 'son',
-    'sw', 'ta', 'tl', 'tn', 'tsz', 'ur', 'vi',
+    'mr', 'ms', 'my', 'ne-NP', 'nn-NO', 'oc', 'or', 'sat',
+    'son', 'sw', 'ta', 'tl', 'tn', 'tsz', 'ur', 'vi',
     'wo', 'xh', 'yo', 'zu',
 ];
 
