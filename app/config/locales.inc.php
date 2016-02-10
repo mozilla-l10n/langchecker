@@ -1,9 +1,10 @@
 <?php
 
-/* $mozilla is the list of all locales supported on Langchecker.
- * Don't forget to update other relevant arrays in this file when adding
- * new locales.
- */
+/*
+    $mozilla is the list of all locales supported on Langchecker.
+    Don't forget to update other relevant arrays in this file when adding
+    new locales.
+*/
 $mozilla = [
     'ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg',
     'bm',  'bn-BD', 'bn-IN', 'br', 'brx', 'bs', 'ca', 'cak', 'cs',
@@ -22,9 +23,10 @@ $mozilla = [
 ];
 sort($mozilla);
 
-/* $mozillaorg is the list of locales supported on mozilla.org
- * Remove locales not supported on mozilla.org from the full array
- */
+/*
+    $mozillaorg is the list of locales supported on mozilla.org
+    Remove locales not supported on mozilla.org from the full array
+*/
 $mozillaorg = array_diff($mozilla, ['en-ZA', 'es', 'sr-Latn']);
 
 // List of locales only working on Firefox OS
@@ -36,10 +38,11 @@ $fxos_locales = [
 // List of locales only working on Fennec
 $fennec_locales = ['cak', 'lo', 'my', 'tsz'];
 
-/* List of locales we support on desktop (Firefox). We need to remove
- * locales used only for Gaia (es, sr-Latn), locales working only on Gaia
- * (e.g. new African locales) or Fennec
- */
+/*
+    List of locales we support on desktop (Firefox). We need to remove
+    locales used only for Gaia (es, sr-Latn), locales working only on Gaia
+    (e.g. new African locales) or Fennec
+*/
 $firefox_locales = array_diff(
     $mozilla,
     $fxos_locales,
@@ -48,6 +51,21 @@ $firefox_locales = array_diff(
 
 // All locales working on Firefox desktop + Android
 $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
+
+/*
+    Thunderbird locales on Release channel
+    Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
+*/
+$thunderbird_locales = [
+    'ar', 'ast', 'az', 'be', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy',
+    'da', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-ES', 'et',
+    'eu', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hr',
+    'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ko', 'lt',
+    'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
+    'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE',
+    'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
+];
+
 
 // List of locales with active newsletter
 $newsletter_locales = ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'];
@@ -63,9 +81,10 @@ $locamotion_locales = [
     'wo', 'xh', 'yo', 'zu',
 ];
 
-/* List of Mozilla's locales supported by SurveyGizmo.
- * Ref. http://help.surveygizmo.com/help/article/link/create-a-translated-survey#available-languages
- */
+/*
+   List of Mozilla's locales supported by SurveyGizmo.
+   Ref. http://help.surveygizmo.com/help/article/link/create-a-translated-survey#available-languages
+*/
 $surveygizmo = [
     'af', 'an', 'ar', 'as', 'az', 'be', 'bg', 'bm', 'bn-IN',
     'br', 'bs', 'ca', 'cs', 'cy', 'da', 'de', 'ee', 'el',

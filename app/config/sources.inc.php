@@ -185,6 +185,7 @@ $mozillaorg_lang = [
     'teach/smarton/security.lang',
     'teach/smarton/surveillance.lang',
     'teach/smarton/tracking.lang',
+    'thunderbird/channel.lang',
     'thunderbird/features.lang',
     'thunderbird/index.lang',
     'thunderbird/start/release.lang',
@@ -268,6 +269,9 @@ $lang_flags['www.mozilla.org'] = [
     'teach/smarton/tracking.lang'             => [
         'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
         'opt-in'   => ['all'],
+    ],
+    'thunderbird/channel.lang'                => [
+        'opt-in' => $thunderbird_locales,
     ],
     'thunderbird/start/release.lang'          => [ 'critical' => ['all'] ],
 ];
@@ -662,21 +666,6 @@ $engagement_locales = [
 ];
 
 /*
-    Thundebird locales on Release channel
-    Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
-    Opt-in locale: az
-*/
-$thunderbird_release = [
-    'ar', 'ast', 'az', 'be', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy',
-    'da', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-ES', 'et',
-    'eu', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hr',
-    'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ko', 'lt',
-    'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
-    'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE',
-    'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
-];
-
-/*
     Array structure for single website:
     [
        0 name,
@@ -987,9 +976,10 @@ $langfiles_subsets = [
                 'es-ES', 'fa', 'fr', 'it', 'pl', 'pt-BR',
                 'ro', 'sq', 'sr', 'zh-CN', 'zh-TW',
             ],
-        'thunderbird/features.lang'             => $thunderbird_release,
-        'thunderbird/index.lang'                => $thunderbird_release,
-        'thunderbird/start/release.lang'        => $thunderbird_release,
+        'thunderbird/channel.lang'              => ['fr'],
+        'thunderbird/features.lang'             => $thunderbird_locales,
+        'thunderbird/index.lang'                => $thunderbird_locales,
+        'thunderbird/start/release.lang'        => $thunderbird_locales,
     ],
 
     'start.mozilla.org' => [
