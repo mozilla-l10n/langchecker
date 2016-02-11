@@ -66,7 +66,6 @@ $thunderbird_locales = [
     'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
 ];
 
-
 // List of locales with active newsletter
 $newsletter_locales = ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'];
 
