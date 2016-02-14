@@ -928,7 +928,7 @@ $langfiles_subsets = [
             ],
         'mozorg/about/leadership.lang'          =>
             [
-                'af', 'cs', 'de', 'dsb', 'en-GB', 'es-CL', 'fa',
+                'af', 'cs', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fr',
                 'hsb', 'it', 'ko', 'pt-BR', 'pt-PT', 'ro', 'sk',
                 'sl', 'sq', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
             ],
