@@ -94,6 +94,14 @@ if ($website_data_source == 'lang') {
         }
     }
 
+    if (count($supported_locales) > 0) {
+        $percentage_activated = round($activated_locales_count / count($supported_locales) * 100);
+        $percentage_complete = round($complete_locales_count / count($supported_locales) * 100);
+    } else {
+        $percentage_activated = 0;
+        $percentage_complete = 0;
+    }
+
     print $twig->render(
         'globalstatus_lang.twig',
         [
@@ -105,8 +113,8 @@ if ($website_data_source == 'lang') {
             'files_list'           => $files_list,
             'filename'             => $current_filename,
             'obsolete'             => Project::isObsoleteFile($current_website, $current_filename, 'all'),
-            'percentage_activated' => round($activated_locales_count / count($supported_locales) * 100),
-            'percentage_complete'  => round($complete_locales_count / count($supported_locales) * 100),
+            'percentage_activated' => $percentage_activated,
+            'percentage_complete'  => $percentage_complete,
             'website_id'           => $website,
             'website_name'         => Project::getWebsiteName($current_website),
         ]
