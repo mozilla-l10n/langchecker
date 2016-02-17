@@ -844,7 +844,7 @@ $langfiles_subsets = [
             ],
         'firefox/os/devices.lang'                => $firefox_os,
         'firefox/os/faq.lang'                    => $firefox_os,
-        'firefox/os/index.lang'                  => 
+        'firefox/os/index.lang'                  =>
             [
                 'cs', 'de',
             ],
