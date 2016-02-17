@@ -15,6 +15,10 @@
                 <td class="maincolumn"><a href="./?locale={{ locale }}#{{ website_name }}">{{ locale }}</a></td>
                 <td><span class="rawstatus {{ file.status }}">{{ file.pretty_status }}</span></td>
             </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">There are no locales supported for this file.</td>
+            </tr>
         {% endfor %}
         </tbody>
         <tfoot>
