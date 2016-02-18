@@ -846,7 +846,7 @@ $langfiles_subsets = [
         'firefox/os/faq.lang'                    => $firefox_os,
         'firefox/os/index.lang'                  =>
             [
-                'cs', 'de', 'it',
+                'cs', 'de', 'fr', 'it', 'pt-BR',
             ],
         'firefox/os/index-new.lang'              => $firefox_os_consumer,
         'firefox/os/tv.lang'                     => $firefox_os_tv,
@@ -983,7 +983,7 @@ $langfiles_subsets = [
             ],
         'thunderbird/channel.lang'              =>
             [
-                'cs', 'de', 'fr', 'it', 'zh-TW',
+                'cs', 'de', 'fr', 'it', 'pt-BR', 'zh-TW',
             ],
         'thunderbird/features.lang'             => $thunderbird_locales,
         'thunderbird/index.lang'                => $thunderbird_locales,
