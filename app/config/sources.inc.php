@@ -934,8 +934,8 @@ $langfiles_subsets = [
         'mozorg/about/leadership.lang'          =>
             [
                 'af', 'cs', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fr',
-                'hsb', 'it', 'ko', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk',
-                'sl', 'sq', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
+                'hsb', 'it', 'ko', 'lt', 'pt-BR', 'pt-PT', 'ro', 'ru',
+                'sk', 'sl', 'sq', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/manifesto.lang'           =>
             [
@@ -983,8 +983,8 @@ $langfiles_subsets = [
             ],
         'thunderbird/channel.lang'              =>
             [
-                'cs', 'de', 'en-GB', 'fr', 'it', 'pt-BR', 'ru',
-                'uk', 'zh-TW',
+                'cs', 'de', 'en-GB', 'fr', 'it', 'lt', 'pt-BR',
+                'ru', 'uk', 'zh-TW',
             ],
         'thunderbird/features.lang'             => $thunderbird_locales,
         'thunderbird/index.lang'                => $thunderbird_locales,
