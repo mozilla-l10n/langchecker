@@ -213,6 +213,7 @@ $lang_flags['www.mozilla.org'] = [
     ],
     'firefox/dnt.lang'                        => [ 'opt-in'   => ['all'] ],
     'firefox/geolocation.lang'                => [ 'opt-in'   => ['all'] ],
+    'firefox/hello.lang'                      => [ 'obsolete' => ['all'] ],
     'firefox/hello-2016.lang'                 => [ 'critical' => ['all'] ],
     'firefox/installer-help.lang'             => [ 'critical' => ['all'] ],
     'firefox/ios.lang'                        => [ 'critical' => ['all'] ],
