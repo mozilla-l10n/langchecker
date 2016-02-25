@@ -493,7 +493,7 @@ $no_active_tag = [
 
 $deadline = [
     'description_beta_page.lang'             => '2015-09-30', // appstores project
-    'apple_description_release.lang'         => '2015-11-10', // appstores project
+    'apple_description_release.lang'         => '2016-03-30', // appstores project
     'android_42_release.lang'                => '2016-03-08', // appstores project
     'download_button.lang'                   => '2015-06-01',
     'firefox/android/index.lang'             => '2015-11-02',
@@ -553,20 +553,20 @@ $addons_locales = [
 ];
 
 /*
-    Source: http://hg.mozilla.org/releases/mozilla-aurora/file/53fa6882c8c5/mobile/android/locales/maemo-locales
-    Added: af, bn-BD, cak, fa, fi, sat, tsz
+    Source : http://hg.mozilla.org/releases/mozilla-release/raw-file/tip/mobile/android/locales/maemo-locales
+    Source : http://hg.mozilla.org/releases/mozilla-beta/raw-file/tip/mobile/android/locales/maemo-locales
+    Source : http://hg.mozilla.org/releases/mozilla-aurora/raw-file/tip/mobile/android/locales/maemo-locales
+    When updating, make sure to update store_l10n project as well:
+    https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L16
 */
 $android_locales = [
-    'af', 'an', 'as', 'az', 'be', 'bn-BD', 'bn-IN', 'br',
-    'ca', 'cak', 'cs', 'cy', 'da', 'de', 'dsb', 'en-GB',
-    'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu', 'fa', 'ff',
-    'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl' ,'gu-IN',
-    'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is',
-    'it', 'ja', 'kk', 'kn', 'ko', 'lt', 'lv', 'mai',
-    'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'or', 'pa-IN',
-    'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'son', 'sq',
-    'sk', 'sl', 'sv-SE', 'ta', 'te', 'tsz', 'th', 'tr',
-    'uk', 'uz', 'zh-CN', 'zh-TW',
+    'an', 'as', 'az', 'be', 'bn-IN', 'br', 'ca', 'cs', 'cy', 'da', 'de',
+    'dsb', 'en-GB', 'en-ZA', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu',
+    'fi', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN', 'hi-IN', 'hr',
+    'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt',
+    'lv', 'mai', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl',
+    'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sv-SE', 'ta',
+    'te', 'th', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
 ];
 
 $firefox_os = [
@@ -631,9 +631,23 @@ $google_play_locales = [
 // Locales that we do support and that Google Play supports too
 $google_play_target = array_intersect($android_locales, $google_play_locales);
 
+/*
+    source: https://l10n.mozilla-community.org/~flod/webstatus/api/?product=firefox-ios
+    translations are at: https://github.com/mozilla-l10n/firefoxios-l10n/
+    For iOS we used the locale code es for Spanish from Spain, that was a
+    mistake, this is why I changed it to es-ES in the array below, otherwise
+    the Spanish team would have to work in the es-ES folder for Android and
+    the es folder for iOS
+    Make sure to update the store_l10n project when you update this list:
+    https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L43
+*/
 $apple_store_target = [
-    'da', 'de', 'en-US', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'ko',
-    'nb-NO', 'nl', 'pt-BR', 'pt-PT', 'ru', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
+    'ar', 'az', 'bg', 'bn-IN', 'br', 'cs', 'cy', 'da', 'de', 'dsb', 'el',
+    'eo', 'es-ES', 'es-CL', 'es-MX', 'fa', 'fr', 'fy-NL', 'ga-IE',
+    'gd', 'gl', 'hsb', 'id', 'is', 'it', 'ja', 'kk', 'km', 'ko', 'lo', 'lt',
+    'lv', 'ml', 'ms', 'my', 'nb-NO', 'nl', 'nn-NO', 'or', 'pl', 'pt-BR',
+    'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'son', 'sv-SE', 'th', 'tl', 'tr',
+    'uk', 'uz', 'zh-CN', 'zh-TW',
 ];
 
 $mwc_locales = [
@@ -830,7 +844,7 @@ $langfiles_subsets = [
         'firefox/hello.lang'                      => $firefox_locales,
         'firefox/hello-2016.lang'                 => $firefox_locales,
         'firefox/installer-help.lang'             => $firefox_locales,
-        'firefox/ios.lang'                        => $firefox_locales,
+        'firefox/ios.lang'                        => $apple_store_target,
         'firefox/new.lang'                        => $firefox_desktop_android,
         'firefox/nightly_firstrun.lang'           =>
             [
