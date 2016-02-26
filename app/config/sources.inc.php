@@ -1099,7 +1099,7 @@ $langfiles_subsets = [
         'description_beta_page.lang'        => $google_play_target,
         'apple_description_release.lang'    => $apple_store_target,
         'android_42_release.lang'           => $google_play_target, // yeah, marketing...
-        'whatsnew/whatsnew_android_44.lang' => ['fr'],
+        'whatsnew/whatsnew_android_44.lang' => ['fr', 'zh-TW'],
     ],
 
     'firefoxos-marketing' => [
