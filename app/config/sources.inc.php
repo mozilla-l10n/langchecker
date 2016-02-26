@@ -195,7 +195,7 @@ $lang_flags['www.mozilla.org'] = [
     'download.lang'                           => [ 'critical' => ['all'] ],
     'download_button.lang'                    => [ 'critical' => ['all'] ],
     'firefox/android/index.lang'              => [
-        'critical' => ['all'],
+        'critical' => [$android_locales],
         'opt-in'   => ['all'],
     ],
     'firefox/australis/firefox_tour.lang'     => [ 'critical' => ['all'] ],
@@ -216,7 +216,10 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/hello.lang'                      => [ 'obsolete' => ['all'] ],
     'firefox/hello-2016.lang'                 => [ 'critical' => ['all'] ],
     'firefox/installer-help.lang'             => [ 'critical' => ['all'] ],
-    'firefox/ios.lang'                        => [ 'critical' => ['all'] ],
+    'firefox/ios.lang'                        => [
+        'critical' => [$apple_store_target],
+        'opt-in'   => ['all'],
+    ],
     'firefox/new.lang'                        => [ 'critical' => ['all'] ],
     'firefox/os/faq.lang'                     => [ 'obsolete' => ['all'] ],
     'firefox/os/index-new.lang'               => [ 'obsolete' => ['all'] ],
@@ -552,23 +555,6 @@ $addons_locales = [
     'pt-BR', 'ru', 'sq', 'zh-TW',
 ];
 
-/*
-    Source : http://hg.mozilla.org/releases/mozilla-release/raw-file/tip/mobile/android/locales/maemo-locales
-    Source : http://hg.mozilla.org/releases/mozilla-beta/raw-file/tip/mobile/android/locales/maemo-locales
-    Source : http://hg.mozilla.org/releases/mozilla-aurora/raw-file/tip/mobile/android/locales/maemo-locales
-    When updating, make sure to update store_l10n project as well:
-    https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L16
-*/
-$android_locales = [
-    'an', 'as', 'az', 'be', 'bn-IN', 'br', 'ca', 'cs', 'cy', 'da', 'de',
-    'dsb', 'en-GB', 'en-ZA', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu',
-    'fi', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN', 'hi-IN', 'hr',
-    'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt',
-    'lv', 'mai', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl',
-    'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sv-SE', 'ta',
-    'te', 'th', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
-];
-
 $firefox_os = [
     'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca' , 'cs',
     'de', 'ee', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
@@ -619,36 +605,22 @@ $getinvolved_locales = [
     'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk', 'zh-CN', 'zh-TW',
 ];
 
-// List provided by Release-drivers, needs access to a Google Play publishing account
-$google_play_locales = [
-    'af', 'ar', 'be', 'bg', 'cs', 'ca', 'da', 'de', 'el', 'en-GB',
-    'es-MX', 'es-ES', 'et', 'fa', 'fi', 'fr', 'hi-IN', 'hu', 'hr',
-    'id', 'it', 'he', 'ja', 'ko', 'lt', 'lv', 'ms', 'nl', 'nb-NO',
-    'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'sr',
-    'sv-SE', 'sw', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW', 'zu',
-];
+// List of locales supported for the landing page (larger than the App Store)
+$ios_landing_page = array_unique(array_merge(
+    $apple_store_target,
+    [
+        'af', 'an', 'bn-BD', 'ca', 'en-GB', 'es-AR', 'eu',
+        'gn', 'hi-IN', 'hu', 'ka', 'kn', 'lij', 'sq', 'sr',
+    ]
+));
 
-// Locales that we do support and that Google Play supports too
-$google_play_target = array_intersect($android_locales, $google_play_locales);
-
-/*
-    source: https://l10n.mozilla-community.org/~flod/webstatus/api/?product=firefox-ios
-    translations are at: https://github.com/mozilla-l10n/firefoxios-l10n/
-    For iOS we used the locale code es for Spanish from Spain, that was a
-    mistake, this is why I changed it to es-ES in the array below, otherwise
-    the Spanish team would have to work in the es-ES folder for Android and
-    the es folder for iOS
-    Make sure to update the store_l10n project when you update this list:
-    https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L43
-*/
-$apple_store_target = [
-    'ar', 'az', 'bg', 'bn-IN', 'br', 'cs', 'cy', 'da', 'de', 'dsb', 'el',
-    'eo', 'es-ES', 'es-CL', 'es-MX', 'fa', 'fr', 'fy-NL', 'ga-IE',
-    'gd', 'gl', 'hsb', 'id', 'is', 'it', 'ja', 'kk', 'km', 'ko', 'lo', 'lt',
-    'lv', 'ml', 'ms', 'my', 'nb-NO', 'nl', 'nn-NO', 'or', 'pl', 'pt-BR',
-    'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'son', 'sv-SE', 'th', 'tl', 'tr',
-    'uk', 'uz', 'zh-CN', 'zh-TW',
-];
+// List of locales supported for the landing page
+$android_landing_page = array_unique(array_merge(
+    $android_locales,
+    [
+        'af', 'bn-BD', 'cak', 'fa', 'sat', 'tsz',
+    ]
+));
 
 $mwc_locales = [
     'ca', 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
@@ -785,7 +757,7 @@ $sites =
         'appstores',
         $repositories['appstores']['local_path'],
         '',
-        $google_play_target,
+        array_unique(array_merge($google_play_target, $apple_store_target)),
         $appstores_lang,
         'en-US', // source locale
         $repositories['appstores']['public_path'],
@@ -800,7 +772,7 @@ $langfiles_subsets = [
         'download.lang'                         => $mozillaorg,
         'download_button.lang'                  => $mozillaorg,
         'esr.lang'                              => ['de', 'fr'],
-        'firefox/android/index.lang'            => $android_locales,
+        'firefox/android/index.lang'            => $android_landing_page,
         'firefox/australis/firefox_tour.lang'   => $firefox_locales,
         'firefox/australis/fx36_tour.lang'      => $firefox_locales,
         'firefox/channel.lang'                  => $mozillaorg, // Has Firefox for Android download buttons
@@ -844,7 +816,7 @@ $langfiles_subsets = [
         'firefox/hello.lang'                      => $firefox_locales,
         'firefox/hello-2016.lang'                 => $firefox_locales,
         'firefox/installer-help.lang'             => $firefox_locales,
-        'firefox/ios.lang'                        => $apple_store_target,
+        'firefox/ios.lang'                        => $ios_landing_page,
         'firefox/new.lang'                        => $firefox_desktop_android,
         'firefox/nightly_firstrun.lang'           =>
             [
