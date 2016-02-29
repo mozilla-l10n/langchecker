@@ -217,7 +217,7 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/hello-2016.lang'                 => [ 'critical' => ['all'] ],
     'firefox/installer-help.lang'             => [ 'critical' => ['all'] ],
     'firefox/ios.lang'                        => [
-        'critical' => [$apple_store_target],
+        'critical' => [$ios_locales],
         'opt-in'   => ['all'],
     ],
     'firefox/new.lang'                        => [ 'critical' => ['all'] ],
@@ -607,7 +607,7 @@ $getinvolved_locales = [
 
 // List of locales supported for the landing page (larger than the App Store)
 $ios_landing_page = array_unique(array_merge(
-    $apple_store_target,
+    $ios_locales,
     [
         'af', 'an', 'bn-BD', 'ca', 'en-GB', 'es-AR', 'eu',
         'gn', 'hi-IN', 'hu', 'ka', 'kn', 'lij', 'sq', 'sr',
