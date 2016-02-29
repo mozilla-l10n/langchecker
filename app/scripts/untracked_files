@@ -45,7 +45,7 @@ $ignored_files = [
     'privacy/notices/firefox-hello.lang',
     'privacy/notices/firefox.lang',
 ];
-$ignored_locales = ['ja'];
+$ignored_locales = ['hi', 'ja'];
 
 // Create list of locales to analyze
 if ($cli_locale == 'all') {
@@ -69,26 +69,47 @@ if ($cli_locale == 'all') {
     $locale_list = [$cli_locale];
 }
 
-// Create list of local .lang files
+// Create a list of all the .lang files present in the website folder
+$website_path = Project::getLocalFilePath($current_website, '', '');
+$directory = new \RecursiveDirectoryIterator($website_path);
+$iterator = new \RecursiveIteratorIterator($directory);
+$filtered_iterator = new \RegexIterator($iterator, '/^.+\.lang$/i', \RecursiveRegexIterator::GET_MATCH);
+
 $file_list = [];
-foreach ($locale_list as $locale) {
-    $locale_path = Project::getLocalFilePath($current_website, $locale, '');
-    if (is_dir($locale_path)) {
-        $directory = new \RecursiveDirectoryIterator($locale_path);
-        $iterator = new \RecursiveIteratorIterator($directory);
-        $filtered_iterator = new \RegexIterator($iterator, '/^.+\.lang$/i', \RecursiveRegexIterator::GET_MATCH);
-        foreach ($filtered_iterator as $file_name => $file) {
-            $file_list[] = [
-                'full_path'     => $file_name,
-                'relative_path' => Utils::leftStrip($file_name, $locale_path),
-                'locale'        => $locale,
-            ];
-        }
-    } else {
-        Utils::logger("#{$locale} is supported by the website but folder is missing.");
+$folders = [];
+foreach ($filtered_iterator as $file_name => $file) {
+    /*
+        Determine path relative to the website's root folder.
+        e.g. zh-TW/description_beta_page.lang
+        Later we'll need to store the path relative to each locale's folder.
+        e.g. description_beta_page.lang
+    */
+    $relative_path = Utils::leftStrip($file_name, $website_path);
+    $toplevel_folder = explode(DIRECTORY_SEPARATOR, $relative_path)[0];
+
+    // Ignore file if is inside an ignored locale
+    if (in_array($toplevel_folder, $ignored_locales)) {
+        continue;
     }
+    if (! in_array($toplevel_folder, $folders)) {
+        $folders[] = $toplevel_folder;
+    }
+    $file_list[] = [
+        'full_path'     => $file_name,
+        'relative_path' => Utils::leftStrip($relative_path, $toplevel_folder . DIRECTORY_SEPARATOR),
+        'locale'        => $toplevel_folder,
+    ];
 }
 sort($file_list);
+sort($folders);
+
+// Check if we have locales supported but completely missing
+$missing_locales = array_diff($locale_list, $folders);
+if (! empty($missing_locales)) {
+    foreach ($missing_locales as $missing_locale) {
+        Utils::logger("#{$missing_locale} is supported by the website but folder is missing.");
+    }
+}
 
 // Check if the .lang files available locally are actually tracked by langchecker
 $untracked_files = [];
@@ -98,7 +119,7 @@ $get_file_path = function ($file_info) use ($absolute_path) {
 
     return $absolute_path != '' ?
         $file_info['full_path'] :
-        $file_info['locale'] . '/' . $file_info['relative_path'];
+        $file_info['locale'] . DIRECTORY_SEPARATOR . $file_info['relative_path'];
 };
 
 // Add all files not supported for this website
