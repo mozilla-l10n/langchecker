@@ -187,6 +187,11 @@ class Project
      */
     public static function getLocalFilePath($website, $locale, $filename)
     {
+        if ($locale == '') {
+            // Return only the main website folder
+            return $website[1] . $website[2];
+        }
+
         return $website[1] . $website[2] . $locale . '/' . $filename;
     }
 

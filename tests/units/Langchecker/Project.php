@@ -217,6 +217,7 @@ class Project extends atoum\test
         return [
             [$sites[0], 'fr', 'test.lang', '/private/repo1/locales/fr/test.lang'],
             [$sites[1], 'de', 'file1.lang', '/private/repo2/l10n/de/file1.lang'],
+            [$sites[1], '', '', '/private/repo2/l10n/'],
         ];
     }
 
