@@ -62,7 +62,7 @@ $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
     Make sure to update the store_l10n project when you update this list:
     https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L43
 */
-$apple_store_target = [
+$ios_locales = [
     'ar', 'az', 'bg', 'bn-IN', 'br', 'cs', 'cy', 'da', 'de', 'dsb', 'el',
     'eo', 'es-ES', 'es-CL', 'es-MX', 'fa', 'fr', 'fy-NL', 'ga-IE',
     'gd', 'gl', 'hsb', 'id', 'is', 'it', 'ja', 'kk', 'km', 'ko', 'lo', 'lt',
@@ -70,6 +70,19 @@ $apple_store_target = [
     'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'son', 'sv-SE', 'th', 'tl', 'tr',
     'uk', 'uz', 'zh-CN', 'zh-TW',
 ];
+
+/*
+    Source: https://l10n.mozilla-community.org/~pascalc/stores_l10n/api/apple/localesmapping/?reverse
+    Locales supported by the Apple Store
+*/
+$apple_store_locales = [
+    'da', 'de', 'el', 'en-GB', 'es-ES', 'es-MX', 'fi', 'fr', 'id', 'it', 'ja',
+    'ko', 'ms', 'nb-NO', 'nl', 'pt-BR', 'pt-PT', 'ru', 'sv-SE', 'th', 'tr', 'vi',
+    'zh-CN', 'zh-TW',
+];
+
+// Locales that we do support and that Apple Store supports too
+$apple_store_target = array_intersect($ios_locales, $apple_store_locales);
 
 /*
     Source : http://hg.mozilla.org/releases/mozilla-release/raw-file/tip/mobile/android/locales/maemo-locales
