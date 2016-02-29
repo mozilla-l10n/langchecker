@@ -40,10 +40,6 @@ $json = [
     ['?website=foo&file=main.lang&json', 400, "{\n    \"error\": \"foo is not a supported website. Check the value and try again.\"\n}"],
 ];
 
-$text = [
-    ['?action=api&file=page.lang', 200, "<ul>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=54a2cf5e634dbba0be2bf8a55f79252f5c790bdb\">Browser</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=84add5b2952787581cb9a8851eef63d1ec75d22b\">Email</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0\">Hello</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=640ab2bae07bedc4c163f679a746f7ab7fb5d1fa\">Test</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=bedc846b24ca06a457bf9b9208de6b146969362f\">Save file</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=ddfe163345d338193ac2bdc183f8e9dcff904b43\">01</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=e27ab9a3b203bd8831760183e2bbff78878c5dac\">String with multiple comments</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=1c037c4d9e72bbf474008cf56eae8734368093e4\">Press center</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=a7b3f41052019d22a389a41e375534e65dd9dff3\">@@this is a test, do not remove@@</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=b075e68c4e2ae16b7e5fe1dec55ede7584706f55\">String with tag</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=268fbfe819c694d4d179d4943de7f7d4cec4b042\">String with %(num)s tags</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=9f13ceddb7ca0399b59b942f0c1d884870225f76\">Second string with %(num)s tags</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=4747af9ac14c7aa4985890e850b6452faf0ab649\">Third string with %s tags</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=c1b92fc8ff9a988f1729f7ffac55efab58cffc00\">Fourth string with 90%% coverage</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=f99de591a4f4f53a7335f41d68f0f28c422a8f10\">Fifth string with %(one)s, %(two)s</li>\n    <li><a href=\"./?action=api&amp;file=page.lang&amp;stringid=3a5667ca2f63ce4baeb13bb10395e1197d041572\">Sixth string with %(one)s</li>\n</ul>\n"],
-];
-
 $number = [
     ['?action=coverage&locales[]=it&locales[]=fr', 200, '1.90'],
     ['?action=coverage&locales[]=fr', 200, '0.32'],
@@ -76,7 +72,6 @@ $check = function ($paths, $type) use ($obj) {
 };
 
 $check($json, 'json');
-$check($text, 'text');
 $check($number, 'number');
 
 $obj->report();

@@ -337,9 +337,6 @@ class Project
                 case 'activation':
                     $result['file'] = 'activation';
                     break;
-                case 'api':
-                    $result['file'] = 'json';
-                    break;
                 case 'count':
                     $result['file'] = 'countstrings';
                     break;
