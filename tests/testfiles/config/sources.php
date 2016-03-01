@@ -80,6 +80,6 @@ $langfiles_subsets = [
     ],
 ];
 
-$snippets_locales = ['fr', 'it'];
+$slogans_locales = ['fr', 'it'];
 
 $mozilla = ['en-US', 'fr', 'it'];
