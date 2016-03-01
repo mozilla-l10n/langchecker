@@ -3,12 +3,18 @@ namespace Langchecker;
 
 $output_array = [];
 $lang_based_sites = Project::getWebsitesByDataType($sites, 'lang');
-if ($website != '' && $filename != '') {
+if ($website != '') {
+    $current_website = $lang_based_sites[$website];
     if (isset($lang_based_sites[$website])) {
-        $current_website = $lang_based_sites[$website];
-        $current_filename = $filename;
-        if (in_array($current_filename, Project::getWebsiteFiles($current_website))) {
-            $output_array = array_values(Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets));
+        if ($filename != '') {
+            // Return locales supported by this specific file
+            $current_filename = $filename;
+            if (in_array($current_filename, Project::getWebsiteFiles($current_website))) {
+                $output_array = array_values(Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets));
+            }
+        } else {
+            // Return locales supported by this website
+            $output_array = array_values(Project::getSupportedLocales($current_website));
         }
     }
 } elseif ($project != '') {
@@ -22,18 +28,12 @@ if ($website != '' && $filename != '') {
         case 'slogans':
             $output_array = $slogans_locales;
         break;
-        case 'snippets':
-            $output_array = $snippets_locales;
-        break;
-        case 'snippets_main':
-            $output_array = $snippets_main_locales;
-        break;
     }
 }
 
 if (count($output_array) == 0) {
     // No locales: either wrong values or not enought parameters
-    die($json_object->outputError("ERROR: please check you request: provide a project name, or a valid couple website+file."));
+    die($json_object->outputError('ERROR: please check your request: provide a project name, a website, or a website+file.'));
 }
 
 echo $json_object->outputContent($output_array, false, true);
