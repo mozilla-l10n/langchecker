@@ -412,6 +412,7 @@ $appstores_lang = [
     'apple_description_release.lang',
     'android_42_release.lang',
     'whatsnew/whatsnew_android_44.lang',
+    'whatsnew/whatsnew_android_45.lang',
 ];
 
 $lang_flags['appstores'] = [
@@ -499,9 +500,9 @@ $no_active_tag = [
 ];
 
 $deadline = [
-    'description_beta_page.lang'             => '2015-09-30', // appstores project
-    'apple_description_release.lang'         => '2016-03-30', // appstores project
     'android_42_release.lang'                => '2016-03-08', // appstores project
+    'apple_description_release.lang'         => '2016-03-30', // appstores project
+    'description_beta_page.lang'             => '2015-09-30', // appstores project
     'download_button.lang'                   => '2015-06-01',
     'firefox/accounts.lang'                  => '2016-03-15',
     'firefox/android/index.lang'             => '2015-11-02',
@@ -533,6 +534,7 @@ $deadline = [
     'mozorg/contribute/stories.lang'         => '2015-08-10',
     'mozorg/home/index.lang'                 => '2016-03-15',
     'mozorg/plugincheck.lang'                => '2015-08-24',
+    'privacy/principles.lang'                => '2015-09-15',
     'snippets/2015/fall2015.lang'            => '2015-11-02',
     'snippets/2015/nov2015_eoy_mofo.lang'    => '2015-11-02',
     'snippets/2015/nov2015_a.lang'           => '2015-11-14',
@@ -542,17 +544,17 @@ $deadline = [
     'snippets/2016/jan2016.lang'             => '2016-01-14',
     'snippets/2016/feb2016.lang'             => '2016-02-15',
     'snippets/2016/mar2016.lang'             => '2016-03-01',
-    'privacy/principles.lang'                => '2015-09-15',
     'surveys/survey_hello_fx42.lang'         => '2015-09-11',
     'teach/smarton/index.lang'               => '2015-12-31',
     'teach/smarton/security.lang'            => '2015-11-17',
     'teach/smarton/surveillance.lang'        => '2015-12-31',
     'teach/smarton/tracking.lang'            => '2015-11-02',
+    'thunderbird/start/release.lang'         => '2015-01-31',
     'tiles/2015/tiles_sep2015.lang'          => '2015-09-10',
     'tiles/2015/tiles_oct2015.lang'          => '2015-10-11',
     'tiles/2015/tiles_nov2015.lang'          => '2015-11-02',
     'tiles/2016/tiles_jan2016.lang'          => '2016-01-14',
-    'thunderbird/start/release.lang'         => '2015-01-31',
+    'whatsnew/whatsnew_android_45.lang'      => '2016-03-08', // appstores project
 ];
 
 // List of locales
@@ -1104,10 +1106,11 @@ $langfiles_subsets = [
     ],
 
     'appstores' => [
-        'description_beta_page.lang'        => $google_play_target,
+        'android_42_release.lang'           => $google_play_target,
         'apple_description_release.lang'    => $apple_store_target,
-        'android_42_release.lang'           => $google_play_target, // yeah, marketing...
+        'description_beta_page.lang'        => $google_play_target,
         'whatsnew/whatsnew_android_44.lang' => ['fr', 'ja', 'zh-TW'],
+        'whatsnew/whatsnew_android_45.lang' => $google_play_target,
     ],
 
     'firefoxos-marketing' => [
