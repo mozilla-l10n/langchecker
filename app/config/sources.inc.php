@@ -413,6 +413,7 @@ $appstores_lang = [
     'android_42_release.lang',
     'whatsnew/whatsnew_android_44.lang',
     'whatsnew/whatsnew_android_45.lang',
+    'whatsnew/whatsnew_android_46_beta.lang',
 ];
 
 $lang_flags['appstores'] = [
@@ -555,6 +556,7 @@ $deadline = [
     'tiles/2015/tiles_nov2015.lang'          => '2015-11-02',
     'tiles/2016/tiles_jan2016.lang'          => '2016-01-14',
     'whatsnew/whatsnew_android_45.lang'      => '2016-03-08', // appstores project
+    'whatsnew/whatsnew_android_46_beta.lang' => '2016-03-09', // appstores project
 ];
 
 // List of locales
@@ -1106,11 +1108,12 @@ $langfiles_subsets = [
     ],
 
     'appstores' => [
-        'android_42_release.lang'           => $google_play_target,
-        'apple_description_release.lang'    => $apple_store_target,
-        'description_beta_page.lang'        => $google_play_target,
-        'whatsnew/whatsnew_android_44.lang' => ['fr', 'ja', 'zh-TW'],
-        'whatsnew/whatsnew_android_45.lang' => $google_play_target,
+        'android_42_release.lang'                => $google_play_target,
+        'apple_description_release.lang'         => $apple_store_target,
+        'description_beta_page.lang'             => $google_play_target,
+        'whatsnew/whatsnew_android_44.lang'      => ['fr', 'ja', 'zh-TW'],
+        'whatsnew/whatsnew_android_45.lang'      => $google_play_target,
+        'whatsnew/whatsnew_android_46_beta.lang' => $google_play_target,
     ],
 
     'firefoxos-marketing' => [
