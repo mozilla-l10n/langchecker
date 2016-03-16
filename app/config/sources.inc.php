@@ -410,10 +410,12 @@ $lang_flags['firefoxos-marketing'] = [];
 $appstores_lang = [
     'description_beta_page.lang',
     'apple_description_release.lang',
+    'apple_screenshots_v3.lang',
     'android_42_release.lang',
     'whatsnew/whatsnew_android_44.lang',
     'whatsnew/whatsnew_android_45.lang',
     'whatsnew/whatsnew_android_46_beta.lang',
+    'whatsnew/whatsnew_ios_2_1.lang',
 ];
 
 $lang_flags['appstores'] = [
@@ -503,6 +505,7 @@ $no_active_tag = [
 $deadline = [
     'android_42_release.lang'                => '2016-03-08', // appstores project
     'apple_description_release.lang'         => '2016-03-30', // appstores project
+    'apple_screenshots_v3.lang'              => '2016-03-25', // appstores project
     'description_beta_page.lang'             => '2015-09-30', // appstores project
     'download_button.lang'                   => '2015-06-01',
     'firefox/accounts.lang'                  => '2016-03-15',
@@ -557,6 +560,7 @@ $deadline = [
     'tiles/2016/tiles_jan2016.lang'          => '2016-01-14',
     'whatsnew/whatsnew_android_45.lang'      => '2016-03-08', // appstores project
     'whatsnew/whatsnew_android_46_beta.lang' => '2016-03-09', // appstores project
+    'whatsnew/whatsnew_ios_2_1.lang'         => '2016-03-21', // appstores project
 ];
 
 // List of locales
@@ -1110,10 +1114,14 @@ $langfiles_subsets = [
     'appstores' => [
         'android_42_release.lang'                => $google_play_target,
         'apple_description_release.lang'         => $apple_store_target,
+        'apple_screenshots_v3.lang'              => [
+            'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
+        ],
         'description_beta_page.lang'             => $google_play_target,
         'whatsnew/whatsnew_android_44.lang'      => ['fr', 'ja', 'zh-TW'],
         'whatsnew/whatsnew_android_45.lang'      => $google_play_target,
         'whatsnew/whatsnew_android_46_beta.lang' => $google_play_target,
+        'whatsnew/whatsnew_ios_2_1.lang'         => $apple_store_target,
     ],
 
     'firefoxos-marketing' => [
