@@ -53,7 +53,7 @@ $firefox_locales = array_diff(
 $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
 
 /*
-    source: https://l10n.mozilla-community.org/~flod/webstatus/api/?product=firefox-ios
+    source: https://raw.githubusercontent.com/mozilla/firefox-ios/v3.x/shipping_locales.txt
     translations are at: https://github.com/mozilla-l10n/firefoxios-l10n/
     For iOS we used the locale code es for Spanish from Spain, that was a
     mistake, this is why I changed it to es-ES in the array below, otherwise
@@ -63,12 +63,11 @@ $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
     https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L43
 */
 $ios_locales = [
-    'ar', 'az', 'bg', 'bn-IN', 'br', 'cs', 'cy', 'da', 'de', 'dsb', 'el',
-    'eo', 'es-ES', 'es-CL', 'es-MX', 'fa', 'fr', 'fy-NL', 'ga-IE',
-    'gd', 'gl', 'hsb', 'id', 'is', 'it', 'ja', 'kk', 'km', 'ko', 'lo', 'lt',
-    'lv', 'ml', 'ms', 'my', 'nb-NO', 'nl', 'nn-NO', 'or', 'pl', 'pt-BR',
-    'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'son', 'sv-SE', 'th', 'tl', 'tr',
-    'uk', 'uz', 'zh-CN', 'zh-TW',
+    'az', 'bg', 'br', 'cs', 'cy', 'da', 'de', 'dsb', 'en-US', 'eo',
+    'es-ES', 'es-CL', 'es-MX', 'fr', 'fy-NL', 'ga-IE', 'gd', 'hsb', 'id', 'is',
+    'it', 'ja', 'kk', 'km', 'ko', 'lo', 'lt', 'lv', 'nb-NO', 'nl', 'nn-NO',
+    'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'sv-SE', 'th',
+    'tl', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
 ];
 
 /*

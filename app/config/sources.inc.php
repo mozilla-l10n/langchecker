@@ -413,11 +413,17 @@ $appstores_lang = [
 
 $lang_flags['appstores'] = [
     'apple_description_release.lang' => [
-        'critical' => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN'],
+        'critical' => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
+    ],
+    'apple_screenshots_v3.lang' => [
+        'critical' => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
     ],
     'android_42_release.lang' => [
-        'critical' => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN'],
+        'critical' => ['ar', 'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
     ],
+    'whatsnew/whatsnew_android_44.lang' => [ 'obsolete' => ['all'] ],
+    'whatsnew/whatsnew_android_45.lang' => [ 'obsolete' => ['all'] ],
+    'whatsnew/whatsnew_ios_2_1.lang'    => [ 'obsolete' => ['all'] ],
 ];
 
 $getinvolved_autoreplies = [
@@ -553,9 +559,7 @@ $deadline = [
     'tiles/2015/tiles_oct2015.lang'          => '2015-10-11',
     'tiles/2015/tiles_nov2015.lang'          => '2015-11-02',
     'tiles/2016/tiles_jan2016.lang'          => '2016-01-14',
-    'whatsnew/whatsnew_android_45.lang'      => '2016-03-08', // appstores project
     'whatsnew/whatsnew_android_46_beta.lang' => '2016-03-09', // appstores project
-    'whatsnew/whatsnew_ios_2_1.lang'         => '2016-03-21', // appstores project
 ];
 
 // List of locales
@@ -618,8 +622,9 @@ $getinvolved_locales = [
 $ios_landing_page = array_unique(array_merge(
     $ios_locales,
     [
-        'af', 'an', 'bn-BD', 'ca', 'en-GB', 'es-AR', 'eu',
-        'gn', 'hi-IN', 'hu', 'ka', 'kn', 'lij', 'sq', 'sr',
+        'af', 'an', 'ar', 'bn-BD', 'bn-IN', 'ca', 'el', 'en-GB', 'es-AR', 'eu',
+        'fa', 'gl', 'gn', 'hi-IN', 'hu', 'ka', 'kn', 'lij', 'ml', 'ms', 'my',
+        'or', 'son', 'sq', 'sr',
     ]
 ));
 
@@ -766,7 +771,8 @@ $sites =
         'appstores',
         $repositories['appstores']['local_path'],
         '',
-        array_unique(array_merge($google_play_target, $apple_store_target)),
+        // Added: ar, see https://bugzilla.mozilla.org/show_bug.cgi?id=1259200
+        array_unique(array_merge(array_merge($google_play_target, ['ar']), $apple_store_target)),
         $appstores_lang,
         'en-US', // source locale
         $repositories['appstores']['public_path'],
@@ -1109,14 +1115,15 @@ $langfiles_subsets = [
     ],
 
     'appstores' => [
-        'android_42_release.lang'                => $google_play_target,
+        // Added: ar, see https://bugzilla.mozilla.org/show_bug.cgi?id=1259200
+        'android_42_release.lang'                => array_merge($google_play_target, ['ar']),
         'apple_description_release.lang'         => $apple_store_target,
         'apple_screenshots_v3.lang'              => [
             'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
         ],
         'description_beta_page.lang'             => $google_play_target,
         'whatsnew/whatsnew_android_44.lang'      => ['fr', 'ja', 'zh-TW'],
-        'whatsnew/whatsnew_android_45.lang'      => $google_play_target,
+        'whatsnew/whatsnew_android_45.lang'      => array_merge($google_play_target, ['ar']),
         'whatsnew/whatsnew_android_46_beta.lang' => $google_play_target,
         'whatsnew/whatsnew_ios_2_1.lang'         => $apple_store_target,
     ],
