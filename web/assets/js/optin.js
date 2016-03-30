@@ -3,7 +3,7 @@ function getSelectedPages() {
     var checkboxes = document.getElementsByClassName('optin_checkbox');
     var list = [];
 
-    for(var i=0, n=checkboxes.length; i<n; i++) {
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
         if (checkboxes[i].checked) {
             list.push(checkboxes[i].value);
         }
@@ -30,9 +30,9 @@ window.onload = function() {
 
             if (selected_pages.length > 0) {
                 message = 'Please add ' + locale.value + ' to the list of ' +
-                          'supported locales for the following files on ' +
-                          'www.mozilla.org:\n';
-                for(var i=0, n=selected_pages.length; i<n; i++) {
+                    'supported locales for the following files on ' +
+                    'www.mozilla.org:\n';
+                for (var i = 0, n = selected_pages.length; i < n; i++) {
                     message += '* ' + selected_pages[i] + '\n';
                 }
                 var bugzilla_url = base_url.value + encodeURI(message);
@@ -45,7 +45,7 @@ window.onload = function() {
 
         // Associate listener to checkboxes
         var checkboxes = document.getElementsByClassName('optin_checkbox');
-        for(var i=0, n=checkboxes.length; i<n; i++) {
+        for (var i = 0, n = checkboxes.length; i < n; i++) {
             checkboxes[i].addEventListener('click', function() {
                 if (this.checked) {
                     // Make sure the button is enabled
@@ -54,7 +54,7 @@ window.onload = function() {
                     // Check if the button should be disabled
                     var selected_pages = getSelectedPages();
 
-                    if (selected_pages.length == 0) {
+                    if (selected_pages.length === 0) {
                         bugzilla_button.setAttribute('disabled', 'disabled');
                     }
                 }
