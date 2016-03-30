@@ -19,7 +19,7 @@ window.onload = function() {
         return list;
     }
 
-    function toggleBugzillaButton (event) {
+    function toggleBugzillaButton(event) {
         if (event.target.checked) {
             // Make sure the button is enabled
             bugzillaButton.removeAttribute('disabled');

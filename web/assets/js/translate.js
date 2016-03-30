@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function() {
 
     function showhide(event) {
         var id = event.target.dataset.loopIndex;
