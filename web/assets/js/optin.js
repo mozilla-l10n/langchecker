@@ -12,6 +12,20 @@ function getSelectedPages() {
     return list;
 };
 
+function toggleBugzillaButton (event) {
+    if (event.target.checked) {
+        // Make sure the button is enabled
+        bugzilla_button.removeAttribute('disabled');
+    } else {
+        // Check if the button should be disabled
+        var selected_pages = getSelectedPages();
+
+        if (selected_pages.length === 0) {
+            bugzilla_button.setAttribute('disabled', 'disabled');
+        }
+    }
+};
+
 window.onload = function() {
     var bugzilla_button = document.getElementById('bugzilla_button');
 
@@ -46,19 +60,7 @@ window.onload = function() {
         // Associate listener to checkboxes
         var checkboxes = document.getElementsByClassName('optin_checkbox');
         for (var i = 0, n = checkboxes.length; i < n; i++) {
-            checkboxes[i].addEventListener('click', function() {
-                if (this.checked) {
-                    // Make sure the button is enabled
-                    bugzilla_button.removeAttribute('disabled');
-                } else {
-                    // Check if the button should be disabled
-                    var selected_pages = getSelectedPages();
-
-                    if (selected_pages.length === 0) {
-                        bugzilla_button.setAttribute('disabled', 'disabled');
-                    }
-                }
-            });
+            checkboxes[i].addEventListener('click', toggleBugzillaButton);
         }
     }
 }
