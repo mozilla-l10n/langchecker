@@ -205,7 +205,7 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/australis/firefox_tour.lang'     => [ 'critical' => ['all'] ],
     'firefox/australis/fx36_tour.lang'        => [ 'critical' => ['all'] ],
     'firefox/channel.lang'                    => [ 'critical' => ['all'] ],
-    'firefox/choose.lang'                     => [ 'critical' => ['all'] ],
+    'firefox/choose.lang'                     => [ 'obsolete' => ['all'] ],
     'firefox/family/index.lang'               => [ 'critical' => ['all'] ],
     'firefox/features.lang'                   => [ 'critical' => ['all'] ],
     'firefox/desktop/customize.lang'          => [ 'critical' => ['all'] ],
@@ -249,9 +249,7 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/about/history.lang'               => [ 'opt-in'   => ['all'] ],
     'mozorg/about/history-details.lang'       => [ 'opt-in'   => ['all'] ],
     'mozorg/contribute.lang'                  => [ 'obsolete' => ['all'] ],
-    'mozorg/contribute/friends.lang'          => [
-        'critical' => ['es-ES', 'pt-BR'],
-    ],
+    'mozorg/contribute/friends.lang'          => [ 'obsolete' => ['all'] ],
     'mozorg/contribute/index.lang'            => [
         'critical' => ['all'],
         'opt-in'   => ['all'],
@@ -506,7 +504,6 @@ $deadline = [
     'firefox/accounts.lang'                  => '2016-03-15',
     'firefox/android/index.lang'             => '2015-11-02',
     'firefox/channel.lang'                   => '2015-11-02',
-    'firefox/choose.lang'                    => '2015-11-02',
     'firefox/desktop/customize.lang'         => '2015-11-02',
     'firefox/desktop/fast.lang'              => '2015-11-02',
     'firefox/desktop/index.lang'             => '2015-11-02',
