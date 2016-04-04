@@ -142,7 +142,6 @@ class RawManager
             }
 
             // Following lines are filenames, there is at least one
-            $files_in_commit = [];
             $current_line = $git_log[++$i];
             while ($current_line != '' && $i < $lines - 1) {
                 $file_name = $path . $current_line;

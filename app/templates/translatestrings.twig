@@ -1,7 +1,7 @@
 {% extends 'default.twig' %}
 
 {% block js_files %}
-    <script src="{{ assets_folder }}/js/base.js"></script>
+    <script src="{{ assets_folder }}/js/translate.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -17,7 +17,7 @@
         {% endif %}
         {% for string in string_list %}
             <p id="string{{ loop.index }}" class="translatestring">
-                <a href="#string{{ loop.index }}" onclick="showhide('{{ loop.index }}');">{{ string.header }}</a>
+                <a href="#string{{ loop.index }}" class="translate_link" data-loop-index="{{ loop.index }}">{{ string.header }}</a>
                 {% if string.tag != '' %}
                     <span title="Associated tag" class="tag" style="background-color: {{ string.tag.bg_color }}; color: {{ string.tag.color }};">{{ string.tag.text }}</span>
                 {% endif %}
