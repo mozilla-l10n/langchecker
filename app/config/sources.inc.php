@@ -297,7 +297,7 @@ $lang_flags['about:healthreport'] = [
 ];
 
 $engagement_lang = [
-    'ios/ios_ads_nov2015.lang',
+    'ads/ios_ads_nov2015.lang',
     'snippets/2014/jan2014.lang',
     'snippets/2014/apr2014.lang',
     'snippets/2014/may2014.lang',
@@ -539,7 +539,7 @@ $deadline = [
     'firefox/tracking-protection-tour.lang'  => '2016-02-29',
     'firefox/whatsnew_42.lang'               => '2015-11-02',
     'firefox/win10-welcome.lang'             => '2016-01-25',
-    'ios/ios_ads_nov2015.lang'               => '2015-11-18',
+    'ads/ios_ads_nov2015.lang'               => '2015-11-18',
     'legal/index.lang'                       => '2016-02-18',
     'main.lang'                              => '2016-04-11',
     'mozorg/about.lang'                      => '2015-03-26',
@@ -1015,7 +1015,7 @@ $langfiles_subsets = [
 
     'engagement' =>
     [
-        'ios/ios_ads_nov2015.lang'              => ['de', 'fr'],
+        'ads/ios_ads_nov2015.lang'              => ['de', 'fr'],
         'snippets/2014/jan2014.lang'            =>
             [
                 'cs', 'de', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr',
