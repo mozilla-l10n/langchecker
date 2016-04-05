@@ -63,11 +63,12 @@ $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
     https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L43
 */
 $ios_locales = [
-    'az', 'bg', 'br', 'cs', 'cy', 'da', 'de', 'dsb', 'en-US', 'eo',
-    'es-ES', 'es-CL', 'es-MX', 'fr', 'fy-NL', 'ga-IE', 'gd', 'hsb', 'id', 'is',
-    'it', 'ja', 'kk', 'km', 'ko', 'lo', 'lt', 'lv', 'nb-NO', 'nl', 'nn-NO',
-    'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'sv-SE', 'th',
-    'tl', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
+    'az', 'bg', 'br', 'cs', 'cy', 'da', 'de', 'dsb', 'eo',
+    'es-ES', 'es-CL', 'es-MX', 'fr', 'fy-NL', 'ga-IE', 'gd',
+    'hsb', 'id', 'is', 'it', 'ja', 'kk', 'km', 'ko', 'lo',
+    'lt', 'lv', 'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-BR', 'pt-PT',
+    'rm', 'ro', 'ru', 'sk', 'sl', 'sv-SE', 'th', 'tl', 'tr',
+    'uk', 'uz', 'zh-CN', 'zh-TW',
 ];
 
 /*
