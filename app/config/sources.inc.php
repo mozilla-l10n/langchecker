@@ -298,6 +298,7 @@ $lang_flags['about:healthreport'] = [
 
 $engagement_lang = [
     'ads/ios_ads_nov2015.lang',
+    'ads/ios_android_apr2016.lang',
     'snippets/2014/jan2014.lang',
     'snippets/2014/apr2014.lang',
     'snippets/2014/may2014.lang',
@@ -374,6 +375,7 @@ $engagement_lang = [
     'tiles/2016/tiles_jan2016.lang',
 ];
 $lang_flags['engagement'] = [
+    'ads/ios_android_apr2016.lang' => [ 'critical' => ['all'] ],
     'snippets/2016/jan2016.lang'   => [ 'critical' => ['all'] ],
     'snippets/2016/feb2016.lang'   => [ 'critical' => ['all'] ],
     'snippets/2016/mar2016.lang'   => [ 'critical' => ['all'] ],
@@ -1016,6 +1018,7 @@ $langfiles_subsets = [
     'engagement' =>
     [
         'ads/ios_ads_nov2015.lang'              => ['de', 'fr'],
+        'ads/ios_android_apr2016.lang'          => ['de', 'fr'],
         'snippets/2014/jan2014.lang'            =>
             [
                 'cs', 'de', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr',
