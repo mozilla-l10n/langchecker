@@ -514,6 +514,7 @@ $no_active_tag = [
 ];
 
 $deadline = [
+    'ads/ios_android_apr2016.lang'           => '2016-04-22',
     'android_42_release.lang'                => '2016-03-08', // appstores project
     'apple_description_release.lang'         => '2016-03-30', // appstores project
     'apple_screenshots_v3.lang'              => '2016-03-25', // appstores project
@@ -1018,7 +1019,7 @@ $langfiles_subsets = [
     'engagement' =>
     [
         'ads/ios_ads_nov2015.lang'              => ['de', 'fr'],
-        'ads/ios_android_apr2016.lang'          => ['de', 'fr'],
+        'ads/ios_android_apr2016.lang'          => ['de', 'es-ES', 'fr', 'pl'],
         'snippets/2014/jan2014.lang'            =>
             [
                 'cs', 'de', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr',
