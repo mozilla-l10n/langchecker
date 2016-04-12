@@ -882,15 +882,15 @@ $langfiles_subsets = [
         'foundation/annualreport/2011.lang'      =>
             [
                 'ast', 'cs', 'de', 'el', 'eo', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
-                'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR',
+                'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ja',
+                'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR',
                 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
             ],
         'foundation/annualreport/2011faq.lang'  =>
             [
                 'ast', 'cs', 'de', 'el', 'eo', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ko',
-                'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR',
+                'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ja',
+                'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR',
                 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
             ],
         'foundation/annualreport/2012/index.lang' =>
@@ -933,19 +933,21 @@ $langfiles_subsets = [
         'mozorg/mission.lang'                   => $mozillaorg,
         'mozorg/about/history-details.lang'     =>
             [
-                'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'es-MX',
-                'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'km', 'ko', 'lt',
-                'pa-IN', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'sk',
-                'son', 'sq', 'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
+                'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
+                'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja',
+                'km', 'ko', 'lt', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
+                'ru', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
+                'zh-CN', 'zh-TW',
             ],
         'mozorg/about/history.lang'             =>
             [
-                'af', 'ar', 'bg', 'ca', 'cs', 'cy', 'de', 'dsb', 'el',
-                'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa',
-                'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id', 'it', 'km', 'ko',
-                'lt', 'ms', 'nl', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'ro',
-                'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
-                'ta', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
+                'af', 'ar', 'bg', 'ca', 'cs', 'cy', 'de', 'dsb',
+                'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+                'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
+                'it', 'ja', 'km', 'ko', 'lt', 'ms', 'nl', 'pa-IN',
+                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'sk',
+                'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk',
+                'uz', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/leadership.lang'          =>
             [
