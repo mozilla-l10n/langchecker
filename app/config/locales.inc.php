@@ -18,7 +18,7 @@ $mozilla = [
     'ne-NP', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN', 'pbb', 'pl',
     'pt-BR', 'pt-PT', 'qvi', 'rm', 'ro', 'ru', 'sat', 'si',
     'sk', 'sl', 'son', 'sq', 'sr', 'sr-Latn', 'sv-SE', 'sw',
-    'ta', 'te', 'th', 'tl', 'tn', 'tr', 'trs', 'tsz', 'uk',
+    'ta', 'te', 'th', 'tl', 'tn', 'tr', 'trs', 'uk',
     'ur', 'uz', 'vi', 'wo', 'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
 sort($mozilla);
@@ -37,7 +37,7 @@ $fxos_locales = [
 
 // List of locales only working on Fennec
 $fennec_locales = [
-    'cak', 'hto', 'lo', 'my', 'pbb', 'qvi', 'trs', 'tsz',
+    'cak', 'hto', 'lo', 'my', 'pbb', 'qvi', 'trs',
 ];
 
 /*
@@ -140,7 +140,7 @@ $locamotion_locales = [
     'kok', 'ks', 'ln', 'lo', 'lt', 'lv', 'mai', 'mg',
     'mr', 'ms', 'my', 'ne-NP', 'nn-NO', 'oc', 'or', 'pbb',
     'qvi', 'sat', 'son', 'sw', 'ta', 'tl', 'tn', 'trs',
-    'tsz', 'ur', 'vi', 'wo', 'xh', 'yo', 'zu',
+    'ur', 'vi', 'wo', 'xh', 'yo', 'zu',
 ];
 
 /*
