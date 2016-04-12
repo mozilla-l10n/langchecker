@@ -515,7 +515,7 @@ $no_active_tag = [
 
 $deadline = [
     'ads/ios_android_apr2016.lang'           => '2016-04-22',
-    'android_42_release.lang'                => '2016-03-08', // appstores project
+    'android_release.lang'                   => '2016-04-30', // appstores project
     'apple_description_release.lang'         => '2016-03-30', // appstores project
     'apple_screenshots_v3.lang'              => '2016-03-25', // appstores project
     'description_beta_page.lang'             => '2015-09-30', // appstores project
@@ -1131,7 +1131,7 @@ $langfiles_subsets = [
 
     'appstores' => [
         // Added: ar, see https://bugzilla.mozilla.org/show_bug.cgi?id=1259200
-        'android_42_release.lang'                => array_merge($google_play_target, ['ar']),
+        'android_release.lang'                   => array_merge($google_play_target, ['ar']),
         'apple_description_release.lang'         => $apple_store_target,
         'apple_screenshots_v3.lang'              => [
             'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
