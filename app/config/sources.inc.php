@@ -416,7 +416,7 @@ $appstores_lang = [
     'description_beta_page.lang',
     'apple_description_release.lang',
     'apple_screenshots_v3.lang',
-    'android_42_release.lang',
+    'android_release.lang',
     'whatsnew/whatsnew_android_44.lang',
     'whatsnew/whatsnew_android_45.lang',
     'whatsnew/whatsnew_android_46_beta.lang',
@@ -430,7 +430,7 @@ $lang_flags['appstores'] = [
     'apple_screenshots_v3.lang' => [
         'critical' => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
     ],
-    'android_42_release.lang' => [
+    'android_release.lang' => [
         'critical' => ['ar', 'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
     ],
     'whatsnew/whatsnew_android_44.lang' => [ 'obsolete' => ['all'] ],
