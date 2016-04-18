@@ -252,11 +252,9 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/contribute/friends.lang'          => [ 'obsolete' => ['all'] ],
     'mozorg/contribute/index.lang'            => [
         'critical' => ['all'],
-        'opt-in'   => ['all'],
     ],
     'mozorg/contribute/stories.lang'          => [
         'critical' => ['all'],
-        'opt-in'   => ['all'],
     ],
     'mozorg/home/index.lang'                  => [ 'critical' => ['all'] ],
     'mozorg/newsletters.lang'                 => [
