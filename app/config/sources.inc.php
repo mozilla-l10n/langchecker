@@ -926,8 +926,7 @@ $langfiles_subsets = [
             ],
         'mozorg/404.lang'                       => $mozillaorg,
         'mozorg/about.lang'                     => $mozillaorg,
-        'mozorg/home/index.lang'                =>
-            array_diff($mozillaorg, ['ja']),
+        'mozorg/home/index.lang'                => $mozillaorg,
         'mozorg/mission.lang'                   => $mozillaorg,
         'mozorg/about/history-details.lang'     =>
             [
