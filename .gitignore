@@ -1,7 +1,9 @@
+.composer_cache
 .phpintel/
-app/config/settings.inc.php
 app/config/adi.inc.php
+app/config/settings.inc.php
 cache/*.cache
-composer.phar
 composer.lock
+composer.phar
+logs/github_log.txt
 vendor/
