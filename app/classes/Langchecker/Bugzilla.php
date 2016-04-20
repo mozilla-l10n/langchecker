@@ -42,7 +42,7 @@ class Bugzilla extends _Bugzilla
                     '&contenttypeselection=text%2Fplain&data=&dependson=&description=&flag_type-4=X' .
                     '&flag_type-418=X&flag_type-419=X&flag_type-506=X&flag_type-507=X&form_name=enter_bug' .
                     '&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=All' .
-                    '&priority=--&product=www.mozilla.org&qa_contact=pascalc%40gmail.com' .
+                    '&priority=--&product=www.mozilla.org' .
                     '&rep_platform=All&short_desc=' . urlencode($bug_title) .
                     '&target_milestone=---&version=Development%2FStaging' .
                     '&format=__default__&cf_locale=' . $bugzilla_locale .
