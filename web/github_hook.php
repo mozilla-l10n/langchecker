@@ -67,7 +67,7 @@ if (isset($_SERVER[$header])) {
                 $removed_files++;
             }
         }
-        $log .= "Cache items removed from {$app_root}/cache: {$removed_files}";
+        $log .= "Cache items removed from {$app_root}/cache: {$removed_files}.\n";
 
         // Install or update dependencies
         if (file_exists($composer)) {
