@@ -423,7 +423,9 @@ $appstores_lang = [
     'whatsnew/whatsnew_android_45.lang',
     'whatsnew/whatsnew_android_46.lang',
     'whatsnew/whatsnew_android_46_beta.lang',
+    'whatsnew/whatsnew_android_47_beta.lang',
     'whatsnew/whatsnew_ios_2_1.lang',
+    'whatsnew/whatsnew_ios_4_0.lang',
 ];
 
 $lang_flags['appstores'] = [
@@ -436,9 +438,10 @@ $lang_flags['appstores'] = [
     'android_release.lang' => [
         'critical' => ['ar', 'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
     ],
-    'whatsnew/whatsnew_android_44.lang' => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_45.lang' => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_ios_2_1.lang'    => [ 'obsolete' => ['all'] ],
+    'whatsnew/whatsnew_android_44.lang'      => [ 'obsolete' => ['all'] ],
+    'whatsnew/whatsnew_android_45.lang'      => [ 'obsolete' => ['all'] ],
+    'whatsnew/whatsnew_android_46_beta.lang' => [ 'obsolete' => ['all'] ],
+    'whatsnew/whatsnew_ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
 ];
 
 $getinvolved_autoreplies = [
@@ -578,6 +581,7 @@ $deadline = [
     'tiles/2015/tiles_nov2015.lang'          => '2015-11-02',
     'tiles/2016/tiles_jan2016.lang'          => '2016-01-14',
     'whatsnew/whatsnew_android_46.lang'      => '2016-04-26', // appstores project
+    'whatsnew/whatsnew_ios_4_0.lang'         => '2016-05-10', // appstores project
 ];
 
 // List of locales
@@ -1149,7 +1153,9 @@ $langfiles_subsets = [
         'whatsnew/whatsnew_android_45.lang'      => array_merge($google_play_target, ['ar']),
         'whatsnew/whatsnew_android_46.lang'      => array_merge($google_play_target, ['ar']),
         'whatsnew/whatsnew_android_46_beta.lang' => $google_play_target,
+        'whatsnew/whatsnew_android_47_beta.lang' => $google_play_target,
         'whatsnew/whatsnew_ios_2_1.lang'         => $apple_store_target,
+        'whatsnew/whatsnew_ios_4_0.lang'         => $apple_store_target,
     ],
 
     'firefoxos-marketing' => [
