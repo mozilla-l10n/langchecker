@@ -77,7 +77,10 @@ class Utils extends atoum\test
     public function getLengthDP()
     {
         return [
-            ['Le cheval  blanc ', 17],
+            ['Le cheval  blanc ', 16],
+            ['<a href="">Le cheval  blanc </a>', 16],
+            ['Stringa di prova {ok}', 16],
+            ['<a href="">Stringa di prova </a> {ok}', 16],
             ['મારુ ઘર પાનું બતાવો', 19],
         ];
     }
