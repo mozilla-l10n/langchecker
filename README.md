@@ -23,9 +23,10 @@ You need to run the update script at least once to clone all the repositories.
 On a production server you want to schedule this script as a cronjob.
 
 # License
-This software is released under the terms of the [Mozilla Public License v2.0](http://www.mozilla.org/MPL/2.0/).
+This software is released under the terms of the [Mozilla Public License v2.0].
 
 [Composer]: https://getcomposer.org/download/
 [Locamotion's repository]: https://github.com/translate/mozilla-lang
 [webdashboard]: https://github.com/mozilla-l10n/webdashboard
 [Wiki]: https://github.com/mozilla-l10n/langchecker/wiki
+[Mozilla Public License v2.0]: http://www.mozilla.org/MPL/2.0/
