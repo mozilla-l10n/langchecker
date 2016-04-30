@@ -81,7 +81,11 @@ class Utils
      */
     public static function getLength($str)
     {
-        return mb_strlen(strip_tags($str), 'UTF-8');
+        // Remove HTML tags and meta tags like {ok}
+        $str = strip_tags($str);
+        $str = self::cleanString($str);
+
+        return mb_strlen($str, 'UTF-8');
     }
 
     /**
