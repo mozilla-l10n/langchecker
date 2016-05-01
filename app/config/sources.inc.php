@@ -74,12 +74,6 @@ $repositories = [
         'repository'  => 'https://github.com/mozilla-l10n/addons-l10n',
         'vcs'         => 'git',
     ],
-    'firefoxos-marketing' => [
-        'local_path'  => $repo_local_path('firefoxos-marketing', 'fxosmarketing-l10n'),
-        'public_path' => 'https://github.com/mozilla-l10n/fxosmarketing-l10n/tree/master/',
-        'repository'  => 'https://github.com/mozilla-l10n/fxosmarketing-l10n',
-        'vcs'         => 'git',
-    ],
     'contribute-autoreplies' => [
         'local_path'  => $repo_local_path('www.mozilla.org', 'mozilla_org'),
         'public_path' => 'https://github.com/mozilla-l10n/www.mozilla.org/tree/master/',
@@ -392,28 +386,6 @@ $addons_lang = [
 ];
 $lang_flags['add-ons'] = [];
 
-$fxos_marketing_lang = [
-    'marketplace/marketplace_l10n_feed.lang',
-    'screenshots/screenshots_2_0.lang',
-    'screenshots/screenshots_2_0_b.lang',
-    'screenshots/screenshots_dolphin.lang',
-    'screenshots/screenshots.lang',
-    'screenshots/screenshots_tarako.lang',
-    'slogans/firefoxos.lang',
-    'slogans/marketplacebadge.lang',
-];
-
-$lang_flags['firefoxos-marketing'] = [
-    'marketplace/marketplace_l10n_feed.lang' => [ 'obsolete' => ['all'] ],
-    'screenshots/screenshots_2_0.lang'       => [ 'obsolete' => ['all'] ],
-    'screenshots/screenshots_2_0_b.lang'     => [ 'obsolete' => ['all'] ],
-    'screenshots/screenshots_dolphin.lang'   => [ 'obsolete' => ['all'] ],
-    'screenshots/screenshots.lang'           => [ 'obsolete' => ['all'] ],
-    'screenshots/screenshots_tarako.lang'    => [ 'obsolete' => ['all'] ],
-    'slogans/firefoxos.lang'                 => [ 'obsolete' => ['all'] ],
-    'slogans/marketplacebadge.lang'          => [ 'obsolete' => ['all'] ],
-];
-
 $appstores_lang = [
     'description_beta_page.lang',
     'apple_description_release.lang',
@@ -608,30 +580,6 @@ $firefox_os_consumer = array_merge($firefox_os, ['et', 'uk']);
 $firefox_os_legal = array_merge($firefox_os, ['et']);
 $firefox_os_tv = array_merge($firefox_os, ['et']);
 
-$fxos_marketing = [
-    'af', 'ar', 'bg', 'bm', 'bn-IN', 'bn-BD', 'ca', 'cs', 'de',
-    'ee', 'el', 'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu',
-    'ig', 'it', 'ja', 'ko', 'ln', 'mg', 'mk', 'my', 'pl', 'pt-BR',
-    'ro', 'son', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tn',
-    'tr', 'wo', 'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
-];
-
-$marketplacebadge_locales = [
-    'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de',
-    'ee', 'el', 'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr',
-    'hu', 'ig', 'it', 'ja', 'ln', 'mg', 'my', 'nl', 'pl', 'pt-BR',
-    'ro', 'ru', 'sk', 'son', 'sr', 'sr-Latn', 'sv-SE', 'sw',
-    'ta', 'tl', 'tn', 'tr', 'wo', 'xh', 'yo', 'zu',
-];
-
-$slogans_locales = [
-    'af', 'ar', 'bg', 'bm', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
-    'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
-    'ja', 'ko', 'ln', 'mg', 'mk', 'my', 'pl', 'pt-BR', 'ro', 'son', 'sq', 'sr',
-    'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tn', 'wo', 'xh',
-    'yo', 'zh-CN', 'zh-TW', 'zu',
-];
-
 $getinvolved_locales = [
     'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
     'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr',
@@ -762,18 +710,6 @@ $sites =
         'en-US', // source locale
         $repositories['add-ons']['public_path'],
         $lang_flags['add-ons'],
-        'lang',
-    ],
-
-    9 => [
-        'firefoxos-marketing',
-        $repositories['firefoxos-marketing']['local_path'],
-        '',
-        $fxos_marketing,
-        $fxos_marketing_lang,
-        'en-US', // source locale
-        $repositories['firefoxos-marketing']['public_path'],
-        $lang_flags['firefoxos-marketing'],
         'lang',
     ],
 
@@ -1157,33 +1093,5 @@ $langfiles_subsets = [
         'whatsnew/whatsnew_android_47_beta.lang' => $google_play_target,
         'whatsnew/whatsnew_ios_2_1.lang'         => $apple_store_target,
         'whatsnew/whatsnew_ios_4_0.lang'         => $apple_store_target,
-    ],
-
-    'firefoxos-marketing' => [
-        'marketplace/marketplace_l10n_feed.lang' =>
-            [
-                'bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr',
-                'hr', 'hu', 'it', 'ja', 'mk', 'pl', 'pt-BR',
-                'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN',
-            ],
-        'screenshots/screenshots_2_0.lang' =>
-            [
-                'af', 'cs', 'de', 'es-ES', 'ja', 'pt-BR',
-                'xh', 'zu',
-            ],
-        'screenshots/screenshots_2_0_b.lang' =>
-            [
-                'ar', 'ee', 'ff', 'fr', 'ha', 'ig', 'sw',
-                'wo', 'yo',
-            ],
-        'screenshots/screenshots_dolphin.lang' => ['bn-BD', 'bn-IN', 'hi-IN', 'ta'],
-        'screenshots/screenshots.lang'         =>
-            [
-                'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it',
-                'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr',
-            ],
-        'screenshots/screenshots_tarako.lang' => ['hi-IN', 'ru', 'ta'],
-        'slogans/firefoxos.lang'              => $slogans_locales,
-        'slogans/marketplacebadge.lang'       => $marketplacebadge_locales,
     ],
 ];
