@@ -74,18 +74,6 @@ $repositories = [
         'repository'  => 'https://github.com/mozilla-l10n/addons-l10n',
         'vcs'         => 'git',
     ],
-    'firefoxos-marketing' => [
-        'local_path'  => $repo_local_path('firefoxos-marketing', 'fxosmarketing-l10n'),
-        'public_path' => 'https://github.com/mozilla-l10n/fxosmarketing-l10n/tree/master/',
-        'repository'  => 'https://github.com/mozilla-l10n/fxosmarketing-l10n',
-        'vcs'         => 'git',
-    ],
-    'contribute-autoreplies' => [
-        'local_path'  => $repo_local_path('www.mozilla.org', 'mozilla_org'),
-        'public_path' => 'https://github.com/mozilla-l10n/www.mozilla.org/tree/master/',
-        'repository'  => 'https://github.com/mozilla-l10n/www.mozilla.org',
-        'vcs'         => 'git',
-    ],
     'appstores' => [
         'local_path'  => $repo_local_path('appstores', 'appstores'),
         'public_path' => 'https://github.com/mozilla-l10n/appstores/tree/master/',
@@ -392,28 +380,6 @@ $addons_lang = [
 ];
 $lang_flags['add-ons'] = [];
 
-$fxos_marketing_lang = [
-    'marketplace/marketplace_l10n_feed.lang',
-    'screenshots/screenshots_2_0.lang',
-    'screenshots/screenshots_2_0_b.lang',
-    'screenshots/screenshots_dolphin.lang',
-    'screenshots/screenshots.lang',
-    'screenshots/screenshots_tarako.lang',
-    'slogans/firefoxos.lang',
-    'slogans/marketplacebadge.lang',
-];
-
-$lang_flags['firefoxos-marketing'] = [
-    'marketplace/marketplace_l10n_feed.lang' => [ 'obsolete' => ['all'] ],
-    'screenshots/screenshots_2_0.lang'       => [ 'obsolete' => ['all'] ],
-    'screenshots/screenshots_2_0_b.lang'     => [ 'obsolete' => ['all'] ],
-    'screenshots/screenshots_dolphin.lang'   => [ 'obsolete' => ['all'] ],
-    'screenshots/screenshots.lang'           => [ 'obsolete' => ['all'] ],
-    'screenshots/screenshots_tarako.lang'    => [ 'obsolete' => ['all'] ],
-    'slogans/firefoxos.lang'                 => [ 'obsolete' => ['all'] ],
-    'slogans/marketplacebadge.lang'          => [ 'obsolete' => ['all'] ],
-];
-
 $appstores_lang = [
     'description_beta_page.lang',
     'apple_description_release.lang',
@@ -442,70 +408,6 @@ $lang_flags['appstores'] = [
     'whatsnew/whatsnew_android_45.lang'      => [ 'obsolete' => ['all'] ],
     'whatsnew/whatsnew_android_46_beta.lang' => [ 'obsolete' => ['all'] ],
     'whatsnew/whatsnew_ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
-];
-
-$getinvolved_autoreplies = [
-    'templates/mozorg/contribute-2015/activism.txt',
-    'templates/mozorg/contribute-2015/coding_addons.txt',
-    'templates/mozorg/contribute-2015/coding_cloud.txt',
-    'templates/mozorg/contribute-2015/coding_firefox.txt',
-    'templates/mozorg/contribute-2015/coding_firefoxos.txt',
-    'templates/mozorg/contribute-2015/coding_marketplace.txt',
-    'templates/mozorg/contribute-2015/coding_webcompat.txt',
-    'templates/mozorg/contribute-2015/coding_webdev.txt',
-    'templates/mozorg/contribute-2015/dontknow.txt',
-    'templates/mozorg/contribute-2015/education_fellowships.txt',
-    'templates/mozorg/contribute-2015/education_hive.txt',
-    'templates/mozorg/contribute-2015/education_sciencelab.txt',
-    'templates/mozorg/contribute-2015/education_webmaker.txt',
-    'templates/mozorg/contribute-2015/generic_template.txt',
-    'templates/mozorg/contribute-2015/l10n_product.txt',
-    'templates/mozorg/contribute-2015/l10n_tools.txt',
-    'templates/mozorg/contribute-2015/l10n_web.txt',
-    'templates/mozorg/contribute-2015/qa_addons.txt',
-    'templates/mozorg/contribute-2015/qa_general.txt',
-    'templates/mozorg/contribute-2015/qa_marketplace.txt',
-    'templates/mozorg/contribute-2015/qa_webcompat.txt',
-    'templates/mozorg/contribute-2015/sumo_sumo.txt',
-    'templates/mozorg/contribute-2015/sumo_webcompat.txt',
-    'templates/mozorg/contribute-2015/writing_addons.txt',
-    'templates/mozorg/contribute-2015/writing_journalism.txt',
-    'templates/mozorg/contribute-2015/writing_marketplace.txt',
-    'templates/mozorg/contribute-2015/writing_social.txt',
-    'templates/mozorg/contribute-2015/writing_txt_devs.txt',
-    'templates/mozorg/contribute-2015/writing_txt_users.txt',
-];
-
-$lang_flags['contribute-autoreplies'] = [
-    'templates/mozorg/contribute-2015/activism.txt'              => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/coding_addons.txt'         => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/coding_cloud.txt'          => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/coding_firefox.txt'        => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/coding_firefoxos.txt'      => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/coding_marketplace.txt'    => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/coding_webcompat.txt'      => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/coding_webdev.txt'         => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/dontknow.txt'              => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/education_fellowships.txt' => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/education_hive.txt'        => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/education_sciencelab.txt'  => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/education_webmaker.txt'    => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/generic_template.txt'      => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/l10n_product.txt'          => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/l10n_tools.txt'            => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/l10n_web.txt'              => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/qa_addons.txt'             => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/qa_general.txt'            => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/qa_marketplace.txt'        => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/qa_webcompat.txt'          => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/sumo_sumo.txt'             => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/sumo_webcompat.txt'        => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/writing_addons.txt'        => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/writing_journalism.txt'    => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/writing_marketplace.txt'   => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/writing_social.txt'        => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/writing_txt_devs.txt'      => [ 'optional' => ['all'] ],
-    'templates/mozorg/contribute-2015/writing_txt_users.txt'     => [ 'optional' => ['all'] ],
 ];
 
 $no_active_tag = [
@@ -607,30 +509,6 @@ $firefox_os = [
 $firefox_os_consumer = array_merge($firefox_os, ['et', 'uk']);
 $firefox_os_legal = array_merge($firefox_os, ['et']);
 $firefox_os_tv = array_merge($firefox_os, ['et']);
-
-$fxos_marketing = [
-    'af', 'ar', 'bg', 'bm', 'bn-IN', 'bn-BD', 'ca', 'cs', 'de',
-    'ee', 'el', 'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu',
-    'ig', 'it', 'ja', 'ko', 'ln', 'mg', 'mk', 'my', 'pl', 'pt-BR',
-    'ro', 'son', 'sr', 'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tn',
-    'tr', 'wo', 'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
-];
-
-$marketplacebadge_locales = [
-    'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de',
-    'ee', 'el', 'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr',
-    'hu', 'ig', 'it', 'ja', 'ln', 'mg', 'my', 'nl', 'pl', 'pt-BR',
-    'ro', 'ru', 'sk', 'son', 'sr', 'sr-Latn', 'sv-SE', 'sw',
-    'ta', 'tl', 'tn', 'tr', 'wo', 'xh', 'yo', 'zu',
-];
-
-$slogans_locales = [
-    'af', 'ar', 'bg', 'bm', 'bn-IN', 'ca', 'cs', 'de', 'ee', 'el',
-    'es-ES', 'ff', 'fr', 'ha', 'hi-IN', 'hr', 'hu', 'ig', 'it',
-    'ja', 'ko', 'ln', 'mg', 'mk', 'my', 'pl', 'pt-BR', 'ro', 'son', 'sq', 'sr',
-    'sr-Latn', 'sv-SE', 'sw', 'ta', 'tl', 'tn', 'wo', 'xh',
-    'yo', 'zh-CN', 'zh-TW', 'zu',
-];
 
 $getinvolved_locales = [
     'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
@@ -763,30 +641,6 @@ $sites =
         $repositories['add-ons']['public_path'],
         $lang_flags['add-ons'],
         'lang',
-    ],
-
-    9 => [
-        'firefoxos-marketing',
-        $repositories['firefoxos-marketing']['local_path'],
-        '',
-        $fxos_marketing,
-        $fxos_marketing_lang,
-        'en-US', // source locale
-        $repositories['firefoxos-marketing']['public_path'],
-        $lang_flags['firefoxos-marketing'],
-        'lang',
-    ],
-
-    11 => [
-        'contribute-autoreplies',
-        $repositories['contribute-autoreplies']['local_path'],
-        '',
-        $getinvolved_locales,
-        $getinvolved_autoreplies,
-        'en-US', // source locale
-        $repositories['contribute-autoreplies']['public_path'],
-        $lang_flags['contribute-autoreplies'],
-        'raw',
     ],
 
     12 => [
@@ -1157,33 +1011,5 @@ $langfiles_subsets = [
         'whatsnew/whatsnew_android_47_beta.lang' => $google_play_target,
         'whatsnew/whatsnew_ios_2_1.lang'         => $apple_store_target,
         'whatsnew/whatsnew_ios_4_0.lang'         => $apple_store_target,
-    ],
-
-    'firefoxos-marketing' => [
-        'marketplace/marketplace_l10n_feed.lang' =>
-            [
-                'bg', 'bn-BD', 'cs', 'de', 'el', 'es-ES', 'fr',
-                'hr', 'hu', 'it', 'ja', 'mk', 'pl', 'pt-BR',
-                'ru', 'sr', 'sr-Latn', 'tr', 'zh-CN',
-            ],
-        'screenshots/screenshots_2_0.lang' =>
-            [
-                'af', 'cs', 'de', 'es-ES', 'ja', 'pt-BR',
-                'xh', 'zu',
-            ],
-        'screenshots/screenshots_2_0_b.lang' =>
-            [
-                'ar', 'ee', 'ff', 'fr', 'ha', 'ig', 'sw',
-                'wo', 'yo',
-            ],
-        'screenshots/screenshots_dolphin.lang' => ['bn-BD', 'bn-IN', 'hi-IN', 'ta'],
-        'screenshots/screenshots.lang'         =>
-            [
-                'cs', 'de', 'el', 'es-ES', 'fr', 'hr', 'hu', 'it',
-                'mk', 'pl', 'pt-BR', 'ro', 'ru', 'sr',
-            ],
-        'screenshots/screenshots_tarako.lang' => ['hi-IN', 'ru', 'ta'],
-        'slogans/firefoxos.lang'              => $slogans_locales,
-        'slogans/marketplacebadge.lang'       => $marketplacebadge_locales,
     ],
 ];
