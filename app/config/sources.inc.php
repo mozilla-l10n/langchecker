@@ -724,8 +724,8 @@ $langfiles_subsets = [
         'firefox/os/faq.lang'                    => $firefox_os,
         'firefox/os/index.lang'                  =>
             [
-                'cs', 'de', 'en-GB', 'fr', 'it', 'pt-BR', 'ru',
-                'uk', 'zh-TW',
+                'cs', 'de', 'en-GB', 'fr', 'it', 'ko', 'pt-BR',
+                'ru', 'uk', 'zh-TW',
             ],
         'firefox/os/index-new.lang'              => $firefox_os_consumer,
         'firefox/os/tv.lang'                     => $firefox_os_tv,
@@ -841,31 +841,35 @@ $langfiles_subsets = [
         'teach/smarton/index.lang'              =>
             [
                 'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ja', 'pl', 'pt-BR',
-                'ro', 'ru', 'sq', 'sr', 'uk', 'zh-CN', 'zh-TW',
+                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ja', 'ko',
+                'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'zh-CN', 'zh-TW',
             ],
         'teach/smarton/security.lang'           =>
             [
                 'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ja', 'pl', 'pt-BR',
-                'ro', 'ru', 'sq', 'sr', 'uk', 'zh-CN', 'zh-TW',
+                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ja', 'ko',
+                'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'zh-CN', 'zh-TW',
             ],
         'teach/smarton/surveillance.lang'       =>
             [
                 'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ja', 'pl', 'pt-BR',
-                'ro', 'ru', 'sq', 'sr', 'uk', 'zh-CN', 'zh-TW',
+                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ja', 'ko',
+                'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'zh-CN', 'zh-TW',
             ],
         'teach/smarton/tracking.lang'           =>
             [
                 'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ja', 'pl', 'pt-BR',
-                'ro', 'ru', 'sq', 'sr', 'uk', 'zh-CN', 'zh-TW',
+                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ko', 'ja',
+                'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'zh-CN', 'zh-TW',
             ],
         'thunderbird/channel.lang'              =>
             [
-                'cs', 'de', 'en-GB', 'fr', 'it', 'ja', 'lt', 'pt-BR',
-                'ru', 'uk', 'zh-TW',
+                'cs', 'de', 'en-GB', 'fr', 'it', 'ja', 'ko','lt',
+                'pt-BR', 'ru', 'uk', 'zh-TW',
             ],
         'thunderbird/features.lang'             => $thunderbird_locales,
         'thunderbird/index.lang'                => $thunderbird_locales,
