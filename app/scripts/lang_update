@@ -104,16 +104,35 @@ foreach ($file_list as $current_filename) {
         */
         $import_files = [];
         $import_website = 0;
-        foreach ($import_files as $import_filename) {
-            $import_data = LangManager::loadSource($lang_based_sites[$import_website], $current_locale, $import_filename);
-            $common_strings = array_intersect(
-                array_keys($import_data['strings']),
-                array_keys($locale_data['strings'])
+
+        if (count($import_files) > 0) {
+            /*
+                Add to $locale_data strings that are available in the
+                reference file but are missing in the localized one. This
+                way we can import them before building the file.
+                Normally this is not necessary, since LangManager::buildLangFile
+                takes care of that.
+            */
+            $missing_strings = array_diff_key(
+                $reference_data['strings'],
+                $locale_data['strings']
             );
-            foreach ($common_strings as $string_id) {
-                if ($locale_data['strings'][$string_id] == $string_id &&
-                    $import_data['strings'][$string_id] != $string_id) {
-                    $locale_data['strings'][$string_id] = $import_data['strings'][$string_id];
+            foreach ($missing_strings as $string_id) {
+                $locale_data['strings'][$string_id] = $string_id;
+            }
+
+            foreach ($import_files as $import_filename) {
+                $import_data = LangManager::loadSource($lang_based_sites[$import_website], $current_locale, $import_filename);
+                $common_strings = array_intersect(
+                    array_keys($import_data['strings']),
+                    array_keys($locale_data['strings'])
+                );
+
+                foreach ($common_strings as $string_id) {
+                    if ($locale_data['strings'][$string_id] == $string_id &&
+                        $import_data['strings'][$string_id] != $string_id) {
+                        $locale_data['strings'][$string_id] = $import_data['strings'][$string_id];
+                    }
                 }
             }
         }
