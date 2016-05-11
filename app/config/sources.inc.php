@@ -165,6 +165,7 @@ $mozillaorg_lang = [
     'mozorg/contribute/signup.lang',
     'mozorg/contribute/stories.lang',
     'mozorg/home/index.lang',
+    'mozorg/homework.lang',
     'mozorg/mission.lang',
     'mozorg/newsletters.lang',
     'mozorg/plugincheck.lang',
@@ -243,6 +244,10 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/contribute/signup.lang'           => [ 'critical' => ['all'] ],
     'mozorg/contribute/stories.lang'          => [ 'critical' => ['all'] ],
     'mozorg/home/index.lang'                  => [ 'critical' => ['all'] ],
+    'mozorg/homework.lang'                    => [
+        'critical' => ['fr'],
+        'opt-in'   => ['all'],
+    ],
     'mozorg/newsletters.lang'                 => [
         'critical' => $newsletter_locales,
     ],
@@ -456,6 +461,7 @@ $deadline = [
     'mozorg/contribute/signup.lang'          => '2016-05-16',
     'mozorg/contribute/stories.lang'         => '2015-08-10',
     'mozorg/home/index.lang'                 => '2016-03-15',
+    'mozorg/homework.lang'                   => '2016-05-31',
     'mozorg/plugincheck.lang'                => '2015-08-24',
     'privacy/principles.lang'                => '2015-09-15',
     'snippets/2015/fall2015.lang'            => '2015-11-02',
@@ -792,6 +798,7 @@ $langfiles_subsets = [
         'mozorg/404.lang'                       => $mozillaorg,
         'mozorg/about.lang'                     => $mozillaorg,
         'mozorg/home/index.lang'                => $mozillaorg,
+        'mozorg/homework.lang'                  => $mozillaorg,
         'mozorg/mission.lang'                   => $mozillaorg,
         'mozorg/about/history-details.lang'     =>
             [
