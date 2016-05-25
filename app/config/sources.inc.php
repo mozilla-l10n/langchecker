@@ -519,7 +519,7 @@ $getinvolved_locales = [
 $ios_landing_page = array_unique(array_merge(
     $ios_locales,
     [
-        'af', 'an', 'ar', 'bn-BD', 'bn-IN', 'ca', 'el', 'en-GB', 'es-AR', 'eu',
+        'af', 'an', 'ar', 'ast', 'bn-BD', 'bn-IN', 'ca', 'el', 'en-GB', 'es-AR', 'eu',
         'fa', 'gl', 'gn', 'hi-IN', 'hu', 'ka', 'kn', 'lij', 'ml', 'ms', 'my',
         'or', 'son', 'sq', 'sr',
     ]
@@ -529,7 +529,7 @@ $ios_landing_page = array_unique(array_merge(
 $android_landing_page = array_unique(array_merge(
     $android_locales,
     [
-        'af', 'bn-BD', 'cak', 'fa', 'sat',
+        'af', 'ast', 'bn-BD', 'cak', 'fa', 'sat',
     ]
 ));
 
@@ -670,7 +670,7 @@ $langfiles_subsets = [
         'firefox/desktop/index.lang'            => $firefox_locales,
         'firefox/desktop/tips.lang'             =>
             [
-                'af', 'ast', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
+                'af', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL',
                 'ga-IE', 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id',
                 'it', 'ja', 'km', 'ko', 'lt', 'ms', 'nl', 'pl', 'pt-BR',
