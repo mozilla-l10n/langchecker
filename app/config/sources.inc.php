@@ -670,7 +670,7 @@ $langfiles_subsets = [
         'firefox/desktop/index.lang'            => $firefox_locales,
         'firefox/desktop/tips.lang'             =>
             [
-                'af', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
+                'af', 'ast', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL',
                 'ga-IE', 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id',
                 'it', 'ja', 'km', 'ko', 'lt', 'ms', 'nl', 'pl', 'pt-BR',
@@ -721,7 +721,7 @@ $langfiles_subsets = [
         'firefox/os/faq.lang'                    => $firefox_os,
         'firefox/os/index.lang'                  =>
             [
-                'cs', 'de', 'en-GB', 'fr', 'it', 'ko', 'pt-BR',
+                'ast', 'cs', 'de', 'en-GB', 'fr', 'it', 'ko', 'pt-BR',
                 'ru', 'uk', 'zh-TW',
             ],
         'firefox/os/index-new.lang'              => $firefox_os_consumer,
