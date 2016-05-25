@@ -111,7 +111,6 @@ $mozillaorg_lang = [
     'firefox/australis/firefox_tour.lang',
     'firefox/australis/fx36_tour.lang',
     'firefox/channel.lang',
-    'firefox/choose.lang',
     'firefox/desktop/customize.lang',
     'firefox/desktop/fast.lang',
     'firefox/desktop/index.lang',
@@ -194,7 +193,6 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/australis/firefox_tour.lang'     => [ 'critical' => ['all'] ],
     'firefox/australis/fx36_tour.lang'        => [ 'critical' => ['all'] ],
     'firefox/channel.lang'                    => [ 'critical' => ['all'] ],
-    'firefox/choose.lang'                     => [ 'obsolete' => ['all'] ],
     'firefox/family/index.lang'               => [ 'critical' => ['all'] ],
     'firefox/features.lang'                   => [ 'critical' => ['all'] ],
     'firefox/desktop/customize.lang'          => [ 'critical' => ['all'] ],
@@ -667,7 +665,6 @@ $langfiles_subsets = [
         'firefox/australis/firefox_tour.lang'   => $firefox_locales,
         'firefox/australis/fx36_tour.lang'      => $firefox_locales,
         'firefox/channel.lang'                  => $mozillaorg, // Has Firefox for Android download buttons
-        'firefox/choose.lang'                   => $firefox_locales,
         'firefox/desktop/customize.lang'        => $firefox_locales,
         'firefox/desktop/fast.lang'             => $firefox_locales,
         'firefox/desktop/index.lang'            => $firefox_locales,
