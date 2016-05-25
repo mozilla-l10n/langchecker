@@ -519,7 +519,7 @@ $getinvolved_locales = [
 $ios_landing_page = array_unique(array_merge(
     $ios_locales,
     [
-        'af', 'an', 'ar', 'bn-BD', 'bn-IN', 'ca', 'el', 'en-GB', 'es-AR', 'eu',
+        'af', 'an', 'ar', 'ast', 'bn-BD', 'bn-IN', 'ca', 'el', 'en-GB', 'es-AR', 'eu',
         'fa', 'gl', 'gn', 'hi-IN', 'hu', 'ka', 'kn', 'lij', 'ml', 'ms', 'my',
         'or', 'son', 'sq', 'sr',
     ]
@@ -529,7 +529,7 @@ $ios_landing_page = array_unique(array_merge(
 $android_landing_page = array_unique(array_merge(
     $android_locales,
     [
-        'af', 'bn-BD', 'cak', 'fa', 'sat',
+        'af', 'ast', 'bn-BD', 'cak', 'fa', 'sat',
     ]
 ));
 
@@ -721,7 +721,7 @@ $langfiles_subsets = [
         'firefox/os/faq.lang'                    => $firefox_os,
         'firefox/os/index.lang'                  =>
             [
-                'cs', 'de', 'en-GB', 'fr', 'it', 'ko', 'pt-BR',
+                'ast', 'cs', 'de', 'en-GB', 'fr', 'it', 'ko', 'pt-BR',
                 'ru', 'uk', 'zh-TW',
             ],
         'firefox/os/index-new.lang'              => $firefox_os_consumer,
