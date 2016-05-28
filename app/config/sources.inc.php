@@ -392,13 +392,22 @@ $appstores_lang = [
 
 $lang_flags['appstores'] = [
     'apple_description_release.lang' => [
-        'critical' => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
+        'critical' => [
+            'de', 'es-ES', 'es-MX', 'fr', 'id', 'it',
+            'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
+        ],
     ],
     'apple_screenshots_v3.lang' => [
-        'critical' => ['de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
+        'critical' => [
+            'de', 'es-ES', 'es-MX', 'fr', 'id', 'it',
+            'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
+        ],
     ],
     'android_release.lang' => [
-        'critical' => ['ar', 'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW'],
+        'critical' => [
+            'ar', 'de', 'es-ES', 'es-MX', 'fr', 'id',
+            'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
+        ],
     ],
     'whatsnew/whatsnew_android_44.lang'      => [ 'obsolete' => ['all'] ],
     'whatsnew/whatsnew_android_45.lang'      => [ 'obsolete' => ['all'] ],
@@ -485,8 +494,8 @@ $deadline = [
 
 // List of locales
 $addons_locales = [
-    'cs', 'de', 'es-ES', 'es-MX', 'fr', 'hu', 'id', 'it', 'ja', 'pl',
-    'pt-BR', 'ru', 'sq', 'zh-TW',
+    'cs', 'de', 'es-ES', 'es-MX', 'fr', 'hu', 'id', 'it',
+    'ja', 'pl', 'pt-BR', 'ru', 'sq', 'zh-TW',
 ];
 
 $firefox_os = [
@@ -519,9 +528,9 @@ $getinvolved_locales = [
 $ios_landing_page = array_unique(array_merge(
     $ios_locales,
     [
-        'af', 'an', 'ar', 'ast', 'bn-BD', 'bn-IN', 'ca', 'el', 'en-GB', 'es-AR', 'eu',
-        'fa', 'gl', 'gn', 'hi-IN', 'hu', 'ka', 'kn', 'lij', 'ml', 'ms', 'my',
-        'or', 'son', 'sq', 'sr',
+        'af', 'an', 'ar', 'ast', 'bn-BD', 'bn-IN', 'ca', 'el', 'en-GB',
+        'es-AR', 'eu', 'fa', 'gl', 'gn', 'hi-IN', 'hu', 'ka', 'kn',
+        'lij', 'ml', 'ms', 'my', 'or', 'son', 'sq', 'sr',
     ]
 ));
 
@@ -837,29 +846,29 @@ $langfiles_subsets = [
         'tabzilla/tabzilla.lang'                => $mozillaorg,
         'teach/smarton/index.lang'              =>
             [
-                'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ja', 'ko',
+                'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
+                'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'ko',
                 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/security.lang'           =>
             [
-                'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ja', 'ko',
+                'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
+                'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'ko',
                 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/surveillance.lang'       =>
             [
-                'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ja', 'ko',
+                'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
+                'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'ko',
                 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/tracking.lang'           =>
             [
-                'az', 'cs', 'cy', 'de', 'en-GB', 'es-AR', 'es-CL',
-                'es-ES', 'es-MX', 'fa', 'fr', 'it', 'ko', 'ja',
+                'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
+                'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ko', 'ja',
                 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
