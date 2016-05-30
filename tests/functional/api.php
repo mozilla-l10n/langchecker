@@ -27,6 +27,7 @@ $json = [
     ['?action=coverage&locales=foo', 400, "{\n    \"error\": \"ERROR: locales is not an array.\"\n}"],
     ['?action=coverage', 400, "{\n    \"error\": \"ERROR: missing list of locales.\"\n}"],
     ['?action=listlocales&project=slogans&json', 200, "[\n    \"fr\",\n    \"it\"\n]"],
+    ['?action=listlocales&project=langchecker&json', 200, "[\n    \"en-US\",\n    \"fr\",\n    \"it\"\n]"],
     ['?action=listlocales&json', 400, "{\n    \"error\": \"ERROR: please check your request: provide a project name, a website, or a website+file.\"\n}"],
     ['?action=listlocales&website=6&json', 200, "[\n    \"en-US\",\n    \"fr\",\n    \"it\"\n]"],
     ['?action=listlocales&website=2&file=page.lang&json', 200, "[\n    \"en-US\",\n    \"it\"\n]"],
