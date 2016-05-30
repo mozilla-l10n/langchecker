@@ -19,6 +19,13 @@ if ($website != '') {
     }
 } elseif ($project != '') {
     switch ($project) {
+        case 'langchecker':
+            /*
+                Returning the $mozilla array defined in config/locales.inc.php
+                with all the supported locales.
+            */
+            $output_array = $mozilla;
+        break;
         case 'locamotion':
             $output_array = $locamotion_locales;
         break;
