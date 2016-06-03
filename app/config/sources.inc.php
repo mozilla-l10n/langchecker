@@ -569,10 +569,10 @@ $startpage36 = [
 
 $engagement_locales = [
     'ar', 'ast', 'bn-BD', 'cs', 'da', 'de', 'el', 'es', 'es-AR',
-    'es-CL', 'es-ES', 'es-MX', 'fi', 'fr', 'fy-NL', 'he', 'hi-IN',
-    'hr', 'hu', 'id', 'it', 'ja', 'ko', 'lv', 'mk', 'nb-NO', 'nl',
-    'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk', 'sl',
-    'sq', 'sr', 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW',
+    'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hi-IN', 'hu',
+    'id', 'it', 'ja', 'ko', 'nb-NO', 'nl', 'nn-NO', 'pa-IN',
+    'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr',
+    'sv-SE', 'tr', 'zh-CN', 'zh-TW',
 ];
 
 /*
