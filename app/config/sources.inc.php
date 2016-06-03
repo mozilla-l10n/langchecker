@@ -568,11 +568,10 @@ $startpage36 = [
 ];
 
 $engagement_locales = [
-    'ar', 'ast', 'bn-BD', 'cs', 'da', 'de', 'el', 'es', 'es-AR',
-    'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hi-IN', 'hu',
-    'id', 'it', 'ja', 'ko', 'nb-NO', 'nl', 'nn-NO', 'pa-IN',
-    'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr',
-    'sv-SE', 'tr', 'zh-CN', 'zh-TW',
+    'ar', 'cs', 'da', 'de', 'el', 'es', 'es-ES', 'es-MX', 'fr',
+    'fy-NL', 'hi-IN', 'hu', 'id', 'it', 'ja', 'ko', 'nb-NO',
+    'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru',
+    'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
 ];
 
 /*
@@ -900,40 +899,39 @@ $langfiles_subsets = [
         'ads/ios_android_apr2016.lang'          => ['de', 'es-ES', 'fr', 'pl'],
         'snippets/2014/jan2014.lang'            =>
             [
-                'cs', 'de', 'el', 'es-CL', 'es-ES', 'es-MX', 'fr',
+                'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr',
                 'fy-NL', 'hu', 'id', 'it', 'ja', 'ko', 'nl', 'pl',
                 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr',
                 'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW',
             ],
         'snippets/2014/apr2014.lang'            =>
         [
-            'cs', 'da', 'de', 'el', 'es-CL', 'es-ES', 'es-MX',
+            'cs', 'da', 'de', 'el', 'es-ES', 'es-MX',
             'fr', 'fy-NL', 'hu', 'id', 'it', 'ja', 'ko', 'mk',
             'nb-NO', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
             'sl', 'sq', 'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
         ],
         'snippets/2014/may2014.lang'            =>
         [
-            'cs', 'da', 'de', 'el', 'es-CL', 'es-ES', 'es-MX',
+            'cs', 'da', 'de', 'el', 'es-ES', 'es-MX',
             'fr', 'fy-NL', 'hu', 'id', 'it', 'ja', 'ko', 'mk',
             'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
             'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
         ],
         'snippets/2014/jun2014.lang'            => ['de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id', 'it', 'nl', 'pl', 'pt-BR', 'sr'],
         'snippets/2014/aug2014_a.lang'          => ['es-ES'],
-        'snippets/2014/aug2014_b.lang'          => ['bn-BD', 'cs', 'hr', 'mk'],
+        'snippets/2014/aug2014_b.lang'          => ['cs', 'hr', 'mk'],
         'snippets/2014/aug2014_c.lang'          => ['de', 'fr', 'pl', 'nl', 'sl', 'sq', 'zh-TW'],
-        'snippets/2014/aug2014_d.lang'          => ['el', 'es-CL', 'es-MX', 'it', 'ja', 'pt-BR', 'ru', 'tr', 'sv-SE', 'sr'],
+        'snippets/2014/aug2014_d.lang'          => ['el', 'es-MX', 'it', 'ja', 'pt-BR', 'ru', 'tr', 'sv-SE', 'sr'],
         'snippets/2014/sep2014_a.lang'          => ['cs', 'de', 'es-ES', 'fr', 'it', 'pl'],
         'snippets/2014/sep2014_b.lang'          => ['id', 'ja', 'ko', 'nb-NO', 'nl', 'ru', 'zh-CN'],
-        'snippets/2014/sep2014_c.lang'          => ['bn-BD', 'el', 'hi-IN', 'hu'],
+        'snippets/2014/sep2014_c.lang'          => ['el', 'hi-IN', 'hu'],
         'snippets/2014/sep2014_d.lang'          => ['pt-BR'],
         'snippets/2014/sep2014_e.lang'          => ['sq'],
         'snippets/2014/nov2014_a.lang'          =>
             [
-                'ast', 'da', 'es-AR', 'es-CL', 'es-MX', 'fi', 'fy-NL',
-                'he', 'ko', 'lv', 'nb-NO', 'nn-NO', 'pa-IN', 'rm', 'sk',
-                'sl', 'zh-TW',
+                'da', 'es-MX', 'fi', 'fy-NL', 'he', 'ko', 'lv', 'nb-NO',
+                'nn-NO', 'pa-IN', 'rm', 'sk', 'sl', 'zh-TW',
             ],
         'snippets/2014/nov2014_b.lang'          => ['ja'],
         'snippets/2014/nov2014_c.lang'          => ['es-ES', 'hu'],
