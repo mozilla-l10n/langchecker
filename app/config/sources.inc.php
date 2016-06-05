@@ -805,7 +805,7 @@ $langfiles_subsets = [
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
                 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja',
-                'km', 'ko', 'lt', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
+                'km', 'ko', 'lt', 'nl', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
                 'ru', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
                 'zh-CN', 'zh-TW',
             ],
