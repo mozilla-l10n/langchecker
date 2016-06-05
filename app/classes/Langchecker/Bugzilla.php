@@ -36,7 +36,10 @@ class Bugzilla extends _Bugzilla
             $bug_body = "(Attach your updated {$files[0]} file to this bug or indicate the changeset of your commit in GitHub)";
         }
 
-        $bug_link = 'https://bugzilla.mozilla.org/enter_bug.cgi?alias=&assigned_to=francesco.lodolo%40gmail.com' .
+        $bug_assignee = urlencode('pmo@mozilla.com');
+        $bug_cc = urlencode('francesco.lodolo@gmail.com');
+        $bug_link = 'https://bugzilla.mozilla.org/enter_bug.cgi?alias=' .
+                    '&assigned_to=' . $bug_assignee . '&cc=' .  $bug_cc .
                     '&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=normal&bug_status=NEW' .
                     '&component=L10N&contenttypeentry=&contenttypemethod=autodetect' .
                     '&contenttypeselection=text%2Fplain&data=&dependson=&description=&flag_type-4=X' .
