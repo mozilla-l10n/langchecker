@@ -348,6 +348,7 @@ $engagement_lang = [
     'snippets/2016/apr2016_b.lang',
     'snippets/2016/may2016_a.lang',
     'snippets/2016/may2016_b.lang',
+    'snippets/2016/jun2016_berec.lang',
     'surveys/survey_hello_fx42.lang',
     'tiles/careers.lang',
     'tiles/suggestedtiles_infographic.lang',
@@ -359,14 +360,17 @@ $engagement_lang = [
     'tiles/2016/tiles_jan2016.lang',
 ];
 $lang_flags['engagement'] = [
-    'ads/ios_android_apr2016.lang' => [ 'critical' => ['all'] ],
-    'snippets/2016/jan2016.lang'   => [ 'critical' => ['all'] ],
-    'snippets/2016/feb2016.lang'   => [ 'critical' => ['all'] ],
-    'snippets/2016/mar2016.lang'   => [ 'critical' => ['all'] ],
-    'snippets/2016/apr2016.lang'   => [ 'critical' => ['all'] ],
-    'snippets/2016/apr2016_b.lang' => [ 'critical' => ['all'] ],
-    'snippets/2016/may2016_a.lang' => [ 'critical' => ['all'] ],
-    'snippets/2016/may2016_b.lang' => [ 'critical' => ['all'] ],
+    'ads/ios_android_apr2016.lang'     => [ 'critical' => ['all'] ],
+    'snippets/2016/jan2016.lang'       => [ 'critical' => ['all'] ],
+    'snippets/2016/feb2016.lang'       => [ 'critical' => ['all'] ],
+    'snippets/2016/mar2016.lang'       => [ 'critical' => ['all'] ],
+    'snippets/2016/apr2016.lang'       => [ 'critical' => ['all'] ],
+    'snippets/2016/apr2016_b.lang'     => [ 'critical' => ['all'] ],
+    'snippets/2016/may2016_a.lang'     => [ 'critical' => ['all'] ],
+    'snippets/2016/may2016_b.lang'     => [ 'critical' => ['all'] ],
+    'snippets/2016/jun2016_berec.lang' => [
+        'critical' => ['de', 'en-GB', 'es', 'fr', 'it'],
+    ],
 ];
 
 $addons_lang = [
@@ -481,6 +485,7 @@ $deadline = [
     'snippets/2016/apr2016_b.lang'           => '2016-04-04',
     'snippets/2016/may2016_a.lang'           => '2016-05-09',
     'snippets/2016/may2016_b.lang'           => '2016-05-09',
+    'snippets/2016/jun2016_berec.lang'       => '2016-06-13',
     'surveys/survey_hello_fx42.lang'         => '2016-06-03',
     'teach/smarton/index.lang'               => '2015-12-31',
     'teach/smarton/security.lang'            => '2015-11-17',
@@ -990,6 +995,9 @@ $langfiles_subsets = [
         'snippets/2016/apr2016_b.lang'          => ['pt-BR'],
         'snippets/2016/may2016_a.lang'          => ['es', 'fr', 'ru', 'pt-BR'],
         'snippets/2016/may2016_b.lang'          => ['de'],
+        'snippets/2016/jun2016_berec.lang'      => [
+            'bg', 'cs', 'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'ro', 'sv-SE', 'sl',
+        ],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
         'tiles/careers.lang'                    => ['de', 'fr'],
         'tiles/suggestedtiles_infographic.lang' => ['de', 'es', 'fr'],
