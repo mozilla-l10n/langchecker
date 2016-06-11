@@ -572,10 +572,11 @@ $startpage36 = [
 ];
 
 $engagement_locales = [
-    'ar', 'cs', 'da', 'de', 'el', 'es', 'es-ES', 'es-MX', 'fr',
-    'fy-NL', 'hi-IN', 'hu', 'id', 'it', 'ja', 'ko', 'nb-NO',
-    'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru',
-    'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
+    'ar', 'bg', 'cs', 'da', 'de', 'el', 'en-GB', 'es', 'es-ES',
+    'es-MX', 'fr', 'fy-NL', 'hi-IN', 'hu', 'id', 'it', 'ja',
+    'ko', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR',
+    'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr',
+    'zh-CN', 'zh-TW',
 ];
 
 /*
@@ -923,7 +924,8 @@ $langfiles_subsets = [
         ],
         'snippets/2014/jun2014.lang'            => [
             'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id',
-            'it', 'nl', 'pl', 'pt-BR', 'sr'],
+            'it', 'nl', 'pl', 'pt-BR', 'sr',
+        ],
         'snippets/2014/aug2014_a.lang'          => ['es-ES'],
         'snippets/2014/aug2014_b.lang'          => ['cs'],
         'snippets/2014/aug2014_c.lang'          => ['de', 'fr', 'pl', 'nl', 'sl', 'sq', 'zh-TW'],
