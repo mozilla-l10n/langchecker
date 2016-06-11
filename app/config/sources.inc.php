@@ -301,7 +301,6 @@ $engagement_lang = [
     'snippets/2014/nov2014_e.lang',
     'snippets/2014/dec2014_a.lang',
     'snippets/2014/dec2014_c.lang',
-    'snippets/2015/jan2015a_a.lang',
     'snippets/2015/jan2015a_b.lang',
     'snippets/2015/jan2015a_c.lang',
     'snippets/2015/jan2015a_d.lang',
@@ -348,6 +347,7 @@ $engagement_lang = [
     'snippets/2016/apr2016_b.lang',
     'snippets/2016/may2016_a.lang',
     'snippets/2016/may2016_b.lang',
+    'snippets/2016/jun2016_berec.lang',
     'surveys/survey_hello_fx42.lang',
     'tiles/careers.lang',
     'tiles/suggestedtiles_infographic.lang',
@@ -359,14 +359,17 @@ $engagement_lang = [
     'tiles/2016/tiles_jan2016.lang',
 ];
 $lang_flags['engagement'] = [
-    'ads/ios_android_apr2016.lang' => [ 'critical' => ['all'] ],
-    'snippets/2016/jan2016.lang'   => [ 'critical' => ['all'] ],
-    'snippets/2016/feb2016.lang'   => [ 'critical' => ['all'] ],
-    'snippets/2016/mar2016.lang'   => [ 'critical' => ['all'] ],
-    'snippets/2016/apr2016.lang'   => [ 'critical' => ['all'] ],
-    'snippets/2016/apr2016_b.lang' => [ 'critical' => ['all'] ],
-    'snippets/2016/may2016_a.lang' => [ 'critical' => ['all'] ],
-    'snippets/2016/may2016_b.lang' => [ 'critical' => ['all'] ],
+    'ads/ios_android_apr2016.lang'     => [ 'critical' => ['all'] ],
+    'snippets/2016/jan2016.lang'       => [ 'critical' => ['all'] ],
+    'snippets/2016/feb2016.lang'       => [ 'critical' => ['all'] ],
+    'snippets/2016/mar2016.lang'       => [ 'critical' => ['all'] ],
+    'snippets/2016/apr2016.lang'       => [ 'critical' => ['all'] ],
+    'snippets/2016/apr2016_b.lang'     => [ 'critical' => ['all'] ],
+    'snippets/2016/may2016_a.lang'     => [ 'critical' => ['all'] ],
+    'snippets/2016/may2016_b.lang'     => [ 'critical' => ['all'] ],
+    'snippets/2016/jun2016_berec.lang' => [
+        'critical' => ['de', 'en-GB', 'es-ES', 'fr', 'it'],
+    ],
 ];
 
 $addons_lang = [
@@ -481,6 +484,7 @@ $deadline = [
     'snippets/2016/apr2016_b.lang'           => '2016-04-04',
     'snippets/2016/may2016_a.lang'           => '2016-05-09',
     'snippets/2016/may2016_b.lang'           => '2016-05-09',
+    'snippets/2016/jun2016_berec.lang'       => '2016-06-13',
     'surveys/survey_hello_fx42.lang'         => '2016-06-03',
     'teach/smarton/index.lang'               => '2015-12-31',
     'teach/smarton/security.lang'            => '2015-11-17',
@@ -568,10 +572,11 @@ $startpage36 = [
 ];
 
 $engagement_locales = [
-    'ar', 'cs', 'da', 'de', 'el', 'es', 'es-ES', 'es-MX', 'fr',
-    'fy-NL', 'hi-IN', 'hu', 'id', 'it', 'ja', 'ko', 'nb-NO',
-    'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru',
-    'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
+    'ar', 'bg', 'cs', 'da', 'de', 'el', 'en-GB', 'es', 'es-ES',
+    'es-MX', 'fr', 'fy-NL', 'hi-IN', 'hu', 'id', 'it', 'ja',
+    'ko', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR',
+    'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr',
+    'zh-CN', 'zh-TW',
 ];
 
 /*
@@ -899,28 +904,30 @@ $langfiles_subsets = [
         'ads/ios_android_apr2016.lang'          => ['de', 'es-ES', 'fr', 'pl'],
         'snippets/2014/jan2014.lang'            =>
             [
-                'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr',
-                'fy-NL', 'hu', 'id', 'it', 'ja', 'ko', 'nl', 'pl',
-                'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr',
-                'sv-SE', 'tr', 'vi', 'zh-CN', 'zh-TW',
+                'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hu',
+                'id', 'it', 'ja', 'ko', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
+                'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
             ],
         'snippets/2014/apr2014.lang'            =>
         [
-            'cs', 'da', 'de', 'el', 'es-ES', 'es-MX',
-            'fr', 'fy-NL', 'hu', 'id', 'it', 'ja', 'ko', 'mk',
-            'nb-NO', 'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk',
-            'sl', 'sq', 'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
+            'cs', 'da', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'fy-NL',
+            'hu', 'id', 'it', 'ja', 'ko', 'nb-NO', 'nl', 'pl', 'pt-BR',
+            'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'zh-CN',
+            'zh-TW',
         ],
         'snippets/2014/may2014.lang'            =>
         [
             'cs', 'da', 'de', 'el', 'es-ES', 'es-MX',
-            'fr', 'fy-NL', 'hu', 'id', 'it', 'ja', 'ko', 'mk',
+            'fr', 'fy-NL', 'hu', 'id', 'it', 'ja', 'ko',
             'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
             'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
         ],
-        'snippets/2014/jun2014.lang'            => ['de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id', 'it', 'nl', 'pl', 'pt-BR', 'sr'],
+        'snippets/2014/jun2014.lang'            => [
+            'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id',
+            'it', 'nl', 'pl', 'pt-BR', 'sr',
+        ],
         'snippets/2014/aug2014_a.lang'          => ['es-ES'],
-        'snippets/2014/aug2014_b.lang'          => ['cs', 'hr', 'mk'],
+        'snippets/2014/aug2014_b.lang'          => ['cs'],
         'snippets/2014/aug2014_c.lang'          => ['de', 'fr', 'pl', 'nl', 'sl', 'sq', 'zh-TW'],
         'snippets/2014/aug2014_d.lang'          => ['el', 'es-MX', 'it', 'ja', 'pt-BR', 'ru', 'tr', 'sv-SE', 'sr'],
         'snippets/2014/sep2014_a.lang'          => ['cs', 'de', 'es-ES', 'fr', 'it', 'pl'],
@@ -930,17 +937,16 @@ $langfiles_subsets = [
         'snippets/2014/sep2014_e.lang'          => ['sq'],
         'snippets/2014/nov2014_a.lang'          =>
             [
-                'da', 'es-MX', 'fi', 'fy-NL', 'he', 'ko', 'lv', 'nb-NO',
-                'nn-NO', 'pa-IN', 'rm', 'sk', 'sl', 'zh-TW',
+                'da', 'es-MX', 'fy-NL', 'ko', 'nb-NO', 'nn-NO', 'pa-IN',
+                'rm', 'sk', 'sl', 'zh-TW',
             ],
         'snippets/2014/nov2014_b.lang'          => ['ja'],
         'snippets/2014/nov2014_c.lang'          => ['es-ES', 'hu'],
         'snippets/2014/nov2014_d.lang'          => ['de', 'fr', 'it', 'pl', 'pt-BR', 'ru'],
-        'snippets/2014/nov2014_e.lang'          => ['el', 'hi-IN', 'mk', 'sr'],
+        'snippets/2014/nov2014_e.lang'          => ['el', 'hi-IN', 'sr'],
         'snippets/2014/dec2014_a.lang'          => ['de', 'es-ES', 'fr', 'id', 'pt-BR', 'ru'],
         'snippets/2014/dec2014_c.lang'          => ['sr'],
-        'snippets/2015/jan2015a_a.lang'         => ['hr'],
-        'snippets/2015/jan2015a_b.lang'         => ['el', 'hi-IN', 'hu', 'mk', 'sr'],
+        'snippets/2015/jan2015a_b.lang'         => ['el', 'hi-IN', 'hu', 'sr'],
         'snippets/2015/jan2015a_c.lang'         => ['de', 'es-ES', 'pt-BR'],
         'snippets/2015/jan2015a_d.lang'         => ['fr', 'pl'],
         'snippets/2015/jan2015b_a.lang'         => ['de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
@@ -990,6 +996,10 @@ $langfiles_subsets = [
         'snippets/2016/apr2016_b.lang'          => ['pt-BR'],
         'snippets/2016/may2016_a.lang'          => ['es', 'fr', 'ru', 'pt-BR'],
         'snippets/2016/may2016_b.lang'          => ['de'],
+        'snippets/2016/jun2016_berec.lang'      => [
+            'bg', 'cs', 'de', 'en-GB', 'es-ES', 'fr', 'it',
+            'nl', 'ro', 'sv-SE', 'sl',
+        ],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
         'tiles/careers.lang'                    => ['de', 'fr'],
         'tiles/suggestedtiles_infographic.lang' => ['de', 'es', 'fr'],
