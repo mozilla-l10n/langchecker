@@ -369,7 +369,7 @@ $lang_flags['engagement'] = [
     'snippets/2016/may2016_a.lang'     => [ 'critical' => ['all'] ],
     'snippets/2016/may2016_b.lang'     => [ 'critical' => ['all'] ],
     'snippets/2016/jun2016_berec.lang' => [
-        'critical' => ['de', 'en-GB', 'es', 'fr', 'it'],
+        'critical' => ['de', 'en-GB', 'es-ES', 'fr', 'it'],
     ],
 ];
 
@@ -996,7 +996,8 @@ $langfiles_subsets = [
         'snippets/2016/may2016_a.lang'          => ['es', 'fr', 'ru', 'pt-BR'],
         'snippets/2016/may2016_b.lang'          => ['de'],
         'snippets/2016/jun2016_berec.lang'      => [
-            'bg', 'cs', 'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'ro', 'sv-SE', 'sl',
+            'bg', 'cs', 'de', 'en-GB', 'es-ES', 'fr', 'it',
+            'nl', 'ro', 'sv-SE', 'sl',
         ],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
         'tiles/careers.lang'                    => ['de', 'fr'],
