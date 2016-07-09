@@ -9,6 +9,8 @@ before_install:
   - phpenv config-rm xdebug.ini
   ## Update Composer
   - composer self-update
+  ## Install latest version of node
+  - nvm install node
 install:
   ## Install Composer dependencies
   - composer install --no-interaction --prefer-source

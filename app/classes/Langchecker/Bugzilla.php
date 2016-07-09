@@ -39,7 +39,7 @@ class Bugzilla extends _Bugzilla
         $bug_assignee = urlencode('pmo@mozilla.com');
         $bug_cc = urlencode('francesco.lodolo@gmail.com');
         $bug_link = 'https://bugzilla.mozilla.org/enter_bug.cgi?alias=' .
-                    '&assigned_to=' . $bug_assignee . '&cc=' .  $bug_cc .
+                    '&assigned_to=' . $bug_assignee . '&cc=' . $bug_cc .
                     '&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=normal&bug_status=NEW' .
                     '&component=L10N&contenttypeentry=&contenttypemethod=autodetect' .
                     '&contenttypeselection=text%2Fplain&data=&dependson=&description=&flag_type-4=X' .
