@@ -451,8 +451,7 @@ $deadline = [
     'firefox/features.lang'                  => '2016-04-11',
     'firefox/hello-2016.lang'                => '2016-04-29',
     'firefox/ios.lang'                       => '2015-11-03',
-    'firefox/new.lang'                       => '2015-11-18',
-    'firefox/new/horizon.lang'               => '2016-08-01'
+    'firefox/new/horizon.lang'               => '2016-08-01',
     'firefox/private-browsing.lang'          => '2015-11-02',
     'firefox/sendto.lang'                    => '2015-06-01',
     'firefox/sync.lang'                      => '2016-04-04',
@@ -467,8 +466,7 @@ $deadline = [
     'mozorg/contribute/signup.lang'          => '2016-06-06',
     'mozorg/contribute/stories.lang'         => '2015-08-10',
     'mozorg/home/index.lang'                 => '2016-03-15',
-    'mozorg/plugincheck.lang'                => '2016-05-23',
-    'mozorg/plugincheck-redesign.lang'       => '2016-08-01'
+    'mozorg/plugincheck-redesign.lang'       => '2016-08-01',
     'privacy/principles.lang'                => '2015-09-15',
     'snippets/2015/fall2015.lang'            => '2015-11-02',
     'snippets/2015/nov2015_eoy_mofo.lang'    => '2015-11-02',
@@ -789,7 +787,6 @@ $langfiles_subsets = [
                 'sv-SE', 'tr', 'uk', 'zh-CN', 'zh-TW',
             ],
         'main.lang'                             => $mozillaorg,
-            ],
         'mozorg/404.lang'                       => $mozillaorg,
         'mozorg/about.lang'                     => $mozillaorg,
         'mozorg/home/index.lang'                => $mozillaorg,
