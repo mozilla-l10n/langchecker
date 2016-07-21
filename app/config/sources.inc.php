@@ -493,7 +493,7 @@ $deadline = [
     'tiles/2015/tiles_nov2015.lang'          => '2015-11-02',
     'tiles/2016/tiles_jan2016.lang'          => '2016-01-14',
     'whatsnew/whatsnew_android_47.lang'      => '2016-06-07', // appstores project
-    'whatsnew/whatsnew_ios_5_0.lang'         => '2016-07-05', // appstores project
+    'whatsnew/whatsnew_ios_5_0.lang'         => '2016-07-27', // appstores project
 ];
 
 // List of locales
