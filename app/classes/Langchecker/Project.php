@@ -292,7 +292,7 @@ class Project
                     );
 
         return ($type == 'html')
-            ?  "<a href='{$page_url}' class='table_small_link'>view</a>"
+            ? "<a href='{$page_url}' class='table_small_link'>view</a>"
             : $page_url;
     }
 
