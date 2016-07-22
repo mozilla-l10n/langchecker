@@ -50,12 +50,6 @@ $repositories = [
         'repository'  => 'https://github.com/mozilla-l10n/www.mozilla.org',
         'vcs'         => 'git',
     ],
-    'start.mozilla.org' => [
-        'local_path'  => $repo_local_path('start.mozilla.org', 'fx36start-l10n'),
-        'public_path' => 'https://github.com/mozilla-l10n/fx36start-l10n/tree/master/',
-        'repository'  => 'https://github.com/mozilla-l10n/fx36start-l10n',
-        'vcs'         => 'git',
-    ],
     'about:healthreport' => [
         'local_path'  => $repo_local_path('about:healthreport', 'fhr-l10n'),
         'public_path' => 'https://github.com/mozilla-l10n/fhr-l10n/tree/master/',
@@ -260,11 +254,6 @@ $lang_flags['www.mozilla.org'] = [
         'opt-in' => $thunderbird_locales,
     ],
     'thunderbird/start/release.lang'          => [ 'critical' => ['all'] ],
-];
-
-$startpage36_lang = ['fx36start.lang'];
-$lang_flags['start.mozilla.org'] = [
-    'fx36start.lang' => [ 'critical' => ['all'] ],
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang'];
@@ -601,18 +590,6 @@ $sites =
         'lang',
     ],
 
-    1 => [
-        'start.mozilla.org',
-        $repositories['start.mozilla.org']['local_path'],
-        '',
-        $startpage36,
-        $startpage36_lang,
-        'en-US', // source locale
-        $repositories['start.mozilla.org']['public_path'],
-        $lang_flags['start.mozilla.org'],
-        'lang',
-    ],
-
     4 => [
         'about:healthreport',
         $repositories['about:healthreport']['local_path'],
@@ -867,10 +844,6 @@ $langfiles_subsets = [
         'thunderbird/features.lang'             => $thunderbird_locales,
         'thunderbird/index.lang'                => $thunderbird_locales,
         'thunderbird/start/release.lang'        => $thunderbird_locales,
-    ],
-
-    'start.mozilla.org' => [
-        'fx36start.lang' => $startpage36,
     ],
 
     'about:healthreport' =>
