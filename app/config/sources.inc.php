@@ -985,6 +985,7 @@ $langfiles_subsets = [
         'whatsnew/whatsnew_android_45.lang'      => array_merge($google_play_target, ['ar']),
         'whatsnew/whatsnew_android_46.lang'      => array_merge($google_play_target, ['ar']),
         'whatsnew/whatsnew_android_47.lang'      => array_merge($google_play_target, ['ar']),
+        'whatsnew/whatsnew_android_48.lang'      => array_merge($google_play_target, ['ar']),
         'whatsnew/whatsnew_android_46_beta.lang' => $google_play_target,
         'whatsnew/whatsnew_android_47_beta.lang' => $google_play_target,
         'whatsnew/whatsnew_android_48_beta.lang' => $google_play_target,
