@@ -527,7 +527,7 @@ $ios_landing_page = array_unique(array_merge(
 $android_landing_page = array_unique(array_merge(
     $android_locales,
     [
-        'af', 'ast', 'bn-BD', 'cak', 'fa', 'sat',
+        'af', 'ast', 'bn-BD', 'cak', 'es-CL', 'fa', 'sat',
     ]
 ));
 
@@ -766,7 +766,7 @@ $langfiles_subsets = [
         'mozorg/mission.lang'                   => $mozillaorg,
         'mozorg/about/history-details.lang'     =>
             [
-                'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
+                'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
                 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja',
                 'km', 'ko', 'lt', 'nl', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
                 'ru', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
@@ -774,7 +774,7 @@ $langfiles_subsets = [
             ],
         'mozorg/about/history.lang'             =>
             [
-                'af', 'ar', 'bg', 'ca', 'cs', 'cy', 'de', 'dsb',
+                'af', 'ar', 'bg', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb',
                 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
                 'it', 'ja', 'km', 'ko', 'lt', 'ms', 'nl', 'pa-IN',
@@ -838,7 +838,7 @@ $langfiles_subsets = [
             ],
         'thunderbird/channel.lang'              =>
             [
-                'cs', 'de', 'en-GB', 'fr', 'it', 'ja', 'ko','lt', 'nl',
+                'cs', 'de', 'en-GB', 'fi', 'fr', 'it', 'ja', 'ko','lt', 'nl',
                 'pt-BR', 'ru', 'uk', 'zh-TW',
             ],
         'thunderbird/features.lang'             => $thunderbird_locales,
