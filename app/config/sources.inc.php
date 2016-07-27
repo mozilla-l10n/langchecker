@@ -374,6 +374,8 @@ $appstores_lang = [
     'whatsnew/whatsnew_android_47_beta.lang',
     'whatsnew/whatsnew_android_47.lang',
     'whatsnew/whatsnew_android_48_beta.lang',
+    'whatsnew/whatsnew_android_48.lang',
+    'whatsnew/whatsnew_android_49_beta.lang',
     'whatsnew/whatsnew_ios_2_1.lang',
     'whatsnew/whatsnew_ios_4_0.lang',
     'whatsnew/whatsnew_ios_5_0.lang',
@@ -402,6 +404,7 @@ $lang_flags['appstores'] = [
     'whatsnew/whatsnew_android_45.lang'      => [ 'obsolete' => ['all'] ],
     'whatsnew/whatsnew_android_46_beta.lang' => [ 'obsolete' => ['all'] ],
     'whatsnew/whatsnew_android_47_beta.lang' => [ 'obsolete' => ['all'] ],
+    'whatsnew/whatsnew_android_48_beta.lang' => [ 'obsolete' => ['all'] ],
     'whatsnew/whatsnew_ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
     'whatsnew/whatsnew_ios_4_0.lang'         => [ 'obsolete' => ['all'] ],
 ];
@@ -477,7 +480,7 @@ $deadline = [
     'tiles/2015/tiles_oct2015.lang'          => '2015-10-11',
     'tiles/2015/tiles_nov2015.lang'          => '2015-11-02',
     'tiles/2016/tiles_jan2016.lang'          => '2016-01-14',
-    'whatsnew/whatsnew_android_47.lang'      => '2016-06-07', // appstores project
+    'whatsnew/whatsnew_android_48.lang'      => '2016-08-03', // appstores project
     'whatsnew/whatsnew_ios_5_0.lang'         => '2016-07-27', // appstores project
 ];
 
@@ -982,9 +985,11 @@ $langfiles_subsets = [
         'whatsnew/whatsnew_android_45.lang'      => array_merge($google_play_target, ['ar']),
         'whatsnew/whatsnew_android_46.lang'      => array_merge($google_play_target, ['ar']),
         'whatsnew/whatsnew_android_47.lang'      => array_merge($google_play_target, ['ar']),
+        'whatsnew/whatsnew_android_48.lang'      => array_merge($google_play_target, ['ar']),
         'whatsnew/whatsnew_android_46_beta.lang' => $google_play_target,
         'whatsnew/whatsnew_android_47_beta.lang' => $google_play_target,
         'whatsnew/whatsnew_android_48_beta.lang' => $google_play_target,
+        'whatsnew/whatsnew_android_49_beta.lang' => $google_play_target,
         'whatsnew/whatsnew_ios_2_1.lang'         => $apple_store_target,
         'whatsnew/whatsnew_ios_4_0.lang'         => $apple_store_target,
         'whatsnew/whatsnew_ios_5_0.lang'         => $apple_store_target,
