@@ -102,8 +102,8 @@ foreach ($file_list as $current_filename) {
 
             Default website is mozilla.org (id 0).
         */
-        $import_files = ['whatsnew/whatsnew_android_48_beta.lang'];
-        $import_website = 12;
+        $import_files = [];
+        $import_website = 0;
 
         if (count($import_files) > 0) {
             /*
