@@ -137,7 +137,7 @@ $locamotion_locales = [
     'ach', 'af', 'bm', 'bn-BD', 'br', 'ca', 'cak', 'cy',
     'ee', 'en-ZA', 'ff', 'ga-IE', 'gn', 'ha',
     'hi-IN', 'hto', 'ig', 'kk', 'km', 'kok',
-    'ks', 'ln', 'lo', 'lt', 'lv', 'mai', 'mg',
+    'ks', 'ln', 'lt', 'lv', 'mai', 'mg',
     'ms', 'my', 'ne-NP', 'nb-NO', 'nn-NO', 'oc', 'or',
     'pbb', 'qvi', 'sat', 'son', 'sw', 'ta', 'tl', 'tn',
     'trs', 'ur', 'vi', 'wo', 'xh', 'yo', 'zu',
