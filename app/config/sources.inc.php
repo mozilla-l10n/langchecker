@@ -671,7 +671,7 @@ $langfiles_subsets = [
         'firefox/developer.lang'                => $firefox_locales,
         'firefox/dnt.lang'                      =>
             [
-                'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fr',
+                'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fi', 'fr',
                 'fy-NL', 'hsb', 'it', 'ja', 'ko', 'lt', 'nl',
                 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'sk', 'sl',
                 'son', 'sq', 'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
