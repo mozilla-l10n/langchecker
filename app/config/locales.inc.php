@@ -74,7 +74,7 @@ $ios_locales = [
 ];
 
 /*
-    Source: https://l10n.mozilla-community.org/~pascalc/stores_l10n/api/apple/localesmapping/?reverse
+    Source: https://l10n.mozilla-community.org/stores_l10n/api/apple/localesmapping/?reverse
     Locales supported by the Apple Store
 */
 $apple_store_locales = [
