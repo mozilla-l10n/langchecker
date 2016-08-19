@@ -387,7 +387,7 @@ class Project
         }
 
         if ($request['locale'] != '' &&
-            $request['website'] == ''  &&
+            $request['website'] == '' &&
             ($request['serial'] || $request['json'])) {
             $result['file'] = 'export';
 

@@ -100,14 +100,14 @@ class Utils
     {
         if (! is_array($origin)) {
             // If $origin is a string, always return a string
-            $origin  = [$origin];
+            $origin = [$origin];
             $isarray = false;
         }
 
         foreach ($origin as $item => $value) {
             // CRLF XSS
-            $item  = str_replace('%0D', '', $item);
-            $item  = str_replace('%0A', '', $item);
+            $item = str_replace('%0D', '', $item);
+            $item = str_replace('%0A', '', $item);
             $value = str_replace('%0D', '', $value);
             $value = str_replace('%0A', '', $value);
 
@@ -117,7 +117,7 @@ class Utils
                 FILTER_FLAG_STRIP_LOW
             );
 
-            $item  = htmlspecialchars(strip_tags($item), ENT_QUOTES);
+            $item = htmlspecialchars(strip_tags($item), ENT_QUOTES);
             $value = htmlspecialchars(strip_tags($value), ENT_QUOTES);
 
             // Repopulate value

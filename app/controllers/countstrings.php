@@ -108,7 +108,7 @@ foreach ($untranslated as $key => $val) {
 $summary_table_rows = [];
 foreach (array_reverse($results) as $category => $values) {
     sort($values);
-    $th  = ucfirst($category);
+    $th = ucfirst($category);
     $tip = $tooltips[$category];
     $td1 = count($values);
     $td2 = implode(', ', $values);

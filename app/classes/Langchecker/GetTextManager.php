@@ -25,8 +25,8 @@ class GetTextManager
     public static function loadPoFile($path)
     {
         $file_handler = new FileHandler($path);
-        $po_parser    = new PoParser($file_handler);
-        $po_strings   = $po_parser->parse();
+        $po_parser = new PoParser($file_handler);
+        $po_strings = $po_parser->parse();
 
         $po_data = [];
         if (count($po_strings) > 0) {

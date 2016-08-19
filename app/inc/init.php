@@ -6,13 +6,13 @@ use Json\Json;
 date_default_timezone_set('Europe/Paris');
 
 // Server shortcuts
-$root_folder        = realpath(__DIR__ . '/../../') . '/';
-$app_folder         = $root_folder . 'app/';
-$conf_folder        = $app_folder . 'config/';
+$root_folder = realpath(__DIR__ . '/../../') . '/';
+$app_folder = $root_folder . 'app/';
+$conf_folder = $app_folder . 'config/';
 $controllers_folder = $app_folder . 'controllers/';
-$libs_folder        = $app_folder . 'libs/';
-$templates_folder   = $app_folder . 'templates/';
-$views_folder       = $app_folder . 'views/';
+$libs_folder = $app_folder . 'libs/';
+$templates_folder = $app_folder . 'templates/';
+$views_folder = $app_folder . 'views/';
 
 // Autoloading of composer dependencies
 require_once $root_folder . 'vendor/autoload.php';
@@ -30,13 +30,13 @@ if (getenv('AUTOMATED_TESTS')) {
 $json_object = new Json;
 
 // User provided variables
-$action   = Utils::getQueryParam('action');
+$action = Utils::getQueryParam('action');
 $filename = Utils::getQueryParam('file');
-$json     = Utils::getQueryParam('json', false);   // Do we want json data for the webdashboard?
-$locale   = Utils::getQueryParam('locale');        // Which locale are we analysing? No default
-$project  = Utils::getQueryParam('project');
-$serial   = Utils::getQueryParam('serial', false); // Do we want serialize data for the webdashboard?
-$website  = Utils::getQueryParam('website');       // Which website are we looking at?
+$json = Utils::getQueryParam('json', false);   // Do we want json data for the webdashboard?
+$locale = Utils::getQueryParam('locale');        // Which locale are we analysing? No default
+$project = Utils::getQueryParam('project');
+$serial = Utils::getQueryParam('serial', false); // Do we want serialize data for the webdashboard?
+$website = Utils::getQueryParam('website');       // Which website are we looking at?
 
 // Cache class
 define('CACHE_ENABLED', true);

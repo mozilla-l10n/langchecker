@@ -135,7 +135,7 @@ class LangManager
                 'length'         => [],
                 'python'         => [],
             ],
-            'tags'       => [],
+            'tags' => [],
         ];
 
         foreach ($locale_data['strings'] as $reference => $translation) {

@@ -174,32 +174,32 @@ $mozillaorg_lang = [
 ];
 
 $lang_flags['www.mozilla.org'] = [
-    'download.lang'                           => [ 'critical' => ['all'] ],
-    'download_button.lang'                    => [ 'critical' => ['all'] ],
-    'firefox/accounts.lang'                   => [ 'critical' => ['all'] ],
-    'firefox/android/index.lang'              => [
+    'download.lang'              => [ 'critical' => ['all'] ],
+    'download_button.lang'       => [ 'critical' => ['all'] ],
+    'firefox/accounts.lang'      => [ 'critical' => ['all'] ],
+    'firefox/android/index.lang' => [
         'critical' => [$android_locales],
         'opt-in'   => ['all'],
     ],
-    'firefox/australis/firefox_tour.lang'     => [ 'critical' => ['all'] ],
-    'firefox/australis/fx36_tour.lang'        => [ 'critical' => ['all'] ],
-    'firefox/channel.lang'                    => [ 'critical' => ['all'] ],
-    'firefox/family/index.lang'               => [ 'critical' => ['all'] ],
-    'firefox/features.lang'                   => [ 'critical' => ['all'] ],
-    'firefox/desktop/customize.lang'          => [ 'critical' => ['all'] ],
-    'firefox/desktop/fast.lang'               => [ 'critical' => ['all'] ],
-    'firefox/desktop/index.lang'              => [ 'critical' => ['all'] ],
-    'firefox/desktop/trust.lang'              => [ 'critical' => ['all'] ],
-    'firefox/desktop/tips.lang'               => [
+    'firefox/australis/firefox_tour.lang' => [ 'critical' => ['all'] ],
+    'firefox/australis/fx36_tour.lang'    => [ 'critical' => ['all'] ],
+    'firefox/channel.lang'                => [ 'critical' => ['all'] ],
+    'firefox/family/index.lang'           => [ 'critical' => ['all'] ],
+    'firefox/features.lang'               => [ 'critical' => ['all'] ],
+    'firefox/desktop/customize.lang'      => [ 'critical' => ['all'] ],
+    'firefox/desktop/fast.lang'           => [ 'critical' => ['all'] ],
+    'firefox/desktop/index.lang'          => [ 'critical' => ['all'] ],
+    'firefox/desktop/trust.lang'          => [ 'critical' => ['all'] ],
+    'firefox/desktop/tips.lang'           => [
         'critical' => ['all'],
         'opt-in'   => ['all'],
     ],
-    'firefox/dnt.lang'                        => [ 'opt-in'   => ['all'] ],
-    'firefox/geolocation.lang'                => [ 'opt-in'   => ['all'] ],
-    'firefox/hello.lang'                      => [ 'obsolete' => ['all'] ],
-    'firefox/hello-2016.lang'                 => [ 'critical' => ['all'] ],
-    'firefox/installer-help.lang'             => [ 'critical' => ['all'] ],
-    'firefox/ios.lang'                        => [
+    'firefox/dnt.lang'            => [ 'opt-in' => ['all'] ],
+    'firefox/geolocation.lang'    => [ 'opt-in' => ['all'] ],
+    'firefox/hello.lang'          => [ 'obsolete' => ['all'] ],
+    'firefox/hello-2016.lang'     => [ 'critical' => ['all'] ],
+    'firefox/installer-help.lang' => [ 'critical' => ['all'] ],
+    'firefox/ios.lang'            => [
         'critical' => [$ios_locales],
         'opt-in'   => ['all'],
     ],
@@ -207,7 +207,7 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/new/horizon.lang'                => [ 'critical' => ['all'] ],
     'firefox/os/faq.lang'                     => [ 'obsolete' => ['all'] ],
     'firefox/os/index-new.lang'               => [ 'obsolete' => ['all'] ],
-    'firefox/os/index.lang'                   => [ 'opt-in'   => ['all'] ],
+    'firefox/os/index.lang'                   => [ 'opt-in' => ['all'] ],
     'firefox/privacy_tour/privacy_tour.lang'  => [ 'critical' => ['all'] ],
     'firefox/private-browsing.lang'           => [ 'critical' => ['all'] ],
     'firefox/sendto.lang'                     => [ 'critical' => ['all'] ],
@@ -218,12 +218,12 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/win10-welcome.lang'              => [ 'critical' => ['all'] ],
     'foundation/annualreport/2012/index.lang' => [ 'critical' => ['all'] ],
     'legal/index.lang'                        => [ 'critical' => ['all'] ],
-    'lightbeam/lightbeam.lang'                => [ 'opt-in'   => ['all'] ],
+    'lightbeam/lightbeam.lang'                => [ 'opt-in' => ['all'] ],
     'main.lang'                               => [ 'critical' => ['all'] ],
-    'mozorg/about/leadership.lang'            => [ 'opt-in'   => ['all'] ],
-    'mozorg/about/manifesto.lang'             => [ 'opt-in'   => ['all'] ],
-    'mozorg/about/history.lang'               => [ 'opt-in'   => ['all'] ],
-    'mozorg/about/history-details.lang'       => [ 'opt-in'   => ['all'] ],
+    'mozorg/about/leadership.lang'            => [ 'opt-in' => ['all'] ],
+    'mozorg/about/manifesto.lang'             => [ 'opt-in' => ['all'] ],
+    'mozorg/about/history.lang'               => [ 'opt-in' => ['all'] ],
+    'mozorg/about/history-details.lang'       => [ 'opt-in' => ['all'] ],
     'mozorg/contribute/index.lang'            => [ 'critical' => ['all'] ],
     'mozorg/contribute/signup.lang'           => [ 'critical' => ['all'] ],
     'mozorg/contribute/stories.lang'          => [ 'critical' => ['all'] ],
@@ -231,29 +231,29 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/newsletters.lang'                 => [
         'critical' => $newsletter_locales,
     ],
-    'mozorg/plugincheck.lang'                 => [ 'obsolete' => ['all'] ],
-    'mozorg/plugincheck-redesign.lang'        => [ 'critical' => ['all'] ],
-    'tabzilla/tabzilla.lang'                  => [ 'obsolete' => ['all'] ],
-    'teach/smarton/index.lang'                => [
+    'mozorg/plugincheck.lang'          => [ 'obsolete' => ['all'] ],
+    'mozorg/plugincheck-redesign.lang' => [ 'critical' => ['all'] ],
+    'tabzilla/tabzilla.lang'           => [ 'obsolete' => ['all'] ],
+    'teach/smarton/index.lang'         => [
         'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
         'opt-in'   => ['all'],
     ],
-    'teach/smarton/security.lang'             => [
+    'teach/smarton/security.lang' => [
         'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
         'opt-in'   => ['all'],
     ],
-    'teach/smarton/surveillance.lang'         => [
+    'teach/smarton/surveillance.lang' => [
         'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
         'opt-in'   => ['all'],
     ],
-    'teach/smarton/tracking.lang'             => [
+    'teach/smarton/tracking.lang' => [
         'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
         'opt-in'   => ['all'],
     ],
-    'thunderbird/channel.lang'                => [
+    'thunderbird/channel.lang' => [
         'opt-in' => $thunderbird_locales,
     ],
-    'thunderbird/start/release.lang'          => [ 'critical' => ['all'] ],
+    'thunderbird/start/release.lang' => [ 'critical' => ['all'] ],
 ];
 
 $firefoxhealthreport_lang = ['fhr.lang'];
@@ -420,69 +420,69 @@ $no_active_tag = [
 ];
 
 $deadline = [
-    'ads/ios_android_apr2016.lang'           => '2016-04-22',
-    'android_release.lang'                   => '2016-04-30', // appstores project
-    'apple_description_release.lang'         => '2016-03-30', // appstores project
-    'apple_screenshots_v3.lang'              => '2016-03-25', // appstores project
-    'description_beta_page.lang'             => '2015-09-30', // appstores project
-    'download_button.lang'                   => '2016-04-29',
-    'firefox/accounts.lang'                  => '2016-03-15',
-    'firefox/android/index.lang'             => '2015-11-02',
-    'firefox/channel.lang'                   => '2016-05-23',
-    'firefox/desktop/customize.lang'         => '2015-11-02',
-    'firefox/desktop/fast.lang'              => '2015-11-02',
-    'firefox/desktop/index.lang'             => '2015-11-02',
-    'firefox/desktop/tips.lang'              => '2015-11-02',
-    'firefox/desktop/trust.lang'             => '2015-11-02',
-    'firefox/developer.lang'                 => '2015-11-18',
-    'firefox/family/index.lang'              => '2016-04-18',
-    'firefox/features.lang'                  => '2016-04-11',
-    'firefox/hello-2016.lang'                => '2016-08-16',
-    'firefox/ios.lang'                       => '2015-11-03',
-    'firefox/new/horizon.lang'               => '2016-08-01',
-    'firefox/private-browsing.lang'          => '2015-11-02',
-    'firefox/sendto.lang'                    => '2015-06-01',
-    'firefox/sync.lang'                      => '2016-04-04',
-    'firefox/tracking-protection-tour.lang'  => '2016-02-29',
-    'firefox/whatsnew_42.lang'               => '2015-11-02',
-    'firefox/win10-welcome.lang'             => '2016-01-25',
-    'ads/ios_ads_nov2015.lang'               => '2015-11-18',
-    'legal/index.lang'                       => '2016-02-18',
-    'main.lang'                              => '2016-08-23',
-    'mozorg/about.lang'                      => '2015-03-26',
-    'mozorg/contribute/index.lang'           => '2015-08-10',
-    'mozorg/contribute/signup.lang'          => '2016-06-06',
-    'mozorg/contribute/stories.lang'         => '2015-08-10',
-    'mozorg/home/index.lang'                 => '2016-03-15',
-    'mozorg/newsletters.lang'                => '2016-08-23',
-    'mozorg/plugincheck-redesign.lang'       => '2016-08-01',
-    'privacy/principles.lang'                => '2015-09-15',
-    'snippets/2015/fall2015.lang'            => '2015-11-02',
-    'snippets/2015/nov2015_eoy_mofo.lang'    => '2015-11-02',
-    'snippets/2015/nov2015_a.lang'           => '2015-11-14',
-    'snippets/2015/nov2015_b.lang'           => '2015-11-14',
-    'snippets/2015/dec2015_a.lang'           => '2015-12-14',
-    'snippets/2015/dec2015_b.lang'           => '2015-12-14',
-    'snippets/2016/jan2016.lang'             => '2016-01-14',
-    'snippets/2016/feb2016.lang'             => '2016-02-15',
-    'snippets/2016/mar2016.lang'             => '2016-03-01',
-    'snippets/2016/apr2016.lang'             => '2016-04-04',
-    'snippets/2016/apr2016_b.lang'           => '2016-04-04',
-    'snippets/2016/may2016_a.lang'           => '2016-05-09',
-    'snippets/2016/may2016_b.lang'           => '2016-05-09',
-    'snippets/2016/jun2016_berec.lang'       => '2016-07-18',
-    'surveys/survey_hello_fx42.lang'         => '2016-06-03',
-    'teach/smarton/index.lang'               => '2015-12-31',
-    'teach/smarton/security.lang'            => '2015-11-17',
-    'teach/smarton/surveillance.lang'        => '2015-12-31',
-    'teach/smarton/tracking.lang'            => '2015-11-02',
-    'thunderbird/start/release.lang'         => '2016-08-01',
-    'tiles/2015/tiles_sep2015.lang'          => '2015-09-10',
-    'tiles/2015/tiles_oct2015.lang'          => '2015-10-11',
-    'tiles/2015/tiles_nov2015.lang'          => '2015-11-02',
-    'tiles/2016/tiles_jan2016.lang'          => '2016-01-14',
-    'whatsnew/whatsnew_android_48.lang'      => '2016-08-03', // appstores project
-    'whatsnew/whatsnew_ios_5_0.lang'         => '2016-07-27', // appstores project
+    'ads/ios_android_apr2016.lang'          => '2016-04-22',
+    'android_release.lang'                  => '2016-04-30', // appstores project
+    'apple_description_release.lang'        => '2016-03-30', // appstores project
+    'apple_screenshots_v3.lang'             => '2016-03-25', // appstores project
+    'description_beta_page.lang'            => '2015-09-30', // appstores project
+    'download_button.lang'                  => '2016-04-29',
+    'firefox/accounts.lang'                 => '2016-03-15',
+    'firefox/android/index.lang'            => '2015-11-02',
+    'firefox/channel.lang'                  => '2016-05-23',
+    'firefox/desktop/customize.lang'        => '2015-11-02',
+    'firefox/desktop/fast.lang'             => '2015-11-02',
+    'firefox/desktop/index.lang'            => '2015-11-02',
+    'firefox/desktop/tips.lang'             => '2015-11-02',
+    'firefox/desktop/trust.lang'            => '2015-11-02',
+    'firefox/developer.lang'                => '2015-11-18',
+    'firefox/family/index.lang'             => '2016-04-18',
+    'firefox/features.lang'                 => '2016-04-11',
+    'firefox/hello-2016.lang'               => '2016-08-16',
+    'firefox/ios.lang'                      => '2015-11-03',
+    'firefox/new/horizon.lang'              => '2016-08-01',
+    'firefox/private-browsing.lang'         => '2015-11-02',
+    'firefox/sendto.lang'                   => '2015-06-01',
+    'firefox/sync.lang'                     => '2016-04-04',
+    'firefox/tracking-protection-tour.lang' => '2016-02-29',
+    'firefox/whatsnew_42.lang'              => '2015-11-02',
+    'firefox/win10-welcome.lang'            => '2016-01-25',
+    'ads/ios_ads_nov2015.lang'              => '2015-11-18',
+    'legal/index.lang'                      => '2016-02-18',
+    'main.lang'                             => '2016-08-23',
+    'mozorg/about.lang'                     => '2015-03-26',
+    'mozorg/contribute/index.lang'          => '2015-08-10',
+    'mozorg/contribute/signup.lang'         => '2016-06-06',
+    'mozorg/contribute/stories.lang'        => '2015-08-10',
+    'mozorg/home/index.lang'                => '2016-03-15',
+    'mozorg/newsletters.lang'               => '2016-08-23',
+    'mozorg/plugincheck-redesign.lang'      => '2016-08-01',
+    'privacy/principles.lang'               => '2015-09-15',
+    'snippets/2015/fall2015.lang'           => '2015-11-02',
+    'snippets/2015/nov2015_eoy_mofo.lang'   => '2015-11-02',
+    'snippets/2015/nov2015_a.lang'          => '2015-11-14',
+    'snippets/2015/nov2015_b.lang'          => '2015-11-14',
+    'snippets/2015/dec2015_a.lang'          => '2015-12-14',
+    'snippets/2015/dec2015_b.lang'          => '2015-12-14',
+    'snippets/2016/jan2016.lang'            => '2016-01-14',
+    'snippets/2016/feb2016.lang'            => '2016-02-15',
+    'snippets/2016/mar2016.lang'            => '2016-03-01',
+    'snippets/2016/apr2016.lang'            => '2016-04-04',
+    'snippets/2016/apr2016_b.lang'          => '2016-04-04',
+    'snippets/2016/may2016_a.lang'          => '2016-05-09',
+    'snippets/2016/may2016_b.lang'          => '2016-05-09',
+    'snippets/2016/jun2016_berec.lang'      => '2016-07-18',
+    'surveys/survey_hello_fx42.lang'        => '2016-06-03',
+    'teach/smarton/index.lang'              => '2015-12-31',
+    'teach/smarton/security.lang'           => '2015-11-17',
+    'teach/smarton/surveillance.lang'       => '2015-12-31',
+    'teach/smarton/tracking.lang'           => '2015-11-02',
+    'thunderbird/start/release.lang'        => '2016-08-01',
+    'tiles/2015/tiles_sep2015.lang'         => '2015-09-10',
+    'tiles/2015/tiles_oct2015.lang'         => '2015-10-11',
+    'tiles/2015/tiles_nov2015.lang'         => '2015-11-02',
+    'tiles/2016/tiles_jan2016.lang'         => '2016-01-14',
+    'whatsnew/whatsnew_android_48.lang'     => '2016-08-03', // appstores project
+    'whatsnew/whatsnew_ios_5_0.lang'        => '2016-07-27', // appstores project
 ];
 
 // List of locales
@@ -647,18 +647,18 @@ $sites =
 $langfiles_subsets = [
     'www.mozilla.org' =>
     [
-        'download.lang'                         => $mozillaorg,
-        'download_button.lang'                  => $mozillaorg,
-        'esr.lang'                              => ['de', 'fr'],
-        'firefox/accounts.lang'                 => $mozillaorg,
-        'firefox/android/index.lang'            => $android_landing_page,
-        'firefox/australis/firefox_tour.lang'   => $firefox_locales,
-        'firefox/australis/fx36_tour.lang'      => $firefox_locales,
-        'firefox/channel.lang'                  => $mozillaorg, // Has Firefox for Android download buttons
-        'firefox/desktop/customize.lang'        => $firefox_locales,
-        'firefox/desktop/fast.lang'             => $firefox_locales,
-        'firefox/desktop/index.lang'            => $firefox_locales,
-        'firefox/desktop/tips.lang'             =>
+        'download.lang'                       => $mozillaorg,
+        'download_button.lang'                => $mozillaorg,
+        'esr.lang'                            => ['de', 'fr'],
+        'firefox/accounts.lang'               => $mozillaorg,
+        'firefox/android/index.lang'          => $android_landing_page,
+        'firefox/australis/firefox_tour.lang' => $firefox_locales,
+        'firefox/australis/fx36_tour.lang'    => $firefox_locales,
+        'firefox/channel.lang'                => $mozillaorg, // Has Firefox for Android download buttons
+        'firefox/desktop/customize.lang'      => $firefox_locales,
+        'firefox/desktop/fast.lang'           => $firefox_locales,
+        'firefox/desktop/index.lang'          => $firefox_locales,
+        'firefox/desktop/tips.lang'           =>
             [
                 'af', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL',
@@ -667,18 +667,18 @@ $langfiles_subsets = [
                 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
                 'sv-SE', 'uk', 'uz', 'xh', 'zh-CN', 'zh-TW',
             ],
-        'firefox/desktop/trust.lang'            => $firefox_locales,
-        'firefox/developer.lang'                => $firefox_locales,
-        'firefox/dnt.lang'                      =>
+        'firefox/desktop/trust.lang' => $firefox_locales,
+        'firefox/developer.lang'     => $firefox_locales,
+        'firefox/dnt.lang'           =>
             [
                 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fi', 'fr',
                 'fy-NL', 'hsb', 'it', 'ja', 'ko', 'lt', 'nl',
                 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'sk', 'sl',
                 'son', 'sq', 'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
-        'firefox/family/index.lang'             => $firefox_locales,
-        'firefox/features.lang'                 => $firefox_locales,
-        'firefox/geolocation.lang'              =>
+        'firefox/family/index.lang' => $firefox_locales,
+        'firefox/features.lang'     => $firefox_locales,
+        'firefox/geolocation.lang'  =>
             [
                 'af', 'ar', 'as', 'ast', 'az', 'be', 'bg', 'bn-BD', 'bn-IN',
                 'ca', 'cs', 'cy', 'da', 'de', 'dsb', 'el', 'en-GB',
@@ -707,9 +707,9 @@ $langfiles_subsets = [
                 'sk', 'sv-SE', 'th', 'tr', 'uk', 'vi', 'zh-CN',
                 'zh-TW',
             ],
-        'firefox/os/devices.lang'                => $firefox_os,
-        'firefox/os/faq.lang'                    => $firefox_os,
-        'firefox/os/index.lang'                  =>
+        'firefox/os/devices.lang' => $firefox_os,
+        'firefox/os/faq.lang'     => $firefox_os,
+        'firefox/os/index.lang'   =>
             [
                 'ast', 'cs', 'de', 'en-GB', 'fr', 'it', 'ko', 'pt-BR',
                 'ru', 'uk', 'zh-TW',
@@ -732,7 +732,7 @@ $langfiles_subsets = [
                 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl', 'pt-BR',
                 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
             ],
-        'foundation/annualreport/2011faq.lang'  =>
+        'foundation/annualreport/2011faq.lang' =>
             [
                 'ast', 'cs', 'de', 'el', 'eo', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ja',
@@ -754,8 +754,8 @@ $langfiles_subsets = [
                 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl',
                 'pt-BR', 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
             ],
-        'legal/index.lang'                      => $firefox_os_legal,
-        'lightbeam/lightbeam.lang'              =>
+        'legal/index.lang'         => $firefox_os_legal,
+        'lightbeam/lightbeam.lang' =>
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL',
@@ -763,12 +763,12 @@ $langfiles_subsets = [
                 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'son', 'sq',
                 'sv-SE', 'tr', 'uk', 'zh-CN', 'zh-TW',
             ],
-        'main.lang'                             => $mozillaorg,
-        'mozorg/404.lang'                       => $mozillaorg,
-        'mozorg/about.lang'                     => $mozillaorg,
-        'mozorg/home/index.lang'                => $mozillaorg,
-        'mozorg/mission.lang'                   => $mozillaorg,
-        'mozorg/about/history-details.lang'     =>
+        'main.lang'                         => $mozillaorg,
+        'mozorg/404.lang'                   => $mozillaorg,
+        'mozorg/about.lang'                 => $mozillaorg,
+        'mozorg/home/index.lang'            => $mozillaorg,
+        'mozorg/mission.lang'               => $mozillaorg,
+        'mozorg/about/history-details.lang' =>
             [
                 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
                 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja',
@@ -776,7 +776,7 @@ $langfiles_subsets = [
                 'ru', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
                 'zh-CN', 'zh-TW',
             ],
-        'mozorg/about/history.lang'             =>
+        'mozorg/about/history.lang' =>
             [
                 'af', 'ar', 'bg', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb',
                 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
@@ -786,13 +786,13 @@ $langfiles_subsets = [
                 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk',
                 'uz', 'zh-CN', 'zh-TW',
             ],
-        'mozorg/about/leadership.lang'          =>
+        'mozorg/about/leadership.lang' =>
             [
                 'af', 'cs', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fr',
                 'hsb', 'it', 'ko', 'lt', 'pt-BR', 'pt-PT', 'ro', 'ru',
                 'sk', 'sl', 'sq', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
             ],
-        'mozorg/about/manifesto.lang'           =>
+        'mozorg/about/manifesto.lang' =>
             [
                 'af', 'ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de',
                 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
@@ -802,52 +802,52 @@ $langfiles_subsets = [
                 'ro', 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'tr', 'uk', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
             ],
-        'mozorg/contribute/index.lang'          => $getinvolved_locales,
-        'mozorg/contribute/signup.lang'         => $getinvolved_locales,
-        'mozorg/contribute/stories.lang'        => $getinvolved_locales,
-        'mozorg/newsletters.lang'               => $newsletter_locales,
-        'mozorg/plugincheck.lang'               => $mozillaorg,
-        'mozorg/plugincheck-redesign.lang'      => $mozillaorg,
-        'mozorg/products.lang'                  => $mozillaorg,
-        'privacy/index.lang'                    => $firefox_os,
-        'privacy/principles.lang'               => $mozillaorg,
-        'tabzilla/tabzilla.lang'                => $mozillaorg,
-        'teach/smarton/index.lang'              =>
+        'mozorg/contribute/index.lang'     => $getinvolved_locales,
+        'mozorg/contribute/signup.lang'    => $getinvolved_locales,
+        'mozorg/contribute/stories.lang'   => $getinvolved_locales,
+        'mozorg/newsletters.lang'          => $newsletter_locales,
+        'mozorg/plugincheck.lang'          => $mozillaorg,
+        'mozorg/plugincheck-redesign.lang' => $mozillaorg,
+        'mozorg/products.lang'             => $mozillaorg,
+        'privacy/index.lang'               => $firefox_os,
+        'privacy/principles.lang'          => $mozillaorg,
+        'tabzilla/tabzilla.lang'           => $mozillaorg,
+        'teach/smarton/index.lang'         =>
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'ko',
                 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
-        'teach/smarton/security.lang'           =>
+        'teach/smarton/security.lang' =>
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'ko',
                 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
-        'teach/smarton/surveillance.lang'       =>
+        'teach/smarton/surveillance.lang' =>
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'ko',
                 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
-        'teach/smarton/tracking.lang'           =>
+        'teach/smarton/tracking.lang' =>
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ko', 'ja',
                 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
-        'thunderbird/channel.lang'              =>
+        'thunderbird/channel.lang' =>
             [
                 'cs', 'de', 'en-GB', 'fi', 'fr', 'it', 'ja', 'ko','lt', 'nl',
                 'pt-BR', 'ru', 'uk', 'zh-TW',
             ],
-        'thunderbird/features.lang'             => $thunderbird_locales,
-        'thunderbird/index.lang'                => $thunderbird_locales,
-        'thunderbird/start/release.lang'        => $thunderbird_locales,
+        'thunderbird/features.lang'      => $thunderbird_locales,
+        'thunderbird/index.lang'         => $thunderbird_locales,
+        'thunderbird/start/release.lang' => $thunderbird_locales,
     ],
 
     'about:healthreport' =>
@@ -857,103 +857,103 @@ $langfiles_subsets = [
 
     'engagement' =>
     [
-        'ads/ios_ads_nov2015.lang'              => ['de', 'fr'],
-        'ads/ios_android_apr2016.lang'          => ['de', 'es-ES', 'fr', 'pl'],
-        'snippets/2014/jan2014.lang'            =>
+        'ads/ios_ads_nov2015.lang'     => ['de', 'fr'],
+        'ads/ios_android_apr2016.lang' => ['de', 'es-ES', 'fr', 'pl'],
+        'snippets/2014/jan2014.lang'   =>
             [
                 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hu',
                 'id', 'it', 'ja', 'ko', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
                 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
             ],
-        'snippets/2014/apr2014.lang'            =>
+        'snippets/2014/apr2014.lang' =>
         [
             'cs', 'da', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'fy-NL',
             'hu', 'id', 'it', 'ja', 'ko', 'nb-NO', 'nl', 'pl', 'pt-BR',
             'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'zh-CN',
             'zh-TW',
         ],
-        'snippets/2014/may2014.lang'            =>
+        'snippets/2014/may2014.lang' =>
         [
             'cs', 'da', 'de', 'el', 'es-ES', 'es-MX',
             'fr', 'fy-NL', 'hu', 'id', 'it', 'ja', 'ko',
             'nl', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq',
             'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
         ],
-        'snippets/2014/jun2014.lang'            => [
+        'snippets/2014/jun2014.lang' => [
             'de', 'el', 'es-ES', 'fr', 'hi-IN', 'hu', 'id',
             'it', 'nl', 'pl', 'pt-BR', 'sr',
         ],
-        'snippets/2014/aug2014_a.lang'          => ['es-ES'],
-        'snippets/2014/aug2014_b.lang'          => ['cs'],
-        'snippets/2014/aug2014_c.lang'          => ['de', 'fr', 'pl', 'nl', 'sl', 'sq', 'zh-TW'],
-        'snippets/2014/aug2014_d.lang'          => ['el', 'es-MX', 'it', 'ja', 'pt-BR', 'ru', 'tr', 'sv-SE', 'sr'],
-        'snippets/2014/sep2014_a.lang'          => ['cs', 'de', 'es-ES', 'fr', 'it', 'pl'],
-        'snippets/2014/sep2014_b.lang'          => ['id', 'ja', 'ko', 'nb-NO', 'nl', 'ru', 'zh-CN'],
-        'snippets/2014/sep2014_c.lang'          => ['el', 'hi-IN', 'hu'],
-        'snippets/2014/sep2014_d.lang'          => ['pt-BR'],
-        'snippets/2014/sep2014_e.lang'          => ['sq'],
-        'snippets/2014/nov2014_a.lang'          =>
+        'snippets/2014/aug2014_a.lang' => ['es-ES'],
+        'snippets/2014/aug2014_b.lang' => ['cs'],
+        'snippets/2014/aug2014_c.lang' => ['de', 'fr', 'pl', 'nl', 'sl', 'sq', 'zh-TW'],
+        'snippets/2014/aug2014_d.lang' => ['el', 'es-MX', 'it', 'ja', 'pt-BR', 'ru', 'tr', 'sv-SE', 'sr'],
+        'snippets/2014/sep2014_a.lang' => ['cs', 'de', 'es-ES', 'fr', 'it', 'pl'],
+        'snippets/2014/sep2014_b.lang' => ['id', 'ja', 'ko', 'nb-NO', 'nl', 'ru', 'zh-CN'],
+        'snippets/2014/sep2014_c.lang' => ['el', 'hi-IN', 'hu'],
+        'snippets/2014/sep2014_d.lang' => ['pt-BR'],
+        'snippets/2014/sep2014_e.lang' => ['sq'],
+        'snippets/2014/nov2014_a.lang' =>
             [
                 'da', 'es-MX', 'fy-NL', 'ko', 'nb-NO', 'nn-NO', 'pa-IN',
                 'rm', 'sk', 'sl', 'zh-TW',
             ],
-        'snippets/2014/nov2014_b.lang'          => ['ja'],
-        'snippets/2014/nov2014_c.lang'          => ['es-ES', 'hu'],
-        'snippets/2014/nov2014_d.lang'          => ['de', 'fr', 'it', 'pl', 'pt-BR', 'ru'],
-        'snippets/2014/nov2014_e.lang'          => ['el', 'hi-IN', 'sr'],
-        'snippets/2014/dec2014_a.lang'          => ['de', 'es-ES', 'fr', 'id', 'pt-BR', 'ru'],
-        'snippets/2014/dec2014_c.lang'          => ['sr'],
-        'snippets/2015/jan2015a_b.lang'         => ['el', 'hi-IN', 'hu', 'sr'],
-        'snippets/2015/jan2015a_c.lang'         => ['de', 'es-ES', 'pt-BR'],
-        'snippets/2015/jan2015a_d.lang'         => ['fr', 'pl'],
-        'snippets/2015/jan2015b_a.lang'         => ['de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
-        'snippets/2015/jan2015b_b.lang'         => ['el', 'hu', 'it', 'ja', 'nl'],
-        'snippets/2015/feb2015_a.lang'          => ['de', 'es-ES', 'pt-BR', 'ru'],
-        'snippets/2015/feb2015_b.lang'          => ['fr'],
-        'snippets/2015/feb2015_c.lang'          => ['id', 'it', 'ja', 'nl'],
-        'snippets/2015/feb2015_d.lang'          => ['el', 'hu', 'sr'],
-        'snippets/2015/feb2015_e.lang'          => ['pl'],
-        'snippets/2015/mar2015_a.lang'          => ['de', 'es-ES', 'fr', 'pt-BR', 'ru'],
-        'snippets/2015/mar2015_b.lang'          => ['el', 'hu', 'id', 'it', 'ja', 'nl', 'pl'],
-        'snippets/2015/apr2015.lang'            => ['de', 'es-ES', 'fr', 'pt-BR', 'ru'],
-        'snippets/2015/may2015_a.lang'          => ['de', 'fr', 'ru'],
-        'snippets/2015/may2015_b.lang'          => ['es-ES', 'pt-BR'],
-        'snippets/2015/spring2015.lang'         =>
+        'snippets/2014/nov2014_b.lang'  => ['ja'],
+        'snippets/2014/nov2014_c.lang'  => ['es-ES', 'hu'],
+        'snippets/2014/nov2014_d.lang'  => ['de', 'fr', 'it', 'pl', 'pt-BR', 'ru'],
+        'snippets/2014/nov2014_e.lang'  => ['el', 'hi-IN', 'sr'],
+        'snippets/2014/dec2014_a.lang'  => ['de', 'es-ES', 'fr', 'id', 'pt-BR', 'ru'],
+        'snippets/2014/dec2014_c.lang'  => ['sr'],
+        'snippets/2015/jan2015a_b.lang' => ['el', 'hi-IN', 'hu', 'sr'],
+        'snippets/2015/jan2015a_c.lang' => ['de', 'es-ES', 'pt-BR'],
+        'snippets/2015/jan2015a_d.lang' => ['fr', 'pl'],
+        'snippets/2015/jan2015b_a.lang' => ['de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
+        'snippets/2015/jan2015b_b.lang' => ['el', 'hu', 'it', 'ja', 'nl'],
+        'snippets/2015/feb2015_a.lang'  => ['de', 'es-ES', 'pt-BR', 'ru'],
+        'snippets/2015/feb2015_b.lang'  => ['fr'],
+        'snippets/2015/feb2015_c.lang'  => ['id', 'it', 'ja', 'nl'],
+        'snippets/2015/feb2015_d.lang'  => ['el', 'hu', 'sr'],
+        'snippets/2015/feb2015_e.lang'  => ['pl'],
+        'snippets/2015/mar2015_a.lang'  => ['de', 'es-ES', 'fr', 'pt-BR', 'ru'],
+        'snippets/2015/mar2015_b.lang'  => ['el', 'hu', 'id', 'it', 'ja', 'nl', 'pl'],
+        'snippets/2015/apr2015.lang'    => ['de', 'es-ES', 'fr', 'pt-BR', 'ru'],
+        'snippets/2015/may2015_a.lang'  => ['de', 'fr', 'ru'],
+        'snippets/2015/may2015_b.lang'  => ['es-ES', 'pt-BR'],
+        'snippets/2015/spring2015.lang' =>
             [
                 'de', 'es-ES', 'fr', 'hu', 'it', 'ja',
                 'pl', 'pt-BR', 'ru',
             ],
-        'snippets/2015/jun2015_a.lang'          => ['de', 'fr'],
-        'snippets/2015/jun2015_b.lang'          => ['ja'],
-        'snippets/2015/jun2015_c.lang'          => ['ru'],
-        'snippets/2015/jun2015_d.lang'          => ['es', 'pt-BR'],
-        'snippets/2015/jul2015_a.lang'          => ['de', 'fr', 'pt-BR'],
-        'snippets/2015/jul2015_b.lang'          => ['es', 'ru'],
-        'snippets/2015/jul2015_c.lang'          => ['ar'],
-        'snippets/2015/aug2015_a.lang'          => ['de', 'fr', 'ru'],
-        'snippets/2015/aug2015_b.lang'          => ['es', 'pt-BR'],
-        'snippets/2015/aug2015_c.lang'          => ['el', 'id', 'pl'],
-        'snippets/2015/aug2015_win10.lang'      => ['de', 'es', 'fr', 'hu', 'it', 'ja', 'pl', 'pt-BR', 'ru'],
-        'snippets/2015/sep2015.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
-        'snippets/2015/sep2015_ios.lang'        => ['de'],
-        'snippets/2015/oct2015_a.lang'          => ['de', 'es', 'fr', 'pt-BR', 'ru'],
-        'snippets/2015/oct2015_b.lang'          => ['hu', 'ro'],
-        'snippets/2015/oct2015_c.lang'          => ['it', 'pl'],
-        'snippets/2015/oct2015_mofo.lang'       => ['de'],
-        'snippets/2015/fall2015.lang'           => ['de', 'es', 'fr', 'id', 'it', 'pl', 'pt-BR', 'ru'],
-        'snippets/2015/nov2015_eoy_mofo.lang'   => ['es', 'fr', 'id', 'it', 'pt-BR'],
-        'snippets/2015/nov2015_a.lang'          => ['de', 'es', 'fr', 'pt-BR', 'ru'],
-        'snippets/2015/nov2015_b.lang'          => ['id', 'it', 'pl'],
-        'snippets/2015/dec2015_a.lang'          => ['de', 'es', 'fr', 'pt-BR', 'ru'],
-        'snippets/2015/dec2015_b.lang'          => ['id'],
-        'snippets/2016/jan2016.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
-        'snippets/2016/feb2016.lang'            => ['de', 'es', 'fr', 'ru', 'pt-BR'],
-        'snippets/2016/mar2016.lang'            => ['de', 'es', 'fr', 'id', 'ru', 'pt-BR'],
-        'snippets/2016/apr2016.lang'            => ['de', 'es', 'fr', 'id', 'ru', 'pt-BR'],
-        'snippets/2016/apr2016_b.lang'          => ['pt-BR'],
-        'snippets/2016/may2016_a.lang'          => ['es', 'fr', 'ru', 'pt-BR'],
-        'snippets/2016/may2016_b.lang'          => ['de'],
-        'snippets/2016/jun2016_berec.lang'      => [
+        'snippets/2015/jun2015_a.lang'        => ['de', 'fr'],
+        'snippets/2015/jun2015_b.lang'        => ['ja'],
+        'snippets/2015/jun2015_c.lang'        => ['ru'],
+        'snippets/2015/jun2015_d.lang'        => ['es', 'pt-BR'],
+        'snippets/2015/jul2015_a.lang'        => ['de', 'fr', 'pt-BR'],
+        'snippets/2015/jul2015_b.lang'        => ['es', 'ru'],
+        'snippets/2015/jul2015_c.lang'        => ['ar'],
+        'snippets/2015/aug2015_a.lang'        => ['de', 'fr', 'ru'],
+        'snippets/2015/aug2015_b.lang'        => ['es', 'pt-BR'],
+        'snippets/2015/aug2015_c.lang'        => ['el', 'id', 'pl'],
+        'snippets/2015/aug2015_win10.lang'    => ['de', 'es', 'fr', 'hu', 'it', 'ja', 'pl', 'pt-BR', 'ru'],
+        'snippets/2015/sep2015.lang'          => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'snippets/2015/sep2015_ios.lang'      => ['de'],
+        'snippets/2015/oct2015_a.lang'        => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'snippets/2015/oct2015_b.lang'        => ['hu', 'ro'],
+        'snippets/2015/oct2015_c.lang'        => ['it', 'pl'],
+        'snippets/2015/oct2015_mofo.lang'     => ['de'],
+        'snippets/2015/fall2015.lang'         => ['de', 'es', 'fr', 'id', 'it', 'pl', 'pt-BR', 'ru'],
+        'snippets/2015/nov2015_eoy_mofo.lang' => ['es', 'fr', 'id', 'it', 'pt-BR'],
+        'snippets/2015/nov2015_a.lang'        => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'snippets/2015/nov2015_b.lang'        => ['id', 'it', 'pl'],
+        'snippets/2015/dec2015_a.lang'        => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'snippets/2015/dec2015_b.lang'        => ['id'],
+        'snippets/2016/jan2016.lang'          => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'snippets/2016/feb2016.lang'          => ['de', 'es', 'fr', 'ru', 'pt-BR'],
+        'snippets/2016/mar2016.lang'          => ['de', 'es', 'fr', 'id', 'ru', 'pt-BR'],
+        'snippets/2016/apr2016.lang'          => ['de', 'es', 'fr', 'id', 'ru', 'pt-BR'],
+        'snippets/2016/apr2016_b.lang'        => ['pt-BR'],
+        'snippets/2016/may2016_a.lang'        => ['es', 'fr', 'ru', 'pt-BR'],
+        'snippets/2016/may2016_b.lang'        => ['de'],
+        'snippets/2016/jun2016_berec.lang'    => [
             'bg', 'cs', 'de', 'en-GB', 'es-ES', 'fr', 'it',
             'nl', 'ro', 'sv-SE', 'sl',
         ],
@@ -976,9 +976,9 @@ $langfiles_subsets = [
 
     'appstores' => [
         // Added: ar, see https://bugzilla.mozilla.org/show_bug.cgi?id=1259200
-        'android_release.lang'                   => array_merge($google_play_target, ['ar']),
-        'apple_description_release.lang'         => $apple_store_target,
-        'apple_screenshots_v3.lang'              => [
+        'android_release.lang'           => array_merge($google_play_target, ['ar']),
+        'apple_description_release.lang' => $apple_store_target,
+        'apple_screenshots_v3.lang'      => [
             'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
         ],
         'description_beta_page.lang'             => $google_play_target,

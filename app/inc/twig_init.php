@@ -34,12 +34,11 @@ $getViewLink = new Twig_SimpleFunction('getViewLink', function ($url) {
 });
 
 $highlightPythonVar = new Twig_SimpleFunction('highlightPythonVar', function ($text) {
-
     return Langchecker\Utils::highlightPythonVar($text);
 });
 
 $perfInformationFunction = new Twig_SimpleFunction('displayPerformanceInformation', function () {
-    $time   = 'Elapsed time (s): ' . round((microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]), 4);
+    $time = 'Elapsed time (s): ' . round((microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]), 4);
     $memory = 'Memory usage (MB): ' . round(memory_get_peak_usage(true) / (1024 * 1024), 2);
 
     if (defined('DEBUG') && DEBUG) {

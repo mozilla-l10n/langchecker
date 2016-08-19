@@ -662,7 +662,7 @@ class Project extends atoum\test
                     'website'  => '',
                 ],
                 [
-                    'file'  => 'listlocales',
+                    'file' => 'listlocales',
                 ],
             ],
             [
