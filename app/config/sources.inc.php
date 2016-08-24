@@ -148,7 +148,6 @@ $mozillaorg_lang = [
     'mozorg/about.lang',
     'mozorg/about/history-details.lang',
     'mozorg/about/history.lang',
-    'mozorg/about/leadership.lang',
     'mozorg/about/manifesto.lang',
     'mozorg/contribute/index.lang',
     'mozorg/contribute/signup.lang',
@@ -220,7 +219,6 @@ $lang_flags['www.mozilla.org'] = [
     'legal/index.lang'                        => [ 'critical' => ['all'] ],
     'lightbeam/lightbeam.lang'                => [ 'opt-in' => ['all'] ],
     'main.lang'                               => [ 'critical' => ['all'] ],
-    'mozorg/about/leadership.lang'            => [ 'opt-in' => ['all'] ],
     'mozorg/about/manifesto.lang'             => [ 'opt-in' => ['all'] ],
     'mozorg/about/history.lang'               => [ 'opt-in' => ['all'] ],
     'mozorg/about/history-details.lang'       => [ 'opt-in' => ['all'] ],
@@ -785,12 +783,6 @@ $langfiles_subsets = [
                 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'sk',
                 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk',
                 'uz', 'zh-CN', 'zh-TW',
-            ],
-        'mozorg/about/leadership.lang' =>
-            [
-                'af', 'cs', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fr',
-                'hsb', 'it', 'ko', 'lt', 'pt-BR', 'pt-PT', 'ro', 'ru',
-                'sk', 'sl', 'sq', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/manifesto.lang' =>
             [
