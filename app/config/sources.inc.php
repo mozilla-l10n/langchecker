@@ -358,7 +358,11 @@ $addons_lang = [
     'privacycoach.lang',
     'worldcup.lang',
 ];
-$lang_flags['add-ons'] = [];
+$lang_flags['add-ons'] = [
+  'homefeeds.lang'    => [ 'obsolete' => ['all'] ],
+  'privacycoach.lang' => [ 'obsolete' => ['all'] ],
+  'worldcup.lang'     => [ 'obsolete' => ['all'] ],
+];
 
 $appstores_lang = [
     'description_beta_page.lang',
