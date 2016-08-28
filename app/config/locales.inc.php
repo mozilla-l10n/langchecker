@@ -12,7 +12,7 @@ $mozilla = [
     'eo', 'es', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et', 'eu',
     'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gn',
     'gu-IN', 'ha', 'he', 'hi-IN', 'hr', 'hsb', 'hto', 'hu',
-    'hy-AM', 'id', 'ig', 'is', 'it', 'ja', 'ka', 'kk', 'km',
+    'hy-AM', 'id', 'ig', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'km',
     'kn', 'ko', 'kok', 'ks', 'lij', 'ln', 'lo', 'lt', 'ltg',
     'lv', 'mai', 'mg', 'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO',
     'ne-NP', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN', 'pbb', 'pl',
@@ -136,7 +136,7 @@ $newsletter_locales = ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'];
 $locamotion_locales = [
     'ach', 'af', 'bm', 'bn-BD', 'br', 'ca', 'cak', 'cy',
     'ee', 'en-ZA', 'ff', 'ga-IE', 'gn', 'ha', 'hi-IN',
-    'hto', 'ig', 'kk', 'kok', 'ks', 'ln', 'lt',
+    'hto', 'ig', 'kab', 'kk', 'kok', 'ks', 'ln', 'lt',
     'lv', 'mai', 'mg', 'ne-NP', 'nb-NO', 'nn-NO',
     'oc', 'or', 'pbb', 'qvi', 'sat', 'son', 'sw', 'ta',
     'tl', 'tn', 'trs', 'ur', 'wo', 'xh', 'yo', 'zu',
