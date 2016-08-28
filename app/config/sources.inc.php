@@ -529,7 +529,7 @@ $ios_landing_page = array_unique(array_merge(
 $android_landing_page = array_unique(array_merge(
     $android_locales,
     [
-        'af', 'ast', 'bn-BD', 'cak', 'es-CL', 'fa', 'sat',
+        'af', 'ast', 'bn-BD', 'cak', 'es-CL', 'fa', 'sat', 'sr',
     ]
 ));
 
@@ -672,7 +672,7 @@ $langfiles_subsets = [
                 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fi', 'fr',
                 'fy-NL', 'hsb', 'it', 'ja', 'ko', 'lt', 'nl',
                 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'sk', 'sl',
-                'son', 'sq', 'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
+                'son', 'sq', 'sr', 'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
         'firefox/family/index.lang' => $firefox_locales,
         'firefox/features.lang'     => $firefox_locales,
@@ -758,7 +758,7 @@ $langfiles_subsets = [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL',
                 'hi-IN', 'hsb', 'it', 'ko', 'ja', 'km', 'lt', 'ms', 'nl',
-                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'son', 'sq',
+                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'son', 'sq', 'sr',
                 'sv-SE', 'tr', 'uk', 'zh-CN', 'zh-TW',
             ],
         'main.lang'                         => $mozillaorg,
