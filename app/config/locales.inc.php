@@ -37,7 +37,7 @@ $fxos_locales = [
 
 // List of locales only working on Fennec
 $fennec_locales = [
-    'cak', 'hto', 'lo', 'my', 'pbb', 'qvi', 'trs',
+    'cak', 'hto', 'lo', 'pbb', 'qvi', 'trs',
 ];
 
 /*
