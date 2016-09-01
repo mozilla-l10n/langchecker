@@ -262,6 +262,7 @@ $lang_flags['about:healthreport'] = [
 $engagement_lang = [
     'ads/ios_ads_nov2015.lang',
     'ads/ios_android_apr2016.lang',
+    'heartbeat/sep_2016.lang',
     'snippets/2014/jan2014.lang',
     'snippets/2014/apr2014.lang',
     'snippets/2014/may2014.lang',
@@ -341,6 +342,7 @@ $engagement_lang = [
 ];
 $lang_flags['engagement'] = [
     'ads/ios_android_apr2016.lang'     => [ 'critical' => ['all'] ],
+    'heartbeat/sep_2016.lang'          => [ 'critical' => ['all'] ],
     'snippets/2016/jan2016.lang'       => [ 'critical' => ['all'] ],
     'snippets/2016/feb2016.lang'       => [ 'critical' => ['all'] ],
     'snippets/2016/mar2016.lang'       => [ 'critical' => ['all'] ],
@@ -422,6 +424,7 @@ $no_active_tag = [
 ];
 
 $deadline = [
+    'ads/ios_ads_nov2015.lang'              => '2015-11-18',
     'ads/ios_android_apr2016.lang'          => '2016-04-22',
     'android_release.lang'                  => '2016-04-30', // appstores project
     'apple_description_release.lang'        => '2016-03-30', // appstores project
@@ -448,7 +451,7 @@ $deadline = [
     'firefox/tracking-protection-tour.lang' => '2016-02-29',
     'firefox/whatsnew_42.lang'              => '2015-11-02',
     'firefox/win10-welcome.lang'            => '2016-01-25',
-    'ads/ios_ads_nov2015.lang'              => '2015-11-18',
+    'heartbeat/sep_2016.lang'               => '2016-09-12',
     'legal/index.lang'                      => '2016-02-18',
     'main.lang'                             => '2016-08-23',
     'mozorg/about.lang'                     => '2015-03-26',
@@ -459,30 +462,12 @@ $deadline = [
     'mozorg/newsletters.lang'               => '2016-08-23',
     'mozorg/plugincheck-redesign.lang'      => '2016-08-01',
     'privacy/principles.lang'               => '2015-09-15',
-    'snippets/2015/fall2015.lang'           => '2015-11-02',
-    'snippets/2015/nov2015_eoy_mofo.lang'   => '2015-11-02',
-    'snippets/2015/nov2015_a.lang'          => '2015-11-14',
-    'snippets/2015/nov2015_b.lang'          => '2015-11-14',
-    'snippets/2015/dec2015_a.lang'          => '2015-12-14',
-    'snippets/2015/dec2015_b.lang'          => '2015-12-14',
-    'snippets/2016/jan2016.lang'            => '2016-01-14',
-    'snippets/2016/feb2016.lang'            => '2016-02-15',
-    'snippets/2016/mar2016.lang'            => '2016-03-01',
-    'snippets/2016/apr2016.lang'            => '2016-04-04',
-    'snippets/2016/apr2016_b.lang'          => '2016-04-04',
-    'snippets/2016/may2016_a.lang'          => '2016-05-09',
-    'snippets/2016/may2016_b.lang'          => '2016-05-09',
-    'snippets/2016/jun2016_berec.lang'      => '2016-07-18',
     'surveys/survey_hello_fx42.lang'        => '2016-06-03',
     'teach/smarton/index.lang'              => '2015-12-31',
     'teach/smarton/security.lang'           => '2015-11-17',
     'teach/smarton/surveillance.lang'       => '2015-12-31',
     'teach/smarton/tracking.lang'           => '2015-11-02',
     'thunderbird/start/release.lang'        => '2016-08-01',
-    'tiles/2015/tiles_sep2015.lang'         => '2015-09-10',
-    'tiles/2015/tiles_oct2015.lang'         => '2015-10-11',
-    'tiles/2015/tiles_nov2015.lang'         => '2015-11-02',
-    'tiles/2016/tiles_jan2016.lang'         => '2016-01-14',
     'whatsnew/whatsnew_android_48.lang'     => '2016-08-03', // appstores project
     'whatsnew/whatsnew_ios_5_0.lang'        => '2016-07-27', // appstores project
 ];
@@ -855,6 +840,11 @@ $langfiles_subsets = [
     [
         'ads/ios_ads_nov2015.lang'     => ['de', 'fr'],
         'ads/ios_android_apr2016.lang' => ['de', 'es-ES', 'fr', 'pl'],
+        'heartbeat/sep_2016.lang'      =>
+            [
+                'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja',
+                'pl', 'pt-BR', 'ru', 'zh-TW',
+            ],
         'snippets/2014/jan2014.lang'   =>
             [
                 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hu',
