@@ -843,7 +843,7 @@ $langfiles_subsets = [
         'heartbeat/2016/sep2016.lang'  =>
             [
                 'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja',
-                'pl', 'pt-BR', 'ru', 'zh-TW',
+                'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
             ],
         'snippets/2014/jan2014.lang' =>
             [
