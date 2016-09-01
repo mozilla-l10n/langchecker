@@ -845,7 +845,7 @@ $langfiles_subsets = [
                 'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja',
                 'pl', 'pt-BR', 'ru', 'zh-TW',
             ],
-        'snippets/2014/jan2014.lang'   =>
+        'snippets/2014/jan2014.lang' =>
             [
                 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'hu',
                 'id', 'it', 'ja', 'ko', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
