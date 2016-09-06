@@ -518,7 +518,7 @@ $ios_landing_page = array_unique(array_merge(
 $android_landing_page = array_unique(array_merge(
     $android_locales,
     [
-        'af', 'ast', 'bn-BD', 'cak', 'es-CL', 'fa', 'sat', 'sr',
+        'af', 'ast', 'bn-BD', 'cak', 'es-CL', 'fa', 'kab', 'sat', 'sr',
     ]
 ));
 
@@ -698,8 +698,8 @@ $langfiles_subsets = [
         'firefox/os/faq.lang'     => $firefox_os,
         'firefox/os/index.lang'   =>
             [
-                'ast', 'cs', 'de', 'en-GB', 'fr', 'it', 'ko', 'pt-BR',
-                'ru', 'uk', 'zh-TW',
+                'ast', 'cs', 'de', 'en-GB', 'fr', 'it', 'kab', 'ko',
+                'pt-BR', 'ru', 'uk', 'zh-TW',
             ],
         'firefox/os/index-new.lang'              => $firefox_os_consumer,
         'firefox/os/tv.lang'                     => $firefox_os_tv,
