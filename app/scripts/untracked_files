@@ -35,17 +35,18 @@ $current_website = $lang_based_sites[$cli_website];
     habit of localizing pages on their own, and we don't want to remove them.
 */
 $ignored_files = [
+    'firefox/nightly_whatsnew.lang',
+    'legal/terms/acceptable-use.lang',
+    'legal/terms/firefox-hello.lang',
+    'legal/terms/mozilla.lang',
     'newsletter/confirm.lang',
     'newsletter/existing.lang',
     'newsletter/mozilla-and-you.lang',
     'newsletter/updated.lang',
-    'legal/terms/acceptable-use.lang',
-    'legal/terms/firefox-hello.lang',
-    'legal/terms/mozilla.lang',
     'privacy/notices/firefox-hello.lang',
     'privacy/notices/firefox.lang',
 ];
-$ignored_locales = ['hi', 'ja'];
+$ignored_locales = ['ja'];
 
 // Create list of locales to analyze
 if ($cli_locale == 'all') {
@@ -56,14 +57,12 @@ if ($cli_locale == 'all') {
     $locale_list = array_diff($locale_list, $ignored_locales);
 } elseif ($cli_locale == 'locamotion') {
     $locale_list = $locamotion_locales;
+    $locale_list = array_diff($locale_list, $ignored_locales);
 } else {
     if ($cli_locale != Project::getReferenceLocale($current_website)) {
         // It's a standard locale, check if it's supported
         if (! Project::isSupportedLocale($current_website, $cli_locale)) {
             Utils::logger("Unsupported locale #{$cli_locale}.", 'quit');
-        }
-        if (in_array($cli_locale, $ignored_locales)) {
-            Utils::logger("This locale #{$cli_locale} is currently ignored.", 'quit');
         }
     }
     $locale_list = [$cli_locale];
@@ -87,8 +86,8 @@ foreach ($filtered_iterator as $file_name => $file) {
     $relative_path = Utils::leftStrip($file_name, $website_path);
     $toplevel_folder = explode(DIRECTORY_SEPARATOR, $relative_path)[0];
 
-    // Ignore file if is inside an ignored locale
-    if (in_array($toplevel_folder, $ignored_locales)) {
+    // Ignore file if is not inside the list of locales I'm interested in
+    if (! in_array($toplevel_folder, $locale_list)) {
         continue;
     }
     if (! in_array($toplevel_folder, $folders)) {
