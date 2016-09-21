@@ -138,7 +138,7 @@ $locamotion_locales = [
     'en-ZA', 'ff', 'ga-IE', 'gn', 'ha', 'hi-IN', 'hto', 'ig',
     'kk', 'kok', 'ks', 'ln', 'lt', 'lv', 'mai', 'mg', 'nb-NO',
     'ne-NP', 'nn-NO', 'oc', 'or', 'pbb', 'qvi', 'sat', 'son',
-    'sw', 'ta', 'tn', 'trs', 'ur', 'wo', 'xh', 'yo', 'zu', 
+    'sw', 'ta', 'tn', 'trs', 'ur', 'wo', 'xh', 'yo', 'zu',
 ];
 
 /*
