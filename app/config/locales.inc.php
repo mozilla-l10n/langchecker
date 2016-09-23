@@ -37,7 +37,8 @@ $fennec_locales = [
 */
 $firefox_locales = array_diff(
     $mozilla,
-    $fennec_locales
+    $fennec_locales,
+    ['es']
 );
 
 // All locales working on Firefox desktop + Android

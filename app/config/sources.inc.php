@@ -744,7 +744,7 @@ $langfiles_subsets = [
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL',
                 'hi-IN', 'hsb', 'it', 'kab', 'ko', 'ja', 'km', 'lt', 'ms', 'nl',
                 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq', 'sr',
-                'sv-SE', 'tl', 'tr', 'uk', 'zh-CN', 'zh-TW',
+                'sv-SE', 'tr', 'uk', 'zh-CN', 'zh-TW',
             ],
         'main.lang'                         => $mozillaorg,
         'mozorg/404.lang'                   => $mozillaorg,
