@@ -46,7 +46,7 @@ $ignored_files = [
     'privacy/notices/firefox-hello.lang',
     'privacy/notices/firefox.lang',
 ];
-$ignored_locales = ['hi', 'ja'];
+$ignored_locales = ['hi', 'ja', 'surveygizmo'];
 
 // Create list of locales to analyze
 if ($cli_locale == 'all') {
