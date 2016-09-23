@@ -142,7 +142,12 @@ foreach ($file_list as $single_file) {
 
 // Check if there are entire locales unsupported to remove
 if (count($locale_list) > 0) {
-    $local_folders = array_filter(glob('*'), 'is_dir');
+    // Get all folders in the requested project
+    $local_folders = array_filter(glob($website_path . '*'), 'is_dir');
+    $path_length = strlen($website_path);
+    $local_folders = array_map(function($value) use ($path_length) {
+        return substr($value, $path_length);
+    }, $local_folders);
     // Don't remove ignored locales
     $local_folders = array_diff($local_folders, $ignored_locales);
     $untracked_files += array_diff($local_folders, $locale_list);
