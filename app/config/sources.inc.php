@@ -62,12 +62,6 @@ $repositories = [
         'repository'  => 'https://github.com/mozilla-l10n/engagement-l10n',
         'vcs'         => 'git',
     ],
-    'add-ons' => [
-        'local_path'  => $repo_local_path('add-ons', 'addons-l10n'),
-        'public_path' => 'https://github.com/mozilla-l10n/addons-l10n/tree/master/',
-        'repository'  => 'https://github.com/mozilla-l10n/addons-l10n',
-        'vcs'         => 'git',
-    ],
     'appstores' => [
         'local_path'  => $repo_local_path('appstores', 'appstores'),
         'public_path' => 'https://github.com/mozilla-l10n/appstores/tree/master/',
@@ -353,17 +347,6 @@ $lang_flags['engagement'] = [
     ],
 ];
 
-$addons_lang = [
-    'homefeeds.lang',
-    'privacycoach.lang',
-    'worldcup.lang',
-];
-$lang_flags['add-ons'] = [
-  'homefeeds.lang'    => [ 'obsolete' => ['all'] ],
-  'privacycoach.lang' => [ 'obsolete' => ['all'] ],
-  'worldcup.lang'     => [ 'obsolete' => ['all'] ],
-];
-
 $appstores_lang = [
     'description_beta_page.lang',
     'apple_description_release.lang',
@@ -599,18 +582,6 @@ $sites =
         'en-US', // source locale
         $repositories['engagement']['public_path'],
         $lang_flags['engagement'],
-        'lang',
-    ],
-
-    7 => [
-        'add-ons',
-        $repositories['add-ons']['local_path'],
-        '',
-        $addons_locales,
-        $addons_lang,
-        'en-US', // source locale
-        $repositories['add-ons']['public_path'],
-        $lang_flags['add-ons'],
         'lang',
     ],
 
@@ -948,12 +919,6 @@ $langfiles_subsets = [
         'tiles/2015/tiles_oct2015.lang'         => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'tiles/2015/tiles_nov2015.lang'         => ['de', 'es', 'fr', 'id', 'it', 'pl', 'pt-BR', 'ru'],
         'tiles/2016/tiles_jan2016.lang'         => ['de', 'es', 'fr', 'id', 'it', 'pl', 'pt-BR', 'ru'],
-    ],
-
-    'add-ons' => [
-        'homefeeds.lang'    => ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'ko', 'pt-BR'],
-        'privacycoach.lang' => $addons_locales,
-        'worldcup.lang'     => ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'ko', 'pt-BR'],
     ],
 
     'appstores' => [
