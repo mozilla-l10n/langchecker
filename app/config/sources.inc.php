@@ -478,13 +478,11 @@ $addons_locales = [
 ];
 
 $firefox_os = [
-    'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca' , 'cs',
-    'de', 'ee', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
-    'fa', 'ff', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
-    'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mg', 'mk', 'my', 'nl',
+    'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de', 'el',
+    'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'ff', 'fr', 'fy-NL',
+    'hi-IN', 'hr', 'hu', 'id', 'it', 'ja', 'ko', 'mk', 'my', 'nl',
     'pl', 'pt-BR', 'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE',
-    'sw', 'ta', 'tl', 'tn', 'wo', 'xh', 'yo', 'zh-CN',
-    'zh-TW', 'zu',
+    'ta', 'tl', 'xh', 'zh-CN', 'zh-TW', 'zu',
 ];
 
 /*
@@ -517,7 +515,7 @@ $ios_landing_page = array_unique(array_merge(
 $android_landing_page = array_unique(array_merge(
     $android_locales,
     [
-        'af', 'ast', 'bg', 'bn-BD', 'cak', 'es-CL', 'fa', 'kab', 'sat', 'sr',
+        'af', 'ast', 'bg', 'bn-BD', 'cak', 'es-CL', 'fa', 'kab', 'sr',
     ]
 ));
 
@@ -533,7 +531,7 @@ $privacy_tour_locales = [
 ];
 
 $startpage36 = [
-    'af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
+    'af', 'ar', 'as', 'ast', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
     'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-ES', 'es-MX',
     'et', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN',
     'he', 'hi-IN', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko',
@@ -660,21 +658,21 @@ $langfiles_subsets = [
             [
                 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fi', 'fr',
                 'fy-NL', 'hsb', 'it', 'ja', 'kab', 'ko', 'lt', 'nl',
-                'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'sk', 'sl',
+                'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl',
                 'son', 'sq', 'sr', 'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
         'firefox/family/index.lang' => $firefox_locales,
         'firefox/features.lang'     => $firefox_locales,
         'firefox/geolocation.lang'  =>
             [
-                'af', 'ar', 'as', 'ast', 'az', 'be', 'bg', 'bn-BD', 'bn-IN',
+                'af', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD', 'bn-IN',
                 'ca', 'cs', 'cy', 'da', 'de', 'dsb', 'el', 'en-GB',
                 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et', 'eu',
                 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl',
                 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM',
                 'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'kn', 'ko', 'lt',
                 'lv', 'mk', 'ml', 'mr', 'nb-NO', 'nl', 'nn-NO', 'oc',
-                'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sat',
+                'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru',
                 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta',
                 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
             ],
@@ -745,8 +743,8 @@ $langfiles_subsets = [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL',
                 'hi-IN', 'hsb', 'it', 'kab', 'ko', 'ja', 'km', 'lt', 'ms', 'nl',
-                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'son', 'sq', 'sr',
-                'sv-SE', 'tr', 'uk', 'zh-CN', 'zh-TW',
+                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq', 'sr',
+                'sv-SE', 'tl', 'tr', 'uk', 'zh-CN', 'zh-TW',
             ],
         'main.lang'                         => $mozillaorg,
         'mozorg/404.lang'                   => $mozillaorg,
@@ -758,7 +756,7 @@ $langfiles_subsets = [
                 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
                 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja', 'kab',
                 'km', 'ko', 'lt', 'nl', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
-                'ru', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
+                'ru', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
                 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/history.lang' =>
@@ -767,7 +765,7 @@ $langfiles_subsets = [
                 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
                 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl', 'pa-IN',
-                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'sk',
+                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk',
                 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk',
                 'uz', 'zh-CN', 'zh-TW',
             ],
@@ -778,7 +776,7 @@ $langfiles_subsets = [
                 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'gd', 'gl',
                 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it', 'ja', 'kab',
                 'km', 'ko', 'lt', 'mk', 'ms', 'nl', 'pl', 'pt-BR', 'pt-PT',
-                'ro', 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
+                'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'tr', 'uk', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
             ],
         'mozorg/contribute/index.lang'     => $getinvolved_locales,
