@@ -19,8 +19,8 @@ $command_help = "untracked_files - List local lang files not tracked by langchec
 require_once __DIR__ . '/../inc/cli_init.php';
 
 // User provided variables
-$cli_website   = Utils::getCliParam(1, $argv, '0');   // Which website are we looking at? Default www.mozilla.org
-$cli_locale    = Utils::getCliParam(2, $argv, 'all'); // Which locale are we analyzing? Default all locales
+$cli_website = Utils::getCliParam(1, $argv, '0');   // Which website are we looking at? Default www.mozilla.org
+$cli_locale = Utils::getCliParam(2, $argv, 'all'); // Which locale are we analyzing? Default all locales
 $absolute_path = Utils::getCliParam(3, $argv, '');    // Should return absolute paths?
 
 $lang_based_sites = Project::getWebsitesByDataType($sites, 'lang');
@@ -46,7 +46,7 @@ $ignored_files = [
     'privacy/notices/firefox-hello.lang',
     'privacy/notices/firefox.lang',
 ];
-$ignored_locales = ['ja'];
+$ignored_locales = ['hi', 'ja', 'surveygizmo'];
 
 // Create list of locales to analyze
 if ($cli_locale == 'all') {
@@ -115,7 +115,6 @@ $untracked_files = [];
 $supported_files = Project::getSupportedFiles($current_website);
 
 $get_file_path = function ($file_info) use ($absolute_path) {
-
     return $absolute_path != '' ?
         $file_info['full_path'] :
         $file_info['locale'] . DIRECTORY_SEPARATOR . $file_info['relative_path'];
@@ -138,6 +137,19 @@ foreach ($file_list as $single_file) {
             $untracked_files[] = $get_file_path($single_file);
         }
     }
+}
+
+// Check if there are entire locales unsupported to remove
+if (count($locale_list) > 0) {
+    // Get all folders in the requested project
+    $local_folders = array_filter(glob($website_path . '*'), 'is_dir');
+    $path_length = strlen($website_path);
+    $local_folders = array_map(function ($value) use ($path_length) {
+        return substr($value, $path_length);
+    }, $local_folders);
+    // Don't remove ignored locales
+    $local_folders = array_diff($local_folders, $ignored_locales);
+    $untracked_files += array_diff($local_folders, $locale_list);
 }
 
 // Sort and remove duplicates

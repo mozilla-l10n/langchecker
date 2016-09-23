@@ -6,20 +6,16 @@
     new locales.
 */
 $mozilla = [
-    'ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg',
-    'bm', 'bn-BD', 'bn-IN', 'br', 'brx', 'bs', 'ca', 'cak',
-    'cs', 'cy', 'da', 'de', 'dsb', 'ee', 'el', 'en-GB', 'en-ZA',
-    'eo', 'es', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et', 'eu',
-    'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gn',
-    'gu-IN', 'ha', 'he', 'hi-IN', 'hr', 'hsb', 'hto', 'hu',
-    'hy-AM', 'id', 'ig', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'km',
-    'kn', 'ko', 'kok', 'ks', 'lij', 'ln', 'lo', 'lt', 'ltg',
-    'lv', 'mai', 'mg', 'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO',
-    'ne-NP', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN', 'pbb', 'pl',
-    'pt-BR', 'pt-PT', 'qvi', 'rm', 'ro', 'ru', 'sat', 'si',
-    'sk', 'sl', 'son', 'sq', 'sr', 'sr-Latn', 'sv-SE', 'sw',
-    'ta', 'te', 'th', 'tl', 'tn', 'tr', 'trs', 'uk',
-    'ur', 'uz', 'vi', 'wo', 'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
+    'ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD', 'bn-IN', 'br',
+    'bs', 'ca', 'cak', 'cs', 'cy', 'da', 'de', 'dsb', 'el', 'en-GB', 'en-ZA',
+    'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'es', 'et', 'eu', 'fa', 'ff',
+    'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gn', 'gu-IN', 'he', 'hi-IN',
+    'hr', 'hsb', 'hto', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ka', 'kab',
+    'kk', 'km', 'kn', 'ko', 'lij', 'lo', 'lt', 'ltg', 'lv', 'mai', 'mk', 'ml',
+    'mr', 'ms', 'my', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN',
+    'pbb', 'pl', 'pt-BR', 'pt-PT', 'qvi', 'rm', 'ro', 'ru', 'si', 'sk', 'sl',
+    'son', 'sq', 'sr', 'sv-SE', 'ta', 'te', 'th', 'tl', 'tr', 'trs', 'uk',
+    'ur', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW', 'zu',
 ];
 sort($mozilla);
 
@@ -27,13 +23,7 @@ sort($mozilla);
     $mozillaorg is the list of locales supported on mozilla.org
     Remove locales not supported on mozilla.org from the full array
 */
-$mozillaorg = array_diff($mozilla, ['en-ZA', 'es', 'sr-Latn']);
-
-// List of locales only working on Firefox OS
-$fxos_locales = [
-    'bm', 'ee', 'es', 'ha', 'ig', 'ln', 'mg', 'sr-Latn',
-    'sw', 'tl', 'tn', 'wo', 'yo',
-];
+$mozillaorg = array_diff($mozilla, ['es']);
 
 // List of locales only working on Fennec
 $fennec_locales = [
@@ -47,8 +37,8 @@ $fennec_locales = [
 */
 $firefox_locales = array_diff(
     $mozilla,
-    $fxos_locales,
-    $fennec_locales
+    $fennec_locales,
+    ['es']
 );
 
 // All locales working on Firefox desktop + Android
@@ -94,7 +84,7 @@ $apple_store_target = array_intersect($ios_locales, $apple_store_locales);
     https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L16
 */
 $android_locales = [
-    'an', 'as', 'az', 'be', 'bn-IN', 'br', 'ca', 'cs', 'cy', 'da', 'de',
+    'an', 'as', 'az', 'bn-IN', 'br', 'ca', 'cs', 'cy', 'da', 'de',
     'dsb', 'en-GB', 'en-ZA', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu',
     'fi', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN', 'hi-IN', 'hr',
     'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt',
@@ -120,7 +110,7 @@ $google_play_target = array_intersect($android_locales, $google_play_locales);
     Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
 */
 $thunderbird_locales = [
-    'ar', 'ast', 'az', 'be', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy',
+    'ar', 'ast', 'az', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy',
     'da', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-ES', 'et',
     'eu', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hr',
     'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ko', 'lt',
@@ -136,8 +126,8 @@ $newsletter_locales = ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'];
 $locamotion_locales = [
     'ach', 'af', 'bm', 'bn-BD', 'br', 'ca', 'cak', 'cy', 'ee',
     'en-ZA', 'ff', 'ga-IE', 'gn', 'ha', 'hi-IN', 'hto', 'ig',
-    'kk', 'kok', 'ks', 'ln', 'lt', 'lv', 'mai', 'mg', 'nb-NO',
-    'ne-NP', 'nn-NO', 'oc', 'or', 'pbb', 'qvi', 'sat', 'son',
+    'kk', 'ln', 'lt', 'lv', 'mai', 'mg', 'nb-NO',
+    'ne-NP', 'nn-NO', 'oc', 'or', 'pbb', 'qvi', 'son',
     'sw', 'ta', 'tn', 'trs', 'ur', 'wo', 'xh', 'yo', 'zu',
 ];
 

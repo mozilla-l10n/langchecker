@@ -62,12 +62,6 @@ $repositories = [
         'repository'  => 'https://github.com/mozilla-l10n/engagement-l10n',
         'vcs'         => 'git',
     ],
-    'add-ons' => [
-        'local_path'  => $repo_local_path('add-ons', 'addons-l10n'),
-        'public_path' => 'https://github.com/mozilla-l10n/addons-l10n/tree/master/',
-        'repository'  => 'https://github.com/mozilla-l10n/addons-l10n',
-        'vcs'         => 'git',
-    ],
     'appstores' => [
         'local_path'  => $repo_local_path('appstores', 'appstores'),
         'public_path' => 'https://github.com/mozilla-l10n/appstores/tree/master/',
@@ -353,17 +347,6 @@ $lang_flags['engagement'] = [
     ],
 ];
 
-$addons_lang = [
-    'homefeeds.lang',
-    'privacycoach.lang',
-    'worldcup.lang',
-];
-$lang_flags['add-ons'] = [
-  'homefeeds.lang'    => [ 'obsolete' => ['all'] ],
-  'privacycoach.lang' => [ 'obsolete' => ['all'] ],
-  'worldcup.lang'     => [ 'obsolete' => ['all'] ],
-];
-
 $appstores_lang = [
     'description_beta_page.lang',
     'apple_description_release.lang',
@@ -478,13 +461,11 @@ $addons_locales = [
 ];
 
 $firefox_os = [
-    'af', 'ar', 'bg', 'bm', 'bn-BD', 'bn-IN', 'ca' , 'cs',
-    'de', 'ee', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
-    'fa', 'ff', 'fr', 'fy-NL', 'ha', 'hi-IN', 'hr', 'hu',
-    'id', 'ig', 'it', 'ja', 'ko', 'ln', 'mg', 'mk', 'my', 'nl',
+    'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de', 'el',
+    'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'ff', 'fr', 'fy-NL',
+    'hi-IN', 'hr', 'hu', 'id', 'it', 'ja', 'ko', 'mk', 'my', 'nl',
     'pl', 'pt-BR', 'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE',
-    'sw', 'ta', 'tl', 'tn', 'wo', 'xh', 'yo', 'zh-CN',
-    'zh-TW', 'zu',
+    'ta', 'tl', 'xh', 'zh-CN', 'zh-TW', 'zu',
 ];
 
 /*
@@ -517,7 +498,7 @@ $ios_landing_page = array_unique(array_merge(
 $android_landing_page = array_unique(array_merge(
     $android_locales,
     [
-        'af', 'ast', 'bg', 'bn-BD', 'cak', 'es-CL', 'fa', 'kab', 'sat', 'sr',
+        'af', 'ast', 'bg', 'bn-BD', 'cak', 'es-CL', 'fa', 'kab', 'sr',
     ]
 ));
 
@@ -533,7 +514,7 @@ $privacy_tour_locales = [
 ];
 
 $startpage36 = [
-    'af', 'ar', 'as', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
+    'af', 'ar', 'as', 'ast', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
     'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-ES', 'es-MX',
     'et', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN',
     'he', 'hi-IN', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko',
@@ -604,18 +585,6 @@ $sites =
         'lang',
     ],
 
-    7 => [
-        'add-ons',
-        $repositories['add-ons']['local_path'],
-        '',
-        $addons_locales,
-        $addons_lang,
-        'en-US', // source locale
-        $repositories['add-ons']['public_path'],
-        $lang_flags['add-ons'],
-        'lang',
-    ],
-
     12 => [
         'appstores',
         $repositories['appstores']['local_path'],
@@ -660,21 +629,21 @@ $langfiles_subsets = [
             [
                 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fi', 'fr',
                 'fy-NL', 'hsb', 'it', 'ja', 'kab', 'ko', 'lt', 'nl',
-                'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'sk', 'sl',
+                'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl',
                 'son', 'sq', 'sr', 'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
         'firefox/family/index.lang' => $firefox_locales,
         'firefox/features.lang'     => $firefox_locales,
         'firefox/geolocation.lang'  =>
             [
-                'af', 'ar', 'as', 'ast', 'az', 'be', 'bg', 'bn-BD', 'bn-IN',
+                'af', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD', 'bn-IN',
                 'ca', 'cs', 'cy', 'da', 'de', 'dsb', 'el', 'en-GB',
                 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et', 'eu',
                 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl',
                 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM',
                 'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'kn', 'ko', 'lt',
                 'lv', 'mk', 'ml', 'mr', 'nb-NO', 'nl', 'nn-NO', 'oc',
-                'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sat',
+                'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru',
                 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta',
                 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
             ],
@@ -745,7 +714,7 @@ $langfiles_subsets = [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL',
                 'hi-IN', 'hsb', 'it', 'kab', 'ko', 'ja', 'km', 'lt', 'ms', 'nl',
-                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'son', 'sq', 'sr',
+                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq', 'sr',
                 'sv-SE', 'tr', 'uk', 'zh-CN', 'zh-TW',
             ],
         'main.lang'                         => $mozillaorg,
@@ -758,7 +727,7 @@ $langfiles_subsets = [
                 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
                 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja', 'kab',
                 'km', 'ko', 'lt', 'nl', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
-                'ru', 'sat', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
+                'ru', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
                 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/history.lang' =>
@@ -767,7 +736,7 @@ $langfiles_subsets = [
                 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
                 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl', 'pa-IN',
-                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sat', 'sk',
+                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk',
                 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk',
                 'uz', 'zh-CN', 'zh-TW',
             ],
@@ -778,7 +747,7 @@ $langfiles_subsets = [
                 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'gd', 'gl',
                 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it', 'ja', 'kab',
                 'km', 'ko', 'lt', 'mk', 'ms', 'nl', 'pl', 'pt-BR', 'pt-PT',
-                'ro', 'ru', 'sat', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
+                'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'tr', 'uk', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
             ],
         'mozorg/contribute/index.lang'     => $getinvolved_locales,
@@ -950,12 +919,6 @@ $langfiles_subsets = [
         'tiles/2015/tiles_oct2015.lang'         => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'tiles/2015/tiles_nov2015.lang'         => ['de', 'es', 'fr', 'id', 'it', 'pl', 'pt-BR', 'ru'],
         'tiles/2016/tiles_jan2016.lang'         => ['de', 'es', 'fr', 'id', 'it', 'pl', 'pt-BR', 'ru'],
-    ],
-
-    'add-ons' => [
-        'homefeeds.lang'    => ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'ko', 'pt-BR'],
-        'privacycoach.lang' => $addons_locales,
-        'worldcup.lang'     => ['de', 'es-ES', 'fr', 'id', 'it', 'ja', 'ko', 'pt-BR'],
     ],
 
     'appstores' => [
