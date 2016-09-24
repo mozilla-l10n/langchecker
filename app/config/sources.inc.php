@@ -467,9 +467,9 @@ $firefox_os_tv = array_merge($firefox_os, ['et']);
 $getinvolved_locales = [
     'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
     'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr',
-    'fy-NL', 'he', 'hi-IN', 'hr', 'hsb', 'id', 'it', 'kab,' 'ko', 'lt',
-    'ms', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl', 'son',
-    'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk', 'zh-CN', 'zh-TW',
+    'fy-NL', 'he', 'hi-IN', 'hr', 'hsb', 'id', 'it', 'kab', 'ko',
+    'lt', 'ms', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl',
+    'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk', 'zh-CN', 'zh-TW',
 ];
 
 // List of locales supported for the landing page (larger than the App Store)
