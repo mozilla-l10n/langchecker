@@ -214,9 +214,18 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/about/manifesto.lang'             => [ 'opt-in' => ['all'] ],
     'mozorg/about/history.lang'               => [ 'opt-in' => ['all'] ],
     'mozorg/about/history-details.lang'       => [ 'opt-in' => ['all'] ],
-    'mozorg/contribute/index.lang'            => [ 'critical' => ['all'] ],
-    'mozorg/contribute/signup.lang'           => [ 'critical' => ['all'] ],
-    'mozorg/contribute/stories.lang'          => [ 'critical' => ['all'] ],
+    'mozorg/contribute/index.lang'            => [
+        'critical' => ['all'],
+        'opt-in' => ['all']
+    ],
+    'mozorg/contribute/signup.lang'           => [
+        'critical' => ['all'],
+        'opt-in' => ['all']
+    ],
+    'mozorg/contribute/stories.lang'          => [
+        'critical' => ['all'],
+        'opt-in' => ['all']
+    ],
     'mozorg/home/index.lang'                  => [ 'critical' => ['all'] ],
     'mozorg/newsletters.lang'                 => [
         'critical' => $newsletter_locales,
