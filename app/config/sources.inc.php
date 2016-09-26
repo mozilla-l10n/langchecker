@@ -146,6 +146,7 @@ $mozillaorg_lang = [
     'mozorg/contribute/signup.lang',
     'mozorg/contribute/stories.lang',
     'mozorg/home/index.lang',
+    'mozorg/home/index-2016.lang',
     'mozorg/mission.lang',
     'mozorg/newsletters.lang',
     'mozorg/plugincheck.lang',
@@ -226,7 +227,8 @@ $lang_flags['www.mozilla.org'] = [
         'critical' => ['all'],
         'opt-in'   => ['all'],
     ],
-    'mozorg/home/index.lang'                  => [ 'critical' => ['all'] ],
+    'mozorg/home/index.lang'                  => [ 'obsolete' => ['all'] ],
+    'mozorg/home/index-2016.lang'             => [ 'critical' => ['all'] ],
     'mozorg/newsletters.lang'                 => [
         'critical' => $newsletter_locales,
     ],
@@ -434,7 +436,7 @@ $deadline = [
     'legal/index.lang'                      => '2016-02-18',
     'main.lang'                             => '2016-10-04',
     'mozorg/contribute/signup.lang'         => '2016-06-06',
-    'mozorg/home/index.lang'                => '2016-03-15',
+    'mozorg/home/index-2016.lang'           => '2016-10-25',
     'mozorg/newsletters.lang'               => '2016-08-23',
     'mozorg/plugincheck-redesign.lang'      => '2016-08-01',
     'thunderbird/start/release.lang'        => '2016-08-01',
@@ -709,6 +711,7 @@ $langfiles_subsets = [
         'mozorg/404.lang'                   => $mozillaorg,
         'mozorg/about.lang'                 => $mozillaorg,
         'mozorg/home/index.lang'            => $mozillaorg,
+        'mozorg/home/index-2016.lang'       => $mozillaorg,
         'mozorg/mission.lang'               => $mozillaorg,
         'mozorg/about/history-details.lang' =>
             [
