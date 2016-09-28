@@ -120,7 +120,10 @@ $thunderbird_locales = [
 ];
 
 // List of locales with active newsletter
-$newsletter_locales = ['de', 'es-ES', 'fr', 'hu', 'id', 'pl', 'pt-BR', 'ru'];
+$newsletter_locales = [
+    'bg', 'cs', 'de', 'es-ES', 'fr', 'hu', 'id', 'it', 'nl',
+    'pl', 'pt-BR', 'ru',
+];
 
 // List of locales working on Pootle
 $locamotion_locales = [
