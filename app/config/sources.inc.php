@@ -129,6 +129,7 @@ $mozillaorg_lang = [
     'firefox/tracking-protection-tour.lang',
     'firefox/whatsnew_38.lang',
     'firefox/whatsnew_42.lang',
+    'firefox/nightly_whatsnew.lang',
     'firefox/win10-welcome.lang',
     'foundation/annualreport/2011.lang',
     'foundation/annualreport/2011faq.lang',
@@ -207,6 +208,13 @@ $lang_flags['www.mozilla.org'] = [
     'firefox/tracking-protection-tour.lang'   => [ 'critical' => ['all'] ],
     'firefox/whatsnew_38.lang'                => [ 'critical' => ['all'] ],
     'firefox/whatsnew_42.lang'                => [ 'critical' => ['all'] ],
+    'firefox/nightly_whatsnew.lang'           => [
+        'opt-in'   => [
+            'cs', 'de', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+            'fr', 'it', 'ja', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sk', 'sl',
+            'uk', 'zh-CN', 'zh-TW',
+        ],
+    ],
     'firefox/win10-welcome.lang'              => [ 'critical' => ['all'] ],
     'foundation/annualreport/2012/index.lang' => [ 'critical' => ['all'] ],
     'legal/index.lang'                        => [ 'critical' => ['all'] ],
@@ -668,6 +676,7 @@ $langfiles_subsets = [
         'firefox/tracking-protection-tour.lang'  => $firefox_locales,
         'firefox/whatsnew_38.lang'               => $firefox_locales,
         'firefox/whatsnew_42.lang'               => $firefox_locales,
+        'firefox/nightly_whatsnew.lang'          => ['cs', 'fr', 'ja'],
         'firefox/win10-welcome.lang'             => $firefox_locales,
         'foundation/annualreport/2011.lang'      =>
             [

@@ -35,7 +35,6 @@ $current_website = $lang_based_sites[$cli_website];
     habit of localizing pages on their own, and we don't want to remove them.
 */
 $ignored_files = [
-    'firefox/nightly_whatsnew.lang',
     'legal/terms/acceptable-use.lang',
     'legal/terms/firefox-hello.lang',
     'legal/terms/mozilla.lang',
