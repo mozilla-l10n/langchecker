@@ -676,7 +676,10 @@ $langfiles_subsets = [
         'firefox/tracking-protection-tour.lang'  => $firefox_locales,
         'firefox/whatsnew_38.lang'               => $firefox_locales,
         'firefox/whatsnew_42.lang'               => $firefox_locales,
-        'firefox/nightly_whatsnew.lang'          => ['cs', 'de', 'fr', 'ja'],
+        'firefox/nightly_whatsnew.lang'          => 
+            [
+                'cs', 'de', 'es-ES', 'fr', 'ja',
+            ],
         'firefox/win10-welcome.lang'             => $firefox_locales,
         'foundation/annualreport/2011.lang'      =>
             [
