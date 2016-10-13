@@ -342,6 +342,7 @@ $engagement_lang = [
     'snippets/2016/may2016_b.lang',
     'snippets/2016/jun2016_berec.lang',
     'surveys/survey_hello_fx42.lang',
+    'surveys/survey_maker_party_2016.lang',
     'tiles/careers.lang',
     'tiles/suggestedtiles_infographic.lang',
     'tiles/2015/tiles_jul2015.lang',
@@ -447,6 +448,7 @@ $deadline = [
     'mozorg/home/index-2016.lang'           => '2016-10-25',
     'mozorg/newsletters.lang'               => '2016-10-18',
     'mozorg/plugincheck-redesign.lang'      => '2016-08-01',
+    'surveys/survey_maker_party_2016.lang'  => '2016-10-30',
     'thunderbird/start/release.lang'        => '2016-08-01',
     'whatsnew/whatsnew_android_49.lang'     => '2016-09-19', // appstores project
     'whatsnew/whatsnew_ios_5_0.lang'        => '2016-07-27', // appstores project
@@ -914,6 +916,7 @@ $langfiles_subsets = [
             'nl', 'ro', 'sv-SE', 'sl',
         ],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
+        'surveys/survey_maker_party_2016.lang'  => ['bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl'],
         'tiles/careers.lang'                    => ['de', 'fr'],
         'tiles/suggestedtiles_infographic.lang' => ['de', 'es', 'fr'],
         'tiles/2015/tiles_jul2015.lang'         => ['de', 'es', 'fr', 'pt-BR', 'ru'],
