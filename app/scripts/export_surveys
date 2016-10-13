@@ -78,10 +78,12 @@ foreach ($locale_list as $current_locale) {
                 Utils::logger("String «{$string_id}» is missing a comment. Please fix the files to proceed.", 'quit');
             }
 
-            $objPHPExcel->getActiveSheet()->setCellValue("A{$current_line}", end($reference_data['comments'][$string_id]));
-            $objPHPExcel->getActiveSheet()->setCellValue("B{$current_line}", $string_value);
-            $objPHPExcel->getActiveSheet()->setCellValue("C{$current_line}", $translation);
-            $current_line++;
+            foreach ($reference_data['comments'][$string_id] as $comment) {
+              $objPHPExcel->getActiveSheet()->setCellValue("A{$current_line}", $comment);
+              $objPHPExcel->getActiveSheet()->setCellValue("B{$current_line}", $string_value);
+              $objPHPExcel->getActiveSheet()->setCellValue("C{$current_line}", $translation);
+              $current_line++;
+            }
         }
 
         $objWriter = new \PHPExcel_Writer_Excel2007($objPHPExcel);
