@@ -448,6 +448,7 @@ $deadline = [
     'mozorg/home/index-2016.lang'           => '2016-10-25',
     'mozorg/newsletters.lang'               => '2016-10-18',
     'mozorg/plugincheck-redesign.lang'      => '2016-08-01',
+    'surveys/survey_maker_party_2016.lang'  => '2016-10-30',
     'thunderbird/start/release.lang'        => '2016-08-01',
     'whatsnew/whatsnew_android_49.lang'     => '2016-09-19', // appstores project
     'whatsnew/whatsnew_ios_5_0.lang'        => '2016-07-27', // appstores project
