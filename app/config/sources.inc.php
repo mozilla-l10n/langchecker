@@ -486,9 +486,9 @@ $getinvolved_locales = [
 $ios_landing_page = array_unique(array_merge(
     $ios_locales,
     [
-        'af', 'an', 'ar', 'ast', 'bn-BD', 'bn-IN', 'ca', 'el', 'en-GB',
-        'es-AR', 'eu', 'fa', 'gl', 'gn', 'hi-IN', 'hu', 'ka', 'kab', 'kn',
-        'lij', 'ml', 'ms', 'my', 'or', 'son', 'sq', 'sr',
+        'af', 'an', 'ar', 'bn-BD', 'bn-IN', 'ca', 'el', 'es-AR',
+        'eu', 'fa', 'gl', 'gn', 'hi-IN', 'ka', 'kab', 'kn',
+        'lij', 'ml', 'ms', 'my', 'or', 'sq', 'sr',
     ]
 ));
 

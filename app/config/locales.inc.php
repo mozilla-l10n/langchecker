@@ -58,7 +58,7 @@ $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
 $ios_locales = [
     'ast', 'az', 'bg', 'br', 'cs', 'cy', 'da', 'de', 'dsb', 'en-GB',
     'eo', 'es-ES', 'es-CL', 'es-MX', 'fr', 'fy-NL', 'ga-IE', 'gd',
-    'hsb', 'hu', 'id', 'is', 'it', 'ja', 'kab', 'kk', 'km', 'ko', 'lo',
+    'hsb', 'hu', 'id', 'is', 'it', 'ja', 'kk', 'km', 'ko', 'lo',
     'lt', 'lv', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'pl', 'pt-BR',
     'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'son', 'sv-SE', 'te', 'th',
     'tl', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
@@ -86,7 +86,7 @@ $apple_store_target = array_intersect($ios_locales, $apple_store_locales);
 */
 $android_locales = [
     'an', 'as', 'az', 'bn-IN', 'br', 'ca', 'cak', 'cs', 'cy', 'da', 'de',
-    'dsb', 'es-Cl', 'en-GB', 'en-ZA', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et',
+    'dsb', 'es-CL', 'en-GB', 'en-ZA', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et',
     'eu', 'fi', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gn', 'gu-IN', 'hi-IN',
     'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'kab', 'kk', 'kn', 'ko',
     'lt', 'lv', 'mai', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'nn-NO', 'or', 'pa-IN',
