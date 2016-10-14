@@ -51,16 +51,17 @@ $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
     mistake, this is why I changed it to es-ES in the array below, otherwise
     the Spanish team would have to work in the es-ES folder for Android and
     the es folder for iOS
+    son (or Songhay) is called ses on iOS
     Make sure to update the store_l10n project when you update this list:
     https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L43
 */
 $ios_locales = [
-    'az', 'bg', 'br', 'cs', 'cy', 'da', 'de', 'dsb', 'eo',
-    'es-ES', 'es-CL', 'es-MX', 'fr', 'fy-NL', 'ga-IE', 'gd',
-    'hsb', 'id', 'is', 'it', 'ja', 'kk', 'km', 'ko', 'lo',
-    'lt', 'lv', 'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-BR', 'pt-PT',
-    'rm', 'ro', 'ru', 'sk', 'sl', 'sv-SE', 'th', 'tl', 'tr',
-    'uk', 'uz', 'zh-CN', 'zh-TW',
+    'ast', 'az', 'bg', 'br', 'cs', 'cy', 'da', 'de', 'dsb', 'en-GB',
+    'eo', 'es-ES', 'es-CL', 'es-MX', 'fr', 'fy-NL', 'ga-IE', 'gd',
+    'hsb', 'hu', 'id', 'is', 'it', 'ja', 'kk', 'km', 'ko', 'lo',
+    'lt', 'lv', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'pl', 'pt-BR',
+    'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'son', 'sv-SE', 'te', 'th',
+    'tl', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
 ];
 
 /*
@@ -84,13 +85,13 @@ $apple_store_target = array_intersect($ios_locales, $apple_store_locales);
     https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L16
 */
 $android_locales = [
-    'an', 'as', 'az', 'bn-IN', 'br', 'ca', 'cs', 'cy', 'da', 'de',
-    'dsb', 'en-GB', 'en-ZA', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et', 'eu',
-    'fi', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN', 'hi-IN', 'hr',
-    'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'lt',
-    'lv', 'mai', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl',
-    'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sv-SE', 'ta',
-    'te', 'th', 'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
+    'an', 'as', 'az', 'bn-IN', 'br', 'ca', 'cak', 'cs', 'cy', 'da', 'de',
+    'dsb', 'es-CL', 'en-GB', 'en-ZA', 'eo', 'es-AR', 'es-ES', 'es-MX', 'et',
+    'eu', 'fi', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gn', 'gu-IN', 'hi-IN',
+    'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko',
+    'lt', 'lv', 'mai', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl', 'nn-NO', 'or', 'pa-IN',
+    'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
+    'sv-SE', 'ta', 'te', 'th', 'tr', 'uk', 'uz', 'xh', 'zh-CN', 'zh-TW',
 ];
 
 // List provided by Release-drivers, needs access to a Google Play publishing account
