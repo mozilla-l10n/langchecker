@@ -496,7 +496,7 @@ $ios_landing_page = array_unique(array_merge(
 $android_landing_page = array_unique(array_merge(
     $android_locales,
     [
-        'af', 'ast', 'bg', 'bn-BD', 'cak', 'es-CL', 'fa', 'kab', 'sr',
+        'af', 'ast', 'bg', 'bn-BD', 'fa', 'kab',
     ]
 ));
 
