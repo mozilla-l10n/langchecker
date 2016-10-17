@@ -919,7 +919,7 @@ $langfiles_subsets = [
             'nl', 'ro', 'sv-SE', 'sl',
         ],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
-        'surveys/survey_maker_party_2016.lang'  => ['bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl'],
+        'surveys/survey_maker_party_2016.lang'  => ['bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'sl'],
         'tiles/careers.lang'                    => ['de', 'fr'],
         'tiles/suggestedtiles_infographic.lang' => ['de', 'es', 'fr'],
         'tiles/2015/tiles_jul2015.lang'         => ['de', 'es', 'fr', 'pt-BR', 'ru'],
