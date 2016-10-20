@@ -923,7 +923,7 @@ $langfiles_subsets = [
             'bg', 'cs', 'de', 'en-GB', 'es-ES', 'fr', 'it',
             'nl', 'ro', 'sv-SE', 'sl',
         ],
-        'snippets/2016/nov2016.lang'          => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'snippets/2016/nov2016.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
         'surveys/survey_maker_party_2016.lang'  => ['bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'sl'],
         'tiles/careers.lang'                    => ['de', 'fr'],
