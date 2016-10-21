@@ -98,7 +98,6 @@ $mozillaorg_lang = [
     'firefox/android/index.lang',
     'firefox/australis/firefox_tour.lang',
     'firefox/australis/fx36_tour.lang',
-    'firefox/channel.lang',
     'firefox/channel/index.lang',
     'firefox/desktop/customize.lang',
     'firefox/desktop/fast.lang',
@@ -113,12 +112,9 @@ $mozillaorg_lang = [
     'firefox/includes/mwc_2015_schedule.lang',
     'firefox/installer-help.lang',
     'firefox/ios.lang',
-    'firefox/new.lang',
     'firefox/new/horizon.lang',
     'firefox/nightly_firstrun.lang',
     'firefox/os/devices.lang',
-    'firefox/os/faq.lang',
-    'firefox/os/index-new.lang',
     'firefox/os/index.lang',
     'firefox/os/tv.lang',
     'firefox/privacy_tour/privacy_tour.lang',
@@ -150,7 +146,6 @@ $mozillaorg_lang = [
     'mozorg/home/index-2016.lang',
     'mozorg/mission.lang',
     'mozorg/newsletters.lang',
-    'mozorg/plugincheck.lang',
     'mozorg/plugincheck-redesign.lang',
     'mozorg/products.lang',
     'newsletter.lang',
@@ -177,7 +172,6 @@ $lang_flags['www.mozilla.org'] = [
     ],
     'firefox/australis/firefox_tour.lang' => [ 'critical' => ['all'] ],
     'firefox/australis/fx36_tour.lang'    => [ 'critical' => ['all'] ],
-    'firefox/channel.lang'                => [ 'obsolete' => ['all'] ],
     'firefox/channel/index.lang'          => [ 'critical' => ['all'] ],
     'firefox/family/index.lang'           => [ 'critical' => ['all'] ],
     'firefox/features.lang'               => [ 'critical' => ['all'] ],
@@ -196,10 +190,7 @@ $lang_flags['www.mozilla.org'] = [
         'critical' => [$ios_locales],
         'opt-in'   => ['all'],
     ],
-    'firefox/new.lang'                        => [ 'obsolete' => ['all'] ],
     'firefox/new/horizon.lang'                => [ 'critical' => ['all'] ],
-    'firefox/os/faq.lang'                     => [ 'obsolete' => ['all'] ],
-    'firefox/os/index-new.lang'               => [ 'obsolete' => ['all'] ],
     'firefox/os/index.lang'                   => [ 'opt-in' => ['all'] ],
     'firefox/privacy_tour/privacy_tour.lang'  => [ 'critical' => ['all'] ],
     'firefox/private-browsing.lang'           => [ 'critical' => ['all'] ],
@@ -240,7 +231,6 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/newsletters.lang'                 => [
         'critical' => $newsletter_locales,
     ],
-    'mozorg/plugincheck.lang'          => [ 'obsolete' => ['all'] ],
     'mozorg/plugincheck-redesign.lang' => [ 'critical' => ['all'] ],
     'tabzilla/tabzilla.lang'           => [ 'obsolete' => ['all'] ],
     'teach/smarton/index.lang'         => [
@@ -618,7 +608,6 @@ $langfiles_subsets = [
         'firefox/android/index.lang'          => $android_landing_page,
         'firefox/australis/firefox_tour.lang' => $firefox_locales,
         'firefox/australis/fx36_tour.lang'    => $firefox_locales,
-        'firefox/channel.lang'                => $mozillaorg, // Has Firefox for Android download buttons
         'firefox/channel/index.lang'          => $mozillaorg, // Has Firefox for Android download buttons
         'firefox/desktop/customize.lang'      => $firefox_locales,
         'firefox/desktop/fast.lang'           => $firefox_locales,
@@ -659,7 +648,6 @@ $langfiles_subsets = [
         'firefox/includes/mwc_2015_schedule.lang' => $mwc_locales,
         'firefox/installer-help.lang'             => $firefox_locales,
         'firefox/ios.lang'                        => $ios_landing_page,
-        'firefox/new.lang'                        => $firefox_desktop_android,
         'firefox/new/horizon.lang'                => $firefox_desktop_android,
         'firefox/nightly_firstrun.lang'           =>
             [
@@ -671,13 +659,11 @@ $langfiles_subsets = [
                 'zh-TW',
             ],
         'firefox/os/devices.lang' => $firefox_os,
-        'firefox/os/faq.lang'     => $firefox_os,
         'firefox/os/index.lang'   =>
             [
                 'ast', 'cs', 'de', 'en-GB', 'fr', 'it', 'kab', 'ko',
                 'pt-BR', 'ru', 'uk', 'zh-TW',
             ],
-        'firefox/os/index-new.lang'              => $firefox_os_consumer,
         'firefox/os/tv.lang'                     => $firefox_os_tv,
         'firefox/privacy_tour/privacy_tour.lang' => $privacy_tour_locales,
         'firefox/private-browsing.lang'          => $firefox_locales,
@@ -768,7 +754,6 @@ $langfiles_subsets = [
         'mozorg/contribute/signup.lang'    => $getinvolved_locales,
         'mozorg/contribute/stories.lang'   => $getinvolved_locales,
         'mozorg/newsletters.lang'          => $newsletter_locales,
-        'mozorg/plugincheck.lang'          => $mozillaorg,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
         'mozorg/products.lang'             => $mozillaorg,
         'privacy/index.lang'               => $firefox_os,
