@@ -109,7 +109,6 @@ $mozillaorg_lang = [
     'firefox/family/index.lang',
     'firefox/features.lang',
     'firefox/geolocation.lang',
-    'firefox/includes/mwc_2015_schedule.lang',
     'firefox/installer-help.lang',
     'firefox/ios.lang',
     'firefox/new/horizon.lang',
@@ -419,7 +418,6 @@ $no_active_tag = [
     'download.lang',
     'download_button.lang',
     'esr.lang',
-    'firefox/includes/mwc_2015_schedule.lang',
     'main.lang',
     'newsletter.lang',
     'privacy/index.lang',
@@ -453,12 +451,6 @@ $deadline = [
     'whatsnew/whatsnew_ios_5_0.lang'        => '2016-07-27', // appstores project
 ];
 
-// List of locales
-$addons_locales = [
-    'cs', 'de', 'es-ES', 'es-MX', 'fr', 'hu', 'id', 'it',
-    'ja', 'pl', 'pt-BR', 'ru', 'sq', 'zh-TW',
-];
-
 $firefox_os = [
     'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de', 'el',
     'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'ff', 'fr', 'fy-NL',
@@ -466,14 +458,6 @@ $firefox_os = [
     'pl', 'pt-BR', 'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE',
     'ta', 'tl', 'xh', 'zh-CN', 'zh-TW', 'zu',
 ];
-
-/*
-    We have some extra locales on some pages, but they're not shipping and we
-    don't want to ask them to translate 600 strings.
-*/
-$firefox_os_consumer = array_merge($firefox_os, ['et', 'uk']);
-$firefox_os_legal = array_merge($firefox_os, ['et']);
-$firefox_os_tv = array_merge($firefox_os, ['et']);
 
 $getinvolved_locales = [
     'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
@@ -501,26 +485,10 @@ $android_landing_page = array_unique(array_merge(
     ]
 ));
 
-$mwc_locales = [
-    'ca', 'cs', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'hu', 'it',
-    'ja', 'ko', 'pl', 'pt-BR', 'ro', 'sr', 'zh-CN', 'zh-TW',
-];
-
 $privacy_tour_locales = [
     'ast', 'da', 'de', 'es-AR', 'es-CL', 'es-ES', 'es-MX',  'fi', 'fr',
     'fy-NL', 'he', 'hu', 'it', 'ja', 'ko', 'lv', 'nb-NO', 'nn-NO',
     'pa-IN', 'pl', 'pt-BR', 'rm', 'ru', 'sk', 'sl', 'zh-TW',
-];
-
-$startpage36 = [
-    'af', 'ar', 'as', 'ast', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
-    'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-ES', 'es-MX',
-    'et', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN',
-    'he', 'hi-IN', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko',
-    'lt', 'lv', 'mk', 'ml', 'mr', 'nb-NO', 'nl', 'nn-NO',
-    'or', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si', 'sk',
-    'sl', 'sq', 'sr', 'sv-SE', 'ta', 'te', 'th', 'tr', 'uk',
-    'vi', 'zh-CN', 'zh-TW',
 ];
 
 $engagement_locales = [
@@ -645,7 +613,6 @@ $langfiles_subsets = [
                 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta',
                 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
             ],
-        'firefox/includes/mwc_2015_schedule.lang' => $mwc_locales,
         'firefox/installer-help.lang'             => $firefox_locales,
         'firefox/ios.lang'                        => $ios_landing_page,
         'firefox/new/horizon.lang'                => $firefox_desktop_android,
@@ -664,7 +631,7 @@ $langfiles_subsets = [
                 'ast', 'cs', 'de', 'en-GB', 'fr', 'it', 'kab', 'ko',
                 'pt-BR', 'ru', 'uk', 'zh-TW',
             ],
-        'firefox/os/tv.lang'                     => $firefox_os_tv,
+        'firefox/os/tv.lang'                     => array_merge($firefox_os, ['et']),
         'firefox/privacy_tour/privacy_tour.lang' => $privacy_tour_locales,
         'firefox/private-browsing.lang'          => $firefox_locales,
         'firefox/speed.lang'                     => ['pt-BR'],
@@ -707,7 +674,7 @@ $langfiles_subsets = [
                 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl',
                 'pt-BR', 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
             ],
-        'legal/index.lang'         => $firefox_os_legal,
+        'legal/index.lang'         => array_merge($firefox_os, ['et']),
         'lightbeam/lightbeam.lang' =>
             [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
