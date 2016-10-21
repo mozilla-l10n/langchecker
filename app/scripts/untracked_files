@@ -138,8 +138,11 @@ foreach ($file_list as $single_file) {
     }
 }
 
-// Check if there are entire locales unsupported to remove
-if (count($locale_list) > 0) {
+/*
+    Check if there are entire locales unsupported to remove, but only if
+    I'm checking more than one locale
+*/
+if (count($locale_list) > 1) {
     // Get all folders in the requested project
     $local_folders = array_filter(glob($website_path . '*'), 'is_dir');
     $path_length = strlen($website_path);
