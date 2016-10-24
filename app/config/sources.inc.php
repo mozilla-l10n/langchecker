@@ -594,7 +594,7 @@ $langfiles_subsets = [
         'firefox/dnt.lang'           =>
             [
                 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fi', 'fr',
-                'fy-NL', 'hsb', 'it', 'ja', 'kab', 'ko', 'lt', 'nl', 'nv',
+                'fy-NL', 'hsb', 'it', 'ja', 'kab', 'ko', 'lt', 'nl',
                 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl',
                 'son', 'sq', 'sr', 'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
@@ -608,7 +608,7 @@ $langfiles_subsets = [
                 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl',
                 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM',
                 'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'kn', 'ko', 'lt',
-                'lv', 'mk', 'ml', 'mr', 'nb-NO', 'nl', 'nn-NO', 'nv', 'oc',
+                'lv', 'mk', 'ml', 'mr', 'nb-NO', 'nl', 'nn-NO', 'oc',
                 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru',
                 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta',
                 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
@@ -730,28 +730,28 @@ $langfiles_subsets = [
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'kab', 'ko',
-                'nv', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/security.lang' =>
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'kab', 'ja', 'ko',
-                'nv', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/surveillance.lang' =>
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'kab', 'ko',
-                'nv', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/tracking.lang' =>
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'kab',
-                'ko', 'nv', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'ko', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
         'thunderbird/channel.lang' =>
