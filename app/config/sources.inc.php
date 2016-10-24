@@ -463,7 +463,7 @@ $getinvolved_locales = [
     'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
     'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr',
     'fy-NL', 'he', 'hi-IN', 'hr', 'hsb', 'id', 'it', 'kab', 'ko',
-    'lt', 'ms', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl',
+    'lt', 'ms', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl',
     'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk', 'zh-CN', 'zh-TW',
 ];
 
@@ -585,7 +585,7 @@ $langfiles_subsets = [
                 'af', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL',
                 'ga-IE', 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id',
-                'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl', 'pl', 'pt-BR',
+                'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl', 'nv', 'pl', 'pt-BR',
                 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
                 'sv-SE', 'uk', 'uz', 'xh', 'zh-CN', 'zh-TW',
             ],
@@ -594,7 +594,7 @@ $langfiles_subsets = [
         'firefox/dnt.lang'           =>
             [
                 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fi', 'fr',
-                'fy-NL', 'hsb', 'it', 'ja', 'kab', 'ko', 'lt', 'nl',
+                'fy-NL', 'hsb', 'it', 'ja', 'kab', 'ko', 'lt', 'nl', 'nv',
                 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl',
                 'son', 'sq', 'sr', 'sv-SE', 'uk', 'uz', 'zh-CN', 'zh-TW',
             ],
@@ -608,7 +608,7 @@ $langfiles_subsets = [
                 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl',
                 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM',
                 'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'kn', 'ko', 'lt',
-                'lv', 'mk', 'ml', 'mr', 'nb-NO', 'nl', 'nn-NO', 'oc',
+                'lv', 'mk', 'ml', 'mr', 'nb-NO', 'nl', 'nn-NO', 'nv', 'oc',
                 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru',
                 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta',
                 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
@@ -680,7 +680,7 @@ $langfiles_subsets = [
                 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL',
                 'hi-IN', 'hsb', 'it', 'kab', 'ko', 'ja', 'km', 'lt', 'ms', 'nl',
-                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq', 'sr',
+                'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq', 'sr',
                 'sv-SE', 'tr', 'uk', 'zh-CN', 'zh-TW',
             ],
         'main.lang'                         => $mozillaorg,
@@ -693,7 +693,7 @@ $langfiles_subsets = [
             [
                 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
                 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja', 'kab',
-                'km', 'ko', 'lt', 'nl', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
+                'km', 'ko', 'lt', 'nl', 'nv', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
                 'ru', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
                 'zh-CN', 'zh-TW',
             ],
@@ -703,7 +703,7 @@ $langfiles_subsets = [
                 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
                 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl', 'pa-IN',
-                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk',
+                'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk',
                 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk',
                 'uz', 'zh-CN', 'zh-TW',
             ],
@@ -713,8 +713,8 @@ $langfiles_subsets = [
                 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'gd', 'gl',
                 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it', 'ja', 'kab',
-                'km', 'ko', 'lt', 'mk', 'ms', 'nl', 'pl', 'pt-BR', 'pt-PT',
-                'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
+                'km', 'ko', 'lt', 'mk', 'ms', 'nl', 'nv', 'pl', 'pt-BR',
+                'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'tr', 'uk', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
             ],
         'mozorg/contribute/index.lang'     => $getinvolved_locales,
@@ -730,28 +730,28 @@ $langfiles_subsets = [
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'kab', 'ko',
-                'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'nv', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/security.lang' =>
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'kab', 'ja', 'ko',
-                'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'nv', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/surveillance.lang' =>
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'kab', 'ko',
-                'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'nv', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
         'teach/smarton/tracking.lang' =>
             [
                 'az', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR', 'es-CL',
                 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'kab',
-                'ko', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
+                'ko', 'nv', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk',
                 'zh-CN', 'zh-TW',
             ],
         'thunderbird/channel.lang' =>
