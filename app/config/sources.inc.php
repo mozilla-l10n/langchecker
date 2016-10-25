@@ -766,7 +766,7 @@ $langfiles_subsets = [
 
     'about:healthreport' =>
     [
-        'fhr.lang' => $firefox_desktop_android,
+        'fhr.lang' => array_diff($firefox_desktop_android, $mozorg_locales),
     ],
 
     'engagement' =>

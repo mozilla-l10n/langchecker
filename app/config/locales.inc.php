@@ -30,6 +30,11 @@ $fennec_locales = [
     'cak', 'hto', 'lo', 'pbb', 'qvi', 'trs',
 ];
 
+// List of locales only working on mozilla.org
+$mozorg_locales = [
+    'nv',
+];
+
 /*
     List of locales we support on desktop (Firefox). We need to remove
     locales used only for Gaia (es, sr-Latn), locales working only on Gaia
