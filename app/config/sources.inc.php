@@ -463,7 +463,7 @@ $firefox_os = [
 ];
 
 $getinvolved_locales = [
-    'af', 'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
+    'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
     'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr',
     'fy-NL', 'he', 'hi-IN', 'hr', 'hsb', 'id', 'it', 'kab', 'ko',
     'lt', 'ms', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl',
@@ -694,7 +694,7 @@ $langfiles_subsets = [
         'mozorg/mission.lang'               => $mozillaorg,
         'mozorg/about/history-details.lang' =>
             [
-                'af', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
+                'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
                 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja', 'kab',
                 'km', 'ko', 'lt', 'nl', 'nv', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
                 'ru', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
