@@ -263,6 +263,7 @@ $engagement_lang = [
     'ads/ios_ads_nov2015.lang',
     'ads/ios_android_apr2016.lang',
     'heartbeat/2016/sep2016.lang',
+    'heartbeat/2016/nov2016.lang',
     'snippets/2014/jan2014.lang',
     'snippets/2014/apr2014.lang',
     'snippets/2014/may2014.lang',
@@ -346,6 +347,7 @@ $engagement_lang = [
 $lang_flags['engagement'] = [
     'ads/ios_android_apr2016.lang'     => [ 'critical' => ['all'] ],
     'heartbeat/2016/sep2016.lang'      => [ 'critical' => ['all'] ],
+    'heartbeat/2016/nov2016.lang'      => [ 'critical' => ['all'] ],
     'snippets/2016/jan2016.lang'       => [ 'critical' => ['all'] ],
     'snippets/2016/feb2016.lang'       => [ 'critical' => ['all'] ],
     'snippets/2016/mar2016.lang'       => [ 'critical' => ['all'] ],
@@ -441,6 +443,7 @@ $deadline = [
     'firefox/tracking-protection-tour.lang' => '2016-02-29',
     'firefox/win10-welcome.lang'            => '2016-01-25',
     'heartbeat/2016/sep2016.lang'           => '2016-09-12',
+    'heartbeat/2016/nov2016.lang'           => '2016-11-22',
     'legal/index.lang'                      => '2016-02-18',
     'main.lang'                             => '2016-10-04',
     'mozorg/contribute/signup.lang'         => '2016-06-06',
@@ -780,6 +783,11 @@ $langfiles_subsets = [
             [
                 'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja',
                 'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
+            ],
+        'heartbeat/2016/nov2016.lang'  =>
+            [
+                'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja',
+                'pl', 'pt-BR', 'ru', 'zh-CN',
             ],
         'snippets/2014/jan2014.lang' =>
             [
