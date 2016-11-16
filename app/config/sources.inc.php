@@ -332,6 +332,7 @@ $engagement_lang = [
     'snippets/2016/may2016_b.lang',
     'snippets/2016/jun2016_berec.lang',
     'snippets/2016/nov2016.lang',
+    'social/2016/fundraising.lang',
     'surveys/survey_hello_fx42.lang',
     'surveys/survey_maker_party_2016.lang',
     'surveys/survey_eoy_heartbeat.lang',
@@ -451,6 +452,7 @@ $deadline = [
     'mozorg/newsletters.lang'               => '2016-11-05',
     'mozorg/plugincheck-redesign.lang'      => '2016-08-01',
     'snippets/2016/nov2016.lang'            => '2016-11-05',
+    'social/2016/fundraising.lang'          => '2016-11-28',
     'surveys/survey_maker_party_2016.lang'  => '2016-10-30',
     'thunderbird/start/release.lang'        => '2016-08-01',
     'whatsnew/whatsnew_android_50.lang'     => '2016-11-14', // appstores project
@@ -888,6 +890,7 @@ $langfiles_subsets = [
             'nl', 'ro', 'sv-SE', 'sl',
         ],
         'snippets/2016/nov2016.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'social/2016/fundraising.lang'          => ['de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR'],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
         'surveys/survey_maker_party_2016.lang'  => ['bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'sl'],
         'surveys/survey_eoy_heartbeat.lang'     => ['de'],
