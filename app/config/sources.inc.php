@@ -147,6 +147,7 @@ $mozillaorg_lang = [
     'mozorg/newsletters.lang',
     'mozorg/plugincheck-redesign.lang',
     'mozorg/products.lang',
+    'mozorg/technology.lang',
     'newsletter.lang',
     'privacy/index.lang',
     'privacy/principles.lang',
@@ -231,6 +232,7 @@ $lang_flags['www.mozilla.org'] = [
         'critical' => $newsletter_locales,
     ],
     'mozorg/plugincheck-redesign.lang' => [ 'critical' => ['all'] ],
+    'mozorg/technology.lang'           => [ 'critical' => ['all'] ],
     'tabzilla/tabzilla.lang'           => [ 'obsolete' => ['all'] ],
     'teach/smarton/index.lang'         => [
         'critical' => ['de', 'es-ES', 'fr', 'it', 'pl'],
@@ -449,8 +451,9 @@ $deadline = [
     'main.lang'                             => '2016-10-04',
     'mozorg/contribute/signup.lang'         => '2016-06-06',
     'mozorg/home/index-2016.lang'           => '2016-10-25',
-    'mozorg/newsletters.lang'               => '2016-11-05',
+    'mozorg/newsletters.lang'               => '2016-11-30',
     'mozorg/plugincheck-redesign.lang'      => '2016-08-01',
+    'mozorg/technology.lang'                => '2016-11-30',
     'snippets/2016/nov2016.lang'            => '2016-11-05',
     'social/2016/fundraising.lang'          => '2016-11-28',
     'surveys/survey_maker_party_2016.lang'  => '2016-10-30',
@@ -697,6 +700,7 @@ $langfiles_subsets = [
         'mozorg/home/index.lang'            => $mozillaorg,
         'mozorg/home/index-2016.lang'       => $mozillaorg,
         'mozorg/mission.lang'               => $mozillaorg,
+        'mozorg/technology.lang'            => $mozillaorg,
         'mozorg/about/history-details.lang' =>
             [
                 'af', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
