@@ -125,7 +125,6 @@ $mozillaorg_lang = [
     'firefox/whatsnew_38.lang',
     'firefox/whatsnew_42.lang',
     'firefox/nightly_whatsnew.lang',
-    'firefox/win10-welcome.lang',
     'foundation/annualreport/2011.lang',
     'foundation/annualreport/2011faq.lang',
     'foundation/annualreport/2012/faq.lang',
@@ -206,7 +205,6 @@ $lang_flags['www.mozilla.org'] = [
             'uk', 'zh-CN', 'zh-TW',
         ],
     ],
-    'firefox/win10-welcome.lang'              => [ 'critical' => ['all'] ],
     'foundation/annualreport/2012/index.lang' => [ 'critical' => ['all'] ],
     'legal/index.lang'                        => [ 'critical' => ['all'] ],
     'lightbeam/lightbeam.lang'                => [ 'opt-in' => ['all'] ],
@@ -334,6 +332,7 @@ $engagement_lang = [
     'snippets/2016/may2016_b.lang',
     'snippets/2016/jun2016_berec.lang',
     'snippets/2016/nov2016.lang',
+    'snippets/2016/dec2016.lang',
     'social/2016/fundraising.lang',
     'surveys/survey_hello_fx42.lang',
     'surveys/survey_maker_party_2016.lang',
@@ -362,6 +361,9 @@ $lang_flags['engagement'] = [
         'critical' => ['de', 'en-GB', 'es-ES', 'fr', 'it'],
     ],
     'snippets/2016/nov2016.lang' => [
+        'critical' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+    ],
+    'snippets/2016/dec2016.lang' => [
         'critical' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
     ],
 ];
@@ -444,7 +446,6 @@ $deadline = [
     'firefox/new/horizon.lang'              => '2016-11-05',
     'firefox/sync.lang'                     => '2016-04-04',
     'firefox/tracking-protection-tour.lang' => '2016-02-29',
-    'firefox/win10-welcome.lang'            => '2016-01-25',
     'heartbeat/2016/sep2016.lang'           => '2016-09-12',
     'heartbeat/2016/nov2016.lang'           => '2016-11-22',
     'legal/index.lang'                      => '2016-02-18',
@@ -455,6 +456,7 @@ $deadline = [
     'mozorg/plugincheck-redesign.lang'      => '2016-08-01',
     'mozorg/technology.lang'                => '2016-11-30',
     'snippets/2016/nov2016.lang'            => '2016-11-05',
+    'snippets/2016/dec2016.lang'            => '2016-12-05',
     'social/2016/fundraising.lang'          => '2016-11-28',
     'surveys/survey_maker_party_2016.lang'  => '2016-10-30',
     'thunderbird/start/release.lang'        => '2016-08-01',
@@ -655,7 +657,6 @@ $langfiles_subsets = [
             [
                 'cs', 'de', 'es-ES', 'fr', 'ja',
             ],
-        'firefox/win10-welcome.lang'             => $firefox_locales,
         'foundation/annualreport/2011.lang'      =>
             [
                 'ast', 'cs', 'de', 'el', 'eo', 'es-AR', 'es-CL',
@@ -894,6 +895,7 @@ $langfiles_subsets = [
             'nl', 'ro', 'sv-SE', 'sl',
         ],
         'snippets/2016/nov2016.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'snippets/2016/dec2016.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'social/2016/fundraising.lang'          => ['de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR'],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
         'surveys/survey_maker_party_2016.lang'  => ['bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'sl'],
