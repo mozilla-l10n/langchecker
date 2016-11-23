@@ -142,6 +142,7 @@ $mozillaorg_lang = [
     'mozorg/contribute/stories.lang',
     'mozorg/home/index.lang',
     'mozorg/home/index-2016.lang',
+    'mozorg/internet-health.lang',
     'mozorg/mission.lang',
     'mozorg/newsletters.lang',
     'mozorg/plugincheck-redesign.lang',
@@ -226,6 +227,10 @@ $lang_flags['www.mozilla.org'] = [
     ],
     'mozorg/home/index.lang'                  => [ 'obsolete' => ['all'] ],
     'mozorg/home/index-2016.lang'             => [ 'critical' => ['all'] ],
+    'mozorg/internet-health.lang'             => [
+       'critical'  => ['de', 'es-ES', 'fr'],
+       'opt-in'    => ['all'],
+    ],
     'mozorg/newsletters.lang'                 => [
         'critical' => $newsletter_locales,
     ],
@@ -700,6 +705,10 @@ $langfiles_subsets = [
         'mozorg/about.lang'                 => $mozillaorg,
         'mozorg/home/index.lang'            => $mozillaorg,
         'mozorg/home/index-2016.lang'       => $mozillaorg,
+        'mozorg/internet-health.lang'       =>
+            [
+              'de', 'es-ES', 'fr',
+            ],
         'mozorg/mission.lang'               => $mozillaorg,
         'mozorg/technology.lang'            => $mozillaorg,
         'mozorg/about/history-details.lang' =>
