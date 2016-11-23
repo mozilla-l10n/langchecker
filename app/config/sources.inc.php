@@ -228,7 +228,7 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/home/index.lang'                  => [ 'obsolete' => ['all'] ],
     'mozorg/home/index-2016.lang'             => [ 'critical' => ['all'] ],
     'mozorg/internet-health.lang'             => [
-       'critical'  => ['de', 'es', 'fr'],
+       'critical'  => ['de', 'es-ES', 'fr'],
        'opt-in'    => ['all'],
     ],
     'mozorg/newsletters.lang'                 => [
@@ -457,7 +457,6 @@ $deadline = [
     'main.lang'                             => '2016-11-30',
     'mozorg/contribute/signup.lang'         => '2016-06-06',
     'mozorg/home/index-2016.lang'           => '2016-10-25',
-    'mozorg/internet-health.lang'           => '2017-01-05',
     'mozorg/newsletters.lang'               => '2016-11-30',
     'mozorg/plugincheck-redesign.lang'      => '2016-08-01',
     'mozorg/technology.lang'                => '2016-11-30',
@@ -708,7 +707,7 @@ $langfiles_subsets = [
         'mozorg/home/index-2016.lang'       => $mozillaorg,
         'mozorg/internet-health.lang'       =>
             [
-              'de', 'es', 'fr',
+              'de', 'es-ES', 'fr',
             ],
         'mozorg/mission.lang'               => $mozillaorg,
         'mozorg/technology.lang'            => $mozillaorg,
