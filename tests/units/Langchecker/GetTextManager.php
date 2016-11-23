@@ -9,34 +9,6 @@ require_once __DIR__ . '/../bootstrap.php';
 
 class GetTextManager extends atoum\test
 {
-    public function testLoadPoFile()
-    {
-        $filepath = TEST_FILES . 'gettext/test.po';
-        $obj = new _GetTextManager();
-
-        $strings = $obj->loadPoFile($filepath);
-
-        // Total number of strings
-        $this
-            ->integer(count($strings))
-                ->isEqualTo(9);
-
-        // Identical string
-        $this
-            ->string($strings['Download'])
-                ->isEqualTo('Download {ok}');
-
-        // Single line string
-        $this
-            ->string($strings['Different by Design'])
-                ->isEqualTo('De todos. Para todos');
-
-        // Multiline string
-        $this
-            ->string($strings['As a non-profit, we’re free to innovate on your behalf without any pressure to compromise.'])
-                ->isEqualTo('Como una organización sin fines de lucro, somos libres de innovar en tu nombre sin presión o compromiso alguno.');
-    }
-
     public function testImportLocalPoFile()
     {
         $po_filepath = TEST_FILES . 'gettext/test.po';
@@ -71,14 +43,24 @@ class GetTextManager extends atoum\test
             ->string($po_import['strings']['Empty'])
                 ->isEqualTo('test');
 
+        // White spaces should be trimmed
+        $this
+            ->string($po_import['strings']['Download2'])
+                ->isEqualTo('Download');
+
         // Test one identical string
         $this
             ->string($po_import['strings']['Download'])
                 ->isEqualTo('Download {ok}');
 
-        // Test one translation starting with ; (should be ignored)
+        // Test translation starting with ; (should be ignored)
         $this
             ->string($po_import['strings']['Download test'])
                 ->isEqualTo('Download test');
+
+        // Test empty string (lang file should not be changed)
+        $this
+            ->string($po_import['strings']['EmptyPO'])
+                ->isEqualTo('Something');
     }
 }
