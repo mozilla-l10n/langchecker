@@ -23,7 +23,7 @@
         "mozillal10n/cache": "~0.1",
         "mozillal10n/json": "~0.1",
         "phpoffice/phpexcel": "1.8.*",
-        "sepia/po-parser": "~4.0",
+        "gettext/gettext": "~4.1",
         "twig/twig": "~1.0"
     },
 

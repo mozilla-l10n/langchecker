@@ -45,6 +45,10 @@ msgstr ""
 msgid "Download"
 msgstr "Download"
 
+#: White spaces
+msgid "Download2"
+msgstr "  Download "
+
 #: translation starting with ;
 msgid "Download test"
 msgstr ";Scarica test"
@@ -52,3 +56,7 @@ msgstr ";Scarica test"
 #: empty translation
 msgid "Empty"
 msgstr "test"
+
+#: empty translation
+msgid "EmptyPO"
+msgstr ""

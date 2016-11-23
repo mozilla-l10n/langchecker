@@ -1,8 +1,7 @@
 <?php
 namespace Langchecker;
 
-use Sepia\FileHandler;
-use Sepia\PoParser;
+use Gettext\Translations;
 
 /**
  * GetTextManager class
@@ -15,44 +14,55 @@ use Sepia\PoParser;
 class GetTextManager
 {
     /**
-     * Read .po file and return array of translated (not fuzzy)
-     * strings [original]=>translation
+     * Extract strings from Translations collection
      *
-     * @param string $path Path to the file to read
+     * @param array  $locale_strings Array of locale strings
+     * @param string $current_file   Description of the file being analyzed,
+     *                               for console messages
+     * @param object $translations   Collection of Translation objects
+     * @param string $output         Display output when updating strings
      *
-     * @return array Array of strings
+     * @return array Array of updated strings. errors
+     *
      */
-    public static function loadPoFile($path)
+    public static function extractStrings($locale_strings, $current_file, $translations, $output = true)
     {
-        $file_handler = new FileHandler($path);
-        $po_parser = new PoParser($file_handler);
-        $po_strings = $po_parser->parse();
+        $result = [
+          'imported' => false,
+          'errors'   => [],
+          'strings'  => [],
+        ];
 
-        $po_data = [];
-        if (count($po_strings) > 0) {
-            foreach ($po_strings as $entry) {
-                // We don't take fuzzy strings
-                if (isset($entry['flags']) && in_array('fuzzy', $entry['flags'])) {
+        foreach ($locale_strings as $string_id => $existing_translation) {
+            $translation_obj = $translations->find(null, $string_id);
+            if ($translation_obj) {
+                $new_translation = trim($translation_obj->getTranslation());
+                // Ignore empty strings
+                if ($new_translation == '') {
                     continue;
                 }
 
-                // We don't take empty strings
-                if (implode($entry['msgstr']) == '') {
-                    continue;
+                // If translation is identical to English, add '{ok}'
+                if ($new_translation == $string_id) {
+                    $new_translation .= ' {ok}';
                 }
 
-                $string_status = '';
-
-                // Add {ok} if the translation is identical to the English string
-                if (implode($entry['msgid']) == implode($entry['msgstr'])) {
-                    $string_status .= ' {ok}';
+                if (Utils::startsWith($new_translation, ';')) {
+                    // Translations can't start with ";"
+                    $result['errors'][] = "({$current_file}): translation starts with prohibited character ;\n{$new_translation}";
+                } elseif ($new_translation !== $existing_translation) {
+                    // Translation in the .po file is different, store the new one
+                    if ($output) {
+                        Utils::logger("Updated translation ({$current_file}): {$string_id} => {$new_translation}");
+                    }
+                    $locale_strings[$string_id] = $new_translation;
+                    $result['imported'] = true;
                 }
-
-                $po_data[implode($entry['msgid'])] = trim(implode($entry['msgstr']) . $string_status);
             }
         }
+        $result['strings'] = $locale_strings;
 
-        return $po_data;
+        return $result;
     }
 
     /**
@@ -68,12 +78,6 @@ class GetTextManager
      */
     public static function importLocamotion($locale_data, $current_filename, $current_locale, $locamotion_repo)
     {
-        $result = [
-          'imported' => false,
-          'errors'   => [],
-          'strings'  => [],
-        ];
-
         $local_import = $locamotion_repo != '' ? true : false;
 
         /*
@@ -110,34 +114,16 @@ class GetTextManager
 
         if ($po_exists) {
             if ($local_import) {
-                $po_strings = self::loadPoFile($file_path);
+                $translations = Translations::fromPoFile($file_path);
             } else {
                 Utils::logger("Fetching {$current_filename} from Locamotion.");
                 // Create temporary file (temp.po), delete it after extracting strings
                 file_put_contents('temp.po', file_get_contents($locamotion_url));
-                $po_strings = self::loadPoFile('temp.po');
+                $translations = Translations::fromPoFile('temp.po');
                 unlink('temp.po');
             }
 
-            if (count($po_strings) == 0) {
-                Utils::logger("{$current_locale}: {$current_filename} is empty.");
-            } else {
-                foreach ($po_strings as $string_id => $translation) {
-                    if (isset($locale_data['strings'][$string_id])) {
-                        // String is available in the local lang file, check if is different
-                        if (Utils::startsWith($po_strings[$string_id], ';')) {
-                            // Translations can't start with ";"
-                            $result['errors'][] = "({$current_locale} - {$current_filename}): translation starts with ;\n{$po_strings[$string_id]}";
-                        } elseif ($po_strings[$string_id] !== $locale_data['strings'][$string_id]) {
-                            // Translation in the .po file is different
-                            Utils::logger("Updated translation ({$current_locale}): {$string_id} => {$translation}");
-                            $locale_data['strings'][$string_id] = $translation;
-                            $result['imported'] = true;
-                        }
-                    }
-                }
-                $result['strings'] = $locale_data['strings'];
-            }
+            $result = self::extractStrings($locale_data['strings'], "{$current_locale} - {$current_filename}", $translations);
         } else {
             if ($local_import) {
                 Utils::logger("{$file_path} does not exist.");
@@ -163,36 +149,9 @@ class GetTextManager
      */
     public static function importLocalPoFile($po_filename, $locale_data, $output_message = true)
     {
-        $result = [
-          'imported' => false,
-          'errors'   => [],
-          'strings'  => [],
-        ];
-
         // Read po file
-        $po_strings = self::loadPoFile($po_filename);
-
-        if (count($po_strings) == 0 && $output_message) {
-            Utils::logger('.po file is empty.');
-        } else {
-            foreach ($po_strings as $string_id => $translation) {
-                if (isset($locale_data['strings'][$string_id])) {
-                    // String is available in the local lang file, check if is different
-                    if (Utils::startsWith($po_strings[$string_id], ';')) {
-                        // Translations can't start with ";"
-                        $result['errors'][] = "Translation starts with ;\n{$po_strings[$string_id]}";
-                    } elseif ($po_strings[$string_id] !== $locale_data['strings'][$string_id]) {
-                        // Translation in the .po file is different
-                        if ($output_message) {
-                            Utils::logger("Updated translation: {$string_id} => {$translation}");
-                        }
-                        $locale_data['strings'][$string_id] = $translation;
-                        $result['imported'] = true;
-                    }
-                }
-            }
-            $result['strings'] = $locale_data['strings'];
-        }
+        $translations = Translations::fromPoFile($po_filename);
+        $result = self::extractStrings($locale_data['strings'], $po_filename, $translations, $output_message);
 
         if ($output_message) {
             if ($result['imported']) {
