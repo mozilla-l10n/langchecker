@@ -62,5 +62,10 @@ class GetTextManager extends atoum\test
         $this
             ->string($po_import['strings']['EmptyPO'])
                 ->isEqualTo('Something');
+
+        // Fuzzy string should not be imported
+        $this
+            ->string($po_import['strings']['Up to 4 h'])
+                ->isEqualTo('Up to 4 h');
     }
 }

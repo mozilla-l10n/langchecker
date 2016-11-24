@@ -37,6 +37,12 @@ class GetTextManager
             $translation_obj = $translations->find(null, $string_id);
             if ($translation_obj) {
                 $new_translation = trim($translation_obj->getTranslation());
+
+                // Ignore fuzzy strings
+                if (in_array('fuzzy', $translation_obj->getFlags())) {
+                    continue;
+                }
+
                 // Ignore empty strings
                 if ($new_translation == '') {
                     continue;
