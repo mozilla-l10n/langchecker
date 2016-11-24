@@ -38,11 +38,8 @@ foreach ($supported_locales as $current_locale) {
     $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
 
     if (isset($reference_data['tag_bindings']) && $locale_analysis['activated']) {
-        if (isset($locale_data['tags'])) {
-            $locale_file_tags = $locale_data['tags'];
-        } else {
-            $locale_file_tags = [];
-        }
+        // Reset locale tags
+        $locale_file_tags = [];
 
         // Get tags not completely localized
         $incomplete_tagged_strings = [];
