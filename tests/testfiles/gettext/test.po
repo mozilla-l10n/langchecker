@@ -60,3 +60,8 @@ msgstr "test"
 #: empty translation
 msgid "EmptyPO"
 msgstr ""
+
+#: firefox/os/devices.lang:780
+#, fuzzy
+msgid "Up to 4 h"
+msgstr "Tot 40 uur"
