@@ -660,7 +660,7 @@ $langfiles_subsets = [
         'firefox/whatsnew_42.lang'               => $firefox_locales,
         'firefox/nightly_whatsnew.lang'          =>
             [
-                'cs', 'de', 'es-ES', 'fr', 'ja',
+                'cs', 'de', 'es-ES', 'fr', 'ja', 'pl',
             ],
         'foundation/annualreport/2011.lang'      =>
             [
@@ -707,7 +707,7 @@ $langfiles_subsets = [
         'mozorg/home/index-2016.lang'       => $mozillaorg,
         'mozorg/internet-health.lang'       =>
             [
-              'de', 'es-ES', 'fr',
+              'de', 'es-ES', 'fr', 'kab',
             ],
         'mozorg/mission.lang'               => $mozillaorg,
         'mozorg/technology.lang'            => $mozillaorg,
@@ -779,7 +779,7 @@ $langfiles_subsets = [
         'thunderbird/channel.lang' =>
             [
                 'cs', 'de', 'en-GB', 'fi', 'fr', 'it', 'ja', 'ko','lt', 'nl',
-                'pt-BR', 'ru', 'uk', 'zh-TW',
+                'pl', 'pt-BR', 'ru', 'uk', 'zh-TW',
             ],
         'thunderbird/features.lang'      => $thunderbird_locales,
         'thunderbird/index.lang'         => $thunderbird_locales,
