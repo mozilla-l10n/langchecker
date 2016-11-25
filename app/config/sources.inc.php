@@ -643,6 +643,10 @@ $langfiles_subsets = [
                 'sk', 'sv-SE', 'th', 'tr', 'uk', 'vi', 'zh-CN',
                 'zh-TW',
             ],
+        'firefox/nightly_whatsnew.lang'          =>
+            [
+                'cs', 'de', 'es-ES', 'fr', 'ja', 'pl',
+            ],
         'firefox/os/devices.lang' => $firefox_os,
         'firefox/os/index.lang'   =>
             [
@@ -658,10 +662,6 @@ $langfiles_subsets = [
         'firefox/tracking-protection-tour.lang'  => $firefox_locales,
         'firefox/whatsnew_38.lang'               => $firefox_locales,
         'firefox/whatsnew_42.lang'               => $firefox_locales,
-        'firefox/nightly_whatsnew.lang'          =>
-            [
-                'cs', 'de', 'es-ES', 'fr', 'ja', 'pl',
-            ],
         'foundation/annualreport/2011.lang'      =>
             [
                 'ast', 'cs', 'de', 'el', 'eo', 'es-AR', 'es-CL',
@@ -703,12 +703,6 @@ $langfiles_subsets = [
         'main.lang'                         => $mozillaorg,
         'mozorg/404.lang'                   => $mozillaorg,
         'mozorg/about.lang'                 => $mozillaorg,
-        'mozorg/home/index.lang'            => $mozillaorg,
-        'mozorg/home/index-2016.lang'       => $mozillaorg,
-        'mozorg/internet-health.lang'       =>
-            [
-              'de', 'es-ES', 'fr', 'kab',
-            ],
         'mozorg/mission.lang'               => $mozillaorg,
         'mozorg/technology.lang'            => $mozillaorg,
         'mozorg/about/history-details.lang' =>
@@ -739,9 +733,15 @@ $langfiles_subsets = [
                 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
                 'tr', 'uk', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
             ],
-        'mozorg/contribute/index.lang'     => $getinvolved_locales,
-        'mozorg/contribute/signup.lang'    => $getinvolved_locales,
-        'mozorg/contribute/stories.lang'   => $getinvolved_locales,
+        'mozorg/contribute/index.lang'      => $getinvolved_locales,
+        'mozorg/contribute/signup.lang'     => $getinvolved_locales,
+        'mozorg/contribute/stories.lang'    => $getinvolved_locales,
+        'mozorg/home/index.lang'            => $mozillaorg,
+        'mozorg/home/index-2016.lang'       => $mozillaorg,
+        'mozorg/internet-health.lang'       =>
+            [
+              'cy', 'de', 'es-ES', 'fr', 'kab',
+            ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
         'mozorg/products.lang'             => $mozillaorg,
@@ -778,8 +778,8 @@ $langfiles_subsets = [
             ],
         'thunderbird/channel.lang' =>
             [
-                'cs', 'de', 'en-GB', 'fi', 'fr', 'it', 'ja', 'ko','lt', 'nl',
-                'pl', 'pt-BR', 'ru', 'uk', 'zh-TW',
+                'cy', 'cs', 'de', 'en-GB', 'fi', 'fr', 'it', 'ja', 'ko',
+                'lt', 'nl', 'pl', 'pt-BR', 'ru', 'uk', 'zh-TW',
             ],
         'thunderbird/features.lang'      => $thunderbird_locales,
         'thunderbird/index.lang'         => $thunderbird_locales,
