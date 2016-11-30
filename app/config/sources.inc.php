@@ -267,6 +267,8 @@ $lang_flags['about:healthreport'] = [
 $engagement_lang = [
     'ads/ios_ads_nov2015.lang',
     'ads/ios_android_apr2016.lang',
+    'emails/2016/fundraising_email_1.lang',
+    'emails/2016/fundraising_email_2.lang',
     'heartbeat/2016/sep2016.lang',
     'heartbeat/2016/nov2016.lang',
     'snippets/2014/jan2014.lang',
@@ -444,6 +446,8 @@ $deadline = [
     'apple_description_release.lang'        => '2016-03-30', // appstores project
     'apple_screenshots_v3.lang'             => '2016-03-25', // appstores project
     'download_button.lang'                  => '2016-04-29',
+    'emails/2016/fundraising_email_1.lang'  => '2016-12-04',
+    'emails/2016/fundraising_email_2.lang'  => '2016-12-11',
     'firefox/accounts.lang'                 => '2016-03-15',
     'firefox/channel/index.lang'            => '2016-12-12',
     'firefox/family/index.lang'             => '2016-10-04',
@@ -462,8 +466,6 @@ $deadline = [
     'mozorg/technology.lang'                => '2016-11-30',
     'snippets/2016/nov2016.lang'            => '2016-11-05',
     'snippets/2016/dec2016.lang'            => '2016-12-05',
-    'social/2016/fundraising.lang'          => '2016-11-28',
-    'surveys/survey_maker_party_2016.lang'  => '2016-10-30',
     'thunderbird/start/release.lang'        => '2016-08-01',
     'whatsnew/whatsnew_android_50.lang'     => '2016-11-14', // appstores project
     'whatsnew/whatsnew_ios_5_0.lang'        => '2016-07-27', // appstores project
@@ -793,9 +795,11 @@ $langfiles_subsets = [
 
     'engagement' =>
     [
-        'ads/ios_ads_nov2015.lang'     => ['de', 'fr'],
-        'ads/ios_android_apr2016.lang' => ['de', 'es-ES', 'fr', 'pl'],
-        'heartbeat/2016/sep2016.lang'  =>
+        'ads/ios_ads_nov2015.lang'             => ['de', 'fr'],
+        'ads/ios_android_apr2016.lang'         => ['de', 'es-ES', 'fr', 'pl'],
+        'emails/2016/fundraising_email_1.lang' => ['de', 'es-ES', 'fr', 'it'],
+        'emails/2016/fundraising_email_2.lang' => ['de', 'es-ES', 'fr', 'it'],
+        'heartbeat/2016/sep2016.lang'          =>
             [
                 'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja',
                 'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
