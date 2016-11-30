@@ -340,6 +340,7 @@ $engagement_lang = [
     'snippets/2016/jun2016_berec.lang',
     'snippets/2016/nov2016.lang',
     'snippets/2016/dec2016.lang',
+    'snippets/2017/jan2017.lang',
     'social/2016/fundraising.lang',
     'surveys/survey_hello_fx42.lang',
     'surveys/survey_maker_party_2016.lang',
@@ -372,6 +373,9 @@ $lang_flags['engagement'] = [
     ],
     'snippets/2016/dec2016.lang' => [
         'critical' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+    ],
+    'snippets/2017/jan2017.lang' => [
+        'critical' => ['de'],
     ],
 ];
 
@@ -466,6 +470,7 @@ $deadline = [
     'mozorg/technology.lang'                => '2016-11-30',
     'snippets/2016/nov2016.lang'            => '2016-11-05',
     'snippets/2016/dec2016.lang'            => '2016-12-05',
+    'snippets/2017/jan2017.lang'            => '2017-01-06',
     'thunderbird/start/release.lang'        => '2016-08-01',
     'whatsnew/whatsnew_android_50.lang'     => '2016-11-14', // appstores project
     'whatsnew/whatsnew_ios_5_0.lang'        => '2016-07-27', // appstores project
@@ -480,7 +485,7 @@ $firefox_os = [
 ];
 
 $getinvolved_locales = [
-    'af', 'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
+    'af', 'am', 'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
     'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr',
     'fy-NL', 'he', 'hi-IN', 'hr', 'hsb', 'id', 'it', 'kab', 'ko',
     'lt', 'ms', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl',
@@ -602,7 +607,7 @@ $langfiles_subsets = [
         'firefox/desktop/index.lang'          => $firefox_locales,
         'firefox/desktop/tips.lang'           =>
             [
-                'af', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
+                'af', 'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL',
                 'ga-IE', 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id',
                 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl', 'nv', 'pl', 'pt-BR',
@@ -696,7 +701,7 @@ $langfiles_subsets = [
         'legal/index.lang'         => array_merge($firefox_os, ['et']),
         'lightbeam/lightbeam.lang' =>
             [
-                'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
+                'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL',
                 'hi-IN', 'hsb', 'it', 'kab', 'ko', 'ja', 'km', 'lt', 'ms', 'nl',
                 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq', 'sr',
@@ -709,7 +714,7 @@ $langfiles_subsets = [
         'mozorg/technology.lang'            => $mozillaorg,
         'mozorg/about/history-details.lang' =>
             [
-                'af', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
+                'af', 'am', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
                 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja', 'kab',
                 'km', 'ko', 'lt', 'nl', 'nv', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
                 'ru', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
@@ -717,7 +722,7 @@ $langfiles_subsets = [
             ],
         'mozorg/about/history.lang' =>
             [
-                'af', 'ar', 'bg', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb',
+                'af', 'am', 'ar', 'bg', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb',
                 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
                 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl', 'pa-IN',
@@ -727,7 +732,7 @@ $langfiles_subsets = [
             ],
         'mozorg/about/manifesto.lang' =>
             [
-                'af', 'ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de',
+                'af', 'am', 'ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de',
                 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'gd', 'gl',
                 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it', 'ja', 'kab',
@@ -909,6 +914,7 @@ $langfiles_subsets = [
         ],
         'snippets/2016/nov2016.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'snippets/2016/dec2016.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'snippets/2017/jan2017.lang'            => ['de'],
         'social/2016/fundraising.lang'          => ['de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR'],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
         'surveys/survey_maker_party_2016.lang'  => ['bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'sl'],

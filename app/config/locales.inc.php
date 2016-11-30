@@ -6,7 +6,7 @@
     new locales.
 */
 $mozilla = [
-    'ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD', 'bn-IN', 'br',
+    'ach', 'af', 'am', 'an', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD', 'bn-IN', 'br',
     'bs', 'ca', 'cak', 'cs', 'cy', 'da', 'de', 'dsb', 'el', 'en-GB', 'en-ZA',
     'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'es', 'et', 'eu', 'fa', 'ff',
     'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gn', 'gu-IN', 'he', 'hi-IN',
@@ -32,7 +32,7 @@ $fennec_locales = [
 
 // List of locales only working on mozilla.org
 $mozorg_locales = [
-    'nv',
+    'am', 'nv',
 ];
 
 /*
