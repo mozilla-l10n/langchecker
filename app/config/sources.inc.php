@@ -797,8 +797,8 @@ $langfiles_subsets = [
     [
         'ads/ios_ads_nov2015.lang'             => ['de', 'fr'],
         'ads/ios_android_apr2016.lang'         => ['de', 'es-ES', 'fr', 'pl'],
-        'emails/2016/fundraising_email_1.lang' => ['de', 'es-ES', 'fr', 'it'],
-        'emails/2016/fundraising_email_2.lang' => ['de', 'es-ES', 'fr', 'it'],
+        'emails/2016/fundraising_email_1.lang' => ['de', 'es', 'fr', 'it'],
+        'emails/2016/fundraising_email_2.lang' => ['de', 'es', 'fr', 'it'],
         'heartbeat/2016/sep2016.lang'          =>
             [
                 'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja',
