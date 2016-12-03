@@ -340,6 +340,8 @@ $engagement_lang = [
     'snippets/2016/jun2016_berec.lang',
     'snippets/2016/nov2016.lang',
     'snippets/2016/dec2016.lang',
+    'snippets/2016/dec2016_eoy_a.lang',
+    'snippets/2016/dec2016_eoy_b.lang',
     'snippets/2017/jan2017.lang',
     'social/2016/fundraising.lang',
     'surveys/survey_hello_fx42.lang',
@@ -374,7 +376,9 @@ $lang_flags['engagement'] = [
     'snippets/2016/dec2016.lang' => [
         'critical' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
     ],
-    'snippets/2017/jan2017.lang' => [
+    'snippets/2016/dec2016_eoy_a.lang' => [ 'critical' => ['all'] ],
+    'snippets/2016/dec2016_eoy_b.lang' => [ 'critical' => ['all'] ],
+    'snippets/2017/jan2017.lang'       => [
         'critical' => ['de'],
     ],
 ];
@@ -470,6 +474,8 @@ $deadline = [
     'mozorg/technology.lang'                => '2016-11-30',
     'snippets/2016/nov2016.lang'            => '2016-11-05',
     'snippets/2016/dec2016.lang'            => '2016-12-05',
+    'snippets/2016/dec2016_eoy_a.lang'      => '2016-12-15',
+    'snippets/2016/dec2016_eoy_b.lang'      => '2016-12-15',
     'snippets/2017/jan2017.lang'            => '2017-01-06',
     'thunderbird/start/release.lang'        => '2016-08-01',
     'whatsnew/whatsnew_android_50.lang'     => '2016-11-14', // appstores project
@@ -914,6 +920,8 @@ $langfiles_subsets = [
         ],
         'snippets/2016/nov2016.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'snippets/2016/dec2016.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'snippets/2016/dec2016_eoy_a.lang'      => ['it', 'pt-BR', 'ru'],
+        'snippets/2016/dec2016_eoy_b.lang'      => ['de', 'es', 'fr', 'pl'],
         'snippets/2017/jan2017.lang'            => ['de'],
         'social/2016/fundraising.lang'          => ['de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR'],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
