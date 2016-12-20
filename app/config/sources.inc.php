@@ -269,6 +269,7 @@ $engagement_lang = [
     'ads/ios_android_apr2016.lang',
     'emails/2016/fundraising_email_1.lang',
     'emails/2016/fundraising_email_2.lang',
+    'emails/2016/fundraising_email_3.lang',
     'heartbeat/2016/sep2016.lang',
     'heartbeat/2016/nov2016.lang',
     'snippets/2014/jan2014.lang',
@@ -454,6 +455,7 @@ $deadline = [
     'apple_description_release.lang'        => '2016-03-30', // appstores project
     'apple_screenshots_v3.lang'             => '2016-03-25', // appstores project
     'download_button.lang'                  => '2016-04-29',
+    'emails/2016/fundraising_email_3.lang'  => '2016-12-27',
     'firefox/accounts.lang'                 => '2016-03-15',
     'firefox/channel/index.lang'            => '2016-12-12',
     'firefox/family/index.lang'             => '2016-10-04',
@@ -806,6 +808,7 @@ $langfiles_subsets = [
         'ads/ios_android_apr2016.lang'         => ['de', 'es-ES', 'fr', 'pl'],
         'emails/2016/fundraising_email_1.lang' => ['de', 'es', 'fr', 'it'],
         'emails/2016/fundraising_email_2.lang' => ['de', 'es', 'fr', 'it'],
+        'emails/2016/fundraising_email_3.lang' => ['de', 'es', 'fr'],
         'heartbeat/2016/sep2016.lang'          =>
             [
                 'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja',
