@@ -269,6 +269,7 @@ $engagement_lang = [
     'ads/ios_android_apr2016.lang',
     'emails/2016/fundraising_email_1.lang',
     'emails/2016/fundraising_email_2.lang',
+    'emails/2016/fundraising_email_3.lang',
     'heartbeat/2016/sep2016.lang',
     'heartbeat/2016/nov2016.lang',
     'snippets/2014/jan2014.lang',
@@ -343,6 +344,7 @@ $engagement_lang = [
     'snippets/2016/dec2016_eoy_a.lang',
     'snippets/2016/dec2016_eoy_b.lang',
     'snippets/2016/dec2016_eoy_mob.lang',
+    'snippets/2016/dec2016_eoy_ty.lang',
     'snippets/2017/jan2017.lang',
     'social/2016/fundraising.lang',
     'surveys/survey_hello_fx42.lang',
@@ -454,6 +456,7 @@ $deadline = [
     'apple_description_release.lang'        => '2016-03-30', // appstores project
     'apple_screenshots_v3.lang'             => '2016-03-25', // appstores project
     'download_button.lang'                  => '2016-04-29',
+    'emails/2016/fundraising_email_3.lang'  => '2016-12-27',
     'firefox/accounts.lang'                 => '2016-03-15',
     'firefox/channel/index.lang'            => '2016-12-12',
     'firefox/family/index.lang'             => '2016-10-04',
@@ -472,6 +475,7 @@ $deadline = [
     'mozorg/technology.lang'                => '2016-11-30',
     'snippets/2016/nov2016.lang'            => '2016-11-05',
     'snippets/2016/dec2016.lang'            => '2016-12-05',
+    'snippets/2016/dec2016_eoy_ty.lang'     => '2017-01-03',
     'snippets/2017/jan2017.lang'            => '2017-01-06',
     'thunderbird/start/release.lang'        => '2016-08-01',
     'whatsnew/whatsnew_android_50.lang'     => '2016-11-14', // appstores project
@@ -806,6 +810,7 @@ $langfiles_subsets = [
         'ads/ios_android_apr2016.lang'         => ['de', 'es-ES', 'fr', 'pl'],
         'emails/2016/fundraising_email_1.lang' => ['de', 'es', 'fr', 'it'],
         'emails/2016/fundraising_email_2.lang' => ['de', 'es', 'fr', 'it'],
+        'emails/2016/fundraising_email_3.lang' => ['de', 'es', 'fr'],
         'heartbeat/2016/sep2016.lang'          =>
             [
                 'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja',
@@ -919,6 +924,7 @@ $langfiles_subsets = [
         'snippets/2016/dec2016_eoy_a.lang'      => ['it', 'pt-BR', 'ru'],
         'snippets/2016/dec2016_eoy_b.lang'      => ['de', 'es', 'fr', 'pl'],
         'snippets/2016/dec2016_eoy_mob.lang'    => ['de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru'],
+        'snippets/2016/dec2016_eoy_ty.lang'     => ['de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru'],
         'snippets/2017/jan2017.lang'            => ['de'],
         'social/2016/fundraising.lang'          => ['de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR'],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
