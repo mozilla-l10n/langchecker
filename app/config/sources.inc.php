@@ -344,6 +344,7 @@ $engagement_lang = [
     'snippets/2016/dec2016_eoy_a.lang',
     'snippets/2016/dec2016_eoy_b.lang',
     'snippets/2016/dec2016_eoy_mob.lang',
+    'snippets/2016/dec2016_eoy_ty.lang',
     'snippets/2017/jan2017.lang',
     'social/2016/fundraising.lang',
     'surveys/survey_hello_fx42.lang',
@@ -474,6 +475,7 @@ $deadline = [
     'mozorg/technology.lang'                => '2016-11-30',
     'snippets/2016/nov2016.lang'            => '2016-11-05',
     'snippets/2016/dec2016.lang'            => '2016-12-05',
+    'snippets/2016/dec2016_eoy_ty.lang'     => '2017-01-03',
     'snippets/2017/jan2017.lang'            => '2017-01-06',
     'thunderbird/start/release.lang'        => '2016-08-01',
     'whatsnew/whatsnew_android_50.lang'     => '2016-11-14', // appstores project
@@ -922,6 +924,7 @@ $langfiles_subsets = [
         'snippets/2016/dec2016_eoy_a.lang'      => ['it', 'pt-BR', 'ru'],
         'snippets/2016/dec2016_eoy_b.lang'      => ['de', 'es', 'fr', 'pl'],
         'snippets/2016/dec2016_eoy_mob.lang'    => ['de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru'],
+        'snippets/2016/dec2016_eoy_ty.lang'     => ['de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru'],
         'snippets/2017/jan2017.lang'            => ['de'],
         'social/2016/fundraising.lang'          => ['de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR'],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
