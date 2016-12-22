@@ -406,6 +406,7 @@ $appstores_lang = [
     'whatsnew/whatsnew_ios_2_1.lang',
     'whatsnew/whatsnew_ios_4_0.lang',
     'whatsnew/whatsnew_ios_5_0.lang',
+    'whatsnew/whatsnew_ios_6_0.lang',
 ];
 
 $lang_flags['appstores'] = [
@@ -439,6 +440,7 @@ $lang_flags['appstores'] = [
     'whatsnew/whatsnew_android_50_beta.lang' => [ 'obsolete' => ['all'] ],
     'whatsnew/whatsnew_ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
     'whatsnew/whatsnew_ios_4_0.lang'         => [ 'obsolete' => ['all'] ],
+    'whatsnew/whatsnew_ios_5_0.lang'         => [ 'obsolete' => ['all'] ],
 ];
 
 $no_active_tag = [
@@ -480,6 +482,7 @@ $deadline = [
     'thunderbird/start/release.lang'        => '2016-08-01',
     'whatsnew/whatsnew_android_50.lang'     => '2016-11-14', // appstores project
     'whatsnew/whatsnew_ios_5_0.lang'        => '2016-07-27', // appstores project
+    'whatsnew/whatsnew_ios_6_0.lang'        => '2016-01-06', // appstores project
 ];
 
 $firefox_os = [
@@ -964,5 +967,6 @@ $langfiles_subsets = [
         'whatsnew/whatsnew_ios_2_1.lang'         => $apple_store_target,
         'whatsnew/whatsnew_ios_4_0.lang'         => $apple_store_target,
         'whatsnew/whatsnew_ios_5_0.lang'         => $apple_store_target,
+        'whatsnew/whatsnew_ios_6_0.lang'         => $apple_store_target,
     ],
 ];
