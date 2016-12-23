@@ -76,6 +76,7 @@ sort($ios_locales);
 /*
     Source: https://l10n.mozilla-community.org/stores_l10n/api/apple/localesmapping/?reverse
     Locales supported by the Apple Store
+    See also https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Appendices/AppStoreTerritories.html
 */
 $apple_store_locales = [
     'da', 'de', 'el', 'en-GB', 'es-ES', 'es-MX', 'fi', 'fr', 'id',
