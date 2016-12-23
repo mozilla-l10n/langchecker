@@ -62,10 +62,10 @@ $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
 */
 $ios_locales = [
     'ast', 'az', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy', 'da', 'de', 'dsb',
-    'en-GB', 'en-US', 'eo', 'es', 'es-CL', 'es-MX', 'eu', 'fr', 'fy-NL',
+    'en-GB', 'en-US', 'eo', 'es-ES', 'es-CL', 'es-MX', 'eu', 'fr', 'fy-NL',
     'ga-IE', 'gd', 'he', 'hsb', 'hu', 'id', 'is', 'it', 'ja', 'kab', 'kk', 'km',
     'ko', 'lo', 'lt', 'lv', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'pl', 'pt-BR',
-    'pt-PT', 'rm', 'ro', 'ru', 'ses', 'sk', 'sl', 'sv-SE', 'te', 'th', 'tl',
+    'pt-PT', 'rm', 'ro', 'ru', 'son', 'sk', 'sl', 'sv-SE', 'te', 'th', 'tl',
     'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
 ];
 
