@@ -57,7 +57,8 @@ if (isset($_SERVER[$header])) {
 
         // Pull latest changes
         $log .= "Updating Git repository\n";
-        exec("git checkout $branch; git pull origin $branch");
+        exec("git checkout $branch >/dev/null 2>&1");
+        exec("git pull origin $branch >/dev/null 2>&1");
 
         // Delete cache
         $log .= "Removing existing cache\n";
