@@ -386,61 +386,61 @@ $lang_flags['engagement'] = [
 ];
 
 $appstores_lang = [
-    'description_beta_page.lang',
-    'apple_description_release.lang',
-    'apple_screenshots_v3.lang',
-    'android_release.lang',
-    'whatsnew/whatsnew_android_44.lang',
-    'whatsnew/whatsnew_android_45.lang',
-    'whatsnew/whatsnew_android_46_beta.lang',
-    'whatsnew/whatsnew_android_46.lang',
-    'whatsnew/whatsnew_android_47_beta.lang',
-    'whatsnew/whatsnew_android_47.lang',
-    'whatsnew/whatsnew_android_48_beta.lang',
-    'whatsnew/whatsnew_android_48.lang',
-    'whatsnew/whatsnew_android_49_beta.lang',
-    'whatsnew/whatsnew_android_49.lang',
-    'whatsnew/whatsnew_android_50_beta.lang',
-    'whatsnew/whatsnew_android_50.lang',
-    'whatsnew/whatsnew_android_51_beta.lang',
-    'whatsnew/whatsnew_ios_2_1.lang',
-    'whatsnew/whatsnew_ios_4_0.lang',
-    'whatsnew/whatsnew_ios_5_0.lang',
-    'whatsnew/whatsnew_ios_6_0.lang',
+    'fx_android/description_beta.lang',
+    'fx_android/description_release.lang',
+    'fx_android/whatsnew/android_44.lang',
+    'fx_android/whatsnew/android_45.lang',
+    'fx_android/whatsnew/android_46_beta.lang',
+    'fx_android/whatsnew/android_46.lang',
+    'fx_android/whatsnew/android_47_beta.lang',
+    'fx_android/whatsnew/android_47.lang',
+    'fx_android/whatsnew/android_48_beta.lang',
+    'fx_android/whatsnew/android_48.lang',
+    'fx_android/whatsnew/android_49_beta.lang',
+    'fx_android/whatsnew/android_49.lang',
+    'fx_android/whatsnew/android_50_beta.lang',
+    'fx_android/whatsnew/android_50.lang',
+    'fx_android/whatsnew/android_51_beta.lang',
+    'fx_ios/description_release.lang',
+    'fx_ios/screenshots_v3.lang',
+    'fx_ios/whatsnew/ios_2_1.lang',
+    'fx_ios/whatsnew/ios_4_0.lang',
+    'fx_ios/whatsnew/ios_5_0.lang',
+    'fx_ios/whatsnew/ios_6_0.lang',
 ];
 
 $lang_flags['appstores'] = [
-    'apple_description_release.lang' => [
-        'critical' => [
-            'de', 'es-ES', 'es-MX', 'fr', 'id', 'it',
-            'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
-        ],
-    ],
-    'apple_screenshots_v3.lang' => [
-        'critical' => [
-            'de', 'es-ES', 'es-MX', 'fr', 'id', 'it',
-            'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
-        ],
-    ],
-    'android_release.lang' => [
+    'fx_android/description_release.lang' => [
         'critical' => [
             'ar', 'de', 'es-ES', 'es-MX', 'fr', 'id',
             'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
         ],
     ],
-    'whatsnew/whatsnew_android_44.lang'      => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_45.lang'      => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_46.lang'      => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_47.lang'      => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_48.lang'      => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_46_beta.lang' => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_47_beta.lang' => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_48_beta.lang' => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_49_beta.lang' => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_50_beta.lang' => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_ios_4_0.lang'         => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_ios_5_0.lang'         => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_44.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_45.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_46.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_47.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_48.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_46_beta.lang' => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_47_beta.lang' => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_48_beta.lang' => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_49_beta.lang' => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_50_beta.lang' => [ 'obsolete' => ['all'] ],
+    'fx_ios/description_release.lang'          => [
+        'critical' => [
+            'de', 'es-ES', 'es-MX', 'fr', 'id', 'it',
+            'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
+        ],
+    ],
+    'fx_ios/screenshots_v3.lang' => [
+        'critical' => [
+            'de', 'es-ES', 'es-MX', 'fr', 'id', 'it',
+            'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
+        ],
+    ],
+    'fx_ios/whatsnew/ios_2_1.lang' => [ 'obsolete' => ['all'] ],
+    'fx_ios/whatsnew/ios_4_0.lang' => [ 'obsolete' => ['all'] ],
+    'fx_ios/whatsnew/ios_5_0.lang' => [ 'obsolete' => ['all'] ],
 ];
 
 $no_active_tag = [
@@ -453,10 +453,8 @@ $no_active_tag = [
 ];
 
 $deadline = [
-    'ads/ios_android_apr2016.lang'          => '2016-04-22',
-    'android_release.lang'                  => '2016-04-30', // appstores project
-    'apple_description_release.lang'        => '2016-03-30', // appstores project
-    'apple_screenshots_v3.lang'             => '2016-03-25', // appstores project
+    'fx_android/description_release.lang'   => '2016-04-30', // appstores project
+    'fx_ios/description_release.lang'       => '2016-03-30', // appstores project
     'download_button.lang'                  => '2016-04-29',
     'emails/2016/fundraising_email_3.lang'  => '2016-12-27',
     'firefox/accounts.lang'                 => '2016-03-15',
@@ -480,9 +478,8 @@ $deadline = [
     'snippets/2016/dec2016_eoy_ty.lang'     => '2017-01-03',
     'snippets/2017/jan2017.lang'            => '2017-01-06',
     'thunderbird/start/release.lang'        => '2016-08-01',
-    'whatsnew/whatsnew_android_50.lang'     => '2016-11-14', // appstores project
-    'whatsnew/whatsnew_ios_5_0.lang'        => '2016-07-27', // appstores project
-    'whatsnew/whatsnew_ios_6_0.lang'        => '2016-01-06', // appstores project
+    'fx_android/whatsnew/android_50.lang'   => '2016-11-14', // appstores project
+    'fx_ios/whatsnew/ios_6_0.lang'          => '2016-01-06', // appstores project
 ];
 
 $firefox_os = [
@@ -945,28 +942,28 @@ $langfiles_subsets = [
 
     'appstores' => [
         // Added: ar, see https://bugzilla.mozilla.org/show_bug.cgi?id=1259200
-        'android_release.lang'           => array_merge($google_play_target, ['ar']),
-        'apple_description_release.lang' => $apple_store_target,
-        'apple_screenshots_v3.lang'      => [
+        'fx_android/description_release.lang'      => array_merge($google_play_target, ['ar']),
+        'fx_android/description_beta.lang'         => $google_play_target,
+        'fx_android/whatsnew/android_44.lang'      => ['fr', 'ja', 'zh-TW'],
+        'fx_android/whatsnew/android_45.lang'      => array_merge($google_play_target, ['ar']),
+        'fx_android/whatsnew/android_46.lang'      => array_merge($google_play_target, ['ar']),
+        'fx_android/whatsnew/android_47.lang'      => array_merge($google_play_target, ['ar']),
+        'fx_android/whatsnew/android_48.lang'      => array_merge($google_play_target, ['ar']),
+        'fx_android/whatsnew/android_49.lang'      => array_merge($google_play_target, ['ar']),
+        'fx_android/whatsnew/android_50.lang'      => array_merge($google_play_target, ['ar']),
+        'fx_android/whatsnew/android_46_beta.lang' => $google_play_target,
+        'fx_android/whatsnew/android_47_beta.lang' => $google_play_target,
+        'fx_android/whatsnew/android_48_beta.lang' => $google_play_target,
+        'fx_android/whatsnew/android_49_beta.lang' => $google_play_target,
+        'fx_android/whatsnew/android_50_beta.lang' => $google_play_target,
+        'fx_android/whatsnew/android_51_beta.lang' => $google_play_target,
+        'fx_ios/description_release.lang'          => $apple_store_target,
+        'fx_ios/screenshots_v3.lang'               => [
             'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
         ],
-        'description_beta_page.lang'             => $google_play_target,
-        'whatsnew/whatsnew_android_44.lang'      => ['fr', 'ja', 'zh-TW'],
-        'whatsnew/whatsnew_android_45.lang'      => array_merge($google_play_target, ['ar']),
-        'whatsnew/whatsnew_android_46.lang'      => array_merge($google_play_target, ['ar']),
-        'whatsnew/whatsnew_android_47.lang'      => array_merge($google_play_target, ['ar']),
-        'whatsnew/whatsnew_android_48.lang'      => array_merge($google_play_target, ['ar']),
-        'whatsnew/whatsnew_android_49.lang'      => array_merge($google_play_target, ['ar']),
-        'whatsnew/whatsnew_android_50.lang'      => array_merge($google_play_target, ['ar']),
-        'whatsnew/whatsnew_android_46_beta.lang' => $google_play_target,
-        'whatsnew/whatsnew_android_47_beta.lang' => $google_play_target,
-        'whatsnew/whatsnew_android_48_beta.lang' => $google_play_target,
-        'whatsnew/whatsnew_android_49_beta.lang' => $google_play_target,
-        'whatsnew/whatsnew_android_50_beta.lang' => $google_play_target,
-        'whatsnew/whatsnew_android_51_beta.lang' => $google_play_target,
-        'whatsnew/whatsnew_ios_2_1.lang'         => $apple_store_target,
-        'whatsnew/whatsnew_ios_4_0.lang'         => $apple_store_target,
-        'whatsnew/whatsnew_ios_5_0.lang'         => $apple_store_target,
-        'whatsnew/whatsnew_ios_6_0.lang'         => $apple_store_target,
+        'fx_ios/whatsnew/ios_2_1.lang' => $apple_store_target,
+        'fx_ios/whatsnew/ios_4_0.lang' => $apple_store_target,
+        'fx_ios/whatsnew/ios_5_0.lang' => $apple_store_target,
+        'fx_ios/whatsnew/ios_6_0.lang' => $apple_store_target,
     ],
 ];
