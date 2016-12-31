@@ -1,5 +1,10 @@
 <?php
 
+use Cache\Cache;
+use Json\Json;
+
+$json_object = new Json;
+
 /*
     $mozilla is the list of all locales supported on Langchecker.
     Don't forget to update other relevant arrays in this file when adding
@@ -49,76 +54,64 @@ $firefox_locales = array_diff(
 // All locales working on Firefox desktop + Android
 $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
 
-/*
-    Source: https://raw.githubusercontent.com/mozilla/firefox-ios/v6.x/shipping_locales.txt
-*/
-$ios_locales = [
-    'ast', 'az', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy', 'da', 'de', 'dsb',
-    'en-GB', 'en-US', 'eo', 'es', 'es-CL', 'es-MX', 'eu', 'fr', 'fy-NL',
-    'ga-IE', 'gd', 'he', 'hsb', 'hu', 'id', 'is', 'it', 'ja', 'kab', 'kk', 'km',
-    'ko', 'lo', 'lt', 'lv', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'pl', 'pt-BR',
-    'pt-PT', 'rm', 'ro', 'ru', 'ses', 'sk', 'sl', 'sv-SE', 'te', 'th', 'tl',
-    'tr', 'uk', 'uz', 'zh-CN', 'zh-TW',
-];
-/*
-    Some changes are needed from the raw list of locales:
-    * es -> es-ES
-    * ses -> son
-    * drop en-US
-*/
-$ios_locales = array_diff($ios_locales, ['es', 'en-US', 'ses']);
-$ios_locales = array_merge($ios_locales, ['es-ES', 'son']);
-sort($ios_locales);
+// Locales working on Firefox for iOS (from stores_l10n app)
+$cache_id = 'ios_locales';
+if (! $ios_locales = Cache::getKey($cache_id, 60 * 60)) {
+    $ios_locales = $json_object
+        ->setURI(STORES_L10N . 'fx_ios/supportedlocales/release')
+        ->fetchContent();
+    Cache::setKey($cache_id, $ios_locales);
+}
+// Drop en-US
+$ios_locales = array_diff($ios_locales, ['en-US']);
 
-/*
-    Source: https://l10n.mozilla-community.org/stores_l10n/api/apple/localesmapping/?reverse
+// Locales supported by Apple App Store (from stores_l10n app)
+$cache_id = 'apple_store_locales';
+if (! $apple_store_locales = Cache::getKey($cache_id, 60 * 60 * 24)) {
+    $apple_store_locales = $json_object
+        ->setURI(STORES_L10N . 'apple/localesmapping/?reverse')
+        ->fetchContent();
+    Cache::setKey($cache_id, array_keys($apple_store_locales));
+}
 
-    Locales supported by Apple App Store. See also: https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Appendices/AppStoreTerritories.html
-*/
-$apple_store_locales = [
-    'da', 'de', 'el', 'en-GB', 'es-ES', 'es-MX', 'fi', 'fr', 'id',
-    'it', 'ja', 'ko', 'ms', 'nb-NO', 'nl', 'pt-BR', 'pt-PT', 'ru',
-    'sv-SE', 'th', 'tr', 'vi', 'zh-CN', 'zh-TW',
-];
-
-$focus_ios_locales = [
-    'cs', 'de', 'es-ES', 'fr', 'id', 'it', 'ja', 'pl', 'pt-BR', 'ru', 'zh-CN',
-    'zh-TW',
-];
+// Locales working on Focus for iOS (from stores_l10n app)
+$cache_id = 'focus_ios_locales';
+if (! $focus_ios_locales = Cache::getKey($cache_id, 60 * 60)) {
+    $focus_ios_locales = $json_object
+        ->setURI(STORES_L10N . 'focus_ios/supportedlocales/release')
+        ->fetchContent();
+    Cache::setKey($cache_id, $focus_ios_locales);
+}
+// Drop en-US
+$focus_ios_locales = array_diff($focus_ios_locales, ['en-US']);
 
 // Locales that we do support and that Apple Store supports too
 $fx_ios_store = array_intersect($ios_locales, $apple_store_locales);
 $focus_ios_store = array_intersect($focus_ios_locales, $apple_store_locales);
-$apple_store = array_unique(array_merge($ios_locales, $focus_ios_locales));
+$apple_store = array_unique(array_merge($fx_ios_store, $focus_ios_store));
 
-/*
-    Source : http://hg.mozilla.org/releases/mozilla-aurora/raw-file/tip/mobile/android/locales/maemo-locales
+// Locales working on Firefox for Android Aurora (from stores_l10n app)
+$cache_id = 'fx_android_locales';
+if (! $fx_android_locales = Cache::getKey($cache_id, 60 * 60)) {
+    $fx_android_locales = $json_object
+        ->setURI(STORES_L10N . 'fx_android/supportedlocales/aurora')
+        ->fetchContent();
+    Cache::setKey($cache_id, $fx_android_locales);
+}
+// Drop en-US
+$fx_android_locales = array_diff($fx_android_locales, ['en-US']);
 
-    We use Aurora instead of Beta or Release, since when a locale is added to
-    Aurora it will ride the trains.
-*/
-$android_locales = [
-    'an', 'as', 'ast', 'az', 'bn-IN', 'br', 'ca', 'cak', 'cs', 'cy', 'da', 'de',
-    'dsb', 'en-GB', 'en-ZA', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et',
-    'eu', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gn', 'gu-IN',
-    'hi-IN', 'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ka', 'kk',
-    'kn', 'ko', 'lt', 'lv', 'mai', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl',
-    'nn-NO', 'or', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sk',
-    'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'te', 'th', 'tr', 'uk', 'uz', 'xh',
-    'zh-CN', 'zh-TW',
-];
-
-// List provided by Release-drivers, needs access to a Google Play publishing account
-$google_play_locales = [
-    'af', 'ar', 'be', 'bg', 'cs', 'ca', 'da', 'de', 'el', 'en-GB',
-    'es-MX', 'es-ES', 'et', 'fa', 'fi', 'fr', 'hi-IN', 'hu', 'hr',
-    'id', 'it', 'he', 'ja', 'ko', 'lt', 'lv', 'ms', 'nl', 'nb-NO',
-    'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'sr',
-    'sv-SE', 'sw', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW', 'zu',
-];
+// Locales supported by Apple App Store (from stores_l10n app)
+$cache_id = 'google_play_locales';
+if (! $google_play_locales = Cache::getKey($cache_id, 60 * 60 * 24)) {
+    $google_play_locales = $json_object
+        ->setURI(STORES_L10N . 'google/localesmapping/?reverse')
+        ->fetchContent();
+    Cache::setKey($cache_id, array_keys($google_play_locales));
+}
 
 // Locales that we support and that Google Play supports too
-$fx_android_store = array_intersect($android_locales, $google_play_locales);
+$fx_android_store = array_intersect($fx_android_locales, $google_play_locales);
 $google_play = $fx_android_store;
 
 /*

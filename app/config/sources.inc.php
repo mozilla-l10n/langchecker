@@ -5,16 +5,6 @@ if (! isset($_SERVER['SERVER_NAME'])) {
     $_SERVER['SERVER_NAME'] = '';
 }
 
-$settings_file = __DIR__ . '/settings.inc.php';
-if (! file_exists($settings_file)) {
-    die('File app/config/settings.inc.php is missing. Please check your configuration.');
-} else {
-    require $settings_file;
-    if (! isset($local_storage)) {
-        die('$local_storage is missing in your configuration file. Please update app/config/settings.inc.php');
-    }
-}
-
 // Real data is in adi.inc.php, not under VCS
 if (is_file(__DIR__ . '/adi.inc.php')) {
     include __DIR__ . '/adi.inc.php';
@@ -167,7 +157,7 @@ $lang_flags['www.mozilla.org'] = [
     'download_button.lang'       => [ 'critical' => ['all'] ],
     'firefox/accounts.lang'      => [ 'critical' => ['all'] ],
     'firefox/android/index.lang' => [
-        'critical' => [$android_locales],
+        'critical' => [$fx_android_locales],
         'opt-in'   => ['all'],
     ],
     'firefox/australis/firefox_tour.lang' => [ 'critical' => ['all'] ],
@@ -523,7 +513,7 @@ $ios_landing_page = array_unique(array_merge(
 
 // List of locales supported for the landing page
 $android_landing_page = array_unique(array_merge(
-    $android_locales,
+    $fx_android_locales,
     [
         'af', 'ast', 'bg', 'bn-BD', 'fa', 'kab',
     ]
@@ -601,7 +591,7 @@ $sites =
         $repositories['appstores']['local_path'],
         '',
         // Added: ar, see https://bugzilla.mozilla.org/show_bug.cgi?id=1259200
-        array_unique(array_merge(array_merge($google_play, ['ar']), $apple_store)),
+        array_unique(array_merge($google_play, ['ar'], $apple_store)),
         $appstores_lang,
         'en-US', // source locale
         $repositories['appstores']['public_path'],
