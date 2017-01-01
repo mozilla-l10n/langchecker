@@ -62,8 +62,6 @@ if (! $ios_locales = Cache::getKey($cache_id, 60 * 60)) {
         ->fetchContent();
     Cache::setKey($cache_id, $ios_locales);
 }
-// Drop en-US
-$ios_locales = array_diff($ios_locales, ['en-US']);
 
 // Locales supported by Apple App Store (from stores_l10n app)
 $cache_id = 'apple_store_locales';
@@ -82,8 +80,6 @@ if (! $focus_ios_locales = Cache::getKey($cache_id, 60 * 60)) {
         ->fetchContent();
     Cache::setKey($cache_id, $focus_ios_locales);
 }
-// Drop en-US
-$focus_ios_locales = array_diff($focus_ios_locales, ['en-US']);
 
 // Locales that we do support and that Apple Store supports too
 $fx_ios_store = array_intersect($ios_locales, $apple_store_locales);
@@ -98,8 +94,6 @@ if (! $fx_android_locales = Cache::getKey($cache_id, 60 * 60)) {
         ->fetchContent();
     Cache::setKey($cache_id, $fx_android_locales);
 }
-// Drop en-US
-$fx_android_locales = array_diff($fx_android_locales, ['en-US']);
 
 // Locales supported by Apple App Store (from stores_l10n app)
 $cache_id = 'google_play_locales';
