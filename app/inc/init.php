@@ -62,6 +62,9 @@ $serial = Utils::getQueryParam('serial', false); // Do we want serialize data fo
 $website = Utils::getQueryParam('website');       // Which website are we looking at?
 
 // Cache class
-define('CACHE_ENABLED', true);
+if (! defined('CACHE_ENABLED')) {
+    // Allow disabling cache via config
+    define('CACHE_ENABLED', true);
+}
 define('CACHE_PATH', $root_folder . 'cache/');
 define('CACHE_TIME', 7200);
