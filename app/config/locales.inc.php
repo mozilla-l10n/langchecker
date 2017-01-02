@@ -50,10 +50,7 @@ $firefox_locales = array_diff(
 $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
 
 /*
-    source: https://raw.githubusercontent.com/mozilla/firefox-ios/v6.x/shipping_locales.txt
-    translations are at: https://github.com/mozilla-l10n/firefoxios-l10n/
-    Make sure to update the store_l10n project when you update this list:
-    https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L43
+    Source: https://raw.githubusercontent.com/mozilla/firefox-ios/v6.x/shipping_locales.txt
 */
 $ios_locales = [
     'ast', 'az', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy', 'da', 'de', 'dsb',
@@ -75,8 +72,8 @@ sort($ios_locales);
 
 /*
     Source: https://l10n.mozilla-community.org/stores_l10n/api/apple/localesmapping/?reverse
-    Locales supported by the Apple Store
-    See also https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Appendices/AppStoreTerritories.html
+
+    Locales supported by Apple App Store. See also: https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Appendices/AppStoreTerritories.html
 */
 $apple_store_locales = [
     'da', 'de', 'el', 'en-GB', 'es-ES', 'es-MX', 'fi', 'fr', 'id',
@@ -84,15 +81,21 @@ $apple_store_locales = [
     'sv-SE', 'th', 'tr', 'vi', 'zh-CN', 'zh-TW',
 ];
 
+$focus_ios_locales = [
+    'cs', 'de', 'es-ES', 'fr', 'id', 'it', 'ja', 'pl', 'pt-BR', 'ru', 'zh-CN',
+    'zh-TW',
+];
+
 // Locales that we do support and that Apple Store supports too
-$apple_store_target = array_intersect($ios_locales, $apple_store_locales);
+$fx_ios_store = array_intersect($ios_locales, $apple_store_locales);
+$focus_ios_store = array_intersect($focus_ios_locales, $apple_store_locales);
+$apple_store = array_unique(array_merge($ios_locales, $focus_ios_locales));
 
 /*
-    Source : http://hg.mozilla.org/releases/mozilla-release/raw-file/tip/mobile/android/locales/maemo-locales
-    Source : http://hg.mozilla.org/releases/mozilla-beta/raw-file/tip/mobile/android/locales/maemo-locales
     Source : http://hg.mozilla.org/releases/mozilla-aurora/raw-file/tip/mobile/android/locales/maemo-locales
-    When updating, make sure to update store_l10n project as well:
-    https://github.com/mozilla-l10n/stores_l10n/blob/15633f598a78357575630fdc235f9cbccc4c6ed3/app/classes/Stores/Project.php#L16
+
+    We use Aurora instead of Beta or Release, since when a locale is added to
+    Aurora it will ride the trains.
 */
 $android_locales = [
     'an', 'as', 'ast', 'az', 'bn-IN', 'br', 'ca', 'cak', 'cs', 'cy', 'da', 'de',
@@ -114,8 +117,9 @@ $google_play_locales = [
     'sv-SE', 'sw', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW', 'zu',
 ];
 
-// Locales that we do support and that Google Play supports too
-$google_play_target = array_intersect($android_locales, $google_play_locales);
+// Locales that we support and that Google Play supports too
+$fx_android_store = array_intersect($android_locales, $google_play_locales);
+$google_play = $fx_android_store;
 
 /*
     Thunderbird locales on Release channel
