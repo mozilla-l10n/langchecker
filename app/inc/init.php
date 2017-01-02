@@ -17,6 +17,29 @@ $views_folder = $app_folder . 'views/';
 // Autoloading of composer dependencies
 require_once $root_folder . 'vendor/autoload.php';
 
+// Import settings and check mandatory parameters
+$settings_file = "{$conf_folder}/settings.inc.php";
+if (! file_exists($settings_file)) {
+    die('File app/config/settings.inc.php is missing. Please check your configuration.');
+} else {
+    require $settings_file;
+    if (! isset($local_storage)) {
+        die('$local_storage is missing in your configuration file. Please update app/config/settings.inc.php');
+    }
+}
+
+// URL used to include web assets
+if (! isset($webroot_folder)) {
+    die('$webroot_folder setting is missing from app/config/settings.inc.php. Please update your settings file.');
+} else {
+    $assets_folder = $webroot_folder . 'assets';
+}
+
+// URL to import iOS/Android/Stores locales
+if (! defined('STORES_L10N')) {
+    die('STORES_L10N constant is missing from app/config/settings.inc.php. Please update your settings file.');
+}
+
 // App-wide variables
 require $conf_folder . 'locales.inc.php';
 require $conf_folder . 'sources.inc.php';
@@ -39,13 +62,9 @@ $serial = Utils::getQueryParam('serial', false); // Do we want serialize data fo
 $website = Utils::getQueryParam('website');       // Which website are we looking at?
 
 // Cache class
-define('CACHE_ENABLED', true);
+if (! defined('CACHE_ENABLED')) {
+    // Allow disabling cache via config
+    define('CACHE_ENABLED', true);
+}
 define('CACHE_PATH', $root_folder . 'cache/');
 define('CACHE_TIME', 7200);
-
-// URL used to include web assets
-if (! isset($webroot_folder)) {
-    die('$webroot_folder setting is missing from app/config/settings.inc.php. Please update your settings file.');
-} else {
-    $assets_folder = $webroot_folder . 'assets';
-}
