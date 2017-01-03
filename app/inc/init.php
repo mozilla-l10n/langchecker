@@ -40,6 +40,14 @@ if (! defined('STORES_L10N')) {
     die('STORES_L10N constant is missing from app/config/settings.inc.php. Please update your settings file.');
 }
 
+// Cache class
+if (! defined('CACHE_ENABLED')) {
+    // Allow disabling cache via config
+    define('CACHE_ENABLED', true);
+}
+define('CACHE_PATH', $root_folder . 'cache/');
+define('CACHE_TIME', 7200);
+
 // App-wide variables
 require $conf_folder . 'locales.inc.php';
 require $conf_folder . 'sources.inc.php';
@@ -60,11 +68,3 @@ $locale = Utils::getQueryParam('locale');        // Which locale are we analysin
 $project = Utils::getQueryParam('project');
 $serial = Utils::getQueryParam('serial', false); // Do we want serialize data for the webdashboard?
 $website = Utils::getQueryParam('website');       // Which website are we looking at?
-
-// Cache class
-if (! defined('CACHE_ENABLED')) {
-    // Allow disabling cache via config
-    define('CACHE_ENABLED', true);
-}
-define('CACHE_PATH', $root_folder . 'cache/');
-define('CACHE_TIME', 7200);
