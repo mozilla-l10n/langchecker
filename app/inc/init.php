@@ -48,17 +48,18 @@ if (! defined('CACHE_ENABLED')) {
 define('CACHE_PATH', $root_folder . 'cache/');
 define('CACHE_TIME', 7200);
 
+// Re-usable JSON object
+$json_object = new Json;
+
 // App-wide variables
 require $conf_folder . 'locales.inc.php';
+require $conf_folder . 'store_locales.inc.php';
 require $conf_folder . 'sources.inc.php';
 
 // Override sources for functional tests both locally and on Travis
 if (getenv('AUTOMATED_TESTS')) {
     require $root_folder . 'tests/testfiles/config/sources.php';
 }
-
-// Re-usable JSON object
-$json_object = new Json;
 
 // User provided variables
 $action = Utils::getQueryParam('action');
