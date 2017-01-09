@@ -756,7 +756,7 @@ $langfiles_subsets = [
         'mozorg/home/index-2016.lang'       => $mozillaorg,
         'mozorg/internet-health.lang'       =>
             [
-              'cy', 'de', 'es-ES', 'fr', 'kab', 'pl', 'pt-BR',
+              'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR',
             ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
