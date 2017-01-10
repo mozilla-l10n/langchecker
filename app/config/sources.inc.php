@@ -336,6 +336,8 @@ $engagement_lang = [
     'snippets/2016/dec2016_eoy_mob.lang',
     'snippets/2016/dec2016_eoy_ty.lang',
     'snippets/2017/jan2017.lang',
+    'snippets/2017/feb2017.lang',
+    'snippets/2017/feb2017_b.lang',
     'social/2016/fundraising.lang',
     'surveys/survey_hello_fx42.lang',
     'surveys/survey_maker_party_2016.lang',
@@ -372,6 +374,12 @@ $lang_flags['engagement'] = [
     'snippets/2016/dec2016_eoy_mob.lang' => [ 'critical' => ['all'] ],
     'snippets/2017/jan2017.lang'         => [
         'critical' => ['de'],
+    ],
+    'snippets/2017/feb2017.lang'         => [
+        'critical' => ['de', 'es', 'fr', 'ru'],
+    ],
+    'snippets/2017/feb2017_b.lang'         => [
+        'critical' => ['pt-BR'],
     ],
 ];
 
@@ -482,6 +490,8 @@ $deadline = [
     'snippets/2016/dec2016.lang'            => '2016-12-05',
     'snippets/2016/dec2016_eoy_ty.lang'     => '2017-01-03',
     'snippets/2017/jan2017.lang'            => '2017-01-06',
+    'snippets/2017/feb2017.lang'            => '2017-02-03',
+    'snippets/2017/feb2017_b.lang'          => '2017-02-03',
     'thunderbird/start/release.lang'        => '2016-08-01',
 ];
 
