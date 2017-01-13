@@ -260,6 +260,7 @@ $engagement_lang = [
     'emails/2016/fundraising_email_1.lang',
     'emails/2016/fundraising_email_2.lang',
     'emails/2016/fundraising_email_3.lang',
+    'emails/2017/fundraising_thank_you.lang',
     'heartbeat/2016/sep2016.lang',
     'heartbeat/2016/nov2016.lang',
     'snippets/2014/jan2014.lang',
@@ -461,38 +462,39 @@ $no_active_tag = [
 ];
 
 $deadline = [
-    'focus_ios/description_release.lang'    => '2017-01-11', // appstores project
-    'focus_ios/screenshots_v2_1.lang'       => '2017-01-11', // appstores project
-    'focus_ios/whatsnew/focus_2_1.lang'     => '2017-01-11', // appstores project
-    'fx_android/description_release.lang'   => '2016-04-30', // appstores project
-    'fx_android/whatsnew/android_50.lang'   => '2016-11-14', // appstores project
-    'fx_ios/description_release.lang'       => '2016-03-30', // appstores project
-    'fx_ios/whatsnew/ios_6_0.lang'          => '2016-01-06', // appstores project
-    'download_button.lang'                  => '2016-04-29',
-    'emails/2016/fundraising_email_3.lang'  => '2016-12-27',
-    'firefox/accounts.lang'                 => '2016-03-15',
-    'firefox/channel/index.lang'            => '2016-12-12',
-    'firefox/family/index.lang'             => '2016-10-04',
-    'firefox/features.lang'                 => '2016-10-04',
-    'firefox/new/horizon.lang'              => '2016-11-05',
-    'firefox/sync.lang'                     => '2016-04-04',
-    'firefox/tracking-protection-tour.lang' => '2016-02-29',
-    'heartbeat/2016/sep2016.lang'           => '2016-09-12',
-    'heartbeat/2016/nov2016.lang'           => '2016-11-22',
-    'legal/index.lang'                      => '2016-02-18',
-    'main.lang'                             => '2016-11-30',
-    'mozorg/contribute/signup.lang'         => '2016-06-06',
-    'mozorg/home/index-2016.lang'           => '2016-10-25',
-    'mozorg/newsletters.lang'               => '2016-11-30',
-    'mozorg/plugincheck-redesign.lang'      => '2016-08-01',
-    'mozorg/technology.lang'                => '2016-11-30',
-    'snippets/2016/nov2016.lang'            => '2016-11-05',
-    'snippets/2016/dec2016.lang'            => '2016-12-05',
-    'snippets/2016/dec2016_eoy_ty.lang'     => '2017-01-03',
-    'snippets/2017/jan2017.lang'            => '2017-01-06',
-    'snippets/2017/feb2017.lang'            => '2017-02-03',
-    'snippets/2017/feb2017_b.lang'          => '2017-02-03',
-    'thunderbird/start/release.lang'        => '2016-08-01',
+    'focus_ios/description_release.lang'     => '2017-01-11', // appstores project
+    'focus_ios/screenshots_v2_1.lang'        => '2017-01-11', // appstores project
+    'focus_ios/whatsnew/focus_2_1.lang'      => '2017-01-11', // appstores project
+    'fx_android/description_release.lang'    => '2016-04-30', // appstores project
+    'fx_android/whatsnew/android_50.lang'    => '2016-11-14', // appstores project
+    'fx_ios/description_release.lang'        => '2016-03-30', // appstores project
+    'fx_ios/whatsnew/ios_6_0.lang'           => '2016-01-06', // appstores project
+    'download_button.lang'                   => '2016-04-29',
+    'emails/2016/fundraising_email_3.lang'   => '2016-12-27',
+    'emails/2017/fundraising_thank_you.lang' => '2017-01-22',
+    'firefox/accounts.lang'                  => '2016-03-15',
+    'firefox/channel/index.lang'             => '2016-12-12',
+    'firefox/family/index.lang'              => '2016-10-04',
+    'firefox/features.lang'                  => '2016-10-04',
+    'firefox/new/horizon.lang'               => '2016-11-05',
+    'firefox/sync.lang'                      => '2016-04-04',
+    'firefox/tracking-protection-tour.lang'  => '2016-02-29',
+    'heartbeat/2016/sep2016.lang'            => '2016-09-12',
+    'heartbeat/2016/nov2016.lang'            => '2016-11-22',
+    'legal/index.lang'                       => '2016-02-18',
+    'main.lang'                              => '2016-11-30',
+    'mozorg/contribute/signup.lang'          => '2016-06-06',
+    'mozorg/home/index-2016.lang'            => '2016-10-25',
+    'mozorg/newsletters.lang'                => '2016-11-30',
+    'mozorg/plugincheck-redesign.lang'       => '2016-08-01',
+    'mozorg/technology.lang'                 => '2016-11-30',
+    'snippets/2016/nov2016.lang'             => '2016-11-05',
+    'snippets/2016/dec2016.lang'             => '2016-12-05',
+    'snippets/2016/dec2016_eoy_ty.lang'      => '2017-01-03',
+    'snippets/2017/jan2017.lang'             => '2017-01-06',
+    'snippets/2017/feb2017.lang'             => '2017-02-03',
+    'snippets/2017/feb2017_b.lang'           => '2017-02-03',
+    'thunderbird/start/release.lang'         => '2016-08-01',
 ];
 
 $firefox_os = [
@@ -819,12 +821,13 @@ $langfiles_subsets = [
 
     'engagement' =>
     [
-        'ads/ios_ads_nov2015.lang'             => ['de', 'fr'],
-        'ads/ios_android_apr2016.lang'         => ['de', 'es-ES', 'fr', 'pl'],
-        'emails/2016/fundraising_email_1.lang' => ['de', 'es', 'fr', 'it'],
-        'emails/2016/fundraising_email_2.lang' => ['de', 'es', 'fr', 'it'],
-        'emails/2016/fundraising_email_3.lang' => ['de', 'es', 'fr'],
-        'heartbeat/2016/sep2016.lang'          =>
+        'ads/ios_ads_nov2015.lang'               => ['de', 'fr'],
+        'ads/ios_android_apr2016.lang'           => ['de', 'es-ES', 'fr', 'pl'],
+        'emails/2016/fundraising_email_1.lang'   => ['de', 'es', 'fr', 'it'],
+        'emails/2016/fundraising_email_2.lang'   => ['de', 'es', 'fr', 'it'],
+        'emails/2016/fundraising_email_3.lang'   => ['de', 'es', 'fr'],
+        'emails/2017/fundraising_thank_you.lang' => ['de', 'es', 'fr', 'it'],
+        'heartbeat/2016/sep2016.lang'            =>
             [
                 'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja',
                 'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
