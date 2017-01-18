@@ -59,8 +59,8 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
         }
 
         $errors = [];
-        // Check if the lang file is in utf8
-        if (Utils::isUTF8($locale_filename) == false) {
+        // Check if the lang file is in UTF-8
+        if (Utils::isUTF8($locale_filename, $disable_libmagic) == false) {
             $status .= ' file_notutf8';
             $count_errors += 1;
             $errors[] = [
