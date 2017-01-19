@@ -119,6 +119,7 @@ $mozillaorg_lang = [
     'foundation/annualreport/2011faq.lang',
     'foundation/annualreport/2012/faq.lang',
     'foundation/annualreport/2012/index.lang',
+    'foundation/index.lang',
     'legal/index.lang',
     'lightbeam/lightbeam.lang',
     'main.lang',
@@ -198,6 +199,7 @@ $lang_flags['www.mozilla.org'] = [
         ],
     ],
     'foundation/annualreport/2012/index.lang' => [ 'critical' => ['all'] ],
+    'foundation/index.lang'                   => [ 'opt-in' => ['all'] ],
     'legal/index.lang'                        => [ 'critical' => ['all'] ],
     'lightbeam/lightbeam.lang'                => [ 'opt-in' => ['all'] ],
     'main.lang'                               => [ 'critical' => ['all'] ],
@@ -733,6 +735,10 @@ $langfiles_subsets = [
                 'es-ES', 'es-MX', 'fr', 'fy-NL', 'is', 'it', 'ja',
                 'ko', 'lij', 'ms', 'nl', 'oc', 'pa-IN', 'pl',
                 'pt-BR', 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
+            ],
+        'foundation/index.lang' =>
+            [
+                'de', 'es-ES', 'fr', 'pl',
             ],
         'legal/index.lang'         => array_merge($firefox_os, ['et']),
         'lightbeam/lightbeam.lang' =>
