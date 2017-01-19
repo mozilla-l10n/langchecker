@@ -163,19 +163,28 @@ class Utils
     /**
      * Return false if file is not in UTF-8 or US-Ascii format
      *
-     * @param string  $filename         File to analyze
-     * @param boolean $disable_libmagic True to avoid using a magic database
+     * @param string $filename File to analyze
      *
      * @return boolean False if file is in the wrong encoding
      */
-    public static function isUTF8($filename, $disable_libmagic)
+    public static function isUTF8($filename)
     {
         $magic = '/usr/share/file/magic';
-        $magic = is_readable($magic) && ! $disable_libmagic
+        $magic = is_readable($magic)
             ? $magic
             : null;
 
-        $f = new \finfo(FILEINFO_MIME_ENCODING, $magic);
+        try {
+            // Silence warnings with @ (error control operator)
+            $f = @new \finfo(FILEINFO_MIME_ENCODING, $magic);
+        } catch (\Exception $e) {
+            /*
+                If the script doesn't work, don't use a libmagic database.
+                In some conditions the database exists but is not compatible
+                with the current version of PHP.
+            */
+            $f = new \finfo(FILEINFO_MIME_ENCODING, null);
+        }
         $type = $f->file($filename);
 
         return ($type == 'utf-8' || $type == 'us-ascii') ? true : false;
