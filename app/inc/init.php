@@ -28,11 +28,6 @@ if (! file_exists($settings_file)) {
     }
 }
 
-// Check $disable_libmagic
-if (! isset($disable_libmagic)) {
-    $disable_libmagic = false;
-}
-
 // URL used to include web assets
 if (! isset($webroot_folder)) {
     die('$webroot_folder setting is missing from app/config/settings.inc.php. Please update your settings file.');
