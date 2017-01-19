@@ -12,6 +12,14 @@ namespace Langchecker;
 class Utils
 {
     /**
+     * Store in this variable if libmagic should be disabled for
+     * database incompatibility.
+     *
+     * @var boolean
+     */
+    private static $disable_libmagic;
+
+    /**
      * Remove a substring from the left of a string, return the trimmed result
      *
      * @param string $origin    Original string
@@ -163,19 +171,37 @@ class Utils
     /**
      * Return false if file is not in UTF-8 or US-Ascii format
      *
-     * @param string  $filename         File to analyze
-     * @param boolean $disable_libmagic True to avoid using a magic database
+     * @param string $filename File to analyze
      *
      * @return boolean False if file is in the wrong encoding
      */
-    public static function isUTF8($filename, $disable_libmagic)
+    public static function isUTF8($filename)
     {
-        $magic = '/usr/share/file/magic';
-        $magic = is_readable($magic) && ! $disable_libmagic
-            ? $magic
-            : null;
+        $magic_database = '/usr/share/file/magic';
+        if (! isset(self::$disable_libmagic)) {
+            // If the file exists and is readable, assume it's valid
+            self::$disable_libmagic = ! is_readable($magic_database);
+        }
 
-        $f = new \finfo(FILEINFO_MIME_ENCODING, $magic);
+        $magic_database = self::$disable_libmagic
+            ? null
+            : $magic_database;
+
+        try {
+            // Silence warnings with @ (error control operator)
+            $f = @new \finfo(FILEINFO_MIME_ENCODING, $magic_database);
+        } catch (\Exception $e) {
+            /*
+                If the script doesn't work, don't use a libmagic database.
+                In some conditions the database exists but is not compatible
+                with the current version of PHP.
+            */
+            $f = new \finfo(FILEINFO_MIME_ENCODING, null);
+            self::$disable_libmagic = true;
+            if (defined('DEBUG') && DEBUG) {
+                error_log('WARNING: Ignoring libmagic database.');
+            }
+        }
         $type = $f->file($filename);
 
         return ($type == 'utf-8' || $type == 'us-ascii') ? true : false;

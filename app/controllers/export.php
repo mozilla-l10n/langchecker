@@ -39,7 +39,7 @@ foreach ($sites as $website) {
 
                 $errors_number = LangManager::countErrors($locale_analysis['errors']);
                 // Also include encoding problems as an error
-                if (Utils::isUTF8($locale_filename, $disable_libmagic) == false) {
+                if (Utils::isUTF8($locale_filename) == false) {
                     $errors_number++;
                 }
                 $export_data[$website_name][$displayed_filename]['errors'] = $errors_number;

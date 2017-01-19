@@ -55,7 +55,7 @@ foreach ($mozilla as $current_locale) {
                 }
 
                 // Check if the lang file is not in UTF-8 or US-ASCII
-                if (Utils::isUTF8($locale_filename, $disable_libmagic) == false) {
+                if (Utils::isUTF8($locale_filename) == false) {
                     $errors[$current_locale][$current_website_name][$current_filename][] = [
                         'message' => "File is not saved with UTF-8 encoding.",
                         'type'    => 'generic',

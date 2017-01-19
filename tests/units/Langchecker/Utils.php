@@ -185,21 +185,20 @@ class Utils extends atoum\test
         $base_folder = TEST_FILES . 'dotlang/';
 
         return [
-            [$base_folder . 'toto.lang', false, true],
-            [$base_folder . 'toto.lang', true, true],
-            [$base_folder . 'notutf8.lang', false, false],
+            [$base_folder . 'toto.lang', true],
+            [$base_folder . 'notutf8.lang', false],
         ];
     }
 
     /**
      * @dataProvider isUTF8DP
      */
-    public function testIsUTF8($a, $b, $c)
+    public function testIsUTF8($a, $b)
     {
         $obj = new _Utils();
         $this
-            ->boolean($obj->isUTF8($a, $b))
-                ->isEqualTo($c);
+            ->boolean($obj->isUTF8($a))
+                ->isEqualTo($b);
     }
 
     public function checkEOLDP()
