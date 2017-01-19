@@ -163,14 +163,15 @@ class Utils
     /**
      * Return false if file is not in UTF-8 or US-Ascii format
      *
-     * @param string $filename File to analyze
+     * @param string  $filename         File to analyze
+     * @param boolean $disable_libmagic True to avoid using a magic database
      *
      * @return boolean False if file is in the wrong encoding
      */
-    public static function isUTF8($filename)
+    public static function isUTF8($filename, $disable_libmagic)
     {
         $magic = '/usr/share/file/magic';
-        $magic = file_exists($magic)
+        $magic = is_readable($magic) && ! $disable_libmagic
             ? $magic
             : null;
 
