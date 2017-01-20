@@ -403,6 +403,8 @@ $appstores_lang = [
     'fx_android/whatsnew/android_50_beta.lang',
     'fx_android/whatsnew/android_50.lang',
     'fx_android/whatsnew/android_51_beta.lang',
+    'fx_android/whatsnew/android_51.lang',
+    'fx_android/whatsnew/android_52_beta.lang',
     'fx_ios/description_release.lang',
     'fx_ios/screenshots_v3.lang',
     'fx_ios/whatsnew/ios_2_1.lang',
@@ -435,6 +437,7 @@ $lang_flags['appstores'] = [
     'fx_android/whatsnew/android_48_beta.lang' => [ 'obsolete' => ['all'] ],
     'fx_android/whatsnew/android_49_beta.lang' => [ 'obsolete' => ['all'] ],
     'fx_android/whatsnew/android_50_beta.lang' => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_51_beta.lang' => [ 'obsolete' => ['all'] ],
     'fx_ios/description_release.lang'          => [
         'critical' => [
             'de', 'es-ES', 'es-MX', 'fr', 'id', 'it',
@@ -466,7 +469,7 @@ $deadline = [
     'focus_ios/screenshots_v2_1.lang'        => '2017-01-11', // appstores project
     'focus_ios/whatsnew/focus_2_1.lang'      => '2017-01-11', // appstores project
     'fx_android/description_release.lang'    => '2016-04-30', // appstores project
-    'fx_android/whatsnew/android_50.lang'    => '2016-11-14', // appstores project
+    'fx_android/whatsnew/android_51.lang'    => '2016-01-23', // appstores project
     'fx_ios/description_release.lang'        => '2016-03-30', // appstores project
     'fx_ios/whatsnew/ios_6_0.lang'           => '2016-01-06', // appstores project
     'download_button.lang'                   => '2016-04-29',
@@ -974,12 +977,14 @@ $langfiles_subsets = [
         'fx_android/whatsnew/android_48.lang'      => array_merge($fx_android_store, ['ar']),
         'fx_android/whatsnew/android_49.lang'      => array_merge($fx_android_store, ['ar']),
         'fx_android/whatsnew/android_50.lang'      => array_merge($fx_android_store, ['ar']),
+        'fx_android/whatsnew/android_51.lang'      => array_merge($fx_android_store, ['ar']),
         'fx_android/whatsnew/android_46_beta.lang' => $fx_android_store,
         'fx_android/whatsnew/android_47_beta.lang' => $fx_android_store,
         'fx_android/whatsnew/android_48_beta.lang' => $fx_android_store,
         'fx_android/whatsnew/android_49_beta.lang' => $fx_android_store,
         'fx_android/whatsnew/android_50_beta.lang' => $fx_android_store,
         'fx_android/whatsnew/android_51_beta.lang' => $fx_android_store,
+        'fx_android/whatsnew/android_52_beta.lang' => $fx_android_store,
         'fx_ios/description_release.lang'          => $fx_ios_store,
         'fx_ios/screenshots_v3.lang'               => [
             'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
