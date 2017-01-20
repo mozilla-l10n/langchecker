@@ -222,7 +222,7 @@ $lang_flags['www.mozilla.org'] = [
        'critical'  => ['de', 'es-ES', 'fr'],
        'opt-in'    => ['all'],
     ],
-    'mozorg/internet-health/privacy-security.lang', => [
+    'mozorg/internet-health/privacy-security.lang' => [
        'critical'  => ['de', 'es-ES', 'fr'],
        'opt-in'    => ['all'],
     ],
