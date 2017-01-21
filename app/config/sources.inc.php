@@ -133,6 +133,7 @@ $mozillaorg_lang = [
     'mozorg/home/index.lang',
     'mozorg/home/index-2016.lang',
     'mozorg/internet-health.lang',
+    'mozorg/internet-health/privacy-security.lang',
     'mozorg/mission.lang',
     'mozorg/newsletters.lang',
     'mozorg/plugincheck-redesign.lang',
@@ -218,6 +219,10 @@ $lang_flags['www.mozilla.org'] = [
     'mozorg/home/index.lang'                  => [ 'obsolete' => ['all'] ],
     'mozorg/home/index-2016.lang'             => [ 'critical' => ['all'] ],
     'mozorg/internet-health.lang'             => [
+       'critical'  => ['de', 'es-ES', 'fr'],
+       'opt-in'    => ['all'],
+    ],
+    'mozorg/internet-health/privacy-security.lang' => [
        'critical'  => ['de', 'es-ES', 'fr'],
        'opt-in'    => ['all'],
     ],
@@ -465,39 +470,41 @@ $no_active_tag = [
 ];
 
 $deadline = [
-    'focus_ios/description_release.lang'     => '2017-01-11', // appstores project
-    'focus_ios/screenshots_v2_1.lang'        => '2017-01-11', // appstores project
-    'focus_ios/whatsnew/focus_2_1.lang'      => '2017-01-11', // appstores project
-    'fx_android/description_release.lang'    => '2016-04-30', // appstores project
-    'fx_android/whatsnew/android_51.lang'    => '2017-01-23', // appstores project
-    'fx_ios/description_release.lang'        => '2016-03-30', // appstores project
-    'fx_ios/whatsnew/ios_6_0.lang'           => '2016-01-06', // appstores project
-    'download_button.lang'                   => '2016-04-29',
-    'emails/2016/fundraising_email_3.lang'   => '2016-12-27',
-    'emails/2017/fundraising_thank_you.lang' => '2017-01-22',
-    'firefox/accounts.lang'                  => '2016-03-15',
-    'firefox/channel/index.lang'             => '2016-12-12',
-    'firefox/family/index.lang'              => '2017-01-30',
-    'firefox/features.lang'                  => '2016-10-04',
-    'firefox/new/horizon.lang'               => '2017-01-30',
-    'firefox/sync.lang'                      => '2016-04-04',
-    'firefox/tracking-protection-tour.lang'  => '2016-02-29',
-    'heartbeat/2016/sep2016.lang'            => '2016-09-12',
-    'heartbeat/2016/nov2016.lang'            => '2016-11-22',
-    'legal/index.lang'                       => '2016-02-18',
-    'main.lang'                              => '2016-11-30',
-    'mozorg/contribute/signup.lang'          => '2016-06-06',
-    'mozorg/home/index-2016.lang'            => '2017-01-30',
-    'mozorg/newsletters.lang'                => '2017-01-30',
-    'mozorg/plugincheck-redesign.lang'       => '2016-08-01',
-    'mozorg/technology.lang'                 => '2016-11-30',
-    'snippets/2016/nov2016.lang'             => '2016-11-05',
-    'snippets/2016/dec2016.lang'             => '2016-12-05',
-    'snippets/2016/dec2016_eoy_ty.lang'      => '2017-01-03',
-    'snippets/2017/jan2017.lang'             => '2017-01-06',
-    'snippets/2017/feb2017.lang'             => '2017-02-03',
-    'snippets/2017/feb2017_b.lang'           => '2017-02-03',
-    'thunderbird/start/release.lang'         => '2016-08-01',
+    'focus_ios/description_release.lang'           => '2017-01-11', // appstores project
+    'focus_ios/screenshots_v2_1.lang'              => '2017-01-11', // appstores project
+    'focus_ios/whatsnew/focus_2_1.lang'            => '2017-01-11', // appstores project
+    'fx_android/description_release.lang'          => '2016-04-30', // appstores project
+    'fx_android/whatsnew/android_50.lang'          => '2016-11-14', // appstores project
+    'fx_ios/description_release.lang'              => '2016-03-30', // appstores project
+    'fx_ios/whatsnew/ios_6_0.lang'                 => '2017-01-06', // appstores project
+    'download_button.lang'                         => '2016-04-29',
+    'emails/2016/fundraising_email_3.lang'         => '2016-12-27',
+    'emails/2017/fundraising_thank_you.lang'       => '2017-01-22',
+    'firefox/accounts.lang'                        => '2016-03-15',
+    'firefox/channel/index.lang'                   => '2016-12-12',
+    'firefox/family/index.lang'                    => '2017-01-30',
+    'firefox/features.lang'                        => '2016-10-04',
+    'firefox/new/horizon.lang'                     => '2017-01-30',
+    'firefox/sync.lang'                            => '2016-04-04',
+    'firefox/tracking-protection-tour.lang'        => '2016-02-29',
+    'heartbeat/2016/sep2016.lang'                  => '2016-09-12',
+    'heartbeat/2016/nov2016.lang'                  => '2016-11-22',
+    'legal/index.lang'                             => '2016-02-18',
+    'main.lang'                                    => '2016-11-30',
+    'mozorg/contribute/signup.lang'                => '2016-06-06',
+    'mozorg/home/index-2016.lang'                  => '2017-02-03',
+    'mozorg/internet-health.lang'                  => '2017-01-28',
+    'mozorg/internet-health/privacy-security.lang' => '2017-01-28',
+    'mozorg/newsletters.lang'                      => '2017-02-03',
+    'mozorg/plugincheck-redesign.lang'             => '2016-08-01',
+    'mozorg/technology.lang'                       => '2016-11-30',
+    'snippets/2016/nov2016.lang'                   => '2016-11-05',
+    'snippets/2016/dec2016.lang'                   => '2016-12-05',
+    'snippets/2016/dec2016_eoy_ty.lang'            => '2017-01-03',
+    'snippets/2017/jan2017.lang'                   => '2017-01-06',
+    'snippets/2017/feb2017.lang'                   => '2017-02-03',
+    'snippets/2017/feb2017_b.lang'                 => '2017-02-03',
+    'thunderbird/start/release.lang'               => '2016-08-01',
 ];
 
 $firefox_os = [
@@ -771,7 +778,11 @@ $langfiles_subsets = [
         'mozorg/home/index-2016.lang'       => $mozillaorg,
         'mozorg/internet-health.lang'       =>
             [
-              'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR',
+                'af', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR',
+            ],
+        'mozorg/internet-health/privacy-security.lang' =>
+            [
+                'de', 'es-ES', 'fr',
             ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
