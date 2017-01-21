@@ -778,12 +778,12 @@ $langfiles_subsets = [
         'mozorg/home/index-2016.lang'       => $mozillaorg,
         'mozorg/internet-health.lang'       =>
             [
-              'af', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR',
+                'af', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR',
             ],
-        'mozorg/internet-health.lang/privacy-security.lang'       =>
-                [
-                  'de', 'es-ES', 'fr',
-                ],
+        'mozorg/internet-health/privacy-security.lang' =>
+            [
+                'de', 'es-ES', 'fr',
+            ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
         'mozorg/products.lang'             => $mozillaorg,
