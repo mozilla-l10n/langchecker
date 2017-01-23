@@ -555,7 +555,7 @@ $engagement_locales = [
     'es-MX', 'fr', 'fy-NL', 'hi-IN', 'hu', 'id', 'it', 'ja',
     'ko', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR',
     'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr',
-    'zh-CN', 'zh-TW',
+    'zh-CN', 'zh-HK', 'zh-TW',
 ];
 
 /*

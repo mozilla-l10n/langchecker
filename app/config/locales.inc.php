@@ -15,7 +15,7 @@ $mozilla = [
     'mr', 'ms', 'my', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'nv', 'oc', 'or', 'pa-IN',
     'pbb', 'pl', 'pt-BR', 'pt-PT', 'qvi', 'rm', 'ro', 'ru', 'si', 'sk', 'sl',
     'son', 'sq', 'sr', 'sv-SE', 'ta', 'te', 'th', 'tl', 'tr', 'trs', 'uk',
-    'ur', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW', 'zu',
+    'ur', 'uz', 'vi', 'xh', 'zh-CN', 'zh-HK', 'zh-TW', 'zu',
 ];
 sort($mozilla);
 
@@ -23,7 +23,7 @@ sort($mozilla);
     $mozillaorg is the list of locales supported on mozilla.org
     Remove locales not supported on mozilla.org from the full array
 */
-$mozillaorg = array_diff($mozilla, ['es']);
+$mozillaorg = array_diff($mozilla, ['es', 'zh-HK']);
 
 // List of locales only working on Fennec
 $fennec_locales = [
