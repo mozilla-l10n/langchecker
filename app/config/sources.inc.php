@@ -262,6 +262,7 @@ $lang_flags['about:healthreport'] = [
 $engagement_lang = [
     'ads/ios_ads_nov2015.lang',
     'ads/ios_android_apr2016.lang',
+    'ads/ios_android_feb2017.lang',
     'emails/2016/fundraising_email_1.lang',
     'emails/2016/fundraising_email_2.lang',
     'emails/2016/fundraising_email_3.lang',
@@ -359,6 +360,7 @@ $engagement_lang = [
 ];
 $lang_flags['engagement'] = [
     'ads/ios_android_apr2016.lang'     => [ 'critical' => ['all'] ],
+    'ads/ios_android_feb2017.lang'     => [ 'critical' => ['all'] ],
     'heartbeat/2016/sep2016.lang'      => [ 'critical' => ['all'] ],
     'heartbeat/2016/nov2016.lang'      => [ 'critical' => ['all'] ],
     'snippets/2016/jan2016.lang'       => [ 'critical' => ['all'] ],
@@ -498,6 +500,7 @@ $deadline = [
     'mozorg/newsletters.lang'                      => '2017-02-03',
     'mozorg/plugincheck-redesign.lang'             => '2016-08-01',
     'mozorg/technology.lang'                       => '2016-11-30',
+    'ads/ios_android_feb2017.lang'                 => '2017-02-02',
     'snippets/2016/nov2016.lang'                   => '2016-11-05',
     'snippets/2016/dec2016.lang'                   => '2016-12-05',
     'snippets/2016/dec2016_eoy_ty.lang'            => '2017-01-03',
@@ -552,7 +555,7 @@ $engagement_locales = [
     'es-MX', 'fr', 'fy-NL', 'hi-IN', 'hu', 'id', 'it', 'ja',
     'ko', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR',
     'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr',
-    'zh-CN', 'zh-TW',
+    'zh-CN', 'zh-HK', 'zh-TW',
 ];
 
 /*
@@ -689,7 +692,7 @@ $langfiles_subsets = [
         'firefox/os/index.lang'   =>
             [
                 'ast', 'cs', 'de', 'en-GB', 'fr', 'it', 'kab', 'ko',
-                'pt-BR', 'ru', 'uk', 'zh-TW',
+                'pt-BR', 'ru', 'sq', 'uk', 'zh-TW',
             ],
         'firefox/os/tv.lang'                     => array_merge($firefox_os, ['et']),
         'firefox/privacy_tour/privacy_tour.lang' => $privacy_tour_locales,
@@ -779,10 +782,11 @@ $langfiles_subsets = [
         'mozorg/internet-health.lang'       =>
             [
                 'af', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR',
+                'sq',
             ],
         'mozorg/internet-health/privacy-security.lang' =>
             [
-                'de', 'es-ES', 'fr',
+                'de', 'es-ES', 'fr','sq',
             ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
@@ -821,7 +825,7 @@ $langfiles_subsets = [
         'thunderbird/channel.lang' =>
             [
                 'cy', 'cs', 'de', 'en-GB', 'es-ES', 'fi', 'fr', 'it', 'ja', 'kab', 'ko',
-                'lt', 'nl', 'pl', 'pt-BR', 'ru', 'uk', 'zh-TW',
+                'lt', 'nl', 'pl', 'pt-BR', 'ru', 'sq', 'uk', 'zh-TW',
             ],
         'thunderbird/features.lang'      => $thunderbird_locales,
         'thunderbird/index.lang'         => $thunderbird_locales,
@@ -837,6 +841,7 @@ $langfiles_subsets = [
     [
         'ads/ios_ads_nov2015.lang'               => ['de', 'fr'],
         'ads/ios_android_apr2016.lang'           => ['de', 'es-ES', 'fr', 'pl'],
+        'ads/ios_android_feb2017.lang'           => ['zh-HK', 'zh-TW'],
         'emails/2016/fundraising_email_1.lang'   => ['de', 'es', 'fr', 'it'],
         'emails/2016/fundraising_email_2.lang'   => ['de', 'es', 'fr', 'it'],
         'emails/2016/fundraising_email_3.lang'   => ['de', 'es', 'fr'],
