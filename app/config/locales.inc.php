@@ -43,7 +43,7 @@ $mozorg_locales = [
 $firefox_locales = array_diff(
     $mozilla,
     $fennec_locales,
-    ['es']
+    ['es', 'zh-HK']
 );
 
 // All locales working on Firefox desktop + Android
