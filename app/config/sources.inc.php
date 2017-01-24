@@ -266,6 +266,7 @@ $engagement_lang = [
     'emails/2016/fundraising_email_1.lang',
     'emails/2016/fundraising_email_2.lang',
     'emails/2016/fundraising_email_3.lang',
+    'emails/2017/data_privacy_day.lang',
     'emails/2017/fundraising_thank_you.lang',
     'heartbeat/2016/sep2016.lang',
     'heartbeat/2016/nov2016.lang',
@@ -346,6 +347,7 @@ $engagement_lang = [
     'snippets/2017/feb2017.lang',
     'snippets/2017/feb2017_b.lang',
     'social/2016/fundraising.lang',
+    'surveys/data_privacy_day.lang',
     'surveys/survey_hello_fx42.lang',
     'surveys/survey_maker_party_2016.lang',
     'surveys/survey_eoy_heartbeat.lang',
@@ -480,8 +482,7 @@ $deadline = [
     'fx_ios/description_release.lang'              => '2016-03-30', // appstores project
     'fx_ios/whatsnew/ios_6_0.lang'                 => '2017-01-06', // appstores project
     'download_button.lang'                         => '2016-04-29',
-    'emails/2016/fundraising_email_3.lang'         => '2016-12-27',
-    'emails/2017/fundraising_thank_you.lang'       => '2017-01-22',
+    'emails/2017/data_privacy_day.lang'            => '2017-01-27',
     'firefox/accounts.lang'                        => '2016-03-15',
     'firefox/channel/index.lang'                   => '2016-12-12',
     'firefox/family/index.lang'                    => '2017-01-30',
@@ -507,6 +508,7 @@ $deadline = [
     'snippets/2017/jan2017.lang'                   => '2017-01-06',
     'snippets/2017/feb2017.lang'                   => '2017-02-03',
     'snippets/2017/feb2017_b.lang'                 => '2017-02-03',
+    'surveys/data_privacy_day.lang'                => '2017-01-27',
     'thunderbird/start/release.lang'               => '2016-08-01',
 ];
 
@@ -845,6 +847,7 @@ $langfiles_subsets = [
         'emails/2016/fundraising_email_1.lang'   => ['de', 'es', 'fr', 'it'],
         'emails/2016/fundraising_email_2.lang'   => ['de', 'es', 'fr', 'it'],
         'emails/2016/fundraising_email_3.lang'   => ['de', 'es', 'fr'],
+        'emails/2017/data_privacy_day.lang'      => ['de', 'fr'],
         'emails/2017/fundraising_thank_you.lang' => ['de', 'es', 'fr', 'it'],
         'heartbeat/2016/sep2016.lang'            =>
             [
@@ -964,6 +967,7 @@ $langfiles_subsets = [
         'snippets/2017/feb2017.lang'            => ['de', 'es', 'fr', 'ru'],
         'snippets/2017/feb2017_b.lang'          => ['pt-BR'],
         'social/2016/fundraising.lang'          => ['de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR'],
+        'surveys/data_privacy_day.lang'         => ['de', 'fr'],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
         'surveys/survey_maker_party_2016.lang'  => ['bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'sl'],
         'surveys/survey_eoy_heartbeat.lang'     => ['de'],
