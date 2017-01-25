@@ -6,16 +6,16 @@
     new locales.
 */
 $mozilla = [
-    'ach', 'af', 'am', 'an', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD', 'bn-IN', 'br',
-    'bs', 'ca', 'cak', 'cs', 'cy', 'da', 'de', 'dsb', 'el', 'en-GB', 'en-ZA',
-    'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'es', 'et', 'eu', 'fa', 'ff',
-    'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gn', 'gu-IN', 'he', 'hi-IN',
-    'hr', 'hsb', 'hto', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ka', 'kab',
-    'kk', 'km', 'kn', 'ko', 'lij', 'lo', 'lt', 'ltg', 'lv', 'mai', 'mk', 'ml',
-    'mr', 'ms', 'my', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'nv', 'oc', 'or', 'pa-IN',
-    'pbb', 'pl', 'pt-BR', 'pt-PT', 'qvi', 'rm', 'ro', 'ru', 'si', 'sk', 'sl',
-    'son', 'sq', 'sr', 'sv-SE', 'ta', 'te', 'th', 'tl', 'tr', 'trs', 'uk',
-    'ur', 'uz', 'vi', 'xh', 'zh-CN', 'zh-HK', 'zh-TW', 'zu',
+    'ach', 'af', 'am', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg', 'bn-BD',
+    'bn-IN', 'br', 'bs', 'ca', 'cak', 'cs', 'cy', 'da', 'de', 'dsb', 'el',
+    'en-GB', 'en-ZA', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'es', 'et',
+    'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gn', 'gu-IN',
+    'he', 'hi-IN', 'hr', 'hsb', 'hto', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja',
+    'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'lij', 'lo', 'lt', 'ltg', 'lv', 'mai',
+    'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'nv', 'oc',
+    'or', 'pa-IN', 'pbb', 'pl', 'pt-BR', 'pt-PT', 'qvi', 'rm', 'ro', 'ru', 'si',
+    'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'te', 'th', 'tl', 'tr', 'trs',
+    'uk', 'ur', 'uz', 'vi', 'xh', 'zh-CN', 'zh-HK', 'zh-TW', 'zu',
 ];
 sort($mozilla);
 
