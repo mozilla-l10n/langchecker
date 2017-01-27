@@ -788,7 +788,7 @@ $langfiles_subsets = [
             ],
         'mozorg/internet-health/privacy-security.lang' =>
             [
-                'de', 'es-ES', 'fr','sq',
+                'de', 'es-ES', 'fr', 'ko', 'pt-BR', 'sq',
             ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
