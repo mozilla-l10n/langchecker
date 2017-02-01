@@ -487,7 +487,7 @@ $deadline = [
     'firefox/channel/index.lang'                   => '2016-12-12',
     'firefox/family/index.lang'                    => '2017-01-30',
     'firefox/features.lang'                        => '2016-10-04',
-    'firefox/new/horizon.lang'                     => '2017-01-30',
+    'firefox/new/horizon.lang'                     => '2017-02-14',
     'firefox/sync.lang'                            => '2016-04-04',
     'firefox/tracking-protection-tour.lang'        => '2016-02-29',
     'heartbeat/2016/sep2016.lang'                  => '2016-09-12',
@@ -788,7 +788,7 @@ $langfiles_subsets = [
             ],
         'mozorg/internet-health/privacy-security.lang' =>
             [
-                'de', 'es-ES', 'fr', 'ko', 'pt-BR', 'sq',
+                'af', 'de', 'es-ES', 'fr', 'ko', 'pt-BR', 'sq',
             ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
