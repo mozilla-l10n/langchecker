@@ -476,9 +476,6 @@ $no_active_tag = [
 ];
 
 $deadline = [
-    'focus_ios/description_release.lang'           => '2017-01-11', // appstores project
-    'focus_ios/screenshots_v2_1.lang'              => '2017-01-11', // appstores project
-    'focus_ios/whatsnew/focus_2_1.lang'            => '2017-01-11', // appstores project
     'fx_android/description_release.lang'          => '2016-04-30', // appstores project
     'fx_android/whatsnew/android_50.lang'          => '2016-11-14', // appstores project
     'fx_ios/description_release.lang'              => '2016-03-30', // appstores project
