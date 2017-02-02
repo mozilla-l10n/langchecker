@@ -872,7 +872,7 @@ $langfiles_subsets = [
         [
             'cs', 'da', 'de', 'el', 'es-ES', 'es-MX', 'fr', 'fy-NL',
             'hu', 'id', 'it', 'ja', 'ko', 'nb-NO', 'nl', 'pl', 'pt-BR',
-            'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'zh-CN',
+            'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'zh-CN',
             'zh-TW',
         ],
         'snippets/2014/may2014.lang' =>
