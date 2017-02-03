@@ -735,7 +735,7 @@ $langfiles_subsets = [
             ],
         'foundation/index.lang' =>
             [
-                'de', 'es-ES', 'fr', 'pl',
+                'de', 'es-ES', 'fr', 'pl', 'pt-BR',
             ],
         'legal/index.lang'         => array_merge($firefox_os, ['et']),
         'lightbeam/lightbeam.lang' =>
