@@ -484,9 +484,10 @@ $deadline = [
     'emails/2017/data_privacy_day.lang'            => '2017-01-27',
     'firefox/accounts.lang'                        => '2016-03-15',
     'firefox/channel/index.lang'                   => '2016-12-12',
+    'firefox/dnt.lang'                             => '2017-02-20',
     'firefox/family/index.lang'                    => '2017-01-30',
     'firefox/features.lang'                        => '2016-10-04',
-    'firefox/new/horizon.lang'                     => '2017-01-30',
+    'firefox/new/horizon.lang'                     => '2017-02-20',
     'firefox/sync.lang'                            => '2016-04-04',
     'firefox/tracking-protection-tour.lang'        => '2016-02-29',
     'heartbeat/2016/sep2016.lang'                  => '2016-09-12',
@@ -494,7 +495,7 @@ $deadline = [
     'legal/index.lang'                             => '2016-02-18',
     'main.lang'                                    => '2016-11-30',
     'mozorg/contribute/signup.lang'                => '2016-06-06',
-    'mozorg/home/index-2016.lang'                  => '2017-02-03',
+    'mozorg/home/index-2016.lang'                  => '2017-02-20',
     'mozorg/internet-health.lang'                  => '2017-01-28',
     'mozorg/internet-health/privacy-security.lang' => '2017-01-28',
     'mozorg/newsletters.lang'                      => '2017-02-03',
@@ -509,6 +510,7 @@ $deadline = [
     'snippets/2017/feb2017_b.lang'                 => '2017-02-03',
     'surveys/data_privacy_day.lang'                => '2017-01-27',
     'thunderbird/start/release.lang'               => '2016-08-01',
+    'thunderbird/features.lang'                    => '2017-02-20',
 ];
 
 $firefox_os = [
@@ -791,7 +793,7 @@ $langfiles_subsets = [
             ],
         'mozorg/internet-health/privacy-security.lang' =>
             [
-                'de', 'es-ES', 'fr', 'ko', 'pt-BR', 'sq',
+                'af', 'de', 'es-ES', 'fr', 'ko', 'pt-BR', 'sq',
             ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
