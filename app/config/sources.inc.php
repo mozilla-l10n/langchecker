@@ -491,9 +491,10 @@ $deadline = [
     'emails/2017/data_privacy_day.lang'            => '2017-01-27',
     'firefox/accounts.lang'                        => '2016-03-15',
     'firefox/channel/index.lang'                   => '2016-12-12',
+    'firefox/dnt.lang'                             => '2017-02-20',
     'firefox/family/index.lang'                    => '2017-01-30',
     'firefox/features.lang'                        => '2016-10-04',
-    'firefox/new/horizon.lang'                     => '2017-02-14',
+    'firefox/new/horizon.lang'                     => '2017-02-20',
     'firefox/sync.lang'                            => '2016-04-04',
     'firefox/tracking-protection-tour.lang'        => '2016-02-29',
     'heartbeat/2016/sep2016.lang'                  => '2016-09-12',
@@ -517,6 +518,7 @@ $deadline = [
     'snippets/2017/feb2017_asia.lang'              => '2017-02-10',
     'surveys/data_privacy_day.lang'                => '2017-01-27',
     'thunderbird/start/release.lang'               => '2016-08-01',
+    'thunderbird/features.lang'                    => '2017-02-20',
 ];
 
 $firefox_os = [
