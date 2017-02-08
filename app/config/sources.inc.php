@@ -348,6 +348,8 @@ $engagement_lang = [
     'snippets/2017/jan2017.lang',
     'snippets/2017/feb2017.lang',
     'snippets/2017/feb2017_b.lang',
+    'snippets/2017/mar2017.lang',
+    'snippets/2017/mar2017_b.lang',
     'social/2016/fundraising.lang',
     'surveys/data_privacy_day.lang',
     'surveys/survey_hello_fx42.lang',
@@ -390,8 +392,14 @@ $lang_flags['engagement'] = [
     'snippets/2017/feb2017.lang'         => [
         'critical' => ['de', 'es', 'fr', 'ru'],
     ],
-    'snippets/2017/feb2017_b.lang'         => [
+    'snippets/2017/feb2017_b.lang'       => [
         'critical' => ['pt-BR'],
+    ],
+    'snippets/2017/mar2017.lang'         => [
+        'critical' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+    ],
+    'snippets/2017/mar2017_b.lang'       => [
+        'critical' => ['id', 'zh-TW'],
     ],
 ];
 
@@ -508,6 +516,8 @@ $deadline = [
     'snippets/2017/jan2017.lang'                   => '2017-01-06',
     'snippets/2017/feb2017.lang'                   => '2017-02-03',
     'snippets/2017/feb2017_b.lang'                 => '2017-02-03',
+    'snippets/2017/mar2017.lang'                   => '2017-02-24',
+    'snippets/2017/mar2017_b.lang'                 => '2017-02-24',
     'surveys/data_privacy_day.lang'                => '2017-01-27',
     'thunderbird/start/release.lang'               => '2016-08-01',
     'thunderbird/features.lang'                    => '2017-02-20',
@@ -737,7 +747,7 @@ $langfiles_subsets = [
             ],
         'foundation/index.lang' =>
             [
-                'de', 'es-ES', 'fr', 'pl', 'pt-BR',
+                'de', 'es-ES', 'fr', 'kab', 'pl', 'pt-BR',
             ],
         'legal/index.lang'         => array_merge($firefox_os, ['et']),
         'lightbeam/lightbeam.lang' =>
@@ -793,7 +803,7 @@ $langfiles_subsets = [
             ],
         'mozorg/internet-health/privacy-security.lang' =>
             [
-                'af', 'de', 'es-ES', 'fr', 'ko', 'pt-BR', 'sq',
+                'af', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pt-BR', 'sq',
             ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
@@ -971,6 +981,8 @@ $langfiles_subsets = [
         'snippets/2017/jan2017.lang'            => ['de'],
         'snippets/2017/feb2017.lang'            => ['de', 'es', 'fr', 'ru'],
         'snippets/2017/feb2017_b.lang'          => ['pt-BR'],
+        'snippets/2017/mar2017.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
+        'snippets/2017/mar2017_b.lang'          => ['id', 'zh-TW'],
         'social/2016/fundraising.lang'          => ['de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR'],
         'surveys/data_privacy_day.lang'         => ['de', 'fr'],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
