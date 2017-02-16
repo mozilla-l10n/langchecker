@@ -799,7 +799,7 @@ $langfiles_subsets = [
         'mozorg/internet-health.lang'       =>
             [
                 'af', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR',
-                'sq',
+                'sq', 'uk',
             ],
         'mozorg/internet-health/privacy-security.lang' =>
             [
