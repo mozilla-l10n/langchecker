@@ -492,7 +492,6 @@ $deadline = [
     'emails/2017/data_privacy_day.lang'            => '2017-01-27',
     'firefox/accounts.lang'                        => '2016-03-15',
     'firefox/channel/index.lang'                   => '2016-12-12',
-    'firefox/dnt.lang'                             => '2017-02-20',
     'firefox/family/index.lang'                    => '2017-01-30',
     'firefox/features.lang'                        => '2016-10-04',
     'firefox/new/horizon.lang'                     => '2017-02-20',
