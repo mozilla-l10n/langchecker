@@ -698,7 +698,7 @@ $langfiles_subsets = [
             ],
         'firefox/nightly_whatsnew.lang'          =>
             [
-                'cs', 'de', 'es-ES', 'fr', 'ja', 'pl', 'pt-BR',
+                'cs', 'de', 'es-ES', 'fr', 'ja', 'pl', 'pt-BR', 'zh-TW',
             ],
         'firefox/os/devices.lang' => $firefox_os,
         'firefox/os/index.lang'   =>
@@ -746,7 +746,7 @@ $langfiles_subsets = [
             ],
         'foundation/index.lang' =>
             [
-                'de', 'es-ES', 'fr', 'kab', 'pl', 'pt-BR',
+                'de', 'es-ES', 'fr', 'kab', 'pl', 'pt-BR', 'zh-TW',
             ],
         'legal/index.lang'         => array_merge($firefox_os, ['et']),
         'lightbeam/lightbeam.lang' =>
@@ -798,11 +798,11 @@ $langfiles_subsets = [
         'mozorg/internet-health.lang'       =>
             [
                 'af', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR',
-                'sq', 'uk',
+                'sq', 'uk', 'zh-TW',
             ],
         'mozorg/internet-health/privacy-security.lang' =>
             [
-                'af', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pt-BR', 'sq',
+                'af', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pt-BR', 'sq', 'zh-TW',
             ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
