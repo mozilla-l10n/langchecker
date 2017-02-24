@@ -103,9 +103,6 @@ $mozillaorg_lang = [
     'firefox/ios.lang',
     'firefox/new/horizon.lang',
     'firefox/nightly_firstrun.lang',
-    'firefox/os/devices.lang',
-    'firefox/os/index.lang',
-    'firefox/os/tv.lang',
     'firefox/privacy_tour/privacy_tour.lang',
     'firefox/private-browsing.lang',
     'firefox/sendto.lang',
@@ -183,7 +180,6 @@ $lang_flags['www.mozilla.org'] = [
         'opt-in'   => ['all'],
     ],
     'firefox/new/horizon.lang'                => [ 'critical' => ['all'] ],
-    'firefox/os/index.lang'                   => [ 'opt-in' => ['all'] ],
     'firefox/privacy_tour/privacy_tour.lang'  => [ 'critical' => ['all'] ],
     'firefox/private-browsing.lang'           => [ 'critical' => ['all'] ],
     'firefox/sendto.lang'                     => [ 'critical' => ['all'] ],
@@ -522,12 +518,11 @@ $deadline = [
     'thunderbird/features.lang'                    => '2017-02-20',
 ];
 
-$firefox_os = [
-    'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de', 'el',
-    'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'ff', 'fr', 'fy-NL',
-    'hi-IN', 'hr', 'hu', 'id', 'it', 'ja', 'ko', 'mk', 'my', 'nl',
-    'pl', 'pt-BR', 'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE',
-    'ta', 'tl', 'xh', 'zh-CN', 'zh-TW', 'zu',
+$legal_locales = [
+    'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de', 'el', 'es-AR',
+    'es-CL', 'es-ES', 'es-MX', 'et', 'fa', 'ff', 'fr', 'fy-NL', 'hi-IN', 'hr',
+    'hu', 'id', 'it', 'ja', 'ko', 'mk', 'my', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
+    'son', 'sq', 'sr', 'sv-SE', 'ta', 'tl', 'xh', 'zh-CN', 'zh-TW', 'zu',
 ];
 
 $getinvolved_locales = [
@@ -700,13 +695,6 @@ $langfiles_subsets = [
             [
                 'cs', 'de', 'es-ES', 'fr', 'ja', 'pl', 'pt-BR', 'zh-TW',
             ],
-        'firefox/os/devices.lang' => $firefox_os,
-        'firefox/os/index.lang'   =>
-            [
-                'ast', 'cs', 'de', 'en-GB', 'fr', 'it', 'kab', 'ko',
-                'pt-BR', 'ru', 'sq', 'uk', 'zh-TW',
-            ],
-        'firefox/os/tv.lang'                     => array_merge($firefox_os, ['et']),
         'firefox/privacy_tour/privacy_tour.lang' => $privacy_tour_locales,
         'firefox/private-browsing.lang'          => $firefox_locales,
         'firefox/speed.lang'                     => ['pt-BR'],
@@ -748,7 +736,7 @@ $langfiles_subsets = [
             [
                 'de', 'es-ES', 'fr', 'kab', 'pl', 'pt-BR', 'zh-TW',
             ],
-        'legal/index.lang'         => array_merge($firefox_os, ['et']),
+        'legal/index.lang'         => $legal_locales,
         'lightbeam/lightbeam.lang' =>
             [
                 'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
@@ -807,7 +795,7 @@ $langfiles_subsets = [
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
         'mozorg/products.lang'             => $mozillaorg,
-        'privacy/index.lang'               => $firefox_os,
+        'privacy/index.lang'               => array_diff($legal_locales, ['et']),
         'privacy/principles.lang'          => $mozillaorg,
         'tabzilla/tabzilla.lang'           => $mozillaorg,
         'teach/smarton/index.lang'         =>
