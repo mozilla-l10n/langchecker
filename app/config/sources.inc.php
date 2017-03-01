@@ -829,7 +829,7 @@ $langfiles_subsets = [
         'thunderbird/channel.lang' =>
             [
                 'cy', 'cs', 'de', 'en-GB', 'es-ES', 'fi', 'fr', 'it', 'ja', 'kab', 'ko',
-                'lt', 'nl', 'pl', 'pt-BR', 'ru', 'sq', 'uk', 'zh-TW',
+                'lt', 'nl', 'pl', 'pt-BR', 'ru', 'sv-SE', 'sq', 'uk', 'zh-TW',
             ],
         'thunderbird/features.lang'      => $thunderbird_locales,
         'thunderbird/index.lang'         => $thunderbird_locales,
