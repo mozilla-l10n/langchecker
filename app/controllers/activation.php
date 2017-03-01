@@ -11,7 +11,7 @@ foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
     if (! in_array($current_filename, $no_active_tag)) {
         // Read en-US data only once
         $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
-        $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+        $supported_locales = Project::getSupportedLocales($current_website, $current_filename);
 
         foreach ($supported_locales as $current_locale) {
             if ($current_locale == $reference_locale) {

@@ -20,7 +20,7 @@ if ($website_data_source == 'lang') {
     // Websites using .lang files
     $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
-    $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+    $supported_locales = Project::getSupportedLocales($current_website, $current_filename);
     foreach ($supported_locales as $current_locale) {
         if ($current_locale == $reference_locale) {
             // Ignore reference language
@@ -63,7 +63,7 @@ if ($website_data_source == 'lang') {
         $json_data[$current_filename][$current_locale]['activated'] = $active;
     }
 } else {
-    $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+    $supported_locales = Project::getSupportedLocales($current_website, $current_filename);
     foreach ($supported_locales as $current_locale) {
         if ($current_locale == $reference_locale) {
             // Ignore reference language

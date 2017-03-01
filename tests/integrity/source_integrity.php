@@ -45,19 +45,30 @@ foreach ($sites as $website_id => $website_data) {
     }
 
     // Check if there are supported files
-    $website_files = $website_data[4];
+    $website_files = array_keys($website_data[4]);
     if (empty($website_files)) {
         $errors[] = "Website with ID {$website_id} ({$website_name}) doesn't include any file.";
     } else {
         $supported_files = array_merge($supported_files, $website_files);
-        // Check flags if available
-        if (! empty($website_data[7])) {
-            foreach ($website_data[7] as $filename => $flags) {
-                if (! in_array($filename, $website_files)) {
-                    $errors[] = "Website with ID {$website_id} ({$website_name}) has a flag for *{$filename}* but the file is not part of the website.";
+        // Check files data
+        foreach ($website_data[4] as $filename => $file_data) {
+            // Check if the deadline date is valid
+            if (isset($file_data['deadline'])) {
+                $date = DateTime::createFromFormat('Y-m-d', $file_data['deadline']);
+                if (! $date || $date->format('Y-m-d') != $file_data['deadline']) {
+                    $errors[] = "Deadline date {$file_data['deadline']} for {$filename} is incorrect.";
+                };
+            }
+
+            // Check if supported locales are known
+            if (isset($file_data['supported_locales'])) {
+                $unknown_locales = array_diff($file_data['supported_locales'], $website_data[3]);
+                if (! empty($unknown_locales)) {
+                    $errors[] = "File {$filename} for website {$website_name} supports unknown locales: " . implode(', ', $unknown_locales) . '.';
                 }
             }
         }
+
         // Check website's type
         if (! in_array($website_data[8], ['lang', 'raw'])) {
             $errors[] = "Website with ID {$website_id} ({$website_name}) has an unknown or empty type ('{$website_data[8]}').";
@@ -69,39 +80,6 @@ foreach ($sites as $website_id => $website_data) {
 foreach ($no_active_tag as $filename) {
     if (! in_array($filename, $supported_files)) {
         $errors[] = "Unknown file in array \$no_active_tag: {$filename}";
-    }
-}
-
-// Check $deadline
-foreach ($deadline as $filename => $deadline_date) {
-    // Check if the file is known
-    if (! in_array($filename, $supported_files)) {
-        $errors[] = "Unknown file in array \$deadline: {$filename}";
-    }
-    // Check if the date is valid
-    $date = DateTime::createFromFormat('Y-m-d', $deadline_date);
-    if (! $date || $date->format('Y-m-d') != $deadline_date) {
-        $errors[] = "Deadline date {$deadline_date} for {$filename} is wrong.";
-    };
-}
-
-// Check $langfiles_subsets
-foreach ($langfiles_subsets as $website_name => $website_files) {
-    // Check if the website is known
-    if (! in_array($website_name, $supported_websites)) {
-        $errors[] = "Uknown website ({$website_name}) in array \$langfiles_subsets.";
-    }
-
-    foreach ($website_files as $filename => $locales) {
-        // Check if the file is known
-        if (! in_array($filename, $supported_files)) {
-            $errors[] = "Unknown file in array \$langfiles_subsets: {$filename}";
-        }
-        // Check if supported locales are known
-        $unknown_locales = array_diff($locales, $supported_locales);
-        if (! empty($unknown_locales)) {
-            $errors[] = "File {$filename} for website {$website_name} in \$langfiles_subsets supports unknown locales: " . implode(', ', $unknown_locales) . '.';
-        }
     }
 }
 

@@ -29,73 +29,28 @@ class Project extends atoum\test
                 ->isEqualTo($b);
     }
 
-    public function getSupportedFilesDP()
-    {
-        require_once TEST_FILES . 'config/sources.php';
-
-        return [
-            [$sites[0], ['file1.lang', 'file2.lang']],
-            [$sites[2], ['page.lang']],
-        ];
-    }
-
-    /**
-     * @dataProvider getSupportedFilesDP
-     */
-    public function testGetSupportedFiles($a, $b)
-    {
-        $obj = new _Project();
-        $this
-            ->array($obj->getSupportedFiles($a))
-                ->isEqualTo($b);
-    }
-
     public function getSupportedLocalesDP()
     {
         require_once TEST_FILES . 'config/sources.php';
 
         return [
-            [$sites[0], '', [], ['en-US', 'fr']],
-            [$sites[0], '', $langfiles_subsets, ['en-US', 'fr']],
-            [$sites[0], 'file1.lang', $langfiles_subsets, ['fr']],
-            [$sites[0], 'file2.lang', $langfiles_subsets, ['en-US', 'fr']],
-            [$sites[1], 'missing.lang', $langfiles_subsets, ['de', 'en-US', 'fr']],
-            [$sites[1], 'file3.lang', $langfiles_subsets, ['de', 'en-US', 'fr']],
+            [$sites[0], '', ['en-US', 'fr']],
+            [$sites[0], 'file1.lang', ['fr']],
+            [$sites[0], 'file2.lang', ['en-US', 'fr']],
+            [$sites[1], 'missing.lang', ['de', 'en-US', 'fr']],
+            [$sites[1], 'file3.lang', ['de', 'en-US', 'fr']],
         ];
     }
 
     /**
      * @dataProvider getSupportedLocalesDP
      */
-    public function testGetSupportedLocales($a, $b, $c, $d)
+    public function testGetSupportedLocales($a, $b, $c)
     {
         $obj = new _Project();
         $this
-            ->array($obj->getSupportedLocales($a, $b, $c))
-                ->isEqualTo($d);
-    }
-
-    public function isCriticalFileDP()
-    {
-        require_once TEST_FILES . 'config/sources.php';
-
-        return [
-            [$sites[0], 'file1.lang', 'en-US', true],
-            [$sites[0], 'file2.lang', 'en-US', false],
-            [$sites[0], 'file2.lang', 'fr', true],
-            [$sites[1], 'file3.lang', 'en-US', false],
-        ];
-    }
-
-    /**
-     * @dataProvider isCriticalFileDP
-     */
-    public function testIsCriticalFile($a, $b, $c, $d)
-    {
-        $obj = new _Project();
-        $this
-            ->boolean($obj->isCriticalFile($a, $b, $c))
-                ->isEqualTo($d);
+            ->array($obj->getSupportedLocales($a, $b))
+                ->isEqualTo($c);
     }
 
     public function isObsoleteFileDP()
@@ -144,28 +99,74 @@ class Project extends atoum\test
                 ->isEqualTo($d);
     }
 
+    public function getFilePriorityDP()
+    {
+        require_once TEST_FILES . 'config/sources.php';
+
+        return [
+            [$sites[0], 'file1.lang', 'en-US', 3],
+            [$sites[0], 'file1.lang', 'fr', 1],
+            [$sites[0], 'file2.lang', 'en-US', 2],
+            [$sites[0], 'file2.lang', 'de', 2],
+            [$sites[0], 'file2.lang', 'fr', 3],
+            [$sites[1], 'file3.lang', 'en-US', 1],
+        ];
+    }
+
+    /**
+     * @dataProvider getFilePriorityDP
+     */
+    public function testGetFilePriorityDP($a, $b, $c, $d)
+    {
+        $obj = new _Project();
+        $this
+            ->integer($obj->getFilePriority($a, $b, $c))
+                ->isEqualTo($d);
+    }
+
+    public function getFileDeadlineDP()
+    {
+        require_once TEST_FILES . 'config/sources.php';
+
+        return [
+            [$sites[0], 'file1.lang', '2017-01-30'],
+            [$sites[0], 'file2.lang', ''],
+        ];
+    }
+
+    /**
+     * @dataProvider getFileDeadlineDP
+     */
+    public function testGetFileDeadline($a, $b, $c)
+    {
+        $obj = new _Project();
+        $this
+            ->string($obj->getFileDeadline($a, $b))
+                ->isEqualTo($c);
+    }
+
     public function isSupportedLocaleDP()
     {
         require_once TEST_FILES . 'config/sources.php';
 
         return [
-            [$sites[0], 'de', '', [], false],
-            [$sites[1], 'de', '', [], true],
-            [$sites[0], 'de', 'file1.lang', $langfiles_subsets, false],
-            [$sites[0], 'fr', 'file1.lang', $langfiles_subsets, true],
-            [$sites[0], 'fr', 'file2.lang', $langfiles_subsets, true],
+            [$sites[0], 'de', '', false],
+            [$sites[1], 'de', '', true],
+            [$sites[0], 'de', 'file1.lang', false],
+            [$sites[0], 'fr', 'file1.lang', true],
+            [$sites[0], 'fr', 'file2.lang', true],
         ];
     }
 
     /**
      * @dataProvider isSupportedLocaleDP
      */
-    public function testIsSupportedLocale($a, $b, $c, $d, $e)
+    public function testIsSupportedLocale($a, $b, $c, $d)
     {
         $obj = new _Project();
         $this
-            ->boolean($obj->isSupportedLocale($a, $b, $c, $d))
-                ->isEqualTo($e);
+            ->boolean($obj->isSupportedLocale($a, $b, $c))
+                ->isEqualTo($d);
     }
 
     public function getWebsiteNameDP()
@@ -194,20 +195,28 @@ class Project extends atoum\test
         require_once TEST_FILES . 'config/sources.php';
 
         return [
-            [$sites[0], ['file1.lang', 'file2.lang']],
-            [$sites[1], ['file3.lang', 'file4.lang']],
+            [$sites[0], true, ['file1.lang', 'file2.lang']],
+            [$sites[1], true, ['file3.lang', 'file4.lang']],
+            [
+                $sites[1],
+                false,
+                [
+                    'file3.lang' => [],
+                    'file4.lang' => [],
+                ],
+            ],
         ];
     }
 
     /**
      * @dataProvider getWebsiteFilesDP
      */
-    public function testGetWebsiteFiles($a, $b)
+    public function testGetWebsiteFiles($a, $b, $c)
     {
         $obj = new _Project();
         $this
-            ->array($obj->getWebsiteFiles($a))
-                ->isEqualTo($b);
+            ->array($obj->getWebsiteFiles($a, $b))
+                ->isEqualTo($c);
     }
 
     public function getLocalFilePathDP()

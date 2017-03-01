@@ -29,7 +29,7 @@ $reference_data = LangManager::loadSource($current_website, $reference_locale, $
 
 $all_strings = [];
 
-$supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+$supported_locales = Project::getSupportedLocales($current_website, $current_filename);
 foreach ($supported_locales as $current_locale) {
     if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
         // If the .lang file does not exist, just skip the locale for this file

@@ -28,36 +28,26 @@ class Project
     }
 
     /**
-     * Return supported files for website
+     * Return supported locales for a file in website. If not defined,
+     * fall back to supported locales for the website itself.
      *
-     * @param array $website Website data
-     *
-     * @return array Supported Files
-     */
-    public static function getSupportedFiles($website)
-    {
-        return $website[4];
-    }
-
-    /**
-     * Return supported locales for website
-     *
-     * @param array  $website           Website data
-     * @param string $filename          File name, default empty
-     * @param array  $langfiles_subsets Array of supported locales for
-     *                                  specific file, default empty
+     * @param array  $website  Website data
+     * @param string $filename File name, default empty
      *
      * @return array Supported locales
      */
-    public static function getSupportedLocales($website, $filename = '', $langfiles_subsets = [])
+    public static function getSupportedLocales($website, $filename = '')
     {
-        $website_name = $website[0];
         // Default: use the website's supported locales
         $supported_locales = $website[3];
-        if ($filename != '' &&
-            isset($langfiles_subsets[$website_name]) &&
-            isset($langfiles_subsets[$website_name][$filename])) {
-            $supported_locales = $langfiles_subsets[$website_name][$filename];
+
+        if ($filename == '') {
+            return $supported_locales;
+        }
+
+        $files_data = self::getWebsiteFiles($website, false);
+        if (isset($files_data[$filename]['supported_locales'])) {
+            $supported_locales = $files_data[$filename]['supported_locales'];
         }
         // Make sure locales are sorted
         sort($supported_locales);
@@ -66,44 +56,20 @@ class Project
     }
 
     /**
-     * Check if locale is supported for website
+     * Check if locale is supported for the requested file
      *
-     * @param array  $website           Website data
-     * @param string $locale            Requested locale
-     * @param string $filename          File name, default empty
-     * @param array  $langfiles_subsets Array of supported locales for
-     *                                  specific file, default empty
+     * @param array  $website  Website data
+     * @param string $locale   Requested locale
+     * @param string $filename File name, default empty
      *
      * @return boolean True if locale is supported
      */
-    public static function isSupportedLocale($website, $locale, $filename = '', $langfiles_subsets = [])
+    public static function isSupportedLocale($website, $locale, $filename = '')
     {
-        return in_array($locale,
-                        self::getSupportedLocales($website, $filename, $langfiles_subsets));
-    }
-
-    /**
-     * Check if file is marked as critical
-     *
-     * @param array  $website  Website data
-     * @param string $filename File name
-     * @param string $locale   Locale
-     *
-     * @return boolean True if file is marked as critical
-     */
-    public static function isCriticalFile($website, $filename, $locale)
-    {
-        if (isset($website[7][$filename])) {
-            $flags = $website[7][$filename];
-            if (isset($flags['critical'])) {
-                if (in_array($locale, $flags['critical']) ||
-                    in_array('all', $flags['critical'])) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
+        return in_array(
+            $locale,
+            self::getSupportedLocales($website, $filename)
+        );
     }
 
     /**
@@ -132,21 +98,70 @@ class Project
     public static function getFileFlags($website, $filename, $locale)
     {
         $file_flags = [];
-        if (isset($website[7][$filename])) {
-            $flags = $website[7][$filename];
-            if (is_array($flags)) {
-                foreach ($flags as $flag => $locales) {
-                    if ($flag != 'critical' &&
-                        (in_array($locale, $locales) ||
-                         in_array('all', $locales))) {
-                        $file_flags[] = $flag;
-                    }
+        $files_data = self::getWebsiteFiles($website, false);
+        if (isset($files_data[$filename]['flags'])) {
+            $flags = $files_data[$filename]['flags'];
+            foreach ($flags as $flag => $locales) {
+                if (in_array($locale, $locales) || in_array('all', $locales)) {
+                    $file_flags[] = $flag;
                 }
             }
             sort($file_flags);
         }
 
         return $file_flags;
+    }
+
+    /**
+     * Return the deadline associated to the file
+     *
+     * @param array  $website  Website data
+     * @param string $filename File name
+     *
+     * @return array Array of flags for this file+locale
+     */
+    public static function getFileDeadline($website, $filename)
+    {
+        $files_data = self::getWebsiteFiles($website, false);
+
+        return isset($files_data[$filename]['deadline'])
+            ? $files_data[$filename]['deadline']
+            : '';
+    }
+
+    /**
+     * Return the priority of a file. If not defined, fall back to the
+     * default priority for the project.
+     *
+     * @param array  $website  Website data
+     * @param string $filename File name
+     * @param string $locale   Locale
+     *
+     * @return array Priority for requested file+locale
+     */
+    public static function getFilePriority($website, $filename, $locale)
+    {
+        // Default is to fall back to the project's priority
+        $priority = $website[7];
+
+        $files_data = self::getWebsiteFiles($website, false);
+        if (isset($files_data[$filename]['priorities'])) {
+            $priorities = $files_data[$filename]['priorities'];
+            foreach ($priorities as $current_priority => $locales) {
+                /*
+                    Return directly if there's a perfect match, store but keep
+                    looking if 'all', in case there's a later definition for
+                    this specific locale.
+                */
+                if (in_array($locale, $locales)) {
+                    return $current_priority;
+                } elseif (in_array('all', $locales)) {
+                    $priority = $current_priority;
+                }
+            }
+        }
+
+        return $priority;
     }
 
     /**
@@ -164,14 +179,21 @@ class Project
     /**
      * Return list of files managed for website
      *
-     * @param array $website Website data
+     * @param array   $website    Website data
+     * @param boolean $only_names If true only return filenames, if false return
+     *                            all data about supported files
      *
-     * @return array Array of managed files, sorted alphabetically
+     * @return array Array of managed files (sorted alphabetically) or
+     *               files data
      */
-    public static function getWebsiteFiles($website)
+    public static function getWebsiteFiles($website, $only_names = true)
     {
-        $file_list = $website[4];
-        asort($file_list);
+        if (! $only_names) {
+            return $website[4];
+        }
+
+        $file_list = array_keys($website[4]);
+        sort($file_list);
 
         return $file_list;
     }

@@ -9,6 +9,7 @@
                 <thead>
                     <tr>
                         <th>Filename</th>
+                        <th>Priority</th>
                         <th>URL</th>
                         <th>Status</th>
                         <th>Translations</th>
@@ -26,6 +27,7 @@
                         {% endif %}
                             {{ file_data.displayed_filename }}
                         </td>
+                        <td>{{ file_data.priority }}</td>
                         <td>{{ getViewLink(file_data.page_url)|raw }}</td>
                         <td><a class="table_small_link" href="./?locale=all&amp;website={{ website_data.site_index }}&amp;file={{ filename }}">Status</a></td>
                         <td><a class="table_small_link" href="./?website={{ website_data.site_index }}&amp;file={{ filename }}&amp;action=translate&amp;show">Show</a></td>

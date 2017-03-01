@@ -1,16 +1,51 @@
 <?php
 
-$priorities = [
+$mozilla = ['en-US', 'fr', 'it'];
+$slogans_locales = ['fr', 'it'];
+
+$repo0_langfiles = [
     'file1.lang' => [
-        'critical' => ['all'],
-        'obsolete' => ['fr'],
+        'supported_locales' => ['fr'],
+        'deadline'          => '2017-01-30',
+        'flags'             => [
+            'obsolete' => ['fr'],
+        ],
+        'priorities' => [
+            1 => ['fr'],
+        ],
     ],
     'file2.lang' => [
-        'critical'  => ['fr'],
-        'obsolete'  => ['all'],
-        'testflag1' => ['all'],
-        'testflag2' => ['fr'],
+        'flags' => [
+            'obsolete'  => ['all'],
+            'testflag1' => ['all'],
+            'testflag2' => ['fr'],
+        ],
+        'priorities' => [
+            2 => ['all'],
+            3 => ['fr'],
+        ],
     ],
+];
+
+$repo1_langfiles = [
+    'file3.lang' => [],
+    'file4.lang' => [],
+];
+
+$repo2_langfiles = [
+    'page.lang' => [],
+];
+
+$repo3_langfiles = [
+    'email1.txt' => [],
+    'email2.txt' => [],
+    'email3.txt' => [],
+    'email4.txt' => [],
+    'email5.txt' => [],
+];
+
+$repo6_langfiles = [
+    'page.lang' => [],
 ];
 
 $sites = [
@@ -19,10 +54,10 @@ $sites = [
         '/private/repo1/',
         'locales/',
         ['en-US', 'fr'],
-        ['file1.lang', 'file2.lang'],
+        $repo0_langfiles,
         'en-GB',
         '/public/repo1/',
-        $priorities,
+        3,
         'lang',
     ],
 
@@ -31,10 +66,10 @@ $sites = [
         '/private/repo2/',
         'l10n/',
         ['en-US', 'fr', 'de'],
-        ['file3.lang', 'file4.lang'],
+        $repo1_langfiles,
         'en-US',
         '/public/repo2/',
-        [],
+        1,
         'lang',
     ],
 
@@ -43,10 +78,10 @@ $sites = [
         __DIR__ . '/../dotlang/',
         '',
         ['en-US', 'it'],
-        ['page.lang'],
+        $repo2_langfiles,
         'en-US',
         '/public/repo3/',
-        [],
+        1,
         'lang',
     ],
 
@@ -55,31 +90,22 @@ $sites = [
         __DIR__ . '/../txt/',
         '',
         ['en-US', 'it'],
-        ['email1.txt', 'email2.txt', 'email3.txt', 'email4.txt', 'email5.txt'],
+        $repo3_langfiles,
         'en-US',
         '/public/repo3/',
-        [],
+        1,
         'raw',
     ],
+
     6 => [
         'snippets',
         __DIR__ . '/../dotlang/',
         '',
         ['en-US', 'fr', 'it'],
-        ['page.lang'],
+        $repo6_langfiles,
         'en-US',
         '/public/repo6/',
-        [],
+        1,
         'lang',
     ],
 ];
-
-$langfiles_subsets = [
-    'reponame1' => [
-        'file1.lang' => ['fr'],
-    ],
-];
-
-$slogans_locales = ['fr', 'it'];
-
-$mozilla = ['en-US', 'fr', 'it'];

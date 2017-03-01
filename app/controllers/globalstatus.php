@@ -27,7 +27,7 @@ if ($website_data_source == 'lang') {
     $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
     $files_list = [];
-    $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+    $supported_locales = Project::getSupportedLocales($current_website, $current_filename);
     foreach ($supported_locales as $current_locale) {
         if ($current_locale == $reference_locale) {
             // Ignore reference language
@@ -122,7 +122,7 @@ if ($website_data_source == 'lang') {
 } else {
     // Websites using raw files
     $files_list = [];
-    $supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+    $supported_locales = Project::getSupportedLocales($current_website, $current_filename);
     foreach ($supported_locales as $current_locale) {
         if ($current_locale == $reference_locale) {
             // Ignore reference language

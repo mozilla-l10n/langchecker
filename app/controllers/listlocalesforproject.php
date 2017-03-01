@@ -10,7 +10,7 @@ if ($website != '') {
             // Return locales supported by this specific file
             $current_filename = $filename;
             if (in_array($current_filename, Project::getWebsiteFiles($current_website))) {
-                $output_array = array_values(Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets));
+                $output_array = array_values(Project::getSupportedLocales($current_website, $current_filename));
             }
         } else {
             // Return locales supported by this website

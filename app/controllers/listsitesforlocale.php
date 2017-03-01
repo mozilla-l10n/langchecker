@@ -21,7 +21,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     $files_todo = [];
     foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
         // File not supported
-        if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
+        if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename)) {
             continue;
         }
 
@@ -134,7 +134,7 @@ foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
     $files_done = [];
     $files_todo = [];
     foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
-        if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
+        if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename)) {
             // File is not managed for this website+locale, ignore it
             continue;
         }

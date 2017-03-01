@@ -25,7 +25,7 @@ foreach ($mozilla as $current_locale) {
 
         foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
             // File not supported
-            if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
+            if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename)) {
                 continue;
             }
 
