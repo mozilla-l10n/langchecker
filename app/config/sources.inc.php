@@ -529,8 +529,8 @@ $getinvolved_locales = [
     'af', 'am', 'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
     'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr',
     'fy-NL', 'he', 'hi-IN', 'hr', 'hsb', 'id', 'it', 'kab', 'ko',
-    'lt', 'ms', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl',
-    'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk', 'zh-CN', 'zh-TW',
+    'lt', 'ms', 'ncj', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl',
+    'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk', 'zam', 'zh-CN', 'zh-TW',
 ];
 
 // List of locales supported for the landing page (larger than the App Store)
@@ -651,9 +651,9 @@ $langfiles_subsets = [
                 'af', 'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL',
                 'ga-IE', 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id',
-                'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl', 'nv', 'pl', 'pt-BR',
+                'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'ncj', 'nl', 'nv', 'pl', 'pt-BR',
                 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
-                'sv-SE', 'uk', 'uz', 'xh', 'zh-CN', 'zh-TW',
+                'sv-SE', 'uk', 'uz', 'xh', 'zam', 'zh-CN', 'zh-TW',
             ],
         'firefox/desktop/trust.lang' => $firefox_locales,
         'firefox/developer.lang'     => $firefox_locales,
@@ -741,9 +741,9 @@ $langfiles_subsets = [
             [
                 'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
                 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL',
-                'hi-IN', 'hsb', 'it', 'kab', 'ko', 'ja', 'km', 'lt', 'ms', 'nl',
+                'hi-IN', 'hsb', 'it', 'kab', 'ko', 'ja', 'km', 'lt', 'ms', 'ncj', 'nl',
                 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq', 'sr',
-                'sv-SE', 'tr', 'uk', 'zh-CN', 'zh-TW',
+                'sv-SE', 'tr', 'uk', 'zam', 'zh-CN', 'zh-TW',
             ],
         'main.lang'                         => $mozillaorg,
         'mozorg/404.lang'                   => $mozillaorg,
@@ -754,8 +754,8 @@ $langfiles_subsets = [
             [
                 'af', 'am', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
                 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja', 'kab',
-                'km', 'ko', 'lt', 'nl', 'nv', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
-                'ru', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
+                'km', 'ko', 'lt', 'ncj', 'nl', 'nv', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
+                'ru', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz', 'zam',
                 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/history.lang' =>
@@ -763,10 +763,10 @@ $langfiles_subsets = [
                 'af', 'am', 'ar', 'bg', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb',
                 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
-                'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl', 'pa-IN',
+                'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'ncj', 'nl', 'pa-IN',
                 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk',
                 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk',
-                'uz', 'zh-CN', 'zh-TW',
+                'uz', 'zam', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/manifesto.lang' =>
             [
@@ -774,9 +774,9 @@ $langfiles_subsets = [
                 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
                 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'gd', 'gl',
                 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it', 'ja', 'kab',
-                'km', 'ko', 'lt', 'mk', 'ms', 'nl', 'nv', 'pl', 'pt-BR',
+                'km', 'ko', 'lt', 'mk', 'ms', 'ncj', 'nl', 'nv', 'pl', 'pt-BR',
                 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
-                'tr', 'uk', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW',
+                'tr', 'uk', 'uz', 'vi', 'xh', 'zam', 'zh-CN', 'zh-TW',
             ],
         'mozorg/contribute/index.lang'      => $getinvolved_locales,
         'mozorg/contribute/signup.lang'     => $getinvolved_locales,
@@ -829,7 +829,7 @@ $langfiles_subsets = [
         'thunderbird/channel.lang' =>
             [
                 'cy', 'cs', 'de', 'en-GB', 'es-ES', 'fi', 'fr', 'it', 'ja', 'kab', 'ko',
-                'lt', 'nl', 'pl', 'pt-BR', 'ru', 'sv-SE', 'sq', 'uk', 'zh-TW',
+                'lt', 'nl', 'pl', 'pt-BR', 'ru', 'sq', 'sv-SE', 'uk', 'zh-TW',
             ],
         'thunderbird/features.lang'      => $thunderbird_locales,
         'thunderbird/index.lang'         => $thunderbird_locales,
