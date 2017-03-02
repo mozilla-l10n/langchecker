@@ -12,10 +12,10 @@ $mozilla = [
     'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gn', 'gu-IN',
     'he', 'hi-IN', 'hr', 'hsb', 'hto', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja',
     'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'lij', 'lo', 'lt', 'ltg', 'lv', 'mai',
-    'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'nv', 'oc',
+    'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'ncj', 'ne-NP', 'nl', 'nn-NO', 'nv', 'oc',
     'or', 'pa-IN', 'pbb', 'pl', 'pt-BR', 'pt-PT', 'qvi', 'rm', 'ro', 'ru', 'si',
     'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'te', 'th', 'tl', 'tr', 'trs',
-    'uk', 'ur', 'uz', 'vi', 'xh', 'zh-CN', 'zh-HK', 'zh-TW', 'zu',
+    'uk', 'ur', 'uz', 'vi', 'xh', 'zam', 'zh-CN', 'zh-HK', 'zh-TW', 'zu',
 ];
 sort($mozilla);
 
@@ -32,7 +32,7 @@ $fennec_locales = [
 
 // List of locales only working on mozilla.org
 $mozorg_locales = [
-    'am', 'nv',
+    'am', 'ncj', 'nv', 'zam',
 ];
 
 /*
@@ -73,8 +73,8 @@ $newsletter_locales = [
 $locamotion_locales = [
     'ach', 'af', 'bm', 'bn-BD', 'br', 'ca', 'cak', 'cy', 'ee', 'en-ZA', 'ff',
     'ga-IE', 'gn', 'ha', 'hi-IN', 'hto', 'ig', 'kk', 'ln', 'lt', 'lv', 'mai',
-    'mg', 'nb-NO', 'ne-NP', 'nv', 'oc', 'or', 'pbb', 'qvi', 'son', 'sw', 'ta',
-    'tn', 'trs', 'ur', 'wo', 'xh', 'yo', 'zu',
+    'mg', 'nb-NO', 'ncj', 'ne-NP', 'nv', 'oc', 'or', 'pbb', 'qvi', 'son', 'sw', 'ta',
+    'tn', 'trs', 'ur', 'wo', 'xh', 'yo', 'zam', 'zu',
 ];
 
 /*
