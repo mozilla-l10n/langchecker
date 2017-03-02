@@ -448,6 +448,9 @@ $lang_flags['appstores'] = [
     'fx_android/whatsnew/android_45.lang'      => [ 'obsolete' => ['all'] ],
     'fx_android/whatsnew/android_46.lang'      => [ 'obsolete' => ['all'] ],
     'fx_android/whatsnew/android_47.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_48.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_49.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_50.lang'      => [ 'obsolete' => ['all'] ],
     'fx_android/whatsnew/android_46_beta.lang' => [ 'obsolete' => ['all'] ],
     'fx_android/whatsnew/android_47_beta.lang' => [ 'obsolete' => ['all'] ],
     'fx_android/whatsnew/android_48_beta.lang' => [ 'obsolete' => ['all'] ],
@@ -455,7 +458,6 @@ $lang_flags['appstores'] = [
     'fx_android/whatsnew/android_50_beta.lang' => [ 'obsolete' => ['all'] ],
     'fx_android/whatsnew/android_51_beta.lang' => [ 'obsolete' => ['all'] ],
     'fx_android/whatsnew/android_52_beta.lang' => [ 'obsolete' => ['all'] ],
-    'fx_android/whatsnew/android_53_beta.lang' => [ 'obsolete' => ['all'] ],
     'fx_ios/description_release.lang'          => [
         'critical' => [
             'de', 'es-ES', 'es-MX', 'fr', 'id', 'it',
