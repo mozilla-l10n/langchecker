@@ -791,11 +791,11 @@ $langfiles_subsets = [
         'mozorg/internet-health.lang'       =>
             [
                 'af', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR',
-                'sq', 'uk', 'zh-TW',
+                'sq', 'sv-SE', 'uk', 'zh-TW',
             ],
         'mozorg/internet-health/privacy-security.lang' =>
             [
-                'af', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pt-BR', 'sq', 'zh-TW',
+                'af', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE', 'zh-TW',
             ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
