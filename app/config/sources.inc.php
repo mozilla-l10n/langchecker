@@ -349,6 +349,7 @@ $engagement_lang = [
     'snippets/2017/mar2017.lang',
     'snippets/2017/mar2017_b.lang',
     'social/2016/fundraising.lang',
+    'surveys/copyright_stories.lang',
     'surveys/data_privacy_day.lang',
     'surveys/survey_hello_fx42.lang',
     'surveys/survey_maker_party_2016.lang',
@@ -523,6 +524,7 @@ $deadline = [
     'snippets/2017/mar2017.lang'                   => '2017-02-24',
     'snippets/2017/mar2017_b.lang'                 => '2017-02-24',
     'surveys/data_privacy_day.lang'                => '2017-01-27',
+    'surveys/copyright_stories.lang'               => '2017-03-09',
     'thunderbird/start/release.lang'               => '2016-08-01',
     'thunderbird/features.lang'                    => '2017-02-20',
 ];
@@ -982,6 +984,7 @@ $langfiles_subsets = [
         'snippets/2017/mar2017.lang'            => ['de', 'es', 'fr', 'pt-BR', 'ru'],
         'snippets/2017/mar2017_b.lang'          => ['id', 'zh-TW'],
         'social/2016/fundraising.lang'          => ['de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR'],
+        'surveys/copyright_stories.lang'        => ['de', 'fr'],
         'surveys/data_privacy_day.lang'         => ['de', 'fr'],
         'surveys/survey_hello_fx42.lang'        => array_intersect($engagement_locales, $surveygizmo),
         'surveys/survey_maker_party_2016.lang'  => ['bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'sl'],
