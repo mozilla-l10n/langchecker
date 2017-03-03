@@ -264,8 +264,10 @@ $engagement_lang = [
     'emails/2016/fundraising_email_1.lang',
     'emails/2016/fundraising_email_2.lang',
     'emails/2016/fundraising_email_3.lang',
+    'emails/2017/copyright.lang',
     'emails/2017/data_privacy_day.lang',
     'emails/2017/fundraising_thank_you.lang',
+    'emails/2017/survey_results.lang',
     'heartbeat/2016/sep2016.lang',
     'heartbeat/2016/nov2016.lang',
     'snippets/2014/jan2014.lang',
@@ -491,6 +493,8 @@ $deadline = [
     'fx_ios/whatsnew/ios_6_0.lang'                 => '2017-01-06', // appstores project
     'download_button.lang'                         => '2016-04-29',
     'emails/2017/data_privacy_day.lang'            => '2017-01-27',
+    'emails/2017/copyright.lang'                   => '2017-03-09',
+    'emails/2017/survey_results.lang'              => '2017-03-09',
     'firefox/accounts.lang'                        => '2016-03-15',
     'firefox/channel/index.lang'                   => '2016-12-12',
     'firefox/family/index.lang'                    => '2017-01-30',
@@ -854,6 +858,8 @@ $langfiles_subsets = [
         'emails/2016/fundraising_email_1.lang'   => ['de', 'es', 'fr', 'it'],
         'emails/2016/fundraising_email_2.lang'   => ['de', 'es', 'fr', 'it'],
         'emails/2016/fundraising_email_3.lang'   => ['de', 'es', 'fr'],
+        'emails/2017/copyright.lang'             => ['de', 'fr'],
+        'emails/2017/survey_results.lang'        => ['de', 'fr'],
         'emails/2017/data_privacy_day.lang'      => ['de', 'fr'],
         'emails/2017/fundraising_thank_you.lang' => ['de', 'es', 'fr', 'it'],
         'heartbeat/2016/sep2016.lang'            =>
