@@ -132,6 +132,7 @@ $mozillaorg_lang = [
     'mozorg/home/index-2016.lang',
     'mozorg/internet-health.lang',
     'mozorg/internet-health/privacy-security.lang',
+    'mozorg/internet-health/digital-inclusion.lang',
     'mozorg/mission.lang',
     'mozorg/newsletters.lang',
     'mozorg/plugincheck-redesign.lang',
@@ -221,6 +222,10 @@ $lang_flags['www.mozilla.org'] = [
        'opt-in'    => ['all'],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
+       'critical'  => ['de', 'es-ES', 'fr'],
+       'opt-in'    => ['all'],
+    ],
+    'mozorg/internet-health/digital-inclusion.lang' => [
        'critical'  => ['de', 'es-ES', 'fr'],
        'opt-in'    => ['all'],
     ],
@@ -506,21 +511,22 @@ $deadline = [
     'mozorg/home/index-2016.lang'                  => '2017-02-20',
     'mozorg/internet-health.lang'                  => '2017-01-28',
     'mozorg/internet-health/privacy-security.lang' => '2017-01-28',
-    'mozorg/newsletters.lang'                      => '2017-02-03',
-    'mozorg/plugincheck-redesign.lang'             => '2016-08-01',
-    'mozorg/technology.lang'                       => '2016-11-30',
-    'ads/ios_android_feb2017.lang'                 => '2017-02-02',
-    'snippets/2016/nov2016.lang'                   => '2016-11-05',
-    'snippets/2016/dec2016.lang'                   => '2016-12-05',
-    'snippets/2016/dec2016_eoy_ty.lang'            => '2017-01-03',
-    'snippets/2017/jan2017.lang'                   => '2017-01-06',
-    'snippets/2017/feb2017.lang'                   => '2017-02-03',
-    'snippets/2017/feb2017_b.lang'                 => '2017-02-03',
-    'snippets/2017/mar2017.lang'                   => '2017-02-24',
-    'snippets/2017/mar2017_b.lang'                 => '2017-02-24',
-    'surveys/data_privacy_day.lang'                => '2017-01-27',
-    'thunderbird/start/release.lang'               => '2016-08-01',
-    'thunderbird/features.lang'                    => '2017-02-20',
+    'mozorg/internet-health/digital-inclusion.lang' => '2017-03-20',
+    'mozorg/newsletters.lang'                       => '2017-02-03',
+    'mozorg/plugincheck-redesign.lang'              => '2016-08-01',
+    'mozorg/technology.lang'                        => '2016-11-30',
+    'ads/ios_android_feb2017.lang'                  => '2017-02-02',
+    'snippets/2016/nov2016.lang'                    => '2016-11-05',
+    'snippets/2016/dec2016.lang'                    => '2016-12-05',
+    'snippets/2016/dec2016_eoy_ty.lang'             => '2017-01-03',
+    'snippets/2017/jan2017.lang'                    => '2017-01-06',
+    'snippets/2017/feb2017.lang'                    => '2017-02-03',
+    'snippets/2017/feb2017_b.lang'                  => '2017-02-03',
+    'snippets/2017/mar2017.lang'                    => '2017-02-24',
+    'snippets/2017/mar2017_b.lang'                  => '2017-02-24',
+    'surveys/data_privacy_day.lang'                 => '2017-01-27',
+    'thunderbird/start/release.lang'                => '2016-08-01',
+    'thunderbird/features.lang'                     => '2017-02-20',
 ];
 
 $legal_locales = [
@@ -653,12 +659,12 @@ $langfiles_subsets = [
         'firefox/desktop/index.lang'          => $firefox_locales,
         'firefox/desktop/tips.lang'           =>
             [
-                'af', 'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
-                'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL',
-                'ga-IE', 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id',
-                'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'ncj', 'nl', 'nv', 'pl', 'pt-BR',
-                'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
-                'sv-SE', 'uk', 'uz', 'xh', 'zam', 'zh-CN', 'zh-TW',
+                'af', 'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB',
+                'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr',
+                'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id',
+                'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'ncj', 'nl', 'nv',
+                'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq',
+                'sr', 'sv-SE', 'uk', 'uz', 'xh', 'zam', 'zh-CN', 'zh-TW',
             ],
         'firefox/desktop/trust.lang' => $firefox_locales,
         'firefox/developer.lang'     => $firefox_locales,
@@ -745,8 +751,8 @@ $langfiles_subsets = [
         'lightbeam/lightbeam.lang' =>
             [
                 'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
-                'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL',
-                'hi-IN', 'hsb', 'it', 'kab', 'ko', 'ja', 'km', 'lt', 'ms', 'ncj', 'nl',
+                'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL', 'hi-IN',
+                'hsb', 'it', 'kab', 'ko', 'ja', 'km', 'lt', 'ms', 'ncj', 'nl',
                 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq', 'sr',
                 'sv-SE', 'tr', 'uk', 'zam', 'zh-CN', 'zh-TW',
             ],
@@ -757,21 +763,20 @@ $langfiles_subsets = [
         'mozorg/technology.lang'            => $mozillaorg,
         'mozorg/about/history-details.lang' =>
             [
-                'af', 'am', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
-                'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja', 'kab',
-                'km', 'ko', 'lt', 'ncj', 'nl', 'nv', 'pa-IN', 'pt-BR', 'pt-PT', 'ro',
-                'ru', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz', 'zam',
-                'zh-CN', 'zh-TW',
+                'af', 'am', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB',
+                'es-CL', 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja',
+                'kab', 'km', 'ko', 'lt', 'ncj', 'nl', 'nv', 'pa-IN', 'pt-BR',
+                'pt-PT', 'ro', 'ru', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz',
+                'zam', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/history.lang' =>
             [
                 'af', 'am', 'ar', 'bg', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb',
-                'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
-                'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id',
-                'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'ncj', 'nl', 'pa-IN',
-                'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk',
-                'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr', 'uk',
-                'uz', 'zam', 'zh-CN', 'zh-TW',
+                'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa',
+                'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id', 'it', 'ja', 'kab', 'km',
+                'ko', 'lt', 'ms', 'ncj', 'nl', 'pa-IN', 'nv', 'pl', 'pt-BR',
+                'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE',
+                'ta', 'tr', 'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
             ],
         'mozorg/about/manifesto.lang' =>
             [
@@ -795,7 +800,12 @@ $langfiles_subsets = [
             ],
         'mozorg/internet-health/privacy-security.lang' =>
             [
-                'af', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE', 'zh-TW',
+                'af', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE',
+                'zh-TW',
+            ],
+        'mozorg/internet-health/digital-inclusion.lang' =>
+            [
+                'de', 'es-ES', 'fr',
             ],
         'mozorg/newsletters.lang'          => $newsletter_locales,
         'mozorg/plugincheck-redesign.lang' => $mozillaorg,
@@ -833,8 +843,9 @@ $langfiles_subsets = [
             ],
         'thunderbird/channel.lang' =>
             [
-                'cy', 'cs', 'de', 'en-GB', 'es-ES', 'fi', 'fr', 'it', 'ja', 'kab', 'ko',
-                'lt', 'nl', 'pl', 'pt-BR', 'ru', 'sq', 'sv-SE', 'uk', 'zh-TW',
+                'cy', 'cs', 'de', 'en-GB', 'es-ES', 'fi', 'fr', 'it', 'ja',
+                'kab', 'ko', 'lt', 'nl', 'pl', 'pt-BR', 'ru', 'sq', 'sv-SE',
+                'uk', 'zh-TW',
             ],
         'thunderbird/features.lang'      => $thunderbird_locales,
         'thunderbird/index.lang'         => $thunderbird_locales,
