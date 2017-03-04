@@ -35,7 +35,7 @@ foreach ($optin_pages as $current_filename => $supported_locales) {
         $available_optins[] = $current_filename;
     }
 
-    $deadline = Project::getFileDeadline($current_website, $current_filename);
+    $deadline = Project::getFileDeadline($current_website, $current_filename, $current_locale);
     $files_list[$current_filename] = [
         'opted_in' => $locale_included,
         'deadline' => $deadline != '' ? $deadline : '-',

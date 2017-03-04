@@ -117,16 +117,38 @@ class Project
      *
      * @param array  $website  Website data
      * @param string $filename File name
+     * @param string $locale   Locale
      *
      * @return array Array of flags for this file+locale
      */
-    public static function getFileDeadline($website, $filename)
+    public static function getFileDeadline($website, $filename, $locale)
     {
-        $files_data = self::getWebsiteFiles($website, false);
+        $deadline = '';
 
-        return isset($files_data[$filename]['deadline'])
-            ? $files_data[$filename]['deadline']
-            : '';
+        $files_data = self::getWebsiteFiles($website, false);
+        if (isset($files_data[$filename]['deadline'])) {
+            $deadlines = $files_data[$filename]['deadline'];
+
+            // If only one deadline is defined, I can return this value
+            if (gettype($deadlines) == 'string') {
+                return $deadlines;
+            }
+
+            foreach ($deadlines as $current_deadline => $locales) {
+                /*
+                    Return directly if there's a perfect match, store but keep
+                    looking if 'all', in case there's a later definition for
+                    this specific locale.
+                */
+                if (in_array($locale, $locales)) {
+                    return $current_deadline;
+                } elseif (in_array('all', $locales)) {
+                    $deadline = $current_deadline;
+                }
+            }
+        }
+
+        return $deadline;
     }
 
     /**

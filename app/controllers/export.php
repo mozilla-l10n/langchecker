@@ -62,7 +62,7 @@ foreach ($sites as $website) {
             $export_data[$website_name][$displayed_filename]['url'] = Project::getLocalizedURL($reference_data, $current_locale);
 
             // Some files have a deadline
-            $deadline = Project::getFileDeadline($website, $filename);
+            $deadline = Project::getFileDeadline($website, $filename, $current_locale);
             if ($deadline != '') {
                 $export_data[$website_name][$displayed_filename]['deadline'] = $deadline;
             }

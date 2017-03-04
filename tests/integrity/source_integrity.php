@@ -54,10 +54,34 @@ foreach ($sites as $website_id => $website_data) {
         foreach ($website_data[4] as $filename => $file_data) {
             // Check if the deadline date is valid
             if (isset($file_data['deadline'])) {
-                $date = DateTime::createFromFormat('Y-m-d', $file_data['deadline']);
-                if (! $date || $date->format('Y-m-d') != $file_data['deadline']) {
-                    $errors[] = "Deadline date {$file_data['deadline']} for {$filename} is incorrect.";
-                };
+                $deadline = $file_data['deadline'];
+
+                if (gettype($deadline) == 'string') {
+                    // Single deadline
+                    $date = DateTime::createFromFormat('Y-m-d', $deadline);
+                    if (! $date || $date->format('Y-m-d') != $deadline) {
+                        $errors[] = "Deadline date {$deadline} for {$filename} is incorrect.";
+                    };
+                } elseif (is_array($deadline)) {
+                    // Multiple deadlines
+                    foreach ($deadline as $key => $value) {
+                        if (gettype($key) == 'string') {
+                            $date = DateTime::createFromFormat('Y-m-d', $key);
+                            if (! $date || $date->format('Y-m-d') != $key) {
+                                $errors[] = "Deadline date {$key} for {$filename} is incorrect.";
+                            };
+                        } else {
+                            $errors[] = "Deadline {$key} for {$filename} is of the wrong type (" . gettype($key) . '). It should be a string.';
+                        }
+
+                        if (! is_array($value)) {
+                            $errors[] = "Deadline {$key} for {$filename} should be assigned to an array of locales.";
+                        }
+                    }
+                } else {
+                    // Wrong type
+                    $errors[] = "Deadline {$deadline} for {$filename} is of the wrong type (" . gettype($priority) . '). It should be a string.';
+                }
             }
 
             // Check priorities

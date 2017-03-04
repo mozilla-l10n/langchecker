@@ -29,9 +29,20 @@ $repo0_langfiles = [
 
 $repo1_langfiles = [
     'file3.lang' => [
+        'deadline' => '2017-01-30',
         'priority' => 2,
     ],
-    'file4.lang' => [],
+    'file4.lang' => [
+        'deadline' => [
+            '2017-01-30' => ['fr'],
+        ],
+    ],
+    'file5.lang' => [
+        'deadline' => [
+            '2017-01-30' => ['de'],
+            '2017-02-15' => ['all'],
+        ],
+    ],
 ];
 
 $repo2_langfiles = [

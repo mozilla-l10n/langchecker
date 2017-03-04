@@ -130,20 +130,26 @@ class Project extends atoum\test
         require_once TEST_FILES . 'config/sources.php';
 
         return [
-            [$sites[0], 'file1.lang', '2017-01-30'],
-            [$sites[0], 'file2.lang', ''],
+            [$sites[0], 'file1.lang', 'fr', '2017-01-30'],
+            [$sites[0], 'file2.lang', 'fr', ''],
+            [$sites[1], 'file3.lang', 'fr', '2017-01-30'],
+            [$sites[1], 'file4.lang', 'fr', '2017-01-30'],
+            [$sites[1], 'file4.lang', 'de', ''],
+            [$sites[1], 'file5.lang', 'de', '2017-01-30'],
+            [$sites[1], 'file5.lang', 'fr', '2017-02-15'],
+
         ];
     }
 
     /**
      * @dataProvider getFileDeadlineDP
      */
-    public function testGetFileDeadline($a, $b, $c)
+    public function testGetFileDeadline($a, $b, $c, $d)
     {
         $obj = new _Project();
         $this
-            ->string($obj->getFileDeadline($a, $b))
-                ->isEqualTo($c);
+            ->string($obj->getFileDeadline($a, $b, $c))
+                ->isEqualTo($d);
     }
 
     public function isSupportedLocaleDP()
@@ -197,15 +203,26 @@ class Project extends atoum\test
 
         return [
             [$sites[0], true, ['file1.lang', 'file2.lang']],
-            [$sites[1], true, ['file3.lang', 'file4.lang']],
+            [$sites[1], true, ['file3.lang', 'file4.lang', 'file5.lang']],
             [
                 $sites[1],
                 false,
                 [
                     'file3.lang' => [
+                        'deadline' => '2017-01-30',
                         'priority' => 2,
                     ],
-                    'file4.lang' => [],
+                    'file4.lang' => [
+                        'deadline' => [
+                            '2017-01-30' => ['fr'],
+                        ],
+                    ],
+                    'file5.lang' => [
+                        'deadline' => [
+                            '2017-01-30' => ['de'],
+                            '2017-02-15' => ['all'],
+                        ],
+                    ],
                 ],
             ],
         ];

@@ -50,11 +50,31 @@ $engagement_locales = [
 
 /*
     For each file it's possibile to specify the following fields:
-    * deadline: string, date in ISO format
+    * deadline: if the deadline is the same for all locales, assign the deadline
+      as a string in ISO format (dd-mm-yyyy):
 
-    * priority: priorities are numeric values assigned to files.
-      1 is the highest priority, 3 is the lowest. If the priority is the same
-      for all locale, simply assign it like this:
+      'deadline' => '2016-04-29',
+
+      If deadline needs to change based on the locale, you can use a
+      multidimensional array, where each deadline is associated to a list of
+      locales. 'all' can be used to indicate that deadline applies to all
+      supported locales. Example, deadline only for two locales:
+
+      'deadline' => [
+          '2016-04-25' => ['de', 'fr'],
+      ],
+
+      Different deadlines:
+
+      'deadline' => [
+          '2016-04-25' => ['de', 'fr'],
+          '2016-01-05' => ['all'],
+      ],
+
+    * priority: priorities are numeric values assigned to files. 1 is the
+      highest priority, 3 is the lowest.
+
+      If the priority is the same for all locales, simply assign it like this:
 
       priority => 1,
 
