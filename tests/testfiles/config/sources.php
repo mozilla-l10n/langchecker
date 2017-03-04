@@ -10,7 +10,7 @@ $repo0_langfiles = [
         'flags'             => [
             'obsolete' => ['fr'],
         ],
-        'priorities' => [
+        'priority' => [
             1 => ['fr'],
         ],
     ],
@@ -20,7 +20,7 @@ $repo0_langfiles = [
             'testflag1' => ['all'],
             'testflag2' => ['fr'],
         ],
-        'priorities' => [
+        'priority' => [
             2 => ['all'],
             3 => ['fr'],
         ],
@@ -28,7 +28,9 @@ $repo0_langfiles = [
 ];
 
 $repo1_langfiles = [
-    'file3.lang' => [],
+    'file3.lang' => [
+        'priority' => 2,
+    ],
     'file4.lang' => [],
 ];
 

@@ -109,7 +109,8 @@ class Project extends atoum\test
             [$sites[0], 'file2.lang', 'en-US', 2],
             [$sites[0], 'file2.lang', 'de', 2],
             [$sites[0], 'file2.lang', 'fr', 3],
-            [$sites[1], 'file3.lang', 'en-US', 1],
+            [$sites[1], 'file3.lang', 'en-US', 2],
+            [$sites[1], 'file4.lang', 'en-US', 1],
         ];
     }
 
@@ -201,7 +202,9 @@ class Project extends atoum\test
                 $sites[1],
                 false,
                 [
-                    'file3.lang' => [],
+                    'file3.lang' => [
+                        'priority' => 2,
+                    ],
                     'file4.lang' => [],
                 ],
             ],

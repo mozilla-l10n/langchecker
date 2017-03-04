@@ -60,6 +60,35 @@ foreach ($sites as $website_id => $website_data) {
                 };
             }
 
+            // Check priorities
+            if (isset($file_data['priority'])) {
+                $priority = $file_data['priority'];
+                if (gettype($priority) == 'integer') {
+                    // Single priority
+                    if ($priority < 1 || $priority > 3) {
+                        $errors[] = "Priority {$priority} for {$filename} is incorrect. It should be an integer between 1 and 3.";
+                    }
+                } elseif (is_array($priority)) {
+                    // Multiple priorities
+                    foreach ($priority as $key => $value) {
+                        if (gettype($key) != 'integer') {
+                            $errors[] = "Priority {$key} for {$filename} is of the wrong type (" . gettype($key) . '). It should be an integer between 1 and 3.';
+                        } else {
+                            if ($key < 1 || $key > 3) {
+                                $errors[] = "Priority {$key} for {$filename} is incorrect. It should be an integer between 1 and 3.";
+                            }
+                        }
+
+                        if (! is_array($value)) {
+                            $errors[] = "Priority {$key} for {$filename} should be assigned to an array of locales.";
+                        }
+                    }
+                } else {
+                    // Wrong type
+                    $errors[] = "Priority {$priority} for {$filename} is of the wrong type (" . gettype($priority) . '). It should be an integer between 1 and 3.';
+                }
+            }
+
             // Check if supported locales are known
             if (isset($file_data['supported_locales'])) {
                 $unknown_locales = array_diff($file_data['supported_locales'], $website_data[3]);

@@ -145,8 +145,14 @@ class Project
         $priority = $website[7];
 
         $files_data = self::getWebsiteFiles($website, false);
-        if (isset($files_data[$filename]['priorities'])) {
-            $priorities = $files_data[$filename]['priorities'];
+        if (isset($files_data[$filename]['priority'])) {
+            $priorities = $files_data[$filename]['priority'];
+
+            // If only one priority is defined, I can return this value
+            if (gettype($priorities) == 'integer') {
+                return $priorities;
+            }
+
             foreach ($priorities as $current_priority => $locales) {
                 /*
                     Return directly if there's a perfect match, store but keep
