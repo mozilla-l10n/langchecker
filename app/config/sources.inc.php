@@ -599,12 +599,24 @@ $engagement_lang = [
     'emails/2016/fundraising_email_3.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'emails/2017/copyright.lang' => [
+        'deadline'          => '2017-03-09',
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2017/data_privacy_day.lang' => [
         'deadline'          => '2017-01-27',
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2017/fundraising_thank_you.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it'],
+    ],
+    'emails/2017/survey_results.lang' => [
+        'deadline'          => '2017-03-09',
+        'supported_locales' => ['de', 'fr'],
+    ],
+    'emails/2017/results_graphics.lang' => [
+        'deadline'          => '2017-03-07',
+        'supported_locales' => ['de', 'fr'],
     ],
     'heartbeat/2016/sep2016.lang' => [
         'deadline'          => '2016-09-12',
@@ -915,6 +927,10 @@ $engagement_lang = [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
         ],
+    ],
+    'emails/2017/copyright_stories.lang' => [
+        'deadline'          => '2017-03-09',
+        'supported_locales' => ['de', 'fr'],
     ],
     'surveys/data_privacy_day.lang' => [
         'deadline'          => '2017-01-27',
