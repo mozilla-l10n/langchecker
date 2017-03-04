@@ -885,7 +885,7 @@ $engagement_lang = [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
         ],
     ],
-    'emails/2017/copyright_stories.lang' => [
+    'surveys/copyright_stories.lang' => [
         'deadline'          => '2017-03-09',
         'supported_locales' => ['de', 'fr'],
     ],
