@@ -51,7 +51,7 @@ $engagement_locales = [
 /*
     For each file it's possibile to specify the following fields:
     * deadline: if the deadline is the same for all locales, assign the deadline
-      as a string in ISO format (yyyy-mm-dd):
+      as a string in ISO format (YYYY-MM-DD):
 
       'deadline' => '2016-04-29',
 
@@ -435,7 +435,6 @@ $mozillaorg_lang = [
     ],
     'mozorg/technology.lang' => [
         'deadline'          => '2016-11-30',
-        'priority'          => 3,
         'supported_locales' => $mozillaorg,
     ],
     'newsletter.lang' => [
