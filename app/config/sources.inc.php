@@ -956,67 +956,7 @@ $appstores_lang = [
     ],
     'fx_android/description_release.lang' => [
         'deadline'          => '2016-04-30',
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
-    ],
-    'fx_android/whatsnew/android_44.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => ['fr', 'ja', 'zh-TW'],
-    ],
-    'fx_android/whatsnew/android_45.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
-    ],
-    'fx_android/whatsnew/android_46_beta.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
         'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_46.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
-    ],
-    'fx_android/whatsnew/android_47_beta.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_47.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
-    ],
-    'fx_android/whatsnew/android_48_beta.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_48.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
-    ],
-    'fx_android/whatsnew/android_49_beta.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_49.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
     ],
     'fx_android/whatsnew/android_50_beta.lang' => [
         'flags' => [
@@ -1028,7 +968,7 @@ $appstores_lang = [
         'flags' => [
             'obsolete' => ['all'],
         ],
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
+        'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_51_beta.lang' => [
         'flags' => [
@@ -1037,7 +977,7 @@ $appstores_lang = [
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_51.lang' => [
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
+        'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_52_beta.lang' => [
         'flags' => [
@@ -1047,7 +987,7 @@ $appstores_lang = [
     ],
     'fx_android/whatsnew/android_52.lang' => [
         'deadline'          => '2017-03-07',
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
+        'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_53_beta.lang' => [
         'supported_locales' => $fx_android_store,
@@ -1061,18 +1001,6 @@ $appstores_lang = [
             'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru',
             'zh-CN', 'zh-TW',
         ],
-    ],
-    'fx_ios/whatsnew/ios_2_1.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_ios_store,
-    ],
-    'fx_ios/whatsnew/ios_4_0.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_ios_store,
     ],
     'fx_ios/whatsnew/ios_5_0.lang' => [
         'flags' => [
