@@ -13,7 +13,7 @@ if (! Project::isSupportedLocale($current_website, $current_locale)) {
 $optin_pages = [];
 foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
     if (in_array('opt-in', Project::getFileFlags($current_website, $current_filename, $current_locale))) {
-        $optin_pages[$current_filename] = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+        $optin_pages[$current_filename] = Project::getSupportedLocales($current_website, $current_filename);
     }
 }
 
@@ -35,9 +35,10 @@ foreach ($optin_pages as $current_filename => $supported_locales) {
         $available_optins[] = $current_filename;
     }
 
+    $deadline = Project::getFileDeadline($current_website, $current_filename, $current_locale);
     $files_list[$current_filename] = [
         'opted_in' => $locale_included,
-        'deadline' => isset($deadline[$current_filename]) ? $deadline[$current_filename] : '-',
+        'deadline' => $deadline != '' ? $deadline : '-',
         'page_url' => Project::getLocalizedURL($reference_data, $current_locale),
         'status'   => $locale_included ? 'yes' : 'no',
         'strings'  => $nb_strings,

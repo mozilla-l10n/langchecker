@@ -45,7 +45,7 @@ $supported_locales = $json_object
     ->setURI("https://transvision.mozfr.org/api/v1/locales/{$cli_repo}/")
     ->fetchContent();
 $locale_list = array_intersect(
-    Project::getSupportedLocales($current_website, $cli_filename, $langfiles_subsets),
+    Project::getSupportedLocales($current_website, $cli_filename),
     $supported_locales
 );
 

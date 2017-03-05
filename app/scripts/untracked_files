@@ -111,7 +111,7 @@ if (! empty($missing_locales)) {
 
 // Check if the .lang files available locally are actually tracked by langchecker
 $untracked_files = [];
-$supported_files = Project::getSupportedFiles($current_website);
+$supported_files = Project::getWebsiteFiles($current_website);
 
 $get_file_path = function ($file_info) use ($absolute_path) {
     return $absolute_path != '' ?
@@ -131,7 +131,7 @@ foreach ($file_list as $single_file) {
 foreach ($file_list as $single_file) {
     $locale = $single_file['locale'];
     if ($locale != Project::getReferenceLocale($current_website)) {
-        if (! Project::isSupportedLocale($current_website, $locale, $single_file['relative_path'], $langfiles_subsets)
+        if (! Project::isSupportedLocale($current_website, $locale, $single_file['relative_path'])
             && ! in_array($single_file['relative_path'], $ignored_files)) {
             $untracked_files[] = $get_file_path($single_file);
         }

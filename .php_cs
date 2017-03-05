@@ -17,6 +17,7 @@ return Symfony\CS\Config\Config::create()
         'spaces_cast', 'standardize_not_equal', 'ternary_spaces', 'unused_use',
         'whitespacy_lines', 'align_double_arrow', 'concat_with_spaces',
         'no_blank_lines_before_namespace', 'ordered_use', 'short_array_syntax',
+        'trim_array_spaces',
     ])
     ->finder($finder)
 ;

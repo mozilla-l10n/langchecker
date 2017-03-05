@@ -26,7 +26,7 @@ if (Project::isObsoleteFile($current_website, $current_filename, 'all')) {
 $reference_locale = Project::getReferenceLocale($current_website);
 $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
-$supported_locales = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+$supported_locales = Project::getSupportedLocales($current_website, $current_filename);
 $results = [
     'activated'  => [],
     'active'     => [],

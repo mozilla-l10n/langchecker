@@ -58,11 +58,11 @@ foreach ($file_list as $current_filename) {
 
     // Create the list of locales ($locale_list) that we need to analyze for this file
     if ($cli_locale != 'all' &&
-        Project::isSupportedLocale($current_website, $cli_locale, $current_filename, $langfiles_subsets)) {
+        Project::isSupportedLocale($current_website, $cli_locale, $current_filename)) {
         // Single locale is requested and it's supported for this file
         $locale_list[] = $cli_locale;
     } elseif ($cli_locale != 'all' &&
-              ! Project::isSupportedLocale($current_website, $cli_locale, $current_filename, $langfiles_subsets)) {
+              ! Project::isSupportedLocale($current_website, $cli_locale, $current_filename)) {
         // Locale is not supported for this file
         Utils::logger("{$cli_locale}: {$current_filename} is not supported for this locale.");
         // Stop if we're analyzing only this file for this locale, otherwise continue to next file
@@ -73,7 +73,7 @@ foreach ($file_list as $current_filename) {
         }
     } else {
         // Get all supported locales
-        $locale_list = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+        $locale_list = Project::getSupportedLocales($current_website, $current_filename);
     }
 
     foreach ($locale_list as $current_locale) {

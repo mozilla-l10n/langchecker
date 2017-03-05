@@ -55,6 +55,7 @@ $json_object = new Json;
 require $conf_folder . 'locales.inc.php';
 require $conf_folder . 'store_locales.inc.php';
 require $conf_folder . 'sources.inc.php';
+require $conf_folder . 'websites.inc.php';
 
 // Override sources for functional tests both locally and on Travis
 if (getenv('AUTOMATED_TESTS')) {

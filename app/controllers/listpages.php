@@ -43,6 +43,7 @@ foreach ($displayed_sites as $site_index => $current_website) {
             'displayed_filename' => $displayed_filename,
             'obsolete'           => $obsolete_file,
             'page_url'           => Project::getLocalizedURL($reference_data, ''),
+            'priority'           => Project::getFilePriority($current_website, $current_filename, 'all'),
             'strings_count'      => $nb_strings,
             'words_count'        => $nb_words,
         ];

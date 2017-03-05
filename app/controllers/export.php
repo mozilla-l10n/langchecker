@@ -8,7 +8,7 @@ foreach ($sites as $website) {
     if (Project::isSupportedLocale($website, $current_locale)) {
         $website_data_source = Project::getWebsiteDataType($website);
         foreach (Project::getWebsiteFiles($website) as $filename) {
-            if (! Project::isSupportedLocale($website, $current_locale, $filename, $langfiles_subsets)) {
+            if (! Project::isSupportedLocale($website, $current_locale, $filename)) {
                 // File is not managed for this website+locale, ignore it
                 continue;
             }
@@ -51,11 +51,7 @@ foreach ($sites as $website) {
 
             $export_data[$website_name][$displayed_filename]['data_source'] = $website_data_source;
 
-            if (Project::isCriticalFile($website, $filename, $current_locale)) {
-                $export_data[$website_name][$displayed_filename]['critical'] = true;
-            } else {
-                $export_data[$website_name][$displayed_filename]['critical'] = false;
-            }
+            $export_data[$website_name][$displayed_filename]['priority'] = Project::getFilePriority($website, $filename, $current_locale);
 
             // Flags
             if ($file_flags) {
@@ -66,8 +62,9 @@ foreach ($sites as $website) {
             $export_data[$website_name][$displayed_filename]['url'] = Project::getLocalizedURL($reference_data, $current_locale);
 
             // Some files have a deadline
-            if (isset($deadline[$filename])) {
-                $export_data[$website_name][$displayed_filename]['deadline'] = $deadline[$filename];
+            $deadline = Project::getFileDeadline($website, $filename, $current_locale);
+            if ($deadline != '') {
+                $export_data[$website_name][$displayed_filename]['deadline'] = $deadline;
             }
         }
     }

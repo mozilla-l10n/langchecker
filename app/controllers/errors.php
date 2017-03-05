@@ -8,7 +8,7 @@ foreach ($mozilla as $current_locale) {
         $current_website_name = Project::getWebsiteName($current_website);
         if (Project::isSupportedLocale($current_website, $current_locale)) {
             foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
-                if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
+                if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename)) {
                     // File is not managed for this website+locale, ignore it
                     continue;
                 }
@@ -143,7 +143,7 @@ foreach ($mozilla as $current_locale) {
         $current_website_name = Project::getWebsiteName($current_website);
         if (Project::isSupportedLocale($current_website, $current_locale)) {
             foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
-                if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename, $langfiles_subsets)) {
+                if (! Project::isSupportedLocale($current_website, $current_locale, $current_filename)) {
                     // File is not managed for this website+locale, ignore it
                     continue;
                 }

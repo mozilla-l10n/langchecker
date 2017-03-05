@@ -41,7 +41,7 @@ Utils::logger("Reference English file: {$reference_filename}");
 $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
 // Get all supported locales for this file
-$locale_list = Project::getSupportedLocales($current_website, $current_filename, $langfiles_subsets);
+$locale_list = Project::getSupportedLocales($current_website, $current_filename);
 
 $result = '';
 foreach ($locale_list as $current_locale) {
