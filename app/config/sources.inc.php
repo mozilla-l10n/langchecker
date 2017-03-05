@@ -51,7 +51,7 @@ $engagement_locales = [
 /*
     For each file it's possibile to specify the following fields:
     * deadline: if the deadline is the same for all locales, assign the deadline
-      as a string in ISO format (dd-mm-yyyy):
+      as a string in ISO format (yyyy-mm-dd):
 
       'deadline' => '2016-04-29',
 
@@ -72,7 +72,7 @@ $engagement_locales = [
       ],
 
     * priority: priorities are numeric values assigned to files. 1 is the
-      highest priority, 3 is the lowest.
+      highest priority, 5 is the lowest.
 
       If the priority is the same for all locales, simply assign it like this:
 
@@ -109,7 +109,6 @@ $mozillaorg_lang = [
     ],
     'firefox/accounts.lang' => [
         'deadline'          => '2016-03-15',
-        'priority'          => 2,
         'supported_locales' => $mozillaorg,
     ],
     'firefox/android/index.lang' => [
@@ -120,6 +119,7 @@ $mozillaorg_lang = [
         'supported_locales' => $android_landing_page,
     ],
     'firefox/australis/firefox_tour.lang' => [
+        'priority'          => 5,
         'supported_locales' => $firefox_locales,
     ],
     'firefox/channel/index.lang' => [
@@ -128,22 +128,18 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
     ],
     'firefox/desktop/customize.lang' => [
-        'priority'          => 2,
         'supported_locales' => $firefox_locales,
     ],
     'firefox/desktop/fast.lang' => [
-        'priority'          => 2,
         'supported_locales' => $firefox_locales,
     ],
     'firefox/desktop/index.lang' => [
-        'priority'          => 2,
         'supported_locales' => $firefox_locales,
     ],
     'firefox/desktop/tips.lang' => [
         'flags' => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 2,
         'supported_locales' => [
             'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
             'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gl',
@@ -154,7 +150,6 @@ $mozillaorg_lang = [
         ],
     ],
     'firefox/desktop/trust.lang' => [
-        'priority'          => 2,
         'supported_locales' => $firefox_locales,
     ],
     'firefox/developer.lang' => [
@@ -165,6 +160,7 @@ $mozillaorg_lang = [
         'flags' => [
             'opt-in' => ['all'],
         ],
+        'priority'          => 5,
         'supported_locales' => [
             'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'fa', 'fi', 'fr',
             'fy-NL', 'hsb', 'it', 'ja', 'kab', 'ko', 'lt', 'nl', 'pt-BR',
@@ -179,13 +175,13 @@ $mozillaorg_lang = [
     ],
     'firefox/features.lang' => [
         'deadline'          => '2016-10-04',
-        'priority'          => 2,
         'supported_locales' => $firefox_locales,
     ],
     'firefox/geolocation.lang' => [
         'flags' => [
             'opt-in' => ['all'],
         ],
+        'priority'          => 5,
         'supported_locales' => [
             'af', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs',
             'cy', 'da', 'de', 'dsb', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL',
@@ -198,7 +194,7 @@ $mozillaorg_lang = [
         ],
     ],
     'firefox/installer-help.lang' => [
-        'priority'          => 1,
+        'priority'          => 2,
         'supported_locales' => $firefox_locales,
     ],
     'firefox/ios.lang' => [
@@ -243,7 +239,7 @@ $mozillaorg_lang = [
     ],
     'firefox/sync.lang' => [
         'deadline'          => '2016-04-04',
-        'priority'          => 1,
+        'priority'          => 2,
         'supported_locales' => $mozillaorg,
     ],
     'firefox/tracking-protection-tour.lang' => [
@@ -257,6 +253,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'foundation/annualreport/2011.lang' => [
+        'priority'          => 5,
         'supported_locales' => [
             'ast', 'cs', 'de', 'el', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'fr', 'fy-NL', 'is', 'it', 'ja', 'ko', 'lij', 'ms', 'nl', 'oc',
@@ -264,6 +261,7 @@ $mozillaorg_lang = [
         ],
     ],
     'foundation/annualreport/2011faq.lang' => [
+        'priority'          => 5,
         'supported_locales' => [
             'ast', 'cs', 'de', 'el', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'fr', 'fy-NL', 'is', 'it', 'ja', 'ko', 'lij', 'ms', 'nl', 'oc',
@@ -271,6 +269,7 @@ $mozillaorg_lang = [
         ],
     ],
     'foundation/annualreport/2012/faq.lang' => [
+        'priority'          => 5,
         'supported_locales' => [
             'ar', 'ast', 'de', 'el', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'fr', 'fy-NL', 'is', 'it', 'ja', 'ko', 'lij', 'ms', 'nl', 'oc',
@@ -278,6 +277,7 @@ $mozillaorg_lang = [
         ],
     ],
     'foundation/annualreport/2012/index.lang' => [
+        'priority'          => 5,
         'supported_locales' => [
             'ar', 'ast', 'de', 'el', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'fr', 'fy-NL', 'is', 'it', 'ja', 'ko', 'lij', 'ms', 'nl', 'oc',
@@ -301,6 +301,7 @@ $mozillaorg_lang = [
         'flags' => [
             'opt-in' => ['all'],
         ],
+        'priority'          => 5,
         'supported_locales' => [
             'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
             'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL', 'hi-IN',
@@ -315,9 +316,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/404.lang' => [
-        'priorities' => [
-            1 => ['all'],
-        ],
+        'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/about.lang' => [
@@ -369,7 +368,6 @@ $mozillaorg_lang = [
         'flags' => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 2,
         'supported_locales' => $getinvolved_locales,
     ],
     'mozorg/contribute/signup.lang' => [
@@ -377,14 +375,12 @@ $mozillaorg_lang = [
         'flags'    => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 2,
         'supported_locales' => $getinvolved_locales,
     ],
     'mozorg/contribute/stories.lang' => [
         'flags' => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 2,
         'supported_locales' => $getinvolved_locales,
     ],
     'mozorg/home/index.lang' => [
@@ -402,7 +398,7 @@ $mozillaorg_lang = [
         'flags' => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 1,
+        'priority'          => 2,
         'supported_locales' => [
             'af', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR', 'sq',
             'sv-SE', 'uk', 'zh-TW',
@@ -425,7 +421,7 @@ $mozillaorg_lang = [
     ],
     'mozorg/newsletters.lang' => [
         'deadline'          => '2017-02-03',
-        'priority'          => 1,
+        'priority'          => 2,
         'supported_locales' => $newsletter_locales,
     ],
     'mozorg/plugincheck-redesign.lang' => [
@@ -434,12 +430,12 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/products.lang' => [
-        'priority'          => 1,
+        'priority'          => 2,
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/technology.lang' => [
         'deadline'          => '2016-11-30',
-        'priority'          => 2,
+        'priority'          => 3,
         'supported_locales' => $mozillaorg,
     ],
     'newsletter.lang' => [
@@ -537,7 +533,7 @@ $firefoxhealthreport_lang = [
     ],
 ];
 
-// Default priority is 1
+// Default priority is 2
 $engagement_lang = [
     'ads/ios_ads_nov2015.lang' => [
         'supported_locales' => ['de', 'fr'],

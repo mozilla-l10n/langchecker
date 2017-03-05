@@ -122,7 +122,7 @@ $sites =
         $appstores_lang,
         'en-US', // source locale
         $repositories['appstores']['public_path'],
-        1,
+        2,
         'lang',
     ],
 ];

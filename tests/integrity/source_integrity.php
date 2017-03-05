@@ -87,19 +87,21 @@ foreach ($sites as $website_id => $website_data) {
             // Check priorities
             if (isset($file_data['priority'])) {
                 $priority = $file_data['priority'];
+                $min_priority = 1;
+                $max_priority = 5;
                 if (gettype($priority) == 'integer') {
                     // Single priority
-                    if ($priority < 1 || $priority > 3) {
-                        $errors[] = "Priority {$priority} for {$filename} is incorrect. It should be an integer between 1 and 3.";
+                    if ($priority < $min_priority || $priority > $max_priority) {
+                        $errors[] = "Priority {$priority} for {$filename} is incorrect. It should be an integer between {$min_priority} and {$max_priority}.";
                     }
                 } elseif (is_array($priority)) {
                     // Multiple priorities
                     foreach ($priority as $key => $value) {
                         if (gettype($key) != 'integer') {
-                            $errors[] = "Priority {$key} for {$filename} is of the wrong type (" . gettype($key) . '). It should be an integer between 1 and 3.';
+                            $errors[] = "Priority {$key} for {$filename} is of the wrong type (" . gettype($key) . '). It should be an integer between {$min_priority} and {$max_priority}.';
                         } else {
-                            if ($key < 1 || $key > 3) {
-                                $errors[] = "Priority {$key} for {$filename} is incorrect. It should be an integer between 1 and 3.";
+                            if ($key < $min_priority || $key > $max_priority) {
+                                $errors[] = "Priority {$key} for {$filename} is incorrect. It should be an integer between {$min_priority} and {$max_priority}.";
                             }
                         }
 
@@ -109,7 +111,7 @@ foreach ($sites as $website_id => $website_data) {
                     }
                 } else {
                     // Wrong type
-                    $errors[] = "Priority {$priority} for {$filename} is of the wrong type (" . gettype($priority) . '). It should be an integer between 1 and 3.';
+                    $errors[] = "Priority {$priority} for {$filename} is of the wrong type (" . gettype($priority) . '). It should be an integer between {$min_priority} and {$max_priority}.';
                 }
             }
 
