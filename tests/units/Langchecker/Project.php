@@ -111,6 +111,8 @@ class Project extends atoum\test
             [$sites[0], 'file2.lang', 'fr', 3],
             [$sites[1], 'file3.lang', 'en-US', 2],
             [$sites[1], 'file4.lang', 'en-US', 1],
+            [$sites[1], 'file6.lang', 'fr', 4],
+            [$sites[1], 'file6.lang', 'en-US', 5],
         ];
     }
 
@@ -137,7 +139,8 @@ class Project extends atoum\test
             [$sites[1], 'file4.lang', 'de', ''],
             [$sites[1], 'file5.lang', 'de', '2017-01-30'],
             [$sites[1], 'file5.lang', 'fr', '2017-02-15'],
-
+            [$sites[1], 'file6.lang', 'de', '2017-01-30'],
+            [$sites[1], 'file6.lang', 'fr', '2017-02-15'],
         ];
     }
 
@@ -203,7 +206,7 @@ class Project extends atoum\test
 
         return [
             [$sites[0], true, ['file1.lang', 'file2.lang']],
-            [$sites[1], true, ['file3.lang', 'file4.lang', 'file5.lang']],
+            [$sites[1], true, ['file3.lang', 'file4.lang', 'file5.lang', 'file6.lang']],
             [
                 $sites[1],
                 false,
@@ -221,6 +224,16 @@ class Project extends atoum\test
                         'deadline' => [
                             '2017-01-30' => ['de'],
                             '2017-02-15' => ['all'],
+                        ],
+                    ],
+                    'file6.lang' => [
+                        'deadline' => [
+                            '2017-02-15' => ['all'],
+                            '2017-01-30' => ['de'],
+                        ],
+                        'priority' => [
+                            5 => ['all'],
+                            4 => ['fr'],
                         ],
                     ],
                 ],

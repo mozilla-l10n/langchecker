@@ -21,8 +21,8 @@ $repo0_langfiles = [
             'testflag2' => ['fr'],
         ],
         'priority' => [
-            2 => ['all'],
             3 => ['fr'],
+            2 => ['all'],
         ],
     ],
 ];
@@ -41,6 +41,16 @@ $repo1_langfiles = [
         'deadline' => [
             '2017-01-30' => ['de'],
             '2017-02-15' => ['all'],
+        ],
+    ],
+    'file6.lang' => [
+        'deadline' => [
+            '2017-02-15' => ['all'],
+            '2017-01-30' => ['de'],
+        ],
+        'priority' => [
+            5 => ['all'],
+            4 => ['fr'],
         ],
     ],
 ];
