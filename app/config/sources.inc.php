@@ -678,7 +678,7 @@ $engagement_lang = [
     ],
     'surveys/survey_maker_party_2016.lang' => [
         'supported_locales' => [
-            'bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'sl',
+            'bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'sl',
         ],
     ],
     'surveys/survey_eoy_heartbeat.lang' => [
