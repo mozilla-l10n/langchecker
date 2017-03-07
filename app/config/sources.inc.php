@@ -702,6 +702,13 @@ $appstores_lang = [
         ],
     ],
     'focus_ios/whatsnew/focus_2_1.lang' => [
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
+        'supported_locales' => $focus_ios_store,
+    ],
+    'focus_ios/whatsnew/focus_3_1.lang' => [
+        'deadline'          => '2017-03-09',
         'supported_locales' => $focus_ios_store,
     ],
     'fx_android/description_beta.lang' => [
