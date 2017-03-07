@@ -702,9 +702,9 @@ $appstores_lang = [
         ],
     ],
     'focus_ios/whatsnew/focus_2_1.lang' => [
-      'flags' => [
-          'obsolete' => ['all'],
-      ],
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $focus_ios_store,
     ],
     'focus_ios/whatsnew/focus_3_1.lang' => [
