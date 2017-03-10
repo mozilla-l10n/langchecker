@@ -117,8 +117,7 @@ $sites =
         'appstores',
         $repositories['appstores']['local_path'],
         '',
-        // Added: ar, see https://bugzilla.mozilla.org/show_bug.cgi?id=1259200
-        array_unique(array_merge($google_play, ['ar'], $apple_store)),
+        array_unique(array_merge($google_play, $apple_store)),
         $appstores_lang,
         'en-US', // source locale
         $repositories['appstores']['public_path'],
