@@ -12,7 +12,7 @@ $missing_parameter = "This command needs more parameters, please check import_po
 require_once __DIR__ . '/../inc/cli_init.php';
 
 // User provided variables
-$cli_po_filename   = realpath(Utils::getCliParam(1, $argv, ''));  // po file to import
+$cli_po_filename = realpath(Utils::getCliParam(1, $argv, ''));  // po file to import
 $cli_lang_filename = realpath(Utils::getCliParam(2, $argv, ''));  // lang file to use as destination
 
 /*

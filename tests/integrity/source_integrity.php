@@ -1,7 +1,7 @@
 <?php
 use \pchevrel\Verif as Verif;
 
-define('INSTALL_ROOT',  realpath(__DIR__ . '/../../') . '/');
+define('INSTALL_ROOT', realpath(__DIR__ . '/../../') . '/');
 
 // We always work with UTF8 encoding
 mb_internal_encoding('UTF-8');
@@ -61,7 +61,7 @@ foreach ($sites as $website_id => $website_data) {
                     $date = DateTime::createFromFormat('Y-m-d', $deadline);
                     if (! $date || $date->format('Y-m-d') != $deadline) {
                         $errors[] = "Deadline date {$deadline} for {$filename} is incorrect.";
-                    };
+                    }
                 } elseif (is_array($deadline)) {
                     // Multiple deadlines
                     foreach ($deadline as $key => $value) {
@@ -69,7 +69,7 @@ foreach ($sites as $website_id => $website_data) {
                             $date = DateTime::createFromFormat('Y-m-d', $key);
                             if (! $date || $date->format('Y-m-d') != $key) {
                                 $errors[] = "Deadline date {$key} for {$filename} is incorrect.";
-                            };
+                            }
                         } else {
                             $errors[] = "Deadline {$key} for {$filename} is of the wrong type (" . gettype($key) . '). It should be a string.';
                         }

@@ -1,5 +1,5 @@
 <?php
-define('INSTALL_ROOT',  realpath(__DIR__ . '/../../') . '/');
+define('INSTALL_ROOT', realpath(__DIR__ . '/../../') . '/');
 
 // We always work with UTF8 encoding
 mb_internal_encoding('UTF-8');
@@ -10,7 +10,7 @@ date_default_timezone_set('Europe/Paris');
 require __DIR__ . '/../../vendor/autoload.php';
 
 // Set an environment variable so that the instance will use content from test files
-putenv("AUTOMATED_TESTS=true");
+putenv('AUTOMATED_TESTS=true');
 
 // Launch PHP dev server in the background
 chdir(INSTALL_ROOT);
@@ -31,7 +31,7 @@ $json = [
     ['?action=listlocales&json', 400, "{\n    \"error\": \"ERROR: please check your request: provide a project name, a website, or a website+file.\"\n}"],
     ['?action=listlocales&website=6&json', 200, "[\n    \"en-US\",\n    \"fr\",\n    \"it\"\n]"],
     ['?action=listlocales&website=2&file=page.lang&json', 200, "[\n    \"en-US\",\n    \"it\"\n]"],
-    ['?action=listpages&website=2&json', 200, "{\"parsing_test\":{\"page.lang\":{\"obsolete\":false,\"source_type\":\"lang\",\"supported_locales\":[\"en-US\",\"it\"],\"strings_count\":16,\"url\":\"-\",\"words_count\":51}}}"],
+    ['?action=listpages&website=2&json', 200, '{"parsing_test":{"page.lang":{"obsolete":false,"source_type":"lang","supported_locales":["en-US","it"],"strings_count":16,"url":"-","words_count":51}}}'],
     ['?action=listpages&website=9999&json', 400, "{\n    \"error\": \"ERROR: the requested website (9999) is not supported.\"\n}"],
     ['?action=snippets&locale=it', 200, "{\n    \"@@this is a test, do not remove@@\": \"Questo \u00e8 un test\",\n    \"Email\": \"Email\",\n    \"Fifth string with %(one)s, %(two)s\": \"Quinta stringa con %(one)s, %(two)s e ancora %(two)s\",\n    \"Fourth string with 90%% coverage\": \"Quarta stringa con copertura al 90%\",\n    \"Hello\": \"Ciao\",\n    \"Obsolete string\": \"Stringa obsoleta\",\n    \"Press center\": \"Sala stampa\",\n    \"Save file\": \"Salva file troppo lungo\",\n    \"Second string with %(num)s tags\": \"Seconda stringa con %(num)s etichette\",\n    \"Sixth string with %(one)s\": \"Sesta stringa con %(one)s e %(two)s\",\n    \"String with %(num)s tags\": \"Stringa con etichette e variabile sbagliata\",\n    \"String with multiple comments\": \"String con pi\u00f9 commenti\",\n    \"Third string with %s tags\": \"Terza stringa con variabile mancante\"\n}"],
     ['?action=translate&file=foo.lang&json', 400, "{\n    \"error\": \"ERROR: file foo.lang does not exist\"\n}"],

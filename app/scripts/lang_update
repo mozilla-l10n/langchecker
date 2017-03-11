@@ -11,8 +11,8 @@ require_once __DIR__ . '/../inc/cli_init.php';
 
 // User provided variables
 $cli_filename = Utils::getCliParam(1, $argv, 'main.lang');           // Which file are we comparing? Set a default
-$cli_website  = Utils::getCliParam(2, $argv, '0');                   // Which website are we looking at? Default to www.mozilla.org
-$cli_locale   = Utils::getCliParam(3, $argv, 'all');                 // Which locale are we analyzing? No default
+$cli_website = Utils::getCliParam(2, $argv, '0');                   // Which website are we looking at? Default to www.mozilla.org
+$cli_locale = Utils::getCliParam(3, $argv, 'all');                 // Which locale are we analyzing? No default
 $single_file_mode = $cli_filename != 'all' && $cli_locale != 'all';  // One locale, one file
 
 $lang_based_sites = Project::getWebsitesByDataType($sites, 'lang');

@@ -7,4 +7,4 @@ date_default_timezone_set('Europe/Paris');
 define('TEST_FILES', __DIR__ . '/../testfiles/');
 
 // Set an environment variable so that the instance will use content from test files
-putenv("AUTOMATED_TESTS=true");
+putenv('AUTOMATED_TESTS=true');
