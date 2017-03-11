@@ -230,7 +230,7 @@ class Utils extends atoum\test
         $base_folder = TEST_FILES . 'dotlang/temp/';
         $file_name = 'test_forced.lang';
         $path = $base_folder . $file_name;
-        $content = "Just a test";
+        $content = 'Just a test';
 
         // File should not exist before the test
         $this

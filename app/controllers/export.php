@@ -71,7 +71,7 @@ foreach ($sites as $website) {
 }
 
 if ($serial) {
-    header("Content-type:text/plain");
+    header('Content-type:text/plain');
     die(serialize($export_data));
 }
 

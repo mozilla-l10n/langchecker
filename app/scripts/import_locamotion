@@ -14,11 +14,11 @@ $command_help = "import_locamotion - Import strings for www.mozilla.org from Lom
 require_once __DIR__ . '/../inc/cli_init.php';
 
 // User provided variables
-$cli_locale       = Utils::getCliParam(1, $argv, 'all');               // Which locale are we analyzing? No default
-$cli_filename     = Utils::getCliParam(2, $argv, 'all');               // Which file are we comparing? Set a default
-$cli_import_type  = Utils::getCliParam(3, $argv, 'local');             // Importing from remote or local?
+$cli_locale = Utils::getCliParam(1, $argv, 'all');               // Which locale are we analyzing? No default
+$cli_filename = Utils::getCliParam(2, $argv, 'all');               // Which file are we comparing? Set a default
+$cli_import_type = Utils::getCliParam(3, $argv, 'local');             // Importing from remote or local?
 $single_file_mode = ($cli_filename != 'all' && $cli_locale != 'all');  // One locale, one file
-$local_import     = $cli_import_type == 'remote' ? false : true;
+$local_import = $cli_import_type == 'remote' ? false : true;
 
 // Exit if trying to import from local without a local repo set
 if ($local_import) {
@@ -134,8 +134,8 @@ foreach ($file_list as $current_filename) {
         Utils::fileForceContent($locale_filename, $content);
     }
 
-    Utils::logger("Updated locales: " . implode(', ', $updated_locales));
-    Utils::logger("Unchanged locales: " . implode(', ', $unchanged_locales));
+    Utils::logger('Updated locales: ' . implode(', ', $updated_locales));
+    Utils::logger('Unchanged locales: ' . implode(', ', $unchanged_locales));
 }
 
 if ($updated_files) {

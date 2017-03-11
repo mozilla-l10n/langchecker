@@ -57,7 +57,7 @@ foreach ($mozilla as $current_locale) {
                 // Check if the lang file is not in UTF-8 or US-ASCII
                 if (Utils::isUTF8($locale_filename) == false) {
                     $errors[$current_locale][$current_website_name][$current_filename][] = [
-                        'message' => "File is not saved with UTF-8 encoding.",
+                        'message' => 'File is not saved with UTF-8 encoding.',
                         'type'    => 'generic',
                     ];
                 }
@@ -65,7 +65,7 @@ foreach ($mozilla as $current_locale) {
                 // Display errors on missing strings
                 if (count($locale_analysis['Missing'])) {
                     $errors[$current_locale][$current_website_name][$current_filename][] = [
-                        'message' => "There are missing strings.",
+                        'message' => 'There are missing strings.',
                         'type'    => 'generic',
                     ];
                 }
@@ -152,7 +152,7 @@ foreach ($mozilla as $current_locale) {
                 if (! in_array('optional', Project::getFileFlags($current_website, $current_filename, $current_locale)) &&
                     ! file_exists($locale_filename)) {
                     $errors[$current_locale][$current_website_name][$current_filename][] = [
-                        'message' => "File is missing.",
+                        'message' => 'File is missing.',
                         'type'    => 'generic',
                     ];
                 }

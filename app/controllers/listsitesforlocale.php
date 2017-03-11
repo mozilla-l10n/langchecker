@@ -157,13 +157,13 @@ foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
         }
 
         $reference_lastupdate = isset($file_analysis['reference_lastupdate'])
-            ? date("Y-m-d H:i", $file_analysis['reference_lastupdate'])
+            ? date('Y-m-d H:i', $file_analysis['reference_lastupdate'])
             : '';
         $reference_url = isset($file_analysis['reference_url'])
             ? $file_analysis['reference_url']
             : '';
         $locale_lastupdate = isset($file_analysis['locale_lastupdate'])
-            ? date("Y-m-d H:i", $file_analysis['locale_lastupdate'])
+            ? date('Y-m-d H:i', $file_analysis['locale_lastupdate'])
             : '';
         $locale_url = isset($file_analysis['locale_url'])
             ? $file_analysis['locale_url']

@@ -37,7 +37,7 @@ if (! file_exists($composer)) {
 if (isset($_SERVER[$header])) {
     $validation = hash_hmac(
         'sha1',
-        file_get_contents("php://input"),
+        file_get_contents('php://input'),
         GITHUB_SECRET
     );
 
@@ -47,9 +47,9 @@ if (isset($_SERVER[$header])) {
         // Aknowledge request
         ob_start();
         echo '{}';
-        header($_SERVER["SERVER_PROTOCOL"] . " 202 Accepted");
-        header("Status: 202 Accepted");
-        header("Content-Type: application/json");
+        header($_SERVER['SERVER_PROTOCOL'] . ' 202 Accepted');
+        header('Status: 202 Accepted');
+        header('Content-Type: application/json');
         header('Content-Length: ' . ob_get_length());
         ob_end_flush();
         ob_flush();
