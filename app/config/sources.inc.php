@@ -410,7 +410,7 @@ $mozillaorg_lang = [
             'zh-TW',
         ],
     ],
-    'mozorg/internet-health/digital-inclusion' => [
+    'mozorg/internet-health/digital-inclusion.lang' => [
         'deadline' => '2017-04-10',
         'flags'    => [
             'opt-in' => ['all'],
