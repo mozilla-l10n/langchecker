@@ -383,12 +383,6 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => $getinvolved_locales,
     ],
-    'mozorg/home/index.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $mozillaorg,
-    ],
     'mozorg/home/index-2016.lang' => [
         'deadline'          => '2017-02-20',
         'priority'          => 1,
