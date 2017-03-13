@@ -389,7 +389,8 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/internet-health.lang' => [
-        'flags' => [
+        'deadline' => '2017-03-27',
+        'flags'    => [
             'opt-in' => ['all'],
         ],
         'priority'          => 2,
@@ -399,7 +400,7 @@ $mozillaorg_lang = [
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
-        'deadline' => '2017-01-28',
+        'deadline' => '2017-03-27',
         'flags'    => [
             'opt-in' => ['all'],
         ],
@@ -409,12 +410,21 @@ $mozillaorg_lang = [
             'zh-TW',
         ],
     ],
+    'mozorg/internet-health/digital-inclusion' => [
+        'deadline' => '2017-04-10',
+        'flags'    => [
+            'opt-in' => ['all'],
+        ],
+        'priority'          => 2,
+        'supported_locales' => [
+        ],
+    ],
     'mozorg/mission.lang' => [
         'priority'          => 2,
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/newsletters.lang' => [
-        'deadline'          => '2017-02-03',
+        'deadline'          => '2017-03-27',
         'priority'          => 2,
         'supported_locales' => $newsletter_locales,
     ],
