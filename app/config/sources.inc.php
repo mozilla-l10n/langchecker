@@ -417,7 +417,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 2,
         'supported_locales' => [
-            'de,', 'es-ES', 'fr',
+            'de', 'es-ES', 'fr',
         ],
     ],
     'mozorg/mission.lang' => [
