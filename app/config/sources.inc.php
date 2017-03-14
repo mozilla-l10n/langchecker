@@ -393,7 +393,7 @@ $mozillaorg_lang = [
         'flags'    => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 2,
+        'priority'          => 3,
         'supported_locales' => [
             'af', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR', 'sq',
             'sv-SE', 'uk', 'zh-TW',
@@ -404,7 +404,7 @@ $mozillaorg_lang = [
         'flags'    => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 2,
+        'priority'          => 3,
         'supported_locales' => [
             'af', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE',
             'zh-TW',
@@ -415,7 +415,7 @@ $mozillaorg_lang = [
         'flags'    => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 2,
+        'priority'          => 3,
         'supported_locales' => [
             'de', 'es-ES', 'fr',
         ],
