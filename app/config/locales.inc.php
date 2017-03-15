@@ -32,7 +32,7 @@ $fennec_locales = [
 
 // List of locales only working on mozilla.org
 $mozorg_locales = [
-    'am', 'ncj', 'nv', 'zam',
+    'am', 'ncj', 'nv',
 ];
 
 /*
