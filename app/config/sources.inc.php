@@ -555,6 +555,10 @@ $engagement_lang = [
     'emails/2016/fundraising_email_3.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'emails/2017/advo-autoresponder.lang' => [
+        'deadline'          => '2017-04-03',
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2017/copyright.lang' => [
         'deadline'          => '2017-03-09',
         'supported_locales' => ['de', 'fr'],
@@ -572,6 +576,10 @@ $engagement_lang = [
     ],
     'emails/2017/results_graphics.lang' => [
         'deadline'          => '2017-03-07',
+        'supported_locales' => ['de', 'fr'],
+    ],
+    'emails/2017/welcome-message.lang' => [
+        'deadline'          => '2017-04-03',
         'supported_locales' => ['de', 'fr'],
     ],
     'heartbeat/2016/sep2016.lang' => [
