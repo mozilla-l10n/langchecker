@@ -557,6 +557,7 @@ $engagement_lang = [
     ],
     'emails/2017/advo-autoresponder.lang' => [
         'deadline'          => '2017-04-03',
+        'priority'          => 4,
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2017/copyright.lang' => [
@@ -580,6 +581,7 @@ $engagement_lang = [
     ],
     'emails/2017/welcome-message.lang' => [
         'deadline'          => '2017-04-03',
+        'priority'          => 4,
         'supported_locales' => ['de', 'fr'],
     ],
     'heartbeat/2016/sep2016.lang' => [
