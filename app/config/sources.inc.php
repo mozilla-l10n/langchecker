@@ -399,17 +399,6 @@ $mozillaorg_lang = [
             'sv-SE', 'uk', 'zh-TW',
         ],
     ],
-    'mozorg/internet-health/privacy-security.lang' => [
-        'deadline' => '2017-03-27',
-        'flags'    => [
-            'opt-in' => ['all'],
-        ],
-        'priority'          => 3,
-        'supported_locales' => [
-            'af', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE',
-            'zh-TW',
-        ],
-    ],
     'mozorg/internet-health/digital-inclusion.lang' => [
         'deadline' => '2017-04-10',
         'flags'    => [
@@ -417,7 +406,28 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
+            'cy', 'de', 'es-ES', 'fr', 'kab',
+        ],
+    ],
+    'mozorg/internet-health/open-innovation.lang' => [
+        'deadline' => '2017-04-14',
+        'flags'    => [
+            'opt-in' => ['all'],
+        ],
+        'priority'          => 3,
+        'supported_locales' => [
             'de', 'es-ES', 'fr',
+        ],
+    ],
+    'mozorg/internet-health/privacy-security.lang' => [
+        'deadline' => '2017-03-27',
+        'flags'    => [
+            'opt-in' => ['all'],
+        ],
+        'priority'          => 3,
+        'supported_locales' => [
+            'af', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE',
+            'zh-TW',
         ],
     ],
     'mozorg/mission.lang' => [
