@@ -111,6 +111,11 @@ $mozillaorg_lang = [
         'deadline'          => '2016-03-15',
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/all.lang' => [
+        'deadline'          => '2017-04-04',
+        'priority'          => 1,
+        'supported_locales' => $firefox_desktop_android,
+    ],
     'firefox/android/index.lang' => [
         'flags' => [
             'opt-in' => ['all'],
@@ -406,7 +411,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'cy', 'de', 'es-ES', 'fr', 'kab',
+            'af', 'cy', 'de', 'es-ES', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'mozorg/internet-health/open-innovation.lang' => [
@@ -416,7 +421,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'cy', 'de', 'es-ES', 'fr', 'kab',
+            'cy', 'de', 'es-ES', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
