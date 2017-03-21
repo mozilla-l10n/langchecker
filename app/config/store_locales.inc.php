@@ -34,6 +34,15 @@ $fx_ios_store = array_intersect($ios_locales, $apple_store_locales);
 $focus_ios_store = array_intersect($focus_ios_locales, $apple_store_locales);
 $apple_store = array_unique(array_merge($fx_ios_store, $focus_ios_store));
 
+// Locales working on Focus for Android (from stores_l10n app)
+$cache_id = 'focus_android_locales';
+if (! $focus_android_locales = Cache::getKey($cache_id, 60 * 60)) {
+    $focus_android_locales = $json_object
+        ->setURI(STORES_L10N . 'focus_android/supportedlocales/release')
+        ->fetchContent();
+    Cache::setKey($cache_id, $focus_android_locales);
+}
+
 // Locales working on Firefox for Android Aurora (from stores_l10n app)
 $cache_id = 'fx_android_locales';
 if (! $fx_android_locales = Cache::getKey($cache_id, 60 * 60)) {
@@ -53,5 +62,6 @@ if (! $google_play_locales = Cache::getKey($cache_id, 60 * 60 * 24)) {
 }
 
 // Locales that we support and that Google Play supports too
+$focus_android_store = array_intersect($focus_android_locales, $google_play_locales);
 $fx_android_store = array_intersect($fx_android_locales, $google_play_locales);
-$google_play = $fx_android_store;
+$google_play = array_unique(array_merge($focus_android_store, $fx_android_store));
