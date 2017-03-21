@@ -113,7 +113,8 @@ $mozillaorg_lang = [
     ],
     'firefox/all.lang' => [
         'deadline'          => '2017-04-04',
-        'supported_locales' => $mozillaorg,
+        'priority'          => 1,
+        'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/android/index.lang' => [
         'flags' => [
