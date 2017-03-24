@@ -575,6 +575,10 @@ $engagement_lang = [
         'priority'          => 4,
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2017/copyright_call.lang' => [
+        'deadline'          => '2017-03-31',
+        'supported_locales' => ['de', 'fr', 'es-ES', 'pl'],
+    ],
     'emails/2017/copyright.lang' => [
         'deadline'          => '2017-03-09',
         'supported_locales' => ['de', 'fr'],
@@ -701,6 +705,10 @@ $engagement_lang = [
     'surveys/copyright_stories.lang' => [
         'deadline'          => '2017-03-09',
         'supported_locales' => ['de', 'fr'],
+    ],
+    'surveys/copyright_call_survey.lang' => [
+        'deadline'          => '2017-03-31',
+        'supported_locales' => ['de', 'fr', 'es-ES', 'pl'],
     ],
     'surveys/data_privacy_day.lang' => [
         'deadline'          => '2017-01-27',
