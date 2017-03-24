@@ -577,7 +577,7 @@ $engagement_lang = [
     ],
     'emails/2017/copyright_call.lang' => [
         'deadline'          => '2017-03-31',
-        'supported_locales' => ['de', 'fr', 'es-ES', 'pl'],
+        'supported_locales' => ['de', 'fr', 'es', 'pl'],
     ],
     'emails/2017/copyright.lang' => [
         'deadline'          => '2017-03-09',
@@ -708,7 +708,7 @@ $engagement_lang = [
     ],
     'surveys/copyright_call_survey.lang' => [
         'deadline'          => '2017-03-31',
-        'supported_locales' => ['de', 'fr', 'es-ES', 'pl'],
+        'supported_locales' => ['de', 'fr', 'es', 'pl'],
     ],
     'surveys/data_privacy_day.lang' => [
         'deadline'          => '2017-01-27',
