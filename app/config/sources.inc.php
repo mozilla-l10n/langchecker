@@ -421,7 +421,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'cs', 'cy', 'de', 'es-ES', 'fr', 'kab', 'pt-BR',
+            'af', 'cs', 'cy', 'de', 'es-ES', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
