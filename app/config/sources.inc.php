@@ -640,7 +640,7 @@ $engagement_lang = [
     ],
     'snippets/2016/jun2016_berec.lang' => [
         'supported_locales' => [
-            'bg', 'cs', 'de', 'en-GB', 'es-ES', 'fr', 'it', 'nl', 'ro', 'sv-SE',
+            'cs', 'de', 'en-GB', 'es-ES', 'fr', 'it', 'nl', 'ro', 'sv-SE',
             'sl',
         ],
     ],
@@ -732,7 +732,7 @@ $engagement_lang = [
     ],
     'surveys/survey_hello_fx42.lang' => [
         'supported_locales' => [
-            'ar', 'bg', 'cs', 'da', 'de', 'el', 'en-GB', 'es-ES', 'es-MX', 'fr',
+            'ar', 'cs', 'da', 'de', 'el', 'en-GB', 'es-ES', 'es-MX', 'fr',
             'fy-NL', 'hi-IN', 'hu', 'id', 'it', 'ja', 'ko', 'nb-NO', 'nl',
             'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk', 'sl', 'sq',
             'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
