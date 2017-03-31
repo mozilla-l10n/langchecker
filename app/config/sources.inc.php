@@ -42,9 +42,9 @@ $android_landing_page = array_unique(array_merge(
 
 $engagement_locales = [
     'ar', 'bg', 'cs', 'da', 'de', 'el', 'en-GB', 'es', 'es-ES',
-    'es-MX', 'fr', 'fy-NL', 'hi-IN', 'hu', 'id', 'it', 'ja',
+    'es-MX', 'fa', 'fr', 'fy-NL', 'he', 'hi-IN', 'hu', 'id', 'it', 'ja',
     'ko', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR',
-    'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr',
+    'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'ur',
     'zh-CN', 'zh-HK', 'zh-TW',
 ];
 
@@ -640,7 +640,7 @@ $engagement_lang = [
     ],
     'snippets/2016/jun2016_berec.lang' => [
         'supported_locales' => [
-            'bg', 'cs', 'de', 'en-GB', 'es-ES', 'fr', 'it', 'nl', 'ro', 'sv-SE',
+            'cs', 'de', 'en-GB', 'es-ES', 'fr', 'it', 'nl', 'ro', 'sv-SE',
             'sl',
         ],
     ],
@@ -697,6 +697,22 @@ $engagement_lang = [
         'deadline'          => '2017-03-31',
         'supported_locales' => ['de', 'es-ES', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW'],
     ],
+    'snippets/2017/may2017.lang' => [
+        'deadline'          => '2017-04-19',
+        'supported_locales' => ['de', 'es', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW'],
+    ],
+    'snippets/2017/may2017_b.lang' => [
+        'deadline'          => '2017-04-19',
+        'supported_locales' => ['ar', 'fa', 'he', 'ur'],
+    ],
+    'snippets/2017/may2017_c.lang' => [
+        'deadline'          => '2017-04-19',
+        'supported_locales' => ['cs'],
+    ],
+    'snippets/2017/may2017_d.lang' => [
+        'deadline'          => '2017-04-19',
+        'supported_locales' => ['pl'],
+    ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
@@ -716,7 +732,7 @@ $engagement_lang = [
     ],
     'surveys/survey_hello_fx42.lang' => [
         'supported_locales' => [
-            'ar', 'bg', 'cs', 'da', 'de', 'el', 'en-GB', 'es-ES', 'es-MX', 'fr',
+            'ar', 'cs', 'da', 'de', 'el', 'en-GB', 'es-ES', 'es-MX', 'fr',
             'fy-NL', 'hi-IN', 'hu', 'id', 'it', 'ja', 'ko', 'nb-NO', 'nl',
             'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk', 'sl', 'sq',
             'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
