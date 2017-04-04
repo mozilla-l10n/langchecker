@@ -573,7 +573,7 @@ $engagement_lang = [
     'emails/2017/advo-autoresponder.lang' => [
         'deadline'          => '2017-05-03',
         'priority'          => 4,
-        'supported_locales' => ['de', 'fr', 'es', 'pl'],
+        'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
     'emails/2017/copyright_call.lang' => [
         'deadline'          => '2017-03-31',
