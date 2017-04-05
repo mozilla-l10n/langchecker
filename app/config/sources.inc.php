@@ -118,7 +118,7 @@ $mozillaorg_lang = [
     ],
     'firefox/android/index.lang' => [
         'deadline'          => '2017-04-20',
-        'flags' => [
+        'flags'             => [
             'opt-in' => ['all'],
         ],
         'priority'          => 2,
@@ -207,7 +207,7 @@ $mozillaorg_lang = [
     ],
     'firefox/ios.lang' => [
         'deadline'          => '2017-04-20',
-        'flags' => [
+        'flags'             => [
             'opt-in' => ['all'],
         ],
         'priority'          => 2,
