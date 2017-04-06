@@ -773,12 +773,6 @@ $appstores_lang = [
             'de', 'es-ES', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN',
         ],
     ],
-    'focus_ios/whatsnew/focus_2_1.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $focus_ios_store,
-    ],
     'focus_ios/whatsnew/focus_3_1.lang' => [
         'deadline'          => '2017-03-09',
         'supported_locales' => $focus_ios_store,
@@ -788,33 +782,6 @@ $appstores_lang = [
     ],
     'fx_android/description_release.lang' => [
         'deadline'          => '2016-04-30',
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_50_beta.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_50.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_51_beta.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_51.lang' => [
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_52_beta.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_52.lang' => [
@@ -833,18 +800,6 @@ $appstores_lang = [
             'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru',
             'zh-CN', 'zh-TW',
         ],
-    ],
-    'fx_ios/whatsnew/ios_5_0.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_ios_store,
-    ],
-    'fx_ios/whatsnew/ios_6_0.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_ios_store,
     ],
     'fx_ios/whatsnew/ios_7_0.lang' => [
         'deadline'          => '2017-03-20',
