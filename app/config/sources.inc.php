@@ -252,6 +252,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_38.lang' => [
+        'deadline'          => '2017-04-20',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_42.lang' => [
