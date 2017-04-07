@@ -401,7 +401,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pl', 'pt-BR', 'sq',
+            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'ko', 'pl', 'pt-BR', 'sq',
             'sv-SE', 'uk', 'zh-TW',
         ],
     ],
@@ -412,7 +412,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'es-ES', 'fr', 'kab', 'pt-BR',
+            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'mozorg/internet-health/open-innovation.lang' => [
@@ -422,7 +422,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'es-ES', 'fr', 'kab', 'pt-BR',
+            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
@@ -432,7 +432,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'es-ES', 'fr', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE',
+            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE',
             'zh-TW',
         ],
     ],
