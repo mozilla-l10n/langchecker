@@ -252,7 +252,6 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_38.lang' => [
-        'deadline'          => '2017-04-20',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_42.lang' => [
@@ -401,8 +400,8 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'ko', 'pl', 'pt-BR', 'sq',
-            'sv-SE', 'uk', 'zh-TW',
+            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'ko', 'pl',
+            'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/digital-inclusion.lang' => [
@@ -432,8 +431,8 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE',
-            'zh-TW',
+            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'ko',
+            'pt-BR', 'sq', 'sv-SE', 'zh-TW',
         ],
     ],
     'mozorg/mission.lang' => [
