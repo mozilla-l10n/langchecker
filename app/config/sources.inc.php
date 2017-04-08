@@ -257,6 +257,14 @@ $mozillaorg_lang = [
     'firefox/whatsnew_42.lang' => [
         'supported_locales' => $firefox_locales,
     ],
+    'foundation/advocacy.lang' => [
+        'flags' => [
+            'opt-in' => ['all'],
+        ],
+        'supported_locales' => [
+            'fr', 'kab',
+        ],
+    ],
     'foundation/annualreport/2011.lang' => [
         'priority'          => 5,
         'supported_locales' => [
@@ -295,6 +303,22 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'cs', 'de', 'es-ES', 'fr', 'kab', 'pl', 'pt-BR', 'zh-TW',
+        ],
+    ],
+    'foundation/issues.lang' => [
+        'flags' => [
+            'opt-in' => ['all'],
+        ],
+        'supported_locales' => [
+            'fr', 'kab',
+        ],
+    ],
+    'foundation/leadership-network.lang' => [
+        'flags' => [
+            'opt-in' => ['all'],
+        ],
+        'supported_locales' => [
+            'fr', 'kab',
         ],
     ],
     'legal/index.lang' => [
