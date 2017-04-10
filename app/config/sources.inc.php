@@ -262,7 +262,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'de', 'fr', 'kab',
+            'cs', 'de', 'fr', 'kab',
         ],
     ],
     'foundation/annualreport/2011.lang' => [
@@ -310,7 +310,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'de', 'fr', 'kab',
+            'cs', 'de', 'fr', 'kab',
         ],
     ],
     'foundation/leadership-network.lang' => [
@@ -318,7 +318,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'de', 'fr', 'kab',
+            'cs', 'de', 'fr', 'kab',
         ],
     ],
     'legal/index.lang' => [
