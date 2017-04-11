@@ -599,7 +599,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2017/welcome-message.lang' => [
-        'deadline'          => '2017-05-03',
+        'deadline'          => '2017-05-10',
         'priority'          => 4,
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
