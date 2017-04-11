@@ -117,7 +117,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/android/index.lang' => [
-        'deadline'          => '2017-04-20',
+        'deadline'          => '2017-04-25',
         'flags'             => [
             'opt-in' => ['all'],
         ],
@@ -129,7 +129,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/channel/index.lang' => [
-        'deadline'          => '2017-04-20',
+        'deadline'          => '2017-04-25',
         'priority'          => 1,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
     ],
@@ -140,7 +140,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/desktop/index.lang' => [
-        'deadline'          => '2017-04-20',
+        'deadline'          => '2017-04-25',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
@@ -177,7 +177,7 @@ $mozillaorg_lang = [
         ],
     ],
     'firefox/family/index.lang' => [
-        'deadline'          => '2017-04-20',
+        'deadline'          => '2017-04-25',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
@@ -206,7 +206,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/ios.lang' => [
-        'deadline'          => '2017-04-20',
+        'deadline'          => '2017-04-25',
         'flags'             => [
             'opt-in' => ['all'],
         ],
@@ -239,7 +239,7 @@ $mozillaorg_lang = [
         ],
     ],
     'firefox/private-browsing.lang' => [
-        'deadline'          => '2017-04-20',
+        'deadline'          => '2017-04-25',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
@@ -248,7 +248,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/sync.lang' => [
-        'deadline'          => '2017-04-20',
+        'deadline'          => '2017-04-25',
         'priority'          => 2,
         'supported_locales' => $mozillaorg,
     ],
