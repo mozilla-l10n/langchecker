@@ -814,12 +814,15 @@ $appstores_lang = [
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_52.lang' => [
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_53_beta.lang' => [
         'flags' => [
             'obsolete' => ['all'],
-    ],
+        ],
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_53.lang' => [
