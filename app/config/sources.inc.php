@@ -235,7 +235,7 @@ $mozillaorg_lang = [
             ],
         ],
         'supported_locales' => [
-            'cs', 'de', 'es-ES', 'fr', 'ja', 'pl', 'pt-BR', 'zh-TW',
+            'cs', 'de', 'en-GB', 'es-ES', 'fr', 'ja', 'pl', 'pt-BR', 'zh-TW',
         ],
     ],
     'firefox/private-browsing.lang' => [
@@ -267,7 +267,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'de', 'fr', 'kab',
+            'cs', 'de', 'en-GB', 'fr', 'kab',
         ],
     ],
     'foundation/annualreport/2011.lang' => [
@@ -307,7 +307,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'de', 'es-ES', 'fr', 'kab', 'pl', 'pt-BR', 'zh-TW',
+            'cs', 'de', 'en-GB', 'es-ES', 'fr', 'kab', 'pl', 'pt-BR', 'zh-TW',
         ],
     ],
     'foundation/issues.lang' => [
@@ -315,7 +315,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'de', 'fr', 'kab',
+            'cs', 'de', 'en-GB', 'fr', 'kab',
         ],
     ],
     'foundation/leadership-network.lang' => [
@@ -323,7 +323,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'de', 'fr', 'kab',
+            'cs', 'de', 'en-GB', 'fr', 'kab',
         ],
     ],
     'legal/index.lang' => [
@@ -429,7 +429,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'ko', 'pl',
+            'af', 'cs', 'cy', 'de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'kab', 'ko', 'pl',
             'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
@@ -440,7 +440,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'pt-BR',
+            'af', 'cs', 'cy', 'de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'mozorg/internet-health/open-innovation.lang' => [
@@ -450,7 +450,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'pt-BR',
+            'af', 'cs', 'cy', 'de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
@@ -460,8 +460,8 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'es-ES', 'es-MX', 'fr', 'kab', 'ko',
-            'pt-BR', 'sq', 'sv-SE', 'zh-TW',
+            'af', 'cs', 'cy', 'de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'kab', 'ko',
+            'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/mission.lang' => [
