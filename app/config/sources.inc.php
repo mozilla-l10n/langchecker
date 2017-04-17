@@ -235,7 +235,7 @@ $mozillaorg_lang = [
             ],
         ],
         'supported_locales' => [
-            'cs', 'de', 'en-GB', 'es-ES', 'fr', 'ja', 'pl', 'pt-BR', 'zh-TW',
+            'cs', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr', 'ja', 'pl', 'pt-BR', 'zh-TW',
         ],
     ],
     'firefox/private-browsing.lang' => [
@@ -429,8 +429,8 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'kab', 'ko', 'pl',
-            'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
+            'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
+            'kab', 'ko', 'pl', 'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/digital-inclusion.lang' => [
@@ -440,7 +440,8 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'kab', 'pt-BR',
+            'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
+            'kab', 'pt-BR',
         ],
     ],
     'mozorg/internet-health/open-innovation.lang' => [
@@ -450,7 +451,8 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'kab', 'pt-BR',
+            'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
+            'kab', 'pt-BR',
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
@@ -460,8 +462,8 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'en-GB', 'es-ES', 'es-MX', 'fr', 'kab', 'ko',
-            'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
+            'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
+            'kab', 'ko', 'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/mission.lang' => [
