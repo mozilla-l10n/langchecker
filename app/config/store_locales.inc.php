@@ -46,11 +46,11 @@ if (! $focus_android_locales = Cache::getKey($cache_id, 60 * 60)) {
     Cache::setKey($cache_id, $focus_android_locales);
 }
 
-// Locales working on Firefox for Android Aurora (from stores_l10n app)
+// Locales working on Firefox for Android central(from stores_l10n app)
 $cache_id = 'fx_android_locales';
 if (! $fx_android_locales = Cache::getKey($cache_id, 60 * 60)) {
     $fx_android_locales = $json_object
-        ->setURI(STORES_L10N . 'fx_android/supportedlocales/aurora')
+        ->setURI(STORES_L10N . 'fx_android/supportedlocales/central')
         ->fetchContent();
     $fx_android_locales = array_intersect($fx_android_locales, $mozilla);
     Cache::setKey($cache_id, $fx_android_locales);
