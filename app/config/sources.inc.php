@@ -219,6 +219,9 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/nightly_firstrun.lang' => [
+        'flags' => [
+            'opt-in' => $firefox_locales,
+        ],
         'supported_locales' => [
             'ar', 'ast', 'cs', 'de', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'fa', 'fr', 'fy-NL', 'gd', 'gl', 'he', 'hu', 'id', 'it', 'ja', 'kk',
@@ -228,11 +231,7 @@ $mozillaorg_lang = [
     ],
     'firefox/nightly_whatsnew.lang' => [
         'flags' => [
-            'opt-in' => [
-                'cs', 'de', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr',
-                'it', 'ja', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sk', 'sl', 'uk',
-                'zh-CN', 'zh-TW',
-            ],
+            'opt-in' => $firefox_locales,
         ],
         'supported_locales' => [
             'cs', 'de', 'en-GB', 'es-CL', 'es-ES', 'fr', 'ja', 'pl', 'pt-BR', 'zh-TW',
