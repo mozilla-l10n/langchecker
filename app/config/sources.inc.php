@@ -699,6 +699,13 @@ $engagement_lang = [
             'de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru',
         ],
     ],
+    'snippets/2017/aurora.lang' => [
+        'deadline'          => '2017-04-26',
+        'supported_locales' => [
+            'cs', 'de', 'es', 'fr', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
+            'tr', 'zh-CN',
+        ],
+    ],
     'snippets/2017/jan2017.lang' => [
         'deadline'          => '2017-01-06',
         'supported_locales' => ['de'],
