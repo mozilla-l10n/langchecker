@@ -66,6 +66,13 @@ class LangManager
 
             foreach ($matches_reference as $python_var) {
                 if ($count_occurrences($python_var, $matches_locale) != $count_occurrences($python_var, $matches_reference)) {
+                    /*
+                        Ignore percentage %% errors when they are replaced by a
+                        different character like ٪
+                    */
+                    if ($python_var == '%%' && mb_strpos($translation, '٪') !== false) {
+                        continue;
+                    }
                     $errors[$reference] = [
                         'text' => $translation,
                         'var'  => $python_var,
