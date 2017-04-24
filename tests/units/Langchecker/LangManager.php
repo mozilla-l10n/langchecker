@@ -108,4 +108,70 @@ class LangManager extends atoum\test
             ->integer($obj->countErrors($analysis_data['errors'], 'random'))
                 ->isEqualTo(0);
     }
+
+    public function checkPythonErrorsDP()
+    {
+        return [
+            [
+                'test string',
+                'test string',
+                [],
+                [],
+            ],
+            [
+                'String with %(num)s tags',
+                'test string',
+                [],
+                [
+                    'String with %(num)s tags' => [
+                        'text' => 'test string',
+                        'var'  => '%(num)s',
+                    ],
+                ],
+            ],
+            [
+                'String with %s tags',
+                'test string',
+                [],
+                [
+                    'String with %s tags' => [
+                        'text' => 'test string',
+                        'var'  => '%s',
+                    ],
+                ],
+            ],
+            [
+                'String with %(num)s 90%% tags',
+                'test string',
+                [],
+                [
+                    'String with %(num)s 90%% tags' => [
+                        'text' => 'test string',
+                        'var'  => '%(num)s',
+                    ],
+                    'String with %(num)s 90%% tags' => [
+                        'text' => 'test string',
+                        'var'  => '%%',
+                    ],
+                ],
+            ],
+            [
+                'String with %(num)s 90%% tags',
+                'test string %(num)s 90٪',
+                [],
+                [],
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider checkPythonErrorsDP
+     */
+    public function testCheckPythonErrors($a, $b, $c, $d)
+    {
+        $obj = new _LangManager();
+        $this
+            ->array($obj->checkPythonErrors($a, $b, $c))
+                ->isEqualTo($d);
+    }
 }
