@@ -225,8 +225,8 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'ar', 'ast', 'cs', 'de', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'fa', 'fr', 'fy-NL', 'gd', 'gl', 'he', 'hu', 'id', 'it', 'ja', 'kk',
-            'ko', 'lt', 'lv', 'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-PT', 'ru', 'sk',
-            'sv-SE', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
+            'ko', 'lt', 'lv', 'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-BR', 'pt-PT', 'ru',
+            'sk', 'sv-SE', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
         ],
     ],
     'firefox/nightly_whatsnew.lang' => [
@@ -259,6 +259,11 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_42.lang' => [
+        'supported_locales' => $firefox_locales,
+    ],
+    'firefox/whatsnew_50.lang' => [
+        'deadline'          => '2017-05-08',
+        'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
     'foundation/advocacy.lang' => [
@@ -344,7 +349,7 @@ $mozillaorg_lang = [
         ],
     ],
     'main.lang' => [
-        'deadline'          => '2016-11-30',
+        'deadline'          => '2017-05-08',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
