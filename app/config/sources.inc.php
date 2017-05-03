@@ -761,9 +761,21 @@ $engagement_lang = [
             'cs', 'de', 'es', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
         ],
     ],
+    'snippets/2017/paperstorm.lang' => [
+        'deadline'          => '2017-05-08',
+        'supported_locales' => [
+            'de', 'es-ES', 'fr', 'it',
+        ],
+    ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
+        ],
+    ],
+    'social/2017/paperstorm.lang' => [
+        'deadline'          => '2017-05-08',
+        'supported_locales' => [
+            'de', 'es-ES', 'fr', 'it',
         ],
     ],
     'surveys/copyright_stories.lang' => [
