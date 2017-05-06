@@ -15,7 +15,8 @@ $mozilla = [
     'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'ncj', 'ne-NP', 'nl', 'nn-NO', 'nv',
     'oc', 'or', 'pa-IN', 'pbb', 'pl', 'pt-BR', 'pt-PT', 'qvi', 'rm', 'ro', 'ru',
     'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'te', 'th', 'tl', 'tr',
-    'trs', 'uk', 'ur', 'uz', 'vi', 'xh', 'zam', 'zh-CN', 'zh-HK', 'zh-TW', 'zu',
+    'trs', 'uk', 'ur', 'uz', 'vi', 'wo', 'xh', 'zam', 'zh-CN', 'zh-HK', 'zh-TW',
+    'zu',
 ];
 sort($mozilla);
 
@@ -27,7 +28,7 @@ $mozillaorg = array_diff($mozilla, ['es', 'zh-HK']);
 
 // List of locales only working on Fennec
 $fennec_locales = [
-    'cak', 'hto', 'lo', 'pbb', 'qvi', 'trs',
+    'cak', 'hto', 'lo', 'pbb', 'qvi', 'trs', 'wo',
 ];
 
 // List of locales only working on mozilla.org
