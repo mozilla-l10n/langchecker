@@ -72,7 +72,7 @@ $newsletter_locales = [
 
 // List of locales working on Pootle
 $locamotion_locales = [
-    'ach', 'af', 'bm', 'bn-BD', 'br', 'bs', 'ca', 'cak', 'cy', 'ee', 'en-ZA', 'ff',
+    'af', 'bm', 'bn-BD', 'br', 'bs', 'ca', 'cak', 'cy', 'ee', 'en-ZA', 'ff',
     'ga-IE', 'gn', 'ha', 'hi-IN', 'hto', 'ig', 'kk', 'ln', 'lt', 'lv', 'mai',
     'mg', 'nb-NO', 'ncj', 'ne-NP', 'nv', 'oc', 'or', 'pbb', 'qvi', 'son', 'sw',
     'ta', 'tn', 'trs', 'ur', 'xh', 'yo', 'zam', 'zu',
