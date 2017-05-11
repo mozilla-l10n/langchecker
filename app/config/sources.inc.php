@@ -428,7 +428,7 @@ $mozillaorg_lang = [
     ],
     'mozorg/internet-health.lang' => [
         'deadline' => '2017-03-27',
-        'flags' => [
+        'flags'    => [
             'opt-in' => ['all'],
         ],
         'priority'          => 3,
