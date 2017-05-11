@@ -103,7 +103,7 @@ $engagement_locales = [
 // Default priority is 3
 $mozillaorg_lang = [
     'download_button.lang' => [
-        'deadline'          => '2016-05-17',
+        'deadline'          => '2017-05-17',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -129,7 +129,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/channel/index.lang' => [
-        'priority'          => 2,
+        'priority'          => 1,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
     ],
     'firefox/desktop/customize.lang' => [
@@ -218,11 +218,11 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/nightly_firstrun.lang' => [
-        'deadline'          => '2017-05-24',
+        'deadline'          => '2017-05-17',
         'flags'             => [
             'opt-in' => $firefox_locales,
         ],
-        'priority'          => 1,
+        'priority'          => 2,
         'supported_locales' => [
             'ar', 'ast', 'cs', 'de', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'fa', 'fr', 'fy-NL', 'gd', 'gl', 'he', 'hu', 'id', 'it', 'ja', 'kk',
@@ -442,7 +442,6 @@ $mozillaorg_lang = [
         'flags'    => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 3,
         'supported_locales' => [
           'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
           'it', 'kab', 'pt-BR',
@@ -452,7 +451,6 @@ $mozillaorg_lang = [
         'flags'    => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 3,
         'supported_locales' => [
             'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
             'it', 'kab', 'pt-BR',
@@ -462,7 +460,6 @@ $mozillaorg_lang = [
         'flags'    => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 3,
         'supported_locales' => [
             'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
             'it', 'kab', 'pt-BR',
@@ -472,7 +469,6 @@ $mozillaorg_lang = [
         'flags'    => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 3,
         'supported_locales' => [
             'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
             'it', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
@@ -483,7 +479,6 @@ $mozillaorg_lang = [
         'flags'    => [
             'opt-in' => ['all'],
         ],
-        'priority'          => 3,
         'supported_locales' => [
           'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
           'it', 'kab', 'pt-BR',
