@@ -220,7 +220,7 @@ $mozillaorg_lang = [
     ],
     'firefox/nightly_firstrun.lang' => [
         'deadline'          => '2017-05-24',
-        'flags' => [
+        'flags'             => [
             'opt-in' => $firefox_locales,
         ],
         'priority'          => 1,
