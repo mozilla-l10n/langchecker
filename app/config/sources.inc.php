@@ -427,8 +427,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/internet-health.lang' => [
-        'deadline' => '2017-03-27',
-        'flags'    => [
+        'flags' => [
             'opt-in' => ['all'],
         ],
         'priority'          => 3,
