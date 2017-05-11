@@ -219,9 +219,11 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/nightly_firstrun.lang' => [
+        'deadline'          => '2017-05-24',
         'flags' => [
             'opt-in' => $firefox_locales,
         ],
+        'priority'          => 1,
         'supported_locales' => [
             'ar', 'ast', 'cs', 'de', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'fa', 'fr', 'fy-NL', 'gd', 'gl', 'he', 'hu', 'id', 'it', 'ja', 'kk',
