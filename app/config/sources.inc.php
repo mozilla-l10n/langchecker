@@ -103,7 +103,7 @@ $engagement_locales = [
 // Default priority is 3
 $mozillaorg_lang = [
     'download_button.lang' => [
-        'deadline'          => '2016-05-24',
+        'deadline'          => '2016-05-17',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -129,8 +129,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/channel/index.lang' => [
-        'deadline'          => '2017-05-24',
-        'priority'          => 1,
+        'priority'          => 2,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
     ],
     'firefox/desktop/customize.lang' => [
@@ -440,17 +439,16 @@ $mozillaorg_lang = [
         ],
     ],
     'mozorg/internet-health/decentralization.lang' => [
-        'deadline' => '2017-05-24',
         'flags'    => [
             'opt-in' => ['all'],
         ],
         'priority'          => 3,
         'supported_locales' => [
-          'de', 'es-ES', 'fr',
+          'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
+          'it', 'kab', 'pt-BR',
         ],
     ],
     'mozorg/internet-health/digital-inclusion.lang' => [
-        'deadline' => '2017-05-24',
         'flags'    => [
             'opt-in' => ['all'],
         ],
@@ -461,7 +459,6 @@ $mozillaorg_lang = [
         ],
     ],
     'mozorg/internet-health/open-innovation.lang' => [
-        'deadline' => '2017-05-24',
         'flags'    => [
             'opt-in' => ['all'],
         ],
@@ -472,7 +469,6 @@ $mozillaorg_lang = [
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
-        'deadline' => '2017-05-24',
         'flags'    => [
             'opt-in' => ['all'],
         ],
@@ -489,7 +485,8 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'de', 'es-ES', 'fr',
+          'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
+          'it', 'kab', 'pt-BR',
         ],
     ],
     'mozorg/mission.lang' => [
