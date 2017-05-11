@@ -218,7 +218,6 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/nightly_firstrun.lang' => [
-        'deadline'          => '2017-05-17',
         'flags'             => [
             'opt-in' => $firefox_locales,
         ],
@@ -429,7 +428,7 @@ $mozillaorg_lang = [
     ],
     'mozorg/internet-health.lang' => [
         'deadline' => '2017-03-27',
-        'flags'    => [
+        'flags' => [
             'opt-in' => ['all'],
         ],
         'priority'          => 3,
@@ -439,7 +438,7 @@ $mozillaorg_lang = [
         ],
     ],
     'mozorg/internet-health/decentralization.lang' => [
-        'flags'    => [
+        'flags' => [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
@@ -448,7 +447,7 @@ $mozillaorg_lang = [
         ],
     ],
     'mozorg/internet-health/digital-inclusion.lang' => [
-        'flags'    => [
+        'flags' => [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
@@ -457,7 +456,7 @@ $mozillaorg_lang = [
         ],
     ],
     'mozorg/internet-health/open-innovation.lang' => [
-        'flags'    => [
+        'flags' => [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
@@ -466,7 +465,7 @@ $mozillaorg_lang = [
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
-        'flags'    => [
+        'flags' => [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
@@ -475,8 +474,7 @@ $mozillaorg_lang = [
         ],
     ],
     'mozorg/internet-health/web-literacy.lang' => [
-        'deadline' => '2017-05-24',
-        'flags'    => [
+        'flags' => [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
