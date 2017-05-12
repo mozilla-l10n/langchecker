@@ -28,7 +28,7 @@ $mozillaorg = array_diff($mozilla, ['es', 'zh-HK']);
 
 // List of locales only working on Fennec
 $fennec_locales = [
-    'cak', 'hto', 'lo', 'pbb', 'qvi', 'trs', 'wo',
+    'cak', 'hto', 'pbb', 'qvi', 'trs', 'wo',
 ];
 
 // List of locales only working on mozilla.org

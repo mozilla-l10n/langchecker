@@ -148,12 +148,12 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
-            'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gl',
-            'he', 'hi-IN', 'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'ko', 'lt',
-            'ms', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'sk', 'sl', 'son',
-            'sq', 'sr', 'sv-SE', 'uk', 'uz', 'xh', 'zam', 'zh-TW', 'af',
-            'es-CL', 'gd', 'km', 'ncj', 'ru', 'zh-CN',
+            'af', 'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
+            'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL', 'ga-IE',
+            'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id', 'it', 'ja', 'kab',
+            'km', 'ko', 'lt', 'ms', 'ncj', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT',
+            'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'uk', 'uz',
+            'xh', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
     'firefox/desktop/trust.lang' => [
@@ -271,7 +271,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'de', 'en-GB', 'fr', 'kab',
+            'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'foundation/annualreport/2011.lang' => [
@@ -319,7 +319,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'de', 'en-GB', 'fr', 'kab',
+            'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'foundation/leadership-network.lang' => [
@@ -327,7 +327,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'de', 'en-GB', 'fr', 'kab',
+            'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'legal/index.lang' => [
@@ -397,8 +397,8 @@ $mozillaorg_lang = [
             'af', 'am', 'ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de', 'dsb',
             'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fi',
             'fr', 'fy-NL', 'gd', 'gl', 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it',
-            'ja', 'kab', 'km', 'ko', 'lt', 'mk', 'ms', 'ncj', 'nl', 'nv', 'pl',
-            'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
+            'ja', 'kab', 'km', 'ko', 'lt', 'mk', 'ms', 'ncj', 'nl', 'nv',
+            'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
             'sv-SE', 'tr', 'uk', 'uz', 'vi', 'xh', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
