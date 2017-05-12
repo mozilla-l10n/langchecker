@@ -18,7 +18,7 @@ $getinvolved_locales = [
     'af', 'am', 'ar', 'az', 'bg', 'bn-BD', 'cs', 'cy', 'de', 'dsb', 'el',
     'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'fy-NL', 'he',
     'hi-IN', 'hr', 'hsb', 'id', 'it', 'kab', 'ko', 'lt', 'ms', 'ncj', 'nl',
-    'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl', 'son', 'sq', 'sr', 'sv-SE',
+    'nv', 'pbb', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl', 'son', 'sq', 'sr', 'sv-SE',
     'ta', 'tr', 'uk', 'zam', 'zh-CN', 'zh-TW',
 ];
 
@@ -151,7 +151,7 @@ $mozillaorg_lang = [
             'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
             'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gl',
             'he', 'hi-IN', 'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'ko', 'lt',
-            'ms', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'sk', 'sl', 'son',
+            'ms', 'nl', 'nv', 'pbb', 'pl', 'pt-BR', 'pt-PT', 'ro', 'sk', 'sl', 'son',
             'sq', 'sr', 'sv-SE', 'uk', 'uz', 'xh', 'zam', 'zh-TW', 'af',
             'es-CL', 'gd', 'km', 'ncj', 'ru', 'zh-CN',
         ],
@@ -271,7 +271,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'de', 'en-GB', 'fr', 'kab',
+            'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'foundation/annualreport/2011.lang' => [
@@ -319,7 +319,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'de', 'en-GB', 'fr', 'kab',
+            'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'foundation/leadership-network.lang' => [
@@ -327,7 +327,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'de', 'en-GB', 'fr', 'kab',
+            'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR',
         ],
     ],
     'legal/index.lang' => [
@@ -344,7 +344,7 @@ $mozillaorg_lang = [
             'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
             'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL', 'hi-IN',
             'hsb', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'ncj', 'nl', 'nv',
-            'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE',
+            'pbb', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq', 'sr', 'sv-SE',
             'tr', 'uk', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
@@ -369,7 +369,7 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'af', 'am', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb', 'en-GB',
             'es-CL', 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hsb', 'it', 'ja', 'kab',
-            'km', 'ko', 'lt', 'ncj', 'nl', 'nv', 'pa-IN', 'pt-BR', 'pt-PT',
+            'km', 'ko', 'lt', 'ncj', 'nl', 'nv', 'pa-IN', 'pbb', 'pt-BR', 'pt-PT',
             'ro', 'ru', 'sk', 'son', 'sq', 'sv-SE', 'uk', 'uz', 'zam', 'zh-CN',
             'zh-TW',
         ],
@@ -383,7 +383,7 @@ $mozillaorg_lang = [
             'af', 'am', 'ar', 'bg', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb',
             'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr',
             'fy-NL', 'gl', 'hr', 'hsb', 'id', 'it', 'ja', 'kab', 'km', 'ko',
-            'lt', 'ms', 'ncj', 'nl', 'nv', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
+            'lt', 'ms', 'ncj', 'nl', 'nv', 'pa-IN', 'pbb', 'pl', 'pt-BR', 'pt-PT',
             'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr',
             'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
         ],
@@ -397,8 +397,8 @@ $mozillaorg_lang = [
             'af', 'am', 'ar', 'ast', 'bg', 'bs', 'ca', 'cs', 'cy', 'de', 'dsb',
             'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fi',
             'fr', 'fy-NL', 'gd', 'gl', 'hi-IN', 'hr', 'hsb', 'hu', 'id', 'it',
-            'ja', 'kab', 'km', 'ko', 'lt', 'mk', 'ms', 'ncj', 'nl', 'nv', 'pl',
-            'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
+            'ja', 'kab', 'km', 'ko', 'lt', 'mk', 'ms', 'ncj', 'nl', 'nv', 'pbb',
+            'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
             'sv-SE', 'tr', 'uk', 'uz', 'vi', 'xh', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
