@@ -42,6 +42,9 @@ class DotLangParser extends atoum\test
                     '## MAX_LENGTH: ABC',
                     ';Save file wrong',
                     'Save file wrong',
+                    '# For translations starting with hashtags we can use a trailing space',
+                    ';This is a snippet #something :)',
+                    ' #something is the translated snippet',
                 ],
             ],
         ];
@@ -99,6 +102,11 @@ class DotLangParser extends atoum\test
             ->string($dotlang_data['strings']['Hello'])
                 ->isEqualTo('Bonjour');
 
+        // Check translation of snippet starting with #
+        $this
+            ->string($dotlang_data['strings']['This is a snippet #something :)'])
+                ->isEqualTo('#something is the translated snippet');
+
         // Check fallback to English for missing translation
         $this
             ->string($dotlang_data['strings']['Empty string'])
@@ -128,7 +136,7 @@ class DotLangParser extends atoum\test
         // Check comments
         $this
             ->integer(count($dotlang_data['comments']))
-                ->isEqualTo(2);
+                ->isEqualTo(3);
         $this
             ->string($dotlang_data['comments']['Browser'][0])
                 ->isEqualTo('I am a comment');

@@ -99,18 +99,20 @@ class DotLangParser
                 continue;
             }
 
-            /* First line may contain an activation status.
-             * In Bedrock tags are read with regexp "^## (\w+) ##", so
-             * trailing spaces can be safely ignored
-             */
+            /*
+                First line may contain an activation status.
+                In Bedrock tags are read with regexp "^## (\w+) ##", so
+                trailing spaces can be safely ignored.
+            */
             if ($i == 0 && rtrim($current_line) == '## active ##') {
                 $dotlang_data['activated'] = true;
                 continue;
             }
 
-            /* Other tags like ## promo_news ##, but not meta data
-             * These tags are always before strings.
-             */
+            /*
+                Other tags like ## promo_news ##, but not meta data.
+                These tags are always before strings.
+            */
             if (empty($dotlang_data['strings'])
                 && Utils::startsWith($current_line, '##')
                 && ! Utils::startsWith($current_line, self::getMetaTags())) {
@@ -125,14 +127,20 @@ class DotLangParser
             }
 
             if (! empty($next_line) && Utils::startsWith($current_line, ';')) {
-                // Source strings start with ";". I have a reference string followed by something
+                /*
+                    Source strings start with ";". I have a reference string
+                    followed by something.
+                */
                 $reference = Utils::leftStrip($current_line, ';');
                 $translation = trim($next_line);
 
                 if (isset($dotlang_data['strings'][$reference]) && $reference_locale) {
-                    /* String is already stored, it's a duplicated string. If it's the reference
-                     * locale I save the string ID to issue a warning where necessary.
-                     */
+                    /*
+                        String is already stored, it's a duplicated string. If
+                        it's the reference locale I save the string ID to issue
+                        a warning where necessary.
+
+                    */
                     $dotlang_data['duplicates'][] = $reference;
                 }
 
@@ -141,34 +149,54 @@ class DotLangParser
                     ? [';', '#']
                     : [';'];
 
-                // We test the most common scenario first: reference string followed by a translation
-                if (! Utils::startsWith($translation, $markers)) {
+                /*
+                    We test the most common scenario first: reference string
+                    followed by a translation. We need a special case for
+                    strings that need to start with an hashtag (e.g. snippets).
+                    In that case we check if the untrimmed line starts with
+                    ' #'. We then still store the trimmed version.
+                */
+                if (! Utils::startsWith($translation, $markers) || Utils::startsWith($next_line, ' #')) {
                     // Store the translation
                     $dotlang_data['strings'][$reference] = $translation;
-                    // We can ignore checks for line i+1, since we already know it's the translation just stored
+                    /*
+                        We can ignore checks for line i+1, since we already know
+                        it's the translation just stored.
+                    */
                     $i++;
                     continue;
                 }
 
-                /* Empty translation: what I'm reading as translation is either the next reference string
-                 * or the next meta tag (comment, tag binding). I consider this string untranslated.
-                 */
+                /*
+                    Empty translation: what I'm reading as translation is either
+                    the next reference string or the next meta tag (comment, tag
+                    binding). I consider this string untranslated.
+                */
                 $dotlang_data['strings'][$reference] = $reference;
                 continue;
             }
 
             if (trim($current_line) != '' && ! Utils::startsWith($current_line, '#')) {
-                // If I reach this point I have a stray line of text that won't be used. Report an error
+                /*
+                    If I reach this point I have a stray line of text that won't
+                    be used. Report an error.
+                */
                 array_push($dotlang_data['errors']['ignoredstrings'], $current_line);
             }
         }
 
         if ($reference_locale) {
-            // Second pass: extract only metadata (comments, tag bindings) for reference locale.
+            /*
+                Second pass: extract only metadata (comments, tag bindings) for
+                reference locale.
+            */
             if (self::$extract_metadata) {
                 $dotlang_data = array_merge($dotlang_data, self::extractReferenceMetaData($file_content));
             }
-            // Store reference locale data statically because it is used multiple times
+            /*
+                Store reference locale data statically because it is used
+                multiple times
+            */
             self::$parsed_files[$path] = $dotlang_data;
         }
 
