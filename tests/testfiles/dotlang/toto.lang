@@ -58,3 +58,7 @@ Save file
 ;Save file wrong
 Save file wrong
 
+
+# For translations starting with hashtags we can use a trailing space
+;This is a snippet #something :)
+ #something is the translated snippet
