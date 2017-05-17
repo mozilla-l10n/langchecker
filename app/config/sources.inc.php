@@ -639,13 +639,16 @@ $engagement_lang = [
     'emails/2017/paperstorm.lang' => [
         'supported_locales' => ['de', 'es-ES', 'fr', 'it'],
     ],
+    'emails/2017/results_graphics.lang' => [
+        'deadline'          => '2017-03-07',
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2017/survey_results.lang' => [
         'deadline'          => '2017-03-09',
         'supported_locales' => ['de', 'fr'],
     ],
-    'emails/2017/results_graphics.lang' => [
-        'deadline'          => '2017-03-07',
-        'supported_locales' => ['de', 'fr'],
+    'emails/2017/template.lang' => [
+        'supported_locales' => ['pl'],
     ],
     'emails/2017/welcome-message.lang' => [
         'deadline'          => '2017-05-10',
