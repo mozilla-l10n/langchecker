@@ -432,8 +432,9 @@ $mozillaorg_lang = [
         ],
         'priority'          => 3,
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
-            'it', 'kab', 'ko', 'pl', 'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
+            'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fa',
+            'fr', 'it', 'kab', 'ko', 'pl', 'pt-BR', 'sq', 'sv-SE', 'uk',
+            'zh-TW',
         ],
     ],
     'mozorg/internet-health/decentralization.lang' => [
@@ -468,8 +469,8 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fr',
-            'it', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
+            'af', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX', 'fa',
+            'fr', 'it', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/web-literacy.lang' => [
