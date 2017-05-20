@@ -881,6 +881,9 @@ $appstores_lang = [
     'fx_android/description_beta.lang' => [
         'supported_locales' => $fx_android_store,
     ],
+    'fx_android/description_nightly.lang' => [
+        'supported_locales' => $fx_android_store,
+    ],
     'fx_android/description_release.lang' => [
         'deadline'          => '2016-04-30',
         'supported_locales' => $fx_android_store,
@@ -890,6 +893,9 @@ $appstores_lang = [
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_54_beta.lang' => [
+        'supported_locales' => $fx_android_store,
+    ],
+    'fx_android/whatsnew/android_nightly.lang' => [
         'supported_locales' => $fx_android_store,
     ],
     'fx_ios/description_release.lang' => [
