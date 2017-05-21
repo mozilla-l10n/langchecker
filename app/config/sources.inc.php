@@ -151,7 +151,7 @@ $mozillaorg_lang = [
             'af', 'am', 'ca', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR',
             'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL', 'ga-IE',
             'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id', 'it', 'ja', 'kab',
-            'km', 'ko', 'lt', 'ms', 'ncj', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT',
+            'km', 'ko', 'lt', 'ms', 'nb-NO', 'ncj', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT',
             'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'uk', 'uz',
             'xh', 'zam', 'zh-CN', 'zh-TW',
         ],
@@ -576,7 +576,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'cy', 'cs', 'de', 'en-GB', 'es-ES', 'fi', 'fr', 'it', 'ja', 'kab',
-            'ko', 'lt', 'nl', 'pl', 'pt-BR', 'ru', 'sq', 'uk', 'zh-TW',
+            'ko', 'lt', 'nb-NO', 'nl', 'pl', 'pt-BR', 'ru', 'sq', 'uk', 'zh-TW',
         ],
     ],
     'thunderbird/features.lang' => [
