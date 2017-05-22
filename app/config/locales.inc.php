@@ -28,7 +28,7 @@ $mozillaorg = array_diff($mozilla, ['es', 'zh-HK']);
 
 // List of locales only working on Fennec
 $fennec_locales = [
-    'cak', 'hto', 'pbb', 'qvi', 'trs', 'wo',
+    'hto', 'pbb', 'qvi', 'trs', 'wo',
 ];
 
 // List of locales only working on mozilla.org
@@ -55,12 +55,11 @@ $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
     Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
 */
 $thunderbird_locales = [
-    'ar', 'ast', 'az', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy',
-    'da', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-ES', 'et',
-    'eu', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hr',
-    'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'kab', 'ko', 'lt',
-    'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
-    'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE',
+    'ar', 'ast', 'be', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy', 'da', 'de', 'dsb',
+    'el', 'en-GB', 'en-US', 'es-AR', 'es-ES', 'et', 'eu', 'fi', 'fr', 'fy-NL',
+    'ga-IE', 'gd', 'gl', 'he', 'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is', 'it',
+    'ja', 'kab', 'ko', 'lt', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR',
+    'pt-PT', 'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'ta-LK',
     'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
 ];
 
