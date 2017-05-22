@@ -28,7 +28,7 @@ $mozillaorg = array_diff($mozilla, ['es', 'zh-HK']);
 
 // List of locales only working on Fennec
 $fennec_locales = [
-    'cak', 'hto', 'pbb', 'qvi', 'trs', 'wo',
+    'hto', 'pbb', 'qvi', 'trs', 'wo',
 ];
 
 // List of locales only working on mozilla.org
@@ -53,15 +53,16 @@ $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
 /*
     Thunderbird locales on Release channel
     Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
+
+    Locales to remove: be, en-US, ta-LK
 */
 $thunderbird_locales = [
-    'ar', 'ast', 'az', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy',
-    'da', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-ES', 'et',
-    'eu', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hr',
-    'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'kab', 'ko', 'lt',
-    'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
-    'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE',
-    'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
+    'ar', 'ast', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy', 'da', 'de', 'dsb',
+    'el', 'en-GB', 'es-AR', 'es-ES', 'et', 'eu', 'fi', 'fr', 'fy-NL', 'ga-IE',
+    'gd', 'gl', 'he', 'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'kab',
+    'ko', 'lt', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm',
+    'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE',  'tr', 'uk', 'vi',
+    'zh-CN', 'zh-TW',
 ];
 
 // List of locales with active newsletter
@@ -72,10 +73,10 @@ $newsletter_locales = [
 
 // List of locales working on Pootle
 $locamotion_locales = [
-    'af', 'bm', 'bn-BD', 'br', 'bs', 'ca', 'cak', 'cy', 'ee', 'en-ZA', 'ff',
-    'ga-IE', 'gn', 'ha', 'hi-IN', 'hto', 'ig', 'kk', 'ln', 'lt', 'lv', 'mai',
-    'mg', 'nb-NO', 'ncj', 'ne-NP', 'nv', 'oc', 'or', 'pbb', 'qvi', 'son', 'sw',
-    'ta', 'tn', 'trs', 'ur', 'xh', 'yo', 'zam', 'zu',
+    'af', 'an', 'bm', 'bn-BD', 'br', 'bs', 'ca', 'cak', 'cy', 'ee', 'en-ZA',
+    'ff', 'ga-IE', 'gn', 'ha', 'hi-IN', 'hto', 'ig', 'kk', 'ln', 'lt', 'lv',
+    'mai', 'mg', 'nb-NO', 'ncj', 'ne-NP', 'nv', 'oc', 'or', 'pbb', 'qvi', 'son',
+    'sw', 'ta', 'tn', 'trs', 'ur', 'xh', 'yo', 'zam', 'zu',
 ];
 
 /*
