@@ -229,7 +229,7 @@ $mozillaorg_lang = [
             'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl',
             'he', 'hi-IN', 'hu', 'id', 'it', 'ja', 'kk', 'ko', 'lt', 'lv',
             'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sk', 'son',
-            'sv-SE', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
+            'sv-SE', 'th', 'tr', 'uk', 'ur', 'vi', 'xh', 'zh-CN', 'zh-TW',
         ],
     ],
     'firefox/nightly_whatsnew.lang' => [
@@ -385,12 +385,12 @@ $mozillaorg_lang = [
         ],
         'priority'          => 2,
         'supported_locales' => [
-            'af', 'am', 'ar', 'bg', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'dsb',
-            'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr',
-            'fy-NL', 'gl', 'hr', 'hsb', 'id', 'it', 'ja', 'kab', 'km', 'ko',
-            'lt', 'ms', 'ncj', 'nl', 'nv', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
-            'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'tr',
-            'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
+            'af', 'am', 'ar', 'bg', 'bn-BD', 'bs', 'ca', 'cak', 'cs', 'cy',
+            'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
+            'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hr', 'hsb', 'id', 'it', 'ja',
+            'kab', 'km', 'ko', 'lt', 'ms', 'ncj', 'nl', 'nv', 'pa-IN', 'pl',
+            'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
+            'sv-SE', 'ta', 'tr', 'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
     'mozorg/about/manifesto.lang' => [
@@ -582,9 +582,9 @@ $mozillaorg_lang = [
             ],
         ],
         'supported_locales' => [
-            'bs', 'cy', 'cs', 'de', 'en-GB', 'es-ES', 'fi', 'fr', 'it', 'ja',
-            'kab', 'ko', 'lt', 'nb-NO', 'nl', 'pl', 'pt-BR', 'ru', 'sq', 'uk',
-            'zh-TW',
+            'bs', 'cak', 'cy', 'cs', 'de', 'en-GB', 'es-ES', 'fi', 'fr', 'it',
+            'ja', 'kab', 'ko', 'lt', 'nb-NO', 'nl', 'pl', 'pt-BR', 'ru', 'sq',
+            'uk', 'zh-TW',
         ],
     ],
     'thunderbird/features.lang' => [
@@ -600,7 +600,7 @@ $mozillaorg_lang = [
         'supported_locales' => array_merge(
             $thunderbird_locales,
             [
-                'az', 'bs', 'cak', 'hi-IN',
+                'az', 'bs', 'cak', 'hi-IN', 'ur',
             ]
         ),
     ],
