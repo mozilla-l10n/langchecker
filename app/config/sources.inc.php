@@ -589,14 +589,29 @@ $mozillaorg_lang = [
     ],
     'thunderbird/features.lang' => [
         'deadline'          => '2017-02-20',
-        'supported_locales' => array_merge($thunderbird_locales, ['bs', 'cak', 'hi-IN']),
+        'supported_locales' => array_merge(
+            $thunderbird_locales,
+            [
+                'az', 'bs', 'cak', 'hi-IN',
+            ]
+        ),
     ],
     'thunderbird/index.lang' => [
-        'supported_locales' => array_merge($thunderbird_locales, ['bs', 'cak', 'hi-IN']),
+        'supported_locales' => array_merge(
+            $thunderbird_locales,
+            [
+                'az', 'bs', 'cak', 'hi-IN',
+            ]
+        ),
     ],
     'thunderbird/start/release.lang' => [
         'deadline'          => '2016-08-01',
-        'supported_locales' => array_merge($thunderbird_locales, ['bs', 'cak']),
+        'supported_locales' => array_merge(
+            $thunderbird_locales,
+            [
+                'az', 'bs', 'cak',
+            ]
+        ),
     ],
 ];
 
