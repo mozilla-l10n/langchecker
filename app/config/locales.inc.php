@@ -54,10 +54,10 @@ $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
     Thunderbird locales on Release channel
     Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
 
-    Note: need to remove en-US, ta-LK from the list
+    Locales to remove: be, en-US, ta-LK
 */
 $thunderbird_locales = [
-    'ar', 'ast', 'be', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy', 'da', 'de', 'dsb',
+    'ar', 'ast', 'bg', 'bn-BD', 'br', 'ca', 'cs', 'cy', 'da', 'de', 'dsb',
     'el', 'en-GB', 'es-AR', 'es-ES', 'et', 'eu', 'fi', 'fr', 'fy-NL', 'ga-IE',
     'gd', 'gl', 'he', 'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'kab',
     'ko', 'lt', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm',
