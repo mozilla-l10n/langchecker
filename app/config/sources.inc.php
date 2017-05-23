@@ -19,7 +19,7 @@ $getinvolved_locales = [
     'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'fy-NL',
     'he', 'hi-IN', 'hr', 'hsb', 'id', 'it', 'kab', 'ko', 'lt', 'ms', 'ncj',
     'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl', 'son', 'sq', 'sr',
-    'sv-SE', 'ta', 'tr', 'uk', 'xh', 'zam', 'zh-CN', 'zh-TW',
+    'sv-SE', 'sw', 'ta', 'tr', 'uk', 'xh', 'zam', 'zh-CN', 'zh-TW',
 ];
 
 // List of locales supported for the landing page (larger than the App Store)
@@ -153,7 +153,7 @@ $mozillaorg_lang = [
             'eu', 'fa', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hi-IN',
             'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'lv', 'ms',
             'nb-NO', 'ncj', 'ne-NP', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro',
-            'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'uk', 'ur',
+            'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'uk', 'ur',
             'uz', 'xh', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
@@ -225,9 +225,9 @@ $mozillaorg_lang = [
         ],
         'priority'          => 2,
         'supported_locales' => [
-            'ar', 'ast', 'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'eo', 'es-AR',
+            'ar', 'ast', 'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'eo', 'es-AR',
             'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl',
-            'he', 'hi-IN', 'hu', 'id', 'it', 'ja', 'kk', 'ko', 'lt', 'lv',
+            'he', 'hi-IN', 'hsb', 'hu', 'id', 'it', 'ja', 'kk', 'ko', 'lt', 'lv',
             'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sk', 'son',
             'sv-SE', 'th', 'tr', 'uk', 'ur', 'vi', 'xh', 'zh-CN', 'zh-TW',
         ],
@@ -237,8 +237,8 @@ $mozillaorg_lang = [
             'opt-in' => $firefox_locales,
         ],
         'supported_locales' => [
-            'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'fr', 'ga-IE', 'hi-IN', 'ja', 'pl', 'pt-BR', 'zh-TW',
+            'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'es-ES',
+            'fr', 'ga-IE', 'hi-IN', 'hsb', 'ja', 'pl', 'pt-BR', 'zh-TW',
         ],
     ],
     'firefox/private-browsing.lang' => [
@@ -350,7 +350,7 @@ $mozillaorg_lang = [
             'en-ZA', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr',
             'fy-NL', 'hi-IN', 'hsb', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms',
             'ncj', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq',
-            'sr', 'sv-SE', 'tr', 'uk', 'ur', 'zam', 'zh-CN', 'zh-TW',
+            'sr', 'sv-SE', 'sw', 'tr', 'uk', 'ur', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
     'main.lang' => [
@@ -376,7 +376,7 @@ $mozillaorg_lang = [
             'en-GB', 'es-CL', 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hi-IN', 'hsb',
             'it', 'ja', 'kab', 'km', 'ko', 'lt', 'lv', 'ncj', 'nl', 'nv',
             'pa-IN', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'son', 'sq', 'sv-SE',
-            'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
+            'sw', 'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
     'mozorg/about/history.lang' => [
@@ -390,7 +390,7 @@ $mozillaorg_lang = [
             'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hi-IN', 'hr', 'hsb', 'id', 'it',
             'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'ncj', 'nl', 'nv', 'pa-IN',
             'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
-            'sv-SE', 'ta', 'tr', 'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
+            'sv-SE', 'sw', 'ta', 'tr', 'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
     'mozorg/about/manifesto.lang' => [
@@ -404,7 +404,7 @@ $mozillaorg_lang = [
             'es-MX', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'gd', 'gl', 'hi-IN', 'hr',
             'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'mk', 'ms',
             'ncj', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl',
-            'son', 'sq', 'sr', 'sv-SE', 'tr', 'uk', 'uz', 'vi', 'xh', 'zam',
+            'son', 'sq', 'sr', 'sv-SE', 'sw', 'tr', 'uk', 'uz', 'vi', 'xh', 'zam',
             'zh-CN', 'zh-TW',
         ],
     ],
