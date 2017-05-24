@@ -350,7 +350,7 @@ $mozillaorg_lang = [
             'en-ZA', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr',
             'fy-NL', 'hi-IN', 'hsb', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms',
             'ncj', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq',
-            'sr', 'sv-SE', 'sw', 'tr', 'uk', 'ur', 'zam', 'zh-CN', 'zh-TW',
+            'sr', 'sv-SE', 'tr', 'uk', 'ur', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
     'main.lang' => [
@@ -398,15 +398,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'priority'          => 2,
-        'supported_locales' => [
-            'af', 'am', 'ar', 'ast', 'bg', 'bn-BD', 'bs', 'ca', 'cak', 'cs',
-            'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES',
-            'es-MX', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'gd', 'gl', 'hi-IN', 'hr',
-            'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'mk', 'ms',
-            'ncj', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl',
-            'son', 'sq', 'sr', 'sv-SE', 'sw', 'tr', 'uk', 'uz', 'vi', 'xh', 'zam',
-            'zh-CN', 'zh-TW',
-        ],
+        'supported_locales' => $mozilla,
     ],
     'mozorg/contribute/index.lang' => [
         'flags' => [
