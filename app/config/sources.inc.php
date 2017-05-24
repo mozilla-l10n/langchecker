@@ -108,7 +108,6 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/accounts.lang' => [
-        'deadline'          => '2016-03-15',
         'supported_locales' => $mozillaorg,
     ],
     'firefox/all.lang' => [
@@ -182,7 +181,6 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/features.lang' => [
-        'deadline'          => '2016-10-04',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/geolocation.lang' => [
@@ -256,7 +254,6 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/tracking-protection-tour.lang' => [
-        'deadline'          => '2016-02-29',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_38.lang' => [
@@ -336,7 +333,6 @@ $mozillaorg_lang = [
         ],
     ],
     'legal/index.lang' => [
-        'deadline'          => '2016-02-18',
         'priority'          => 1,
         'supported_locales' => $legal_locales,
     ],
@@ -415,7 +411,6 @@ $mozillaorg_lang = [
         'supported_locales' => $getinvolved_locales,
     ],
     'mozorg/contribute/signup.lang' => [
-        'deadline' => '2016-06-06',
         'flags'    => [
             'opt-in' => ['all'],
         ],
@@ -499,7 +494,6 @@ $mozillaorg_lang = [
         'supported_locales' => $newsletter_locales,
     ],
     'mozorg/plugincheck-redesign.lang' => [
-        'deadline'          => '2016-08-01',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -508,7 +502,6 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/technology.lang' => [
-        'deadline'          => '2016-11-30',
         'supported_locales' => $mozillaorg,
     ],
     'newsletter.lang' => [
@@ -605,7 +598,6 @@ $mozillaorg_lang = [
         ),
     ],
     'thunderbird/start/release.lang' => [
-        'deadline'          => '2016-08-01',
         'supported_locales' => array_merge(
             $thunderbird_locales,
             [
@@ -680,14 +672,12 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
     'heartbeat/2016/sep2016.lang' => [
-        'deadline'          => '2016-09-12',
         'supported_locales' => [
             'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja', 'pl',
             'pt-BR', 'ru', 'zh-CN', 'zh-TW',
         ],
     ],
     'heartbeat/2016/nov2016.lang' => [
-        'deadline'          => '2016-11-22',
         'supported_locales' => [
             'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja', 'pl',
             'pt-BR', 'ru', 'zh-CN',
@@ -721,11 +711,9 @@ $engagement_lang = [
         ],
     ],
     'snippets/2016/nov2016.lang' => [
-        'deadline'          => '2016-11-05',
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
     ],
     'snippets/2016/dec2016.lang' => [
-        'deadline'          => '2016-12-05',
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
     ],
     'snippets/2016/dec2016_eoy_a.lang' => [
@@ -861,7 +849,6 @@ $appstores_lang = [
         'supported_locales' => $focus_android_store,
     ],
     'focus_android/screenshots_v1.lang' => [
-        'deadline'          => '2017-03-31',
         'supported_locales' => [
             'es-ES', 'id', 'pt-BR', 'ru',
         ],
@@ -875,14 +862,15 @@ $appstores_lang = [
         ],
     ],
     'focus_ios/whatsnew/focus_3_1.lang' => [
-        'deadline'          => '2017-03-09',
         'supported_locales' => $focus_ios_store,
     ],
     'fx_android/description_beta.lang' => [
         'supported_locales' => $fx_android_store,
     ],
+    'fx_android/description_nightly.lang' => [
+        'supported_locales' => $fx_android_store,
+    ],
     'fx_android/description_release.lang' => [
-        'deadline'          => '2016-04-30',
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_53.lang' => [
@@ -892,8 +880,10 @@ $appstores_lang = [
     'fx_android/whatsnew/android_54_beta.lang' => [
         'supported_locales' => $fx_android_store,
     ],
+    'fx_android/whatsnew/android_nightly.lang' => [
+        'supported_locales' => $fx_android_store,
+    ],
     'fx_ios/description_release.lang' => [
-        'deadline'          => '2016-03-30',
         'supported_locales' => $fx_ios_store,
     ],
     'fx_ios/screenshots_v3.lang' => [
