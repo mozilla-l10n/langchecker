@@ -398,7 +398,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'priority'          => 2,
-        'supported_locales' => $mozilla,
+        'supported_locales' => $mozillaorg,
     ],
     'mozorg/contribute/index.lang' => [
         'flags' => [
