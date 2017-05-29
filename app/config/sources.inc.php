@@ -150,10 +150,10 @@ $mozillaorg_lang = [
             'af', 'am', 'an', 'bn-BD', 'br', 'bs', 'ca', 'cak', 'cs', 'cy',
             'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'eu', 'fa', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hi-IN',
-            'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'lv', 'ms',
-            'nb-NO', 'ncj', 'ne-NP', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro',
-            'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'uk', 'ur',
-            'uz', 'xh', 'zam', 'zh-CN', 'zh-TW',
+            'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'kk', 'km', 'ko', 'lt', 'lv',
+            'ms', 'nb-NO', 'ncj', 'ne-NP', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT',
+            'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta',
+            'uk', 'ur', 'uz', 'xh', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
     'firefox/desktop/trust.lang' => [
@@ -235,8 +235,9 @@ $mozillaorg_lang = [
             'opt-in' => $firefox_locales,
         ],
         'supported_locales' => [
-            'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL', 'es-ES',
-            'fr', 'ga-IE', 'hi-IN', 'hsb', 'ja', 'pl', 'pt-BR', 'zh-TW',
+            'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
+            'es-ES', 'fr', 'ga-IE', 'hi-IN', 'hsb', 'ja', 'kk', 'pl', 'pt-BR',
+            'zh-TW',
         ],
     ],
     'firefox/private-browsing.lang' => [
@@ -390,10 +391,7 @@ $mozillaorg_lang = [
         ],
     ],
     'mozorg/about/manifesto.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'priority'          => 2,
+        'priority'          => 3,
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/contribute/index.lang' => [
