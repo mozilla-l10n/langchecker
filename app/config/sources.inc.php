@@ -364,7 +364,6 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/about/governance/policies/participation.lang' => [
-        'priority'          => 3,
         'supported_locales' => [
             'de', 'es-ES', 'fr', 'hi-IN', 'pt-BR', 'zh-TW',
         ],
