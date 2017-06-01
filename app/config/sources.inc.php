@@ -367,6 +367,7 @@ $mozillaorg_lang = [
         'priority'          => 3,
         'supported_locales' => [
             'de', 'es-ES', 'fr', 'hi-IN', 'pt-BR', 'zh-TW',
+        ],
     ],
     'mozorg/about/history-details.lang' => [
         'flags' => [
