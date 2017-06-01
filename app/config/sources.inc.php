@@ -636,6 +636,11 @@ $engagement_lang = [
         'deadline'          => '2017-03-31',
         'supported_locales' => ['de', 'fr', 'es', 'pl'],
     ],
+    'emails/2017/copyright_call_IMCO.lang' => [
+        'deadline'          => '2017-06-06',
+        'priority'          => 5,
+        'supported_locales' => ['de'],
+    ],
     'emails/2017/copyright.lang' => [
         'deadline'          => '2017-03-09',
         'supported_locales' => ['de', 'fr'],
