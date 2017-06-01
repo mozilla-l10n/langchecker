@@ -642,6 +642,10 @@ $engagement_lang = [
     'emails/2017/fundraising_thank_you.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it'],
     ],
+    'emails/2017/mozfest_call.lang' => [
+        'deadline'          => '2017-06-15',
+        'supported_locales' => ['de', 'es', 'fr'],
+    ],
     'emails/2017/paperstorm.lang' => [
         'supported_locales' => ['de', 'es-ES', 'fr', 'it'],
     ],
@@ -672,6 +676,10 @@ $engagement_lang = [
             'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja', 'pl',
             'pt-BR', 'ru', 'zh-CN',
         ],
+    ],
+    'other/2017/mozfest_form.lang' => [
+        'deadline'          => '2017-06-15',
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'snippets/2016/jan2016.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
@@ -790,6 +798,10 @@ $engagement_lang = [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
         ],
+    ],
+    'social/2017/mozfest.lang' => [
+        'deadline'          => '2017-06-15',
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'social/2017/paperstorm.lang' => [
         'deadline'          => '2017-05-08',
