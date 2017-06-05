@@ -347,7 +347,7 @@ $mozillaorg_lang = [
             'en-ZA', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr',
             'fy-NL', 'hi-IN', 'hsb', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms',
             'ncj', 'nl', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son',
-            'sq',, 'sr', 'sv-SE', 'tr', 'uk', 'ur', 'zam', 'zh-CN', 'zh-TW',
+            'sq', 'sr', 'sv-SE', 'tr', 'uk', 'ur', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
     'main.lang' => [
