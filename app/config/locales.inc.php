@@ -13,9 +13,9 @@ $mozilla = [
     'he', 'hi-IN', 'hr', 'hsb', 'hto', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja',
     'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'lij', 'lo', 'lt', 'ltg', 'lv', 'mai',
     'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'ncj', 'ne-NP', 'nl', 'nn-NO', 'nv',
-    'oc', 'or', 'pa-IN', 'pbb', 'pl', 'pt-BR', 'pt-PT', 'qvi', 'rm', 'ro', 'ru',
-    'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'te', 'th', 'tl', 'tr',
-    'trs', 'uk', 'ur', 'uz', 'vi', 'wo', 'xh', 'zam', 'zh-CN', 'zh-HK', 'zh-TW',
+    'oc', 'or', 'pa-IN', 'pai', 'pbb', 'pl', 'pt-BR', 'pt-PT', 'qvi', 'rm', 'ro',
+    'ru', 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'te', 'th', 'tl',
+    'tr', 'trs', 'uk', 'ur', 'uz', 'vi', 'wo', 'xh', 'zam', 'zh-CN', 'zh-HK', 'zh-TW',
     'zu',
 ];
 sort($mozilla);
@@ -33,7 +33,7 @@ $fennec_locales = [
 
 // List of locales only working on mozilla.org
 $mozorg_locales = [
-    'am', 'ncj', 'nv', 'sw',
+    'am', 'ncj', 'nv', 'pai', 'sw',
 ];
 
 /*
@@ -74,8 +74,8 @@ $newsletter_locales = [
 // List of locales working on Pootle
 $locamotion_locales = [
     'af', 'an', 'bn-BD', 'br', 'bs', 'ca', 'cak', 'cy', 'en-ZA', 'ff', 'ga-IE',
-    'gn', 'hi-IN', 'hto', 'lt', 'mai', 'ncj', 'ne-NP', 'nv', 'or', 'pbb', 'qvi',
-    'son', 'sw', 'ta', 'trs', 'ur', 'xh', 'zam', 'zu',
+    'gn', 'hi-IN', 'hto', 'lt', 'mai', 'ncj', 'ne-NP', 'nv', 'or', 'pai', 'pbb',
+    'qvi', 'son', 'sw', 'ta', 'trs', 'ur', 'xh', 'zam', 'zu',
 ];
 
 /*
