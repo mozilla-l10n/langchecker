@@ -18,8 +18,8 @@ $getinvolved_locales = [
     'af', 'am', 'ar', 'az', 'bg', 'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb',
     'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'fy-NL',
     'he', 'hi-IN', 'hr', 'hsb', 'id', 'it', 'kab', 'ko', 'lt', 'ms', 'ncj',
-    'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl', 'son', 'sq', 'sr',
-    'sv-SE', 'sw', 'ta', 'tr', 'uk', 'xh', 'zam', 'zh-CN', 'zh-TW',
+    'nl', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl', 'son', 'sq',
+    'sr', 'sv-SE', 'sw', 'ta', 'tr', 'uk', 'xh', 'zam', 'zh-CN', 'zh-TW',
 ];
 
 // List of locales supported for the landing page (larger than the App Store)
@@ -151,7 +151,7 @@ $mozillaorg_lang = [
             'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'eu', 'fa', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hi-IN',
             'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'kk', 'km', 'ko', 'lt', 'lv',
-            'ms', 'nb-NO', 'ncj', 'ne-NP', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT',
+            'ms', 'nb-NO', 'ncj', 'ne-NP', 'nl', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT',
             'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta',
             'uk', 'ur', 'uz', 'xh', 'zam', 'zh-CN', 'zh-TW',
         ],
@@ -346,8 +346,8 @@ $mozillaorg_lang = [
             'am', 'bs', 'ca', 'cak', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB',
             'en-ZA', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr',
             'fy-NL', 'hi-IN', 'hsb', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms',
-            'ncj', 'nl', 'nv', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son', 'sq',
-            'sr', 'sv-SE', 'tr', 'uk', 'ur', 'zam', 'zh-CN', 'zh-TW',
+            'ncj', 'nl', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son',
+            'sq',, 'sr', 'sv-SE', 'tr', 'uk', 'ur', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
     'main.lang' => [
@@ -377,7 +377,7 @@ $mozillaorg_lang = [
             'af', 'am', 'bn-BD', 'bs', 'ca', 'cak', 'cs', 'cy', 'de', 'dsb',
             'en-GB', 'es-CL', 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hi-IN', 'hsb',
             'it', 'ja', 'kab', 'km', 'ko', 'lt', 'lv', 'ncj', 'nl', 'nv',
-            'pa-IN', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'son', 'sq', 'sv-SE',
+            'pa-IN', 'pai', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'son', 'sq', 'sv-SE',
             'sw', 'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
@@ -391,8 +391,8 @@ $mozillaorg_lang = [
             'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hi-IN', 'hr', 'hsb', 'id', 'it',
             'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'ncj', 'nl', 'nv', 'pa-IN',
-            'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
-            'sv-SE', 'sw', 'ta', 'tr', 'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
+            'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq',
+            'sr', 'sv-SE', 'sw', 'ta', 'tr', 'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
     'mozorg/about/manifesto.lang' => [
