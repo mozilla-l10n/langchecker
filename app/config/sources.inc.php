@@ -479,9 +479,6 @@ $mozillaorg_lang = [
         ],
     ],
     'mozorg/internet-health/shared.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
             'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
