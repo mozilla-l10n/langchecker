@@ -455,7 +455,8 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR',
+            'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
+            'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/open-innovation.lang' => [
@@ -483,8 +484,8 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fa', 'fr', 'it', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE',
-            'uk', 'zh-TW',
+            'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
+            'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/web-literacy.lang' => [
