@@ -227,7 +227,7 @@ $mozillaorg_lang = [
             'ar', 'ast', 'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'eo', 'es-AR',
             'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl',
             'he', 'hi-IN', 'hsb', 'hu', 'id', 'it', 'ja', 'kk', 'ko', 'lt', 'lv',
-            'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sk', 'son',
+            'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-BR', 'pt-PT', 'ru', 'sk', 'sl', 'son',
             'sv-SE', 'th', 'tr', 'uk', 'ur', 'vi', 'xh', 'zh-CN', 'zh-TW',
         ],
     ],
@@ -238,7 +238,7 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
             'es-ES', 'fr', 'ga-IE', 'hi-IN', 'hsb', 'ja', 'kk', 'pl', 'pt-BR',
-            'zh-TW',
+            'sl', 'zh-TW',
         ],
     ],
     'firefox/private-browsing.lang' => [
@@ -437,7 +437,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR',
+            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl',
         ],
     ],
     'mozorg/internet-health/digital-inclusion.lang' => [
@@ -446,7 +446,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR',
+            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl',
         ],
     ],
     'mozorg/internet-health/index.lang' => [
@@ -456,7 +456,7 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
             'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
-            'sq', 'sv-SE', 'uk', 'zh-TW',
+            'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/open-innovation.lang' => [
@@ -465,7 +465,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR',
+            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl',
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
@@ -474,7 +474,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fa', 'fr', 'it', 'kab', 'ko', 'pt-BR', 'sq', 'sv-SE',
+            'es-MX', 'fa', 'fr', 'it', 'kab', 'ko', 'pt-BR', 'sl', 'sq', 'sv-SE',
             'uk', 'zh-TW',
         ],
     ],
@@ -482,7 +482,7 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
             'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
-            'sq', 'sv-SE', 'uk', 'zh-TW',
+            'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/web-literacy.lang' => [
@@ -491,7 +491,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX',
-            'fr', 'it', 'kab', 'pt-BR',
+            'fr', 'it', 'kab', 'pt-BR', 'sl',
         ],
     ],
     'mozorg/mission.lang' => [
