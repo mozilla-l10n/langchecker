@@ -3,6 +3,7 @@
 $no_active_tag = [
     'download_button.lang',
     'main.lang',
+    'mozorg/internet-health/shared.lang',
     'newsletter.lang',
     'privacy/index.lang',
 ];
@@ -351,7 +352,7 @@ $mozillaorg_lang = [
         ],
     ],
     'main.lang' => [
-        'deadline'          => '2017-05-08',
+        'deadline'          => '2017-06-16',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -423,9 +424,6 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/internet-health.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
         'priority'          => 3,
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
@@ -438,8 +436,8 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-          'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-          'es-MX', 'fr', 'it', 'kab', 'pt-BR',
+            'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
+            'es-MX', 'fr', 'it', 'kab', 'pt-BR',
         ],
     ],
     'mozorg/internet-health/digital-inclusion.lang' => [
@@ -449,6 +447,16 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
             'es-MX', 'fr', 'it', 'kab', 'pt-BR',
+        ],
+    ],
+    'mozorg/internet-health/index.lang' => [
+        'flags' => [
+            'opt-in' => ['all'],
+        ],
+        'supported_locales' => [
+            'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
+            'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
+            'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/open-innovation.lang' => [
@@ -470,13 +478,20 @@ $mozillaorg_lang = [
             'uk', 'zh-TW',
         ],
     ],
+    'mozorg/internet-health/shared.lang' => [
+        'supported_locales' => [
+            'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
+            'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
+            'sq', 'sv-SE', 'uk', 'zh-TW',
+        ],
+    ],
     'mozorg/internet-health/web-literacy.lang' => [
         'flags' => [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-          'af', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX',
-          'fr', 'it', 'kab', 'pt-BR',
+            'af', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX',
+            'fr', 'it', 'kab', 'pt-BR',
         ],
     ],
     'mozorg/mission.lang' => [
