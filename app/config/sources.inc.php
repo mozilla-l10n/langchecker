@@ -424,9 +424,6 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/internet-health.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
         'priority'          => 3,
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
