@@ -437,7 +437,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl',
+            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/internet-health/digital-inclusion.lang' => [
@@ -446,7 +446,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl',
+            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/internet-health/index.lang' => [
@@ -465,7 +465,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl',
+            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
@@ -491,7 +491,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX',
-            'fr', 'it', 'kab', 'pt-BR', 'sl',
+            'fr', 'it', 'kab', 'pt-BR', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/mission.lang' => [
