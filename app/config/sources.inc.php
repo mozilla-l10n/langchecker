@@ -664,6 +664,10 @@ $engagement_lang = [
         'deadline'          => '2017-01-27',
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2017/focus_android.lang' => [
+        'deadline'          => '2017-06-19',
+        'supported_locales' => ['pl'],
+    ],
     'emails/2017/fundraising_thank_you.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it'],
     ],
