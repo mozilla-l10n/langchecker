@@ -885,6 +885,15 @@ $appstores_lang = [
         'deadline'          => '2017-04-21',
         'supported_locales' => $focus_android_store,
     ],
+    /*
+        Klar is a special case. Content is enabled only for en-US, de, it, fr
+        to cover Switzerland. This also allows us to have a proper "Focus"
+        description for German (e.g. users located outside Germany but using
+        a phone in German).
+    */
+    'klar_android/description_release.lang' => [
+        'supported_locales' => ['de', 'fr', 'it'],
+    ],
     'focus_android/screenshots_v1.lang' => [
         'supported_locales' => [
             'es-ES', 'id', 'pt-BR', 'ru',
