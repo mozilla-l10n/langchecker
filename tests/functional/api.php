@@ -43,8 +43,9 @@ $json = [
 ];
 
 $number = [
-    ['?action=coverage&locales[]=it&locales[]=fr', 200, '1.90'],
+    ['?action=coverage&locales[]=it&locales[]=fr', 200, '1.92'],
     ['?action=coverage&locales[]=fr', 200, '0.32'],
+    ['?action=coverage&locales[]=es', 200, '4.29'],
     ['?action=coverage&locales[]=foo', 200, '0.00'],
 ];
 
