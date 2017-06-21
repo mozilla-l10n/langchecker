@@ -425,6 +425,8 @@ class Project extends atoum\test
             'en-US'     => '10000',
             'fr'        => '2000',
             'it'        => '1000',
+            'es-AR'     => '250',
+            'es-ES'     => '250',
             'en-GB'     => '500',
             'ja'        => '250',
             'ja-JP-mac' => '250',
@@ -433,6 +435,8 @@ class Project extends atoum\test
         return [
             [['it'], $adu, '25.00'],
             [['fr'], $adu, '50.00'],
+            [['es'], $adu, '11.11'],
+            [['es-ES'], $adu, '6.25'],
             [['it', 'fr'], $adu, '75.00'],
         ];
     }

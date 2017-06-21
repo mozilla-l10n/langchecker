@@ -355,19 +355,32 @@ class Project
      */
     public static function getUserBaseCoverage($locales, $adu)
     {
+        // Japanese is always the sum of ja and ja-JP-mac
         if (isset($adu['ja']) && isset($adu['ja-JP-mac'])) {
-            // Japanese has 2 builds
             $adu['ja'] = $adu['ja'] + $adu['ja-JP-mac'];
             unset($adu['ja-JP-mac']);
         }
 
-        $englishes = ['en-US', 'en-ZA'];
+        $englishes = ['en-GB', 'en-US', 'en-ZA'];
         $english_adu = 0;
         foreach ($englishes as $english) {
             if (isset($adu[$english])) {
                 $english_adu += $adu[$english];
             }
         }
+
+        // es, if requrested, replaces all other Spanishes and its the sum of them
+        $spanishes = ['es-AR', 'es-CL', 'es-ES', 'es-MX'];
+        $spanish_adu = 0;
+        foreach ($spanishes as $spanish) {
+            if (isset($adu[$spanish])) {
+                $spanish_adu += $adu[$spanish];
+            }
+        }
+        if (in_array('es', $locales)) {
+            $adu['es'] = $spanish_adu;
+        }
+
         $locales = array_intersect_key($adu, array_flip($locales));
 
         return number_format(array_sum($locales) / (array_sum($adu) - $english_adu) * 100, 2);
