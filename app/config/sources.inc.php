@@ -887,7 +887,6 @@ $engagement_lang = [
 // Default priority is 1
 $appstores_lang = [
     'focus_android/description_release.lang' => [
-        'deadline'          => '2017-04-21',
         'supported_locales' => $focus_android_store,
     ],
     /*
