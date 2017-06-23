@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+namespace Langchecker;
+
+require_once __DIR__ . '/../inc/cli_init.php';
+
+/*
+    This script takes en-US files and create a pseudo folder for mozilla.org
+    All strings in this locale are replaced by "<!-- original --> ***".
+*/
+
+// This script only works for mozilla.org
+$current_website = $sites[0];
+
+// Create list of files to analyze
+$file_list = Project::getWebsiteFiles($current_website);
+
+foreach ($file_list as $current_filename) {
+    // Load reference strings
+    $reference_locale = Project::getReferenceLocale($current_website);
+    $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+    $reference_filename = Project::getLocalFilePath($current_website, $reference_locale, $current_filename);
+
+    // Locale data is still the reference
+    $locale_code = 'pseudo';
+    $locale_data = $reference_data;
+    $locale_filename = Project::getLocalFilePath($current_website, $locale_code, $current_filename);
+
+    foreach ($reference_data['strings'] as $string_id => $string_value) {
+        $locale_data['strings'][$string_id] = "<!-- {$string_value} --> ***";
+    }
+
+    $content = LangManager::buildLangFile($reference_data, $locale_data, $locale_code, PHP_EOL);
+    Utils::fileForceContent($locale_filename, $content);
+}
+
+Utils::logger("Generated pseudolocale in /pseudo");
