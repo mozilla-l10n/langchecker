@@ -2,6 +2,7 @@
 
 $no_active_tag = [
     'download_button.lang',
+    'firefox/shared.lang',
     'main.lang',
     'mozorg/internet-health/shared.lang',
     'newsletter.lang',
@@ -117,11 +118,9 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/android/index.lang' => [
-        'deadline'          => '2017-04-25',
         'flags'             => [
-            'opt-in' => ['all'],
+            'obsolete' => ['all'],
         ],
-        'priority'          => 2,
         'supported_locales' => $android_landing_page,
     ],
     'firefox/australis/firefox_tour.lang' => [
@@ -184,6 +183,41 @@ $mozillaorg_lang = [
     'firefox/features.lang' => [
         'supported_locales' => $firefox_locales,
     ],
+    'firefox/features/bookmarks.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/features/fast.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/features/independent.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/features/index.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/features/memory.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/features/password-manager.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/features/private-browsing.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/geolocation.lang' => [
         'flags' => [
             'opt-in' => ['all'],
@@ -201,16 +235,19 @@ $mozillaorg_lang = [
                 'th', 'tr', 'uk', 'ur', 'vi', 'xh', 'zh-CN', 'zh-TW',
         ],
     ],
+    'firefox/hub/home.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/installer-help.lang' => [
         'priority'          => 2,
         'supported_locales' => $firefox_locales,
     ],
     'firefox/ios.lang' => [
-        'deadline'          => '2017-04-25',
         'flags'             => [
-            'opt-in' => ['all'],
+            'obsolete' => ['all'],
         ],
-        'priority'          => 2,
         'supported_locales' => $ios_landing_page,
     ],
     'firefox/new/horizon.lang' => [
@@ -246,9 +283,34 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
+    'firefox/products/android.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/products/focus.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/products/desktop.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/products/ios.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/sendto.lang' => [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
+    ],
+    'firefox/shared.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
     ],
     'firefox/sync.lang' => [
         'deadline'          => '2017-04-25',
