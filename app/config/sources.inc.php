@@ -128,6 +128,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/channel/index.lang' => [
+        'deadline'          => '2017-07-20',
         'priority'          => 1,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
     ],
