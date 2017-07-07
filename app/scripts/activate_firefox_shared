@@ -1,0 +1,95 @@
+#!/usr/bin/env php
+<?php
+namespace Langchecker;
+
+$command_help = "activate_firefox_shared - Enable new features and product pages, only if firefox/shared.lang is completely translated\n";
+
+require_once __DIR__ . '/../inc/cli_init.php';
+
+// This script is relevant only for mozilla.org
+$current_website = $sites[0];
+
+$files_to_check = [
+    'firefox/features/bookmarks.lang',
+    'firefox/features/fast.lang',
+    'firefox/features/independent.lang',
+    'firefox/features/index.lang',
+    'firefox/features/memory.lang',
+    'firefox/features/password-manager.lang',
+    'firefox/features/private-browsing.lang',
+    'firefox/hub/home.lang',
+    'firefox/products/android.lang',
+    'firefox/products/desktop.lang',
+    'firefox/products/focus.lang',
+    'firefox/products/ios.lang',
+];
+
+// Get the list of locales that completely translated the shared file
+$shared_filename = 'firefox/shared.lang';
+$supported_locales = Project::getSupportedLocales($current_website, $shared_filename);
+
+$reference_locale = Project::getReferenceLocale($current_website);
+$reference_data = LangManager::loadSource($current_website, $reference_locale, $shared_filename);
+
+$complete_locales = [];
+foreach ($supported_locales as $current_locale) {
+    // Ignore locale if it's the reference language
+    if ($current_locale == $reference_locale) {
+        continue;
+    }
+    // If the .lang file does not exist, just skip the locale for this file
+    if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $shared_filename))) {
+        continue;
+    }
+    $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $shared_filename);
+    $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $shared_filename, $reference_data);
+
+    $todo = count($locale_analysis['Identical']) +
+            count($locale_analysis['Missing']) +
+            LangManager::countErrors($locale_analysis['errors']);
+    if ($todo == 0) {
+        $complete_locales[] = $current_locale;
+    }
+}
+sort($complete_locales);
+
+foreach ($files_to_check as $current_filename) {
+    $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
+
+    // Get the list of supported locales that also completely localized the shared file
+    $supported_locales = array_intersect(
+        Project::getSupportedLocales($current_website, $current_filename),
+        $complete_locales
+    );
+
+    // Start checking each locale
+    foreach ($supported_locales as $current_locale) {
+        // Ignore locale if it's the reference language
+        if ($current_locale == $reference_locale) {
+            continue;
+        }
+        // If the .lang file does not exist, just skip the locale for this file
+        if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
+            continue;
+        }
+        $locale_filename = Project::getLocalFilePath($current_website, $current_locale, $current_filename);
+        $locale_analysis = LangManager::analyzeLangFile($current_website, $current_locale, $current_filename, $reference_data);
+
+        $todo = count($locale_analysis['Identical']) +
+                count($locale_analysis['Missing']) +
+                LangManager::countErrors($locale_analysis['errors']);
+        if ($todo == 0) {
+            // If file is ready and not activated, add the ## active ## tag
+            if (! $locale_analysis['activated']) {
+                $file_content = file($locale_filename);
+                $eol = Utils::checkEOL($file_content[0]);
+                $write_status = file_put_contents($locale_filename, "## active ##{$eol}" . implode($file_content));
+                if ($write_status === false) {
+                    Utils::logger("There was an error writing {$current_filename} for {$current_locale}");
+                } else {
+                    Utils::logger("Activated {$current_filename} for {$current_locale}");
+                }
+            }
+        }
+    }
+}
