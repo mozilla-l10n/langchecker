@@ -894,7 +894,7 @@ $engagement_lang = [
         'deadline'          => '2017-06-19',
         'supported_locales' => ['de'],
     ],
-    'snippets/2017/aug2017.lang' => [
+    'snippets/2017/testpilot_aug2017.lang' => [
         'deadline'          => '2017-07-31',
         'supported_locales' => [
             'cs', 'es', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
