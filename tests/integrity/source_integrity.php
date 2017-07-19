@@ -1,5 +1,5 @@
 <?php
-use \pchevrel\Verif as Verif;
+use pchevrel\Verif as Verif;
 
 define('INSTALL_ROOT', realpath(__DIR__ . '/../../') . '/');
 
