@@ -1031,6 +1031,10 @@ $appstores_lang = [
     ],
     'fx_ios/whatsnew/ios_8_0.lang' => [
         'deadline'          => '2017-07-26',
-        'supported_locales' => $fx_ios_store,
+        'supported_locales' => array_diff($fx_ios_store, ['de']),
+    ],
+    'fx_ios/whatsnew/ios_8_0_de.lang' => [
+        'deadline'          => '2017-07-26',
+        'supported_locales' => ['de'],
     ],
 ];
