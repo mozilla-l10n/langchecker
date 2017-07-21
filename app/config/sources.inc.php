@@ -572,6 +572,16 @@ $mozillaorg_lang = [
         'priority'          => 2,
         'supported_locales' => $mozillaorg,
     ],
+    'mozorg/moss/index.lang' => [
+        'deadline'          => '2017-07-30',
+        'priority'          => 1,
+        'supported_locales' => ['hi-IN'],
+    ],
+    'mozorg/moss/mission-partners-india.lang' => [
+        'deadline'          => '2017-07-30',
+        'priority'          => 1,
+        'supported_locales' => ['hi-IN'],
+    ],
     'mozorg/newsletters.lang' => [
         'deadline'          => '2017-03-27',
         'priority'          => 2,
