@@ -160,7 +160,9 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/developer.lang' => [
-        'priority'          => 2,
+        'flags'             => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $firefox_locales,
     ],
     'firefox/dnt.lang' => [
@@ -251,12 +253,13 @@ $mozillaorg_lang = [
         'supported_locales' => $ios_landing_page,
     ],
     'firefox/new/horizon.lang' => [
-        'deadline'          => '2017-02-20',
-        'priority'          => 1,
+        'flags'             => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/new/onboarding.lang' => [
-        'deadline'          => '2017-08-20',
+        'deadline'          => '2017-08-15',
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
@@ -299,9 +302,8 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/products/developer.lang' => [
-        'deadline'          => '2017-08-20',
-        'priority'          => 1,
-        'supported_locales' => $mozillaorg,
+        'deadline'          => '2017-08-15',
+        'supported_locales' => $firefox_locales,
     ],
     'firefox/products/focus.lang' => [
         'deadline'          => '2017-08-15',
@@ -323,7 +325,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/sync.lang' => [
-        'deadline'          => '2017-08-20',
+        'deadline'          => '2017-08-15',
         'priority'          => 2,
         'supported_locales' => $mozillaorg,
     ],
