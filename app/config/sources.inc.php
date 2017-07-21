@@ -255,6 +255,11 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
+    'firefox/new/onboarding.lang' => [
+        'deadline'          => '2017-08-20',
+        'priority'          => 1,
+        'supported_locales' => $firefox_desktop_android,
+    ],
     'firefox/nightly_firstrun.lang' => [
         'flags'             => [
             'opt-in' => $firefox_locales,
@@ -288,12 +293,17 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
-    'firefox/products/focus.lang' => [
+    'firefox/products/desktop.lang' => [
         'deadline'          => '2017-08-15',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
-    'firefox/products/desktop.lang' => [
+    'firefox/products/developer.lang' => [
+        'deadline'          => '2017-08-20',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/products/focus.lang' => [
         'deadline'          => '2017-08-15',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
@@ -313,7 +323,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/sync.lang' => [
-        'deadline'          => '2017-04-25',
+        'deadline'          => '2017-08-20',
         'priority'          => 2,
         'supported_locales' => $mozillaorg,
     ],
