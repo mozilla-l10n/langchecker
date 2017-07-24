@@ -34,6 +34,21 @@ foreach ($sites as $website) {
 
                 $export_data[$website_name][$displayed_filename]['identical'] = count($locale_analysis['Identical']);
                 $export_data[$website_name][$displayed_filename]['missing'] = count($locale_analysis['Missing']);
+
+                // If there are missing or identical strings, calculate missing words
+                $missing_words = 0;
+                if (count($locale_analysis['Identical']) > 0 ) {
+                    foreach ($locale_analysis['Identical'] as $string_id) {
+                        $missing_words += str_word_count(strip_tags($string_id));
+                    }
+                }
+                if (count($locale_analysis['Missing']) > 0 ) {
+                    foreach ($locale_analysis['Missing'] as $string_id) {
+                        $missing_words += str_word_count(strip_tags($string_id));
+                    }
+                }
+                $export_data[$website_name][$displayed_filename]['missing_words'] = $missing_words;
+
                 $export_data[$website_name][$displayed_filename]['obsolete'] = count($locale_analysis['Obsolete']);
                 $export_data[$website_name][$displayed_filename]['translated'] = count($locale_analysis['Translated']);
 
