@@ -955,6 +955,10 @@ $engagement_lang = [
         'deadline'          => '2017-01-27',
         'supported_locales' => ['de', 'fr'],
     ],
+    'surveys/iot_survey.lang' => [
+        'deadline'          => '2017-08-09',
+        'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
+    ],
     'surveys/survey_hello_fx42.lang' => [
         'supported_locales' => [
             'ar', 'cs', 'da', 'de', 'el', 'en-GB', 'es-ES', 'es-MX', 'fr',
