@@ -759,6 +759,10 @@ $engagement_lang = [
     'emails/2017/fundraising_thank_you.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it'],
     ],
+    'emails/2017/iot_survey.lang' => [
+        'deadline'          => '2017-08-06',
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
+    ],
     'emails/2017/mozfest_call.lang' => [
         'deadline'          => '2017-06-15',
         'supported_locales' => ['de', 'es', 'fr'],
