@@ -770,6 +770,10 @@ $engagement_lang = [
     'emails/2017/paperstorm.lang' => [
         'supported_locales' => ['de', 'es-ES', 'fr', 'it'],
     ],
+    'emails/2017/pocket.lang' => [
+        'deadline'          => '2017-08-04',
+        'supported_locales' => ['pl'],
+    ],
     'emails/2017/results_graphics.lang' => [
         'deadline'          => '2017-03-07',
         'supported_locales' => ['de', 'fr'],
