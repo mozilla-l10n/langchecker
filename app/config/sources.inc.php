@@ -930,6 +930,12 @@ $engagement_lang = [
             'cs', 'es', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
         ],
     ],
+    'snippets/2017/iot_survey.lang' => [
+        'deadline'          => '2017-08-06',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'it', 'pt-BR',
+        ],
+    ],
     'snippets/2017/paperstorm.lang' => [
         'deadline'          => '2017-05-08',
         'supported_locales' => [
