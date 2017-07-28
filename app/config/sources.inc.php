@@ -1057,7 +1057,7 @@ $appstores_lang = [
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_55.lang' => [
-        'deadline'          => '2017-08-02',
+        'deadline'          => '2017-08-07',
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_56_beta.lang' => [
