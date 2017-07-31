@@ -1067,9 +1067,6 @@ $appstores_lang = [
     'fx_android/whatsnew/android_56_beta.lang' => [
         'supported_locales' => $fx_android_store,
     ],
-    'fx_android/whatsnew/android_nightly.lang' => [
-        'supported_locales' => $fx_android_store,
-    ],
     'fx_ios/description_release.lang' => [
         'supported_locales' => $fx_ios_store,
     ],
