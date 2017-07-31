@@ -20,7 +20,7 @@ $getinvolved_locales = [
     'af', 'am', 'ar', 'az', 'azz', 'bg', 'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb',
     'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'fy-NL',
     'he', 'hi-IN', 'hr', 'hsb', 'id', 'it', 'kab', 'ko', 'lt', 'ms',
-    'nl', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sl', 'son', 'sq',
+    'nl', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq',
     'sr', 'sv-SE', 'sw', 'ta', 'tr', 'uk', 'xh', 'zam', 'zh-CN', 'zh-TW',
 ];
 
@@ -151,7 +151,7 @@ $mozillaorg_lang = [
             'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'eu', 'fa', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hi-IN',
             'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'kk', 'km', 'ko', 'lt', 'lv',
-            'ms', 'nb-NO', 'ne-NP', 'nl', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT',
+            'ms', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT',
             'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta',
             'uk', 'ur', 'uz', 'xh', 'zam', 'zh-CN', 'zh-TW',
         ],
@@ -173,7 +173,7 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
             'fa', 'fi', 'fr', 'fy-NL', 'hi-IN', 'hsb', 'it', 'ja', 'kab', 'ko',
-            'lt', 'nl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq',
+            'lt', 'nl', 'nn-NO', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq',
             'sr', 'sv-SE', 'uk', 'ur', 'uz', 'xh', 'zh-CN', 'zh-TW',
         ],
     ],
@@ -282,8 +282,8 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
-            'es-ES', 'fr', 'ga-IE', 'hi-IN', 'hsb', 'ja', 'kab', 'kk', 'pl', 'pt-BR',
-            'sl', 'zh-TW',
+            'es-ES', 'fr', 'ga-IE', 'hi-IN', 'hsb', 'ja', 'kab', 'kk', 'nn-NO', 'pl',
+            'pt-BR', 'sk', 'sl', 'zh-TW',
         ],
     ],
     'firefox/private-browsing.lang' => [
@@ -348,7 +348,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'bs', 'cak', 'cy', 'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR',
+            'bs', 'cak', 'cy', 'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR', 'sk',
         ],
     ],
     'foundation/annualreport/2011.lang' => [
@@ -389,7 +389,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'bs', 'cak', 'cy', 'cs', 'de', 'en-GB', 'es-ES', 'fr', 'kab', 'pl',
-            'pt-BR', 'zh-TW',
+            'pt-BR', 'sk', 'zh-TW',
         ],
     ],
     'foundation/issues.lang' => [
@@ -397,7 +397,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'bs', 'cak', 'cy', 'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR',
+            'bs', 'cak', 'cy', 'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR', 'sk',
         ],
     ],
     'foundation/leadership-network.lang' => [
@@ -405,7 +405,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'bs', 'cak', 'cy', 'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR',
+            'bs', 'cak', 'cy', 'cs', 'de', 'en-GB', 'fr', 'kab', 'pt-BR', 'sk',
         ],
     ],
     'legal/index.lang' => [
@@ -421,7 +421,7 @@ $mozillaorg_lang = [
             'am', 'azz', 'bs', 'ca', 'cak', 'cs', 'cy', 'de', 'dsb', 'el', 'en-GB',
             'en-ZA', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa', 'fr',
             'fy-NL', 'hi-IN', 'hsb', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms',
-            'nl', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'son',
+            'nl', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'son',
             'sq', 'sr', 'sv-SE', 'tr', 'uk', 'ur', 'zam', 'zh-CN', 'zh-TW',
         ],
     ],
@@ -511,7 +511,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl', 'sv-SE',
+            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/internet-health/digital-inclusion.lang' => [
@@ -520,7 +520,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl', 'sv-SE',
+            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/internet-health/index.lang' => [
@@ -530,7 +530,7 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
             'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
-            'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
+            'sk', 'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/open-innovation.lang' => [
@@ -539,7 +539,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sl', 'sv-SE',
+            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
@@ -548,15 +548,15 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fa', 'fr', 'it', 'kab', 'ko', 'pt-BR', 'sl', 'sq', 'sv-SE',
-            'uk', 'zh-TW',
+            'es-MX', 'fa', 'fr', 'it', 'kab', 'ko', 'pt-BR', 'sk', 'sl', 'sq',
+            'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/shared.lang' => [
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
             'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
-            'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
+            'sk', 'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/web-literacy.lang' => [
@@ -565,7 +565,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX',
-            'fr', 'it', 'kab', 'pt-BR', 'sl', 'sv-SE',
+            'fr', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/mission.lang' => [
@@ -623,7 +623,8 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'az', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR',
             'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'kab',
-            'ko', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk', 'zh-CN', 'zh-TW',
+            'ko', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sq', 'sr', 'uk', 'zh-CN',
+            'zh-TW',
         ],
     ],
     'teach/smarton/security.lang' => [
@@ -633,7 +634,8 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'az', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR',
             'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'kab', 'ja',
-            'ko', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk', 'zh-CN', 'zh-TW',
+            'ko', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sq', 'sr', 'uk', 'zh-CN',
+            'zh-TW',
         ],
     ],
     'teach/smarton/surveillance.lang' => [
@@ -643,7 +645,8 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'az', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR',
             'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'kab',
-            'ko', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk', 'zh-CN', 'zh-TW',
+            'ko', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sq', 'sr', 'uk', 'zh-CN',
+            'zh-TW',
         ],
     ],
     'teach/smarton/tracking.lang' => [
@@ -653,7 +656,8 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'az', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-AR',
             'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'it', 'ja', 'kab',
-            'ko', 'pl', 'pt-BR', 'ro', 'ru', 'sq', 'sr', 'uk', 'zh-CN', 'zh-TW',
+            'ko', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sq', 'sr', 'uk', 'zh-CN',
+            'zh-TW',
         ],
     ],
     'thunderbird/channel.lang' => [
@@ -670,8 +674,8 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'bs', 'cak', 'cy', 'cs', 'de', 'en-GB', 'es-ES', 'fi', 'fr', 'it',
-            'ja', 'kab', 'ko', 'lt', 'nb-NO', 'nl', 'pl', 'pt-BR', 'ru', 'sq',
-            'uk', 'zh-TW',
+            'ja', 'kab', 'ko', 'lt', 'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-BR', 'ru', 'sk',
+            'sq', 'uk', 'zh-TW',
         ],
     ],
     'thunderbird/features.lang' => [
