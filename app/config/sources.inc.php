@@ -959,6 +959,13 @@ $engagement_lang = [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
         ],
     ],
+    'social/2017/iot_survey.lang' => [
+        'deadline'          => '2017-05-09',
+        'priority'          => 5,
+        'supported_locales' => [
+            'de', 'es', 'fr', 'pt-BR',
+        ],
+    ],
     'social/2017/mozfest.lang' => [
         'deadline'          => '2017-06-15',
         'supported_locales' => ['de', 'es', 'fr'],
