@@ -322,7 +322,7 @@ $mozillaorg_lang = [
     ],
     'firefox/sendto.lang' => [
         'flags'             => [
-          'obsolete' => ['all'],
+          'obsolete'        => ['all'],
         'supported_locales' => $firefox_locales,
         ],
     ],
@@ -601,7 +601,7 @@ $mozillaorg_lang = [
     ],
     'mozorg/plugincheck-redesign.lang' => [
         'flags'             => [
-          'obsolete' => ['all'],
+          'obsolete'        => ['all'],
         'supported_locales' => $mozillaorg,
         ],
     ],
