@@ -767,10 +767,6 @@ $engagement_lang = [
         'deadline'          => '2017-08-07',
         'supported_locales' => ['de', 'fr'],
     ],
-    'emails/2017/ihr_email_b.lang' => [
-        'deadline'          => '2017-08-07',
-        'supported_locales' => ['de', 'fr'],
-    ],
     'emails/2017/iot_survey.lang' => [
         'deadline'          => '2017-08-06',
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
@@ -960,7 +956,7 @@ $engagement_lang = [
         ],
     ],
     'social/2017/iot_survey.lang' => [
-        'deadline'          => '2017-05-09',
+        'deadline'          => '2017-08-09',
         'priority'          => 5,
         'supported_locales' => [
             'de', 'es', 'fr', 'pt-BR',
