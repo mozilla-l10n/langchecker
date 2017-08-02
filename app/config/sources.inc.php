@@ -252,6 +252,11 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => $ios_landing_page,
     ],
+    'firefox/new/batm.lang' => [
+      'deadline'          => '2017-08-07',
+      'priority'          => 1,
+      'supported_locales' => 'de',
+    ],
     'firefox/new/horizon.lang' => [
         'flags'             => [
             'obsolete' => ['all'],
@@ -316,6 +321,13 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/sendto.lang' => [
+        'flags'             => [
+          'obsolete' => ['all'],
+        'supported_locales' => $firefox_locales,
+        ],
+    ],
+    'firefox/sendto-tabs.lang' => [
+        'deadline'          => '2017-08-15',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
@@ -588,6 +600,13 @@ $mozillaorg_lang = [
         'supported_locales' => $newsletter_locales,
     ],
     'mozorg/plugincheck-redesign.lang' => [
+        'flags'             => [
+          'obsolete' => ['all'],
+        'supported_locales' => $mozillaorg,
+        ],
+    ],
+    'mozorg/plugincheck-update.lang' => [
+        'deadline'          => '2017-08-15',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
