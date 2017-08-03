@@ -17,6 +17,7 @@ $files_to_check = [
     'firefox/features/memory.lang',
     'firefox/features/password-manager.lang',
     'firefox/features/private-browsing.lang',
+    'firefox/features/send-tabs',
     'firefox/hub/home.lang',
     'firefox/products/android.lang',
     'firefox/products/desktop.lang',
