@@ -431,7 +431,7 @@ $mozillaorg_lang = [
         ],
     ],
     'main.lang' => [
-        'deadline'          => '2017-06-16',
+        'deadline'          => '2017-08-15',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
