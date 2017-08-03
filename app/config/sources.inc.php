@@ -322,7 +322,7 @@ $mozillaorg_lang = [
     ],
     'firefox/sendto.lang' => [
         'priority'          => 1,
-        'supported_locales' => $mozillaorg,
+        'supported_locales' => $firefox_locales,
     ],
     'firefox/shared.lang' => [
         'deadline'          => '2017-08-15',
