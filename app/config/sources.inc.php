@@ -220,6 +220,11 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/features/send-tabs.lang' => [
+        'deadline'          => '2017-08-15',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/geolocation.lang' => [
         'flags' => [
             'opt-in' => ['all'],
@@ -316,8 +321,10 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/sendto.lang' => [
+        'flags'             => [
         'priority'          => 1,
-        'supported_locales' => $firefox_locales,
+        'supported_locales' => $mozillaorg,
+        ],
     ],
     'firefox/shared.lang' => [
         'deadline'          => '2017-08-15',
@@ -588,6 +595,13 @@ $mozillaorg_lang = [
         'supported_locales' => $newsletter_locales,
     ],
     'mozorg/plugincheck-redesign.lang' => [
+        'flags'             => [
+            'obsolete' => ['all'],
+        'supported_locales' => $mozillaorg,
+        ],
+    ],
+    'mozorg/plugincheck-update.lang' => [
+        'deadline'          => '2017-08-15',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
