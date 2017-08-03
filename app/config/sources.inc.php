@@ -223,7 +223,7 @@ $mozillaorg_lang = [
     'firefox/features/sendto-tabs.lang' => [
         'deadline'          => '2017-08-15',
         'priority'          => 1,
-        'supported_locales' => $firefox_locales,
+        'supported_locales' => $mozillaorg,
     ],
     'firefox/geolocation.lang' => [
         'flags' => [
@@ -322,7 +322,7 @@ $mozillaorg_lang = [
     ],
     'firefox/sendto.lang' => [
         'flags'             => [
-          'obsolete'        => ['all'],
+          'obsolete'    => ['all'],
         'supported_locales' => $firefox_locales,
         ],
     ],
@@ -596,7 +596,7 @@ $mozillaorg_lang = [
     ],
     'mozorg/plugincheck-redesign.lang' => [
         'flags'             => [
-          'obsolete'        => ['all'],
+          'obsolete'    => ['all'],
         'supported_locales' => $mozillaorg,
         ],
     ],
