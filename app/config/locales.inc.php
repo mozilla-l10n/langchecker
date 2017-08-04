@@ -73,9 +73,9 @@ $newsletter_locales = [
 
 // List of locales working on Pootle
 $locamotion_locales = [
-    'af', 'an', 'azz', 'br', 'bs', 'ca', 'cak', 'cy', 'en-ZA', 'ff', 'ga-IE',
-    'gn', 'hi-IN', 'hto', 'lt', 'mai', 'ne-NP', 'nv', 'or', 'pai', 'pbb',
-    'qvi', 'son', 'sw', 'ta', 'trs', 'ur', 'xh', 'zam', 'zu',
+    'af', 'an', 'azz', 'br', 'bs', 'ca', 'cy', 'en-ZA', 'ff', 'ga-IE', 'gn',
+    'hi-IN', 'hto', 'lt', 'mai', 'ne-NP', 'nv', 'or', 'pai', 'pbb', 'qvi',
+    'son', 'sw', 'ta', 'trs', 'ur', 'xh', 'zam', 'zu',
 ];
 
 /*
