@@ -777,7 +777,7 @@ $engagement_lang = [
     ],
     'emails/2017/ihr_email_a.lang' => [
         'deadline'          => '2017-08-07',
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2017/iot_survey.lang' => [
         'deadline'          => '2017-08-06',
