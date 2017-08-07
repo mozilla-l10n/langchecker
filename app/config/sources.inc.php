@@ -257,6 +257,10 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => $ios_landing_page,
     ],
+    'firefox/new/batm.lang' => [
+        'priority'          => 1,
+        'supported_locales' => ['de'],
+    ],
     'firefox/new/horizon.lang' => [
         'flags'             => [
             'obsolete' => ['all'],
