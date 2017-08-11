@@ -118,7 +118,7 @@ foreach ($mozilla as $current_locale) {
                     // Get all missing tags completely localized
                     if (isset($reference_data['tags'])) {
                         /* I ignore tags not bound to strings for this report, so using unique
-                         *  values of 'tag_bindings' instead of using 'tags' from reference data
+                         * values of 'tag_bindings' instead of using 'tags' from reference data
                          */
                         $source_file_tags = array_unique(array_values($reference_data['tag_bindings']));
                     } else {
@@ -204,6 +204,42 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
             $errors[$reference_locale][$current_website_name][$current_filename][] = [
                 'errors' => $zero_length,
                 'type'   => 'zero_length',
+            ];
+        }
+
+        /*
+            Check for tags without any string associated, or tags not declared
+            at the beginning of the file but bound to strings.
+        */
+
+        // Tags bound to strings
+        $bound_tags = isset($reference_data['tag_bindings'])
+            ? array_unique(array_values($reference_data['tag_bindings']))
+            : [];
+
+        // Tags declared in the file
+        $declared_tags = isset($reference_data['tags'])
+            ? $reference_data['tags']
+            : [];
+
+        // There are a few files that should be ignored when checking tags
+        if (in_array($current_filename, ['firefox/nightly_firstrun.lang'])) {
+            continue;
+        }
+
+        $empty_tags = array_diff($declared_tags, $bound_tags);
+        if (! empty($empty_tags)) {
+            $errors[$reference_locale][$current_website_name][$current_filename][] = [
+                'errors' => $empty_tags,
+                'type'   => 'empty_tags',
+            ];
+        }
+
+        $undeclared_tags = array_diff($bound_tags, $declared_tags);
+        if (! empty($undeclared_tags)) {
+            $errors[$reference_locale][$current_website_name][$current_filename][] = [
+                'errors' => $undeclared_tags,
+                'type'   => 'undeclared_tags',
             ];
         }
     }

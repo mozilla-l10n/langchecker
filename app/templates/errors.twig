@@ -33,6 +33,20 @@
                                     <li>{{ string_id }}</li>
                                 {% endfor %}
                                 </ul>
+                            {% elseif error.type == 'empty_tags' %}
+                                <p>The following tags are not bound to any string:</p></p>
+                                <ul>
+                                {% for tag in error.errors %}
+                                    <li>{{ tag }}</li>
+                                {% endfor %}
+                                </ul>
+                            {% elseif error.type == 'undeclared_tags' %}
+                                <p>The following tags are bound to strings but not declared at the beginning of the file:</p></p>
+                                <ul>
+                                {% for tag in error.errors %}
+                                    <li>{{ tag }}</li>
+                                {% endfor %}
+                                </ul>
                             {% elseif error.type == 'length' %}
                                 <p>Some strings are longer than allowed:</p>
                                 <ul>
