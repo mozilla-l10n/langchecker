@@ -75,7 +75,7 @@ $newsletter_locales = [
 $locamotion_locales = [
     'af', 'an', 'br', 'cy', 'en-ZA', 'ff', 'ga-IE', 'hi-IN', 'hto',
     'lt', 'mai', 'ne-NP', 'nv', 'or', 'pai', 'pbb', 'qvi', 'son', 'sw', 'ta',
-    'trs', 'ur', 'zu',
+    'ur', 'zu',
 ];
 
 /*
