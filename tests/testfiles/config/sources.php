@@ -82,6 +82,7 @@ $sites = [
         '/public/repo1/',
         3,
         'lang',
+        'pontoontest1',
     ],
 
     1 => [
@@ -94,6 +95,7 @@ $sites = [
         '/public/repo2/',
         1,
         'lang',
+        'pontoontest2',
     ],
 
     2 => [
@@ -106,6 +108,7 @@ $sites = [
         '/public/repo3/',
         1,
         'lang',
+        'pontoontest3',
     ],
 
     3 => [
@@ -118,6 +121,7 @@ $sites = [
         '/public/repo3/',
         1,
         'raw',
+        'pontoontest4',
     ],
 
     6 => [
@@ -130,5 +134,6 @@ $sites = [
         '/public/repo6/',
         1,
         'lang',
+        'pontoontest5',
     ],
 ];

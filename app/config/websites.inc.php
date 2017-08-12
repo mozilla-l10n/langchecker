@@ -72,6 +72,7 @@ $repositories = [
        6 url to public repo,
        7 default priority,
        8 type of files (lang, raw)
+       9 project name on Pontoon
     ]
 */
 
@@ -87,6 +88,7 @@ $sites =
         $repositories['www.mozilla.org']['public_path'],
         3,
         'lang',
+        'mozillaorg',
     ],
 
     4 => [
@@ -99,6 +101,7 @@ $sites =
         $repositories['about:healthreport']['public_path'],
         2,
         'lang',
+        'firefox-health-reporter',
     ],
 
     6 => [
@@ -111,6 +114,7 @@ $sites =
         $repositories['engagement']['public_path'],
         1,
         'lang',
+        'engagement',
     ],
 
     12 => [
@@ -123,5 +127,6 @@ $sites =
         $repositories['appstores']['public_path'],
         2,
         'lang',
+        'appstores',
     ],
 ];

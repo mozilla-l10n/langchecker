@@ -260,6 +260,25 @@ class Project
     }
 
     /**
+     * Return edit link to a file in Pontoon
+     *
+     * @param array  $website         Website data
+     * @param string $locale          Requested locale
+     * @param string $filename        File name
+     * @param string $pontoon_locales List of Poontoon locales
+     *
+     * @return string URL to file in Pontoon
+     */
+    public static function getPontoonEditLink($website, $locale, $filename, $pontoon_locales)
+    {
+        if (! in_array($locale, $pontoon_locales)) {
+            return '';
+        }
+
+        return "https://pontoon.mozilla.org/{$locale}/{$website[9]}/{$filename}";
+    }
+
+    /**
      * Return website path repo
      *
      * @param array  $website Website data

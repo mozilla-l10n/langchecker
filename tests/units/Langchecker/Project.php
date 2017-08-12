@@ -295,6 +295,27 @@ class Project extends atoum\test
                 ->isEqualTo($d);
     }
 
+    public function getPontoonEditLinkDP()
+    {
+        require_once TEST_FILES . 'config/sources.php';
+
+        return [
+            [$sites[0], 'fr', 'test.lang', ['fr'], 'https://pontoon.mozilla.org/fr/pontoontest1/test.lang'],
+            [$sites[1], 'de', 'file1.lang', ['fr'], ''],
+        ];
+    }
+
+    /**
+     * @dataProvider getPontoonEditLinkDP
+     */
+    public function testGetPontoonEditLinkDP($a, $b, $c, $d, $e)
+    {
+        $obj = new _Project();
+        $this
+            ->string($obj->getPontoonEditLink($a, $b, $c, $d))
+                ->isEqualTo($e);
+    }
+
     public function getPublicRepoPathDP()
     {
         require_once TEST_FILES . 'config/sources.php';
