@@ -1,5 +1,7 @@
 <?php
 
+use Cache\Cache;
+
 /*
     $mozilla is the list of all locales supported on Langchecker.
     Don't forget to update other relevant arrays in this file when adding
@@ -95,3 +97,12 @@ $surveygizmo = [
     'ta', 'te', 'th', 'tl', 'tn', 'tr', 'uk', 'ur', 'uz',
     'vi', 'wo', 'xh', 'yo', 'zh-CN', 'zh-TW', 'zu',
 ];
+
+// List of locales working on Pontoon
+$cache_id = 'pontoon_locales';
+if (! $pontoon_locales = Cache::getKey($cache_id, 60 * 60 * 24)) {
+    $pontoon_locales = $json_object
+        ->setURI(QUERY_L10N . '?tool=pontoon')
+        ->fetchContent();
+    Cache::setKey($cache_id, array_values($pontoon_locales));
+}

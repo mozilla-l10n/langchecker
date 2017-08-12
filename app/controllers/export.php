@@ -81,6 +81,12 @@ foreach ($sites as $website) {
             if ($deadline != '') {
                 $export_data[$website_name][$displayed_filename]['deadline'] = $deadline;
             }
+
+            // Add a link to Pontoon if locale is enabled
+            $pontoon_link = Project::getPontoonEditLink($website, $current_locale, $filename, $pontoon_locales);
+            if ($pontoon_link != '') {
+                $export_data[$website_name][$displayed_filename]['pontoon_link'] = $pontoon_link;
+            }
         }
     }
 }
