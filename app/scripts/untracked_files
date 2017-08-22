@@ -12,9 +12,7 @@ $command_help = "untracked_files - List local lang files not tracked by langchec
                 "Example: untracked_files 1 fr\n" .
                 "(list all untracked files on website with ID 1 for French)\n" .
                 "Example: untracked_files 1 fr true\n" .
-                "(list all untracked files on website with ID 1 for French, displaying absolute paths)\n" .
-                "Example: untracked_files 1 locamotion\n" .
-                "(list all untracked files on website with ID 1 for Locamotion locales)\n";
+                "(list all untracked files on website with ID 1 for French, displaying absolute paths)\n";
 
 require_once __DIR__ . '/../inc/cli_init.php';
 
@@ -53,9 +51,6 @@ if ($cli_locale == 'all') {
     // Include also the reference locale
     $locale_list[] = Project::getReferenceLocale($current_website);
     // Remove ignored locales
-    $locale_list = array_diff($locale_list, $ignored_locales);
-} elseif ($cli_locale == 'locamotion') {
-    $locale_list = $locamotion_locales;
     $locale_list = array_diff($locale_list, $ignored_locales);
 } else {
     if ($cli_locale != Project::getReferenceLocale($current_website)) {

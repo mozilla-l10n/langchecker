@@ -42,14 +42,12 @@
             <th>State</th>
             <th>Count</th>
             <th>Locales</th>
-            <th>On locamotion</th>
         </tr>
         {% for row in summary_table_rows %}
             <tr>
                 <th title="{{ row.tooltip }}" class="help">{{ row.header }}</th>
                 <td>{{ row.count }}</td>
                 <td>{{ row.locales }}</td>
-                <td>{{ row.locamotion }}</td>
             </tr>
         {% endfor %}
     </table>
