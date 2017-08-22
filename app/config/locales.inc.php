@@ -74,11 +74,7 @@ $newsletter_locales = [
 ];
 
 // List of locales working on Pootle
-$locamotion_locales = [
-    'af', 'an', 'br', 'cy', 'en-ZA', 'ff', 'ga-IE', 'hi-IN', 'hto',
-    'lt', 'mai', 'ne-NP', 'nv', 'or', 'pai', 'pbb', 'qvi', 'son', 'sw', 'ta',
-    'ur', 'zu',
-];
+$locamotion_locales = [];
 
 /*
    List of Mozilla's locales supported by SurveyGizmo.

@@ -722,13 +722,6 @@ $mozillaorg_lang = [
 ];
 
 // Default priority is 2
-$firefoxhealthreport_lang = [
-    'fhr.lang' => [
-        'supported_locales' => array_diff($firefox_desktop_android, $mozorg_locales),
-    ],
-];
-
-// Default priority is 2
 $engagement_lang = [
     'ads/ios_android_apr2016.lang' => [
         'supported_locales' => ['de', 'es-ES', 'fr', 'pl'],
