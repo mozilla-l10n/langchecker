@@ -34,6 +34,10 @@ if ($cli_locale != 'all' && ! in_array($cli_locale, $locamotion_locales)) {
     Utils::logger("{$cli_locale} is not a Locamotion locale.", 'quit');
 }
 
+if (empty($locamotion_locales)) {
+    Utils::logger("The list of Locamotion locales is empty.", 'quit');
+}
+
 // We only support import for mozilla.org
 $current_website = $sites[0];
 $updated_files = [];
