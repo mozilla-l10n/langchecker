@@ -40,12 +40,6 @@ $repositories = [
         'repository'  => 'https://github.com/mozilla-l10n/www.mozilla.org',
         'vcs'         => 'git',
     ],
-    'about:healthreport' => [
-        'local_path'  => $repo_local_path('about:healthreport', 'fhr-l10n'),
-        'public_path' => 'https://github.com/mozilla-l10n/fhr-l10n/tree/master/',
-        'repository'  => 'https://github.com/mozilla-l10n/fhr-l10n',
-        'vcs'         => 'git',
-    ],
     'engagement' => [
         'local_path'  => $repo_local_path('engagement', 'engagement-l10n'),
         'public_path' => 'https://github.com/mozilla-l10n/engagement-l10n/tree/master/',
@@ -90,20 +84,6 @@ $sites =
         'lang',
         'mozillaorg',
     ],
-
-    4 => [
-        'about:healthreport',
-        $repositories['about:healthreport']['local_path'],
-        '',
-        $firefox_desktop_android,
-        $firefoxhealthreport_lang,
-        'en-US', // source locale
-        $repositories['about:healthreport']['public_path'],
-        2,
-        'lang',
-        'firefox-health-reporter',
-    ],
-
     6 => [
         'engagement',
         $repositories['engagement']['local_path'],
@@ -116,7 +96,6 @@ $sites =
         'lang',
         'engagement',
     ],
-
     12 => [
         'appstores',
         $repositories['appstores']['local_path'],
