@@ -117,12 +117,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
-    'firefox/android/index.lang' => [
-        'flags'             => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $android_landing_page,
-    ],
     'firefox/australis/firefox_tour.lang' => [
         'priority'          => 5,
         'supported_locales' => $firefox_locales,
@@ -159,12 +153,6 @@ $mozillaorg_lang = [
     'firefox/desktop/trust.lang' => [
         'supported_locales' => $firefox_locales,
     ],
-    'firefox/developer.lang' => [
-        'flags'             => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $firefox_locales,
-    ],
     'firefox/dnt.lang' => [
         'flags' => [
             'opt-in' => ['all'],
@@ -180,9 +168,6 @@ $mozillaorg_lang = [
     'firefox/family/index.lang' => [
         'deadline'          => '2017-04-25',
         'priority'          => 1,
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/features.lang' => [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/features/bookmarks.lang' => [
@@ -250,12 +235,6 @@ $mozillaorg_lang = [
     'firefox/installer-help.lang' => [
         'priority'          => 2,
         'supported_locales' => $firefox_locales,
-    ],
-    'firefox/ios.lang' => [
-        'flags'             => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $ios_landing_page,
     ],
     'firefox/new/batm.lang' => [
         'priority'          => 1,
@@ -595,12 +574,6 @@ $mozillaorg_lang = [
         'deadline'          => '2017-03-27',
         'priority'          => 2,
         'supported_locales' => $newsletter_locales,
-    ],
-    'mozorg/plugincheck-redesign.lang' => [
-        'flags'             => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $mozillaorg,
     ],
     'mozorg/plugincheck-update.lang' => [
         'deadline'          => '2017-08-15',
