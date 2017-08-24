@@ -181,7 +181,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/features/independent.lang' => [
-        'deadline'          => '2017-08-15',
+        'deadline'          => '2017-09-10',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -247,7 +247,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/new/onboarding.lang' => [
-        'deadline'          => '2017-08-15',
+        'deadline'          => '2017-09-10',
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
@@ -290,7 +290,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/products/developer.lang' => [
-        'deadline'          => '2017-08-15',
+        'deadline'          => '2017-09-10',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/products/focus.lang' => [
@@ -414,7 +414,7 @@ $mozillaorg_lang = [
         ],
     ],
     'main.lang' => [
-        'deadline'          => '2017-08-15',
+        'deadline'          => '2017-09-10',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -489,7 +489,7 @@ $mozillaorg_lang = [
         'priority'          => 3,
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
+            'es-MX', 'fa', 'fr', 'hi-IN', 'id', 'it', 'kab', 'ko', 'pl', 'pt-BR',
             'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
@@ -499,7 +499,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
+            'es-MX', 'fr', 'id', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/internet-health/digital-inclusion.lang' => [
@@ -508,7 +508,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
+            'es-MX', 'fr', 'id', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/internet-health/index.lang' => [
@@ -517,7 +517,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
+            'es-MX', 'fa', 'fr', 'hi-IN', 'id', 'it', 'kab', 'ko', 'pl', 'pt-BR',
             'sk', 'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
@@ -527,7 +527,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
+            'es-MX', 'fr', 'id', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/internet-health/privacy-security.lang' => [
@@ -536,14 +536,14 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fa', 'fr', 'it', 'kab', 'ko', 'pt-BR', 'sk', 'sl', 'sq',
+            'es-MX', 'fa', 'fr', 'id', 'it', 'kab', 'ko', 'pt-BR', 'sk', 'sl', 'sq',
             'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/shared.lang' => [
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fa', 'fr', 'hi-IN', 'it', 'kab', 'ko', 'pl', 'pt-BR',
+            'es-MX', 'fa', 'fr', 'hi-IN', 'id', 'it', 'kab', 'ko', 'pl', 'pt-BR',
             'sk', 'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
@@ -553,7 +553,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX',
-            'fr', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
+            'fr', 'id', 'it', 'kab', 'pt-BR', 'sk', 'sl', 'sv-SE',
         ],
     ],
     'mozorg/mission.lang' => [
