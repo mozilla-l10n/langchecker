@@ -947,6 +947,12 @@ $engagement_lang = [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
         ],
     ],
+    'social/2017/copyright_sept.lang' => [
+        'deadline'          => '2017-09-03',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'it', 'pl',
+        ],
+    ],
     'social/2017/iot_survey.lang' => [
         'deadline'          => '2017-08-09',
         'priority'          => 5,
