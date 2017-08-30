@@ -730,6 +730,12 @@ $engagement_lang = [
         'deadline'          => '2017-03-09',
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2017/copyright_sept.lang' => [
+        'deadline'          => '2017-09-05',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'it', 'pl',
+        ],
+    ],
     'emails/2017/copyright_summer.lang' => [
         'deadline'          => '2017-07-14',
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
