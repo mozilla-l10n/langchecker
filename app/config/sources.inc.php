@@ -301,6 +301,13 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/retention/thank-you.lang' => [
+        'priority'          => 1,
+        'deadline'          => '2017-09-15',
+        'supported_locales' => [
+            'de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
+        ],
+    ],
     'firefox/sendto.lang' => [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
