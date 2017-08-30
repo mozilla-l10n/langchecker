@@ -400,7 +400,7 @@ $mozillaorg_lang = [
     ],
     'mozorg/about/governance/policies/participation.lang' => [
         'supported_locales' => [
-            'de', 'es-ES', 'fr', 'hi-IN', 'pt-BR', 'zh-TW',
+            'de', 'es-ES', 'fr', 'hi-IN', 'ja', 'pt-BR', 'zh-TW',
         ],
     ],
     'mozorg/about/history-details.lang' => [
@@ -896,6 +896,12 @@ $engagement_lang = [
     'snippets/2017/sep2017_b.lang' => [
         'deadline'          => '2017-09-04',
         'supported_locales' => ['id'],
+    ],
+    'snippets/2017/thanks_sep2017.lang' => [
+        'deadline'          => '2017-09-15',
+        'supported_locales' => [
+            'de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
+        ],
     ],
     'snippets/2017/testpilot_aug2017.lang' => [
         'deadline'          => '2017-07-31',
