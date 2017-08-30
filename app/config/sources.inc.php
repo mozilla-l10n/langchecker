@@ -125,35 +125,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
     ],
-    'firefox/desktop/customize.lang' => [
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/desktop/fast.lang' => [
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/desktop/index.lang' => [
-        'deadline'          => '2017-04-25',
-        'priority'          => 1,
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/desktop/tips.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'af', 'am', 'an', 'azz', 'bn-BD', 'br', 'bs', 'ca', 'cak', 'cs',
-            'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES',
-            'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he',
-            'hi-IN', 'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'kk', 'km', 'ko',
-            'lt', 'lv', 'ms', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'nv', 'pai',
-            'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
-            'sv-SE', 'sw', 'ta', 'uk', 'ur', 'uz', 'xh', 'zam', 'zh-CN',
-            'zh-TW',
-        ],
-    ],
-    'firefox/desktop/trust.lang' => [
-        'supported_locales' => $firefox_locales,
-    ],
     'firefox/dnt.lang' => [
         'flags' => [
             'opt-in' => ['all'],
@@ -271,11 +242,6 @@ $mozillaorg_lang = [
             'es-ES', 'fr', 'ga-IE', 'hi-IN', 'hsb', 'ja', 'kab', 'kk', 'nn-NO',
             'pl', 'pt-BR', 'sk', 'sl', 'zh-CN', 'zh-TW',
         ],
-    ],
-    'firefox/private-browsing.lang' => [
-        'deadline'          => '2017-04-25',
-        'priority'          => 1,
-        'supported_locales' => $firefox_locales,
     ],
     'firefox/products/android.lang' => [
         'deadline'          => '2017-08-15',
