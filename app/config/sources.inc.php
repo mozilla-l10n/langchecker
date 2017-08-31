@@ -125,35 +125,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
     ],
-    'firefox/desktop/customize.lang' => [
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/desktop/fast.lang' => [
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/desktop/index.lang' => [
-        'deadline'          => '2017-04-25',
-        'priority'          => 1,
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/desktop/tips.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'af', 'am', 'an', 'azz', 'bn-BD', 'br', 'bs', 'ca', 'cak', 'cs',
-            'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES',
-            'es-MX', 'eu', 'fa', 'ff', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he',
-            'hi-IN', 'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'kk', 'km', 'ko',
-            'lt', 'lv', 'ms', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'nv', 'pai',
-            'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq', 'sr',
-            'sv-SE', 'sw', 'ta', 'uk', 'ur', 'uz', 'xh', 'zam', 'zh-CN',
-            'zh-TW',
-        ],
-    ],
-    'firefox/desktop/trust.lang' => [
-        'supported_locales' => $firefox_locales,
-    ],
     'firefox/dnt.lang' => [
         'flags' => [
             'opt-in' => ['all'],
@@ -272,11 +243,6 @@ $mozillaorg_lang = [
             'pl', 'pt-BR', 'sk', 'sl', 'zh-CN', 'zh-TW',
         ],
     ],
-    'firefox/private-browsing.lang' => [
-        'deadline'          => '2017-04-25',
-        'priority'          => 1,
-        'supported_locales' => $firefox_locales,
-    ],
     'firefox/products/android.lang' => [
         'deadline'          => '2017-08-15',
         'priority'          => 1,
@@ -300,6 +266,13 @@ $mozillaorg_lang = [
         'deadline'          => '2017-08-15',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
+    ],
+    'firefox/retention/thank-you.lang' => [
+        'priority'          => 1,
+        'deadline'          => '2017-09-15',
+        'supported_locales' => [
+            'de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
+        ],
     ],
     'firefox/sendto.lang' => [
         'priority'          => 1,
@@ -427,7 +400,7 @@ $mozillaorg_lang = [
     ],
     'mozorg/about/governance/policies/participation.lang' => [
         'supported_locales' => [
-            'de', 'es-ES', 'fr', 'hi-IN', 'pt-BR', 'zh-TW',
+            'de', 'es-ES', 'fr', 'hi-IN', 'ja', 'pt-BR', 'zh-TW',
         ],
     ],
     'mozorg/about/history-details.lang' => [
@@ -929,6 +902,12 @@ $engagement_lang = [
     'snippets/2017/sep2017_b.lang' => [
         'deadline'          => '2017-09-04',
         'supported_locales' => ['id'],
+    ],
+    'snippets/2017/thanks_sep2017.lang' => [
+        'deadline'          => '2017-09-15',
+        'supported_locales' => [
+            'de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
+        ],
     ],
     'snippets/2017/testpilot_aug2017.lang' => [
         'deadline'          => '2017-07-31',
