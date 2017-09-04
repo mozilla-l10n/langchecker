@@ -219,6 +219,10 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
+    'firefox/new/sem.lang' => [
+        'priority'          => 1,
+        'supported_locales' => ['de'],
+    ],
     'firefox/nightly_firstrun.lang' => [
         'flags'             => [
             'opt-in' => $firefox_locales,
