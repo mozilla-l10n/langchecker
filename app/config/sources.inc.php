@@ -302,7 +302,11 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_50.lang' => [
-        'deadline'          => '2017-05-08',
+        'priority'          => 1,
+        'supported_locales' => $firefox_locales,
+    ],
+    'firefox/whatsnew_56.lang' => [
+        'deadline'          => '2017-09-26',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
