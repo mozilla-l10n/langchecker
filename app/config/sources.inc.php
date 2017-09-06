@@ -1020,6 +1020,7 @@ $appstores_lang = [
         ],
     ],
     'focus_ios/description_release.lang' => [
+        'deadline'          => '2017-09-13',
         'supported_locales' => $focus_ios_store,
     ],
     'focus_ios/screenshots_v2_1.lang' => [
@@ -1068,6 +1069,7 @@ $appstores_lang = [
         'supported_locales' => $fx_android_store,
     ],
     'fx_ios/description_release.lang' => [
+        'deadline'          => '2017-09-13',
         'supported_locales' => $fx_ios_store,
     ],
     'fx_ios/screenshots_v3.lang' => [
