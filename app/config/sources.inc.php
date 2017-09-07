@@ -178,6 +178,11 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/features/sync.lang' => [
+        'deadline'          => '2017-09-26',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/geolocation.lang' => [
         'flags' => [
             'opt-in' => ['all'],
@@ -288,8 +293,9 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/sync.lang' => [
-        'deadline'          => '2017-08-15',
-        'priority'          => 2,
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $mozillaorg,
     ],
     'firefox/tracking-protection-tour.lang' => [
