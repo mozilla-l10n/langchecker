@@ -174,7 +174,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/features/send-tabs.lang' => [
-        'deadline'          => '2017-08-15',
+        'deadline'          => '2017-09-26',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
