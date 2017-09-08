@@ -98,7 +98,7 @@ $surveygizmo = [
 $cache_id = 'pontoon_locales';
 if (! $pontoon_locales = Cache::getKey($cache_id, 60 * 60 * 24)) {
     $pontoon_locales = $json_object
-        ->setURI(QUERY_L10N . '?tool=pontoon')
+        ->setURI(QUERY_L10N . '?tool=pontoon-mozorg')
         ->fetchContent();
     Cache::setKey($cache_id, array_values($pontoon_locales));
 }
