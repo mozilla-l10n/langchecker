@@ -792,6 +792,11 @@ $engagement_lang = [
         'deadline'          => '2017-06-15',
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'other/2017/mozfest_design_assets.lang' => [
+        'deadline'          => '2017-09-21',
+        'priority'          => 3,
+        'supported_locales' => ['de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'zh-TW'],
+    ],
     'snippets/2016/jan2016.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
     ],
