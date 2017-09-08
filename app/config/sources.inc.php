@@ -174,7 +174,12 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/features/send-tabs.lang' => [
-        'deadline'          => '2017-08-15',
+        'deadline'          => '2017-09-26',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/features/sync.lang' => [
+        'deadline'          => '2017-09-26',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -218,6 +223,10 @@ $mozillaorg_lang = [
         'deadline'          => '2017-09-10',
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
+    ],
+    'firefox/new/sem.lang' => [
+        'priority'          => 1,
+        'supported_locales' => ['de'],
     ],
     'firefox/nightly_firstrun.lang' => [
         'flags'             => [
@@ -284,8 +293,9 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/sync.lang' => [
-        'deadline'          => '2017-08-15',
-        'priority'          => 2,
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $mozillaorg,
     ],
     'firefox/tracking-protection-tour.lang' => [
@@ -298,7 +308,11 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_50.lang' => [
-        'deadline'          => '2017-05-08',
+        'priority'          => 1,
+        'supported_locales' => $firefox_locales,
+    ],
+    'firefox/whatsnew_56.lang' => [
+        'deadline'          => '2017-09-26',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
@@ -386,7 +400,7 @@ $mozillaorg_lang = [
         ],
     ],
     'main.lang' => [
-        'deadline'          => '2017-09-10',
+        'deadline'          => '2017-09-26',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -459,7 +473,9 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/internet-health.lang' => [
-        'priority'          => 3,
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
             'es-MX', 'fa', 'fr', 'hi-IN', 'id', 'it', 'kab', 'ko', 'pl',
