@@ -3,7 +3,7 @@ Code to replicate the langchecker feature on [webdashboard]. See the [Wiki] for 
 
 ## Installation
 System requirements:
-* PHP 5.5 or later.
+* PHP 5.6 or later.
 * HTTP server (Apache, nginx, internal PHP server).
 
 Setup:
