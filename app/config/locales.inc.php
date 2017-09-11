@@ -73,9 +73,6 @@ $newsletter_locales = [
     'pl', 'pt-BR', 'ru', 'zh-TW',
 ];
 
-// List of locales working on Pootle
-$locamotion_locales = [];
-
 /*
    List of Mozilla's locales supported by SurveyGizmo.
    Ref. http://help.surveygizmo.com/help/article/link/create-a-translated-survey#available-languages

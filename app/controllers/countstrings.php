@@ -112,13 +112,11 @@ foreach (array_reverse($results) as $category => $values) {
     $tip = $tooltips[$category];
     $td1 = count($values);
     $td2 = implode(', ', $values);
-    $on_locamotion = implode(', ', array_intersect($values, $locamotion_locales));
     $summary_table_rows[] = [
         'header'     => $th,
         'tooltip'    => $tip,
         'count'      => $td1,
         'locales'    => $td2,
-        'locamotion' => $on_locamotion,
     ];
 }
 

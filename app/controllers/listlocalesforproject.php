@@ -26,9 +26,6 @@ if ($website != '') {
             */
             $output_array = $mozilla;
         break;
-        case 'locamotion':
-            $output_array = $locamotion_locales;
-        break;
         case 'marketplacebadge':
             $output_array = $marketplacebadge_locales;
         break;

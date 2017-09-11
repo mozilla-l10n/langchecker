@@ -138,12 +138,6 @@ foreach ($no_active_tag as $filename) {
     }
 }
 
-// Check Locamotion locales
-$extra_locamotion_locales = array_diff($locamotion_locales, $mozillaorg);
-if (! empty($extra_locamotion_locales)) {
-    $errors[] = '$locamotion_locales includes extra locales: ' . implode(', ', $extra_locamotion_locales);
-}
-
 if (! empty($errors)) {
     echo Verif::colorizeOutput('Detected errors during source integrity checks: ' . count($errors) . "\n", 'red');
     echo implode("\n", $errors);
