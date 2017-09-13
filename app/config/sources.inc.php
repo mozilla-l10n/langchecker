@@ -1099,18 +1099,20 @@ $appstores_lang = [
             'zh-CN', 'zh-TW',
         ],
     ],
-    'fx_ios/whatsnew/ios_7_0.lang' => [
+    'fx_ios/whatsnew/ios_8_0.lang' => [
         'flags' => [
             'obsolete' => ['all'],
         ],
-        'supported_locales' => $fx_ios_store,
-    ],
-    'fx_ios/whatsnew/ios_8_0.lang' => [
-        'deadline'          => '2017-07-26',
         'supported_locales' => array_diff($fx_ios_store, ['de']),
     ],
     'fx_ios/whatsnew/ios_8_0_de.lang' => [
-        'deadline'          => '2017-07-26',
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => ['de'],
+    ],
+    'fx_ios/whatsnew/ios_9_0.lang' => [
+        'deadline'          => '2017-09-21',
+        'supported_locales' => $fx_ios_store,
     ],
 ];
