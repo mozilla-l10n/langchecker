@@ -733,6 +733,10 @@ $engagement_lang = [
         'deadline'          => '2017-01-27',
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2017/fx_mobile_update.lang' => [
+        'deadline'          => '2017-09-22',
+        'supported_locales' => ['pl'],
+    ],
     'emails/2017/focus_android.lang' => [
         'deadline'          => '2017-06-19',
         'supported_locales' => ['pl'],
