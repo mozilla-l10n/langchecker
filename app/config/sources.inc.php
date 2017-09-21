@@ -958,6 +958,12 @@ $engagement_lang = [
             'de', 'es-ES', 'fr', 'it',
         ],
     ],
+    'snippets/2017/list_sign_up_oct.lang' => [
+        'deadline'          => '2017-10-05',
+        'supported_locales' => [
+            'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'ru'
+        ],
+    ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
