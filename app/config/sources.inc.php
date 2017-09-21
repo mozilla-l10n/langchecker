@@ -961,7 +961,7 @@ $engagement_lang = [
     'snippets/2017/list_sign_up_oct.lang' => [
         'deadline'          => '2017-10-05',
         'supported_locales' => [
-            'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'ru'
+            'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'ru',
         ],
     ],
     'social/2016/fundraising.lang' => [
