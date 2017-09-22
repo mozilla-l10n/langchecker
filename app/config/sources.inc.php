@@ -1095,6 +1095,9 @@ $appstores_lang = [
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_54.lang' => [
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_55_beta.lang' => [
@@ -1104,10 +1107,22 @@ $appstores_lang = [
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_55.lang' => [
-        'deadline'          => '2017-08-07',
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_56_beta.lang' => [
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
+        'supported_locales' => $fx_android_store,
+    ],
+    'fx_android/whatsnew/android_56.lang' => [
+        'deadline'          => '2017-09-28',
+        'supported_locales' => $fx_android_store,
+    ],
+    'fx_android/whatsnew/android_57_beta.lang' => [
         'supported_locales' => $fx_android_store,
     ],
     'fx_ios/description_release.lang' => [
