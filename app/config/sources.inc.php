@@ -247,7 +247,7 @@ $mozillaorg_lang = [
             'opt-in' => $firefox_locales,
         ],
         'supported_locales' => [
-            'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
+            'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'eo', 'es-CL',
             'es-ES', 'fr', 'ga-IE', 'hi-IN', 'hsb', 'ja', 'kab', 'kk', 'nn-NO',
             'pl', 'pt-BR', 'sk', 'sl', 'zh-CN', 'zh-TW',
         ],
@@ -263,7 +263,13 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/products/developer.lang' => [
-        'deadline'          => '2017-09-10',
+        'flags'             => [
+            'obsolete' => ['all'],
+        ],
+        'supported_locales' => $firefox_locales,
+    ],
+    'firefox/products/developer-quantum.lang' => [
+        'deadline'          => '2017-10-06',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/products/focus.lang' => [
@@ -275,6 +281,11 @@ $mozillaorg_lang = [
         'deadline'          => '2017-08-15',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
+    ],
+    'firefox/quantum.lang' => [
+        'deadline'          => '2017-09-26',
+        'priority'          => 1,
+        'supported_locales' => ['de'],
     ],
     'firefox/retention/thank-you.lang' => [
         'priority'          => 1,
