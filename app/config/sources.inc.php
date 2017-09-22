@@ -263,7 +263,9 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/products/developer.lang' => [
-        'deadline'          => '2017-09-10',
+        'flags'             => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $firefox_locales,
     ],
     'firefox/products/developer-quantum.lang' => [
