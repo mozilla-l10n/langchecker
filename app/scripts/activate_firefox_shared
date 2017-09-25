@@ -22,7 +22,7 @@ $files_to_check = [
     'firefox/hub/home.lang',
     'firefox/products/android.lang',
     'firefox/products/desktop.lang',
-    'firefox/products/developer.lang',
+    'firefox/products/developer-quantum.lang',
     'firefox/products/focus.lang',
     'firefox/products/ios.lang',
 ];
