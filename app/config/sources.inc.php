@@ -249,7 +249,7 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'eo', 'es-CL',
             'es-ES', 'fr', 'ga-IE', 'hi-IN', 'hsb', 'ja', 'kab', 'kk', 'nn-NO',
-            'pl', 'pt-BR', 'sk', 'sl', 'zh-CN', 'zh-TW',
+            'pl', 'pt-BR', 'ru', 'sk', 'sl', 'zh-CN', 'zh-TW',
         ],
     ],
     'firefox/products/android.lang' => [
