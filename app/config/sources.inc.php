@@ -759,6 +759,14 @@ $engagement_lang = [
         'deadline'          => '2017-08-07',
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'emails/2017/iot_results_a.lang' => [
+        'deadline'          => '2017-10-30',
+        'supported_locales' => ['es'],
+    ],
+    'emails/2017/iot_results_b.lang' => [
+        'deadline'          => '2017-10-30',
+        'supported_locales' => ['de', 'fr', 'pt-BR'],
+    ],
     'emails/2017/iot_survey.lang' => [
         'deadline'          => '2017-08-06',
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
@@ -957,8 +965,20 @@ $engagement_lang = [
             'cs', 'es', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
         ],
     ],
+    'snippets/2017/fundraising.lang' => [
+        'deadline'          => '2017-10-10',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru',
+        ],
+    ],
     'snippets/2017/iot_survey.lang' => [
         'deadline'          => '2017-08-06',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'it', 'pt-BR',
+        ],
+    ],
+    'snippets/2017/iot_results.lang' => [
+        'deadline'          => '2017-10-30',
         'supported_locales' => [
             'de', 'es', 'fr', 'it', 'pt-BR',
         ],
