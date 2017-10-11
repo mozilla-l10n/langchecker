@@ -754,7 +754,7 @@ $engagement_lang = [
     ],
     'emails/2017/firefoxandyou_oct.lang' => [
         'deadline'          => '2017-10-23',
-        'supported_locales' => ['fr', 'pl'],
+        'supported_locales' => ['fr', 'pl', 'pt-BR', 'ru'],
     ],
     'emails/2017/fundraising_thank_you.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it'],
