@@ -183,6 +183,11 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/firefox-quantum.lang' => [
+        'deadline'          => '2017-11-13',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/geolocation.lang' => [
         'flags' => [
             'opt-in' => ['all'],
@@ -221,6 +226,11 @@ $mozillaorg_lang = [
     ],
     'firefox/new/onboarding.lang' => [
         'deadline'          => '2017-09-10',
+        'priority'          => 1,
+        'supported_locales' => $firefox_desktop_android,
+    ],
+    'firefox/new/quantum.lang' => [
+        'deadline'          => '2017-11-13',
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
@@ -269,7 +279,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/products/developer-quantum.lang' => [
-        'deadline'          => '2017-10-06',
+        'deadline'          => '2017-11-13',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/products/focus.lang' => [
@@ -411,7 +421,7 @@ $mozillaorg_lang = [
         ],
     ],
     'main.lang' => [
-        'deadline'          => '2017-09-26',
+        'deadline'          => '2017-11-13',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
