@@ -225,8 +225,9 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/new/onboarding.lang' => [
-        'deadline'          => '2017-09-10',
-        'priority'          => 1,
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/new/quantum.lang' => [
@@ -293,8 +294,9 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/quantum.lang' => [
-        'deadline'          => '2017-09-26',
-        'priority'          => 1,
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => ['de'],
     ],
     'firefox/retention/thank-you.lang' => [
