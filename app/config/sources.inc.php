@@ -183,11 +183,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
-    'firefox/firefox-quantum.lang' => [
-        'deadline'          => '2017-11-13',
-        'priority'          => 1,
-        'supported_locales' => $mozillaorg,
-    ],
     'firefox/geolocation.lang' => [
         'flags' => [
             'opt-in' => ['all'],
