@@ -20,7 +20,7 @@ $getinvolved_locales = [
     'af', 'am', 'ar', 'az', 'azz', 'bg', 'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb',
     'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'fy-NL',
     'he', 'hi-IN', 'hr', 'hsb', 'ia', 'id', 'it', 'kab', 'ko', 'lt', 'ms',
-    'nl', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq',
+    'nl', 'nn-NO', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'son', 'sq',
     'sr', 'sv-SE', 'sw', 'ta', 'tr', 'uk', 'xh', 'zam', 'zh-CN', 'zh-TW',
 ];
 
@@ -443,7 +443,7 @@ $mozillaorg_lang = [
         'supported_locales' => [
             'af', 'am', 'azz', 'bn-BD', 'bs', 'ca', 'cak', 'cs', 'cy', 'de',
             'dsb', 'en-GB', 'es-CL', 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hi-IN',
-            'hsb', 'ia', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'lv', 'nl', 'nv',
+            'hsb', 'ia', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'lv', 'nl', 'nn-NO', 'nv',
             'pa-IN', 'pai', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'son', 'sq',
             'sv-SE', 'sw', 'uk', 'uz', 'zam', 'zh-CN', 'zh-TW',
         ],
@@ -457,7 +457,7 @@ $mozillaorg_lang = [
             'af', 'am', 'ar', 'azz', 'bg', 'bn-BD', 'bs', 'ca', 'cak', 'cs',
             'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES',
             'es-MX', 'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hi-IN', 'hr', 'hsb',
-            'ia', 'id', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl', 'nv',
+            'ia', 'id', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl', 'nn-NO', 'nv',
             'pa-IN', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl',
             'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'tr', 'uk', 'uz', 'zam',
             'zh-CN', 'zh-TW',
