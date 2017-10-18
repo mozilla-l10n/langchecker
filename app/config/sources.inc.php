@@ -822,6 +822,10 @@ $engagement_lang = [
             'pt-BR', 'ru', 'zh-CN',
         ],
     ],
+    'other/2017/iot_results_assets.lang' => [
+        'deadline'          => '2017-10-29',
+        'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
+    ],
     'other/2017/mozfest_form.lang' => [
         'deadline'          => '2017-06-15',
         'supported_locales' => ['de', 'es', 'fr'],
