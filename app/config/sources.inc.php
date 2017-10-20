@@ -154,7 +154,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/features/index.lang' => [
-        'deadline'          => '2017-08-15',
+        'deadline'          => '2017-11-13',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -201,13 +201,24 @@ $mozillaorg_lang = [
         ],
     ],
     'firefox/hub/home.lang' => [
-        'deadline'          => '2017-08-15',
+        'flags'             => [
+            'obsolete' => ['all'],
+        ],
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/hub/home-quantum.lang' => [
+        'deadline'          => '2017-11-13',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
     'firefox/installer-help.lang' => [
         'priority'          => 2,
         'supported_locales' => $firefox_locales,
+    ],
+    'firefox/mobile.lang' => [
+        'deadline'          => '2017-11-13',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
     ],
     'firefox/new/batm.lang' => [
         'priority'          => 1,

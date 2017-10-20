@@ -19,7 +19,7 @@ $files_to_check = [
     'firefox/features/private-browsing.lang',
     'firefox/features/send-tabs.lang',
     'firefox/features/sync.lang',
-    'firefox/hub/home.lang',
+    'firefox/hub/home-quantum.lang',
     'firefox/products/android.lang',
     'firefox/products/desktop.lang',
     'firefox/products/developer-quantum.lang',
