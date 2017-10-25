@@ -982,6 +982,12 @@ $engagement_lang = [
             'cs', 'de', 'es', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
         ],
     ],
+    'snippets/2017/nov2017_mobile.lang' => [
+        'deadline'          => '2017-11-10',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'id', 'it', 'pl', 'pt-BR', 'ru', 'zh-TW',
+        ],
+    ],
     'snippets/2017/thanks_sep2017.lang' => [
         'deadline'          => '2017-09-15',
         'supported_locales' => [
