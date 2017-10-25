@@ -1209,7 +1209,17 @@ $appstores_lang = [
         'supported_locales' => ['de'],
     ],
     'fx_ios/whatsnew/ios_9_0.lang' => [
-        'deadline'          => '2017-09-21',
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $fx_ios_store,
+    ],
+    'fx_ios/whatsnew/ios_10.lang' => [
+        'deadline'          => '2017-11-13',
+        'supported_locales' => array_diff($fx_ios_store, ['de']),
+    ],
+    'fx_ios/whatsnew/ios_10b.lang' => [
+        'deadline'          => '2017-11-13',
+        'supported_locales' => ['de'],
     ],
 ];
