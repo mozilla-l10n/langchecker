@@ -348,8 +348,7 @@ $mozillaorg_lang = [
     'firefox/whatsnew_57.lang' => [
         'deadline'          => '2017-11-13',
         'priority'          => 1,
-        'supported_locales' => array_diff($firefox_locales, ['de', 'es-ES', 'fr', 'id',
-            'pl', 'pt-BR', 'ru',]),
+        'supported_locales' => array_diff($firefox_locales, ['de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru']),
     ],
     'foundation/advocacy.lang' => [
         'flags' => [
