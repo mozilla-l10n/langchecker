@@ -105,7 +105,7 @@ $engagement_locales = [
 // Default priority is 3
 $mozillaorg_lang = [
     'download_button.lang' => [
-        'deadline'          => '2017-05-17',
+        'deadline'          => '2017-11-13',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -344,6 +344,15 @@ $mozillaorg_lang = [
         'deadline'          => '2017-09-26',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
+    ],
+    'firefox/whatsnew_57.lang' => [
+        'deadline'          => '2017-11-13',
+        'priority'          => 1,
+        'supported_locales' => array_diff(
+            $firefox_locales,
+            [
+                'de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru',
+            ]),
     ],
     'foundation/advocacy.lang' => [
         'flags' => [
