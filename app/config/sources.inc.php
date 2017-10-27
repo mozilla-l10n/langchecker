@@ -349,7 +349,7 @@ $mozillaorg_lang = [
         'deadline'          => '2017-11-13',
         'priority'          => 1,
         'supported_locales' => array_diff($firefox_locales, ['de', 'es-ES', 'fr', 'id',
-            'pl', 'pt-BR', 'ru']),
+            'pl', 'pt-BR', 'ru',]),
     ],
     'foundation/advocacy.lang' => [
         'flags' => [
