@@ -40,8 +40,7 @@ $mozorg_locales = [
 
 /*
     List of locales we support on desktop (Firefox). We need to remove
-    locales used only for Gaia (es, sr-Latn), locales working only on Gaia
-    (e.g. new African locales) or Fennec
+    locales used only for Fennec
 */
 $firefox_locales = array_diff(
     $mozilla,
