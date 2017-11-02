@@ -346,7 +346,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_57.lang' => [
-        'deadline'          => '2017-11-13',
+        'deadline'          => '2017-11-05',
         'priority'          => 1,
         'supported_locales' => array_diff(
             $firefox_locales,
