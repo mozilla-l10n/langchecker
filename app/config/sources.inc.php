@@ -246,18 +246,8 @@ $mozillaorg_lang = [
         'supported_locales' => ['de'],
     ],
     'firefox/nightly_firstrun.lang' => [
-        'flags'             => [
-            'opt-in' => $firefox_locales,
-        ],
         'priority'          => 2,
-        'supported_locales' => [
-            'ar', 'ast', 'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'eo',
-            'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'fy-NL', 'ga-IE',
-            'gd', 'gl', 'he', 'hi-IN', 'hsb', 'hu', 'id', 'it', 'ja', 'kab',
-            'kk', 'ko', 'lt', 'lv', 'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-BR',
-            'pt-PT', 'ru', 'sk', 'sl', 'son', 'sv-SE', 'th', 'tr', 'uk', 'ur',
-            'vi', 'xh', 'zh-CN', 'zh-TW',
-        ],
+        'supported_locales' => $firefox_locales,
     ],
     'firefox/nightly_whatsnew.lang' => [
         'flags' => [
@@ -506,7 +496,7 @@ $mozillaorg_lang = [
         'supported_locales' => $getinvolved_locales,
     ],
     'mozorg/home/index-2016.lang' => [
-        'deadline'          => '2017-02-20',
+        'deadline'          => '2017-11-13',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
