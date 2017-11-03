@@ -496,6 +496,12 @@ $mozillaorg_lang = [
         'supported_locales' => $getinvolved_locales,
     ],
     'mozorg/home/index-2016.lang' => [
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
+        'supported_locales' => $mozillaorg,
+    ],
+    'mozorg/home/index-quantum.lang' => [
         'deadline'          => '2017-11-13',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
