@@ -246,7 +246,6 @@ $mozillaorg_lang = [
         'supported_locales' => ['de'],
     ],
     'firefox/nightly_firstrun.lang' => [
-        'priority'          => 2,
         'supported_locales' => $firefox_locales,
     ],
     'firefox/nightly_whatsnew.lang' => [
