@@ -349,6 +349,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'bs', 'cak', 'cy', 'cs', 'de', 'en-GB', 'fr', 'kab', 'ko', 'pt-BR', 'sk',
+            'sq',
         ],
     ],
     'foundation/annualreport/2011.lang' => [
