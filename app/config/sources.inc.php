@@ -245,6 +245,10 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => ['de'],
     ],
+    'firefox/new/wait-face.lang' => [
+        'priority'          => 1,
+        'supported_locales' => ['de'],
+    ],
     'firefox/nightly_firstrun.lang' => [
         'supported_locales' => $firefox_locales,
     ],
