@@ -344,7 +344,8 @@ $mozillaorg_lang = [
         'supported_locales' => array_diff(
             $firefox_locales,
             [
-                'de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
+                'de', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'id',
+                'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
             ]),
     ],
     'foundation/advocacy.lang' => [
