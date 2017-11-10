@@ -1051,6 +1051,9 @@ $engagement_lang = [
             'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'ru',
         ],
     ],
+    'snippets/2017/buyers-guide.lang' => [
+        'supported_locales' => ['es'],
+    ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
