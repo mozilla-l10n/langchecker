@@ -263,8 +263,9 @@ $mozillaorg_lang = [
         ],
     ],
     'firefox/products/android.lang' => [
-        'deadline'          => '2017-08-15',
-        'priority'          => 1,
+        'flags'             => [
+          'obsolete' => ['all'],
+        ],
         'supported_locales' => $mozillaorg,
     ],
     'firefox/products/desktop.lang' => [
@@ -283,13 +284,15 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/products/focus.lang' => [
-        'deadline'          => '2017-08-15',
-        'priority'          => 1,
+        'flags'             => [
+          'obsolete' => ['all'],
+        ],
         'supported_locales' => $mozillaorg,
     ],
     'firefox/products/ios.lang' => [
-        'deadline'          => '2017-08-15',
-        'priority'          => 1,
+        'flags'             => [
+          'obsolete' => ['all'],
+        ],
         'supported_locales' => $mozillaorg,
     ],
     'firefox/quantum.lang' => [
