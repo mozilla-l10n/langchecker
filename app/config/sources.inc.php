@@ -512,7 +512,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/home/index-quantum.lang' => [
-        'deadline'          => '2017-11-13',
+        'deadline'          => '2017-11-30',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
