@@ -207,7 +207,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/hub/home-quantum.lang' => [
-        'deadline'          => '2017-11-13',
+        'deadline'          => '2017-11-30',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -237,7 +237,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/new/quantum.lang' => [
-        'deadline'          => '2017-11-13',
+        'deadline'          => '2017-11-30',
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
@@ -294,12 +294,6 @@ $mozillaorg_lang = [
           'obsolete' => ['all'],
         ],
         'supported_locales' => $mozillaorg,
-    ],
-    'firefox/quantum.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => ['de'],
     ],
     'firefox/retention/thank-you.lang' => [
         'priority'          => 1,
