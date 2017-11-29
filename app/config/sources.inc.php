@@ -320,14 +320,26 @@ $mozillaorg_lang = [
     'firefox/tracking-protection-tour.lang' => [
         'supported_locales' => $firefox_locales,
     ],
+    'firefox/whatsnew.lang' => [
+        'priority'          => 1,
+        'supported_locales' => $firefox_locales,
+    ],
     'firefox/whatsnew_38.lang' => [
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_42.lang' => [
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_50.lang' => [
-        'priority'          => 1,
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_56.lang' => [
