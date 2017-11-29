@@ -269,8 +269,9 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/products/desktop.lang' => [
-        'deadline'          => '2017-08-15',
-        'priority'          => 1,
+        'flags'             => [
+          'obsolete' => ['all'],
+        ],
         'supported_locales' => $mozillaorg,
     ],
     'firefox/products/developer.lang' => [
