@@ -216,7 +216,6 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/mobile.lang' => [
-        'deadline'          => '2017-11-13',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
