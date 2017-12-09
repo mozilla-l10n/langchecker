@@ -42,6 +42,8 @@ $ignored_files = [
     'newsletter/updated.lang',
     'privacy/notices/firefox-hello.lang',
     'privacy/notices/firefox.lang',
+    # Temporary, to avoid removing fake activation files for Quantum Whatsnew page
+    'firefox/whatsnew_57.lang',
 ];
 $ignored_locales = ['hi', 'ja', 'surveygizmo'];
 
