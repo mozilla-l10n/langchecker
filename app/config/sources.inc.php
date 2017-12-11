@@ -759,6 +759,9 @@ $engagement_lang = [
         'priority'          => 4,
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2017/buyers_guide_2.lang' => [
+        'supported_locales' => ['es'],
+    ],
     'emails/2017/copyright_call.lang' => [
         'deadline'          => '2017-03-31',
         'supported_locales' => ['de', 'fr', 'es', 'pl'],
@@ -805,6 +808,9 @@ $engagement_lang = [
     'emails/2017/fundraising_email_2.lang' => [
         'deadline'          => '2017-12-10',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
+    'emails/2017/fundraising_moco.lang' => [
+        'supported_locales' => ['de'],
     ],
     'emails/2017/fundraising_oct.lang' => [
         'supported_locales' => ['de'],
