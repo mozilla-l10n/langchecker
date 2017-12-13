@@ -528,7 +528,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fa', 'fr', 'hi-IN', 'id', 'it', 'kab', 'ko', 'pl',
+            'es-MX', 'fa', 'fr', 'hi-IN', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pl',
             'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
@@ -538,8 +538,8 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'id', 'it', 'kab', 'ko', 'pt-BR', 'ro', 'sk', 'sl',
-            'sq', 'sv-SE',
+            'es-MX', 'fr', 'id', 'it', 'kab', 'ko', 'nn-NO','pt-BR', 'ro', 'sk',
+            'sl', 'sq', 'sv-SE',
         ],
     ],
     'mozorg/internet-health/digital-inclusion.lang' => [
@@ -548,7 +548,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'id', 'it', 'kab', 'ko', 'pt-BR', 'ro', 'sk', 'sl',
+            'es-MX', 'fr', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR', 'ro', 'sk', 'sl',
             'sq', 'sv-SE',
         ],
     ],
@@ -568,7 +568,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'id', 'it', 'kab', 'ko', 'pt-BR', 'ro', 'sk', 'sl',
+            'es-MX', 'fr', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR', 'ro', 'sk', 'sl',
             'sq', 'sv-SE',
         ],
     ],
@@ -578,14 +578,14 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fa', 'fr', 'id', 'it', 'kab', 'ko', 'pt-BR', 'ro', 'sk',
+            'es-MX', 'fa', 'fr', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR', 'ro', 'sk',
             'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
     'mozorg/internet-health/shared.lang' => [
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fa', 'fr', 'hi-IN', 'id', 'it', 'kab', 'ko', 'pl',
+            'es-MX', 'fa', 'fr', 'hi-IN', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pl',
             'pt-BR', 'sk', 'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
@@ -595,7 +595,8 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES', 'es-MX',
-            'fr', 'id', 'it', 'kab', 'ko', 'pt-BR', 'ro', 'sk', 'sl', 'sq', 'sv-SE',
+            'fr', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR', 'ro', 'sk', 'sl',
+            'sq', 'sv-SE',
         ],
     ],
     'mozorg/mission.lang' => [
