@@ -818,6 +818,10 @@ $engagement_lang = [
         'deadline'          => '2017-12-24',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
+    'emails/2017/fundraising_mitchell.lang' => [
+        'priority'          => 4,
+        'supported_locales' => ['de', 'fr', 'pl', 'pt-BR'],
+    ],
     'emails/2017/fundraising_moco.lang' => [
         'supported_locales' => ['de'],
     ],
