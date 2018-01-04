@@ -118,7 +118,9 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/australis/firefox_tour.lang' => [
-        'priority'          => 5,
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => $firefox_locales,
     ],
     'firefox/channel/index.lang' => [
@@ -200,12 +202,6 @@ $mozillaorg_lang = [
                 'th', 'tr', 'uk', 'ur', 'vi', 'xh', 'zh-CN', 'zh-TW',
         ],
     ],
-    'firefox/hub/home.lang' => [
-        'flags'             => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $mozillaorg,
-    ],
     'firefox/hub/home-quantum.lang' => [
         'deadline'          => '2017-11-30',
         'priority'          => 1,
@@ -222,18 +218,6 @@ $mozillaorg_lang = [
     'firefox/new/batm.lang' => [
         'priority'          => 1,
         'supported_locales' => ['de'],
-    ],
-    'firefox/new/horizon.lang' => [
-        'flags'             => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $firefox_desktop_android,
-    ],
-    'firefox/new/onboarding.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $firefox_desktop_android,
     ],
     'firefox/new/quantum.lang' => [
         'deadline'          => '2017-11-30',
@@ -265,39 +249,9 @@ $mozillaorg_lang = [
             'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'uk', 'zh-CN', 'zh-TW',
         ],
     ],
-    'firefox/products/android.lang' => [
-        'flags'             => [
-          'obsolete' => ['all'],
-        ],
-        'supported_locales' => $mozillaorg,
-    ],
-    'firefox/products/desktop.lang' => [
-        'flags'             => [
-          'obsolete' => ['all'],
-        ],
-        'supported_locales' => $mozillaorg,
-    ],
-    'firefox/products/developer.lang' => [
-        'flags'             => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $firefox_locales,
-    ],
     'firefox/products/developer-quantum.lang' => [
         'deadline'          => '2017-11-13',
         'supported_locales' => $firefox_locales,
-    ],
-    'firefox/products/focus.lang' => [
-        'flags'             => [
-          'obsolete' => ['all'],
-        ],
-        'supported_locales' => $mozillaorg,
-    ],
-    'firefox/products/ios.lang' => [
-        'flags'             => [
-          'obsolete' => ['all'],
-        ],
-        'supported_locales' => $mozillaorg,
     ],
     'firefox/retention/thank-you.lang' => [
         'priority'          => 1,
@@ -315,12 +269,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
-    'firefox/sync.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $mozillaorg,
-    ],
     'firefox/tracking-protection-tour.lang' => [
         'supported_locales' => $firefox_locales,
     ],
@@ -329,22 +277,10 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_38.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/whatsnew_42.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/whatsnew_50.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $firefox_locales,
+       'flags' => [
+           'obsolete' => ['all'],
+       ],
+       'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_56.lang' => [
         'deadline'          => '2017-09-26',
@@ -515,26 +451,10 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => $getinvolved_locales,
     ],
-    'mozorg/home/index-2016.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $mozillaorg,
-    ],
     'mozorg/home/index-quantum.lang' => [
         'deadline'          => '2017-11-30',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
-    ],
-    'mozorg/internet-health.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => [
-            'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fa', 'fr', 'hi-IN', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pl',
-            'pt-BR', 'sq', 'sv-SE', 'uk', 'zh-TW',
-        ],
     ],
     'mozorg/internet-health/decentralization.lang' => [
         'flags' => [
