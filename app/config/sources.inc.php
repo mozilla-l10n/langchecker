@@ -393,7 +393,6 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/500.lang' => [
-        'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/about.lang' => [
