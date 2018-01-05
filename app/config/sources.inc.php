@@ -113,7 +113,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/all.lang' => [
-        'deadline'          => '2017-04-04',
+        'deadline'          => '2018-01-21',
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
@@ -203,7 +203,7 @@ $mozillaorg_lang = [
         ],
     ],
     'firefox/hub/home-quantum.lang' => [
-        'deadline'          => '2017-11-30',
+        'deadline'          => '2018-01-21',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -220,7 +220,7 @@ $mozillaorg_lang = [
         'supported_locales' => ['de'],
     ],
     'firefox/new/quantum.lang' => [
-        'deadline'          => '2017-11-30',
+        'deadline'          => '2018-01-21',
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
@@ -389,6 +389,10 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/404.lang' => [
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'mozorg/500.lang' => [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
