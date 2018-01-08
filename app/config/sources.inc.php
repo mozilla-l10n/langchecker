@@ -802,6 +802,10 @@ $engagement_lang = [
         'priority'          => 4,
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
+    'emails/2018/fundraising_thank_you.lang' => [
+        'deadline'          => '2018-01-14',
+        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
     'heartbeat/2016/sep2016.lang' => [
         'supported_locales' => [
             'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja', 'pl',
