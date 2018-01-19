@@ -269,6 +269,11 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/switch.lang' => [
+        'deadline'          => '2018-01-21',
+        'priority'          => 1,
+        'supported_locales' => ['de'],
+    ],
     'firefox/tracking-protection-tour.lang' => [
         'supported_locales' => $firefox_locales,
     ],
