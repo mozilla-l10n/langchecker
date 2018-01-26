@@ -813,7 +813,7 @@ $engagement_lang = [
     ],
     'emails/2018/jan_mobile_app_updates.lang' => [
         'deadline'          => '2018-02-06',
-        'supported_locales' => ['es', 'fr', 'pl', 'pt-BR', 'ru'],
+        'supported_locales' => ['es', 'pl', 'pt-BR', 'ru'],
     ],
     'heartbeat/2016/sep2016.lang' => [
         'supported_locales' => [
