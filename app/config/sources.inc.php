@@ -811,6 +811,10 @@ $engagement_lang = [
         'deadline'          => '2018-01-14',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
+    'emails/2018/jan_mobile_app_updates.lang' => [
+        'deadline'          => '2018-02-06',
+        'supported_locales' => ['es', 'fr', 'id', 'pl', 'pt-BR','ru'],
+    ],
     'heartbeat/2016/sep2016.lang' => [
         'supported_locales' => [
             'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja', 'pl',
