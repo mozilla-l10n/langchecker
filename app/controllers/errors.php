@@ -177,6 +177,14 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
             ];
         }
 
+        // Check for strings that will be ignored
+        if (LangManager::countErrors($reference_data['errors'], 'ignoredstrings')) {
+            $errors[$reference_locale][$current_website_name][$current_filename][] = [
+                'errors' => $reference_data['errors']['ignoredstrings'],
+                'type'   => 'ignored_strings',
+            ];
+        }
+
         // Check for strings "translated" in the source
         $reference_differences = [];
         foreach ($reference_data['strings'] as $string_id => $string_value) {
