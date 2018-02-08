@@ -807,9 +807,17 @@ $engagement_lang = [
         'priority'          => 4,
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
+    'emails/2018/donor_update_feb.lang' => [
+        'deadline'          => '2018-02-18',
+        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
     'emails/2018/fundraising_thank_you.lang' => [
         'deadline'          => '2018-01-14',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
+    'emails/2018/fundraising_valentines_day.lang' => [
+        'deadline'          => '2018-02-12',
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2018/jan_mobile_app_updates.lang' => [
         'deadline'          => '2018-02-06',
