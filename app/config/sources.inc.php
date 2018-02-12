@@ -113,7 +113,6 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/all.lang' => [
-        'deadline'          => '2018-01-21',
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
@@ -220,7 +219,6 @@ $mozillaorg_lang = [
         'supported_locales' => ['de'],
     ],
     'firefox/new/quantum.lang' => [
-        'deadline'          => '2018-01-21',
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
