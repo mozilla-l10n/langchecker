@@ -106,7 +106,7 @@ $engagement_locales = [
 // Default priority is 3
 $mozillaorg_lang = [
     'download_button.lang' => [
-        'deadline'          => '2017-11-13',
+        'deadline'          => '2018-02-20',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -270,9 +270,11 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/switch.lang' => [
-        'deadline'          => '2018-01-21',
-        'priority'          => 1,
-        'supported_locales' => ['de'],
+        'priority' => [
+            1 => ['de'],
+            3 => ['all'],
+        ],
+        'supported_locales' => $mozillaorg,
     ],
     'firefox/tracking-protection-tour.lang' => [
         'supported_locales' => $firefox_locales,
