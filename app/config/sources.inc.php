@@ -203,7 +203,6 @@ $mozillaorg_lang = [
         ],
     ],
     'firefox/hub/home-quantum.lang' => [
-        'deadline'          => '2018-01-21',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
