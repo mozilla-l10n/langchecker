@@ -1,0 +1,17 @@
+{% extends 'default.twig' %}
+
+{% block body %}
+    <h2>{{ filename }}</h2>
+    {% if locale_list|length > 0 %}
+        {% for locale in locale_list %}
+            <h3 id="{{ locale.locale }}">{{ locale.locale }}</h3>
+            <p>
+                {% for translation in locale.translations %}
+                    <span title="{{ translation.string_id }}">{{ translation.translation }}</span><br/><br/>
+                {% endfor %}
+            </p>
+        {% endfor %}
+    {% else %}
+        <p>There are currently no translations available for this file.</p>
+    {% endif %}
+{% endblock %}

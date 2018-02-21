@@ -454,6 +454,9 @@ class Project
                 case 'translate':
                     $result['file'] = 'translatestrings';
                     break;
+                case 'review':
+                    $result['file'] = 'reviewstrings';
+                    break;
             }
 
             return $result;

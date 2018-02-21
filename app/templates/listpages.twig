@@ -12,7 +12,7 @@
                         <th>Priority</th>
                         <th>URL</th>
                         <th>Status</th>
-                        <th>Translations</th>
+                        <th colspan="2">Translations</th>
                         <th>Strings</th>
                         <th>Words</th>
                     </tr>
@@ -31,12 +31,13 @@
                         <td>{{ getViewLink(file_data.page_url)|raw }}</td>
                         <td><a class="table_small_link" href="./?locale=all&amp;website={{ website_data.site_index }}&amp;file={{ filename }}">Status</a></td>
                         <td><a class="table_small_link" href="./?website={{ website_data.site_index }}&amp;file={{ filename }}&amp;action=translate&amp;show">Show</a></td>
+                        <td><a class="table_small_link" href="./?website={{ website_data.site_index }}&amp;file={{ filename }}&amp;action=review">Review</a></td>
                         <td>{{ file_data.strings_count }}</td>
                         <td>{{ file_data.words_count }}</td>
                     </tr>
                     {% endfor %}
                     <tr class="tabletotals">
-                        <th colspan="4">Total</th>
+                        <th colspan="5">Total</th>
                         <td>{{ getPluralForm(website_data.total_files, 'file') }}</td>
                         <td>{{ website_data.total_strings }}</td>
                         <td>{{ website_data.total_words }}</td>
