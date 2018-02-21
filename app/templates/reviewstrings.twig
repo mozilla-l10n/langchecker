@@ -3,6 +3,18 @@
 {% block body %}
     <h2>{{ filename }}</h2>
     {% if locale_list|length > 0 %}
+        <table>
+            <thead>
+                <th>Locale list</th>
+            </thead>
+            <tbody>
+                {% for locale in locale_list %}
+                    <tr>
+                        <th><a href="#{{ locale.locale }}">{{ locale.locale }}</a></th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
         {% for locale in locale_list %}
             <h3 id="{{ locale.locale }}">{{ locale.locale }}</h3>
             <p>

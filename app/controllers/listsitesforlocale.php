@@ -105,7 +105,6 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
                 'count_translated'  => count($locale_analysis['Translated']),
                 'errors'            => $errors,
                 'locale_url'        => $locale_url,
-                'preview_url'       => $locale_url,
                 'python_note'       => LangManager::countErrors($locale_analysis['errors'], 'python') > 0,
                 'reference_url'     => $reference_url,
                 'file_status'       => $status,
