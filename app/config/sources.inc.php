@@ -362,20 +362,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $legal_locales,
     ],
-    'lightbeam/lightbeam.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'priority'          => 5,
-        'supported_locales' => [
-            'am', 'azz', 'bs', 'ca', 'cak', 'cs', 'cy', 'de', 'dsb', 'el',
-            'en-GB', 'en-ZA', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fa',
-            'fr', 'fy-NL', 'hi-IN', 'hsb', 'ia', 'it', 'ja', 'kab', 'km', 'ko',
-            'lt', 'ms', 'nl', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru',
-            'sk', 'son', 'sq', 'sr', 'sv-SE', 'tr', 'uk', 'ur', 'zam', 'zh-CN',
-            'zh-TW',
-        ],
-    ],
     'main.lang' => [
         'deadline'          => '2017-11-13',
         'priority'          => 1,
