@@ -290,7 +290,6 @@ $mozillaorg_lang = [
             ]),
     ],
     'firefox/whatsnew_59.lang' => [
-        'deadline'          => '2018-03-07',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
