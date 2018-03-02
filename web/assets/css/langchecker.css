@@ -439,7 +439,7 @@ div.tip blockquote {
 .email_wrapper {
     background: #fff;
     font-size: 15px;
-    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     padding: 20px 30px 30px 30px;
     margin-top: 15px;
 }
@@ -450,18 +450,17 @@ div.tip blockquote {
     border: 1px #000 solid;
     padding: 8px;
     margin-left: 5px;
-    align: right;
     margin-top: 10px;
 }
 
 .email_button {
-    font-weight: bold;
-    margin: 15px 0 0 0;
-    color: #fff;
-    text-decoration: none;
-    padding: 14px 50px;
     display: inline-block;
     background: #1081d5;
+    margin: 15px 0 0 0;
+    padding: 14px 50px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
     text-transform: uppercase;
     text-align: center;
 }

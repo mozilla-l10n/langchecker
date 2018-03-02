@@ -45,7 +45,6 @@ foreach ($supported_locales as $current_locale) {
 
 $locale_list = [];
 foreach ($all_locale_data as $current_locale => $available_strings) {
-
     $body_strings = $email_metadata = $callout_box = [];
     foreach ($available_strings as $string_id => $translation) {
         if (isset($reference_data['tag_bindings'][$string_id])) {
@@ -72,7 +71,7 @@ foreach ($all_locale_data as $current_locale => $available_strings) {
         'locale'         => $current_locale,
         'body_strings'   => $body_strings,
         'callout_box'    => $callout_box,
-        'email_metadata' => $email_metadata
+        'email_metadata' => $email_metadata,
     ];
 }
 
