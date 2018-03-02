@@ -20,13 +20,13 @@
                 <h3 id="{{ locale.locale }}">{{ locale.locale }}</h3>
                 <div class="email_metadata">
                     {% for translation in locale.email_metadata %}
+                        {% set metadata_category = 'Other metadata:' %}
                         {% if translation.tag == 'subject_line' %}
-                            <span title="{{ translation.string_id }}"><b>Subject line:</b> {{ translation.translation|raw }}</span><br/>
+                            {% set metadata_category = 'Subject line:' %}
                         {% elseif translation.tag == 'preheader' %}
-                            <span title="{{ translation.string_id }}"><b>Pre header:</b> {{ translation.translation|raw }}</span><br/>
-                        {% else %}
-                            <span title="{{ translation.string_id }}"><b>Other metadata:</b> {{ translation.translation|raw }}</span><br/>
+                            {% set metadata_category = 'Pre header:' %}
                         {% endif %}
+                        <span title="{{ translation.string_id }}"><b>{{ metadata_category }}</b> {{ translation.translation|raw }}</span><br/>
                     {% endfor %}
                 </div>
                 <div class="email_wrapper">
@@ -38,6 +38,7 @@
                                 </p>
                             {% endfor %}
                         </div>
+                        <div class="clear"></div>
                     {% endif %}
                     <p>
                         {% for translation in locale.body_strings %}

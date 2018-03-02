@@ -58,6 +58,8 @@ foreach ($all_locale_data as $current_locale => $available_strings) {
             'translation' => $translation,
             'tag'         => $current_tag,
         ];
+
+        // Split tagged strings in groups
         if (in_array($current_tag, ['subject_line', 'preheader', 'metadata'])) {
             $email_metadata[] = $string_data;
         } else if (in_array($current_tag, ['callout_text', 'callout_button'])) {
