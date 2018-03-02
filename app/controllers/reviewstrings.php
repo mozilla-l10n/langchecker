@@ -3,7 +3,6 @@ namespace Langchecker;
 
 // $filename is set in /inc/init.php
 $current_filename = $filename != '' ? $filename : 'snippets.lang';
-$single_locale = isset($_GET['single']) ? 'auto' : 'all';
 
 $supported_file = false;
 // Search which website has the requested file
@@ -28,11 +27,7 @@ $reference_locale = Project::getReferenceLocale($current_website);
 $reference_data = LangManager::loadSource($current_website, $reference_locale, $current_filename);
 
 $all_locale_data = [];
-
-$supported_locales = array($locale);
-if ($single_locale) {
-    $supported_locales = Project::getSupportedLocales($current_website, $current_filename);
-}
+$supported_locales = Project::getSupportedLocales($current_website, $current_filename);
 
 foreach ($supported_locales as $current_locale) {
     if (! file_exists(Project::getLocalFilePath($current_website, $current_locale, $current_filename))) {
@@ -48,25 +43,36 @@ foreach ($supported_locales as $current_locale) {
     }
 }
 
-// If requested output is JSON, we're ready
-if ($json) {
-    die($json_object->outputContent($all_locale_data, false, true));
-}
-
 $locale_list = [];
 foreach ($all_locale_data as $current_locale => $available_strings) {
 
-    $translations = [];
+    $body_strings = $email_metadata = $callout_box = [];
     foreach ($available_strings as $string_id => $translation) {
-        $translations[] = [
+        if (isset($reference_data['tag_bindings'][$string_id])) {
+            $current_tag = $reference_data['tag_bindings'][$string_id];
+        } else {
+            $current_tag = '';
+        }
+
+        $string_data = [
             'string_id'   => $string_id,
             'translation' => $translation,
+            'tag'         => $current_tag,
         ];
+        if (in_array($current_tag, ['subject_line', 'preheader', 'metadata'])) {
+            $email_metadata[] = $string_data;
+        } else if (in_array($current_tag, ['callout_text', 'callout_button'])) {
+            $callout_box[] = $string_data;
+        } else {
+            $body_strings[] = $string_data;
+        }
     }
 
     $locale_list[] = [
-        'locale'       => $current_locale,
-        'translations' => $translations,
+        'locale'         => $current_locale,
+        'body_strings'   => $body_strings,
+        'callout_box'    => $callout_box,
+        'email_metadata' => $email_metadata
     ];
 }
 
