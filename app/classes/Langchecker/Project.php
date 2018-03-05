@@ -87,6 +87,19 @@ class Project
     }
 
     /**
+     * Check if a type of errors is excluded from a website
+     *
+     * @param array  $website  Website data
+     * @param string $type Error type
+     *
+     * @return boolean True if the error check is excluded from this website
+     */
+    public static function isExcludedErrorCheck($website, $type)
+    {
+        return in_array($type, self::getWebsiteErrorExclusionList($website));
+    }
+
+    /**
      * Return a list of flags associated to the file
      *
      * @param array  $website  Website data
@@ -332,6 +345,18 @@ class Project
     public static function getWebsiteLocalRepository($website)
     {
         return $website[1];
+    }
+
+    /**
+     * Return an array of error check exclusions for the website
+     *
+     * @param array $website Website data
+     *
+     * @return string Array of error check exclusions
+     */
+    public static function getWebsiteErrorExclusionList($website)
+    {
+        return $website[10];
     }
 
     /**

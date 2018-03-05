@@ -76,6 +76,28 @@ class Project extends atoum\test
                 ->isEqualTo($d);
     }
 
+    public function isExcludedErrorCheckDP()
+    {
+        require_once TEST_FILES . 'config/sources.php';
+
+        return [
+            [$sites[0], 'tags', false],
+            [$sites[0], 'foo', false],
+            [$sites[2], 'tags', true],
+        ];
+    }
+
+    /**
+     * @dataProvider isExcludedErrorCheckDP
+     */
+    public function testIsExcludedErrorCheck($a, $b, $c)
+    {
+        $obj = new _Project();
+        $this
+            ->boolean($obj->isExcludedErrorCheck($a, $b))
+                ->isEqualTo($c);
+    }
+
     public function getFileFlagsDP()
     {
         require_once TEST_FILES . 'config/sources.php';
@@ -390,6 +412,27 @@ class Project extends atoum\test
         $obj = new _Project();
         $this
             ->string($obj->getWebsiteLocalRepository($a))
+                ->isEqualTo($b);
+    }
+
+    public function getWebsiteErrorExclusionListDP()
+    {
+        require_once TEST_FILES . 'config/sources.php';
+
+        return [
+            [$sites[0], []],
+            [$sites[2], ['tags']],
+        ];
+    }
+
+    /**
+     * @dataProvider getWebsiteErrorExclusionListDP
+     */
+    public function testGetWebsiteErrorExclusionList($a, $b)
+    {
+        $obj = new _Project();
+        $this
+            ->array($obj->getWebsiteErrorExclusionList($a))
                 ->isEqualTo($b);
     }
 

@@ -453,10 +453,6 @@ div.tip blockquote {
     margin-top: 10px;
 }
 
-.clear {
-    clear: both;
-}
-
 .email_button {
     display: inline-block;
     background: #1081d5;
