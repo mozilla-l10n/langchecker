@@ -89,8 +89,8 @@ class Project
     /**
      * Check if a type of errors is excluded from a website
      *
-     * @param array  $website  Website data
-     * @param string $type Error type
+     * @param array  $website Website data
+     * @param string $type    Error type
      *
      * @return boolean True if the error check is excluded from this website
      */
