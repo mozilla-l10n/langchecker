@@ -7,8 +7,7 @@ namespace Langchecker;
 */
 
 // $filename is set in /inc/init.php
-$current_filename = $filename != '' ? $filename : 'snippets.lang';
-$show_status = isset($_GET['show']) ? 'auto' : 'none';
+$current_filename = $filename != '' ? $filename : 'download_button.lang';
 
 $supported_file = false;
 // Search which website has the requested file

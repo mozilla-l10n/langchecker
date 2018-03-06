@@ -2,6 +2,7 @@
 namespace Langchecker;
 
 $store_by_string = true;
+$show_status = isset($_GET['show']) ? 'auto' : 'none';
 require_once $controllers_folder . 'loadtranslations.php';
 
 // If requested output is JSON, we're ready

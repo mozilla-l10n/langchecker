@@ -67,7 +67,7 @@ $repositories = [
        7 default priority,
        8 type of files (lang, raw),
        9 project name on Pontoon,
-       10 array of excluded error checks
+       10 array of excluded error checks (tags)
     ]
 */
 
