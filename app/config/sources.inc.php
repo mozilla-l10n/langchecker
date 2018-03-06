@@ -127,19 +127,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
     ],
-    'firefox/dnt.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'priority'          => 5,
-        'supported_locales' => [
-            'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-GB', 'es-CL',
-            'fa', 'fi', 'fr', 'fy-NL', 'hi-IN', 'hsb', 'it', 'ja', 'kab', 'ko',
-            'lt', 'nl', 'nn-NO', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl',
-            'son', 'sq', 'sr', 'sv-SE', 'uk', 'ur', 'uz', 'xh', 'zh-CN',
-            'zh-TW',
-        ],
-    ],
     'firefox/features/bookmarks.lang' => [
         'deadline'          => '2017-08-15',
         'priority'          => 1,
@@ -184,23 +171,6 @@ $mozillaorg_lang = [
         'deadline'          => '2017-09-26',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
-    ],
-    'firefox/geolocation.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'priority'          => 5,
-        'supported_locales' => [
-                'af', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD', 'bn-IN', 'bs',
-                'ca', 'cak', 'cs', 'cy', 'da', 'de', 'dsb', 'el', 'en-GB', 'eo',
-                'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et', 'eu', 'fa', 'fi',
-                'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN', 'he', 'hi-IN',
-                'hr', 'hsb', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'ka', 'kab',
-                'kk', 'kn', 'ko', 'lt', 'lv', 'mk', 'ml', 'mr', 'nb-NO', 'nl',
-                'nn-NO', 'oc', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro',
-                'ru', 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta', 'te',
-                'th', 'tr', 'uk', 'ur', 'vi', 'xh', 'zh-CN', 'zh-TW',
-        ],
     ],
     'firefox/hub/home-quantum.lang' => [
         'priority'          => 1,
