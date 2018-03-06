@@ -83,6 +83,7 @@ $sites = [
         3,
         'lang',
         'pontoontest1',
+        [],
     ],
 
     1 => [
@@ -96,6 +97,7 @@ $sites = [
         1,
         'lang',
         'pontoontest2',
+        [],
     ],
 
     2 => [
@@ -109,6 +111,7 @@ $sites = [
         1,
         'lang',
         'pontoontest3',
+        ['tags'],
     ],
 
     3 => [
@@ -122,6 +125,7 @@ $sites = [
         1,
         'raw',
         'pontoontest4',
+        [],
     ],
 
     6 => [
@@ -135,5 +139,6 @@ $sites = [
         1,
         'lang',
         'pontoontest5',
+        [],
     ],
 ];

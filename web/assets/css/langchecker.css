@@ -428,6 +428,48 @@ div.tip blockquote {
     color: #008000;
 }
 
+/* Review page */
+
+.emailreview_wrapper {
+    width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.email_wrapper {
+    background: #fff;
+    font-size: 15px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 20px 30px 30px 30px;
+    margin-top: 15px;
+}
+
+.callout_box {
+    width: 322px;
+    float: right;
+    border: 1px #000 solid;
+    padding: 8px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.email_button {
+    display: inline-block;
+    background: #1081d5;
+    margin: 15px 0 0 0;
+    padding: 14px 50px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.callout_box .email_button {
+    width: 198px;
+    margin: 15px 10px 0 10px;
+}
+
 /* List locales */
 
 #locales {

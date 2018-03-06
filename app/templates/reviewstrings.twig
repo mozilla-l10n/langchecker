@@ -1,0 +1,53 @@
+{% extends 'default.twig' %}
+
+{% block body %}
+    <div class="emailreview_wrapper">
+        <h2>{{ filename }}</h2>
+        {% if locale_list|length > 0 %}
+            <table>
+                <thead>
+                    <th>Locales</th>
+                </thead>
+                <tbody>
+                  <tr><th>
+                    {% for locale in locale_list %}
+                        <a href="#{{ locale.locale }}">{{ locale.locale }}</a>,
+                    {% endfor %}
+                  </th></tr>
+                </tbody>
+            </table>
+            {% for locale in locale_list %}
+                <h3 id="{{ locale.locale }}">{{ locale.locale }}</h3>
+                <div class="email_metadata">
+                    {% for translation in locale.email_metadata %}
+                        {% set metadata_category = 'Other metadata:' %}
+                        {% if translation.tag == 'subject_line' %}
+                            {% set metadata_category = 'Subject line:' %}
+                        {% elseif translation.tag == 'preheader' %}
+                            {% set metadata_category = 'Pre header:' %}
+                        {% endif %}
+                        <span title="{{ translation.string_id }}"><b>{{ metadata_category }}</b> {{ translation.translation|raw }}</span><br/>
+                    {% endfor %}
+                </div>
+                <div class="email_wrapper">
+                    {% if locale.callout_box|length > 0 %}
+                        <div class="callout_box">
+                            {% for translation in locale.callout_box %}
+                                <p>
+                                    <span class="{{ translation.tag == 'callout_button' ? 'email_button' }}" title="{{ translation.string_id }}">{{ translation.translation|raw }}</span>
+                                </p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    <p>
+                        {% for translation in locale.body_strings %}
+                            <span class="{{ translation.tag == 'button' ? 'email_button' }}" title="{{ translation.string_id }}">{{ translation.translation|raw }}</span><br/><br/>
+                        {% endfor %}
+                    </p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>There are currently no translations available for this file.</p>
+        {% endif %}
+    </div>
+{% endblock %}

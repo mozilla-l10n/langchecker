@@ -70,68 +70,71 @@ foreach ($mozilla as $current_locale) {
                     ];
                 }
 
-                // If locale has tags, display errors on unknown tags
-                if (isset($locale_analysis['tags'])) {
-                    $locale_file_tags = $locale_analysis['tags'];
-                    if (isset($reference_data['tags'])) {
-                        $extra_tags = array_diff($locale_file_tags, $reference_data['tags']);
-                    } else {
-                        $extra_tags = $locale_file_tags;
-                    }
-                    if (count($extra_tags)) {
-                        foreach ($extra_tags as $extra_tag) {
-                            $errors[$current_locale][$current_website_name][$current_filename][] = [
-                                'message' => "Unknown tag: <strong>{$extra_tag}</strong>.",
-                                'type'    => 'generic',
-                            ];
+                // Run tag checks only if they are not disabled for this website
+                if (! Project::isExcludedErrorCheck($current_website, 'tags')) {
+                    // If locale has tags, display errors on unknown tags
+                    if (isset($locale_analysis['tags'])) {
+                        $locale_file_tags = $locale_analysis['tags'];
+                        if (isset($reference_data['tags'])) {
+                            $extra_tags = array_diff($locale_file_tags, $reference_data['tags']);
+                        } else {
+                            $extra_tags = $locale_file_tags;
                         }
-                    }
-                } else {
-                    $locale_file_tags = [];
-                }
-
-                if (isset($reference_data['tag_bindings']) && $locale_analysis['activated']) {
-                    // If file is activated, get a list of untranslated/identical strings bound to tags
-                    $incomplete_tagged_strings = [];
-                    foreach ($reference_data['tag_bindings'] as $string_id => $bound_tag) {
-                        if (in_array($string_id, $locale_analysis['Missing']) ||
-                            in_array($string_id, $locale_analysis['Identical'])) {
-                            $incomplete_tagged_strings[$bound_tag][] = $string_id;
-                        }
-                    }
-
-                    // Get all tags with missing strings
-                    $incomplete_tags = array_unique(array_keys($incomplete_tagged_strings));
-                    if (! empty($incomplete_tags)) {
-                        foreach ($locale_file_tags as $locale_tag) {
-                            if (in_array($locale_tag, $incomplete_tags)) {
-                                // Tag is enabled, but strings are still missing
+                        if (count($extra_tags)) {
+                            foreach ($extra_tags as $extra_tag) {
                                 $errors[$current_locale][$current_website_name][$current_filename][] = [
-                                    'errors' => $incomplete_tagged_strings[$locale_tag],
-                                    'tag'    => $locale_tag,
-                                    'type'   => 'incomplete_tags',
+                                    'message' => "Unknown tag: <strong>{$extra_tag}</strong>.",
+                                    'type'    => 'generic',
                                 ];
                             }
                         }
-                    }
-
-                    // Get all missing tags completely localized
-                    if (isset($reference_data['tags'])) {
-                        /* I ignore tags not bound to strings for this report, so using unique
-                         * values of 'tag_bindings' instead of using 'tags' from reference data
-                         */
-                        $source_file_tags = array_unique(array_values($reference_data['tag_bindings']));
                     } else {
-                        $source_file_tags = [];
+                        $locale_file_tags = [];
                     }
 
-                    $missing_tags = array_diff($source_file_tags, $locale_file_tags);
-                    foreach ($missing_tags as $missing_tag) {
-                        if (! in_array($missing_tag, $incomplete_tags)) {
-                            $errors[$current_locale][$current_website_name][$current_filename][] = [
-                                'message' => "Missing tag: <strong>{$missing_tag}</strong>.",
-                                'type'    => 'generic',
-                            ];
+                    if (isset($reference_data['tag_bindings']) && $locale_analysis['activated']) {
+                        // If file is activated, get a list of untranslated/identical strings bound to tags
+                        $incomplete_tagged_strings = [];
+                        foreach ($reference_data['tag_bindings'] as $string_id => $bound_tag) {
+                            if (in_array($string_id, $locale_analysis['Missing']) ||
+                                in_array($string_id, $locale_analysis['Identical'])) {
+                                $incomplete_tagged_strings[$bound_tag][] = $string_id;
+                            }
+                        }
+
+                        // Get all tags with missing strings
+                        $incomplete_tags = array_unique(array_keys($incomplete_tagged_strings));
+                        if (! empty($incomplete_tags)) {
+                            foreach ($locale_file_tags as $locale_tag) {
+                                if (in_array($locale_tag, $incomplete_tags)) {
+                                    // Tag is enabled, but strings are still missing
+                                    $errors[$current_locale][$current_website_name][$current_filename][] = [
+                                        'errors' => $incomplete_tagged_strings[$locale_tag],
+                                        'tag'    => $locale_tag,
+                                        'type'   => 'incomplete_tags',
+                                    ];
+                                }
+                            }
+                        }
+
+                        // Get all missing tags completely localized
+                        if (isset($reference_data['tags'])) {
+                            /* I ignore tags not bound to strings for this report, so using unique
+                             * values of 'tag_bindings' instead of using 'tags' from reference data
+                             */
+                            $source_file_tags = array_unique(array_values($reference_data['tag_bindings']));
+                        } else {
+                            $source_file_tags = [];
+                        }
+
+                        $missing_tags = array_diff($source_file_tags, $locale_file_tags);
+                        foreach ($missing_tags as $missing_tag) {
+                            if (! in_array($missing_tag, $incomplete_tags)) {
+                                $errors[$current_locale][$current_website_name][$current_filename][] = [
+                                    'message' => "Missing tag: <strong>{$missing_tag}</strong>.",
+                                    'type'    => 'generic',
+                                ];
+                            }
                         }
                     }
                 }
@@ -216,39 +219,41 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
         }
 
         /*
-            Check for tags without any string associated, or tags not declared
-            at the beginning of the file but bound to strings.
+            If enabled for the current website, check for tags without any
+            string associated, or tags not declared at the beginning of the file
+            but bound to strings.
         */
+        if (! Project::isExcludedErrorCheck($current_website, 'tags')) {
+            // Tags bound to strings
+            $bound_tags = isset($reference_data['tag_bindings'])
+                ? array_unique(array_values($reference_data['tag_bindings']))
+                : [];
 
-        // Tags bound to strings
-        $bound_tags = isset($reference_data['tag_bindings'])
-            ? array_unique(array_values($reference_data['tag_bindings']))
-            : [];
+            // Tags declared in the file
+            $declared_tags = isset($reference_data['tags'])
+                ? $reference_data['tags']
+                : [];
 
-        // Tags declared in the file
-        $declared_tags = isset($reference_data['tags'])
-            ? $reference_data['tags']
-            : [];
+            // There are a few files that should be ignored when checking tags
+            if (in_array($current_filename, ['firefox/nightly_firstrun.lang'])) {
+                continue;
+            }
 
-        // There are a few files that should be ignored when checking tags
-        if (in_array($current_filename, ['firefox/nightly_firstrun.lang'])) {
-            continue;
-        }
+            $empty_tags = array_diff($declared_tags, $bound_tags);
+            if (! empty($empty_tags)) {
+                $errors[$reference_locale][$current_website_name][$current_filename][] = [
+                    'errors' => $empty_tags,
+                    'type'   => 'empty_tags',
+                ];
+            }
 
-        $empty_tags = array_diff($declared_tags, $bound_tags);
-        if (! empty($empty_tags)) {
-            $errors[$reference_locale][$current_website_name][$current_filename][] = [
-                'errors' => $empty_tags,
-                'type'   => 'empty_tags',
-            ];
-        }
-
-        $undeclared_tags = array_diff($bound_tags, $declared_tags);
-        if (! empty($undeclared_tags)) {
-            $errors[$reference_locale][$current_website_name][$current_filename][] = [
-                'errors' => $undeclared_tags,
-                'type'   => 'undeclared_tags',
-            ];
+            $undeclared_tags = array_diff($bound_tags, $declared_tags);
+            if (! empty($undeclared_tags)) {
+                $errors[$reference_locale][$current_website_name][$current_filename][] = [
+                    'errors' => $undeclared_tags,
+                    'type'   => 'undeclared_tags',
+                ];
+            }
         }
     }
 }

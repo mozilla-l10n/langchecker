@@ -65,8 +65,9 @@ $repositories = [
        5 reference locale,
        6 url to public repo,
        7 default priority,
-       8 type of files (lang, raw)
-       9 project name on Pontoon
+       8 type of files (lang, raw),
+       9 project name on Pontoon,
+       10 array of excluded error checks (tags)
     ]
 */
 
@@ -83,6 +84,7 @@ $sites =
         3,
         'lang',
         'mozillaorg',
+        [],
     ],
     6 => [
         'engagement',
@@ -95,6 +97,7 @@ $sites =
         1,
         'lang',
         'engagement',
+        ['tags'],
     ],
     12 => [
         'appstores',
@@ -107,5 +110,6 @@ $sites =
         2,
         'lang',
         'appstores',
+        ['tags'],
     ],
 ];
