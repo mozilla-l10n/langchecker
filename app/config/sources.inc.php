@@ -779,6 +779,10 @@ $engagement_lang = [
         'priority'          => 4,
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
+    'emails/2018/donor_survey_march.lang' => [
+        'deadline'          => '2018-03-11',
+        'supported_locales' => ['de', 'es', 'fr'],
+    ],
     'emails/2018/donor_update_feb.lang' => [
         'deadline'          => '2018-02-18',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
@@ -1066,6 +1070,10 @@ $engagement_lang = [
     'surveys/copyright_call_survey.lang' => [
         'deadline'          => '2017-03-31',
         'supported_locales' => ['de', 'fr', 'es', 'pl'],
+    ],
+    'surveys/donor_survey_2018.lang' => [
+        'deadline'          => '2018-03-11',
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'surveys/data_privacy_day.lang' => [
         'deadline'          => '2017-01-27',
