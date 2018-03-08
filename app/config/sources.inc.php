@@ -1123,10 +1123,19 @@ $appstores_lang = [
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_58.lang' => [
-        'deadline'          => '2018-01-23',
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_59_beta.lang' => [
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
+        'supported_locales' => $fx_android_store,
+    ],
+    'fx_android/whatsnew/android_59.lang' => [
+        'deadline'          => '2018-03-13',
+        'supported_locales' => $fx_android_store,
+    ],
+    'fx_android/whatsnew/android_60_beta.lang' => [
         'supported_locales' => $fx_android_store,
     ],
     'fx_ios/description_release.lang' => [
