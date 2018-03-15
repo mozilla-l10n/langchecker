@@ -767,7 +767,7 @@ $engagement_lang = [
     ],
     'emails/2018/ihr_launch.lang' => [
         'deadline'          => '2018-04-08',
-        'supported_locales' => ['de', 'es', 'fr'],
+        'supported_locales' => ['de'],
     ],
     'emails/2018/jan_mobile_app_updates.lang' => [
         'deadline'          => '2018-02-06',
