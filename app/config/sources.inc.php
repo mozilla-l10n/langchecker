@@ -749,6 +749,10 @@ $engagement_lang = [
         'priority'          => 4,
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
+    'emails/2018/cambridge_analytica.lang' => [
+        'deadline'          => '2018-03-22',
+        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
     'emails/2018/donor_survey_march.lang' => [
         'deadline'          => '2018-03-11',
         'supported_locales' => ['de', 'es', 'fr'],
