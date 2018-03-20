@@ -812,6 +812,10 @@ $engagement_lang = [
             'de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'zh-TW',
         ],
     ],
+    'other/2018/cambridge_analytica_petition.lang' => [
+        'deadline'          => '2018-03-22',
+        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
     'snippets/2016/jan2016.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
     ],
