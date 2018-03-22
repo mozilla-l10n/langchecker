@@ -386,6 +386,7 @@ $mozillaorg_lang = [
     ],
     'mozorg/about/manifesto.lang' => [
         'priority'          => 3,
+        'deadline'          => '2018-03-28',
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/contribute/index.lang' => [
