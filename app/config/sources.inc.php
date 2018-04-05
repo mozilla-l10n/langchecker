@@ -754,6 +754,10 @@ $engagement_lang = [
         'deadline'          => '2018-03-22',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
+    'emails/2018/cross_site_tracking_petition.lang' => [
+        'deadline'          => '2018-04-08',
+        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
     'emails/2018/donor_survey_march.lang' => [
         'deadline'          => '2018-03-11',
         'supported_locales' => ['de', 'es', 'fr'],
@@ -816,6 +820,10 @@ $engagement_lang = [
     'other/2018/cambridge_analytica_petition.lang' => [
         'deadline'          => '2018-03-22',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
+    'other/2018/cross_site_tracking_petition.lang' => [
+        'deadline'          => '2018-04-08',
+        'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'snippets/2016/jan2016.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
