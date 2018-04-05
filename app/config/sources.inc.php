@@ -755,7 +755,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2018/cross_site_tracking_petition.lang' => [
-        'deadline'          => '2018-04-04',
+        'deadline'          => '2018-04-08',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2018/donor_survey_march.lang' => [
@@ -822,7 +822,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'other/2018/cross_site_tracking_petition.lang' => [
-        'deadline'          => '2018-04-04',
+        'deadline'          => '2018-04-08',
         'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'snippets/2016/jan2016.lang' => [
