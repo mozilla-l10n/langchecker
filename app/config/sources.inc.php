@@ -127,6 +127,11 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
     ],
+    'firefox/facebookcontainer.lang' => [
+        'deadline'          => '2018-04-26',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/features/bookmarks.lang' => [
         'deadline'          => '2017-08-15',
         'priority'          => 1,
