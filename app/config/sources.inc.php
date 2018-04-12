@@ -17,8 +17,8 @@ $legal_locales = [
 ];
 
 $getinvolved_locales = [
-    'af', 'am', 'ar', 'az', 'azz', 'bg', 'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de',
-    'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr',
+    'af', 'am', 'ar', 'az', 'azz', 'bg', 'bn-BD', 'bs', 'cak', 'crh', 'cs', 'cy',
+    'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr',
     'fy-NL', 'he', 'hi-IN', 'hr', 'hsb', 'ia', 'id', 'it', 'kab', 'ko', 'lt',
     'ms', 'nl', 'nn-NO', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk',
     'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'tr', 'uk', 'xh', 'zam',
@@ -126,6 +126,11 @@ $mozillaorg_lang = [
     'firefox/channel/index.lang' => [
         'priority'          => 1,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
+    ],
+    'firefox/facebookcontainer/index.lang' => [
+        'deadline'          => '2018-04-26',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
     ],
     'firefox/features/bookmarks.lang' => [
         'deadline'          => '2017-08-15',
@@ -362,7 +367,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 2,
         'supported_locales' => [
-            'af', 'am', 'azz', 'bn-BD', 'bs', 'ca', 'cak', 'cs', 'cy', 'de',
+            'af', 'am', 'azz', 'bn-BD', 'bs', 'ca', 'cak', 'crh', 'cs', 'cy', 'de',
             'dsb', 'en-GB', 'es-CL', 'es-MX', 'eu', 'fa', 'fr', 'gl', 'hi-IN',
             'hsb', 'ia', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'lv', 'nl',
             'nn-NO', 'nv', 'pa-IN', 'pai', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk',
@@ -375,8 +380,8 @@ $mozillaorg_lang = [
         ],
         'priority'          => 2,
         'supported_locales' => [
-            'af', 'am', 'ar', 'azz', 'bg', 'bn-BD', 'bs', 'ca', 'cak', 'cs',
-            'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES',
+            'af', 'am', 'ar', 'azz', 'bg', 'bn-BD', 'bs', 'ca', 'cak', 'crh',
+            'cs', 'cy', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-CL', 'es-ES',
             'es-MX', 'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hi-IN', 'hr', 'hsb',
             'ia', 'id', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl',
             'nn-NO', 'nv', 'pa-IN', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru',
@@ -386,7 +391,7 @@ $mozillaorg_lang = [
     ],
     'mozorg/about/manifesto.lang' => [
         'priority'          => 3,
-        'deadline'          => '2018-03-28',
+        'deadline'          => '2018-04-26',
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/contribute/index.lang' => [
