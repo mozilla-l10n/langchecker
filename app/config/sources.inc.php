@@ -127,7 +127,7 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
     ],
-    'firefox/facebookcontainer.lang' => [
+    'firefox/facebookcontainer/index.lang' => [
         'deadline'          => '2018-04-26',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
@@ -391,7 +391,7 @@ $mozillaorg_lang = [
     ],
     'mozorg/about/manifesto.lang' => [
         'priority'          => 3,
-        'deadline'          => '2018-03-28',
+        'deadline'          => '2018-04-26',
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/contribute/index.lang' => [
