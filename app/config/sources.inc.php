@@ -763,6 +763,10 @@ $engagement_lang = [
         'deadline'          => '2018-04-08',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
+    'emails/2018/cross_site_tracking_petition_kicker.lang' => [
+        'deadline'          => '2018-04-19',
+        'supported_locales' => ['es', 'pt-BR'],
+    ],
     'emails/2018/donor_survey_march.lang' => [
         'deadline'          => '2018-03-11',
         'supported_locales' => ['de', 'es', 'fr'],
@@ -794,6 +798,10 @@ $engagement_lang = [
     'emails/2018/jan_mobile_app_updates_id.lang' => [
         'deadline'          => '2018-02-06',
         'supported_locales' => ['id'],
+    ],
+    'emails/2018/zuckerberg_eu.lang' => [
+        'deadline'          => '2018-04-19',
+        'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
     'heartbeat/2016/sep2016.lang' => [
         'supported_locales' => [
@@ -829,6 +837,10 @@ $engagement_lang = [
     'other/2018/cross_site_tracking_petition.lang' => [
         'deadline'          => '2018-04-08',
         'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
+    'other/2018/zuckerberg_eu_petition.lang' => [
+        'deadline'          => '2018-04-19',
+        'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl'],
     ],
     'snippets/2016/jan2016.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
