@@ -577,44 +577,6 @@ $mozillaorg_lang = [
             'zh-TW',
         ],
     ],
-    'thunderbird/channel.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'bs', 'cak', 'cy', 'cs', 'de', 'en-GB', 'es-ES', 'fi', 'fr', 'it',
-            'ja', 'kab', 'ko', 'lt', 'nb-NO', 'nl', 'nn-NO', 'pl', 'pt-BR',
-            'ro', 'ru', 'sk', 'sq', 'uk', 'zh-TW',
-        ],
-    ],
-    'thunderbird/features.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => array_merge(
-            $thunderbird_locales,
-            [
-                'hi-IN',
-            ]
-        ),
-    ],
-    'thunderbird/index.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => array_merge(
-            $thunderbird_locales,
-            [
-                'hi-IN', 'ur',
-            ]
-        ),
-    ],
-    'thunderbird/start/release.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => $thunderbird_locales,
-    ],
 ];
 
 // Default priority is 2

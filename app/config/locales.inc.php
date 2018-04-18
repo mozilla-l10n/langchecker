@@ -51,22 +51,6 @@ $firefox_locales = array_diff(
 // All locales working on Firefox desktop + Android
 $firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
 
-/*
-    Thunderbird locales on Release channel
-    Source: http://hg.mozilla.org/releases/comm-release/raw-file/tip/mail/locales/shipped-locales
-
-    Locales to remove: en-US, ta-LK
-    Added: az, bs, cak, fa
-*/
-$thunderbird_locales = [
-    'ar', 'ast', 'az', 'be', 'bg', 'bn-BD', 'br', 'bs', 'ca', 'cak', 'cs', 'cy',
-    'da', 'de', 'dsb', 'el', 'en-GB', 'es-AR', 'es-ES', 'et', 'eu', 'fa', 'fi',
-    'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hr', 'hsb', 'hu', 'hy-AM', 'id',
-    'is', 'it', 'ja', 'kab', 'ko', 'lt', 'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl',
-    'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE',
-    'tr', 'uk', 'vi', 'zh-CN', 'zh-TW',
-];
-
 // List of locales with active newsletter
 $newsletter_locales = [
     'bg', 'cs', 'de', 'es-ES', 'fr', 'hu', 'id', 'it', 'nl',
