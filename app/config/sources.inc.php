@@ -1015,6 +1015,10 @@ $engagement_lang = [
         'deadline'          => '2018-04-09',
         'supported_locales' => ['id'],
     ],
+    'snippets/2018/apr2018_mofo.lang' => [
+        'deadline'          => '2018-04-30',
+        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
