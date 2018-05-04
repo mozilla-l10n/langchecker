@@ -116,12 +116,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
-    'firefox/australis/firefox_tour.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $firefox_locales,
-    ],
     'firefox/channel/index.lang' => [
         'priority'          => 1,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
@@ -247,12 +241,6 @@ $mozillaorg_lang = [
     'firefox/whatsnew.lang' => [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
-    ],
-    'firefox/whatsnew_38.lang' => [
-       'flags' => [
-           'obsolete' => ['all'],
-       ],
-       'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_57.lang' => [
         'priority'          => 1,
