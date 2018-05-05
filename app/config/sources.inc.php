@@ -722,6 +722,10 @@ $engagement_lang = [
         'deadline'          => '2018-03-22',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
+    'emails/2018/clear_history.lang' => [
+        'deadline'          => '2018-05-13',
+        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
     'emails/2018/cross_site_tracking_petition.lang' => [
         'deadline'          => '2018-04-08',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
