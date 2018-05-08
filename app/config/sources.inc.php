@@ -1147,36 +1147,6 @@ $appstores_lang = [
             'zh-CN', 'zh-TW',
         ],
     ],
-    'fx_ios/whatsnew/ios_8_0.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => array_diff($fx_ios_store, ['de']),
-    ],
-    'fx_ios/whatsnew/ios_8_0_de.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => ['de'],
-    ],
-    'fx_ios/whatsnew/ios_9_0.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_ios_store,
-    ],
-    'fx_ios/whatsnew/ios_10.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => array_diff($fx_ios_store, ['de']),
-    ],
-    'fx_ios/whatsnew/ios_10b.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => ['de'],
-    ],
     'fx_ios/whatsnew/ios_11.lang' => [
         'deadline'          => '2018-03-29',
         'supported_locales' => $fx_ios_store,
