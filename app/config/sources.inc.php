@@ -1164,7 +1164,13 @@ $appstores_lang = [
         ],
     ],
     'fx_ios/whatsnew/ios_11.lang' => [
-        'deadline'          => '2018-03-29',
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
+        'supported_locales' => $fx_ios_store,
+    ],
+    'fx_ios/whatsnew/ios_12.lang' => [
+        'deadline'          => '2018-05-25',
         'supported_locales' => $fx_ios_store,
     ],
 ];
