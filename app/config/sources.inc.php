@@ -1032,6 +1032,12 @@ $engagement_lang = [
         'deadline'          => '2018-05-24',
         'supported_locales' => ['id', 'zh-TW'],
     ],
+    'snippets/2018/fundraising.lang' => [
+        'deadline'          => '2018-06-04',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru',
+        ],
+    ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
