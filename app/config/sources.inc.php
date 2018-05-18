@@ -766,6 +766,9 @@ $engagement_lang = [
         'deadline'          => '2018-04-19',
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
+    'emails/2018/zuckerberg_eu_hearing.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'heartbeat/2016/sep2016.lang' => [
         'supported_locales' => [
             'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja', 'pl',
@@ -800,6 +803,9 @@ $engagement_lang = [
     'other/2018/cross_site_tracking_petition.lang' => [
         'deadline'          => '2018-04-08',
         'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
+    'other/2018/zuckerberg_eu_hearing_petition.lang' => [
+        'supported_locales' => ['de', 'fr'],
     ],
     'other/2018/zuckerberg_eu_petition.lang' => [
         'deadline'          => '2018-04-19',
