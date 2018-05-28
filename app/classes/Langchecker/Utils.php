@@ -85,12 +85,16 @@ class Utils
      *
      * @param string $str A multibyte string
      *
-     * @return int The length of the string after removing all html
+     * @return int The length of the string after removing HTML tags and
+     *             decoding all entities
      */
     public static function getLength($str)
     {
-        // Remove HTML tags and meta tags like {ok}
+        // Remove HTML tags
         $str = strip_tags($str);
+        // Convert HTML entities to unicode
+        $str = html_entity_decode($str);
+        // Strip meta tags like "{ok}"
         $str = self::cleanString($str);
 
         return mb_strlen($str, 'UTF-8');
