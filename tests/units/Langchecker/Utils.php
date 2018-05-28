@@ -33,6 +33,7 @@ class Utils extends atoum\test
     {
         return [
             [' test string', 'test string'],
+            [' test string', 'test string'],
             ['test string {ok} ', 'test string'],
             ['test string {OK} ', 'test string'],
             ['test string{ok} ', 'test string'],
@@ -78,8 +79,13 @@ class Utils extends atoum\test
     {
         return [
             ['Le cheval  blanc ', 16],
+            ['Le cheval&nbsp;blanc ', 15],
+            // Non breaking space at the end should not be stripped
+            ['Le cheval blanc&nbsp;', 16],
             ['<a href="">Le cheval  blanc </a>', 16],
             ['Stringa di prova {ok}', 16],
+            ['Test wrong &foobar; entity', 26],
+            ['Stringa di&quot;prova&quot; {ok}', 17],
             ['<a href="">Stringa di prova </a> {ok}', 16],
             ['મારુ ઘર પાનું બતાવો', 19],
         ];
