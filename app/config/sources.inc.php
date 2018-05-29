@@ -522,50 +522,6 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => $mozillaorg,
     ],
-    'teach/smarton/index.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'az', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-CA', 'en-GB',
-            'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'id', 'it',
-            'ja', 'kab', 'ko', 'nn-NO', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sq',
-            'sr', 'uk', 'zh-CN', 'zh-TW',
-        ],
-    ],
-    'teach/smarton/security.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'az', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-CA', 'en-GB',
-            'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'id', 'it',
-            'kab', 'ja', 'ko', 'nn-NO', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sq',
-            'sr', 'uk', 'zh-CN', 'zh-TW',
-        ],
-    ],
-    'teach/smarton/surveillance.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'az', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-CA', 'en-GB',
-            'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'id', 'it',
-            'ja', 'kab', 'ko', 'nn-NO', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sq',
-            'sr', 'uk', 'zh-CN', 'zh-TW',
-        ],
-    ],
-    'teach/smarton/tracking.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'az', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-CA', 'en-GB',
-            'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'hsb', 'id', 'it',
-            'ja', 'kab', 'ko', 'nn-NO', 'pl', 'pt-BR', 'ro', 'ru', 'sk', 'sq',
-            'sr', 'uk', 'zh-CN', 'zh-TW',
-        ],
-    ],
 ];
 
 // Default priority is 2
