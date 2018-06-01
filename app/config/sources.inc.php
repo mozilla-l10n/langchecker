@@ -670,6 +670,10 @@ $engagement_lang = [
         'deadline'          => '2018-05-13',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
+    'emails/2018/cloudpets.lang' => [
+        'deadline'          => '2018-06-04',
+        'supported_locales' => ['de'],
+    ],
     'emails/2018/cross_site_tracking_petition.lang' => [
         'deadline'          => '2018-04-08',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
@@ -755,6 +759,10 @@ $engagement_lang = [
     'other/2018/cambridge_analytica_petition.lang' => [
         'deadline'          => '2018-03-22',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
+    'other/2018/cloudpets_petition.lang' => [
+        'deadline'          => '2018-06-04',
+        'supported_locales' => ['de'],
     ],
     'other/2018/cross_site_tracking_petition.lang' => [
         'deadline'          => '2018-04-08',
