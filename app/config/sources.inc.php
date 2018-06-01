@@ -47,7 +47,7 @@ $engagement_locales = [
     'ar', 'bg', 'cs', 'cy', 'da', 'de', 'el', 'en-CA', 'en-GB', 'es', 'es-ES',
     'es-MX', 'fa', 'fr', 'fy-NL', 'he', 'hi-IN', 'hu', 'id', 'it', 'ja', 'ko',
     'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk',
-    'sl', 'sq', 'sr', 'sv-SE', 'tr', 'ur', 'zh-CN', 'zh-HK', 'zh-TW',
+    'sl', 'sq', 'sr', 'sv-SE', 'sw', 'tr', 'ur', 'zh-CN', 'zh-HK', 'zh-TW',
 ];
 
 /*
@@ -767,6 +767,11 @@ $engagement_lang = [
     'other/2018/cross_site_tracking_petition.lang' => [
         'deadline'          => '2018-04-08',
         'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
+    'other/2018/mozfest.lang' => [
+        'deadline'          => '2018-06-15',
+        'priority'          => 3,
+        'supported_locales' => ['de', 'es', 'fr', 'hi-IN', 'sw'],
     ],
     'other/2018/zuckerberg_eu_hearing_petition.lang' => [
         'supported_locales' => ['de', 'fr'],
