@@ -243,7 +243,9 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_57.lang' => [
-        'priority'          => 1,
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
         'supported_locales' => array_diff(
             $firefox_locales,
             [
@@ -252,6 +254,13 @@ $mozillaorg_lang = [
             ]),
     ],
     'firefox/whatsnew_59.lang' => [
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
+        'supported_locales' => $firefox_locales,
+    ],
+    'firefox/whatsnew_61.lang' => [
+        'deadline'          => '2018-06-15',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
