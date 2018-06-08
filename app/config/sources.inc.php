@@ -573,7 +573,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2017/copyright_sept.lang' => [
-        'deadline'          => '2017-10-10',
+        'deadline'          => '2018-06-13',
         'supported_locales' => [
             'de', 'es', 'fr', 'it', 'pl',
         ],
