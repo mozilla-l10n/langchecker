@@ -1136,7 +1136,7 @@ $appstores_lang = [
     'fx_android/whatsnew/android_59.lang' => [
         'flags' => [
             'obsolete' => ['all'],
-    ],
+        ],
         'supported_locales' => $fx_android_store,
     ],
     'fx_android/whatsnew/android_60.lang' => [
