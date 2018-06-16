@@ -1016,6 +1016,30 @@ $engagement_lang = [
         'deadline'          => '2018-05-24',
         'supported_locales' => ['id', 'zh-TW'],
     ],
+    'snippets/2018/Firefox100-part1.lang' => [
+        'deadline'          => '2018-07-11',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
+        ],
+    ],
+    'snippets/2018/Firefox100-part2.lang' => [
+        'deadline'          => '2018-07-25',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
+        ],
+    ],
+    'snippets/2018/Firefox100-part3.lang' => [
+        'deadline'          => '2018-08-08',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
+        ],
+    ],
+    'snippets/2018/Firefox100-part4.lang' => [
+        'deadline'          => '2018-08-22',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
+        ],
+    ],
     'snippets/2018/fundraising.lang' => [
         'deadline'          => '2018-06-04',
         'supported_locales' => [
