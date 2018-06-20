@@ -497,7 +497,7 @@ $mozillaorg_lang = [
         'supported_locales' => ['hi-IN'],
     ],
     'mozorg/newsletter/opt-out-confirmation.lang' => [
-        'deadline'          => '2018-06-21',
+        'deadline'          => '2018-06-22',
         'priority'          => 2,
         'supported_locales' => ['de'],
     ],
