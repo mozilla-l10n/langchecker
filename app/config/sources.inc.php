@@ -496,11 +496,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => ['hi-IN'],
     ],
-    'mozorg/newsletter/opt-out-confirmation.lang' => [
-        'deadline'          => '2018-06-22',
-        'priority'          => 2,
-        'supported_locales' => ['de'],
-    ],
     'mozorg/newsletters.lang' => [
         'deadline'          => '2017-03-27',
         'priority'          => 2,
@@ -517,6 +512,11 @@ $mozillaorg_lang = [
     ],
     'mozorg/technology.lang' => [
         'supported_locales' => $mozillaorg,
+    ],
+    'newsletter/opt-out-confirmation.lang' => [
+        'deadline'          => '2018-06-22',
+        'priority'          => 2,
+        'supported_locales' => ['de'],
     ],
     'newsletter.lang' => [
         'priority'          => 1,
