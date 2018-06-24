@@ -580,7 +580,7 @@ $engagement_lang = [
     'emails/2017/copyright_sept.lang' => [
         'deadline'          => '2018-06-13',
         'supported_locales' => [
-            'de', 'es', 'fr', 'it', 'pl',
+            'de', 'fr', 'it', 'pl',
         ],
     ],
     'emails/2017/copyright_summer.lang' => [
@@ -688,6 +688,12 @@ $engagement_lang = [
         'deadline'          => '2018-06-04',
         'supported_locales' => ['de'],
     ],
+    'emails/2018/copyright_stage_2.lang' => [
+        'deadline'          => '2018-07-01',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'it', 'pl',
+        ],
+    ],
     'emails/2018/cross_site_tracking_petition.lang' => [
         'deadline'          => '2018-04-08',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
@@ -710,7 +716,7 @@ $engagement_lang = [
     ],
     'emails/2018/fundraising_may.lang' => [
         'deadline'          => '2018-06-07',
-        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+        'supported_locales' => ['de', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2018/fundraising_thank_you.lang' => [
         'deadline'          => '2018-01-14',
