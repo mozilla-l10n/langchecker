@@ -40,6 +40,7 @@ $ignored_files = [
     'newsletter/existing.lang',
     'newsletter/mozilla-and-you.lang',
     'newsletter/updated.lang',
+    'privacy/archive/firefox-cliqz.lang',
     'privacy/notices/firefox-hello.lang',
     'privacy/notices/firefox.lang',
     # Temporary, to avoid removing fake activation files for Quantum Whatsnew page
