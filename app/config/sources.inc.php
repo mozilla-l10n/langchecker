@@ -789,9 +789,12 @@ $engagement_lang = [
         'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'other/2018/mozfest.lang' => [
-        'deadline'          => '2018-06-15',
         'priority'          => 3,
-        'supported_locales' => ['de', 'es', 'fr', 'hi-IN', 'pt-BR', 'sw'],
+        'supported_locales' => ['de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'sw'],
+    ],
+    'other/2018/mozfest_tickets.lang' => [
+        'priority'          => 3,
+        'supported_locales' => ['de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'sw'],
     ],
     'other/2018/zuckerberg_eu_hearing_petition.lang' => [
         'supported_locales' => ['de', 'fr'],
