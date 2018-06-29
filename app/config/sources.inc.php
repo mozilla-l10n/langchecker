@@ -487,7 +487,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/moss/index.lang' => [
-        'deadline'          => '2017-07-30',
+        'deadline'          => '2018-07-15',
         'priority'          => 1,
         'supported_locales' => ['hi-IN'],
     ],
@@ -497,7 +497,7 @@ $mozillaorg_lang = [
         'supported_locales' => ['hi-IN'],
     ],
     'mozorg/newsletters.lang' => [
-        'deadline'          => '2017-03-27',
+        'deadline'          => '2018-07-15',
         'priority'          => 2,
         'supported_locales' => $newsletter_locales,
     ],
@@ -520,6 +520,11 @@ $mozillaorg_lang = [
     ],
     'newsletter.lang' => [
         'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
+    'privacy/faq.lang' => [
+        'priority'          => 2,
+        'deadline'          => '2018-07-30',
         'supported_locales' => $mozillaorg,
     ],
     'privacy/index.lang' => [
