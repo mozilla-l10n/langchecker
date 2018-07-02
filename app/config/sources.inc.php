@@ -696,7 +696,7 @@ $engagement_lang = [
     'emails/2018/copyright_stage_2.lang' => [
         'deadline'          => '2018-07-01',
         'supported_locales' => [
-            'de', 'es', 'fr', 'it', 'pl',
+            'de', 'fr', 'it',
         ],
     ],
     'emails/2018/cross_site_tracking_petition.lang' => [
@@ -1020,7 +1020,7 @@ $engagement_lang = [
         'supported_locales' => ['id'],
     ],
     'snippets/2018/apr2018_mofo.lang' => [
-        'deadline'          => '2018-04-30',
+        'deadline'          => '2018-07-07',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'snippets/2018/may2018.lang' => [
