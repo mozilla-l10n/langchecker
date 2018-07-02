@@ -440,7 +440,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL',
-            'es-ES', 'es-MX', 'fa', 'fr', 'hi-IN', 'id', 'it', 'kab', 'ko',
+            'es-ES', 'es-MX', 'fa', 'fr', 'hi-IN', 'ia', 'id', 'it', 'kab', 'ko',
             'nn-NO', 'pl', 'pt-BR', 'ro', 'sk', 'sl', 'sq', 'sv-SE', 'uk',
             'zh-TW', 'uk',
         ],
@@ -468,7 +468,7 @@ $mozillaorg_lang = [
     'mozorg/internet-health/shared.lang' => [
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL',
-            'es-ES', 'es-MX', 'fa', 'fr', 'hi-IN', 'id', 'it', 'kab', 'ko',
+            'es-ES', 'es-MX', 'fa', 'fr', 'hi-IN', 'ia', 'id', 'it', 'kab', 'ko',
             'nn-NO', 'pl', 'pt-BR', 'sk', 'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
         ],
     ],
@@ -478,7 +478,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR', 'ro',
+            'es-MX', 'fr', 'ia', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR', 'ro',
             'sk', 'sl', 'sq', 'sv-SE',
         ],
     ],
