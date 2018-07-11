@@ -699,6 +699,9 @@ $engagement_lang = [
             'de', 'fr', 'it',
         ],
     ],
+    'emails/2018/copyright_win.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2018/cross_site_tracking_petition.lang' => [
         'deadline'          => '2018-04-08',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
