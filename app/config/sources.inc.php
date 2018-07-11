@@ -710,6 +710,10 @@ $engagement_lang = [
         'deadline'          => '2018-04-19',
         'supported_locales' => ['es', 'pt-BR'],
     ],
+    'emails/2018/donor_mid_year_update.lang' => [
+        'deadline'          => '2018-07-23',
+        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
     'emails/2018/donor_survey_march.lang' => [
         'deadline'          => '2018-03-11',
         'supported_locales' => ['de', 'es', 'fr'],
