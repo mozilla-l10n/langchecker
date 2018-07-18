@@ -1209,14 +1209,14 @@ $appstores_lang = [
             'zh-CN', 'zh-TW',
         ],
     ],
-    'fx_ios/whatsnew/ios_11.lang' => [
+    'fx_ios/whatsnew/ios_12.lang' => [
         'flags' => [
             'obsolete' => ['all'],
         ],
         'supported_locales' => $fx_ios_store,
     ],
-    'fx_ios/whatsnew/ios_12.lang' => [
-        'deadline'          => '2018-05-25',
+    'fx_ios/whatsnew/ios_13.lang' => [
+        'deadline'          => '2018-07-26',
         'supported_locales' => $fx_ios_store,
     ],
 ];
