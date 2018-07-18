@@ -1211,7 +1211,7 @@ $appstores_lang = [
     ],
     'fx_ios/whatsnew/ios_12.lang' => [
         'flags' => [
-          'obsolete' => ['all'],
+            'obsolete' => ['all'],
         ],
         'supported_locales' => $fx_ios_store,
     ],
