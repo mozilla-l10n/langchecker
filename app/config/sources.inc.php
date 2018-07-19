@@ -712,7 +712,7 @@ $engagement_lang = [
     ],
     'emails/2018/donor_mid_year_update.lang' => [
         'deadline'          => '2018-07-23',
-        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+        'supported_locales' => ['de', 'fr'],
     ],
     'emails/2018/donor_survey_march.lang' => [
         'deadline'          => '2018-03-11',
@@ -725,6 +725,10 @@ $engagement_lang = [
     'emails/2018/firefox_learning_journey.lang' => [
         'deadline'          => '2018-06-03',
         'supported_locales' => ['es', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
+    ],
+    'emails/2018/fundraising_july.lang' => [
+        'deadline'          => '2018-07-26',
+        'supported_locales' => ['de', 'fr'],
     ],
     'emails/2018/fundraising_may.lang' => [
         'deadline'          => '2018-06-07',
