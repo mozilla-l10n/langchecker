@@ -528,7 +528,8 @@ $mozillaorg_lang = [
     ],
     'privacy/index.lang' => [
         'priority'          => 1,
-        'supported_locales' => array_diff($legal_locales, ['et']),
+        'deadline'          => '2018-07-30',
+        'supported_locales' => $mozillaorg,
     ],
     'privacy/principles.lang' => [
         'priority'          => 2,
@@ -542,7 +543,7 @@ $mozillaorg_lang = [
     ],
 ];
 
-// Default priority is 2
+// Default priority is 1
 $engagement_lang = [
     'ads/ios_android_apr2016.lang' => [
         'supported_locales' => ['de', 'es-ES', 'fr', 'pl'],
