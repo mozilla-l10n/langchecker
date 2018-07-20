@@ -6,7 +6,6 @@ $no_active_tag = [
     'main.lang',
     'mozorg/internet-health/shared.lang',
     'newsletter.lang',
-    'privacy/index.lang',
 ];
 
 $legal_locales = [
