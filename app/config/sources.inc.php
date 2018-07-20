@@ -6,7 +6,6 @@ $no_active_tag = [
     'main.lang',
     'mozorg/internet-health/shared.lang',
     'newsletter.lang',
-    'privacy/index.lang',
 ];
 
 $legal_locales = [
@@ -529,7 +528,8 @@ $mozillaorg_lang = [
     ],
     'privacy/index.lang' => [
         'priority'          => 1,
-        'supported_locales' => array_diff($legal_locales, ['et']),
+        'deadline'          => '2018-07-30',
+        'supported_locales' => $mozillaorg,
     ],
     'privacy/principles.lang' => [
         'priority'          => 2,
