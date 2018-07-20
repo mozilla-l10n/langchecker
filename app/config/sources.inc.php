@@ -543,7 +543,7 @@ $mozillaorg_lang = [
     ],
 ];
 
-// Default priority is 2
+// Default priority is 1
 $engagement_lang = [
     'ads/ios_android_apr2016.lang' => [
         'supported_locales' => ['de', 'es-ES', 'fr', 'pl'],
