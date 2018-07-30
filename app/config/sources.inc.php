@@ -202,9 +202,9 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-CA', 'en-GB',
-            'eo', 'es-CL', 'es-ES', 'fr', 'ga-IE', 'hi-IN', 'hsb', 'ia', 'ja',
-            'kab', 'kk', 'ko', 'nl', 'nn-NO', 'pl', 'pt-PT', 'pt-BR', 'ro', 'ru',
-            'sk', 'sl', 'sq', 'uk', 'zh-CN', 'zh-TW',
+            'eo', 'es-CL', 'es-ES', 'fr', ' fy-NL', 'ga-IE', 'hi-IN', 'hsb', 'ia',
+            'ja', 'kab', 'kk', 'ko', 'nl', 'nn-NO', 'pl', 'pt-PT', 'pt-BR', 'ro',
+            'ru', 'sk', 'sl', 'sq', 'uk', 'zh-CN', 'zh-TW',
         ],
     ],
     'firefox/products/developer-quantum.lang' => [
