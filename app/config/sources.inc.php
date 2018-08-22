@@ -477,8 +477,8 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'ia', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR', 'ro',
-            'sk', 'sl', 'sq', 'sv-SE',
+            'es-MX', 'fr', 'ia', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR',
+            'ro', 'sk', 'sl', 'sq', 'sv-SE', 'uk',
         ],
     ],
     'mozorg/mission.lang' => [
