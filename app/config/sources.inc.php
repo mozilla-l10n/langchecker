@@ -696,7 +696,7 @@ $engagement_lang = [
     'emails/2018/copyright_sept_vote.lang' => [
         'deadline'          => '2018-08-31',
         'supported_locales' => [
-            'de', 'fr', 'es', 'pl'
+            'de', 'fr', 'es', 'pl',
         ],
     ],
     'emails/2018/copyright_stage_2.lang' => [
@@ -809,7 +809,7 @@ $engagement_lang = [
     'other/2018/copyright_postcards.lang' => [
         'deadline'          => '2018-08-31',
         'supported_locales' => [
-            'de', 'fr', 'es', 'pl'
+            'de', 'fr', 'es', 'pl',
         ],
     ],
     'other/2018/cross_site_tracking_petition.lang' => [
@@ -827,7 +827,7 @@ $engagement_lang = [
     'other/2018/wagtail_forms.lang' => [
         'deadline'          => '2018-08-31',
         'supported_locales' => [
-            'de', 'fr', 'es', 'pl'
+            'de', 'fr', 'es', 'pl',
         ],
     ],
     'other/2018/zuckerberg_eu_hearing_petition.lang' => [
