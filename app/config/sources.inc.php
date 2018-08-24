@@ -792,10 +792,9 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'other/2017/mozfest_design_assets.lang' => [
-        'deadline'          => '2017-10-04',
         'priority'          => 3,
         'supported_locales' => [
-            'de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'zh-TW',
+            'de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'sw', 'zh-TW',
         ],
     ],
     'other/2018/cambridge_analytica_petition.lang' => [
