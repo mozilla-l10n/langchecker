@@ -693,6 +693,12 @@ $engagement_lang = [
         'deadline'          => '2018-06-04',
         'supported_locales' => ['de'],
     ],
+    'emails/2018/copyright_sept_vote.lang' => [
+        'deadline'          => '2018-08-31',
+        'supported_locales' => [
+            'de', 'fr', 'es', 'pl',
+        ],
+    ],
     'emails/2018/copyright_stage_2.lang' => [
         'deadline'          => '2018-07-01',
         'supported_locales' => [
@@ -800,6 +806,12 @@ $engagement_lang = [
         'deadline'          => '2018-06-04',
         'supported_locales' => ['de'],
     ],
+    'other/2018/copyright_postcards.lang' => [
+        'deadline'          => '2018-08-31',
+        'supported_locales' => [
+            'de', 'fr', 'es', 'pl',
+        ],
+    ],
     'other/2018/cross_site_tracking_petition.lang' => [
         'deadline'          => '2018-04-08',
         'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl', 'pt-BR'],
@@ -811,6 +823,12 @@ $engagement_lang = [
     'other/2018/mozfest_tickets.lang' => [
         'priority'          => 3,
         'supported_locales' => ['de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'sw'],
+    ],
+    'other/2018/wagtail_forms.lang' => [
+        'deadline'          => '2018-08-31',
+        'supported_locales' => [
+            'de', 'fr', 'es', 'pl',
+        ],
     ],
     'other/2018/zuckerberg_eu_hearing_petition.lang' => [
         'supported_locales' => ['de', 'fr'],
