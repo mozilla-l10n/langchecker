@@ -104,7 +104,7 @@ $engagement_locales = [
 // Default priority is 3
 $mozillaorg_lang = [
     'download_button.lang' => [
-        'deadline'          => '2018-02-20',
+        'deadline'          => '2018-09-09',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -338,7 +338,7 @@ $mozillaorg_lang = [
         'supported_locales' => $legal_locales,
     ],
     'main.lang' => [
-        'deadline'          => '2017-11-13',
+        'deadline'          => '2018-09-09',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
@@ -498,7 +498,7 @@ $mozillaorg_lang = [
         'supported_locales' => ['hi-IN'],
     ],
     'mozorg/newsletters.lang' => [
-        'deadline'          => '2018-07-15',
+        'deadline'          => '2018-09-09',
         'priority'          => 2,
         'supported_locales' => $newsletter_locales,
     ],
