@@ -419,7 +419,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL',
-            'es-ES', 'es-MX', 'fr', 'id', 'it', 'kab', 'ko', 'nn-NO','pt-BR',
+            'es-ES', 'es-MX', 'fr', 'ia', 'id', 'it', 'kab', 'ko', 'nn-NO','pt-BR',
             'ro', 'sk', 'sl', 'sq', 'sv-SE', 'uk',
         ],
     ],
@@ -429,7 +429,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL',
-            'es-ES', 'es-MX', 'fr', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR',
+            'es-ES', 'es-MX', 'fr', 'ia', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR',
             'ro', 'sk', 'sl', 'sq', 'sv-SE', 'uk',
         ],
     ],
@@ -450,7 +450,7 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL',
-            'es-ES', 'es-MX', 'fr', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR',
+            'es-ES', 'es-MX', 'fr', 'ia', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR',
             'ro', 'sk', 'sl', 'sq', 'sv-SE', 'uk',
         ],
     ],
