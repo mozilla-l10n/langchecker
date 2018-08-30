@@ -701,6 +701,12 @@ $engagement_lang = [
             'de', 'fr', 'es', 'pl',
         ],
     ],
+    'emails/2018/copyright_sept_vote_v2.lang' => [
+        'deadline'          => '2018-09-03',
+        'supported_locales' => [
+            'de', 'fr', 'es', 'pl',
+        ],
+    ],
     'emails/2018/copyright_stage_2.lang' => [
         'deadline'          => '2018-07-01',
         'supported_locales' => [
