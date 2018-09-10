@@ -182,6 +182,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/new/quantum.lang' => [
+        'deadline'          => '2018-09-23',
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
@@ -236,7 +237,7 @@ $mozillaorg_lang = [
     ],
     'firefox/tracking-protection-tour.lang' => [
         'priority'          => 1,
-        'deadline'          => '2018-09-09',
+        'deadline'          => '2018-10-02',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew.lang' => [
