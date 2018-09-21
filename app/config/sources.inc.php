@@ -758,6 +758,10 @@ $engagement_lang = [
         'deadline'          => '2018-06-07',
         'supported_locales' => ['de', 'fr', 'pl', 'pt-BR'],
     ],
+    'emails/2018/fundraising_sept.lang' => [
+        'deadline'          => '2018-10-08',
+        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+    ],
     'emails/2018/fundraising_thank_you.lang' => [
         'deadline'          => '2018-01-14',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
@@ -842,7 +846,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'sw'],
     ],
     'other/2018/wagtail_forms.lang' => [
-        'deadline'          => '2018-08-31',
+        'priority'          => 4,
         'supported_locales' => [
             'de', 'fr', 'es', 'pl',
         ],
@@ -1112,9 +1116,8 @@ $engagement_lang = [
         ],
     ],
     'snippets/2018/fundraising_sept.lang' => [
-        'deadline'          => '2018-09-14',
         'supported_locales' => [
-            'de', 'es', 'fr',
+            'de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru',
         ],
     ],
     'social/2016/fundraising.lang' => [
