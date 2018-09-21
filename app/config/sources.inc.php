@@ -209,7 +209,11 @@ $mozillaorg_lang = [
         ],
     ],
     'firefox/products/developer-quantum.lang' => [
-        'deadline'          => '2018-09-23',
+        'deadline'          => '2018-10-05',
+        'supported_locales' => $firefox_locales,
+    ],
+    'firefox/profile-per-install.lang' => [
+        'deadline'          => '2018-10-05',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/retention/thank-you.lang' => [
@@ -263,6 +267,11 @@ $mozillaorg_lang = [
     ],
     'firefox/whatsnew_61.lang' => [
         'deadline'          => '2018-06-15',
+        'priority'          => 1,
+        'supported_locales' => $firefox_locales,
+    ],
+    'firefox/whatsnew_63.lang' => [
+        'deadline'          => '2018-09-28',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
