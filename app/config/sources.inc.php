@@ -746,6 +746,10 @@ $engagement_lang = [
         'deadline'          => '2018-02-18',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
+    'emails/2018/firefox_account_welcome_journey.lang' => [
+        'deadline'          => '2018-10-28',
+        'supported_locales' => ['es', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
+    ],
     'emails/2018/firefox_learning_journey.lang' => [
         'deadline'          => '2018-06-03',
         'supported_locales' => ['es', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
