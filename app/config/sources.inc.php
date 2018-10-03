@@ -746,6 +746,9 @@ $engagement_lang = [
         'deadline'          => '2018-02-18',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
+    'emails/2018/facebook_2fa.lang' => [
+        'supported_locales' => ['de', 'fr', 'pl', 'pt-BR'],
+    ],
     'emails/2018/firefox_account_welcome_journey.lang' => [
         'deadline'          => '2018-10-28',
         'supported_locales' => ['es', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
@@ -841,6 +844,9 @@ $engagement_lang = [
         'deadline'          => '2018-04-08',
         'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
+    'other/2018/facebook_2fa_petition.lang' => [
+        'supported_locales' => ['de', 'fr', 'pl', 'pt-BR'],
+    ],
     'other/2018/mozfest.lang' => [
         'priority'          => 3,
         'supported_locales' => ['de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'sw'],
@@ -850,9 +856,8 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'sw'],
     ],
     'other/2018/wagtail_forms.lang' => [
-        'priority'          => 4,
         'supported_locales' => [
-            'de', 'fr', 'es', 'pl',
+            'de', 'fr', 'es', 'pl', 'pt-BR',
         ],
     ],
     'other/2018/zuckerberg_eu_hearing_petition.lang' => [
