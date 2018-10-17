@@ -209,7 +209,7 @@ $mozillaorg_lang = [
         ],
     ],
     'firefox/products/developer-quantum.lang' => [
-        'deadline'          => '2018-10-05',
+        'deadline'          => '2018-10-29',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/profile-per-install.lang' => [
@@ -241,7 +241,7 @@ $mozillaorg_lang = [
     ],
     'firefox/tracking-protection-tour.lang' => [
         'priority'          => 1,
-        'deadline'          => '2018-10-02',
+        'deadline'          => '2018-10-29',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew.lang' => [
