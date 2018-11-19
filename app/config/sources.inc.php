@@ -767,11 +767,11 @@ $engagement_lang = [
     ],
     'emails/2018/fundraising_oct.lang' => [
         'deadline'          => '2018-10-25',
-        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+        'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
     'emails/2018/fundraising_sept.lang' => [
         'deadline'          => '2018-10-08',
-        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+        'supported_locales' => ['de', 'fr', 'pl'],
     ],
     'emails/2018/fundraising_thank_you.lang' => [
         'deadline'          => '2018-01-14',
@@ -853,11 +853,11 @@ $engagement_lang = [
     ],
     'other/2018/mozfest.lang' => [
         'priority'          => 3,
-        'supported_locales' => ['de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'sw'],
+        'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR', 'sw'],
     ],
     'other/2018/mozfest_tickets.lang' => [
         'priority'          => 3,
-        'supported_locales' => ['de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'sw'],
+        'supported_locales' => ['de', 'fr', 'it', 'pt-BR'],
     ],
     'other/2018/wagtail_forms.lang' => [
         'supported_locales' => [
@@ -1131,6 +1131,12 @@ $engagement_lang = [
     'snippets/2018/fundraising_sept.lang' => [
         'supported_locales' => [
             'de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru',
+        ],
+    ],
+    'snippets/2018/fundraising_nov.lang' => [
+        'deadline'          => '2018-12-03',
+        'supported_locales' => [
+            'de', 'es', 'fr', 'pl', 'pt-BR',
         ],
     ],
     'social/2016/fundraising.lang' => [
