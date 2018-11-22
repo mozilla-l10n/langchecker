@@ -111,6 +111,11 @@ $mozillaorg_lang = [
     'firefox/accounts.lang' => [
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/accounts-2018.lang' => [
+        'deadline'          => '2018-12-06',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/all.lang' => [
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
