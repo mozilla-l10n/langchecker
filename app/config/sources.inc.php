@@ -373,7 +373,7 @@ $mozillaorg_lang = [
             'de', 'es-ES', 'fr', 'hi-IN', 'ja', 'pt-BR', 'zh-TW',
         ],
     ],
-    ' en-US/mozorg/about/governance/policies/reporting.lang' => [
+    ' mozorg/about/governance/policies/reporting.lang' => [
         'supported_locales' => [
             'de', 'es-ES', 'fr', 'hi-IN', 'ja', 'pt-BR', 'zh-TW',
         ],
