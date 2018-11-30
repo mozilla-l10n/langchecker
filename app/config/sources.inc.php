@@ -208,9 +208,9 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-CA', 'en-GB',
-            'eo', 'es-CL', 'es-ES', 'fr', 'fy-NL', 'ga-IE', 'hi-IN', 'hsb', 'ia',
-            'ja', 'kab', 'kk', 'ko', 'nl', 'nn-NO', 'pl', 'pt-PT', 'pt-BR', 'ro',
-            'ru', 'sk', 'sl', 'sq', 'uk', 'zh-CN', 'zh-TW',
+            'eo', 'es-CL', 'es-ES', 'fr', 'fy-NL', 'ga-IE', 'gl', 'hi-IN', 'hsb',
+            'ia', 'ja', 'kab', 'kk', 'ko', 'nl', 'nn-NO', 'pl', 'pt-PT', 'pt-BR',
+            'ro', 'ru', 'sk', 'sl', 'sq', 'uk', 'zh-CN', 'zh-TW',
         ],
     ],
     'firefox/products/developer-quantum.lang' => [
@@ -530,9 +530,9 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'newsletter/opt-out-confirmation.lang' => [
-        'deadline'          => '2018-06-22',
-        'priority'          => 2,
-        'supported_locales' => ['de'],
+        'deadline'          => '2018-12-13',
+        'priority'          => 1,
+        'supported_locales' => ['de','es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
     ],
     'newsletter.lang' => [
         'priority'          => 1,
