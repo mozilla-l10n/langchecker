@@ -783,6 +783,9 @@ $engagement_lang = [
         'deadline'          => '2018-12-12',
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2018/fundraising_mitchell.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2018/fundraising_oct.lang' => [
         'deadline'          => '2018-10-25',
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
@@ -790,6 +793,9 @@ $engagement_lang = [
     'emails/2018/fundraising_sept.lang' => [
         'deadline'          => '2018-10-08',
         'supported_locales' => ['de', 'fr', 'pl'],
+    ],
+    'emails/2018/fundraising_surman.lang' => [
+        'supported_locales' => ['de', 'fr'],
     ],
     'emails/2018/fundraising_thank_you.lang' => [
         'deadline'          => '2018-01-14',
