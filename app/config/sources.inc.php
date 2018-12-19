@@ -112,7 +112,6 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/accounts-2018.lang' => [
-        'deadline'          => '2018-12-12',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
