@@ -5,6 +5,7 @@ $no_active_tag = [
     'firefox/shared.lang',
     'main.lang',
     'mozorg/internet-health/shared.lang',
+    'navigation.lang',
     'newsletter.lang',
 ];
 
@@ -537,6 +538,11 @@ $mozillaorg_lang = [
         'deadline'          => '2018-12-13',
         'priority'          => 1,
         'supported_locales' => ['de','es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
+    ],
+    'navigation.lang' => [
+        'deadline'          => '2019-02-04',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
     ],
     'newsletter.lang' => [
         'priority'          => 1,
