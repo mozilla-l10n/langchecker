@@ -246,7 +246,7 @@ $mozillaorg_lang = [
     ],
     'firefox/tracking-protection-tour.lang' => [
         'priority'          => 1,
-        'deadline'          => '2018-10-29',
+        'deadline'          => '2019-01-28',
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew.lang' => [
