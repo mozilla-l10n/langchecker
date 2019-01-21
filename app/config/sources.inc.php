@@ -827,6 +827,9 @@ $engagement_lang = [
     'emails/2018/zuckerberg_eu_hearing.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2019/misinfo_survey.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'heartbeat/2016/sep2016.lang' => [
         'supported_locales' => [
             'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja', 'pl',
@@ -1209,6 +1212,9 @@ $engagement_lang = [
     'surveys/iot_survey.lang' => [
         'deadline'          => '2017-08-06',
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
+    ],
+    'surveys/misinfo.lang' => [
+        'supported_locales' => ['de', 'fr'],
     ],
     'surveys/survey_hello_fx42.lang' => [
         'supported_locales' => [
