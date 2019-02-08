@@ -836,6 +836,9 @@ $engagement_lang = [
     'emails/2019/misinfo_survey.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2019/fb_open_letter.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'heartbeat/2016/sep2016.lang' => [
         'supported_locales' => [
             'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja', 'pl',
