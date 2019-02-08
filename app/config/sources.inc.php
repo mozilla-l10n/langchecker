@@ -833,10 +833,10 @@ $engagement_lang = [
     'emails/2018/zuckerberg_eu_hearing.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
-    'emails/2019/misinfo_survey.lang' => [
+    'emails/2019/fb_open_letter.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
-    'emails/2019/fb_open_letter.lang' => [
+    'emails/2019/misinfo_survey.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
     'heartbeat/2016/sep2016.lang' => [
