@@ -280,6 +280,11 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
+    'firefox/whatsnew_66.lang' => [
+        'deadline'          => '2019-03-06',
+        'priority'          => 1,
+        'supported_locales' => $firefox_locales,
+    ],
     'foundation/advocacy.lang' => [
         'flags' => [
             'opt-in' => ['all'],
@@ -555,7 +560,7 @@ $mozillaorg_lang = [
     ],
     'privacy/index.lang' => [
         'priority'          => 1,
-        'deadline'          => '2018-07-30',
+        'deadline'          => '2019-03-06',
         'supported_locales' => $mozillaorg,
     ],
     'privacy/principles.lang' => [
