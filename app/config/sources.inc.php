@@ -842,6 +842,12 @@ $engagement_lang = [
     'emails/2018/zuckerberg_eu_hearing.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2019/donation_receipt.lang' => [
+        'supported_locales' => [
+            'cs', 'da', 'de', 'es', 'fr', 'it', 'ja', 'nb-NO', 'nl', 'pl',
+            'pt-BR', 'sv-SE', 'ru',
+        ],
+    ],
     'emails/2019/fb_open_letter.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
