@@ -906,7 +906,7 @@ $engagement_lang = [
     ],
     'other/2018/mozfest.lang' => [
         'priority'          => 3,
-        'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR', 'sw'],
+        'supported_locales' => ['de', 'fr', 'it', 'pt-BR', 'sw'],
     ],
     'other/2018/mozfest_tickets.lang' => [
         'priority'          => 3,
