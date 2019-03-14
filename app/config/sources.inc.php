@@ -857,6 +857,11 @@ $engagement_lang = [
     'emails/2019/misinfo_survey.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2019/misinfo_survey_global.lang' => [
+        'priority'          => 3,
+        'deadline'          => '2019-03-25',
+        'supported_locales' => ['pt-BR'],
+    ],
     'heartbeat/2016/sep2016.lang' => [
         'supported_locales' => [
             'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja', 'pl',
@@ -1241,7 +1246,9 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
     ],
     'surveys/misinfo.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'priority'          => 3,
+        'deadline'          => '2019-03-25',
+        'supported_locales' => ['de', 'fr', 'pt-BR'],
     ],
     'surveys/survey_hello_fx42.lang' => [
         'supported_locales' => [
