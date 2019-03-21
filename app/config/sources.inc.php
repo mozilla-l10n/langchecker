@@ -377,6 +377,10 @@ $mozillaorg_lang = [
         'priority'          => 2,
         'supported_locales' => $mozillaorg,
     ],
+    'mozorg/about-2019.lang' => [
+        'priority'          => 3,
+        'supported_locales' => $mozillaorg,
+    ],
     'mozorg/about/governance/policies/participation.lang' => [
         'supported_locales' => [
             'de', 'es-ES', 'fr', 'hi-IN', 'ja', 'pt-BR', 'zh-TW',
