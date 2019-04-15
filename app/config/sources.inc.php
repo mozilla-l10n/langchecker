@@ -430,6 +430,14 @@ $mozillaorg_lang = [
         'deadline'          => '2018-04-26',
         'supported_locales' => $mozillaorg,
     ],
+    'mozorg/browser-history.lang' => [
+        'flags' => [
+            'opt-in' => ['all'],
+        ],
+        'supported_locales' => [
+            'de', 'en-CA', 'en-GB', 'fr',
+        ],
+    ],
     'mozorg/contribute/index.lang' => [
         'flags' => [
             'opt-in' => ['all'],
