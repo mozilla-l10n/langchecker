@@ -1,10 +1,17 @@
 <?php
 namespace Langchecker;
 
+// Check if we only need to display errors for one website
+if ($website != '' && isset($sites[$website])) {
+    $analyzed_sites = [$sites[$website]];
+} else {
+    $analyzed_sites = $sites;
+}
+
 $errors = [];
 // Checks on l10n files
 foreach ($mozilla as $current_locale) {
-    foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
+    foreach (Project::getWebsitesByDataType($analyzed_sites, 'lang') as $current_website) {
         $current_website_name = Project::getWebsiteName($current_website);
         if (Project::isSupportedLocale($current_website, $current_locale)) {
             foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
@@ -142,7 +149,7 @@ foreach ($mozilla as $current_locale) {
         }
     }
 
-    foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
+    foreach (Project::getWebsitesByDataType($analyzed_sites, 'raw') as $current_website) {
         $current_website_name = Project::getWebsiteName($current_website);
         if (Project::isSupportedLocale($current_website, $current_locale)) {
             foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
@@ -165,7 +172,7 @@ foreach ($mozilla as $current_locale) {
 }
 
 // Checks on reference files
-foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
+foreach (Project::getWebsitesByDataType($analyzed_sites, 'lang') as $current_website) {
     $current_website_name = Project::getWebsiteName($current_website);
     $reference_locale = Project::getReferenceLocale($current_website);
     foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
@@ -258,7 +265,7 @@ foreach (Project::getWebsitesByDataType($sites, 'lang') as $current_website) {
     }
 }
 
-foreach (Project::getWebsitesByDataType($sites, 'raw') as $current_website) {
+foreach (Project::getWebsitesByDataType($analyzed_sites, 'raw') as $current_website) {
     $current_website_name = Project::getWebsiteName($current_website);
     $reference_locale = Project::getReferenceLocale($current_website);
     foreach (Project::getWebsiteFiles($current_website) as $current_filename) {
