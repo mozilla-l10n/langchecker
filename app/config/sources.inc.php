@@ -956,7 +956,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'other/2019/misinfo_site.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'snippets/2016/jan2016.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
