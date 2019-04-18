@@ -8,7 +8,7 @@ use Cache\Cache;
     new locales.
 */
 $mozilla = [
-    'ach', 'af', 'am', 'an', 'ar', 'as', 'ast', 'az', 'azz', 'be', 'bg',
+    'ach', 'af', 'am', 'an', 'ar', 'as', 'ast', 'az', 'azz', 'be', 'bg', 'bn',
     'bn-BD', 'bn-IN', 'br', 'bs', 'ca', 'cak', 'crh', 'cs', 'cy', 'da', 'de',
     'dsb', 'el', 'en-CA', 'en-GB', 'en-ZA', 'eo', 'es-AR', 'es-CL', 'es-ES',
     'es-MX', 'es', 'et', 'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
@@ -62,7 +62,7 @@ $newsletter_locales = [
    Ref. http://help.surveygizmo.com/help/article/link/create-a-translated-survey#available-languages
 */
 $surveygizmo = [
-    'af', 'an', 'ar', 'as', 'az', 'be', 'bg', 'bm', 'bn-IN',
+    'af', 'an', 'ar', 'as', 'az', 'be', 'bg', 'bm', 'bn',
     'br', 'bs', 'ca', 'cs', 'cy', 'da', 'de', 'ee', 'el',
     'en-GB', 'eo', 'es-ES', 'es-MX', 'et', 'eu', 'fa', 'ff',
     'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN', 'ha',
