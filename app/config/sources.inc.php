@@ -10,14 +10,14 @@ $no_active_tag = [
 ];
 
 $legal_locales = [
-    'af', 'ar', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'de', 'el', 'es-AR',
+    'af', 'ar', 'bg', 'bn', 'ca', 'cs', 'de', 'el', 'es-AR',
     'es-CL', 'es-ES', 'es-MX', 'et', 'fa', 'ff', 'fr', 'fy-NL', 'hi-IN', 'hr',
     'hu', 'id', 'it', 'ja', 'ko', 'mk', 'my', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
     'son', 'sq', 'sr', 'sv-SE', 'ta', 'tl', 'xh', 'zh-CN', 'zh-TW', 'zu',
 ];
 
 $getinvolved_locales = [
-    'af', 'am', 'ar', 'az', 'azz', 'bg', 'bn-BD', 'bs', 'cak', 'crh', 'cs',
+    'af', 'am', 'ar', 'az', 'azz', 'bg', 'bn', 'bs', 'cak', 'crh', 'cs',
     'cy', 'de', 'dsb', 'el', 'en-CA', 'en-GB', 'es-AR', 'es-CL', 'es-ES',
     'es-MX', 'fa', 'fr', 'fy-NL', 'he', 'hi-IN', 'hr', 'hsb', 'ia', 'id', 'it',
     'kab', 'ko', 'lt', 'ms', 'nl', 'nn-NO', 'nv', 'pai', 'pl', 'pt-BR', 'pt-PT',
@@ -29,7 +29,7 @@ $getinvolved_locales = [
 $ios_landing_page = array_unique(array_merge(
     $ios_locales,
     [
-        'af', 'an', 'ar', 'bn-BD', 'bn-IN', 'bs', 'ca', 'cak', 'el',  'en-CA',
+        'af', 'an', 'ar', 'bn', 'bs', 'ca', 'cak', 'el',  'en-CA',
         'es-AR', 'eu', 'fa', 'fy-NL', 'gl', 'gn', 'he', 'hi-IN', 'ka', 'kab',
         'kn', 'lij', 'ml', 'ms', 'my', 'or', 'sq', 'sr', 'ta', 'ur', 'xh',
     ]
@@ -39,7 +39,7 @@ $ios_landing_page = array_unique(array_merge(
 $android_landing_page = array_unique(array_merge(
     $fx_android_locales,
     [
-        'af', 'ast', 'bg', 'bn-BD', 'bs', 'fa', 'kab',
+        'af', 'ast', 'bg', 'bn', 'bs', 'fa', 'kab',
     ]
 ));
 
@@ -211,10 +211,10 @@ $mozillaorg_lang = [
             'opt-in' => $firefox_locales,
         ],
         'supported_locales' => [
-            'bn-BD', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-CA', 'en-GB',
-            'eo', 'es-CL', 'es-ES', 'fr', 'fy-NL', 'ga-IE', 'gl', 'hi-IN', 'hsb',
-            'ia', 'ja', 'kab', 'kk', 'ko', 'nl', 'nn-NO', 'pl', 'pt-PT', 'pt-BR',
-            'ro', 'ru', 'sk', 'sl', 'sq', 'uk', 'zh-CN', 'zh-TW',
+            'bn', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-CA', 'en-GB', 'eo',
+            'es-CL', 'es-ES', 'fr', 'fy-NL', 'ga-IE', 'gl', 'hi-IN', 'hsb',
+            'ia', 'ja', 'kab', 'kk', 'ko', 'nl', 'nn-NO', 'pl', 'pt-PT',
+            'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'uk', 'zh-CN', 'zh-TW',
         ],
     ],
     'firefox/products/developer-quantum.lang' => [
@@ -402,7 +402,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 2,
         'supported_locales' => [
-            'af', 'am', 'azz', 'bn-BD', 'bs', 'ca', 'cak', 'crh', 'cs', 'cy',
+            'af', 'am', 'azz', 'bn', 'bs', 'ca', 'cak', 'crh', 'cs', 'cy',
             'de', 'dsb', 'en-CA', 'en-GB', 'es-CL', 'es-MX', 'eu', 'fa', 'fr',
             'gl', 'hi-IN', 'hsb', 'ia', 'it', 'ja', 'kab', 'km', 'ko', 'lt',
             'lv', 'nl', 'nn-NO', 'nv', 'pa-IN', 'pai', 'pt-BR', 'pt-PT', 'ro',
@@ -416,7 +416,7 @@ $mozillaorg_lang = [
         ],
         'priority'          => 2,
         'supported_locales' => [
-            'af', 'am', 'ar', 'azz', 'bg', 'bn-BD', 'bs', 'ca', 'cak', 'crh',
+            'af', 'am', 'ar', 'azz', 'bg', 'bn', 'bs', 'ca', 'cak', 'crh',
             'cs', 'cy', 'de', 'dsb', 'el', 'en-CA', 'en-GB', 'es-AR', 'es-CL',
             'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hi-IN', 'hr',
             'hsb', 'ia', 'id', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl',
