@@ -560,6 +560,14 @@ $mozillaorg_lang = [
     'mozorg/technology.lang' => [
         'supported_locales' => $mozillaorg,
     ],
+    'mozorg/what-is-a-browser.lang' => [
+        'flags' => [
+            'opt-in' => ['all'],
+        ],
+        'supported_locales' => [
+            'de', 'en-CA', 'en-GB', 'fr',
+        ],
+    ],
     'newsletter/opt-out-confirmation.lang' => [
         'deadline'          => '2018-12-13',
         'priority'          => 1,
