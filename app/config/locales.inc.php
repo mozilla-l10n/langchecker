@@ -9,7 +9,7 @@ use Cache\Cache;
 */
 $mozilla = [
     'ach', 'af', 'am', 'an', 'ar', 'ast', 'az', 'azz', 'be', 'bg', 'bn',
-    'bn-BD', 'bn-IN', 'br', 'bs', 'ca', 'cak', 'crh', 'cs', 'cy', 'da', 'de',
+    'br', 'bs', 'ca', 'cak', 'crh', 'cs', 'cy', 'da', 'de',
     'dsb', 'el', 'en-CA', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
     'es', 'et', 'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl',
     'gn', 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hto', 'hu', 'hy-AM', 'ia',
