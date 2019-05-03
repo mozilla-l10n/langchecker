@@ -885,6 +885,9 @@ $engagement_lang = [
     'emails/2019/fb_open_letter_response.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2019/guardian_reportback.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2019/misinfo_survey.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
@@ -965,6 +968,9 @@ $engagement_lang = [
     ],
     'other/2019/misinfo_site.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
+    ],
+    'other/2019/the_guardian_video.lang' => [
+        'supported_locales' => ['de', 'fr'],
     ],
     'snippets/2016/jan2016.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
