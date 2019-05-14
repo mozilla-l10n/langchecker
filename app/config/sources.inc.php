@@ -199,6 +199,11 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => ['de'],
     ],
+    'firefox/new/trailhead.lang' => [
+        'deadline'          => '2019-06-04',
+        'priority'          => 1,
+        'supported_locales' => $firefox_desktop_android,
+    ],
     'firefox/new/wait-face.lang' => [
         'priority'          => 1,
         'supported_locales' => ['de'],
