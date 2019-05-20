@@ -306,6 +306,13 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
+    'firefox/whatsnew_67.0.5.lang' => [
+        'deadline'          => '2019-06-04',
+        'priority'          => 1,
+        'supported_locales' => [
+            'de', 'en-CA', 'en-GB', 'fr',
+        ],
+    ],
     'foundation/advocacy.lang' => [
         'flags' => [
             'opt-in' => ['all'],
