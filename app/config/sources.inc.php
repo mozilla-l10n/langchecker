@@ -1407,14 +1407,7 @@ $appstores_lang = [
             'zh-CN', 'zh-TW',
         ],
     ],
-    'fx_ios/whatsnew/ios_13.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_ios_store,
-    ],
     'fx_ios/whatsnew/ios_14.lang' => [
-        'deadline'          => '2018-10-08',
         'supported_locales' => $fx_ios_store,
     ],
 ];
