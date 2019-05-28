@@ -65,8 +65,12 @@ if (getenv('AUTOMATED_TESTS')) {
 // User provided variables
 $action = Utils::getQueryParam('action');
 $filename = Utils::getQueryParam('file');
-$json = Utils::getQueryParam('json', false);   // Do we want json data for the webdashboard?
+$json = Utils::getQueryParam('json', false);     // Do we want json data for the webdashboard?
 $locale = Utils::getQueryParam('locale');        // Which locale are we analysing? No default
+if ($locale == '' && $action == 'optin') {
+    // Try to autodetect the locale
+    $locale = Utils::detectLocale($mozilla, '');
+}
 $project = Utils::getQueryParam('project');
 $serial = Utils::getQueryParam('serial', false); // Do we want serialize data for the webdashboard?
-$website = Utils::getQueryParam('website');       // Which website are we looking at?
+$website = Utils::getQueryParam('website');      // Which website are we looking at?
