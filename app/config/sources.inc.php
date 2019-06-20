@@ -904,6 +904,9 @@ $engagement_lang = [
     'emails/2019/fb_open_letter_response.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2019/fundraising_june.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2019/guardian_reportback.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
