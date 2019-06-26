@@ -128,6 +128,10 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
+    'firefox/campaign-trailhead.lang' => [
+        'priority'          => 1,
+        'supported_locales' => $firefox_desktop_android,
+    ],
     'firefox/channel/index.lang' => [
         'priority'          => 1,
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
