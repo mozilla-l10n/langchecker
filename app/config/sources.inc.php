@@ -109,9 +109,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
-    'firefox/accounts.lang' => [
-        'supported_locales' => $mozillaorg,
-    ],
     'firefox/accounts-2018.lang' => [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
