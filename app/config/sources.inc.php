@@ -894,6 +894,9 @@ $engagement_lang = [
     'emails/2019/ad_API.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2019/amazon_privacy_policy.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2019/apple_privacy.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
@@ -992,6 +995,9 @@ $engagement_lang = [
     'other/2018/zuckerberg_eu_petition.lang' => [
         'deadline'          => '2018-04-19',
         'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl'],
+    ],
+    'other/2019/amazon_privacy_policy_petition.lang' => [
+        'supported_locales' => ['de', 'fr'],
     ],
     'other/2019/apple_privacy_petition.lang' => [
         'supported_locales' => ['de', 'fr'],
