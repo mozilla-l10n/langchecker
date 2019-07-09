@@ -117,6 +117,9 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/adblocker.lang' => [
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/all.lang' => [
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
