@@ -232,8 +232,8 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => [
             'bn', 'bs', 'cak', 'cs', 'cy', 'de', 'dsb', 'en-CA', 'en-GB', 'eo',
-            'es-CL', 'es-ES', 'fr', 'fy-NL', 'ga-IE', 'gl', 'hi-IN', 'hsb',
-            'ia', 'ja', 'kab', 'kk', 'ko', 'nl', 'nn-NO', 'pl', 'pt-PT',
+            'es-CL', 'es-ES', 'es-MX', 'fr', 'fy-NL', 'ga-IE', 'gl', 'hi-IN',
+             'hsb', 'ia', 'ja', 'kab', 'kk', 'ko', 'nl', 'nn-NO', 'pl', 'pt-PT',
             'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'uk', 'zh-CN', 'zh-TW',
         ],
     ],
