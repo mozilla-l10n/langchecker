@@ -44,7 +44,7 @@ $android_landing_page = array_unique(array_merge(
 ));
 
 $engagement_locales = [
-    'ar', 'bg', 'cs', 'cy', 'da', 'de', 'el', 'en-CA', 'en-GB', 'es', 'es-ES',
+    'ar', 'bg', 'cs', 'cy', 'da', 'de', 'el', 'en-GB', 'es', 'es-ES',
     'es-MX', 'fa', 'fr', 'fy-NL', 'he', 'hi-IN', 'hu', 'id', 'it', 'ja', 'ko',
     'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk',
     'sl', 'sq', 'sr', 'sv-SE', 'sw', 'tr', 'ur', 'zh-CN', 'zh-HK', 'zh-TW',
@@ -633,13 +633,6 @@ $mozillaorg_lang = [
 
 // Default priority is 1
 $engagement_lang = [
-    'ads/ios_android_apr2016.lang' => [
-        'supported_locales' => ['de', 'es-ES', 'fr', 'pl'],
-    ],
-    'ads/ios_android_feb2017.lang' => [
-        'deadline'          => '2017-02-02',
-        'supported_locales' => ['zh-HK', 'zh-TW'],
-    ],
     'emails/2016/fundraising_email_1.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it'],
     ],
@@ -650,70 +643,44 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2017/advo-autoresponder.lang' => [
-        'deadline'          => '2017-04-03',
-        'priority'          => 4,
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2017/buyers_guide_2.lang' => [
         'supported_locales' => ['es'],
     ],
     'emails/2017/copyright_call.lang' => [
-        'deadline'          => '2017-03-31',
         'supported_locales' => ['de', 'fr', 'es', 'pl'],
     ],
     'emails/2017/copyright_call_IMCO.lang' => [
-        'deadline'          => '2017-06-06',
-        'priority'          => 5,
         'supported_locales' => ['de'],
     ],
     'emails/2017/copyright.lang' => [
-        'deadline'          => '2017-03-09',
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2017/copyright_sept.lang' => [
-        'deadline'          => '2018-06-13',
         'supported_locales' => [
             'de', 'fr', 'it', 'pl',
         ],
     ],
     'emails/2017/copyright_summer.lang' => [
-        'deadline'          => '2017-07-14',
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
     'emails/2017/data_privacy_day.lang' => [
-        'deadline'          => '2017-01-27',
         'supported_locales' => ['de', 'fr'],
     ],
-    'emails/2017/focus_android.lang' => [
-        'deadline'          => '2017-06-19',
-        'supported_locales' => ['pl'],
-    ],
-    'emails/2017/fx_mobile_update.lang' => [
-        'deadline'          => '2017-09-22',
-        'supported_locales' => ['pl'],
-    ],
-    'emails/2017/firefoxandyou_oct.lang' => [
-        'deadline'          => '2017-10-23',
-        'supported_locales' => ['fr', 'pl', 'pt-BR', 'ru'],
-    ],
     'emails/2017/fundraising_email_1.lang' => [
-        'deadline'          => '2017-11-24',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2017/fundraising_email_2.lang' => [
-        'deadline'          => '2017-12-10',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2017/fundraising_email_4_a.lang' => [
-        'deadline'          => '2017-12-24',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2017/fundraising_email_4_b.lang' => [
-        'deadline'          => '2017-12-24',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2017/fundraising_mitchell.lang' => [
-        'priority'          => 4,
         'supported_locales' => ['de', 'fr', 'pt-BR'],
     ],
     'emails/2017/fundraising_moco.lang' => [
@@ -726,75 +693,55 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr', 'it'],
     ],
     'emails/2017/ihr_email_a.lang' => [
-        'deadline'          => '2017-08-07',
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2017/iot_results_a.lang' => [
-        'deadline'          => '2017-10-30',
         'supported_locales' => ['es'],
     ],
     'emails/2017/iot_results_b.lang' => [
-        'deadline'          => '2017-10-30',
         'supported_locales' => ['de', 'fr', 'pt-BR'],
     ],
     'emails/2017/iot_survey.lang' => [
-        'deadline'          => '2017-08-06',
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'emails/2017/mozfest_call.lang' => [
-        'deadline'          => '2017-06-15',
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2017/paperstorm.lang' => [
         'supported_locales' => ['de', 'es-ES', 'fr', 'it'],
     ],
-    'emails/2017/pocket.lang' => [
-        'deadline'          => '2017-08-04',
-        'supported_locales' => ['pl'],
-    ],
     'emails/2017/results_graphics.lang' => [
-        'deadline'          => '2017-03-07',
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2017/survey_results.lang' => [
-        'deadline'          => '2017-03-09',
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2017/template.lang' => [
-        'deadline'          => '2017-06-29',
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pl'],
     ],
     'emails/2017/welcome-message.lang' => [
-        'deadline'          => '2017-05-10',
-        'priority'          => 4,
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
     'emails/2018/cambridge_analytica.lang' => [
-        'deadline'          => '2018-03-22',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2018/clear_history.lang' => [
-        'deadline'          => '2018-05-13',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2018/cloudpets.lang' => [
-        'deadline'          => '2018-06-04',
         'supported_locales' => ['de'],
     ],
     'emails/2018/copyright_sept_vote.lang' => [
-        'deadline'          => '2018-08-31',
         'supported_locales' => [
             'de', 'fr', 'pl',
         ],
     ],
     'emails/2018/copyright_sept_vote_v2.lang' => [
-        'deadline'          => '2018-09-03',
         'supported_locales' => [
             'de', 'fr', 'pl',
         ],
     ],
     'emails/2018/copyright_stage_2.lang' => [
-        'deadline'          => '2018-07-01',
         'supported_locales' => [
             'de', 'fr', 'it',
         ],
@@ -803,92 +750,66 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2018/cross_site_tracking_petition.lang' => [
-        'deadline'          => '2018-04-08',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2018/cross_site_tracking_petition_kicker.lang' => [
-        'deadline'          => '2018-04-19',
         'supported_locales' => ['es', 'pt-BR'],
     ],
     'emails/2018/donor_mid_year_update.lang' => [
-        'deadline'          => '2018-07-23',
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2018/donor_survey_march.lang' => [
-        'deadline'          => '2018-03-11',
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2018/donor_update_feb.lang' => [
-        'deadline'          => '2018-02-18',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2018/facebook_2fa.lang' => [
         'supported_locales' => ['de', 'fr', 'pl', 'pt-BR'],
     ],
-    'emails/2018/firefox_account_welcome_journey.lang' => [
-        'deadline'          => '2018-10-28',
-        'supported_locales' => ['es', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
-    ],
-    'emails/2018/firefox_learning_journey.lang' => [
-        'deadline'          => '2018-06-03',
-        'supported_locales' => ['es', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
-    ],
     'emails/2018/fundraising_giving_tuesday.lang' => [
-        'deadline'          => '2018-11-26',
         'supported_locales' => ['de', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2018/fundraising_july.lang' => [
-        'deadline'          => '2018-07-26',
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2018/fundraising_may.lang' => [
-        'deadline'          => '2018-06-07',
         'supported_locales' => ['de', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2018/fundraising_misinfo.lang' => [
-        'deadline'          => '2018-12-12',
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2018/fundraising_mitchell.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2018/fundraising_oct.lang' => [
-        'deadline'          => '2018-10-25',
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
     'emails/2018/fundraising_sept.lang' => [
-        'deadline'          => '2018-10-08',
         'supported_locales' => ['de', 'fr', 'pl'],
     ],
     'emails/2018/fundraising_surman.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2018/fundraising_thank_you.lang' => [
-        'deadline'          => '2018-01-14',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'emails/2018/fundraising_valentines_day.lang' => [
-        'deadline'          => '2018-02-12',
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2018/ihr_launch.lang' => [
-        'deadline'          => '2018-04-08',
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2018/jan_mobile_app_updates.lang' => [
-        'deadline'          => '2018-02-06',
         'supported_locales' => ['es', 'pl', 'pt-BR', 'ru'],
     ],
     'emails/2018/jan_mobile_app_updates_fr.lang' => [
-        'deadline'          => '2018-02-06',
         'supported_locales' => ['fr'],
     ],
     'emails/2018/jan_mobile_app_updates_id.lang' => [
-        'deadline'          => '2018-02-06',
         'supported_locales' => ['id'],
     ],
     'emails/2018/zuckerberg_eu.lang' => [
-        'deadline'          => '2018-04-19',
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
     'emails/2018/zuckerberg_eu_hearing.lang' => [
@@ -928,63 +849,40 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2019/misinfo_survey_global.lang' => [
-        'priority'          => 3,
-        'deadline'          => '2019-03-25',
         'supported_locales' => ['pt-BR'],
     ],
-    'heartbeat/2016/sep2016.lang' => [
-        'supported_locales' => [
-            'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja', 'pl',
-            'pt-BR', 'ru', 'zh-CN', 'zh-TW',
-        ],
-    ],
-    'heartbeat/2016/nov2016.lang' => [
-        'supported_locales' => [
-            'de', 'es-ES', 'es-MX', 'fr', 'hi-IN', 'id', 'it', 'ja', 'pl',
-            'pt-BR', 'ru', 'zh-CN',
-        ],
-    ],
     'other/2017/iot_results_assets.lang' => [
-        'deadline'          => '2017-10-29',
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
     ],
     'other/2017/mozfest_form.lang' => [
-        'deadline'          => '2017-06-15',
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'other/2017/mozfest_design_assets.lang' => [
-        'priority'          => 3,
         'supported_locales' => [
             'de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'sw', 'zh-TW',
         ],
     ],
     'other/2018/cambridge_analytica_petition.lang' => [
-        'deadline'          => '2018-03-22',
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'other/2018/cloudpets_petition.lang' => [
-        'deadline'          => '2018-06-04',
         'supported_locales' => ['de'],
     ],
     'other/2018/copyright_postcards.lang' => [
-        'deadline'          => '2018-08-31',
         'supported_locales' => [
             'de', 'fr', 'pl',
         ],
     ],
     'other/2018/cross_site_tracking_petition.lang' => [
-        'deadline'          => '2018-04-08',
         'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
     'other/2018/facebook_2fa_petition.lang' => [
         'supported_locales' => ['de', 'fr', 'pl', 'pt-BR'],
     ],
     'other/2018/mozfest.lang' => [
-        'priority'          => 3,
         'supported_locales' => ['de', 'fr', 'it', 'pt-BR', 'sw'],
     ],
     'other/2018/mozfest_tickets.lang' => [
-        'priority'          => 3,
         'supported_locales' => ['de', 'fr', 'it', 'pt-BR'],
     ],
     'other/2018/wagtail_forms.lang' => [
@@ -996,7 +894,6 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'other/2018/zuckerberg_eu_petition.lang' => [
-        'deadline'          => '2018-04-19',
         'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl'],
     ],
     'other/2019/amazon_privacy_policy_petition.lang' => [
@@ -1011,346 +908,52 @@ $engagement_lang = [
     'other/2019/the_guardian_video.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
-    'snippets/2016/jan2016.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
-    ],
-    'snippets/2016/feb2016.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'ru', 'pt-BR'],
-    ],
-    'snippets/2016/mar2016.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'id', 'ru', 'pt-BR'],
-    ],
-    'snippets/2016/apr2016.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'id', 'ru', 'pt-BR'],
-    ],
-    'snippets/2016/apr2016_b.lang' => [
-        'supported_locales' => ['pt-BR'],
-    ],
-    'snippets/2016/may2016_a.lang' => [
-        'supported_locales' => ['es', 'fr', 'ru', 'pt-BR'],
-    ],
-    'snippets/2016/may2016_b.lang' => [
-        'supported_locales' => ['de'],
-    ],
-    'snippets/2016/jun2016_berec.lang' => [
-        'supported_locales' => [
-            'cs', 'de', 'en-GB', 'es-ES', 'fr', 'it', 'nl', 'ro', 'sv-SE',
-            'sl',
-        ],
-    ],
-    'snippets/2016/nov2016.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
-    ],
-    'snippets/2016/dec2016.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
-    ],
-    'snippets/2016/dec2016_eoy_a.lang' => [
-        'supported_locales' => ['it', 'pt-BR', 'ru'],
-    ],
-    'snippets/2016/dec2016_eoy_b.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pl'],
-    ],
-    'snippets/2016/dec2016_eoy_mob.lang' => [
-        'supported_locales' => [
-            'de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru',
-        ],
-    ],
-    'snippets/2016/dec2016_eoy_ty.lang' => [
-        'deadline'          => '2017-01-03',
-        'supported_locales' => [
-            'de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru',
-        ],
-    ],
-    'snippets/2017/aurora.lang' => [
-        'deadline'          => '2017-04-26',
-        'supported_locales' => [
-            'cs', 'de', 'es', 'fr', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ro', 'ru',
-            'tr', 'zh-CN',
-        ],
-    ],
-    'snippets/2017/jan2017.lang' => [
-        'deadline'          => '2017-01-06',
-        'supported_locales' => ['de'],
-    ],
-    'snippets/2017/feb2017.lang' => [
-        'deadline'          => '2017-02-03',
-        'supported_locales' => ['de', 'es', 'fr', 'ru'],
-    ],
-    'snippets/2017/feb2017_b.lang' => [
-        'deadline'          => '2017-02-03',
-        'supported_locales' => ['pt-BR'],
-    ],
-    'snippets/2017/mar2017.lang' => [
-        'deadline'          => '2017-02-24',
-        'supported_locales' => ['de', 'es', 'fr', 'pt-BR', 'ru'],
-    ],
-    'snippets/2017/mar2017_b.lang' => [
-        'deadline'          => '2017-02-24',
-        'supported_locales' => ['id', 'zh-TW'],
-    ],
-    'snippets/2017/apr2017.lang' => [
-        'deadline'          => '2017-03-21',
-        'supported_locales' => [
-            'de', 'es-ES', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2017/apr2017_b.lang' => [
-        'deadline'          => '2017-03-31',
-        'supported_locales' => [
-            'de', 'es-ES', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2017/may2017.lang' => [
-        'deadline'          => '2017-04-19',
-        'supported_locales' => [
-            'de', 'es', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2017/may2017_b.lang' => [
-        'deadline'          => '2017-04-19',
-        'supported_locales' => ['ar', 'fa', 'he', 'ur'],
-    ],
-    'snippets/2017/may2017_c.lang' => [
-        'deadline'          => '2017-04-19',
-        'supported_locales' => ['cs'],
-    ],
-    'snippets/2017/may2017_d.lang' => [
-        'deadline'          => '2017-04-19',
-        'supported_locales' => ['pl'],
-    ],
-    'snippets/2017/jun2017.lang' => [
-        'deadline'          => '2017-05-12',
-        'supported_locales' => [
-            'cs', 'de', 'es', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2017/jul2017.lang' => [
-        'deadline'          => '2017-06-19',
-        'supported_locales' => [
-            'cs', 'es', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2017/jul2017_b.lang' => [
-        'deadline'          => '2017-06-19',
-        'supported_locales' => ['de'],
-    ],
-    'snippets/2017/sep2017_a.lang' => [
-        'deadline'          => '2017-09-04',
-        'supported_locales' => [
-            'cs', 'de', 'es', 'fr', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2017/sep2017_b.lang' => [
-        'deadline'          => '2017-09-04',
-        'supported_locales' => ['id'],
-    ],
-    'snippets/2017/oct2017.lang' => [
-        'deadline'          => '2017-10-25',
-        'supported_locales' => [
-            'cs', 'de', 'es', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2017/nov2017_mobile.lang' => [
-        'deadline'          => '2017-11-10',
-        'supported_locales' => [
-            'de', 'es', 'fr', 'id', 'it', 'pl', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2017/thanks_sep2017.lang' => [
-        'deadline'          => '2017-09-15',
-        'supported_locales' => [
-            'de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2017/copyright_sept.lang' => [
-        'deadline'          => '2017-09-15',
-        'supported_locales' => [
-            'de', 'es', 'fr', 'it', 'pl',
-        ],
-    ],
-    'snippets/2017/testpilot_aug2017.lang' => [
-        'deadline'          => '2017-07-31',
-        'supported_locales' => [
-            'cs', 'es', 'fr', 'id', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2017/fundraising.lang' => [
-        'supported_locales' => [
-            'de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru',
-        ],
-    ],
-    'snippets/2017/iot_survey.lang' => [
-        'deadline'          => '2017-08-06',
-        'supported_locales' => [
-            'de', 'es', 'fr', 'it', 'pt-BR',
-        ],
-    ],
-    'snippets/2017/iot_results.lang' => [
-        'deadline'          => '2017-10-30',
-        'supported_locales' => [
-            'de', 'es', 'fr', 'it', 'pt-BR',
-        ],
-    ],
-    'snippets/2017/paperstorm.lang' => [
-        'deadline'          => '2017-05-08',
-        'supported_locales' => [
-            'de', 'es-ES', 'fr', 'it',
-        ],
-    ],
-    'snippets/2017/list_sign_up_oct.lang' => [
-        'deadline'          => '2017-10-05',
-        'supported_locales' => [
-            'cs', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'ru',
-        ],
-    ],
-    'snippets/2017/buyers-guide.lang' => [
-        'supported_locales' => ['es'],
-    ],
-    'snippets/2018/jan2018.lang' => [
-        'deadline'          => '2018-02-01',
-        'supported_locales' => [
-          'cs', 'de', 'es', 'fr', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2018/apr2018.lang' => [
-        'deadline'          => '2018-04-09',
-        'supported_locales' => [
-          'de', 'es', 'fr', 'pl', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2018/apr2018_b.lang' => [
-        'deadline'          => '2018-04-09',
-        'supported_locales' => ['id'],
-    ],
-    'snippets/2018/apr2018_mofo.lang' => [
-        'deadline'          => '2018-07-07',
-        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
-    ],
-    'snippets/2018/may2018.lang' => [
-        'deadline'          => '2018-05-24',
-        'supported_locales' => ['es', 'fr', 'pl', 'pt-BR', 'ru'],
-    ],
-    'snippets/2018/may2018_b.lang' => [
-        'deadline'          => '2018-05-24',
-        'supported_locales' => ['de'],
-    ],
-    'snippets/2018/may2018_c.lang' => [
-        'deadline'          => '2018-05-24',
-        'supported_locales' => ['id', 'zh-TW'],
-    ],
-    'snippets/2018/Firefox100-part1.lang' => [
-        'deadline'          => '2018-07-11',
-        'supported_locales' => [
-            'de', 'es', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2018/Firefox100-part2.lang' => [
-        'deadline'          => '2018-07-25',
-        'supported_locales' => [
-            'de', 'es', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2018/Firefox100-part3.lang' => [
-        'deadline'          => '2018-08-08',
-        'supported_locales' => [
-            'de', 'es', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2018/Firefox100-part4.lang' => [
-        'deadline'          => '2018-08-22',
-        'supported_locales' => [
-            'de', 'es', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
-        ],
-    ],
-    'snippets/2018/fundraising.lang' => [
-        'deadline'          => '2018-06-04',
-        'supported_locales' => [
-            'de', 'es', 'fr', 'it', 'pl', 'pt-BR', 'ru',
-        ],
-    ],
-    'snippets/2018/fundraising_sept.lang' => [
-        'supported_locales' => [
-            'de', 'fr', 'it', 'pl', 'pt-BR', 'ru',
-        ],
-    ],
-    'snippets/2018/fundraising_nov.lang' => [
-        'deadline'          => '2018-12-03',
-        'supported_locales' => [
-            'de', 'fr', 'pl', 'pt-BR',
-        ],
-    ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
         ],
     ],
     'social/2017/copyright_sept.lang' => [
-        'deadline'          => '2017-09-03',
         'supported_locales' => [
             'de', 'es', 'fr', 'it', 'pl',
         ],
     ],
     'social/2017/iot_survey.lang' => [
-        'deadline'          => '2017-08-09',
         'priority'          => 5,
         'supported_locales' => [
             'de', 'es', 'fr', 'pt-BR',
         ],
     ],
     'social/2017/mozfest.lang' => [
-        'deadline'          => '2017-06-15',
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'social/2017/paperstorm.lang' => [
-        'deadline'          => '2017-05-08',
         'supported_locales' => [
             'de', 'es-ES', 'fr', 'it',
         ],
     ],
     'surveys/copyright_stories.lang' => [
-        'deadline'          => '2017-03-09',
         'supported_locales' => ['de', 'fr'],
     ],
     'surveys/copyright_call_survey.lang' => [
-        'deadline'          => '2017-03-31',
         'supported_locales' => ['de', 'fr', 'es', 'pl'],
     ],
     'surveys/donor_survey_2018.lang' => [
-        'deadline'          => '2018-03-11',
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'surveys/data_privacy_day.lang' => [
-        'deadline'          => '2017-01-27',
         'supported_locales' => ['de', 'fr'],
     ],
     'surveys/iot_survey.lang' => [
-        'deadline'          => '2017-08-06',
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
     ],
     'surveys/misinfo.lang' => [
         'priority'          => 3,
-        'deadline'          => '2019-03-25',
         'supported_locales' => ['de', 'fr', 'pt-BR'],
-    ],
-    'surveys/survey_hello_fx42.lang' => [
-        'supported_locales' => [
-            'ar', 'cs', 'da', 'de', 'el', 'en-GB', 'es-ES', 'es-MX', 'fr',
-            'fy-NL', 'hi-IN', 'hu', 'id', 'it', 'ja', 'ko', 'nb-NO', 'nl',
-            'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk', 'sl', 'sq',
-            'sr', 'sv-SE', 'tr', 'zh-CN', 'zh-TW',
-        ],
     ],
     'surveys/survey_maker_party_2016.lang' => [
         'supported_locales' => [
             'bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'sl',
-        ],
-    ],
-    'surveys/survey_eoy_heartbeat.lang' => [
-        'supported_locales' => ['de'],
-    ],
-    'tiles/2016/tiles_jan2016.lang' => [
-        'supported_locales' => [
-            'de', 'es', 'fr', 'id', 'it', 'pl', 'pt-BR', 'ru',
         ],
     ],
 ];
