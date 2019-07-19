@@ -44,10 +44,8 @@ $android_landing_page = array_unique(array_merge(
 ));
 
 $engagement_locales = [
-    'ar', 'bg', 'cs', 'cy', 'da', 'de', 'el', 'en-GB', 'es', 'es-ES',
-    'es-MX', 'fa', 'fr', 'fy-NL', 'he', 'hi-IN', 'hu', 'id', 'it', 'ja', 'ko',
-    'nb-NO', 'nl', 'nn-NO', 'pa-IN', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk',
-    'sl', 'sq', 'sr', 'sv-SE', 'sw', 'tr', 'ur', 'zh-CN', 'zh-HK', 'zh-TW',
+    'bg', 'cs', 'cy', 'da', 'de', 'en-GB', 'es-ES', 'es', 'fr', 'hi-IN', 'id',
+    'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'sv-SE', 'sw', 'zh-TW',
 ];
 
 /*
@@ -829,7 +827,7 @@ $engagement_lang = [
     ],
     'emails/2019/donation_receipt.lang' => [
         'supported_locales' => [
-            'cs', 'da', 'de', 'es', 'fr', 'it', 'ja', 'nb-NO', 'nl', 'pl',
+            'cs', 'da', 'de', 'es', 'fr', 'it', 'ja', 'nl', 'pl',
             'pt-BR', 'sv-SE', 'ru',
         ],
     ],
