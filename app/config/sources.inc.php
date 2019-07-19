@@ -403,10 +403,6 @@ $mozillaorg_lang = [
     'mozorg/500.lang' => [
         'supported_locales' => $mozillaorg,
     ],
-    'mozorg/about.lang' => [
-        'priority'          => 2,
-        'supported_locales' => $mozillaorg,
-    ],
     'mozorg/about-2019.lang' => [
         'priority'          => 3,
         'supported_locales' => $mozillaorg,
