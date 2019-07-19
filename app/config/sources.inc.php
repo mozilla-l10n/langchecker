@@ -45,7 +45,7 @@ $android_landing_page = array_unique(array_merge(
 
 $engagement_locales = [
     'bg', 'cs', 'cy', 'da', 'de', 'en-GB', 'es-ES', 'es', 'fr', 'hi-IN', 'id',
-    'it', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'sv-SE', 'sw', 'zh-TW',
+    'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'sv-SE', 'sw', 'zh-TW',
 ];
 
 /*
