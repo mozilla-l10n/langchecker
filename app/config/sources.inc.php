@@ -322,9 +322,7 @@ $mozillaorg_lang = [
     'firefox/whatsnew_69.lang' => [
         'deadline'          => '2019-08-26',
         'priority'          => 1,
-        'supported_locales' => [
-            'de', 'en-CA', 'en-GB', 'fr',
-        ],
+        'supported_locales' => $firefox_locales,
     ],
     'foundation/advocacy.lang' => [
         'flags' => [
