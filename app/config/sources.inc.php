@@ -832,6 +832,9 @@ $engagement_lang = [
             'pt-BR', 'sv-SE', 'ru',
         ],
     ],
+    'emails/2019/fb_2fa_win.lang' => [
+        'supported_locales' => ['de', 'fr', 'pl'],
+    ],
     'emails/2019/fb_open_letter.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
