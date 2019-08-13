@@ -898,6 +898,11 @@ $engagement_lang = [
     'other/2018/zuckerberg_eu_petition.lang' => [
         'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl'],
     ],
+    'other/2019/about_us.lang' => [
+        'supported_locales' => [
+            'de', 'fr', 'es', 'pl', 'pt-BR',
+        ],
+    ],
     'other/2019/amazon_privacy_policy_petition.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
@@ -905,6 +910,11 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'other/2019/join_us.lang' => [
+        'supported_locales' => [
+            'de', 'fr', 'es', 'pl', 'pt-BR',
+        ],
+    ],
+    'other/2019/leadership.lang' => [
         'supported_locales' => [
             'de', 'fr', 'es', 'pl', 'pt-BR',
         ],
