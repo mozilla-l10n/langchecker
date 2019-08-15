@@ -853,6 +853,9 @@ $engagement_lang = [
     'emails/2019/misinfo_survey_global.lang' => [
         'supported_locales' => ['pt-BR'],
     ],
+    'emails/2019/voice_assistants.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'other/2017/iot_results_assets.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
     ],
@@ -938,6 +941,12 @@ $engagement_lang = [
         ],
     ],
     'other/2019/the_guardian_video.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
+    'other/2019/voice_assistants_blog.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
+    'other/2019/voice_assistants_graphics.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
     'social/2016/fundraising.lang' => [
