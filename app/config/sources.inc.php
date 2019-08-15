@@ -909,11 +909,6 @@ $engagement_lang = [
     'other/2019/apple_privacy_petition.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
-    'other/2019/initiatives_page.lang' => [
-        'supported_locales' => [
-            'de', 'fr', 'es', 'pl', 'pt-BR',
-        ],
-    ],
     'other/2019/internet_health_page.lang' => [
         'supported_locales' => [
             'de', 'fr', 'es', 'pl', 'pt-BR',
@@ -931,11 +926,6 @@ $engagement_lang = [
     ],
     'other/2019/misinfo_site.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'other/2019/participate_page.lang' => [
-        'supported_locales' => [
-            'de', 'fr', 'es', 'pl', 'pt-BR',
-        ],
     ],
     'other/2019/the_guardian_video.lang' => [
         'supported_locales' => ['de', 'fr'],
