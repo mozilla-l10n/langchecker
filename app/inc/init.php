@@ -35,11 +35,6 @@ if (! isset($webroot_folder)) {
     $assets_folder = $webroot_folder . 'assets';
 }
 
-// URL to import iOS/Android/Stores locales
-if (! defined('STORES_L10N')) {
-    die('STORES_L10N constant is missing from app/config/settings.inc.php. Please update your settings file.');
-}
-
 // Cache class
 if (! defined('CACHE_ENABLED')) {
     // Allow disabling cache via config
@@ -53,7 +48,6 @@ $json_object = new Json;
 
 // App-wide variables
 require $conf_folder . 'locales.inc.php';
-require $conf_folder . 'store_locales.inc.php';
 require $conf_folder . 'sources.inc.php';
 require $conf_folder . 'websites.inc.php';
 

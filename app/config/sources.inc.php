@@ -25,24 +25,6 @@ $getinvolved_locales = [
     'xh', 'zam', 'zh-CN', 'zh-TW',
 ];
 
-// List of locales supported for the landing page (larger than the App Store)
-$ios_landing_page = array_unique(array_merge(
-    $ios_locales,
-    [
-        'af', 'an', 'ar', 'bn', 'bs', 'ca', 'cak', 'el',  'en-CA',
-        'es-AR', 'eu', 'fa', 'fy-NL', 'gl', 'gn', 'he', 'hi-IN', 'ka', 'kab',
-        'kn', 'lij', 'ml', 'ms', 'my', 'or', 'sq', 'sr', 'ta', 'ur', 'xh',
-    ]
-));
-
-// List of locales supported for the landing page
-$android_landing_page = array_unique(array_merge(
-    $fx_android_locales,
-    [
-        'af', 'ast', 'bg', 'bn', 'bs', 'fa', 'kab',
-    ]
-));
-
 $engagement_locales = [
     'bg', 'cs', 'cy', 'da', 'de', 'en-GB', 'es-ES', 'es', 'fr', 'hi-IN', 'id',
     'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'sv-SE', 'sw', 'zh-TW',
@@ -986,82 +968,5 @@ $engagement_lang = [
         'supported_locales' => [
             'bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'sl',
         ],
-    ],
-];
-
-// Default priority is 1
-$appstores_lang = [
-    'focus_android/description_release.lang' => [
-        'supported_locales' => $focus_android_store,
-    ],
-    /*
-        Klar is a special case. Content is enabled only for en-US, de, it, fr
-        to cover Switzerland. This also allows us to have a proper "Focus"
-        description for German (e.g. users located outside Germany but using
-        a phone in German).
-    */
-    'klar_android/description_release.lang' => [
-        'supported_locales' => ['de', 'fr', 'it'],
-    ],
-    'focus_android/screenshots_v1.lang' => [
-        'supported_locales' => [
-            'es-ES', 'id', 'pt-BR', 'ru',
-        ],
-    ],
-    'focus_ios/description_release.lang' => [
-        'deadline'          => '2017-09-13',
-        'supported_locales' => $focus_ios_store,
-    ],
-    'focus_ios/screenshots_v2_1.lang' => [
-        'supported_locales' => [
-            'de', 'es-ES', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru', 'zh-CN',
-        ],
-    ],
-    'focus_ios/whatsnew/focus_3_1.lang' => [
-        'supported_locales' => $focus_ios_store,
-    ],
-    'fx_android/description_beta.lang' => [
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/description_nightly.lang' => [
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/description_release.lang' => [
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_59.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_60.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_61.lang' => [
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_62.lang' => [
-        'deadline'          => '2018-09-05',
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_android/whatsnew/android_63.lang' => [
-        'supported_locales' => $fx_android_store,
-    ],
-    'fx_ios/description_release.lang' => [
-        'deadline'          => '2017-09-13',
-        'supported_locales' => $fx_ios_store,
-    ],
-    'fx_ios/screenshots_v3.lang' => [
-        'supported_locales' => [
-            'de', 'es-ES', 'es-MX', 'fr', 'id', 'it', 'ja', 'pt-BR', 'ru',
-            'zh-CN', 'zh-TW',
-        ],
-    ],
-    'fx_ios/whatsnew/ios_14.lang' => [
-        'supported_locales' => $fx_ios_store,
     ],
 ];
