@@ -99,17 +99,4 @@ $sites =
         'engagement',
         ['tags'],
     ],
-    12 => [
-        'appstores',
-        $repositories['appstores']['local_path'],
-        '',
-        array_unique(array_merge($google_play, $apple_store)),
-        $appstores_lang,
-        'en-US', // source locale
-        $repositories['appstores']['public_path'],
-        2,
-        'lang',
-        'appstores',
-        ['tags'],
-    ],
 ];
