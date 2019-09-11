@@ -835,6 +835,9 @@ $engagement_lang = [
     'emails/2019/misinfo_survey_global.lang' => [
         'supported_locales' => ['pt-BR'],
     ],
+    'emails/2019/ad_transparency_latam.lang' => [
+        'supported_locales' => ['es', 'pt-BR'],
+    ],
     'emails/2019/voice_assistants.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
