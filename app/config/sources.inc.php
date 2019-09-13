@@ -842,7 +842,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2019/yt_regrets.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'other/2017/iot_results_assets.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
@@ -928,7 +928,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'other/2019/yt_regrets_form.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
