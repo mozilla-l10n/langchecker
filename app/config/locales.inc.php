@@ -52,6 +52,11 @@ $newsletter_locales = [
     'pl', 'pt-BR', 'ru', 'zh-TW',
 ];
 
+// List of key locations for Marketing
+$key_market_locales = [
+    'de', 'en-CA', 'en-GB', 'es-ES', 'fr',
+];
+
 // List of locales working on Pontoon
 $cache_id = 'pontoon_locales';
 if (! $pontoon_locales = Cache::getKey($cache_id, 60 * 60 * 24)) {
