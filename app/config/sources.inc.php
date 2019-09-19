@@ -916,7 +916,7 @@ $engagement_lang = [
         ],
     ],
     'other/2019/initiatives_page.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+        'supported_locales' => ['de'],
     ],
     'other/2019/join_us.lang' => [
         'supported_locales' => [
@@ -932,7 +932,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'other/2019/participate_page.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
+        'supported_locales' => ['de'],
     ],
     'other/2019/the_guardian_video.lang' => [
         'supported_locales' => ['de', 'fr'],
