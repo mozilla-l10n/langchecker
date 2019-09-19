@@ -317,7 +317,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_70.lang' => [
-        'deadline'          => '2019-10-14',
+        'deadline'          => '2019-10-11',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
