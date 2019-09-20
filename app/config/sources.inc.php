@@ -458,7 +458,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'cy', 'de', 'en-CA', 'en-GB', 'fr',
+            'cs', 'cy', 'de', 'en-CA', 'en-GB', 'fr', 'zh-TW',
         ],
     ],
     'mozorg/contribute/index.lang' => [
