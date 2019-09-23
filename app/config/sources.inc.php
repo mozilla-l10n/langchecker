@@ -814,6 +814,9 @@ $engagement_lang = [
     'emails/2019/ad_API.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2019/ai_survey.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2019/amazon_privacy_policy.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
@@ -908,6 +911,9 @@ $engagement_lang = [
         'supported_locales' => [
             'de', 'fr', 'es', 'pl', 'pt-BR',
         ],
+    ],
+    'other/2019/ai_survey_post_action_page.lang' => [
+        'supported_locales' => ['de', 'fr'],
     ],
     'other/2019/amazon_privacy_policy_petition.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
