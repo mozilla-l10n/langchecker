@@ -217,6 +217,11 @@ $mozillaorg_lang = [
             'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sq', 'uk', 'zh-CN', 'zh-TW',
         ],
     ],
+    'firefox/privacy-hub.lang' => [
+        'deadline'          => '2019-10-20',
+        'priority'          => 1,
+        'supported_locales' => $key_market_locales,
+    ],
     'firefox/products/developer-quantum.lang' => [
         'deadline'          => '2018-10-29',
         'supported_locales' => $firefox_locales,
