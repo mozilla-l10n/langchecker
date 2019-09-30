@@ -227,6 +227,9 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/products/lockwise.lang' => [
+        'flags' => [
+            'opt-in' => $mozilla,
+        ],
         'deadline'          => '2019-10-20',
         'priority'          => 1,
         'supported_locales' => $key_market_locales,
