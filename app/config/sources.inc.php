@@ -849,6 +849,9 @@ $engagement_lang = [
     'emails/2019/fundraising_june.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'emails/2019/fundraising_sept.lang' => [
+        'supported_locales' => ['de', 'es', 'fr'],
+    ],
     'emails/2019/guardian_reportback.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
