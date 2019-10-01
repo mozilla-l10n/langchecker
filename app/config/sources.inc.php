@@ -229,7 +229,9 @@ $mozillaorg_lang = [
     'firefox/products/lockwise.lang' => [
         'deadline'          => '2019-10-20',
         'priority'          => 1,
-        'supported_locales' => ['de', 'en-CA', 'en-GB', 'es-ES', 'fr', 'it',]
+        'supported_locales' => [
+            'de', 'en-CA', 'en-GB', 'es-ES', 'fr', 'it',
+        ],
     ],
     'firefox/profile-per-install.lang' => [
         'deadline'          => '2018-10-05',
