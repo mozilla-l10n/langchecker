@@ -3,6 +3,7 @@
 $no_active_tag = [
     'download_button.lang',
     'firefox/shared.lang',
+    'footer.lang',
     'main.lang',
     'mozorg/internet-health/shared.lang',
     'navigation.lang',
@@ -328,6 +329,11 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
+    'footer.lang' => [
+        'deadline'          => '2019-11-18',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'foundation/advocacy.lang' => [
         'flags' => [
             'opt-in' => ['all'],
@@ -604,7 +610,7 @@ $mozillaorg_lang = [
         'supported_locales' => ['de','es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
     ],
     'navigation.lang' => [
-        'deadline'          => '2019-02-04',
+        'deadline'          => '2019-11-18',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
