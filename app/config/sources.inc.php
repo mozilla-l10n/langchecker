@@ -961,6 +961,11 @@ $engagement_lang = [
     'other/2019/misinfo_site.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'other/2019/newsletter_form.lang' => [
+        'supported_locales' => [
+            'de', 'fr', 'es', 'pl', 'pt-BR',
+        ],
+    ],
     'other/2019/participate_page.lang' => [
         'supported_locales' => ['de'],
     ],
