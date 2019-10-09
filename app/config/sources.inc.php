@@ -272,6 +272,11 @@ $mozillaorg_lang = [
         'deadline'          => '2019-09-30',
         'supported_locales' => $key_market_locales,
     ],
+    'firefox/welcome/page2.lang' => [
+        'priority'          => 1,
+        'deadline'          => '2019-10-20',
+        'supported_locales' => $key_market_locales,
+    ],
     'firefox/whatsnew.lang' => [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
