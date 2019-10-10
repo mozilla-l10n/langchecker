@@ -175,7 +175,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/home-master.lang' => [
-        'deadline'          => '2019-10-20',
+        'deadline'          => '2019-11-25',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
