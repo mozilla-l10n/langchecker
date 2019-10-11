@@ -174,6 +174,11 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/home-master.lang' => [
+        'deadline'          => '2019-11-25',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/installer-help.lang' => [
         'priority'          => 2,
         'supported_locales' => $firefox_locales,
