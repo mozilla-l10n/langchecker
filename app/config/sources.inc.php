@@ -272,6 +272,17 @@ $mozillaorg_lang = [
         'deadline'          => '2019-09-30',
         'supported_locales' => $key_market_locales,
     ],
+    'firefox/welcome/page2.lang' => [
+        'priority'          => [
+            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+            3 => ['all'],
+        ],
+        'deadline'          => '2019-11-25',
+        'supported_locales' => [
+            'en-CA', 'en-GB', 'de', 'fr', 'it', 'ja', 'ko', 'nl', 'pl',
+            'pt-BR', 'pt-PT', 'ru', 'zh-CN', 'zh-TW',
+        ],
+    ],
     'firefox/whatsnew.lang' => [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
