@@ -278,12 +278,10 @@ $mozillaorg_lang = [
             3 => ['all'],
         ],
         'deadline'          => '2019-11-25',
-        'supported_locales' => array_diff(
-            $key_market_locales,
-            [
-                'it', 'ja', 'ko', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ru',
-                'zh-CN', 'zh-TW',
-            ]),
+        'supported_locales' => [
+            'en-CA', 'en-GB', 'de', 'fr', 'it', 'ja', 'ko', 'nl', 'pl',
+            'pt-BR', 'pt-PT', 'ru', 'zh-CN', 'zh-TW',
+        ],
     ],
     'firefox/whatsnew.lang' => [
         'priority'          => 1,
