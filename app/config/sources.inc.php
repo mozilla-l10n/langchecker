@@ -90,10 +90,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
-    'firefox/accounts-2018.lang' => [
-        'priority'          => 1,
-        'supported_locales' => $mozillaorg,
-    ],
    'firefox/accounts-2019.lang' => [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
