@@ -893,6 +893,9 @@ $engagement_lang = [
     'emails/2019/yt_regrets.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
+    'emails/2019/yt_regrets_site.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
+    ],
     'other/2017/iot_results_assets.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
     ],
@@ -942,6 +945,9 @@ $engagement_lang = [
         'supported_locales' => [
             'de', 'fr', 'es', 'pl', 'pt-BR',
         ],
+    ],
+    'other/2019/advocacy_page.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'other/2019/ai_survey_post_action_page.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
