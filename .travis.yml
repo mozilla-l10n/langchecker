@@ -6,6 +6,7 @@ cache:
 php:
   - 7.0
   - 7.2
+  - 7.3
 before_install:
   ## Install latest version of node
   - nvm install node
@@ -13,7 +14,7 @@ before_install:
   - phpenv config-rm xdebug.ini
 install:
   # Update composer, install dependencies
-  - flags="--ansi --prefer-dist --no-interaction --optimize-autoloader --no-suggest --no-progress"    
+  - flags="--ansi --prefer-dist --no-interaction --optimize-autoloader --no-suggest --no-progress"
   - composer self-update
   - composer install $flags
   ## Install ESLint
@@ -27,13 +28,3 @@ script:
   - php tests/integrity/source_integrity.php
   - vendor/bin/php-cs-fixer --diff --dry-run -v fix
   - eslint web/assets/js
-notifications:
-  irc:
-    channels:
-      - "irc.mozilla.org#l10n-tools"
-    on_success: always
-    on_failure: always
-    use_notice: true
-    template:
-      - "%{repository} ; %{commit} (%{author}) : %{message} "
-      - "Build details: %{build_url} ; changes: %{compare_url}"
