@@ -287,38 +287,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
-    'firefox/whatsnew_57.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => array_diff(
-            $firefox_locales,
-            [
-                'de', 'en-GB', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fr', 'id',
-                'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
-            ]),
-    ],
-    'firefox/whatsnew_59.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/whatsnew_61.lang' => [
-        'deadline'          => '2018-06-15',
-        'priority'          => 1,
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/whatsnew_63.lang' => [
-        'deadline'          => '2018-09-28',
-        'priority'          => 1,
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/whatsnew_66.lang' => [
-        'deadline'          => '2019-03-06',
-        'priority'          => 1,
-        'supported_locales' => $firefox_locales,
-    ],
     'firefox/whatsnew_67.lang' => [
         'deadline'          => '2019-05-03',
         'priority'          => 1,
@@ -345,15 +313,6 @@ $mozillaorg_lang = [
         'deadline'          => '2019-11-18',
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
-    ],
-    'foundation/advocacy.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'bs', 'cak', 'cy', 'cs', 'de', 'en-CA', 'en-GB', 'fr', 'ia', 'kab',
-            'ko', 'pt-BR', 'ro', 'sk', 'sq',
-        ],
     ],
     'foundation/annualreport/2011.lang' => [
         'priority'          => 5,
@@ -385,33 +344,6 @@ $mozillaorg_lang = [
             'ar', 'ast', 'de', 'el', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX',
             'fr', 'fy-NL', 'is', 'it', 'ja', 'ko', 'lij', 'ms', 'nl', 'oc',
             'pa-IN', 'pl', 'pt-BR', 'sq', 'sr', 'sv-SE', 'uk', 'zh-CN', 'zh-TW',
-        ],
-    ],
-    'foundation/index.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'bs', 'cak', 'cy', 'cs', 'de', 'en-CA', 'en-GB', 'es-ES', 'fr',
-            'ia', 'kab', 'ko', 'pl', 'pt-BR', 'ro', 'sk', 'sq', 'zh-TW',
-        ],
-    ],
-    'foundation/issues.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'bs', 'cak', 'cy', 'cs', 'de', 'en-CA', 'en-GB', 'fr', 'ia', 'kab',
-            'ko', 'pt-BR', 'ro', 'sk', 'sq',
-        ],
-    ],
-    'foundation/leadership-network.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'bs', 'cak', 'cy', 'cs', 'de', 'en-CA', 'en-GB', 'fr', 'ia', 'kab',
-            'ko', 'pt-BR', 'ro', 'sk', 'sq',
         ],
     ],
     'legal/index.lang' => [
@@ -458,21 +390,6 @@ $mozillaorg_lang = [
             'zh-TW',
         ],
     ],
-    'mozorg/about/history.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'priority'          => 2,
-        'supported_locales' => [
-            'af', 'am', 'ar', 'azz', 'bg', 'bn', 'bs', 'ca', 'cak', 'crh',
-            'cs', 'cy', 'de', 'dsb', 'el', 'en-CA', 'en-GB', 'es-AR', 'es-CL',
-            'es-ES', 'es-MX', 'eu', 'fa', 'fr', 'fy-NL', 'gl', 'hi-IN', 'hr',
-            'hsb', 'ia', 'id', 'it', 'ja', 'kab', 'km', 'ko', 'lt', 'ms', 'nl',
-            'nn-NO', 'nv', 'pa-IN', 'pai', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru',
-            'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta', 'tr', 'uk',
-            'uz', 'zam', 'zh-CN', 'zh-TW',
-        ],
-    ],
     'mozorg/about/manifesto.lang' => [
         'priority'          => 3,
         'deadline'          => '2018-04-26',
@@ -488,12 +405,6 @@ $mozillaorg_lang = [
     ],
     'mozorg/contribute/index.lang' => [
         'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => $getinvolved_locales,
-    ],
-    'mozorg/contribute/signup.lang' => [
-        'flags'    => [
             'opt-in' => ['all'],
         ],
         'supported_locales' => $getinvolved_locales,
@@ -581,16 +492,6 @@ $mozillaorg_lang = [
         'priority'          => 2,
         'supported_locales' => $mozillaorg,
     ],
-    'mozorg/moss/index.lang' => [
-        'deadline'          => '2018-07-15',
-        'priority'          => 1,
-        'supported_locales' => ['hi-IN'],
-    ],
-    'mozorg/moss/mission-partners-india.lang' => [
-        'deadline'          => '2017-07-30',
-        'priority'          => 1,
-        'supported_locales' => ['hi-IN'],
-    ],
     'mozorg/newsletters.lang' => [
         'deadline'          => '2018-09-09',
         'priority'          => 2,
@@ -642,12 +543,6 @@ $mozillaorg_lang = [
     ],
     'privacy/principles.lang' => [
         'priority'          => 2,
-        'supported_locales' => $mozillaorg,
-    ],
-    'tabzilla/tabzilla.lang' => [
-        'flags' => [
-            'obsolete' => ['all'],
-        ],
         'supported_locales' => $mozillaorg,
     ],
 ];
