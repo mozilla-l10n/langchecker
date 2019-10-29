@@ -15,10 +15,10 @@ $mozilla = [
     'gn', 'gu-IN', 'he', 'hi-IN', 'hr', 'hsb', 'hto', 'hu', 'hy-AM', 'ia',
     'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'lij', 'lo',
     'lt', 'ltg', 'lv', 'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'ne-NP', 'nl',
-    'nn-NO', 'nv', 'oc', 'pa-IN', 'pai', 'pbb', 'pl', 'pt-BR', 'pt-PT', 'qvi',
-    'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw', 'ta',
-    'te', 'th', 'tl', 'tr', 'trs', 'uk', 'ur', 'uz', 'vi', 'wo', 'xh', 'zam',
-    'zh-CN', 'zh-HK', 'zh-TW', 'zu',
+    'nn-NO', 'nv', 'oc', 'pa-IN', 'pai', 'pbb', 'ppl', 'pl', 'pt-BR', 'pt-PT',
+    'qvi', 'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'sw',
+    'ta', 'te', 'th', 'tl', 'tr', 'trs', 'uk', 'ur', 'uz', 'vi', 'wo', 'xh',
+    'zam', 'zh-CN', 'zh-HK', 'zh-TW', 'zu',
 ];
 sort($mozilla);
 
