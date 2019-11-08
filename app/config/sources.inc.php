@@ -856,6 +856,9 @@ $engagement_lang = [
     'other/2019/apple_privacy_petition.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'other/2019/fundraising_banner.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'other/2019/internet_health_page.lang' => [
         'supported_locales' => [
             'de', 'fr', 'es', 'pl', 'pt-BR',
