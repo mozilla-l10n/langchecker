@@ -187,6 +187,10 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/mobile-2019.lang' => [
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/new/quantum.lang' => [
         'deadline'          => '2018-09-23',
         'priority'          => 1,
