@@ -287,6 +287,20 @@ $mozillaorg_lang = [
             'pt-BR', 'pt-PT', 'ru', 'zh-CN', 'zh-TW',
         ],
     ],
+    'firefox/welcome/page3.lang' => [
+        'priority'          => [
+            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+        ],
+        'deadline'          => '2019-11-20',
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/welcome/page4.lang' => [
+        'priority'          => [
+            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+        ],
+        'deadline'          => '2019-12-11',
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/whatsnew.lang' => [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
