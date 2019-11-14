@@ -278,7 +278,7 @@ $mozillaorg_lang = [
     ],
     'firefox/welcome/page2.lang' => [
         'priority'          => [
-            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+            1 => ['de', 'fr', 'en-GB', 'en-CA',],
             3 => ['all'],
         ],
         'deadline'          => '2019-11-25',
@@ -289,14 +289,14 @@ $mozillaorg_lang = [
     ],
     'firefox/welcome/page3.lang' => [
         'priority'          => [
-            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+            1 => ['de', 'fr', 'en-GB', 'en-CA',],
         ],
         'deadline'          => '2019-11-20',
         'supported_locales' => $mozillaorg,
     ],
     'firefox/welcome/page4.lang' => [
         'priority'          => [
-            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+            1 => ['de', 'fr', 'en-GB', 'en-CA',],
         ],
         'deadline'          => '2019-12-11',
         'supported_locales' => $mozillaorg,
