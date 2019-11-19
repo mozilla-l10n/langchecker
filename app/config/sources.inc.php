@@ -327,6 +327,14 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
+    'firefox/whatsnew_71.lang' => [
+        'deadline'          => '2019-12-03',
+        'priority'          => [
+            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+            3 => ['all'],
+        ],
+        'supported_locales' => $firefox_locales,
+    ],
     'footer.lang' => [
         'deadline'          => '2019-11-18',
         'priority'          => 1,
