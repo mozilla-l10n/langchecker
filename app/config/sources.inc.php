@@ -744,6 +744,9 @@ $engagement_lang = [
     'emails/2019/ai_survey_oct.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'emails/2019/ai_survey_results.lang' => [
+        'supported_locales' => ['de', 'es', 'fr'],
+    ],
     'emails/2019/amazon_privacy_policy.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
