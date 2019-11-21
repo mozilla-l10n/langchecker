@@ -895,6 +895,11 @@ $engagement_lang = [
     'other/2019/the_guardian_video.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'other/2019/trustworthy_ai_page.lang' => [
+        'supported_locales' => [
+            'de', 'fr', 'es', 'pl', 'pt-BR',
+        ],
+    ],
     'other/2019/voice_assistants_blog.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
