@@ -331,6 +331,10 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => $firefox_locales,
     ],
+    'firefox/windows-64-bit.lang' => [
+        'priority'          => 3,
+        'supported_locales' => $firefox_locales,
+    ],
     'footer.lang' => [
         'deadline'          => '2019-11-18',
         'priority'          => 1,
