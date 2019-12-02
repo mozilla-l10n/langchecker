@@ -97,10 +97,6 @@ $mozillaorg_lang = [
     'firefox/adblocker.lang' => [
         'supported_locales' => $mozillaorg,
     ],
-    'firefox/all.lang' => [
-        'priority'          => 1,
-        'supported_locales' => $firefox_desktop_android,
-    ],
     'firefox/all-unified.lang' => [
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
@@ -333,6 +329,10 @@ $mozillaorg_lang = [
             1 => ['de', 'fr', 'en-GB', 'en-CA'],
             3 => ['all'],
         ],
+        'supported_locales' => $firefox_locales,
+    ],
+    'firefox/windows-64-bit.lang' => [
+        'priority'          => 3,
         'supported_locales' => $firefox_locales,
     ],
     'footer.lang' => [
