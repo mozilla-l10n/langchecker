@@ -426,7 +426,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'cy', 'de', 'en-CA', 'en-GB', 'fr', 'zh-TW',
+            'cs', 'cy', 'de', 'en-CA', 'en-GB', 'fr', 'kab', 'zh-TW',
         ],
     ],
     'mozorg/contribute/index.lang' => [
@@ -540,7 +540,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'cy', 'de', 'en-CA', 'en-GB', 'fr',
+            'cs', 'cy', 'de', 'en-CA', 'en-GB', 'fr', 'kab',
         ],
     ],
     'newsletter/opt-out-confirmation.lang' => [
