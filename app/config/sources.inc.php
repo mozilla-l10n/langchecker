@@ -424,6 +424,11 @@ $mozillaorg_lang = [
             'de', 'es-ES', 'fr', 'hi-IN', 'ja', 'pt-BR', 'zh-TW',
         ],
     ],
+    'mozorg/about/governance/policies/community-hotline.lang' => [
+        'supported_locales' => [
+            'de', 'es-ES', 'fr', 'hi-IN', 'ja', 'pt-BR', 'zh-TW',
+        ],
+    ],
     'mozorg/about/history-details.lang' => [
         'flags' => [
             'opt-in' => ['all'],
