@@ -123,6 +123,14 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/set-default-thanks.lang' => [
+        'deadline'          => '2020-01-22',
+        'priority'          => [
+            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+            3 => ['all'],
+        ],
+        'supported_locales' => $firefox_locales,
+    ],
     'firefox/facebookcontainer/index.lang' => [
         'deadline'          => '2018-04-26',
         'priority'          => 1,
