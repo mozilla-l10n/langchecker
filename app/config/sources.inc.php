@@ -31,6 +31,11 @@ $engagement_locales = [
     'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'sv-SE', 'sw', 'zh-TW',
 ];
 
+$participation_locales = [
+    'ar', 'de', 'es-ES', 'fr', 'hi-IN', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR',
+    'ru', 'zh-CN', 'zh-TW',
+];
+
 /*
     For each file it's possibile to specify the following fields:
     * deadline: if the deadline is the same for all locales, assign the deadline
@@ -415,19 +420,13 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/about/governance/policies/participation.lang' => [
-        'supported_locales' => [
-            'ar', 'de', 'es-ES', 'fr', 'hi', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
-        ],
+        'supported_locales' => $participation_locales,
     ],
     'mozorg/about/governance/policies/reporting.lang' => [
-        'supported_locales' => [
-            'ar', 'de', 'es-ES', 'fr', 'hi', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
-        ],
+        'supported_locales' => $participation_locales,
     ],
     'mozorg/about/governance/policies/community-hotline.lang' => [
-        'supported_locales' => [
-            'ar', 'de', 'es-ES', 'fr', 'hi', 'id', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'zh-CN', 'zh-TW',
-        ],
+        'supported_locales' => $participation_locales,
     ],
     'mozorg/about/history-details.lang' => [
         'flags' => [
