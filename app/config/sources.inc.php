@@ -263,7 +263,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/set-default-thanks.lang' => [
-        'deadline'          => '2020-01-22',
+        'deadline'          => '2020-02-04',
         'priority'          => [
             1 => ['de', 'fr', 'en-GB', 'en-CA'],
             3 => ['all'],
@@ -352,6 +352,14 @@ $mozillaorg_lang = [
     ],
     'firefox/whatsnew_71.lang' => [
         'deadline'          => '2019-12-03',
+        'priority'          => [
+            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+            3 => ['all'],
+        ],
+        'supported_locales' => $firefox_locales,
+    ],
+    'firefox/whatsnew_73.lang' => [
+        'deadline'          => '2020-02-04',
         'priority'          => [
             1 => ['de', 'fr', 'en-GB', 'en-CA'],
             3 => ['all'],
