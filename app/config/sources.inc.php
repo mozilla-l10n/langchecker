@@ -419,13 +419,13 @@ $mozillaorg_lang = [
         'priority'          => 3,
         'supported_locales' => $mozillaorg,
     ],
+    'mozorg/about/governance/policies/community-hotline.lang' => [
+        'supported_locales' => $participation_locales,
+    ],
     'mozorg/about/governance/policies/participation.lang' => [
         'supported_locales' => $participation_locales,
     ],
     'mozorg/about/governance/policies/reporting.lang' => [
-        'supported_locales' => $participation_locales,
-    ],
-    'mozorg/about/governance/policies/community-hotline.lang' => [
         'supported_locales' => $participation_locales,
     ],
     'mozorg/about/history-details.lang' => [
