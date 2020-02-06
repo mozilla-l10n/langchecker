@@ -109,6 +109,11 @@ $mozillaorg_lang = [
     'firefox/best-browser.lang' => [
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/browsers.lang' => [
+        'deadline'          => '2020-03-31',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/campaign.lang' => [
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
@@ -235,6 +240,11 @@ $mozillaorg_lang = [
         'deadline'          => '2019-10-20',
         'priority'          => 1,
         'supported_locales' => $key_market_locales,
+    ],
+    'firefox/products.lang' => [
+        'deadline'          => '2020-03-31',
+        'priority'          => 1,
+        'supported_locales' => $mozillaorg,
     ],
     'firefox/products/developer-quantum.lang' => [
         'deadline'          => '2018-10-29',
