@@ -196,10 +196,6 @@ $mozillaorg_lang = [
         'priority'          => 2,
         'supported_locales' => $firefox_locales,
     ],
-    'firefox/mobile.lang' => [
-        'priority'          => 1,
-        'supported_locales' => $mozillaorg,
-    ],
     'firefox/mobile-2019.lang' => [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
