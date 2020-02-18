@@ -292,11 +292,6 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => $mozillaorg,
     ],
-    'firefox/tracking-protection-tour.lang' => [
-        'priority'          => 1,
-        'deadline'          => '2019-01-28',
-        'supported_locales' => $firefox_locales,
-    ],
     'firefox/welcome/page1.lang' => [
         'priority'          => 1,
         'deadline'          => '2019-09-30',
