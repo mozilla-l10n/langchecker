@@ -3,6 +3,7 @@
 $no_active_tag = [
     'download_button.lang',
     'firefox/shared.lang',
+    'firefox/compare/shared.lang',
     'footer.lang',
     'main.lang',
     'mozorg/internet-health/shared.lang',
@@ -127,6 +128,48 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg, // Has Firefox for Android download buttons
     ],
     'firefox/compare.lang' => [
+        'priority' => [
+            1 => $key_market_locales,
+            3 => ['all'],
+        ],
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/compare/chrome.lang' => [
+        'priority' => [
+            1 => $key_market_locales,
+            3 => ['all'],
+        ],
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/compare/edge.lang' => [
+        'priority' => [
+            1 => $key_market_locales,
+            3 => ['all'],
+        ],
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/compare/ie.lang' => [
+        'priority' => [
+            1 => $key_market_locales,
+            3 => ['all'],
+        ],
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/compare/opera.lang' => [
+        'priority' => [
+            1 => $key_market_locales,
+            3 => ['all'],
+        ],
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/compare/safari.lang' => [
+        'priority' => [
+            1 => $key_market_locales,
+            3 => ['all'],
+        ],
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/compare/shared.lang' => [
         'priority' => [
             1 => $key_market_locales,
             3 => ['all'],
