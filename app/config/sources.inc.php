@@ -372,23 +372,6 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
-    'firefox/whatsnew_67.lang' => [
-        'deadline'          => '2019-05-03',
-        'priority'          => 1,
-        'supported_locales' => $firefox_locales,
-    ],
-    'firefox/whatsnew_67.0.5.lang' => [
-        'deadline'          => '2019-06-04',
-        'priority'          => 1,
-        'supported_locales' => [
-            'de', 'en-CA', 'en-GB', 'fr',
-        ],
-    ],
-    'firefox/whatsnew_69.lang' => [
-        'deadline'          => '2019-08-26',
-        'priority'          => 1,
-        'supported_locales' => $firefox_locales,
-    ],
     'firefox/whatsnew_70.lang' => [
         'deadline'          => '2019-10-11',
         'priority'          => 1,
