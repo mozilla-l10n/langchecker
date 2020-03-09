@@ -1024,6 +1024,9 @@ $engagement_lang = [
     'other/2019/yt_regrets_form.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
+    'other/2020/mozfest_homepage.lang' => [
+        'supported_locales' => ['fr', 'nl'],
+    ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
