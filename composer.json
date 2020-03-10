@@ -32,16 +32,15 @@
     },
 
     "require-dev": {
-        "atoum/atoum": "~3.0",
-        "friendsofphp/php-cs-fixer": "~2.1",
+        "atoum/atoum": "~3.4",
+        "friendsofphp/php-cs-fixer": "~2.16",
         "symfony/var-dumper": "~2.6",
         "pchevrel/verif": "0.3"
     },
 
     "autoload": {
-        "psr-0": {
-            "Langchecker": "app/classes/",
-            "Transvision": "app/classes/"
+        "psr-4": {
+            "Langchecker\\": "app/classes/Langchecker/"
         },
         "files": ["app/helpers/debug.php"]
     }
