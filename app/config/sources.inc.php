@@ -908,7 +908,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'emails/2020/donor_expired_card.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2020/ring_win.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
