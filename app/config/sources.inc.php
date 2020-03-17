@@ -401,6 +401,14 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => $firefox_locales,
     ],
+    'firefox/whatsnew_75.lang' => [
+        'deadline'          => '2020-03-31',
+        'priority'          => [
+            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+            3 => ['all'],
+        ],
+        'supported_locales' => $firefox_locales,
+    ],
     'firefox/windows-64-bit.lang' => [
         'priority'          => 3,
         'supported_locales' => $firefox_locales,
