@@ -368,6 +368,20 @@ $mozillaorg_lang = [
         'deadline'          => '2020-01-20',
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/welcome/page6.lang' => [
+        'priority'          => [
+            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+        ],
+        'deadline'          => '2020-04-20',
+        'supported_locales' => $mozillaorg,
+    ],
+    'firefox/welcome/page7.lang' => [
+        'priority'          => [
+            1 => ['de', 'fr', 'en-GB', 'en-CA'],
+        ],
+        'deadline'          => '2020-04-20',
+        'supported_locales' => $mozillaorg,
+    ],
     'firefox/whatsnew.lang' => [
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
