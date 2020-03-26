@@ -932,6 +932,9 @@ $engagement_lang = [
     'emails/2020/donor_expired_card.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'emails/2020/how_can_we_help.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2020/ring_win.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
@@ -1048,6 +1051,9 @@ $engagement_lang = [
     ],
     'other/2020/mozfest_homepage.lang' => [
         'supported_locales' => ['fr', 'nl'],
+    ],
+    'other/2020/how_can_we_help_form.lang' => [
+        'supported_locales' => ['de', 'fr'],
     ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
