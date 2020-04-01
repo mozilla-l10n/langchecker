@@ -631,7 +631,7 @@ $mozillaorg_lang = [
             'opt-in' => ['all'],
         ],
         'supported_locales' => [
-            'cs', 'cy', 'de', 'en-CA', 'en-GB', 'fr', 'kab',
+            'cs', 'cy', 'de', 'en-CA', 'en-GB', 'fr', 'kab', 'uk',
         ],
     ],
     'newsletter/opt-out-confirmation.lang' => [
