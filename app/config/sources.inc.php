@@ -938,6 +938,9 @@ $engagement_lang = [
     'emails/2020/ring_win.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'emails/2020/zoom_email.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'other/2017/iot_results_assets.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
     ],
