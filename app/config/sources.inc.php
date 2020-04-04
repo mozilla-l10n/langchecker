@@ -1061,6 +1061,9 @@ $engagement_lang = [
     'other/2020/pni_security_standards_badge.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'other/2020/zoom_graphics.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
