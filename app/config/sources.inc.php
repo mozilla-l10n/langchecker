@@ -176,6 +176,11 @@ $mozillaorg_lang = [
         ],
         'supported_locales' => $mozillaorg,
     ],
+    'firefox/enterprise/index.lang' => [
+        'deadline'          => '2020-04-15',
+        'priority'          => 1,
+        'supported_locales' => $firefox_locales,
+    ],
     'firefox/facebookcontainer/index.lang' => [
         'deadline'          => '2018-04-26',
         'priority'          => 1,
