@@ -939,7 +939,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2020/zoom_email.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'other/2017/iot_results_assets.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
@@ -1062,7 +1062,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'other/2020/zoom_graphics.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
