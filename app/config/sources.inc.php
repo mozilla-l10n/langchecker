@@ -178,7 +178,10 @@ $mozillaorg_lang = [
     ],
     'firefox/enterprise/index.lang' => [
         'deadline'          => '2020-04-30',
-        'priority'          => 1,
+        'priority' => [
+            1 => $key_market_locales,
+            3 => ['all'],
+        ],
         'supported_locales' => $firefox_locales,
     ],
     'firefox/facebookcontainer/index.lang' => [
