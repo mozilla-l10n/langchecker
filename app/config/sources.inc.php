@@ -177,7 +177,7 @@ $mozillaorg_lang = [
         'supported_locales' => $mozillaorg,
     ],
     'firefox/enterprise/index.lang' => [
-        'deadline'          => '2020-04-15',
+        'deadline'          => '2020-04-30',
         'priority'          => 1,
         'supported_locales' => $firefox_locales,
     ],
