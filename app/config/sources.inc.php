@@ -410,7 +410,7 @@ $mozillaorg_lang = [
         'supported_locales' => $firefox_locales,
     ],
     'firefox/whatsnew_76.lang' => [
-        'deadline'          => '2020-04-30',
+        'deadline'          => '2020-04-24',
         'priority'          => [
             1 => ['de', 'fr', 'en-GB', 'en-CA'],
             3 => ['all'],
