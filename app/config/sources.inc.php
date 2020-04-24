@@ -1081,7 +1081,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'other/2020/zoom_snippet.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
