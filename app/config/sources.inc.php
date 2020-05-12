@@ -951,10 +951,16 @@ $engagement_lang = [
     'emails/2020/how_can_we_help.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2020/pni_video_apps.lang' => [
+        'supported_locales' => ['de', 'es', 'fr'],
+    ],
     'emails/2020/ring_win.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2020/zoom_email.lang' => [
+        'supported_locales' => ['de', 'es', 'fr'],
+    ],
+    'emails/2020/zoom_report_back.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'other/2017/iot_results_assets.lang' => [
@@ -1081,6 +1087,9 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'other/2020/zoom_snippet.lang' => [
+        'supported_locales' => ['de', 'es', 'fr'],
+    ],
+    'other/2020/zoom_vote.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'social/2016/fundraising.lang' => [
