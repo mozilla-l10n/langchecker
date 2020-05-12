@@ -951,6 +951,9 @@ $engagement_lang = [
     'emails/2020/how_can_we_help.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2020/pni_video_apps.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2020/ring_win.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
