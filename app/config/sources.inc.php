@@ -1,13 +1,9 @@
 <?php
 
 $no_active_tag = [
-    'download_button.lang',
     'firefox/shared.lang',
     'firefox/compare/shared.lang',
-    'footer.lang',
     'main.lang',
-    'mozorg/internet-health/shared.lang',
-    'navigation.lang',
     'newsletter.lang',
 ];
 
@@ -91,11 +87,6 @@ $participation_locales = [
 
 // Default priority is 3
 $mozillaorg_lang = [
-    'download_button.lang' => [
-        'deadline'          => '2018-09-09',
-        'priority'          => 1,
-        'supported_locales' => $mozillaorg,
-    ],
    'firefox/accounts-2019.lang' => [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
@@ -256,18 +247,10 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
     ],
-    'firefox/new/reggiewatts.lang' => [
-        'priority'          => 1,
-        'supported_locales' => ['de'],
-    ],
     'firefox/new/trailhead.lang' => [
         'deadline'          => '2019-06-04',
         'priority'          => 1,
         'supported_locales' => $firefox_desktop_android,
-    ],
-    'firefox/new/wait-face.lang' => [
-        'priority'          => 1,
-        'supported_locales' => ['de'],
     ],
     'firefox/nightly_firstrun.lang' => [
         'supported_locales' => $firefox_locales,
@@ -304,20 +287,12 @@ $mozillaorg_lang = [
             'de', 'en-CA', 'en-GB', 'es-ES', 'fr', 'it',
         ],
     ],
-    'firefox/profile-per-install.lang' => [
-        'deadline'          => '2018-10-05',
-        'supported_locales' => $firefox_locales,
-    ],
     'firefox/retention/thank-you.lang' => [
         'priority'          => 1,
         'deadline'          => '2017-09-15',
         'supported_locales' => [
             'de', 'es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru', 'zh-TW',
         ],
-    ],
-    'firefox/sendto.lang' => [
-        'priority'          => 1,
-        'supported_locales' => $firefox_locales,
     ],
     'firefox/set-default-thanks.lang' => [
         'deadline'          => '2020-02-04',
@@ -330,13 +305,6 @@ $mozillaorg_lang = [
     'firefox/shared.lang' => [
         'deadline'          => '2017-08-15',
         'priority'          => 1,
-        'supported_locales' => $mozillaorg,
-    ],
-    'firefox/switch.lang' => [
-        'priority' => [
-            1 => ['de'],
-            3 => ['all'],
-        ],
         'supported_locales' => $mozillaorg,
     ],
     'firefox/welcome/page1.lang' => [
@@ -443,11 +411,6 @@ $mozillaorg_lang = [
         'priority'          => 3,
         'supported_locales' => $firefox_locales,
     ],
-    'footer.lang' => [
-        'deadline'          => '2019-11-18',
-        'priority'          => 1,
-        'supported_locales' => $mozillaorg,
-    ],
     'foundation/annualreport/2011.lang' => [
         'priority'          => 5,
         'supported_locales' => [
@@ -553,93 +516,13 @@ $mozillaorg_lang = [
         'priority'          => 1,
         'supported_locales' => $mozillaorg,
     ],
-    'mozorg/internet-health/decentralization.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL',
-            'es-ES', 'es-MX', 'fr', 'ia', 'id', 'it', 'kab', 'ko', 'nn-NO','pt-BR',
-            'ro', 'sk', 'sl', 'sq', 'sv-SE', 'uk',
-        ],
-    ],
-    'mozorg/internet-health/digital-inclusion.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL',
-            'es-ES', 'es-MX', 'fr', 'ia', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR',
-            'ro', 'sk', 'sl', 'sq', 'sv-SE', 'uk',
-        ],
-    ],
-    'mozorg/internet-health/index.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL',
-            'es-ES', 'es-MX', 'fa', 'fr', 'hi-IN', 'ia', 'id', 'it', 'kab', 'ko',
-            'nn-NO', 'pl', 'pt-BR', 'ro', 'sk', 'sl', 'sq', 'sv-SE', 'uk',
-            'zh-TW', 'uk',
-        ],
-    ],
-    'mozorg/internet-health/open-innovation.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL',
-            'es-ES', 'es-MX', 'fr', 'ia', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR',
-            'ro', 'sk', 'sl', 'sq', 'sv-SE', 'uk',
-        ],
-    ],
-    'mozorg/internet-health/privacy-security.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL',
-            'es-ES', 'es-MX', 'fa', 'fr', 'ia', 'id', 'it', 'kab', 'ko', 'nn-NO',
-            'pt-BR', 'ro', 'sk', 'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
-        ],
-    ],
-    'mozorg/internet-health/shared.lang' => [
-        'supported_locales' => [
-            'af', 'bs', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL',
-            'es-ES', 'es-MX', 'fa', 'fr', 'hi-IN', 'ia', 'id', 'it', 'kab', 'ko',
-            'nn-NO', 'pl', 'pt-BR', 'sk', 'sl', 'sq', 'sv-SE', 'uk', 'zh-TW',
-        ],
-    ],
-    'mozorg/internet-health/web-literacy.lang' => [
-        'flags' => [
-            'opt-in' => ['all'],
-        ],
-        'supported_locales' => [
-            'af', 'cak', 'cs', 'cy', 'de', 'en-CA', 'en-GB', 'es-CL', 'es-ES',
-            'es-MX', 'fr', 'ia', 'id', 'it', 'kab', 'ko', 'nn-NO', 'pt-BR',
-            'ro', 'sk', 'sl', 'sq', 'sv-SE', 'uk',
-        ],
-    ],
-    'mozorg/mission.lang' => [
-        'priority'          => 2,
-        'supported_locales' => $mozillaorg,
-    ],
     'mozorg/newsletters.lang' => [
         'deadline'          => '2018-09-09',
         'priority'          => 2,
         'supported_locales' => $newsletter_locales,
     ],
-    'mozorg/plugincheck-update.lang' => [
-        'deadline'          => '2017-08-15',
-        'priority'          => 1,
-        'supported_locales' => $mozillaorg,
-    ],
     'mozorg/products.lang' => [
         'priority'          => 2,
-        'supported_locales' => $mozillaorg,
-    ],
-    'mozorg/technology.lang' => [
         'supported_locales' => $mozillaorg,
     ],
     'mozorg/what-is-a-browser.lang' => [
@@ -654,11 +537,6 @@ $mozillaorg_lang = [
         'deadline'          => '2018-12-13',
         'priority'          => 1,
         'supported_locales' => ['de','es-ES', 'fr', 'id', 'pl', 'pt-BR', 'ru'],
-    ],
-    'navigation.lang' => [
-        'deadline'          => '2019-11-18',
-        'priority'          => 1,
-        'supported_locales' => $mozillaorg,
     ],
     'newsletter.lang' => [
         'priority'          => 1,
