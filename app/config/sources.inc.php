@@ -963,6 +963,12 @@ $engagement_lang = [
     'other/2020/mozfest_homepage.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'nl'],
     ],
+    'other/2020/mozfest_newsletter.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'nl'],
+    ],
+    'other/2020/mozfest_dialogue_and_debate.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'nl'],
+    ],
     'other/2020/how_can_we_help_form.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
