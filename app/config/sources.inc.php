@@ -843,6 +843,9 @@ $engagement_lang = [
     'emails/2020/ring_win.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'emails/2020/zoom_e2e.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2020/zoom_email.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
