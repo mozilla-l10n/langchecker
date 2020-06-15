@@ -844,7 +844,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2020/zoom_e2e.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2020/zoom_email.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
