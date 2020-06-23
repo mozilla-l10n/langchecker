@@ -855,6 +855,9 @@ $engagement_lang = [
     'emails/2020/zoom_report_back.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'emails/2020/zoom_victory.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'other/2017/iot_results_assets.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
     ],
@@ -980,6 +983,9 @@ $engagement_lang = [
     ],
     'other/2020/zoom_snippet.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
+    ],
+    'other/2020/zoom_victory_blog.lang' => [
+        'supported_locales' => ['de', 'fr'],
     ],
     'other/2020/zoom_vote.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
