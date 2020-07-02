@@ -843,6 +843,9 @@ $engagement_lang = [
     'emails/2020/pni_video_apps.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'emails/2020/stophateforprofit.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2020/ring_win.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
