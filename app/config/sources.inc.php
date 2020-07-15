@@ -841,7 +841,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2020/nextdoor.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2020/pni_video_apps.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
@@ -982,7 +982,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'other/2020/nextdoor_petition.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr'],
     ],
     'other/2020/pni_security_standards_badge.lang' => [
         'supported_locales' => ['de', 'fr'],
