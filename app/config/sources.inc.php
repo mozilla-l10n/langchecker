@@ -849,6 +849,9 @@ $engagement_lang = [
     'emails/2020/stophateforprofit.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
+    'emails/2020/stophateforprofit_action_day.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'emails/2020/ring_win.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
