@@ -24,8 +24,8 @@ $getinvolved_locales = [
 ];
 
 $engagement_locales = [
-    'bg', 'cs', 'cy', 'da', 'de', 'en-GB', 'es-ES', 'es', 'fr', 'hi-IN', 'id',
-    'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'sv-SE', 'sw', 'zh-TW',
+    'bg', 'cs', 'cy', 'da', 'de', 'en-GB', 'es-ES', 'es', 'fr', 'fy-NL', 'hi-IN',
+    'id', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'sv-SE', 'sw', 'zh-TW',
 ];
 
 $participation_locales = [
