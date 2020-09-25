@@ -1050,6 +1050,9 @@ $engagement_lang = [
             'bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'sl',
         ],
     ],
+    'websites/foundation/blog.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pl', 'pt-BR'],
+    ],
     'websites/foundation/homepage.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pl', 'pt-BR'],
     ],
