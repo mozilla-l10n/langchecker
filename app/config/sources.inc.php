@@ -978,11 +978,14 @@ $engagement_lang = [
     'other/2019/yt_regrets_form.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
-    'other/2020/mozfest_homepage.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl'],
+    'other/2020/fb_groups_graphic.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'other/2020/how_can_we_help_form.lang' => [
         'supported_locales' => ['de', 'fr'],
+    ],
+    'other/2020/mozfest_homepage.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl'],
     ],
     'other/2020/nextdoor_petition.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
