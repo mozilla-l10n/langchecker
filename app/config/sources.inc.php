@@ -834,6 +834,9 @@ $engagement_lang = [
     'emails/2020/donor_expired_card.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'emails/2020/fb_groups.lang' => [
+        'supported_locales' => ['fr'],
+    ],
     'emails/2020/fundraising_june.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
