@@ -835,7 +835,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
     'emails/2020/fb_groups.lang' => [
-        'supported_locales' => ['fr'],
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'emails/2020/fundraising_june.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
@@ -982,6 +982,9 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'other/2020/fb_groups_graphic.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
+    ],
+    'other/2020/fb_groups_petition.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'other/2020/how_can_we_help_form.lang' => [
