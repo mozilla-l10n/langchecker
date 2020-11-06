@@ -1068,7 +1068,13 @@ $engagement_lang = [
     'websites/foundation/unfck_the_internet.lang' => [
         'supported_locales' => ['fr'],
     ],
+    'websites/foundation/what_we_do.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
+    ],
     'websites/mozfest/uniquely_mozfest.lang' => [
         'supported_locales' => ['de', 'fr', 'fy-NL', 'nl'],
+    ],
+    'websites/pni/categories.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
     ],
 ];
