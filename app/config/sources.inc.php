@@ -1075,6 +1075,6 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr', 'fy-NL', 'nl'],
     ],
     'websites/pni/categories.lang' => [
-        'supported_locales' => ['de', 'es', 'fr',],
+        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
     ],
 ];
