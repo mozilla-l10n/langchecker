@@ -917,7 +917,7 @@ $engagement_lang = [
     ],
     'other/2019/about_us.lang' => [
         'supported_locales' => [
-            'de', 'fr', 'es', 'pl', 'pt-BR',
+            'de', 'es', 'fr', 'fy-NL', 'nl', 'pl', 'pt-BR',
         ],
     ],
     'other/2019/advocacy_page.lang' => [
