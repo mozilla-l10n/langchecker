@@ -1071,6 +1071,9 @@ $engagement_lang = [
     'websites/foundation/what_we_do.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
     ],
+    'websites/foundation/what_we_fund.lang' => [
+        'supported_locales' => ['de', 'es', 'fr'],
+    ],
     'websites/mozfest/uniquely_mozfest.lang' => [
         'supported_locales' => ['de', 'fr', 'fy-NL', 'nl'],
     ],
