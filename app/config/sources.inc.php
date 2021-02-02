@@ -1011,6 +1011,9 @@ $engagement_lang = [
     'other/2020/zoom_vote.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
+    'other/2021/idfa_stand_strong.lang' => [
+        'supported_locales' => ['de', 'es', 'fr'],
+    ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
             'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
