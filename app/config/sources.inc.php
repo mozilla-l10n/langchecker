@@ -871,7 +871,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2021/shfp_vote.lang' => [
-        'supported_locales' => ['de'],
+        'supported_locales' => ['de', 'fr'],
     ],
     'other/2017/iot_results_assets.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
