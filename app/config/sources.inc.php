@@ -24,8 +24,8 @@ $getinvolved_locales = [
 ];
 
 $engagement_locales = [
-    'bg', 'cs', 'cy', 'da', 'de', 'en-GB', 'es-ES', 'es', 'fr', 'fy-NL', 'hi-IN',
-    'id', 'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'sv-SE', 'sw', 'zh-TW',
+    'bg', 'cy', 'da', 'de', 'en-GB', 'es-ES', 'es', 'fr', 'fy-NL', 'hi-IN', 'id',
+    'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'sv-SE', 'sw', 'zh-TW',
 ];
 
 $participation_locales = [
@@ -773,7 +773,7 @@ $engagement_lang = [
     ],
     'emails/2019/donation_receipt.lang' => [
         'supported_locales' => [
-            'cs', 'da', 'de', 'es', 'fr', 'it', 'ja', 'nl', 'pl',
+            'da', 'de', 'es', 'fr', 'it', 'ja', 'nl', 'pl',
             'pt-BR', 'sv-SE', 'ru',
         ],
     ],
@@ -1062,7 +1062,7 @@ $engagement_lang = [
     ],
     'surveys/survey_maker_party_2016.lang' => [
         'supported_locales' => [
-            'bg', 'cs', 'de', 'es', 'fr', 'it', 'nl', 'sl',
+            'bg', 'de', 'es', 'fr', 'it', 'nl', 'sl',
         ],
     ],
     'websites/foundation/blog.lang' => [
