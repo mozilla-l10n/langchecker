@@ -22,41 +22,6 @@ $mozilla = [
 ];
 sort($mozilla);
 
-/*
-    $mozillaorg is the list of locales supported on mozilla.org
-    Remove locales not supported on mozilla.org from the full array
-*/
-$mozillaorg = array_diff($mozilla, ['es', 'zh-HK']);
-
-// List of locales only working on Fennec
-$fennec_locales = [
-    'hto', 'pbb', 'qvi', 'trs', 'wo',
-];
-
-/*
-    List of locales we support on desktop (Firefox). We need to remove
-    locales used only for Fennec
-*/
-$firefox_locales = array_diff(
-    $mozilla,
-    $fennec_locales,
-    ['es', 'zh-HK']
-);
-
-// All locales working on Firefox desktop + Android
-$firefox_desktop_android = array_merge($firefox_locales, $fennec_locales);
-
-// List of locales with active newsletter
-$newsletter_locales = [
-    'bg', 'cs', 'de', 'es-ES', 'fr', 'hu', 'id', 'it', 'nl',
-    'pl', 'pt-BR', 'ru', 'zh-TW',
-];
-
-// List of key locations for Marketing
-$key_market_locales = [
-    'de', 'en-CA', 'en-GB', 'es-ES', 'fr',
-];
-
 // List of locales working on Pontoon
 $cache_id = 'pontoon_locales';
 if (! $pontoon_locales = Cache::getKey($cache_id, 60 * 60 * 24)) {
