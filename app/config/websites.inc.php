@@ -34,22 +34,10 @@ $repo_local_path = function ($id, $folder) use ($local_storage, $override_local)
     |__ vcs         = Type of VCS (git, svn)
 */
 $repositories = [
-    'www.mozilla.org' => [
-        'local_path'  => $repo_local_path('www.mozilla.org', 'mozilla_org'),
-        'public_path' => 'https://github.com/mozilla-l10n/www.mozilla.org/tree/master/',
-        'repository'  => 'https://github.com/mozilla-l10n/www.mozilla.org',
-        'vcs'         => 'git',
-    ],
     'engagement' => [
         'local_path'  => $repo_local_path('engagement', 'engagement-l10n'),
         'public_path' => 'https://github.com/mozilla-l10n/engagement-l10n/tree/master/',
         'repository'  => 'https://github.com/mozilla-l10n/engagement-l10n',
-        'vcs'         => 'git',
-    ],
-    'appstores' => [
-        'local_path'  => $repo_local_path('appstores', 'appstores'),
-        'public_path' => 'https://github.com/mozilla-l10n/appstores/tree/master/',
-        'repository'  => 'https://github.com/mozilla-l10n/appstores',
         'vcs'         => 'git',
     ],
 ];
@@ -73,19 +61,6 @@ $repositories = [
 
 $sites =
 [
-    0 => [
-        'www.mozilla.org',
-        $repositories['www.mozilla.org']['local_path'],
-        '',
-        $mozillaorg,
-        $mozillaorg_lang,
-        'en-US', // source locale
-        $repositories['www.mozilla.org']['public_path'],
-        3,
-        'lang',
-        'mozillaorg',
-        [],
-    ],
     6 => [
         'engagement',
         $repositories['engagement']['local_path'],
