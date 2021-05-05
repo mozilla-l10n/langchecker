@@ -567,6 +567,9 @@ $engagement_lang = [
     'websites/foundation/newsletter_form.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
     ],
+    'websites/foundation/regrets_reporter.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
+    ],
     'websites/foundation/unfck_the_internet.lang' => [
         'supported_locales' => ['fr'],
     ],
