@@ -559,10 +559,10 @@ $engagement_lang = [
         ],
     ],
     'websites/foundation/blog.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pl', 'pt-BR'],
+        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
     ],
     'websites/foundation/homepage.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pl', 'pt-BR'],
+        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
     ],
     'websites/foundation/newsletter_form.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
