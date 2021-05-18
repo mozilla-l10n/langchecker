@@ -413,7 +413,7 @@ $engagement_lang = [
     ],
     'other/2019/about_us.lang' => [
         'supported_locales' => [
-            'de', 'es', 'fr', 'fy-NL', 'nl', 'pl', 'pt-BR',
+            'de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR',
         ],
     ],
     'other/2019/advocacy_page.lang' => [
@@ -433,7 +433,7 @@ $engagement_lang = [
     ],
     'other/2019/internet_health_page.lang' => [
         'supported_locales' => [
-            'de', 'fr', 'es', 'pl', 'pt-BR',
+            'de', 'fr', 'es', 'pt-BR',
         ],
     ],
     'other/2019/initiatives_page.lang' => [
@@ -446,7 +446,7 @@ $engagement_lang = [
     ],
     'other/2019/leadership.lang' => [
         'supported_locales' => [
-            'de', 'fr', 'es', 'pl', 'pt-BR',
+            'de', 'fr', 'es', 'pt-BR',
         ],
     ],
     'other/2019/misinfo_site.lang' => [
@@ -465,7 +465,7 @@ $engagement_lang = [
     ],
     'other/2019/trustworthy_ai_page.lang' => [
         'supported_locales' => [
-            'de', 'fr', 'es', 'pl', 'pt-BR',
+            'de', 'fr', 'es', 'pt-BR',
         ],
     ],
     'other/2019/voice_assistants_blog.lang' => [
@@ -487,7 +487,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'other/2020/mozfest_homepage.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl'],
+        'supported_locales' => ['de', 'fr', 'fy-NL', 'nl'],
     ],
     'other/2020/nextdoor_petition.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
