@@ -561,6 +561,12 @@ $engagement_lang = [
     'websites/foundation/blog.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
     ],
+    'websites/foundation/german-election.lang' => [
+        'supported_locales' => ['de'],
+    ],
+    'websites/foundation/german-election-policy-tracker.lang' => [
+        'supported_locales' => ['de'],
+    ],
     'websites/foundation/homepage.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
     ],
