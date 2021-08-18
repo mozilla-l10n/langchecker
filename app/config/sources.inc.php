@@ -3,8 +3,7 @@
 $no_active_tag = [];
 
 $engagement_locales = [
-    'bg', 'cy', 'da', 'de', 'en-GB', 'es-ES', 'es', 'fr', 'fy-NL', 'hi-IN', 'id',
-    'it', 'ja', 'nl', 'pl', 'pt-BR', 'ru', 'sl', 'sv-SE', 'sw', 'zh-TW',
+    'de', 'es-ES', 'es', 'fr', 'it', 'ja', 'pl', 'pt-BR',
 ];
 
 /*
@@ -228,15 +227,6 @@ $engagement_lang = [
     'emails/2018/ihr_launch.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
     ],
-    'emails/2018/jan_mobile_app_updates.lang' => [
-        'supported_locales' => ['es', 'pl', 'pt-BR', 'ru'],
-    ],
-    'emails/2018/jan_mobile_app_updates_fr.lang' => [
-        'supported_locales' => ['fr'],
-    ],
-    'emails/2018/jan_mobile_app_updates_id.lang' => [
-        'supported_locales' => ['id'],
-    ],
     'emails/2018/zuckerberg_eu.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pl'],
     ],
@@ -263,12 +253,6 @@ $engagement_lang = [
     ],
     'emails/2019/apple_privacy_kicker.lang' => [
         'supported_locales' => ['de', 'fr'],
-    ],
-    'emails/2019/donation_receipt.lang' => [
-        'supported_locales' => [
-            'da', 'de', 'es', 'fr', 'it', 'ja', 'nl', 'pl',
-            'pt-BR', 'sv-SE', 'ru',
-        ],
     ],
     'emails/2019/fb_2fa_win.lang' => [
         'supported_locales' => ['de', 'fr', 'pl'],
@@ -369,238 +353,10 @@ $engagement_lang = [
     'emails/2021/slack.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
-    'other/2017/iot_results_assets.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
-    ],
-    'other/2017/mozfest_form.lang' => [
-        'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'other/2017/mozfest_design_assets.lang' => [
-        'supported_locales' => [
-            'de', 'es', 'fr', 'hi-IN', 'it', 'pt-BR', 'sw', 'zh-TW',
-        ],
-    ],
-    'other/2018/cambridge_analytica_petition.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
-    ],
-    'other/2018/cloudpets_petition.lang' => [
-        'supported_locales' => ['de'],
-    ],
-    'other/2018/copyright_postcards.lang' => [
-        'supported_locales' => [
-            'de', 'fr', 'pl',
-        ],
-    ],
-    'other/2018/cross_site_tracking_petition.lang' => [
-        'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl', 'pt-BR'],
-    ],
-    'other/2018/facebook_2fa_petition.lang' => [
-        'supported_locales' => ['de', 'fr', 'pl', 'pt-BR'],
-    ],
-    'other/2018/mozfest.lang' => [
-        'supported_locales' => ['de', 'fr', 'it', 'pt-BR', 'sw'],
-    ],
-    'other/2018/mozfest_tickets.lang' => [
-        'supported_locales' => ['de', 'fr', 'it', 'pt-BR'],
-    ],
-    'other/2018/wagtail_forms.lang' => [
-        'supported_locales' => [
-            'de', 'fr', 'es', 'pl', 'pt-BR',
-        ],
-    ],
-    'other/2018/zuckerberg_eu_hearing_petition.lang' => [
-        'supported_locales' => ['de', 'fr'],
-    ],
-    'other/2018/zuckerberg_eu_petition.lang' => [
-        'supported_locales' => ['cy', 'de', 'es', 'fr', 'pl'],
-    ],
-    'other/2019/about_us.lang' => [
-        'supported_locales' => [
-            'de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR',
-        ],
-    ],
-    'other/2019/advocacy_page.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
-    ],
-    'other/2019/ai_survey_post_action_page.lang' => [
-        'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'other/2019/amazon_privacy_policy_petition.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
-    ],
-    'other/2019/apple_privacy_petition.lang' => [
-        'supported_locales' => ['de', 'fr'],
-    ],
-    'other/2019/fundraising_banner.lang' => [
-        'supported_locales' => ['de', 'fr'],
-    ],
-    'other/2019/internet_health_page.lang' => [
-        'supported_locales' => [
-            'de', 'fr', 'es', 'pt-BR',
-        ],
-    ],
-    'other/2019/initiatives_page.lang' => [
-        'supported_locales' => ['de'],
-    ],
-    'other/2019/join_us.lang' => [
-        'supported_locales' => [
-            'de', 'fr', 'es', 'pl', 'pt-BR',
-        ],
-    ],
-    'other/2019/leadership.lang' => [
-        'supported_locales' => [
-            'de', 'fr', 'es', 'pt-BR',
-        ],
-    ],
-    'other/2019/misinfo_site.lang' => [
-        'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'other/2019/newsletter_form.lang' => [
-        'supported_locales' => [
-            'de', 'fr', 'es', 'pl', 'pt-BR',
-        ],
-    ],
-    'other/2019/participate_page.lang' => [
-        'supported_locales' => ['de'],
-    ],
-    'other/2019/the_guardian_video.lang' => [
-        'supported_locales' => ['de', 'fr'],
-    ],
-    'other/2019/trustworthy_ai_page.lang' => [
-        'supported_locales' => [
-            'de', 'fr', 'es', 'pt-BR',
-        ],
-    ],
-    'other/2019/voice_assistants_blog.lang' => [
-        'supported_locales' => ['de', 'fr'],
-    ],
-    'other/2019/voice_assistants_graphics.lang' => [
-        'supported_locales' => ['de', 'fr'],
-    ],
-    'other/2019/yt_regrets_form.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
-    ],
-    'other/2020/fb_groups_graphic.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
-    ],
-    'other/2020/fb_groups_petition.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
-    ],
-    'other/2020/how_can_we_help_form.lang' => [
-        'supported_locales' => ['de', 'fr'],
-    ],
-    'other/2020/mozfest_homepage.lang' => [
-        'supported_locales' => ['de', 'fr', 'fy-NL', 'nl'],
-    ],
-    'other/2020/nextdoor_petition.lang' => [
-        'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'other/2020/pni_security_standards_badge.lang' => [
-        'supported_locales' => ['de', 'fr'],
-    ],
-    'other/2020/zoom_graphics.lang' => [
-        'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'other/2020/zoom_snippet.lang' => [
-        'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'other/2020/zoom_victory_blog.lang' => [
-        'supported_locales' => ['de', 'fr'],
-    ],
-    'other/2020/zoom_vote.lang' => [
-        'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'other/2021/idfa_stand_strong.lang' => [
-        'supported_locales' => ['de', 'es', 'fr'],
-    ],
     'other/2021/slack_shareprogress.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
     'other/2021/slack_typeform.lang' => [
         'supported_locales' => ['de', 'fr'],
-    ],
-    'social/2016/fundraising.lang' => [
-        'supported_locales' => [
-            'de', 'en-GB', 'es', 'fr', 'it', 'nl', 'pt-BR',
-        ],
-    ],
-    'social/2017/copyright_sept.lang' => [
-        'supported_locales' => [
-            'de', 'es', 'fr', 'it', 'pl',
-        ],
-    ],
-    'social/2017/iot_survey.lang' => [
-        'priority'          => 5,
-        'supported_locales' => [
-            'de', 'es', 'fr', 'pt-BR',
-        ],
-    ],
-    'social/2017/mozfest.lang' => [
-        'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'social/2017/paperstorm.lang' => [
-        'supported_locales' => [
-            'de', 'es-ES', 'fr', 'it',
-        ],
-    ],
-    'surveys/copyright_stories.lang' => [
-        'supported_locales' => ['de', 'fr'],
-    ],
-    'surveys/copyright_call_survey.lang' => [
-        'supported_locales' => ['de', 'fr', 'es', 'pl'],
-    ],
-    'surveys/donor_survey_2018.lang' => [
-        'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'surveys/data_privacy_day.lang' => [
-        'supported_locales' => ['de', 'fr'],
-    ],
-    'surveys/iot_survey.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
-    ],
-    'surveys/misinfo.lang' => [
-        'priority'          => 3,
-        'supported_locales' => ['de', 'fr', 'pt-BR'],
-    ],
-    'surveys/survey_maker_party_2016.lang' => [
-        'supported_locales' => [
-            'bg', 'de', 'es', 'fr', 'it', 'nl', 'sl',
-        ],
-    ],
-    'websites/foundation/blog.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
-    ],
-    'websites/foundation/german-election.lang' => [
-        'supported_locales' => ['de'],
-    ],
-    'websites/foundation/german-election-policy-tracker.lang' => [
-        'supported_locales' => ['de'],
-    ],
-    'websites/foundation/german-election-tracker-doc.lang' => [
-        'supported_locales' => ['de'],
-    ],
-    'websites/foundation/homepage.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
-    ],
-    'websites/foundation/newsletter_form.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'pl', 'pt-BR'],
-    ],
-    'websites/foundation/regrets_reporter.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
-    ],
-    'websites/foundation/unfck_the_internet.lang' => [
-        'supported_locales' => ['fr'],
-    ],
-    'websites/foundation/what_we_do.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
-    ],
-    'websites/foundation/what_we_fund.lang' => [
-        'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'websites/mozfest/uniquely_mozfest.lang' => [
-        'supported_locales' => ['de', 'fr', 'fy-NL', 'nl'],
-    ],
-    'websites/pni/categories.lang' => [
-        'supported_locales' => ['de', 'es', 'fr', 'fy-NL', 'nl', 'pt-BR'],
-    ],
+    ]
 ];
