@@ -358,5 +358,5 @@ $engagement_lang = [
     ],
     'other/2021/slack_typeform.lang' => [
         'supported_locales' => ['de', 'fr'],
-    ]
+    ],
 ];
