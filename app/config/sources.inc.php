@@ -366,6 +366,9 @@ $engagement_lang = [
     'emails/2021/shfp_vote.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'emails/2021/slack.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
     'other/2017/iot_results_assets.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'it', 'pt-BR'],
     ],
@@ -509,6 +512,12 @@ $engagement_lang = [
     ],
     'other/2021/idfa_stand_strong.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
+    ],
+    'other/2021/slack_shareprogress.lang' => [
+        'supported_locales' => ['de', 'fr'],
+    ],
+    'other/2021/slack_typeform.lang' => [
+        'supported_locales' => ['de', 'fr'],
     ],
     'social/2016/fundraising.lang' => [
         'supported_locales' => [
