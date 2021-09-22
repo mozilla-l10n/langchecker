@@ -3,7 +3,7 @@
 $no_active_tag = [];
 
 $engagement_locales = [
-    'de', 'es-ES', 'es', 'fr', 'it', 'ja', 'pl', 'pt-BR',
+    'de', 'es', 'fr', 'it', 'pl', 'pt-BR',
 ];
 
 /*
@@ -133,9 +133,6 @@ $engagement_lang = [
     ],
     'emails/2017/mozfest_call.lang' => [
         'supported_locales' => ['de', 'es', 'fr'],
-    ],
-    'emails/2017/paperstorm.lang' => [
-        'supported_locales' => ['de', 'es-ES', 'fr', 'it'],
     ],
     'emails/2017/results_graphics.lang' => [
         'supported_locales' => ['de', 'fr'],
