@@ -348,10 +348,10 @@ $engagement_lang = [
         'supported_locales' => ['de', 'fr'],
     ],
     'emails/2021/slack.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'other/2021/slack_shareprogress.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'other/2021/slack_typeform.lang' => [
         'supported_locales' => ['de', 'fr'],
