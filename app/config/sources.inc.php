@@ -354,7 +354,7 @@ $engagement_lang = [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'other/2021/slack_typeform.lang' => [
-        'supported_locales' => ['de', 'fr'],
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
     'other/2021/pni_launch_sl.lang' => [
         'supported_locales' => ['de', 'fr'],
