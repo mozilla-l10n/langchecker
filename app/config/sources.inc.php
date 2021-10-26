@@ -359,4 +359,7 @@ $engagement_lang = [
     'other/2021/pni_launch_sl.lang' => [
         'supported_locales' => ['de', 'fr'],
     ],
+    'other/2021/thumbnails.lang' => [
+        'supported_locales' => ['de', 'es', 'pt-BR'],
+    ],
 ];
