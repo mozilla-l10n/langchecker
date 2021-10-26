@@ -350,6 +350,9 @@ $engagement_lang = [
     'emails/2021/slack.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
+    'emails/2021/slack_video.lang' => [
+        'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
+    ],
     'other/2021/slack_shareprogress.lang' => [
         'supported_locales' => ['de', 'es', 'fr', 'pt-BR'],
     ],
