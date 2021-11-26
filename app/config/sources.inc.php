@@ -365,4 +365,7 @@ $engagement_lang = [
     'other/2021/thumbnails.lang' => [
         'supported_locales' => ['de', 'es', 'pt-BR'],
     ],
+    'other/2021/regretsreporter_graphics.lang' => [
+        'supported_locales' => ['pt-BR'],
+    ],
 ];
